@@ -1,0 +1,11 @@
+#import "./Component.graphql"
+#import "./Prop.graphql"
+
+mutation addComponent($input: AddComponentInput!) {
+  addComponent(input: $input) {
+    ... ComponentInfo
+    props {
+      ... PropInfo
+    }
+  }
+}

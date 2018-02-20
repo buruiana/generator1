@@ -1,0 +1,17 @@
+#import "./Component.graphql"
+
+query components($limit: Int!, $after: Int) {
+  components(limit: $limit, after: $after) {
+    totalCount
+    edges {
+      cursor
+      node {
+        ... ComponentInfo
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

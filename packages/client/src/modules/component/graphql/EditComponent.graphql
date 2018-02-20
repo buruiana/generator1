@@ -1,0 +1,7 @@
+#import "./Component.graphql"
+
+mutation editComponent($input: EditComponentInput!) {
+  editComponent(input: $input) {
+    ... ComponentInfo
+  }
+}

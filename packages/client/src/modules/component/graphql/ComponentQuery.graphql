@@ -1,0 +1,11 @@
+#import "./Component.graphql"
+#import "./Prop.graphql"
+
+query component($id: Int!) {
+  component(id: $id) {
+    ... ComponentInfo
+    props {
+      ... PropInfo
+    }
+  }
+}

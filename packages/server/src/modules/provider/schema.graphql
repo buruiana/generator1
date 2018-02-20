@@ -1,0 +1,68 @@
+# Provider
+type Provider {
+  id: Int!
+  name: String!
+  path: String!
+}
+
+# Edges for Providers
+type ProviderEdges {
+  node: Provider
+  cursor: Int
+}
+
+# PageInfo for Providers
+type ProviderPageInfo {
+  endCursor: Int
+  hasNextPage: Boolean
+}
+
+# Providers relay-style pagination query
+type Providers {
+  totalCount: Int
+  edges: [ProviderEdges]
+  pageInfo: ProviderPageInfo
+}
+
+extend type Query {
+  # Providers pagination query
+  providers(limit: Int, after: Int): Providers
+  # provider
+  provider(id: Int!): Provider
+}
+
+extend type Mutation {
+  # Create new Provider
+  addProvider(input: AddProviderInput!): Provider
+  # Delete a Provider
+  deleteProvider(id: Int!): Provider
+  # Edit a provider
+  editProvider(input: EditProviderInput!): Provider
+}
+
+# Input for addProvider Mutation
+input AddProviderInput {
+  name: String!
+  path: String!
+}
+
+# Input for editProvider Mutation
+input EditProviderInput {
+  id: Int!
+  name: String!
+  path: String!
+}
+
+extend type Subscription {
+  # Subscription for when editing a Provider
+  providerUpdated(id: Int!): Provider
+  # Subscription for provider list
+  providersUpdated(endCursor: Int!): UpdateProviderPayload
+}
+
+# Payload for providersUpdated Subscription
+type UpdateProviderPayload {
+  mutation: String!
+  id: Int!
+  node: Provider
+}

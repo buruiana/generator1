@@ -1,0 +1,11 @@
+fragment ComponentWithPropsInfo on ComponentWithProps {
+  id
+  componentName
+  componentDescription
+  componentTechnology
+  componentProvider
+	propId
+	propName
+	propDescription
+	propType
+}

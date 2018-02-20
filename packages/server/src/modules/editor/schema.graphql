@@ -1,0 +1,34 @@
+# Edges for ComponentWithProps
+type ComponentWithPropsEdges {
+  cursor: Int
+  componentId: Int
+  componentName: String!
+  componentDescription: String!
+  componentTechnology: String!
+  componentProvider: String!
+  propId: Int!
+  propName: String!
+  propDescription: String!
+  propType: String!
+}
+
+# PageInfo for ComponentWithProps
+type ComponentWithPropsPageInfo {
+  endCursor: Int
+  hasNextPage: Boolean
+}
+
+# ComponentWithProps relay-style pagination query
+type ComponentsWithProps {
+  totalCount: Int
+  edges: [ComponentWithPropsEdges]
+  pageInfo: ComponentWithPropsPageInfo
+}
+
+extend type Query {
+  # ComponentsWithProps pagination query
+  componentsWithProps(limit: Int, after: Int): ComponentsWithProps
+}
+
+extend type Mutation {}
+extend type Subscription {}

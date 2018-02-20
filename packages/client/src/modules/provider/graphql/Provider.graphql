@@ -1,0 +1,5 @@
+fragment ProviderInfo on Provider {
+  id
+  name
+  path
+}

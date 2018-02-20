@@ -1,0 +1,10 @@
+#import "./Component.graphql"
+
+subscription onComponentsUpdated($endCursor: Int!) {
+  componentsUpdated(endCursor: $endCursor) {
+    mutation
+    node {
+      ...ComponentInfo
+    }
+  }
+}

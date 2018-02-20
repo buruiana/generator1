@@ -1,0 +1,7 @@
+#import "./Prop.graphql"
+
+mutation editProp($input: EditPropInput!) {
+  editProp(input: $input) {
+    ... PropInfo
+  }
+}

@@ -1,0 +1,6 @@
+fragment PropInfo on Prop {
+  id
+  name
+  description
+  type
+}

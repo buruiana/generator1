@@ -1,0 +1,10 @@
+#import "./Provider.graphql"
+
+subscription onProvidersUpdated($endCursor: Int!) {
+  providersUpdated(endCursor: $endCursor) {
+    mutation
+    node {
+      ...ProviderInfo
+    }
+  }
+}

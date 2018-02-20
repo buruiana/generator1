@@ -1,0 +1,125 @@
+# Component
+type Component {
+  id: Int!
+  name: String!
+  description: String!
+  technology: String!
+  provider: String!
+  props: [Prop]
+}
+
+# Prop
+type Prop {
+  id: Int!
+  name: String!
+	description: String!
+	type: String!
+}
+
+# Edges for Components
+type ComponentEdges {
+  node: Component
+  cursor: Int
+}
+
+# PageInfo for Components
+type ComponentPageInfo {
+  endCursor: Int
+  hasNextPage: Boolean
+}
+
+# Components relay-style pagination query
+type Components {
+  totalCount: Int
+  edges: [ComponentEdges]
+  pageInfo: ComponentPageInfo
+}
+
+extend type Query {
+  # Components pagination query
+  components(limit: Int, after: Int): Components
+  # Component
+  component(id: Int!): Component
+}
+
+extend type Mutation {
+  # Create new Component
+  addComponent(input: AddComponentInput!): Component
+  # Delete a Component
+  deleteComponent(id: Int!): Component
+  # Edit a Component
+  editComponent(input: EditComponentInput!): Component
+  # Add prop to component
+  addProp(input: AddPropInput!): Prop
+  # Delete a Prop
+  deleteProp(input: DeletePropInput!): Prop
+  # Edit a Prop
+  editProp(input: EditPropInput!): Prop
+}
+
+# Input for addComponent Mutation
+input AddComponentInput {
+  name: String!
+  description: String!
+  technology: String!
+  provider: String!
+}
+
+# Input for editComponent Mutation
+input EditComponentInput {
+  id: Int!
+  name: String!
+  description: String!
+  technology: String!
+  provider: String!
+}
+
+# Input for addProp Mutation
+input AddPropInput {
+  name: String!
+	description: String!
+	type: String!
+  # Needed for propUpdated Subscription filter
+  componentId: Int!
+}
+
+# Input for editProp Mutation
+input DeletePropInput {
+  id: Int!
+  # Needed for propUpdated Subscription filter
+  componentId: Int!
+}
+
+# Input for deleteProp Mutation
+input EditPropInput {
+  id: Int!
+  name: String!
+	description: String!
+	type: String!
+  # Needed for propUpdated Subscription filter
+  componentId: Int!
+}
+
+extend type Subscription {
+  # Subscription for when editing a component
+  componentUpdated(id: Int!): Component
+  # Subscription for component list
+  componentsUpdated(endCursor: Int!): UpdateComponentPayload
+  # Subscription for props
+  propUpdated(componentId: Int!): UpdatePropPayload
+}
+
+# Payload for componentsUpdated Subscription
+type UpdateComponentPayload {
+  mutation: String!
+  id: Int!
+  node: Component
+}
+
+# Payload for propUpdated Subscription
+type UpdatePropPayload {
+  mutation: String!
+  id: Int
+  componentId: Int!
+  node: Prop
+}

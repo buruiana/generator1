@@ -1,0 +1,12 @@
+#import "./Prop.graphql"
+
+subscription onPropUpdated($componentId: Int!) {
+  propUpdated(componentId: $componentId) {
+    mutation
+    id
+    componentId
+    node {
+      ... PropInfo
+    }
+  }
+}
