@@ -4,7 +4,8 @@ type Component {
   name: String!
   description: String!
   technology: String!
-  provider: String!
+  provider: Int!
+  providerName: String!
   props: [Prop]
 }
 

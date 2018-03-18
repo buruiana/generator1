@@ -63,8 +63,8 @@ export default class ComponentList extends React.PureComponent {
         },
         {
           title: 'Provider',
-          dataIndex: 'provider',
-          key: 'provider'
+          dataIndex: 'providerName',
+          key: 'providerName'
         },
         {
           title: 'Actions',

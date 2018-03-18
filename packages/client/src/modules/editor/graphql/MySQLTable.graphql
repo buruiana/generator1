@@ -1,0 +1,14 @@
+query mySQLTable($database: String!, $table: String!) {
+  mySQLTable(database: $database, table: $table) {
+    edges {
+      table_name
+      column_name
+      ordinal_position
+      is_nullable
+      data_type
+      column_key
+      column_type
+      column_comment
+    }
+  }
+}

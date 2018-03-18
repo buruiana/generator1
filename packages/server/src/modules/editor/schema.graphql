@@ -12,6 +12,17 @@ type ComponentWithPropsEdges {
   propType: String!
 }
 
+type MySQLTable {
+  table_name: String!
+  column_name: String!
+  ordinal_position: String!
+  is_nullable: String!
+  data_type: String!
+  column_key: String!
+  column_type: String!
+  column_comment: String!
+}
+
 # PageInfo for ComponentWithProps
 type ComponentWithPropsPageInfo {
   endCursor: Int
@@ -25,9 +36,14 @@ type ComponentsWithProps {
   pageInfo: ComponentWithPropsPageInfo
 }
 
+type MySQLTableArray {
+  edges: [MySQLTable]
+}
+
 extend type Query {
   # ComponentsWithProps pagination query
   componentsWithProps(limit: Int, after: Int): ComponentsWithProps
+  mySQLTable(database: String, table: String): MySQLTableArray
 }
 
 extend type Mutation {}

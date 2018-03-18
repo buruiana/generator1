@@ -2,12 +2,13 @@ import React from 'react';
 import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import 'react-sortable-tree/style.css';
+import PropsForm from './PropsForm';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
-const SortableTreeTest = props => {
+const SortableTreeView = props => {
   const remove = path => {
     const newTree = {
       treeData2: removeNodeAtPath({
@@ -19,11 +20,21 @@ const SortableTreeTest = props => {
     props.setTree(newTree);
   };
 
+  const showPropsModal = node => {
+    props.setModalVisibility(true);
+    props.setModalContent(node);
+  };
+
+  const onSubmit = props => values => {
+    console.log('prop', props);
+    console.log('form', values);
+  };
+
   return (
     <div>
       <div
         style={{
-          height: 350,
+          height: 850,
           width: 350,
           float: 'left'
         }}
@@ -38,7 +49,7 @@ const SortableTreeTest = props => {
 
       <div
         style={{
-          height: 350,
+          height: 650,
           width: 350,
           float: 'left'
         }}
@@ -48,19 +59,33 @@ const SortableTreeTest = props => {
           onChange={treeData2 => props.setTree({ treeData2 })}
           dndType={externalNodeType}
           shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
-          generateNodeProps={({ path }) => ({
-            buttons: [<button onClick={() => remove(path)}>-</button>]
+          generateNodeProps={({ node, path }) => ({
+            buttons: [
+              <button onClick={() => remove(path)}>-</button>,
+              <button onClick={() => showPropsModal(node)}>P</button>
+            ]
           })}
+        />
+        <PropsForm
+          onSubmit={onSubmit(props.getTree)}
+          initialValues={props.getTree}
+          getModalContent={props.getModalContent}
+          getModalVisible={props.getModalVisible}
+          setModalVisibility={props.setModalVisibility}
         />
       </div>
     </div>
   );
 };
 
-SortableTreeTest.propTypes = {
+SortableTreeView.propTypes = {
   getTree: PropTypes.array,
   setTree: PropTypes.func,
-  getDefaultTree: PropTypes.array
+  getDefaultTree: PropTypes.array,
+  setModalVisibility: PropTypes.func,
+  setModalContent: PropTypes.func,
+  getModalVisible: PropTypes.bool,
+  getModalContent: PropTypes.object
 };
 
-export default SortableTreeTest;
+export default SortableTreeView;

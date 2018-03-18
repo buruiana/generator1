@@ -14,7 +14,8 @@ export default class Component {
         'component.name',
         'component.description',
         'component.technology',
-        'provider.name as provider'
+        'provider.id as provider',
+        'provider.name as providerName'
       )
       .select()
       .from('component')
@@ -53,7 +54,8 @@ export default class Component {
         'component.name',
         'component.description',
         'component.technology',
-        'provider.name as provider'
+        'provider.id as provider',
+        'provider.name as providerName'
       )
       .select()
       .from('component')

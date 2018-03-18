@@ -60,4 +60,21 @@ export default class Editor {
       .innerJoin('provider', 'component.provider', 'provider.id')
       .innerJoin('prop', 'component.id', 'prop.component_id');
   }
+
+  mySQLTable(database, table) {
+    return knex
+      .select([
+        'table_name',
+        'column_name',
+        'ordinal_position',
+        'is_nullable',
+        'data_type',
+        'column_key',
+        'column_type',
+        'column_comment'
+      ])
+      .from('information_schema.columns')
+      .where('.table_schema', database)
+      .orderBy('table_name', 'asc');
+  }
 }

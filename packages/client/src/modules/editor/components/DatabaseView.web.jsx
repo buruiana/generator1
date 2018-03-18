@@ -11,7 +11,7 @@ const renderMetaData = () => (
     meta={[
       {
         name: 'description',
-        content: 'Editor page'
+        content: 'Database page'
       }
     ]}
   />
@@ -31,7 +31,7 @@ const renderButtons = () => (
   </ButtonGroup>
 );
 
-const EditorView = props => {
+const DatabaseView = props => {
   return (
     <PageLayout>
       {renderMetaData()}
@@ -48,4 +48,4 @@ const EditorView = props => {
   );
 };
 
-export default EditorView;
+export default DatabaseView;

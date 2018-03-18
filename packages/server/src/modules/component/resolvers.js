@@ -19,13 +19,13 @@ export default pubsub => ({
             name: component.name,
             description: component.description,
             technology: component.technology,
-            provider: component.provider
+            provider: component.provider,
+            providerName: component.providerName
           }
         });
       });
 
       const endCursor = edgesArray.length > 0 ? edgesArray[edgesArray.length - 1].cursor : 0;
-
       const values = await Promise.all([context.Component.getTotal(), context.Component.getNextPageFlag(endCursor)]);
       return {
         totalCount: values[0].count,

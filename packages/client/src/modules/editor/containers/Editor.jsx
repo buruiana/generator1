@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import EditorView from '../components/EditorView';
 import * as editor from '../reducers/';
 import COMPONENTS_WITH_PROPS_QUERY from '../graphql/ComponentsWithPropsQuery.graphql';
+import DATABASE_INFO_QUERY from '../graphql/MySQLTable.graphql';
 
 class Editor extends React.Component {
   static propTypes = {
@@ -35,6 +36,7 @@ class Editor extends React.Component {
     if (nextProps.componentsWithProps && nextProps.componentsWithProps.edges && !this.props.getComponents.length) {
       this.prepareComponentList(nextProps.componentsWithProps);
     }
+    console.log('nextProps', nextProps);
   }
 
   prepareComponentList(props) {
@@ -43,7 +45,9 @@ class Editor extends React.Component {
         id: x.propId,
         name: x.propName,
         description: x.propDescription,
-        type: x.propType
+        type: x.propType,
+        [`${x.propId}-isActive`]: false,
+        [`${x.propId}-val`]: ''
       };
     };
 
@@ -99,6 +103,18 @@ const EditorWithApollo = compose(
       if (error) throw new Error(error);
       return { loading, componentsWithProps, subscribeToMore };
     }
+  }),
+  graphql(DATABASE_INFO_QUERY, {
+    options: () => {
+      return {
+        variables: { database: 'generator1', table: 'component' }
+      };
+    },
+    props: ({ data }) => {
+      const { loading, error, mySQLTable } = data;
+      if (error) throw new Error(error);
+      return { loading, mySQLTable };
+    }
   })
 )(Editor);
 
@@ -106,7 +122,9 @@ const mapStateToProps = state => {
   return {
     getComponents: editor.getComponents(state),
     getTree: editor.getTree(state),
-    getDefaultTree: editor.getDefaultTree(state)
+    getDefaultTree: editor.getDefaultTree(state),
+    getModalVisible: editor.getModalVisible(state),
+    getModalContent: editor.getModalContent(state)
   };
 };
 
@@ -115,7 +133,9 @@ const mapDispatchToProps = dispatch => {
     {
       setComponents: components => editor.setComponents(components),
       setTree: tree => editor.setTree(tree),
-      setDefaultTree: tree => editor.setDefaultTree(tree)
+      setDefaultTree: tree => editor.setDefaultTree(tree),
+      setModalVisibility: modalVisible => editor.setModalVisibility(modalVisible),
+      setModalContent: modalContent => editor.setModalContent(modalContent)
     },
     dispatch
   );

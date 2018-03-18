@@ -31,6 +31,27 @@ export default pubsub => ({
           hasNextPage: values[1].count > 0
         }
       };
+    },
+    async mySQLTable(obj, { database, table }, context) {
+      let edgesArray = [];
+      let mySQLTable = await context.Editor.mySQLTable(database, table);
+
+      mySQLTable.map(table => {
+        edgesArray.push({
+          table_name: table.table_name,
+          column_name: table.column_name,
+          ordinal_position: table.ordinal_position,
+          is_nullable: table.is_nullable,
+          data_type: table.data_type,
+          column_key: table.column_key,
+          column_type: table.column_type,
+          column_comment: table.column_comment
+        });
+      });
+
+      return {
+        edges: edgesArray
+      };
     }
   },
   Mutation: {},

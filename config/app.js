@@ -1,7 +1,7 @@
 export default {
-  name: 'Apollo Starter Kit',
+  name: 'App',
   logging: {
-    debugSQL: false,
+    debugSQL: true,
     apolloLogging: false
   },
   // Check here for Windows and Mac OS X: https://code.visualstudio.com/docs/editor/command-line#_opening-vs-code-with-urls
