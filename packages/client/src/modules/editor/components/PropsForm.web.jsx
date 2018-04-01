@@ -35,10 +35,10 @@ const PropsForm = ({ handleSubmit, submitting, onSubmit, setModalVisibility, get
               <label className="row">{prop.name}</label>
             </div>
             <div className="col-sm-2">
-              <Field name={`${prop.id}-isActive`} component={RenderCheckBox} type="checkbox" />
+              <Field name={`${prop.id - 1}.isActive`} component={RenderCheckBox} type="checkbox" />
             </div>
             <div className="col-sm-4">
-              <Field name={`${prop.id}-val`} component={RenderField} type="text" />
+              <Field name={`${prop.id - 1}.val`} component={RenderField} type="text" />
             </div>
           </div>
         </div>
@@ -52,8 +52,7 @@ const PropsForm = ({ handleSubmit, submitting, onSubmit, setModalVisibility, get
         <ModalHeader toggle={closeModal}>{getModalContent.title}</ModalHeader>
         <Form name="componentProps" onSubmit={handleSubmit(onSubmit)}>
           <ModalBody>
-            <Field name="test" component={RenderCheckBox} type="checkbox" />
-            <FieldArray name="props" component={renderForm} />
+            <FieldArray name="componentProps" component={renderForm} />
           </ModalBody>
           <ModalFooter>
             <Button color="primary" type="submit" disabled={submitting}>

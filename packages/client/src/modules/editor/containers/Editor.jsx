@@ -46,8 +46,8 @@ class Editor extends React.Component {
         name: x.propName,
         description: x.propDescription,
         type: x.propType,
-        [`${x.propId}-isActive`]: false,
-        [`${x.propId}-val`]: ''
+        isActive: false,
+        val: ''
       };
     };
 

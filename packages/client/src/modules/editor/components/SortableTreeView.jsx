@@ -26,6 +26,7 @@ const SortableTreeView = props => {
   };
 
   const onSubmit = props => values => {
+    console.log('SortableTreeView onSubmit');
     console.log('prop', props);
     console.log('form', values);
   };
@@ -68,7 +69,7 @@ const SortableTreeView = props => {
         />
         <PropsForm
           onSubmit={onSubmit(props.getTree)}
-          initialValues={props.getTree}
+          initialValues={props.getModalContent.props}
           getModalContent={props.getModalContent}
           getModalVisible={props.getModalVisible}
           setModalVisibility={props.setModalVisibility}
