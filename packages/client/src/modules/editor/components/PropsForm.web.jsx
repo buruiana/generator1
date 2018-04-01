@@ -12,32 +12,38 @@ import {
   ModalFooter
 } from '../../common/components/web';
 
-const PropsForm = ({ handleSubmit, onSubmit, setModalVisibility, getModalVisible, getModalContent }) => {
+const PropsForm = ({ handleSubmit, submitting, onSubmit, setModalVisibility, getModalVisible, getModalContent }) => {
   const closeModal = () => {
     setModalVisibility(false);
   };
 
-  const renderFields = prop => {
-    console.log('prop', prop);
-    getModalContent.props.map(
-      <div key={prop.name}>
-        <div>
-          <label className="row">{prop.name}</label>
-        </div>
-        <div className="row">
-          <label className="col-sm-2">Active</label>
-          <label className="col-sm-10">Value</label>
-        </div>
-        <div className="row">
-          <div className="col-sm-2">
-            <Field name={`${prop.id}-isActive`} component={RenderCheckBox} type="checkbox" />
+  const renderForm = () => {
+    return getModalContent.props.map(prop => {
+      return (
+        <div key={prop.name}>
+          <div className="row">
+            <div className="col-sm-6">&nbsp;</div>
+            <div className="col-sm-2">
+              <label className="col-sm-2">Active</label>
+            </div>
+            <div className="col-sm-4">
+              <label className="col-sm-10">Value</label>
+            </div>
           </div>
-          <div className="col-sm-10">
-            <Field name={`${prop.id}-val`} component={RenderField} type="text" />
+          <div className="row">
+            <div className="col-sm-6">
+              <label className="row">{prop.name}</label>
+            </div>
+            <div className="col-sm-2">
+              <Field name={`${prop.id}-isActive`} component={RenderCheckBox} type="checkbox" />
+            </div>
+            <div className="col-sm-4">
+              <Field name={`${prop.id}-val`} component={RenderField} type="text" />
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    });
   };
 
   return (
@@ -46,10 +52,11 @@ const PropsForm = ({ handleSubmit, onSubmit, setModalVisibility, getModalVisible
         <ModalHeader toggle={closeModal}>{getModalContent.title}</ModalHeader>
         <Form name="componentProps" onSubmit={handleSubmit(onSubmit)}>
           <ModalBody>
-            <FieldArray name="props" component={renderFields} />
+            <Field name="test" component={RenderCheckBox} type="checkbox" />
+            <FieldArray name="props" component={renderForm} />
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" type="submit">
+            <Button color="primary" type="submit" disabled={submitting}>
               Save
             </Button>
           </ModalFooter>
@@ -65,7 +72,8 @@ PropsForm.propTypes = {
   getModalVisible: PropTypes.bool,
   getModalContent: PropTypes.object,
   handleSubmit: PropTypes.func,
-  onSubmit: PropTypes.func
+  onSubmit: PropTypes.func,
+  submitting: PropTypes.bool
 };
 
 export default reduxForm({
