@@ -6,6 +6,7 @@ const TREE_SET = 'TREE_SET';
 const DEFAULT_TREE_SET = 'DEFAULT_TREE_SET';
 const MODAL_VISIBILITY_SET = 'MODAL_VISIBILITY_SET';
 const MODAL_CONTENT_SET = 'MODAL_CONTENT_SET';
+const NODE_PATH_SET = 'NODE_PATH_SET';
 
 /* -----------------------------------------
 Reducer
@@ -17,6 +18,10 @@ const defaultState = {
   modalVisible: false,
   modalContent: {
     props: []
+  },
+  nodePath: {
+    node: {},
+    path: []
   }
 };
 
@@ -46,6 +51,11 @@ export default function(state = defaultState, action) {
       return {
         ...state,
         modalContent: action.payload
+      };
+    case NODE_PATH_SET:
+      return {
+        ...state,
+        nodePath: action.payload
       };
     default:
       return state;
@@ -90,6 +100,13 @@ export function setModalContent(modalContent) {
   };
 }
 
+export function setNodePath(nodePath) {
+  return {
+    type: NODE_PATH_SET,
+    payload: nodePath
+  };
+}
+
 /* -----------------------------------------
 Selectors
 ------------------------------------------*/
@@ -98,3 +115,4 @@ export const getTree = state => state.editor.tree;
 export const getDefaultTree = state => state.editor.defaultTree;
 export const getModalVisible = state => state.editor.modalVisible;
 export const getModalContent = state => state.editor.modalContent;
+export const getNodePath = state => state.editor.nodePath;

@@ -1,5 +1,5 @@
 import React from 'react';
-import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
+import SortableTree, { removeNodeAtPath, changeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import 'react-sortable-tree/style.css';
 import PropsForm from './PropsForm';
@@ -20,15 +20,42 @@ const SortableTreeView = props => {
     props.setTree(newTree);
   };
 
-  const showPropsModal = node => {
+  const showPropsModal = (node, path) => {
+    console.log('ssssss', node);
+    const nodePath = {
+      node,
+      path
+    };
+    props.setNodePath(nodePath);
     props.setModalVisibility(true);
     props.setModalContent(node);
   };
 
-  const onSubmit = props => values => {
-    console.log('SortableTreeView onSubmit');
-    console.log('prop', props);
-    console.log('form', values);
+  const prepareData = (x, y) => {
+    console.log('11111', x);
+    console.log('22222', y);
+    const data = {
+      title: x.title,
+      props: y
+    };
+    return data;
+  };
+
+  const onSubmit = prop => values => {
+    const data = prepareData(prop[0], values);
+    const nodePath = props.getNodePath;
+    const path = nodePath.path;
+    const newTree = {
+      treeData2: changeNodeAtPath({
+        treeData: props.getTree,
+        path,
+        getNodeKey,
+        newNode: data
+      })
+    };
+    //props.setTree(newTree);
+    console.log('newTree', newTree);
+    props.setModalVisibility(false);
   };
 
   return (
@@ -60,10 +87,11 @@ const SortableTreeView = props => {
           onChange={treeData2 => props.setTree({ treeData2 })}
           dndType={externalNodeType}
           shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
+          getNodeKey={getNodeKey}
           generateNodeProps={({ node, path }) => ({
             buttons: [
               <button onClick={() => remove(path)}>-</button>,
-              <button onClick={() => showPropsModal(node)}>P</button>
+              <button onClick={() => showPropsModal(node, path)}>P</button>
             ]
           })}
         />
@@ -86,7 +114,9 @@ SortableTreeView.propTypes = {
   setModalVisibility: PropTypes.func,
   setModalContent: PropTypes.func,
   getModalVisible: PropTypes.bool,
-  getModalContent: PropTypes.object
+  getModalContent: PropTypes.object,
+  getNodePath: PropTypes.object,
+  setNodePath: PropTypes.object
 };
 
 export default SortableTreeView;

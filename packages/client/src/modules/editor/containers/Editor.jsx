@@ -124,7 +124,8 @@ const mapStateToProps = state => {
     getTree: editor.getTree(state),
     getDefaultTree: editor.getDefaultTree(state),
     getModalVisible: editor.getModalVisible(state),
-    getModalContent: editor.getModalContent(state)
+    getModalContent: editor.getModalContent(state),
+    getNodePath: editor.getNodePath(state)
   };
 };
 
@@ -135,7 +136,8 @@ const mapDispatchToProps = dispatch => {
       setTree: tree => editor.setTree(tree),
       setDefaultTree: tree => editor.setDefaultTree(tree),
       setModalVisibility: modalVisible => editor.setModalVisibility(modalVisible),
-      setModalContent: modalContent => editor.setModalContent(modalContent)
+      setModalContent: modalContent => editor.setModalContent(modalContent),
+      setNodePath: path => editor.setNodePath(path)
     },
     dispatch
   );
