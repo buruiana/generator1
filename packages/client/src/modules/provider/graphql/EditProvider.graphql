@@ -1,7 +1,0 @@
-#import "./Provider.graphql"
-
-mutation editProvider($input: EditProviderInput!) {
-  editProvider(input: $input) {
-    ... ProviderInfo
-  }
-}

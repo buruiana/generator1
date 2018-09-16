@@ -1,5 +1,0 @@
-mutation deleteProp($input: DeletePropInput!) {
-  deleteProp(input: $input) {
-    id
-  }
-}

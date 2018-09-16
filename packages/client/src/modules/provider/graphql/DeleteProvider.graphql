@@ -1,5 +1,0 @@
-mutation deleteProvider($id: Int!) {
-  deleteProvider(id: $id) {
-    id
-  }
-}

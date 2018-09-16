@@ -1,8 +1,0 @@
-fragment ComponentInfo on Component {
-  id
-  name
-  description
-  technology
-  provider
-  providerName
-}

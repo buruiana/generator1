@@ -1,7 +1,0 @@
-#import "./Provider.graphql"
-
-subscription onProviderUpdated($id: Int!) {
-  providerUpdated(id: $id) {
-    ... ProviderInfo
-  }
-}

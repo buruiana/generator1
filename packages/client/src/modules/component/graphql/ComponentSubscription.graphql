@@ -1,7 +1,0 @@
-#import "./Component.graphql"
-
-subscription onComponentUpdated($id: Int!) {
-  componentUpdated(id: $id) {
-    ... ComponentInfo
-  }
-}

@@ -1,5 +1,0 @@
-mutation deleteComponent($id: Int!) {
-  deleteComponent(id: $id) {
-    id
-  }
-}

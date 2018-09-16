@@ -1,7 +1,0 @@
-#import "./Provider.graphql"
-
-query provider($id: Int!) {
-  provider(id: $id) {
-    ... ProviderInfo
-  }
-}
