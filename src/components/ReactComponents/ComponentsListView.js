@@ -22,8 +22,6 @@ const ComponentsListView = props => {
   };
 
   const showModal = (type, node, path) => {
-    console.log('showPropsModal - node', node);
-    console.log('showPropsModal - path', path);
     const nodePath = {
       node,
       path
