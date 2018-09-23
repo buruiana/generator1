@@ -2,14 +2,14 @@ import React from 'react';
 import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import 'react-sortable-tree/style.css';
-import renderModal from './Modals/Modal';
+import renderModal from '../../modals';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
-const ComponentsListView = props => {
-
+const EditorView = props => {
+  console.log('console: EditorView-props', props);
   const remove = path => {
     const newTree = {
       treeData2: removeNodeAtPath({
@@ -123,7 +123,7 @@ const ComponentsListView = props => {
   );
 };
 
-ComponentsListView.propTypes = {
+EditorView.propTypes = {
   getTree: PropTypes.array,
   setTree: PropTypes.func,
   getDefaultTree: PropTypes.array,
@@ -135,4 +135,4 @@ ComponentsListView.propTypes = {
   setNodePath: PropTypes.func
 };
 
-export default ComponentsListView;
+export default EditorView;

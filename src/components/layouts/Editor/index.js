@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import ComponentsListView from './ComponentsListView';
-import { getAllComponents } from '../../services/componentsService/actions';
-import { setTree, setDefaultTree, setNodePath } from '../../services/sortableTreeService/actions';
-import { setModalVisibility, setModalContent } from '../../services/modalService/actions';
+import EditorView from './editorView';
+import { getAllComponents } from '../../../services/componentsService/actions';
+import { setTree, setDefaultTree, setNodePath } from '../../../services/sortableTreeService/actions';
+import { setModalVisibility, setModalContent } from '../../../services/modalService/actions';
 
-class ComponentsList extends Component {
+class Editor extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -16,7 +16,7 @@ class ComponentsList extends Component {
   }
 
   render() {
-    return <ComponentsListView {...this.props} />;
+    return <EditorView {...this.props} />;
   }
 };
 
@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ComponentsList);
+export default connect(mapStateToProps, mapDispatchToProps)(Editor);
