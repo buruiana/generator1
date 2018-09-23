@@ -1,12 +1,13 @@
 import React from 'react';
 import PropsForm from './PropsForm/propsForm';
 import ComponentInfo from './ComponentInfo/componentInfo';
+import {
+  PROPS_FORM,
+  COMPONENT_INFO,
+  PROJECT_SETTINGS
+} from './constants';
 
 const RenderModal = props => {
-
-  const onSubmit = () => {
-    console.log('console: onSubmit');
-  };
 
   const closeModal = () => {
     props.setModalVisibility(false);
@@ -14,17 +15,16 @@ const RenderModal = props => {
 
   if (props.modalContent) {
     switch (props.modalContent.type) {
-      case 'propsForm':
+      case PROPS_FORM:
         return (
           <PropsForm
-            //onSubmit={onSubmit(props.getTree)}
             initialValues={props.modalContent.props}
             modalContent={props.modalContent}
             modalVisible={props.modalVisible}
             closeModal={closeModal}
           />
         );
-      case 'componentInfo':
+      case COMPONENT_INFO:
         return (
           <ComponentInfo
             modalContent={props.modalContent}
@@ -33,7 +33,7 @@ const RenderModal = props => {
             closeModal={closeModal}
           />
         );
-      case 'settings':
+      case PROJECT_SETTINGS:
         return (
           <SettingsForm
             modalContent={props.modalContent}

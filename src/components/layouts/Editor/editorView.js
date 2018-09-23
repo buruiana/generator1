@@ -3,13 +3,14 @@ import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
+import { COMPONENT_INFO, PROPS_FORM } from '../../modals/constants';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const EditorView = props => {
-  console.log('console: EditorView-props', props);
+
   const remove = path => {
     const newTree = {
       treeData2: removeNodeAtPath({
@@ -92,7 +93,7 @@ const EditorView = props => {
           shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
           getNodeKey={getNodeKey}
           generateNodeProps={({ node, path }) => ({
-            buttons: [<button onClick={() => showModal('componentInfo', node, path)}>I</button>]
+            buttons: [<button onClick={() => showModal(COMPONENT_INFO, node, path)}>I</button>]
           })}
         />
       </div>
@@ -113,7 +114,7 @@ const EditorView = props => {
           generateNodeProps={({ node, path }) => ({
             buttons: [
               <button onClick={() => remove(path)}>-</button>,
-              <button onClick={() => showModal('propsForm', node, path)}>P</button>
+              <button onClick={() => showModal(PROPS_FORM, node, path)}>P</button>
             ]
           })}
         />
