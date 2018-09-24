@@ -1,7 +1,7 @@
 export const mock = {
   allComponents: [
     {
-      description: 'aaaa111',
+      description: 'aaaa1112',
       props: [
         {
           description: 'prop1_descr',
@@ -19,7 +19,7 @@ export const mock = {
       title: 'title1'
     },
     {
-      description: 'fgfdgfdg',
+      description: 'bbbb45354',
       props: {
         description: 'prop2_description',
         name: 'prop2 name',

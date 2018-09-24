@@ -5,31 +5,18 @@ import { setDefaultTree } from '../sortableTreeService/actions';
 import reduxSagaFirebase from '../../redux/firebaseConfig';
 import { mock } from './__mocks__';
 
-// export function* watchGetAllComponents() {
-//   const snapshot = yield call(reduxSagaFirebase.firestore.getCollection, 'components');
-//   const allComponents = snapshot.docs.map(component => component.data());
-
-//   yield put(setAllComponents(allComponents));
-//   yield put(setDefaultTree(allComponents));
-// }
-
-// export default function* rootSaga() {
-//   yield takeLatest(GET_ALL_COMPONENTS, watchGetAllComponents);
-// }
-
-
-
-
 export function* watchGetAllComponents() {
 
   let allComponents = [];
   const configs = (yield select()).configsServiceReducer.configs;
-
-  if (!configs.isOffline) {
+  console.log('console: 00000000000000000000', configs.isOffline);
+  if (configs.isOffline) {
+    console.log('console: 111111111111111111', );
+    allComponents = mock.allComponents;
+  } else {
+    console.log('console: 222222222222222', );
     const snapshot = yield call(reduxSagaFirebase.firestore.getCollection, 'components');
     allComponents = snapshot.docs.map(component => component.data());
-  } else {
-    allComponents = mock.allComponents;
   };
 
 

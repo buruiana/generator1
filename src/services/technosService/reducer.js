@@ -1,17 +1,15 @@
-import * as actionTypes from '../modalService/actionTypes';
+import * as actionTypes from '../providersService/actionTypes';
 
 export const initialState = () => ({
-  configs: {
-    isOffline: false,
-  },
+  technos: {},
 });
 
 export default (state = initialState(), action) => {
   switch (action.type) {
-    case actionTypes.CONFIGS_SET:
+    case actionTypes.SET_ALL_TECHNOS:
       return {
         ...state,
-        configs: action.payload
+        technos: action.technos,
       };
     default:
       return state;

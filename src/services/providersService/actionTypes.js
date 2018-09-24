@@ -1,0 +1,5 @@
+export const GET_ALL_PROVIDERS = 'GET_ALL_PROVIDERS';
+export const SET_ALL_PROVIDERS = 'SET_ALL_PROVIDERS';
+export const SET_PROVIDER = 'SET_PROVIDER';
+
+
