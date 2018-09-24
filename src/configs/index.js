@@ -1,1 +1,1 @@
-export const isOffline = false;
+export const isOffline = true;
