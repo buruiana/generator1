@@ -10,9 +10,11 @@ export default class App extends React.Component {
         <Row className="show-grid">
           <NavBarInstance />
         </Row>
-        <Row className="show-grid">
-          {this.props.children}
-        </Row>
+        <div className="mainContainer">
+          <Row className="show-grid">
+            {this.props.children}
+          </Row>
+        </div>
       </Grid>
     );
   }
