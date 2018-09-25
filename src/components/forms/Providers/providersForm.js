@@ -4,12 +4,11 @@ import Form from "react-jsonschema-form";
 const ProvidersForm = props => {
   const { name, path } = props.provider;
   const schema = {
-    title: "Provider",
     type: "object",
     required: ["name"],
     properties: {
-      name: { type: "string", title: name, default: name },
-      path: { type: "string", title: path, default: path }
+      name: { type: "string", title: "Name", default: name },
+      path: { type: "string", title: "Path", default: path }
     }
   };
 
@@ -17,6 +16,7 @@ const ProvidersForm = props => {
     console.log('console: data', data);
     const { formData } = data;
   };
+
   const log = (type) => console.log.bind(console, type);
   return (
     <Form schema={schema}

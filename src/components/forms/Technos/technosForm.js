@@ -2,14 +2,12 @@ import React from 'react';
 import Form from "react-jsonschema-form";
 
 const TechnosForm = props => {
-  console.log('console: props', props);
   const { name } = props.techno;
   const schema = {
-    title: "Technology",
     type: "object",
     required: ["name"],
     properties: {
-      name: { type: "string", title: name, default: name },
+      name: { type: "string", title: "Name", default: name },
     }
   };
 
@@ -17,6 +15,7 @@ const TechnosForm = props => {
     console.log('console: data', data);
     const { formData } = data;
   };
+
   const log = (type) => console.log.bind(console, type);
   return (
     <Form schema={schema}
