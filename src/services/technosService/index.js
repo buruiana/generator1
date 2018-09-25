@@ -14,7 +14,6 @@ export function* watchGetAllTechnos() {
     const snapshot = yield call(reduxSagaFirebase.firestore.getCollection, 'technos');
     allTechnos = snapshot.docs.map(techno => techno.data());
   };
-  console.log('console: allTechnos', allTechnos);
   yield put(setAllTechnos(allTechnos));
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from "react-bootstrap";
+import { boxArray } from '../../../utils';
 
 const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
   const renderDescription = () => {
@@ -8,9 +9,8 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
   };
 
   const renderProps = () => {
-    const propsInfo = Object.prototype.toString.call(modalContent.node.props) != '[object Array]'
-      ? [modalContent.node.props]
-      : modalContent.node.props;
+    const propsInfo = boxArray(modalContent.node.props);
+
     return propsInfo.map(prop => {
       return (
         <div key={prop.name}>

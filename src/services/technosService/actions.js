@@ -4,7 +4,7 @@ export const getAllTechnos = () => ({
   type: actionTypes.GET_ALL_TECHNOS,
 })
 
-export const setAllProviders = providers => ({
+export const setAllTechnos = technos => ({
   type: actionTypes.SET_ALL_TECHNOS,
   technos,
 })

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from "react-bootstrap";
 import Form from "react-jsonschema-form";
+import { boxArray } from '../../../utils';
 
 const PropsForm = ({
   modalVisible,
@@ -17,13 +18,7 @@ const PropsForm = ({
   };
   const properties = schema.properties;
 
-  const propsInfo = Object.prototype.toString.call(modalContent.node.props) != '[object Array]'
-    ? [modalContent.node.props]
-    : modalContent.node.props;
-
-  // const propsInfo1 = Object.prototype.toString.call(properties) != '[object Array]'
-  //   ? [properties]
-  //   : properties;
+  const propsInfo = boxArray(modalContent.node.props);
 
   propsInfo.map(prop => {
     properties[prop.name] = {
