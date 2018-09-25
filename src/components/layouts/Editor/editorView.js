@@ -3,6 +3,7 @@ import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
+import Ace from '../../AceEditor/Ace';
 import { COMPONENT_INFO, PROPS_FORM } from '../../modals/constants';
 
 const externalNodeType = 'yourNodeType';
@@ -82,7 +83,7 @@ const EditorView = props => {
       <div
         style={{
           height: 800,
-          width: '40%',
+          width: '30%',
           float: 'left'
         }}
       >
@@ -101,7 +102,7 @@ const EditorView = props => {
       <div
         style={{
           height: 800,
-          width: '60%',
+          width: '30%',
           float: 'left'
         }}
       >
@@ -118,8 +119,17 @@ const EditorView = props => {
             ]
           })}
         />
-        <div>{renderModal(props)}</div>
       </div>
+      <div
+        style={{
+          height: 800,
+          width: '30%',
+          float: 'left'
+        }}
+      >
+        <Ace />
+      </div>
+      <div>{renderModal(props)}</div>
     </div>
   );
 };

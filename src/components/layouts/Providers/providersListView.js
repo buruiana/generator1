@@ -1,38 +1,31 @@
 import React from 'react';
-import { PanelGroup, Panel } from 'react-bootstrap';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import { boxArray } from '../../../utils';
 
-const ProvidersView = props => {
-  //const { providers } = props;
+const ProvidersListView = props => {
+  const providers = boxArray(props.providers);
 
-  const providers = [{
-    name: 'grgtr',
-    path: 'sdadsa'
-  }];
-
-  const providersList = providers.map(provider => {
-    console.log('console: provider', provider);
-    return (
-        <Panel eventKey={provider.name}>
-          <Panel.Heading key={provider.name}>
-            <Panel.Title toggle>{provider.name}</Panel.Title>
-          </Panel.Heading>
-          <Panel.Body collapsible>{provider.path}</Panel.Body>
-        </Panel>
-    );
-  });
-
+  const providersList = () => {
+    return providers.map(provider => {
+      const { name, path } = provider;
+      return (
+        <ListGroupItem href="#link1" key={name}>
+          <div className="container">
+            <div>{name}</div>
+            <div>{path}</div>
+          </div>
+        </ListGroupItem>
+      );
+    })
+  };
+  console.log('console: providersList', providersList());
   return (
     <div>
-      <PanelGroup
-        accordion
-        id="accordion-controlled-example"
-        activeKey=''
-        onSelect=''
-      >
-        {providersList}
-      </PanelGroup>
+      <ListGroup>
+        {providersList()}
+      </ListGroup>
     </div>
   );
 }
 
-export default ProvidersView;
+export default ProvidersListView;

@@ -1,17 +1,19 @@
 import React from 'react';
+import { boxArray } from '../../../utils';
 
-const TechnosView = props => {
-  const { technos } = props;
+const TechnosListView = props => {
+  const technos = boxArray(props.technos);
+
   const technosList = () => {
-    return (
-      Object.keys(technos).forEach(techno => {
-        <div key={key}>
-          <div>name: {technos[key]}</div>
+    return technos.map(techno => {
+      return (
+        <div key={techno.name}>
+          name: {techno.name}
         </div>
-      })
-    );
+      );
+    })
   };
-
+  console.log('console: technosList', technosList());
   return (
     <div>
       {technosList()}
@@ -19,4 +21,4 @@ const TechnosView = props => {
   );
 }
 
-export default TechnosView;
+export default TechnosListView;
