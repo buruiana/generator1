@@ -8,9 +8,9 @@ const ProvidersForm = props => {
     type: "object",
     required: ["name"],
     properties: {
-      id: { type: "string", title: "Id", default: "" },
-      name: { type: "string", title: "Name", default: "" },
-      path: { type: "string", title: "Path", default: "" }
+      id: { type: "string", title: "Id", default: id },
+      name: { type: "string", title: "Name", default: name },
+      path: { type: "string", title: "Path", default: path }
     }
   };
   const uiSchema = {

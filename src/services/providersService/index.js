@@ -1,5 +1,4 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
-import has from 'lodash/has';
 import {
   GET_ALL_PROVIDERS,
   SET_PROVIDER,
@@ -31,11 +30,10 @@ export function* watchGetAllProviders() {
 
 export function* watchSetProvider() {
   const provider = (yield select()).providersServiceReducer.provider;
-
   const configs = (yield select()).configsServiceReducer.configs;
 
-  if (configs.isOffline) {
-    if (has(provider, 'id') && provider.id.length) {
+  if (!configs.isOffline) {
+    if (provider.id) {
       yield call(
         reduxSagaFirebase.firestore.setDocument,
         `providers/${provider.id}`,
@@ -56,7 +54,7 @@ export function* watchDeleteProvider() {
   const { id } = (yield select()).providersServiceReducer.provider;
   const configs = (yield select()).configsServiceReducer.configs;
 
-  if (configs.isOffline) {
+  if (!configs.isOffline) {
     yield call(reduxSagaFirebase.firestore.deleteDocument, `providers/${id}`);
     yield put(getAllProviders());
   }

@@ -8,8 +8,8 @@ const TechnosForm = props => {
     type: "object",
     required: ["name"],
     properties: {
-      id: { type: "string", title: "Id", default: "" },
-      name: { type: "string", title: "Name", default: "" },
+      id: { type: "string", title: "Id", default: id },
+      name: { type: "string", title: "Name", default: name },
     }
   };
   const uiSchema = {

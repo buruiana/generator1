@@ -1,5 +1,4 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
-import has from 'lodash/has';
 import {
   GET_ALL_TECHNOS,
   SET_TECHNO,
@@ -34,7 +33,7 @@ export function* watchSetTechno() {
   const configs = (yield select()).configsServiceReducer.configs;
 
   if (!configs.isOffline) {
-    if (has(techno, 'id') && techno.id.length) {
+    if (techno.id) {
       yield call(
         reduxSagaFirebase.firestore.setDocument,
         `technos/${techno.id}`,
@@ -55,7 +54,7 @@ export function* watchDeleteTechno() {
   const { id } = (yield select()).technosServiceReducer.techno;
   const configs = (yield select()).configsServiceReducer.configs;
 
-  if (configs.isOffline) {
+  if (!configs.isOffline) {
     yield call(reduxSagaFirebase.firestore.deleteDocument, `technos/${id}`);
     yield put(getAllTechnos());
   }
