@@ -3,7 +3,12 @@ import { Nav, Navbar, NavItem } from 'react-bootstrap';
 
 
 const NavBar = configs => {
-  console.log('console: configs', configs);
+  const { isOffline } = configs.configs;
+
+  const renderNetworkStatus = () => {
+    return isOffline ? 'OFFLINE' : 'ONLINE';
+  };
+
   return (
     <Navbar>
       <Navbar.Header>
@@ -19,7 +24,7 @@ const NavBar = configs => {
       </Nav>
       <Nav pullRight>
         <NavItem eventKey={1} href="#">
-          {configs.isOffline ? 'OFFLINE' : 'ONLINE'}
+          {renderNetworkStatus()}
         </NavItem>
       </Nav>
     </Navbar>

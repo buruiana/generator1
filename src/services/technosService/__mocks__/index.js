@@ -1,10 +1,10 @@
 export const mock = {
   allTechnos: [
     {
-      name: 't-title1'
+      name: 'React'
     },
     {
-      name: 't-title2'
+      name: 'ReactNative'
     }
   ]
 }

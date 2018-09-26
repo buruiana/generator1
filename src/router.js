@@ -6,7 +6,7 @@ import Home from "./components/layouts/Home";
 import Editor from "../src/components/layouts/Editor";
 import Providers from "../src/components/layouts/Providers";
 import Technos from "../src/components/layouts/Technos";
-import NotFound from "./components/NotFound";
+import NotFound from "./components/layouts/NotFound";
 
 // build the router
 const router = (

@@ -1,11 +1,11 @@
 export const mock = {
   allProviders: [
     {
-      name: "provider-1",
+      name: "Bootstrap",
       path: "some/path"
     },
     {
-      name: "provider-2",
+      name: "MaterialUI",
       path: "other/path"
     }
   ]

@@ -3,7 +3,7 @@ import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
-import Ace from '../../AceEditor/Ace';
+import Ace from '../AceEditor/Ace';
 import { COMPONENT_INFO, PROPS_FORM } from '../../modals/constants';
 
 const externalNodeType = 'yourNodeType';
