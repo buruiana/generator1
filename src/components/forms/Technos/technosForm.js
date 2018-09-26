@@ -8,8 +8,8 @@ const TechnosForm = props => {
     type: "object",
     required: ["name"],
     properties: {
-      id: { type: "string", title: "Id", default: id },
-      name: { type: "string", title: "Name", default: name },
+      id: { type: "string", title: "Id", default: "" },
+      name: { type: "string", title: "Name", default: "" },
     }
   };
   const uiSchema = {
@@ -18,7 +18,8 @@ const TechnosForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    props.setTechno(formData);
+    props.setSelectedTechno(formData);
+    props.setTechno();
   };
 
   const log = (type) => console.log.bind(console, type);

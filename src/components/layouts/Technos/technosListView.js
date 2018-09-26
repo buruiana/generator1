@@ -7,32 +7,50 @@ import TechnosForm from '../../forms/Technos';
 const TechnosListView = props => {
   const technos = boxArray(props.technos);
 
-  const renderTechnosList = () => {
+  const deleteTechno = event => {
+    props.setSelectedTechno({ id: event.target.id });
+    props.deleteTechno();
+  };
 
+  const technosList = () => {
     return technos.map(techno => {
-      const { name } = techno;
+      const { name, id } = techno;
 
       return (
-        <Panel eventKey={name} key={name}>
+        <Panel key={id} eventKey={name} >
           <Panel.Heading>
             <Panel.Title toggle>{name}</Panel.Title>
+            <div id={id} onClick={deleteTechno}>Delete</div>
           </Panel.Heading>
           <Panel.Body collapsible>
             <TechnosForm techno={techno} />
           </Panel.Body>
         </Panel>
       );
-    });
+    })
+  };
+  const newTechno = {
+    name: '',
+    id: ''
   };
 
-    return (
+
+
+  return (
     <div>
       <PanelGroup
         accordion
-          id="accordion-controlled-example"
-          key="technoListPanelGroup"
-        >
-          {renderTechnosList()}
+        id="accordion-controlled-example"
+      >
+        <Panel key="new" eventKey="new" >
+          <Panel.Heading>
+            <Panel.Title toggle>New Techno</Panel.Title>
+          </Panel.Heading>
+          <Panel.Body collapsible>
+            <TechnosForm techno={newTechno} />
+          </Panel.Body>
+        </Panel>
+        {technosList()}
       </PanelGroup>
     </div>
   );

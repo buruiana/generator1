@@ -1,10 +1,14 @@
 import TechnosForm from './technosForm';
 import { connect } from "react-redux";
-import { setTechno } from '../../../services/technosService/actions';
+import {
+  setTechno,
+  setSelectedTechno
+} from '../../../services/technosService/actions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    setTechno: techno => dispatch(setTechno(techno)),
+    setTechno: () => dispatch(setTechno()),
+    setSelectedTechno: techno => dispatch(setSelectedTechno(techno)),
   };
 }
 

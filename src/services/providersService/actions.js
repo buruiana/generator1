@@ -9,7 +9,15 @@ export const setAllProviders = providers => ({
   providers,
 })
 
-export const setProvider = provider => ({
+export const setProvider = () => ({
   type: actionTypes.SET_PROVIDER,
+})
+
+export const setSelectedProvider = provider => ({
+  type: actionTypes.SET_SELECTED_PROVIDER,
   provider,
+})
+
+export const deleteProvider = () => ({
+  type: actionTypes.DELETE_PROVIDER,
 })

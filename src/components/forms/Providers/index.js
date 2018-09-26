@@ -1,10 +1,14 @@
 import ProvidersForm from './providersForm';
 import { connect } from "react-redux";
-import { setProvider } from '../../../services/providersService/actions';
+import {
+  setProvider,
+  setSelectedProvider
+} from '../../../services/providersService/actions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    setProvider: provider => dispatch(setProvider(provider)),
+    setProvider: () => dispatch(setProvider()),
+    setSelectedProvider: provider => dispatch(setSelectedProvider(provider)),
   };
 }
 

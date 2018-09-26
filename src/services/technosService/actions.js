@@ -9,7 +9,15 @@ export const setAllTechnos = technos => ({
   technos,
 })
 
-export const setTechno = techno => ({
+export const setTechno = () => ({
   type: actionTypes.SET_TECHNO,
+})
+
+export const setSelectedTechno = techno => ({
+  type: actionTypes.SET_SELECTED_TECHNO,
   techno,
+})
+
+export const deleteTechno = () => ({
+  type: actionTypes.DELETE_TECHNO,
 })

@@ -12,8 +12,7 @@ export default (state = initialState(), action) => {
         ...state,
         providers: action.providers,
       };
-    case actionTypes.SET_PROVIDER:
-      console.log('console: zzzzzzzzzzzz', action);
+    case actionTypes.SET_SELECTED_PROVIDER:
       return {
         ...state,
         provider: action.provider,

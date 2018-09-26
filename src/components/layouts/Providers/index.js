@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import ProvidersListView from './providersListView';
-import { getAllProviders } from '../../../services/providersService/actions';
+import {
+  getAllProviders,
+  deleteProvider,
+  setSelectedProvider,
+} from '../../../services/providersService/actions';
 
 class Providers extends Component {
   constructor(props) {
@@ -26,6 +30,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAllProviders: () => dispatch(getAllProviders()),
+    deleteProvider: () => dispatch(deleteProvider()),
+    setSelectedProvider: provider => dispatch(setSelectedProvider(provider)),
   };
 }
 

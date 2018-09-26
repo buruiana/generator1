@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import TechnosListView from './technosListView';
-import { getAllTechnos } from '../../../services/technosService/actions';
+import {
+  getAllTechnos,
+  deleteTechno,
+  setSelectedTechno,
+} from '../../../services/technosService/actions';
 
 class Technos extends Component {
   constructor(props) {
@@ -26,6 +30,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAllTechnos: () => dispatch(getAllTechnos()),
+    deleteTechno: () => dispatch(deleteTechno()),
+    setSelectedTechno: techno => dispatch(setSelectedTechno(techno)),
   };
 }
 

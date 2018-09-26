@@ -1,15 +1,18 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
+import has from 'lodash/has';
 import {
   GET_ALL_TECHNOS,
   SET_TECHNO,
+  DELETE_TECHNO,
 } from './actionTypes';
 import {
   setAllTechnos,
   getAllTechnos,
+
 } from './actions';
 import reduxSagaFirebase from '../../redux/firebaseConfig';
-import { boxArray } from '../../utils';
 import { mock } from './__mocks__';
+import { boxArray } from '../../utils';
 
 export function* watchGetAllTechnos() {
   let allTechnos = [];
@@ -28,15 +31,33 @@ export function* watchGetAllTechnos() {
 
 export function* watchSetTechno() {
   const techno = (yield select()).technosServiceReducer.techno;
-  yield call(
-    reduxSagaFirebase.firestore.setDocument,
-    `technos/${techno.id}`,
-    techno
-  );
+
+  if (has(techno, 'id') && techno.id.length) {
+    yield call(
+      reduxSagaFirebase.firestore.setDocument,
+      `technos/${techno.id}`,
+      techno
+    );
+  } else {
+    yield call(
+      reduxSagaFirebase.firestore.addDocument,
+      `technos`,
+      techno
+    );
+  }
+
+  yield put(getAllTechnos());
+}
+
+export function* watchDeleteTechno() {
+  const { id } = (yield select()).technosServiceReducer.techno;
+  console.log('console: techno', id);
+  yield call(reduxSagaFirebase.firestore.deleteDocument, `technos/${id}`);
   yield put(getAllTechnos());
 }
 
 export default function* rootSaga() {
   yield takeLatest(GET_ALL_TECHNOS, watchGetAllTechnos);
   yield takeLatest(SET_TECHNO, watchSetTechno);
+  yield takeLatest(DELETE_TECHNO, watchDeleteTechno);
 }

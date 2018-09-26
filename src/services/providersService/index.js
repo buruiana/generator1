@@ -1,7 +1,9 @@
-import { fork, call, put, takeLatest, select } from "redux-saga/effects";
+import { call, put, takeLatest, select } from "redux-saga/effects";
+import has from 'lodash/has';
 import {
   GET_ALL_PROVIDERS,
   SET_PROVIDER,
+  DELETE_PROVIDER,
 } from './actionTypes';
 import {
   setAllProviders,
@@ -29,15 +31,33 @@ export function* watchGetAllProviders() {
 
 export function* watchSetProvider() {
   const provider = (yield select()).providersServiceReducer.provider;
-  yield call(
-    reduxSagaFirebase.firestore.setDocument,
-    `providers/${provider.id}`,
-    provider
-  );
+
+  if (has(provider, 'id') && provider.id.length) {
+    yield call(
+      reduxSagaFirebase.firestore.setDocument,
+      `providers/${provider.id}`,
+      provider
+    );
+  } else {
+    yield call(
+      reduxSagaFirebase.firestore.addDocument,
+      `providers`,
+      provider
+    );
+  }
+
+  yield put(getAllProviders());
+}
+
+export function* watchDeleteProvider() {
+  const { id } = (yield select()).providersServiceReducer.provider;
+  console.log('console: provider', id);
+  yield call(reduxSagaFirebase.firestore.deleteDocument, `providers/${id}`);
   yield put(getAllProviders());
 }
 
 export default function* rootSaga() {
   yield takeLatest(GET_ALL_PROVIDERS, watchGetAllProviders);
   yield takeLatest(SET_PROVIDER, watchSetProvider);
+  yield takeLatest(DELETE_PROVIDER, watchDeleteProvider);
 }
