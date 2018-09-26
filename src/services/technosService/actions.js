@@ -8,3 +8,8 @@ export const setAllTechnos = technos => ({
   type: actionTypes.SET_ALL_TECHNOS,
   technos,
 })
+
+export const setTechno = techno => ({
+  type: actionTypes.SET_TECHNO,
+  techno,
+})

@@ -5,16 +5,13 @@ import { boxArray } from '../../../utils';
 import TechnosForm from '../../forms/Technos';
 
 const TechnosListView = props => {
-  console.log('console: props', props);
   const technos = boxArray(props.technos);
-  console.log('console: technos', technos);
 
   const renderTechnosList = () => {
 
     return technos.map(techno => {
       const { name } = techno;
-      console.log('console: techno', techno);
-      console.log('console: name', name);
+
       return (
         <Panel eventKey={name} key={name}>
           <Panel.Heading>

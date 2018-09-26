@@ -2,6 +2,7 @@ import * as actionTypes from '../technosService/actionTypes';
 
 export const initialState = () => ({
   technos: {},
+  techno: {},
 });
 
 export default (state = initialState(), action) => {
@@ -10,6 +11,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         technos: action.technos,
+      };
+    case actionTypes.SET_TECHNO:
+      return {
+        ...state,
+        techno: action.techno,
       };
     default:
       return state;

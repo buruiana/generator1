@@ -8,3 +8,8 @@ export const setAllProviders = providers => ({
   type: actionTypes.SET_ALL_PROVIDERS,
   providers,
 })
+
+export const setProvider = provider => ({
+  type: actionTypes.SET_PROVIDER,
+  provider,
+})
