@@ -2,7 +2,7 @@ import * as actionTypes from '../modalService/actionTypes';
 
 export const initialState = () => ({
   configs: {
-    isOffline: false,
+    isOffline: true,
   },
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import PropsForm from './PropsForm/propsForm';
-import ComponentInfo from './ComponentInfo/componentInfo';
+import PropsInfo from './PropsInfo';
+import ComponentInfo from './ComponentInfo';
 import {
   PROPS_FORM,
   COMPONENT_INFO,
@@ -17,7 +17,7 @@ const RenderModal = props => {
     switch (props.modalContent.type) {
       case PROPS_FORM:
         return (
-          <PropsForm
+          <PropsInfo
             initialValues={props.modalContent.props}
             modalContent={props.modalContent}
             modalVisible={props.modalVisible}

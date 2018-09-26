@@ -31,29 +31,34 @@ export function* watchGetAllTechnos() {
 
 export function* watchSetTechno() {
   const techno = (yield select()).technosServiceReducer.techno;
+  const configs = (yield select()).configsServiceReducer.configs;
 
-  if (has(techno, 'id') && techno.id.length) {
-    yield call(
-      reduxSagaFirebase.firestore.setDocument,
-      `technos/${techno.id}`,
-      techno
-    );
-  } else {
-    yield call(
-      reduxSagaFirebase.firestore.addDocument,
-      `technos`,
-      techno
-    );
+  if (!configs.isOffline) {
+    if (has(techno, 'id') && techno.id.length) {
+      yield call(
+        reduxSagaFirebase.firestore.setDocument,
+        `technos/${techno.id}`,
+        techno
+      );
+    } else {
+      yield call(
+        reduxSagaFirebase.firestore.addDocument,
+        `technos`,
+        techno
+      );
+    }
+    yield put(getAllTechnos());
   }
-
-  yield put(getAllTechnos());
 }
 
 export function* watchDeleteTechno() {
   const { id } = (yield select()).technosServiceReducer.techno;
-  console.log('console: techno', id);
-  yield call(reduxSagaFirebase.firestore.deleteDocument, `technos/${id}`);
-  yield put(getAllTechnos());
+  const configs = (yield select()).configsServiceReducer.configs;
+
+  if (configs.isOffline) {
+    yield call(reduxSagaFirebase.firestore.deleteDocument, `technos/${id}`);
+    yield put(getAllTechnos());
+  }
 }
 
 export default function* rootSaga() {

@@ -32,28 +32,34 @@ export function* watchGetAllProviders() {
 export function* watchSetProvider() {
   const provider = (yield select()).providersServiceReducer.provider;
 
-  if (has(provider, 'id') && provider.id.length) {
-    yield call(
-      reduxSagaFirebase.firestore.setDocument,
-      `providers/${provider.id}`,
-      provider
-    );
-  } else {
-    yield call(
-      reduxSagaFirebase.firestore.addDocument,
-      `providers`,
-      provider
-    );
-  }
+  const configs = (yield select()).configsServiceReducer.configs;
 
-  yield put(getAllProviders());
+  if (configs.isOffline) {
+    if (has(provider, 'id') && provider.id.length) {
+      yield call(
+        reduxSagaFirebase.firestore.setDocument,
+        `providers/${provider.id}`,
+        provider
+      );
+    } else {
+      yield call(
+        reduxSagaFirebase.firestore.addDocument,
+        `providers`,
+        provider
+      );
+    }
+    yield put(getAllProviders());
+  }
 }
 
 export function* watchDeleteProvider() {
   const { id } = (yield select()).providersServiceReducer.provider;
-  console.log('console: provider', id);
-  yield call(reduxSagaFirebase.firestore.deleteDocument, `providers/${id}`);
-  yield put(getAllProviders());
+  const configs = (yield select()).configsServiceReducer.configs;
+
+  if (configs.isOffline) {
+    yield call(reduxSagaFirebase.firestore.deleteDocument, `providers/${id}`);
+    yield put(getAllProviders());
+  }
 }
 
 export default function* rootSaga() {

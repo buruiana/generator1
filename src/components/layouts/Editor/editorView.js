@@ -135,7 +135,7 @@ const EditorView = props => {
 };
 
 EditorView.propTypes = {
-  getTree: PropTypes.array,
+  tree: PropTypes.array,
   setTree: PropTypes.func,
   getDefaultTree: PropTypes.array,
   setModalVisibility: PropTypes.func,
