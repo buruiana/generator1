@@ -3,10 +3,7 @@ import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import { PROJECT_SETTINGS } from '../../modals/constants';
 
 const NavBarSettings = props => {
-  const handleSelect = type => {
-    console.log('console: handleSelect', event);
-    showModal(type, );
-  };
+  const handleSelect = type =>  showModal(type);
 
   const showModal = (type) => {
     const node = [];

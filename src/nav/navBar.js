@@ -19,11 +19,10 @@ const NavBar = configs => {
         <NavItem eventKey={1} href="/home">Home</NavItem>
         <NavItem eventKey={2} href="/editor">Editor</NavItem>
         <NavItem eventKey={3} href="/providers">Providers</NavItem>
-        <NavItem eventKey={4} href="/technos">Technos</NavItem>
-        <NavItem eventKey={5} href="/projectTypes">Project Types</NavItem>
+        <NavItem eventKey={4} href="/components">Components</NavItem>
       </Nav>
       <Nav pullRight>
-        <NavItem eventKey={1} href="#">
+        <NavItem eventKey={111} href="#">
           {renderNetworkStatus()}
         </NavItem>
       </Nav>

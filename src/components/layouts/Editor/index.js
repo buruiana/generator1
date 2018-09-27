@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import EditorView from './editorView';
 import { getAllComponents } from '../../../services/componentsService/actions';
-import { getAllTechnos } from '../../../services/technosService/actions';
 import { getAllProviders } from '../../../services/providersService/actions';
-import { getAllProjectTypes } from '../../../services/projectTypesService/actions';
 import { setTree, setDefaultTree, setNodePath } from '../../../services/sortableTreeService/actions';
 import { setModalVisibility, setModalContent } from '../../../services/modalService/actions';
 

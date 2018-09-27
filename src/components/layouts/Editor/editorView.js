@@ -12,7 +12,6 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const EditorView = props => {
-
   const remove = path => {
     const newTree = {
       treeData2: removeNodeAtPath({

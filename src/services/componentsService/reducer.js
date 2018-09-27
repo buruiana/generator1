@@ -2,8 +2,7 @@ import * as actionTypes from '../componentsService/actionTypes';
 
 export const initialState = () => ({
   components: [],
-  tree: [],
-  defaultTree: [],
+  component: [],
 });
 
 export default (state = initialState(), action) => {
@@ -12,6 +11,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         components: action.components,
+      };
+    case actionTypes.SET_SELECTED_COMPONENT:
+      return {
+        ...state,
+        component: action.component,
       };
     default:
       return state;

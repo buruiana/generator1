@@ -16,7 +16,6 @@ import {
 
 const ProjectSettingsForm = props => {
   const { projectName, projectTechno, projectType, componentType } = props;
-  console.log('console: props', props);
   const projectTypeEnums = [ APPLICATION, SERVICE, COMPONENT ];
   const componentTypeEnums = [ SMART, DUMB ];
   const technoTypeEnums = [ REACT, REACT_NATIVE ];
