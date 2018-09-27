@@ -6,6 +6,8 @@ import sortableTreeServiceReducer from '../../services/sortableTreeService/reduc
 import configsServiceReducer from '../../services/configsService/reducer';
 import providersServiceReducer from '../../services/providersService/reducer';
 import technosServiceReducer from '../../services/technosService/reducer';
+import projectSettingsServiceReducer from '../../services/projectSettingsService/reducer';
+import projectTypesServiceReducer from '../../services/projectTypesService/reducer';
 
 export const reducers = combineReducers({
   routing: routerReducer,
@@ -15,4 +17,6 @@ export const reducers = combineReducers({
   configsServiceReducer,
   providersServiceReducer,
   technosServiceReducer,
+  projectSettingsServiceReducer,
+  projectTypesServiceReducer,
 });

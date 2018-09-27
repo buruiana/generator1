@@ -1,6 +1,7 @@
 import React from 'react';
 import PropsInfo from './PropsInfo';
 import ComponentInfo from './ComponentInfo';
+import ProjectSettings from './ProjectSettings';
 import {
   PROPS_FORM,
   COMPONENT_INFO,
@@ -17,35 +18,15 @@ const RenderModal = props => {
     switch (props.modalContent.type) {
       case PROPS_FORM:
         return (
-          <PropsInfo
-            initialValues={props.modalContent.props}
-            modalContent={props.modalContent}
-            modalVisible={props.modalVisible}
-            closeModal={closeModal}
-          />
+          <PropsInfo  closeModal={closeModal} />
         );
       case COMPONENT_INFO:
         return (
-          <ComponentInfo
-            modalContent={props.modalContent}
-            modalVisible={props.modalVisible}
-            setModalVisibility={props.setModalVisibility}
-            closeModal={closeModal}
-          />
+          <ComponentInfo closeModal={closeModal} />
         );
       case PROJECT_SETTINGS:
         return (
-          <SettingsForm
-            modalContent={props.modalContent}
-            modalVisible={props.modalVisible}
-            setModalVisibility={props.setModalVisibility}
-            onSubmit={onSubmit}
-            closeModal={closeModal}
-            setProjectName={props.setProjectName}
-            setProjectType={props.setProjectType}
-            getProjectName={props.getProjectName}
-            getProjectType={props.getProjectType}
-          />
+          <ProjectSettings closeModal={closeModal} />
         );
       default: return null;
     }

@@ -35,8 +35,6 @@ const ProvidersListView = props => {
     id: ''
   };
 
-
-
   return (
     <div>
       <PanelGroup

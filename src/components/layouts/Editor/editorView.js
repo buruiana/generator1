@@ -5,6 +5,7 @@ import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
 import Ace from '../AceEditor/ace';
 import { COMPONENT_INFO, PROPS_FORM } from '../../modals/constants';
+import NavBarSettings from '../NavBarSettings';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
@@ -50,35 +51,9 @@ const EditorView = props => {
     );
   };
 
-
-  // const prepareData = (x, y) => {
-  //   return {
-  //     id: x.id,
-  //     title: x.title,
-  //     description: x.description,
-  //     props: y
-  //   };
-  // };
-
-  // const onSubmit = prop => values => {
-  //   const data = prepareData(prop[0], values);
-  //   const nodePath = props.getNodePath;
-  //   const path = nodePath.path;
-  //   const newTree = {
-  //     treeData2: changeNodeAtPath({
-  //       treeData: props.getTree,
-  //       path,
-  //       getNodeKey,
-  //       newNode: data
-  //     })
-  //   };
-  //   //props.setTree(newTree);
-  //   console.log('newTree', newTree);
-  //   props.setModalVisibility(false);
-  // };
-
   return (
     <div>
+      <NavBarSettings />
       {/* {renderSearchField()} */}
       <div
         style={{

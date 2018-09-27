@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import EditorView from './editorView';
 import { getAllComponents } from '../../../services/componentsService/actions';
+import { getAllTechnos } from '../../../services/technosService/actions';
+import { getAllProviders } from '../../../services/providersService/actions';
 import { setTree, setDefaultTree, setNodePath } from '../../../services/sortableTreeService/actions';
 import { setModalVisibility, setModalContent } from '../../../services/modalService/actions';
 
@@ -13,6 +15,8 @@ class Editor extends Component {
 
   componentWillMount() {
     this.props.getAllComponents();
+    this.props.getAllTechnos();
+    this.props.getAllProviders();
   }
 
   render() {
@@ -34,6 +38,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAllComponents: () => dispatch(getAllComponents()),
+    getAllTechnos: () => dispatch(getAllTechnos()),
+    getAllProviders: () => dispatch(getAllProviders()),
     setTree: tree => dispatch(setTree(tree)),
     setDefaultTree: defaultTree => dispatch(setDefaultTree(defaultTree)),
     setNodePath: nodePath => dispatch(setNodePath(nodePath)),

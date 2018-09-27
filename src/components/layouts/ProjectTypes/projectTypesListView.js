@@ -2,34 +2,34 @@ import React from 'react';
 import PanelGroup from 'react-bootstrap/lib/PanelGroup';
 import Panel from 'react-bootstrap/lib/Panel'
 import { boxArray } from '../../../utils';
-import TechnosForm from '../../forms/Technos';
+import ProjectTypesForm from '../../forms/ProjectTypes';
 
-const TechnosListView = props => {
-  const technos = boxArray(props.technos);
+const ProjectTypesListView = props => {
+  const projectTypes = boxArray(props.projectTypes);
 
-  const deleteTechno = event => {
-    props.setSelectedTechno({ id: event.target.id });
-    props.deleteTechno();
+  const deleteProjectType = event => {
+    props.setSelectedProjectType({ id: event.target.id });
+    props.deleteProjectType();
   };
 
-  const technosList = () => {
-    return technos.map(techno => {
-      const { name, id } = techno;
+  const projectTypesList = () => {
+    return projectTypes.map(projectType => {
+      const { name, id } = projectType;
 
       return (
         <Panel key={id} eventKey={name} >
           <Panel.Heading>
             <Panel.Title toggle>{name}</Panel.Title>
-            <div id={id} onClick={deleteTechno}>Delete</div>
+            <div id={id} onClick={deleteProjectType}>Delete</div>
           </Panel.Heading>
           <Panel.Body collapsible>
-            <TechnosForm techno={techno} />
+            <ProjectTypesForm projectType={projectType} />
           </Panel.Body>
         </Panel>
       );
     })
   };
-  const newTechno = {
+  const newProjectType = {
     name: '',
     id: ''
   };
@@ -42,16 +42,16 @@ const TechnosListView = props => {
       >
         <Panel key="new" eventKey="new" >
           <Panel.Heading>
-            <Panel.Title toggle>New Techno</Panel.Title>
+            <Panel.Title toggle>New ProjectType</Panel.Title>
           </Panel.Heading>
           <Panel.Body collapsible>
-            <TechnosForm techno={newTechno} />
+            <ProjectTypesForm projectType={newProjectType} />
           </Panel.Body>
         </Panel>
-        {technosList()}
+        {projectTypesList()}
       </PanelGroup>
     </div>
   );
 }
 
-export default TechnosListView;
+export default ProjectTypesListView;
