@@ -4,6 +4,7 @@ import EditorView from './editorView';
 import { getAllComponents } from '../../../services/componentsService/actions';
 import { getAllTechnos } from '../../../services/technosService/actions';
 import { getAllProviders } from '../../../services/providersService/actions';
+import { getAllProjectTypes } from '../../../services/projectTypesService/actions';
 import { setTree, setDefaultTree, setNodePath } from '../../../services/sortableTreeService/actions';
 import { setModalVisibility, setModalContent } from '../../../services/modalService/actions';
 
@@ -17,6 +18,7 @@ class Editor extends Component {
     this.props.getAllComponents();
     this.props.getAllTechnos();
     this.props.getAllProviders();
+    this.props.getAllProjectTypes();
   }
 
   render() {
@@ -40,6 +42,7 @@ const mapDispatchToProps = dispatch => {
     getAllComponents: () => dispatch(getAllComponents()),
     getAllTechnos: () => dispatch(getAllTechnos()),
     getAllProviders: () => dispatch(getAllProviders()),
+    getAllProjectTypes: () => dispatch(getAllProjectTypes()),
     setTree: tree => dispatch(setTree(tree)),
     setDefaultTree: defaultTree => dispatch(setDefaultTree(defaultTree)),
     setNodePath: nodePath => dispatch(setNodePath(nodePath)),

@@ -4,6 +4,7 @@ import {
   setProjectName,
   setProjectType,
   setProjectTechno,
+  setProjectComponentType,
 } from '../../../services/projectSettingsService/actions';
 import {
   setModalContent,
@@ -18,6 +19,8 @@ const mapStateToProps = state => {
     projectType: state.projectSettingsServiceReducer.projectType,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
     technos: state.technosServiceReducer.technos,
+    projectTypes: state.projectTypesServiceReducer.projectTypes,
+    componentType: state.projectSettingsServiceReducer.componentType,
   }
 }
 
@@ -28,6 +31,7 @@ const mapDispatchToProps = dispatch => {
     setProjectName: projectName => dispatch(setProjectName(projectName)),
     setProjectTechno: projectTechno => dispatch(setProjectTechno(projectTechno)),
     setProjectType: projectType => dispatch(setProjectType(projectType)),
+    setProjectComponentType: componentType => dispatch(setProjectComponentType(componentType)),
   };
 }
 

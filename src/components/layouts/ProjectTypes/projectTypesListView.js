@@ -40,7 +40,7 @@ const ProjectTypesListView = props => {
         accordion
         id="accordion-controlled-example"
       >
-        <Panel key="new" eventKey="new" >
+        <Panel key="new" eventKey="new">
           <Panel.Heading>
             <Panel.Title toggle>New ProjectType</Panel.Title>
           </Panel.Heading>
