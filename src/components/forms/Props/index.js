@@ -1,5 +1,7 @@
 import PropsForm from './propsForm';
 import { connect } from "react-redux";
+import { setTree } from '../../../services/sortableTreeService/actions';
+import { setModalVisibility } from '../../../services/modalService/actions';
 
 
 const mapStateToProps = state => {
@@ -12,7 +14,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setTree: tree => dispatch(setProsetTreevider(tree)),
+    setTree: tree => dispatch(setTree(tree)),
+    setModalVisibility: modalVisible => dispatch(setModalVisibility(modalVisible)),
   };
 }
 

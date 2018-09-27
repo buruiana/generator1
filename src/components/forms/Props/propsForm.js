@@ -1,97 +1,50 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
 import { changeNodeAtPath } from 'react-sortable-tree';
-import { boxArray } from '../../../utils';
 
 const PropsForm = props => {
-  console.log('console: ------------', props);
-
   const getNodeKey = ({ treeIndex }) => treeIndex;
   const schema = {
     type: "object",
     properties: {}
   };
   const properties = schema.properties;
-  const propsInfo = boxArray(props.modalContent.node.props);
+  const propsInfo = props.modalContent.node.props;
 
   propsInfo.map(prop => {
     properties[prop.name] = {
       type: "string",
-      title: prop.name
+      title: prop.name,
+      val: prop.val,
+      default: prop.val
     }
   });
 
-    // const onSubmit = data => {
-  //   console.log('console: aaaaaaaaa', data);
-  //   console.log('console: bbbbbbbbb', modalContent.node);
-
-  //   const { props } = { ...modalContent.node };
-  //   console.log('console: props', Object.prototype.toString.call(props) != '[object Array]');
-  //   let el = {};
-  //   Object.keys(data.formData).forEach(key => {
-  //     console.log('console: ddddddd', data.formData[key]);
-  //     el = props.forEach(el => {
-  //       console.log('console: oooooo', key === el.name , key, el );
-  //       return el.name === key;
-  //     });
-  //     //el.val = data.formData[key];
-  //     console.log('console: uuuuu', el);
-  //   });
-
-  //   console.log('console: eeeeeeeee', el);
-  // }
-
-  // const prepareData = row => {
-  //   const element = {
-
-  //   }
-  // };
-  //   const prepareData = (x, y) => {
-  //   return {
-  //     id: x.id,
-  //     title: x.title,
-  //     description: x.description,
-  //     props: y
-  //   };
-  // };
-
-  // const onSubmit = prop => values => {
-  //   console.log('console: 11111', prop);
-  //   console.log('console: 22222', values);
-  //   const data = prepareData(prop[0], values);
-  //   const nodePath = props.getNodePath;
-  //   const path = nodePath.path;
-  //   const newTree = {
-  //     treeData2: changeNodeAtPath({
-  //       treeData: props.getTree,
-  //       path,
-  //       getNodeKey,
-  //       newNode: data
-  //     })
-  //   };
-  //   //props.setTree(newTree);
-  //   console.log('newTree', newTree);
-  //   props.setModalVisibility(false);
-  // };
-
   const onSubmit = data => {
     const { formData } = data;
-
     const { node, path } = props.getNodePath;
-    const newNode = { ...node };
+    const newProps = [];
 
-    const newProps = Object.keys(formData).forEach(key => {
-      console.log(key, formData[key]);
-      let prop = node.props.filter(prop => {
-        return prop.name === key;
-      });
-      console.log('console: prop', prop);
-      //const newProp = { ...prop, val: formData[key]};
-      prop[0].val = formData[key];
-      console.log('console: newProp', newProp);
-      return prop;
+    Object.keys(formData).forEach(key => {
+      let prop = node.props.filter(prop => prop.name === key);
+
+      let newProp = {};
+      if (prop) {
+        newProp = {
+          type: prop[0].type,
+          name: prop[0].name,
+          description: prop[0].description,
+          val: formData[key]
+        };
+      } else {
+        newProp = prop[0];
+      }
+      newProps.push(newProp);
     });
-    console.log('console: newProps', prop);
+
+    const newNode = {...node};
+    newNode.props = newProps;
+
     const newTree = {
       treeData2: changeNodeAtPath({
         treeData: props.tree,
@@ -100,10 +53,9 @@ const PropsForm = props => {
         newNode
       })
     };
-    console.log('console: newProps', newProps);
-    console.log('console: newTree', newTree);
-    //props.setTree(newTree);
 
+    props.setTree(newTree);
+    props.setModalVisibility(false);
   };
 
   const log = (type) => console.log.bind(console, type);
