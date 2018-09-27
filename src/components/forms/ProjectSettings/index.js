@@ -18,8 +18,6 @@ const mapStateToProps = state => {
     projectName: state.projectSettingsServiceReducer.projectName,
     projectType: state.projectSettingsServiceReducer.projectType,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
-    technos: state.technosServiceReducer.technos,
-    projectTypes: state.projectTypesServiceReducer.projectTypes,
     componentType: state.projectSettingsServiceReducer.componentType,
   }
 }

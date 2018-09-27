@@ -16,9 +16,7 @@ class Editor extends Component {
 
   componentWillMount() {
     this.props.getAllComponents();
-    this.props.getAllTechnos();
     this.props.getAllProviders();
-    this.props.getAllProjectTypes();
   }
 
   render() {
@@ -40,9 +38,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAllComponents: () => dispatch(getAllComponents()),
-    getAllTechnos: () => dispatch(getAllTechnos()),
     getAllProviders: () => dispatch(getAllProviders()),
-    getAllProjectTypes: () => dispatch(getAllProjectTypes()),
     setTree: tree => dispatch(setTree(tree)),
     setDefaultTree: defaultTree => dispatch(setDefaultTree(defaultTree)),
     setNodePath: nodePath => dispatch(setNodePath(nodePath)),

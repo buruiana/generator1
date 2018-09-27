@@ -2,8 +2,8 @@ import * as actionTypes from '../projectSettingsService/actionTypes';
 
 export const initialState = () => ({
   projectName: '',
-  projectType: {},
-  projectTechno: {},
+  projectType: '',
+  projectTechno: '',
   componentType: '',
 });
 
