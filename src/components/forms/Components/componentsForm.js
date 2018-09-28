@@ -16,8 +16,8 @@ const ComponentsForm = props => {
   const { title, id, description, techno, provider } = props.component;
   const { providers } = props;
   const componentProps = props.component.props;
-  const technoTypeEnums = [REACT, REACT_NATIVE];
-  const providersTypeEnums = !isEmpty(providers)
+  const technosEnums = [REACT, REACT_NATIVE];
+  const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
     : [];
 
@@ -31,13 +31,13 @@ const ComponentsForm = props => {
       provider: {
         type: "string",
         title: "Provider",
-        enum: providersTypeEnums,
+        enum: providersEnums,
         default: provider,
       },
       techno: {
         type: 'string',
         title: PROJECT_TECHNO,
-        enum: technoTypeEnums,
+        enum: technosEnums,
         default: techno,
       },
     },
