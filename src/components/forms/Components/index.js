@@ -5,11 +5,17 @@ import {
   setSelectedComponent
 } from '../../../services/componentsService/actions';
 
+const mapStateToProps = state => {
+  return {
+    providers: state.providersServiceReducer.providers,
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     setComponent: () => dispatch(setComponent()),
-    setSelectedComponent: techno => dispatch(setSelectedComponent(techno)),
+    setSelectedComponent: componnet => dispatch(setSelectedComponent(componnet)),
   };
 }
 
-export default connect(null, mapDispatchToProps)(ComponentsForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ComponentsForm);

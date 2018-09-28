@@ -17,3 +17,7 @@ export const setSelectedComponent = component => ({
 export const deleteComponent = () => ({
   type: actionTypes.DELETE_COMPONENT,
 })
+
+export const setComponent = component => ({
+  type: actionTypes.SET_COMPONENT,
+})

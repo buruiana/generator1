@@ -36,7 +36,7 @@ const ProvidersListView = props => {
   };
 
   return (
-    <div>
+    <div className="middle">
       <PanelGroup
         accordion
         id="accordion-controlled-example"

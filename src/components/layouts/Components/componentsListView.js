@@ -39,7 +39,7 @@ const ComponentsListView = props => {
   };
 
   return (
-    <div>
+    <div className="middle">
       <PanelGroup
         accordion
         id="components"

@@ -6,6 +6,9 @@ import {
   deleteComponent,
   setSelectedComponent,
 } from '../../../services/componentsService/actions';
+import {
+  getAllProviders,
+} from '../../../services/providersService/actions';
 
 class Components extends Component {
   constructor(props) {
@@ -15,6 +18,7 @@ class Components extends Component {
 
   componentWillMount() {
     this.props.getAllComponents();
+    this.props.getAllProviders();
   }
 
   render() {
@@ -29,6 +33,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    getAllProviders: () => dispatch(getAllProviders()),
     getAllComponents: () => dispatch(getAllComponents()),
     deleteComponent: () => dispatch(deleteComponent()),
     setSelectedComponent: component => dispatch(setSelectedComponent(component)),
