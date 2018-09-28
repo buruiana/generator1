@@ -20,6 +20,7 @@ const NavBar = configs => {
         <NavItem eventKey={2} href="/editor">Editor</NavItem>
         <NavItem eventKey={3} href="/providers">Providers</NavItem>
         <NavItem eventKey={4} href="/components">Components</NavItem>
+        <NavItem eventKey={4} href="/propTypes">PropTypes</NavItem>
       </Nav>
       <Nav pullRight>
         <NavItem eventKey={111} href="#">

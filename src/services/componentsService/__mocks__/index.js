@@ -1,33 +1,46 @@
 export const mock = {
   allComponents: [
     {
-      description: 'aaaa1112',
+      description: 'descr-1',
+      id: '0s2R4WbEC4gXw9nc3Evx',
       props: [
         {
-          description: 'prop1_descr',
-          name: 'name1',
-          propType: 'prop1_type'
+          description: 'descr-1',
+          name: 'name-1',
+          propType: 'propType-1',
+          val: 'val-1'
         },
         {
-          description: 'prop2_descr',
-          name: 'name2',
-          propType: 'prop2_type'
+          description: 'descr-2',
+          name: 'name-2',
+          propType: 'propType-2',
+          val: 'val-2'
         }
       ],
-      provider: 1,
-      techno: 2,
-      title: 'title1'
+      provider: 'provider-1',
+      techno: 'React Native',
+      title: 'name-2'
     },
     {
-      description: 'bbbb45354',
-      props: {
-        description: 'prop2_description',
-        name: 'prop2 name',
-        propType: 'prop2_propType'
-      },
-      provider: 1,
-      techno: 2,
-      title: 'title2'
+      description: 'descr-1',
+      id: '5hXwwxP81HdUHjv9oSAc',
+      props: [
+        {
+          description: 'prop-1-descr',
+          name: 'prop-1',
+          propType: 'propType-1',
+          val: ''
+        },
+        {
+          description: 'hgfhd',
+          name: 'fdgdfgdf',
+          propType: 'propType-2',
+          val: 'dfgdfgdfgfd'
+        }
+      ],
+      provider: 'provider-2',
+      techno: 'React',
+      title: 'name-1-1'
     }
-  ]
+  ],
 }

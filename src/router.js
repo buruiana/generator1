@@ -6,6 +6,7 @@ import Home from "./components/layouts/Home";
 import Editor from "../src/components/layouts/Editor";
 import Providers from "../src/components/layouts/Providers";
 import Components from "../src/components/layouts/Components";
+import PropTypes from "../src/components/layouts/PropTypes";
 import NotFound from "./components/layouts/NotFound";
 
 const router = (
@@ -16,6 +17,7 @@ const router = (
       <Route path="/editor" component={Editor} />
       <Route path="/providers" component={Providers} />
       <Route path="/components" component={Components} />
+      <Route path="/propTypes" component={PropTypes} />
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

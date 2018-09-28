@@ -1,12 +1,14 @@
 export const mock = {
   allProviders: [
     {
-      name: "Bootstrap",
-      path: "some/path"
+      id: 'FJizOR1dI4rZvlKHRYU4',
+      name: 'provider-2',
+      path: 'provider2/path'
     },
     {
-      name: "MaterialUI",
-      path: "other/path"
+      id: 'k0LjCQQLYTKwe8DfA44J',
+      name: 'provider-1',
+      path: 'provider3/path'
     }
-  ]
+  ],
 }
