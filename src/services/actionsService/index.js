@@ -35,9 +35,7 @@ export function* watchSetActionTypes() {
       actions.push(object);
     }
   });
-  console.log('console: before', actions);
   yield put(setActions(actions));
-  console.log('console: after', );
 }
 
 export default function* rootSaga() {
