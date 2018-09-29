@@ -9,6 +9,7 @@ const SagasForm = props => {
       type: 'object',
       properties: {
         name: { type: 'string', title: 'Actions' },
+        watcher: { type: 'string', title: 'Watcher' },
         isActive: {type: 'boolean'}
       }
     },

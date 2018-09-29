@@ -18,7 +18,7 @@ export function* watchSetActions() {
       object = {
         isActive: false,
         name: action.name,
-        val: '',
+        watcher: '',
       }
       sagas.push(object);
     }
