@@ -9,6 +9,7 @@ import projectSettingsServiceReducer from '../../services/projectSettingsService
 import propTypesServiceReducer from '../../services/propTypesService/reducer';
 import actionTypesServiceReducer from '../../services/actionTypesService/reducer';
 import actionsServiceReducer from '../../services/actionsService/reducer';
+import sagasServiceReducer from '../../services/sagasService/reducer';
 
 export const reducers = combineReducers({
   routing: routerReducer,
@@ -21,4 +22,5 @@ export const reducers = combineReducers({
   propTypesServiceReducer,
   actionTypesServiceReducer,
   actionsServiceReducer,
+  sagasServiceReducer,
 });

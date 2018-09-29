@@ -4,12 +4,14 @@ import ComponentInfo from './ComponentInfo';
 import ProjectSettings from './ProjectSettings';
 import Actions from './Actions';
 import ActionTypes from './ActionTypes';
+import Sagas from './Sagas';
 import {
   PROPS_FORM,
   COMPONENT_INFO,
   PROJECT_SETTINGS,
   ACTION_TYPES,
   ACTIONS,
+  SAGAS,
 } from './constants';
 
 const RenderModal = props => {
@@ -39,6 +41,10 @@ const RenderModal = props => {
       case ACTIONS:
         return (
           <Actions closeModal={closeModal} />
+        );
+      case SAGAS:
+        return (
+          <Sagas closeModal={closeModal} />
         );
       default: return null;
     }

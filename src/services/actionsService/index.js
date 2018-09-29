@@ -15,14 +15,16 @@ export function* watchSetActionTypes() {
   actionTypes.map(actionType => {
     let object = {
       isActive: false,
-      name: `set${capitalizeWord(actionType.name)}`
+      name: `${capitalizeWord(actionType.name)}`,
+      actionType: actionType.name.toUpperCase(),
     };
     actions.push(object);
 
     if (actionType.isSuccess) {
       object = {
         isActive: false,
-        name: `set${capitalizeWord(actionType.name)}Success`
+        name: `${capitalizeWord(actionType.name)}Success`,
+        actionType: `${actionType.name.toUpperCase()}_SUCCESS`,
       }
       actions.push(object);
     }
@@ -30,7 +32,8 @@ export function* watchSetActionTypes() {
     if (actionType.isFail) {
       object = {
         isActive: false,
-        name: `set${capitalizeWord(actionType.name)}Fail`
+        name: `${capitalizeWord(actionType.name)}Fail`,
+        actionType: `${actionType.name.toUpperCase()}_FAIL`,
       }
       actions.push(object);
     }

@@ -4,6 +4,7 @@ import {
   PROJECT_SETTINGS,
   ACTIONS,
   ACTION_TYPES,
+  SAGAS,
 } from '../../modals/constants';
 
 const NavBarSettings = props => {
@@ -25,6 +26,9 @@ const NavBarSettings = props => {
       </NavItem>
       <NavItem eventKey={ACTIONS} >
           Actions
+      </NavItem>
+      <NavItem eventKey={SAGAS} >
+        Saga
       </NavItem>
     </Nav>
   );
