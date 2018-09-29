@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/lib/Modal';
-import ProjectSettingsForm from '../../forms/ProjectSettings';
+import ActionsForm from '../../forms/Actions';
 
 const Actions = ({ closeModal, modalVisible, modalContent }) => {
 
@@ -17,7 +17,7 @@ const Actions = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <ProjectSettingsForm />
+            <ActionsForm />
           </div>
         </Modal.Body>
       </Modal>

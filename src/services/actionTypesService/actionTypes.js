@@ -1,3 +1,3 @@
-export const ACTION_TYPES_SET = 'ACTION_TYPES_SET';
+export const SET_ACTION_TYPES = 'SET_ACTION_TYPES';
 
 
