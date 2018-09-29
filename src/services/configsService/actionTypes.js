@@ -1,3 +1,3 @@
-export const CONFIGS_SET = 'CONFIGS_SET';
+export const SET_CONFIGS_IS_OFFLINE = 'SET_CONFIGS_IS_OFFLINE';
 
 

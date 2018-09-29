@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
 import { connect } from "react-redux";
 import NavBar from './navBar';
+import { setConfigsIsOffline } from '../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
-    configs: state.configsServiceReducer.configs,
+    isOffline: state.configsServiceReducer.configs.isOffline,
   }
 }
 
-export default connect(mapStateToProps)(NavBar);
+const mapDispatchToProps = dispatch => {
+  return {
+    setConfigsIsOffline: isOffline => dispatch(setConfigsIsOffline(isOffline)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

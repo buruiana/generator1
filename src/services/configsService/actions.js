@@ -1,8 +1,6 @@
 import * as actionTypes from './actionTypes';
 
-export const setConfigs = configs => {
-  return {
-    type: actionTypes.CONFIGS_SET,
-    payload: configs
-  };
-}
+export const setConfigsIsOffline = isOffline => ({
+  type: actionTypes.SET_CONFIGS_IS_OFFLINE,
+  isOffline
+});

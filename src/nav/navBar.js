@@ -1,11 +1,16 @@
 import React from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 
-const NavBar = configs => {
-  const { isOffline } = configs.configs;
+const NavBar = props => {
+  console.log('console: props', props);
+  const { isOffline } = props;
 
   const renderNetworkStatus = () => {
     return isOffline ? 'OFFLINE' : 'ONLINE';
+  };
+
+  const setIsOffline = () => {
+    props.setConfigsIsOffline(!isOffline);
   };
 
   return (
@@ -23,7 +28,7 @@ const NavBar = configs => {
         <NavItem eventKey={4} href="/propTypes">PropTypes</NavItem>
       </Nav>
       <Nav pullRight>
-        <NavItem eventKey={111} href="#">
+        <NavItem eventKey={111} onClick={setIsOffline}>
           {renderNetworkStatus()}
         </NavItem>
       </Nav>

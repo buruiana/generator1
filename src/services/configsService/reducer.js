@@ -1,4 +1,4 @@
-import * as actionTypes from '../modalService/actionTypes';
+import * as actionTypes from '../configsService/actionTypes';
 
 export const initialState = () => ({
   configs: {
@@ -8,10 +8,10 @@ export const initialState = () => ({
 
 export default (state = initialState(), action) => {
   switch (action.type) {
-    case actionTypes.CONFIGS_SET:
+    case actionTypes.SET_CONFIGS_IS_OFFLINE:
       return {
         ...state,
-        configs: action.payload
+        isOffline: action.action
       };
     default:
       return state;
