@@ -3,12 +3,12 @@ import {
   SET_ACTIONS
 } from '../actionsService/actionTypes';
 import {
-  setSagas,
+  setSaga,
 } from './actions';
 
 export function* watchSetActions() {
 
-  let sagas = [];
+  let saga = [];
   const actions = (yield select()).actionsServiceReducer.actions;
 
   actions.map(action => {
@@ -20,10 +20,10 @@ export function* watchSetActions() {
         name: action.name,
         watcher: '',
       }
-      sagas.push(object);
+      saga.push(object);
     }
   });
-  yield put(setSagas(sagas));
+  yield put(setSaga(saga));
 }
 
 export default function* rootSaga() {

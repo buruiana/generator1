@@ -1,4 +1,4 @@
-import Sagas from './sagas';
+import Saga from './saga';
 import { connect } from "react-redux";
 import {
   setModalContent,
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sagas);
+export default connect(mapStateToProps, mapDispatchToProps)(Saga);

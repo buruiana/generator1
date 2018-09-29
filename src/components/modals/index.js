@@ -4,14 +4,16 @@ import ComponentInfo from './ComponentInfo';
 import ProjectSettings from './ProjectSettings';
 import Actions from './Actions';
 import ActionTypes from './ActionTypes';
-import Sagas from './Sagas';
+import Saga from './Saga';
+import Reducer from './Reducer';
 import {
   PROPS_FORM,
   COMPONENT_INFO,
   PROJECT_SETTINGS,
   ACTION_TYPES,
   ACTIONS,
-  SAGAS,
+  SAGA,
+  REDUCER,
 } from './constants';
 
 const RenderModal = props => {
@@ -42,9 +44,13 @@ const RenderModal = props => {
         return (
           <Actions closeModal={closeModal} />
         );
-      case SAGAS:
+      case SAGA:
         return (
-          <Sagas closeModal={closeModal} />
+          <Saga closeModal={closeModal} />
+        );
+      case REDUCER:
+        return (
+          <Reducer closeModal={closeModal} />
         );
       default: return null;
     }

@@ -1,13 +1,17 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
 
-const ActionsForm = props => {
+const ReducerForm = props => {
+  console.log('console: propsprops', props);
   const schema = {
     type: "array",
     items: {
       type: 'object',
       properties: {
         name: { type: 'string', title: 'Actions' },
+        payload: { type: 'string', title: 'Payload' },
+        payloadVal: { type: 'string', title: 'Payload Value' },
+        payloadDefaultVal: { type: 'string', title: 'Ppayload Default Value' },
         isActive: {type: 'boolean'}
       }
     },
@@ -19,7 +23,7 @@ const ActionsForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    props.setActions(formData);
+    props.setReducer(formData);
     props.setModalVisibility(false);
   };
 
@@ -45,9 +49,9 @@ const ActionsForm = props => {
       onSubmit={onSubmit}
       onError={log("errors")}
       ArrayFieldTemplate={ArrayFieldTemplate}
-      formData={props.actions}
+      formData={props.reducer}
     />
   );
 }
 
-export default ActionsForm;
+export default ReducerForm;

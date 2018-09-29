@@ -1,15 +1,15 @@
-import * as actionTypes from '../sagasService/actionTypes';
+import * as actionTypes from './actionTypes';
 
 export const initialState = () => ({
-  sagas: [],
+  saga: [],
 });
 
 export default (state = initialState(), action) => {
   switch (action.type) {
-    case actionTypes.SET_SAGAS:
+    case actionTypes.SET_SAGA:
       return {
         ...state,
-        sagas: action.sagas
+        saga: action.saga
       };
     default:
       return state;

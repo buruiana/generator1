@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/lib/Modal';
-import SagasForm from '../../forms/Sagas';
+import SagaForm from '../../forms/Saga';
 
-const Sagas = ({ closeModal, modalVisible, modalContent }) => {
+const Saga = ({ closeModal, modalVisible }) => {
 
   return (
     <div>
@@ -17,7 +17,7 @@ const Sagas = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <SagasForm />
+            <SagaForm />
           </div>
         </Modal.Body>
       </Modal>
@@ -25,11 +25,11 @@ const Sagas = ({ closeModal, modalVisible, modalContent }) => {
   );
 };
 
-Sagas.propTypes = {
+Saga.propTypes = {
   modalVisible: PropTypes.bool,
   modalContent: PropTypes.object,
   componentInfo: PropTypes.object,
   closeModal: PropTypes.func
 };
 
-export default Sagas;
+export default Saga;

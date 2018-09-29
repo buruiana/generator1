@@ -1,23 +1,23 @@
-import SagasForm from './sagasForm';
+import ReducerForm from './reducerForm';
 import { connect } from "react-redux";
 import {
-  setSagas,
-} from '../../../services/sagasService/actions';
+  setReducer,
+} from '../../../services/reducerService/actions';
 import {
   setModalVisibility,
 } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
-    sagas: state.sagasServiceReducer.sagas,
+    reducer: state.reducerServiceReducer.reducer,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setSagas: sagas => dispatch(setSagas(sagas)),
+    setReducer: reducer => dispatch(setReducer(reducer)),
     setModalVisibility: visibile => dispatch(setModalVisibility(visibile)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SagasForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ReducerForm);
