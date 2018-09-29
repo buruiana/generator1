@@ -1,8 +1,8 @@
-import * as actions from './actions';
+import * as actionTypes from './actionTypes';
 
 export const setActions = actions => {
   return {
-    type: actions.ACTIONS_SET,
+    type: actionTypes.SET_ACTIONS,
     actions
   };
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 
 const NavBar = props => {
-  console.log('console: props', props);
   const { isOffline } = props;
 
   const renderNetworkStatus = () => {

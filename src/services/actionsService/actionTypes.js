@@ -1,3 +1,3 @@
-export const ACTIONS_SET = 'ACTIONS_SET';
+export const SET_ACTIONS = 'SET_ACTIONS';
 
 
