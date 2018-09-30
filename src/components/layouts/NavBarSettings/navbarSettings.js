@@ -7,6 +7,9 @@ import {
   SAGA,
   REDUCER,
 } from '../../modals/constants';
+import {
+  SERVICE,
+} from '../../../utils/constants';
 
 const NavBarSettings = props => {
   const handleSelect = type =>  showModal(type);
@@ -17,23 +20,38 @@ const NavBarSettings = props => {
     props.setModalContent({ node, type });
   };
 
+  const getProjectType = () => {
+    if (props.projectType === SERVICE) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <Nav bsStyle="pills" activeKey={1} onSelect={handleSelect}>
       <NavItem eventKey={PROJECT_SETTINGS}>
         Project Settings
       </NavItem>
-      <NavItem eventKey={ACTION_TYPES}>
+      { getProjectType() &&
+        <NavItem eventKey={ACTION_TYPES}>
           Action Types
-      </NavItem>
+        </NavItem>
+      }
+      { getProjectType() &&
       <NavItem eventKey={ACTIONS} >
           Actions
       </NavItem>
+      }
+      { getProjectType() &&
       <NavItem eventKey={SAGA} >
         Saga
       </NavItem>
-      <NavItem eventKey={REDUCER} >
-        Reducer
+      }
+      { getProjectType() &&
+        <NavItem eventKey={REDUCER} >
+          Reducer
       </NavItem>
+      }
     </Nav>
   );
 }

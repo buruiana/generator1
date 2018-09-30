@@ -5,14 +5,13 @@ import {
   setModalContent,
 } from '../../../services/modalService/actions';
 
-
-// const mapStateToProps = state => {
-//   return {
-//     modalContent: state.modalServiceReducer.modalContent,
-//     getNodePath: state.sortableTreeServiceReducer.nodePath,
-//     tree: state.sortableTreeServiceReducer.tree,
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    projectType: state.projectSettingsServiceReducer.projectType,
+    projectTechno: state.projectSettingsServiceReducer.projectTechno,
+    componentType: state.projectSettingsServiceReducer.componentType,
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -21,4 +20,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(null, mapDispatchToProps)(NavBarSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBarSettings);

@@ -16,12 +16,26 @@ const ActionTypesForm = props => {
 
   const uiSchema = {
     items: { 'ui:emptyValue': '' },
+    name: { 'ui:disabled': true }
   };
 
   const onSubmit = data => {
     const { formData } = data;
     props.setActionTypes(formData);
     props.setModalVisibility(false);
+  };
+  const getAddNewbutton = props => {
+    return (
+      props.canAdd && (
+        <div className="row">
+          <p className="col-xs-3 col-xs-offset-9 array-item-add text-right">
+            <button onClick={props.onAddClick} type="button">
+              Add Action Type
+          </button>
+          </p>
+        </div>
+      )
+    );
   };
 
   const ArrayFieldTemplate = props => {
@@ -56,15 +70,7 @@ const ActionTypesForm = props => {
             </div>
           ))}
 
-        {props.canAdd && (
-          <div className="row">
-            <p className="col-xs-3 col-xs-offset-9 array-item-add text-right">
-              <button onClick={props.onAddClick} type="button">
-                Add Action Type
-            </button>
-            </p>
-          </div>
-        )}
+        {getAddNewbutton(props)}
       </div>
     );
   };
