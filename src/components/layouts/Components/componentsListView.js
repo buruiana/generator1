@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from 'react-bootstrap/lib/PageHeader';
 import PanelGroup from 'react-bootstrap/lib/PanelGroup';
-import Panel from 'react-bootstrap/lib/Panel'
+import Panel from 'react-bootstrap/lib/Panel';
 import ComponentsForm from '../../forms/Components';
 import ComponentPropsForm from '../../forms/ComponentProps';
 

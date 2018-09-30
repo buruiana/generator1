@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/lib/Modal'
+import PageHeader from 'react-bootstrap/lib/PageHeader';
+import Panel from 'react-bootstrap/lib/Panel';
 
 const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
   const renderDescription = () => {
@@ -11,13 +13,19 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
     const propsInfo = modalContent.node.componentProps;
     return propsInfo.map(prop => {
       return (
-        <div key={prop.name}>
-          <div>{prop.name}</div>
-          <hr />
-          <div>{prop.description}</div>
-          <hr />
-          <div>{prop.type}</div>
-        </div>
+        <Panel key={prop.name} eventKey={prop.name}>
+          <Panel.Heading>
+            <Panel.Title toggle componentClass="h1">{prop.name}</Panel.Title>
+          </Panel.Heading>
+          <Panel.Body collapsible>
+            <div>
+              {prop.propType}
+            </div>
+            <div>
+              {prop.description}
+            </div>
+          </Panel.Body>
+        </Panel>
       );
     });
   };
@@ -35,7 +43,7 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
         <Modal.Body>
           <div>
             {renderDescription()}
-            <hr />
+            <PageHeader>Props</PageHeader>
             {renderProps()}
           </div>
         </Modal.Body>
