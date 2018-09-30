@@ -15,13 +15,13 @@ const ComponentsListView = props => {
 
   const componentsList = () => {
     return components.map(component => {
-      const { title, id, componentProps } = component;
+      const { title, id } = component;
 
       return (
-        <Panel key={id} eventKey={title} >
+        <Panel key={id} eventKey={title}>
           <Panel.Heading>
-            <Panel.Title toggle>{title}</Panel.Title>
-            <div id={id} onClick={deleteComponent}>Delete</div>
+            <Panel.Title toggle componentClass="h1">{title}</Panel.Title>
+            <div className='deleteButton' id={id} onClick={deleteComponent}><a>Delete</a></div>
           </Panel.Heading>
           <Panel.Body collapsible>
             <ComponentsForm component={component} />
