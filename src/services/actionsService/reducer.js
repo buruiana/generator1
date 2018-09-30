@@ -5,7 +5,6 @@ export const initialState = () => ({
 });
 
 export default (state = initialState(), action) => {
-  console.log('console: action', action );
   switch (action.type) {
     case actionTypes.SET_ACTIONS:
       return {

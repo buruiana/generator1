@@ -1,10 +1,6 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
 import isEmpty from 'lodash/isEmpty';
-import Panel from 'react-bootstrap/lib/Panel'
-import PanelGroup from 'react-bootstrap/lib/PanelGroup';
-import PageHeader from 'react-bootstrap/lib/PageHeader';
-import ComponentPropsForm from '../../forms/ComponentProps';
 import {
   REACT_NATIVE,
   REACT,
@@ -12,10 +8,8 @@ import {
 } from '../../../utils/constants';
 
 const ComponentsForm = props => {
-
-  const { title, id, description, techno, provider } = props.component;
+  const { title, id, description, techno, provider, componentProps } = props.component;
   const { providers } = props;
-  const componentProps = props.component.props;
   const technosEnums = [REACT, REACT_NATIVE];
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
@@ -58,37 +52,6 @@ const ComponentsForm = props => {
 
   const log = (type) => console.log.bind(console, type);
 
-  const deleteComponentProp = event => {
-    props.setSelectedComponent({ id: event.target.id });
-    props.deleteComponent();
-  };
-
-  const componentPropsList = () => {
-    return componentProps.map(prop => {
-      const { name, id } = prop;
-
-      return (
-        <Panel key={id} eventKey={name} >
-          <Panel.Heading>
-            <Panel.Title toggle>{name}</Panel.Title>
-            <div id={id} onClick={deleteComponentProp}>Delete</div>
-          </Panel.Heading>
-          <Panel.Body collapsible>
-            <ComponentPropsForm prop={prop} />
-          </Panel.Body>
-        </Panel>
-      );
-    })
-  };
-
-  const newProp = {
-    name: '',
-    description: '',
-    id: '',
-    propType: ''
-  };
-
-
   return (
     <div>
       <Form schema={schema}
@@ -97,20 +60,6 @@ const ComponentsForm = props => {
         onSubmit={onSubmit}
         onError={log("errors")}
       />
-      <PageHeader>Props</PageHeader>
-      <PanelGroup
-        accordion
-        id="props-form">
-        <Panel key="new" eventKey="new" >
-          <Panel.Heading>
-            <Panel.Title toggle>New Prop</Panel.Title>
-          </Panel.Heading>
-          <Panel.Body collapsible>
-            <ComponentPropsForm prop={newProp} />
-          </Panel.Body>
-        </Panel>
-        {componentPropsList()}
-      </PanelGroup>
     </div>
   );
 }

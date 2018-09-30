@@ -1,11 +1,12 @@
 import React from 'react';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
 import PanelGroup from 'react-bootstrap/lib/PanelGroup';
 import Panel from 'react-bootstrap/lib/Panel'
-import { boxArray } from '../../../utils';
 import ComponentsForm from '../../forms/Components';
+import ComponentPropsForm from '../../forms/ComponentProps';
 
 const ComponentsListView = props => {
-  const components = boxArray(props.components);
+  const components = props.components;
 
   const deleteComponent = event => {
     props.setSelectedComponent({ id: event.target.id });
@@ -14,7 +15,7 @@ const ComponentsListView = props => {
 
   const componentsList = () => {
     return components.map(component => {
-      const { title, id } = component;
+      const { title, id, componentProps } = component;
 
       return (
         <Panel key={id} eventKey={title} >
@@ -24,6 +25,8 @@ const ComponentsListView = props => {
           </Panel.Heading>
           <Panel.Body collapsible>
             <ComponentsForm component={component} />
+            <PageHeader>Props</PageHeader>
+            <ComponentPropsForm component={component} />
           </Panel.Body>
         </Panel>
       );
@@ -35,7 +38,7 @@ const ComponentsListView = props => {
     description: '',
     provider: '',
     techno: '',
-    props: [],
+    componentProps: [],
   };
 
   return (

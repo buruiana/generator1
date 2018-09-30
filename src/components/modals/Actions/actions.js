@@ -11,7 +11,7 @@ const Actions = ({ closeModal, modalVisible, modalContent }) => {
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>
-            Action Types
+            Action Settings
           </Modal.Title>
         </Modal.Header>
 

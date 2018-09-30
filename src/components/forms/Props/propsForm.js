@@ -9,7 +9,7 @@ const PropsForm = props => {
     properties: {}
   };
   const properties = schema.properties;
-  const propsInfo = props.modalContent.node.props;
+  const propsInfo = props.modalContent.node.componentProps;
 
   propsInfo.map(prop => {
     properties[prop.name] = {

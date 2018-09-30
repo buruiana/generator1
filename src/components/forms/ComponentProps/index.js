@@ -1,22 +1,21 @@
 import ComponentPropsForm from './componentPropsForm';
 import { connect } from "react-redux";
-import { setTree } from '../../../services/sortableTreeService/actions';
 import { setModalVisibility } from '../../../services/modalService/actions';
+import { setComponent, setSelectedComponent } from '../../../services/componentsService/actions';
 
 
-const mapStateToProps = state => {
-  return {
-    modalContent: state.modalServiceReducer.modalContent,
-    getNodePath: state.sortableTreeServiceReducer.nodePath,
-    tree: state.sortableTreeServiceReducer.tree,
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     componentProps: state.modalServiceReducer.modalContent,
+//   }
+// }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setTree: tree => dispatch(setTree(tree)),
     setModalVisibility: modalVisible => dispatch(setModalVisibility(modalVisible)),
+    setComponent: () => dispatch(setComponent()),
+    setSelectedComponent: component => dispatch(setSelectedComponent(component)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ComponentPropsForm);
+export default connect(null, mapDispatchToProps)(ComponentPropsForm);

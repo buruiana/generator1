@@ -11,7 +11,7 @@ const Saga = ({ closeModal, modalVisible }) => {
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>
-            Action Types
+            Saga Settings
           </Modal.Title>
         </Modal.Header>
 
