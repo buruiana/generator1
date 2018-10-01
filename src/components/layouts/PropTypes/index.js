@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypesListView from './propTypesListView';
 import {
@@ -7,20 +6,6 @@ import {
   setSelectedPropType,
 } from '../../../services/propTypesService/actions';
 
-class PropTypes extends Component {
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
-
-  componentWillMount() {
-    this.props.getAllPropTypes();
-  }
-
-  render() {
-    return <PropTypesListView {...this.props} />;
-  }
-}
 const mapStateToProps = state => {
   return {
     propTypes: state.propTypesServiceReducer.propTypes,
@@ -35,4 +20,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PropTypes);
+export default connect(mapStateToProps, mapDispatchToProps)(PropTypesListView);

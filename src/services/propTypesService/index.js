@@ -1,6 +1,8 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
 import {
-  GET_ALL_PROP_TYPES,
+  INIT_APP
+} from '../configsService/actionTypes';
+import {
   SET_PROP_TYPE,
   DELETE_PROP_TYPE,
 } from './actionTypes';
@@ -10,6 +12,7 @@ import {
 
 } from './actions';
 import reduxSagaFirebase from '../../redux/firebaseConfig';
+import { boxArray } from '../../utils';
 import { mock } from './__mocks__';
 
 export function* watchGetAllPropTypes() {
@@ -24,7 +27,7 @@ export function* watchGetAllPropTypes() {
       return { ...propType.data(), id: propType.id };
     });
   };
-  yield put(setAllPropTypes(allPropTypes));
+  yield put(setAllPropTypes(boxArray(allPropTypes)));
 }
 
 export function* watchSetPropType() {
@@ -60,7 +63,7 @@ export function* watchDeletePropType() {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(GET_ALL_PROP_TYPES, watchGetAllPropTypes);
+  yield takeLatest(INIT_APP, watchGetAllPropTypes);
   yield takeLatest(SET_PROP_TYPE, watchSetPropType);
   yield takeLatest(DELETE_PROP_TYPE, watchDeletePropType);
 }

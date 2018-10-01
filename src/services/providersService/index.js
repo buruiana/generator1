@@ -1,6 +1,8 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
 import {
-  GET_ALL_PROVIDERS,
+  INIT_APP
+} from '../configsService/actionTypes';
+import {
   SET_PROVIDER,
   DELETE_PROVIDER,
 } from './actionTypes';
@@ -10,6 +12,7 @@ import {
 
 } from './actions';
 import reduxSagaFirebase from '../../redux/firebaseConfig';
+import { boxArray } from '../../utils';
 import { mock } from './__mocks__';
 
 export function* watchGetAllProviders() {
@@ -24,7 +27,7 @@ export function* watchGetAllProviders() {
       return { ...provider.data(), id: provider.id};
     });
   };
-  yield put(setAllProviders(allProviders));
+  yield put(setAllProviders(boxArray(allProviders)));
 }
 
 export function* watchSetProvider() {
@@ -60,7 +63,7 @@ export function* watchDeleteProvider() {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(GET_ALL_PROVIDERS, watchGetAllProviders);
+  yield takeLatest(INIT_APP, watchGetAllProviders);
   yield takeLatest(SET_PROVIDER, watchSetProvider);
   yield takeLatest(DELETE_PROVIDER, watchDeleteProvider);
 }

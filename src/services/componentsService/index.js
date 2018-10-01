@@ -1,6 +1,8 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
 import {
-  GET_ALL_COMPONENTS,
+  INIT_APP
+} from '../configsService/actionTypes';
+import {
   SET_COMPONENT,
   DELETE_COMPONENT,
 } from './actionTypes';
@@ -64,7 +66,7 @@ export function* watchDeleteComponent() {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(GET_ALL_COMPONENTS, watchGetAllComponents);
+  yield takeLatest(INIT_APP, watchGetAllComponents);
   yield takeLatest(SET_COMPONENT, watchSetComponent);
   yield takeLatest(DELETE_COMPONENT, watchDeleteComponent);
 }

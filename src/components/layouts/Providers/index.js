@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { connect } from "react-redux";
 import ProvidersListView from './providersListView';
 import {
@@ -7,20 +6,6 @@ import {
   setSelectedProvider,
 } from '../../../services/providersService/actions';
 
-class Providers extends Component {
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
-
-  componentWillMount() {
-    this.props.getAllProviders();
-  }
-
-  render() {
-    return <ProvidersListView {...this.props} />;
-  }
-}
 const mapStateToProps = state => {
   return {
     providers: state.providersServiceReducer.providers,
@@ -35,4 +20,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Providers);
+export default connect(mapStateToProps, mapDispatchToProps)(ProvidersListView);

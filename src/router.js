@@ -1,7 +1,7 @@
 import React from "react";
 import { Router, Route, IndexRoute } from "react-router";
 import { history } from "./redux/store.js";
-import App from "./components/App";
+import App from "./components/layouts/App";
 import Home from "./components/layouts/Home";
 import Editor from "../src/components/layouts/Editor";
 import Providers from "../src/components/layouts/Providers";
