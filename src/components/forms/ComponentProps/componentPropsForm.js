@@ -1,7 +1,12 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
+import isEmpty from 'lodash/isEmpty';
 
 const ComponentPropsForm = props => {
+  const propTypesEnums = !isEmpty(props.component.componentProps)
+    ? props.component.componentProps.map(p => p.propType)
+    : [];
+
   const schema = {
     type: "array",
     items: {
@@ -9,7 +14,11 @@ const ComponentPropsForm = props => {
       properties: {
         name: { type: 'string', title: 'Name' },
         description: { type: 'string', title: 'Description' },
-        propType: { type: 'string', title: 'PropType' },
+        propType: {
+          type: 'string',
+          title: 'PropType',
+          enum: propTypesEnums,
+        },
       }
     },
   };
@@ -20,7 +29,7 @@ const ComponentPropsForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    console.log('console: formData', formData);
+
     let newComponent = {
       title: props.component.title,
       description: props.component.description,
@@ -29,7 +38,7 @@ const ComponentPropsForm = props => {
       componentProps: formData,
       id: props.component.id,
     };
-    console.log('console: newComponent', newComponent);
+
     props.setSelectedComponent(newComponent);
     props.setComponent();
     props.setModalVisibility(false);
