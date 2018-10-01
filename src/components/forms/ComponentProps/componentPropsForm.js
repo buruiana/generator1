@@ -2,7 +2,6 @@ import React from 'react';
 import Form from "react-jsonschema-form";
 
 const ComponentPropsForm = props => {
-  console.log('console: ComponentPropsForm', props);
   const schema = {
     type: "array",
     items: {

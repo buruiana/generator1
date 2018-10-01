@@ -15,7 +15,7 @@ import { mock } from './__mocks__';
 
 export function* watchGetAllComponents() {
   let allComponents = [];
-  const { isOffline } = (yield select()).configsServiceReducer.isOffline;
+  const { isOffline } = (yield select()).configsServiceReducer;
 
   if (isOffline) {
     allComponents = mock.allComponents;
@@ -33,7 +33,7 @@ export function* watchGetAllComponents() {
 
 export function* watchSetComponent() {
   const component = (yield select()).componentsServiceReducer.component;
-  const { isOffline } = (yield select()).configsServiceReducer.isOffline;
+  const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {
     if (component.id) {
@@ -55,7 +55,7 @@ export function* watchSetComponent() {
 
 export function* watchDeleteComponent() {
   const { id } = (yield select()).componentsServiceReducer.component;
-  const { isOffline } = (yield select()).configsServiceReducer.isOffline;
+  const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {
     yield call(reduxSagaFirebase.firestore.deleteDocument, `components/${id}`);

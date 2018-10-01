@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <Grid>
         <Row className="show-grid">
-          <NavBar />
+          <NavBar {...this.props}/>
         </Row>
         <div className="mainContainer">
           <Row className="show-grid">

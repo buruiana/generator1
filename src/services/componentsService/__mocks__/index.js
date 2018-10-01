@@ -3,7 +3,7 @@ export const mock = {
     {
       description: 'descr-1',
       id: '0s2R4WbEC4gXw9nc3Evx',
-      props: [
+      componentProps: [
         {
           description: 'descr-1',
           name: 'name-1',
@@ -24,7 +24,7 @@ export const mock = {
     {
       description: 'descr-1',
       id: '5hXwwxP81HdUHjv9oSAc',
-      props: [
+      componentProps: [
         {
           description: 'prop-1-descr',
           name: 'prop-1',

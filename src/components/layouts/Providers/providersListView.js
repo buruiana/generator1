@@ -1,11 +1,10 @@
 import React from 'react';
 import PanelGroup from 'react-bootstrap/lib/PanelGroup';
 import Panel from 'react-bootstrap/lib/Panel'
-import { boxArray } from '../../../utils';
 import ProvidersForm from '../../forms/Providers';
 
 const ProvidersListView = props => {
-  const providers = boxArray(props.providers);
+  const providers = props.providers;
 
   const deleteProvider = event => {
     props.setSelectedProvider({ id: event.target.id });

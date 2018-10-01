@@ -46,6 +46,7 @@ const ComponentsListView = props => {
       <PanelGroup
         accordion
         id="components"
+        activeKey='0'
       >
         <Panel key="new" eventKey="new" >
           <Panel.Heading>

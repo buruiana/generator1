@@ -1,11 +1,10 @@
 import React from 'react';
 import PanelGroup from 'react-bootstrap/lib/PanelGroup';
 import Panel from 'react-bootstrap/lib/Panel'
-import { boxArray } from '../../../utils';
 import PropTypesForm from '../../forms/PropTypes';
 
 const PropTypesListView = props => {
-  const propTypes = boxArray(props.propTypes);
+  const propTypes = props.propTypes;
 
   const deletePropType = event => {
     props.setSelectedPropType({ id: event.target.id });
