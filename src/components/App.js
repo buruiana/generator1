@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Col, Row } from "react-bootstrap";
+import { Grid, Row } from "react-bootstrap";
 import "../stylesheets/main.scss";
 import NavBar from '../nav';
 

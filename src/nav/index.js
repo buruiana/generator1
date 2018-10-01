@@ -4,7 +4,7 @@ import { setConfigsIsOffline } from '../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
-    isOffline: state.configsServiceReducer.configs.isOffline,
+    isOffline: state.configsServiceReducer.isOffline,
   }
 }
 

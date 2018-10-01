@@ -15,9 +15,9 @@ import { mock } from './__mocks__';
 
 export function* watchGetAllComponents() {
   let allComponents = [];
-  const configs = (yield select()).configsServiceReducer.configs;
+  const { isOffline } = (yield select()).configsServiceReducer.isOffline;
 
-  if (configs.isOffline) {
+  if (isOffline) {
     allComponents = mock.allComponents;
   } else {
     const snapshot = yield call(reduxSagaFirebase.firestore.getCollection, 'components');
@@ -33,9 +33,9 @@ export function* watchGetAllComponents() {
 
 export function* watchSetComponent() {
   const component = (yield select()).componentsServiceReducer.component;
-  const configs = (yield select()).configsServiceReducer.configs;
+  const { isOffline } = (yield select()).configsServiceReducer.isOffline;
 
-  if (!configs.isOffline) {
+  if (!isOffline) {
     if (component.id) {
       yield call(
         reduxSagaFirebase.firestore.setDocument,
@@ -55,9 +55,9 @@ export function* watchSetComponent() {
 
 export function* watchDeleteComponent() {
   const { id } = (yield select()).componentsServiceReducer.component;
-  const configs = (yield select()).configsServiceReducer.configs;
+  const { isOffline } = (yield select()).configsServiceReducer.isOffline;
 
-  if (!configs.isOffline) {
+  if (!isOffline) {
     yield call(reduxSagaFirebase.firestore.deleteDocument, `components/${id}`);
     yield put(getAllComponents());
   }
