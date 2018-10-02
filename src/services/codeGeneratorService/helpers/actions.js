@@ -1,3 +1,5 @@
+import { renderActions } from '../constants';
+
 export const generateActionsCode = actions => {
   let actionsCode = {};
 
@@ -7,16 +9,14 @@ export const generateActionsCode = actions => {
   const importsCodeEnd = "} from './actionTypes'\n";
 
   actions.map(action => {
-
     if (action.isActive) {
-      exportsCode +=
-        `export function ${action.name} ( ${action.payload} ) {
-        return {
-          type: ${action.actionType},
-          ${action.payload}
-        }
-      };\n\n`;
+      const payload = action.payload || '';
+      const payloadVal = (payload.includes(',') || payload === '')
+        ? `(${payload})`
+        : `${payload}`;
 
+      const payload1 = payload.split(',').join(',\n\u0009')
+      exportsCode += renderActions(action, payloadVal, payload1);
       importsCode += `	${action.actionType.toUpperCase()},\n`;
     }
   });

@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { connect } from "react-redux";
 import EditorView from './editorView';
 import { setTree, setDefaultTree, setNodePath } from '../../../services/sortableTreeService/actions';

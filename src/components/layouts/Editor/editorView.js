@@ -3,7 +3,7 @@ import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
-import Ace from '../AceEditor/ace';
+import Ace from '../AceEditor';
 import { COMPONENT_INFO, PROPS_FORM } from '../../modals/constants';
 import NavBarSettings from '../NavBarSettings';
 

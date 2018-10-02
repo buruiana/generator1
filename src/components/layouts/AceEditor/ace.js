@@ -3,11 +3,12 @@ import AceEditor from 'react-ace';
 import 'brace/mode/jsx';
 import 'brace/theme/github';
 
-function onChange(newValue) {
+const onChange = newValue => {
   console.log('change', newValue);
 }
 
 const Ace = props => {
+  console.log('console: ---------', props);
   return (
     <AceEditor
       mode="jsx"
@@ -26,6 +27,7 @@ const Ace = props => {
       showPrintMargin={true}
       showGutter={true}
       highlightActiveLine={true}
+      value={props.actionTypez + '\n' + props.actions.importsCode + '\n' + props.actions.exportsCode}
     />
   );
 };
