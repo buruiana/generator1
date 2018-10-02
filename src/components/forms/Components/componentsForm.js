@@ -17,7 +17,7 @@ const ComponentsForm = props => {
 
   const schema = {
     type: "object",
-    required: ["title"],
+    required: ['title', 'provider', 'techno'],
     properties: {
       id: { type: "string", title: "Id", default: id },
       title: { type: "string", title: "Name", default: title },
@@ -39,13 +39,20 @@ const ComponentsForm = props => {
 
   const uiSchema = {
     id: { "ui:widget": "hidden" },
-    description: { "ui:widget": "textarea" },
+    description: {
+      "ui:widget": "textarea",
+      "ui:options": {
+        rows: 15
+      }
+    },
+    provider: { "ui:placeholder": "Choose a provider" },
+    techno: { "ui:placeholder": "Choose a technology" },
   };
 
   const onSubmit = data => {
     const { formData } = data;
 
-    formData.props = componentProps;
+    formData.componentProps = componentProps;
     props.setSelectedComponent(formData);
     props.setComponent();
   };

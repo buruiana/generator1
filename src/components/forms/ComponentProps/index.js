@@ -4,11 +4,11 @@ import { setModalVisibility } from '../../../services/modalService/actions';
 import { setComponent, setSelectedComponent } from '../../../services/componentsService/actions';
 
 
-// const mapStateToProps = state => {
-//   return {
-//     componentProps: state.modalServiceReducer.modalContent,
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    propTypes: state.propTypesServiceReducer.propTypes,
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(null, mapDispatchToProps)(ComponentPropsForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ComponentPropsForm);

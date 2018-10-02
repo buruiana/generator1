@@ -26,7 +26,7 @@ const PropsForm = props => {
     const newProps = [];
 
     Object.keys(formData).forEach(key => {
-      let prop = node.props.filter(prop => prop.name === key);
+      let prop = node.componentProps.filter(prop => prop.name === key);
 
       let newProp = {};
       if (prop) {

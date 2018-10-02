@@ -3,14 +3,15 @@ import Form from "react-jsonschema-form";
 import isEmpty from 'lodash/isEmpty';
 
 const ComponentPropsForm = props => {
-  const propTypesEnums = !isEmpty(props.component.componentProps)
-    ? props.component.componentProps.map(p => p.propType)
+  const propTypesEnums = !isEmpty(props.propTypes)
+    ? props.propTypes.map(p => p.name)
     : [];
 
   const schema = {
     type: "array",
     items: {
       type: 'object',
+      required: ['name'],
       properties: {
         name: { type: 'string', title: 'Name' },
         description: { type: 'string', title: 'Description' },
@@ -24,12 +25,19 @@ const ComponentPropsForm = props => {
   };
 
   const uiSchema = {
-    description: { "ui:widget": "textarea" },
+    items: {
+      description: {
+        "ui:widget": "textarea",
+        "ui:options": {
+          rows: 5
+        }
+      },
+      propType: { "ui:placeholder": "Choose an propType" },
+    },
   };
 
   const onSubmit = data => {
     const { formData } = data;
-
     let newComponent = {
       title: props.component.title,
       description: props.component.description,

@@ -5,6 +5,7 @@ import {
 import {
   SET_COMPONENT,
   DELETE_COMPONENT,
+  GET_ALL_COMPONENTS,
 } from './actionTypes';
 import {
   setAllComponents,
@@ -66,7 +67,7 @@ export function* watchDeleteComponent() {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(INIT_APP, watchGetAllComponents);
+  yield takeLatest([INIT_APP, GET_ALL_COMPONENTS], watchGetAllComponents);
   yield takeLatest(SET_COMPONENT, watchSetComponent);
   yield takeLatest(DELETE_COMPONENT, watchDeleteComponent);
 }

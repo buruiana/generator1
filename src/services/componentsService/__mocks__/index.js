@@ -8,13 +8,11 @@ export const mock = {
           description: 'descr-1',
           name: 'name-1',
           propType: 'propType-1',
-          val: 'val-1'
         },
         {
           description: 'descr-2',
           name: 'name-2',
           propType: 'propType-2',
-          val: 'val-2'
         }
       ],
       provider: 'provider-1',
@@ -29,13 +27,11 @@ export const mock = {
           description: 'prop-1-descr',
           name: 'prop-1',
           propType: 'propType-1',
-          val: ''
         },
         {
           description: 'hgfhd',
           name: 'fdgdfgdf',
           propType: 'propType-2',
-          val: 'dfgdfgdfgfd'
         }
       ],
       provider: 'provider-2',
