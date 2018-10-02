@@ -8,7 +8,9 @@ const onChange = newValue => {
 }
 
 const Ace = props => {
-  console.log('console: ---------', props);
+  const code = (props.actionTypez || '') + '\n' +
+    (props.actions.importsCode || '') + '\n' +
+    (props.actions.exportsCode || '');
   return (
     <AceEditor
       mode="jsx"
@@ -23,11 +25,11 @@ const Ace = props => {
         showLineNumbers: true,
         tabSize: 2,
       }}
-      fontSize={14}
+      fontSize={10}
       showPrintMargin={true}
       showGutter={true}
       highlightActiveLine={true}
-      value={props.actionTypez + '\n' + props.actions.importsCode + '\n' + props.actions.exportsCode}
+      value={code}
     />
   );
 };

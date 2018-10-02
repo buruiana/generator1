@@ -1,11 +1,11 @@
 import { put, takeLatest, select } from "redux-saga/effects";
+import camelCase from 'lodash/camelCase';
 import {
   SET_ACTION_TYPES
 } from '../actionTypesService/actionTypes';
 import {
   setActions,
 } from './actions';
-import { capitalizeWord } from '../../utils';
 
 export function* watchSetActionTypes() {
 
@@ -13,9 +13,10 @@ export function* watchSetActionTypes() {
   const actionTypes = (yield select()).actionTypesServiceReducer.actionTypes;
 
   actionTypes.map(actionType => {
+
     let object = {
       isActive: false,
-      name: `${capitalizeWord(actionType.name)}`,
+      name: `${camelCase(actionType.name)}`,
       actionType: actionType.name.toUpperCase(),
     };
     actions.push(object);
@@ -23,7 +24,7 @@ export function* watchSetActionTypes() {
     if (actionType.isSuccess) {
       object = {
         isActive: false,
-        name: `${capitalizeWord(actionType.name)}Success`,
+        name: `${camelCase(actionType.name)}Success`,
         actionType: `${actionType.name.toUpperCase()}_SUCCESS`,
       }
       actions.push(object);
@@ -32,7 +33,7 @@ export function* watchSetActionTypes() {
     if (actionType.isFail) {
       object = {
         isActive: false,
-        name: `${capitalizeWord(actionType.name)}Fail`,
+        name: `${camelCase(actionType.name)}Fail`,
         actionType: `${actionType.name.toUpperCase()}_FAIL`,
       }
       actions.push(object);

@@ -1,10 +1,10 @@
 export const mock = {
-  allTechnos: [
+  allPropTypes: [
     {
-      name: 'React'
+      name: 'prop-type-1',
     },
     {
-      name: 'ReactNative'
+      name: 'prop-type-2'
     }
   ]
 }

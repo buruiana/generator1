@@ -11,7 +11,7 @@ const ReducerForm = props => {
         name: { type: 'string', title: 'Actions' },
         payload: { type: 'string', title: 'Payload' },
         payloadVal: { type: 'string', title: 'Payload Value' },
-        payloadDefaultVal: { type: 'string', title: 'Ppayload Default Value' },
+        initVal: { type: 'string', title: 'Init Value' },
         isActive: {type: 'boolean'}
       }
     },
