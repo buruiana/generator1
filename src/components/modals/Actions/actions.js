@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/lib/Modal';
 import ActionsForm from '../../forms/Actions';
 
-const Actions = ({ closeModal, modalVisible, modalContent }) => {
+const Actions = ({ closeModal, modalVisible }) => {
 
   return (
     <div>
@@ -11,7 +11,7 @@ const Actions = ({ closeModal, modalVisible, modalContent }) => {
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>
-            Action Settings
+            Actions Settings
           </Modal.Title>
         </Modal.Header>
 

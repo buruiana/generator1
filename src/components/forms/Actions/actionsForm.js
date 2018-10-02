@@ -7,7 +7,8 @@ const ActionsForm = props => {
     items: {
       type: 'object',
       properties: {
-        name: { type: 'string', title: 'Actions' },
+        name: { type: 'string', title: 'Action' },
+        payload: { type: 'string', title: 'Payload' },
         isActive: {type: 'boolean'}
       }
     },
