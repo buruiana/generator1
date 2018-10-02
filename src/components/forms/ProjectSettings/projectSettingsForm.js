@@ -63,7 +63,11 @@ const ProjectSettingsForm = props => {
   };
   const uiSchema = {
     projectType: { "ui:widget": "select" },
-    projectTechno: { "ui:widget": "select" }
+    projectTechno: {
+      "ui:widget": "select",
+      "ui:placeholder": "Choose a technology"
+    },
+    projectType: { "ui:placeholder": "Choose a type" },
   };
 
   const onSubmit = data => {

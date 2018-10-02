@@ -43,7 +43,7 @@ const PropsForm = props => {
     });
 
     const newNode = {...node};
-    newNode.props = newProps;
+    newNode.componentProps = newProps;
 
     const newTree = {
       treeData2: changeNodeAtPath({

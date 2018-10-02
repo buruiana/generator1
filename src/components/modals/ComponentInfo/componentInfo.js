@@ -22,7 +22,9 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
               {prop.propType}
             </div>
             <div>
-              {prop.description}
+              <textarea rows="2" cols="120" className='textarea-noBorder'>
+                {prop.description}
+              </textarea>
             </div>
           </Panel.Body>
         </Panel>
@@ -42,7 +44,9 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <textarea rows="20" cols="120" className='textarea-noBorder'>{renderDescription().props.children}</textarea>
+            <textarea rows="20" cols="120" className='textarea-noBorder'>
+              {renderDescription().props.children}
+            </textarea>
             <PageHeader>Props</PageHeader>
             {renderProps()}
           </div>
