@@ -1,33 +1,49 @@
 import { put, takeLatest, select } from "redux-saga/effects";
 import {
-  SET_ACTIONS
-} from '../actionsService/actionTypes';
+  SET_ACTION_TYPES
+} from '../actionTypesService/actionTypes';
 import {
   setReducer,
 } from './actions';
 
-export function* watchSetActionsForReducer() {
+export function* watchSetActionTypesForReducer() {
 
   let reducer = [];
-  const actions = (yield select()).actionsServiceReducer.actions;
+  const actionTypes = (yield select()).actionTypesServiceReducer.actionTypes;
 
-  actions.map(action => {
-    let object = [];
+  actionTypes.map(actionType => {
+    reducer.push({
+      isActive: false,
+      name: actionType.name,
+      payload: '',
+      payloadVal: '',
+      payloadDefaultVal: '',
+    });
 
-    if (action.isActive) {
-      object = {
+    if (actionType.isSuccess) {
+      reducer.push({
         isActive: false,
-        name: action.name,
+        name: `${actionType.name.toUpperCase()}_SUCCESS`,
         payload: '',
         payloadVal: '',
         payloadDefaultVal: '',
-      }
-      reducer.push(object);
+      });
+    }
+
+    if (actionType.isFail) {
+      reducer.push({
+        isActive: false,
+        name: `${actionType.name.toUpperCase()}_FAIL`,
+        payload: '',
+        payloadVal: '',
+        payloadDefaultVal: '',
+      });
     }
   });
+
   yield put(setReducer(reducer));
 }
 
 export default function* rootReducer() {
-  yield takeLatest(SET_ACTIONS, watchSetActionsForReducer);
+  yield takeLatest(SET_ACTION_TYPES, watchSetActionTypesForReducer);
 }

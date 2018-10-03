@@ -6,30 +6,30 @@ import {
   setSaga,
 } from './actions';
 
-export function* watchSetActionTypes() {
+export function* watchSetActionTypesForSaga() {
 
   let saga = [];
   const actionTypes = (yield select()).actionTypesServiceReducer.actionTypes;
 
-  actionTypes.map(action => {
+  actionTypes.map(actionType => {
     saga.push({
       isActive: false,
-      name: action.name,
+      name: actionType.name,
       watcher: '',
     });
 
-    if (action.isSuccess) {
+    if (actionType.isSuccess) {
       saga.push({
         isActive: false,
-        name: `${action.name.toUpperCase()}_SUCCESS`,
+        name: `${actionType.name.toUpperCase()}_SUCCESS`,
         watcher: '',
       });
     }
 
-    if (action.isFail) {
+    if (actionType.isFail) {
       saga.push({
         isActive: false,
-        name: `${action.name.toUpperCase()}_FAIL`,
+        name: `${actionType.name.toUpperCase()}_FAIL`,
         watcher: ''
       });
     }
@@ -38,5 +38,5 @@ export function* watchSetActionTypes() {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(SET_ACTION_TYPES, watchSetActionTypes);
+  yield takeLatest(SET_ACTION_TYPES, watchSetActionTypesForSaga);
 }
