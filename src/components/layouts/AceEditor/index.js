@@ -5,6 +5,7 @@ const mapStateToProps = state => {
   return {
     actionTypez: state.codeGeneratorServiceReducer.actionTypez,
     actions: state.codeGeneratorServiceReducer.actions,
+    saga: state.codeGeneratorServiceReducer.saga, 
   }
 }
 

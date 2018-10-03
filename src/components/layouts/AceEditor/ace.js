@@ -10,7 +10,8 @@ const onChange = newValue => {
 const Ace = props => {
   const code = (props.actionTypez || '') + '\n' +
     (props.actions.importsCode || '') + '\n' +
-    (props.actions.exportsCode || '');
+    (props.actions.exportsCode || '') + '\n' +
+    (props.saga || '') + '\n';
   return (
     <AceEditor
       mode="jsx"

@@ -8,7 +8,7 @@ const ReducerForm = props => {
     items: {
       type: 'object',
       properties: {
-        name: { type: 'string', title: 'Actions' },
+        name: { type: 'string', title: 'Action Type' },
         payload: { type: 'string', title: 'Payload' },
         payloadVal: { type: 'string', title: 'Payload Value' },
         initVal: { type: 'string', title: 'Init Value' },
