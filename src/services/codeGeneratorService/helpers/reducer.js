@@ -1,31 +1,18 @@
+import {
+  renderReducerImports,
+  renderReducerInitState,
+  renderReducerExport,
+} from '../constants';
+
 export const generateReducerCode = reducer => {
-  let actionsCode = {};
+  let reducerCode = '';
 
-  let importsCode = '';
-  let exportsCode = '';
-  const importsCodeStart = 'import {\n';
-  const importsCodeEnd = "} from './actionTypes'\n";
+  reducerCode += renderReducerImports();
+  reducerCode += renderReducerInitState(reducer);
+  reducerCode += renderReducerExport(reducer);
 
-  actions.map(action => {
-    if (action.isActive) {
-      const payload = action.payload || '';
-      const payloadVal = (payload.includes(',') || payload === '')
-        ? `(${payload})`
-        : `${payload}`;
+  return reducerCode;
+}
 
-      const payload1 = payload.split(',').join(',\n\u0009')
-      exportsCode +=
-`export const ${action.name} = ${payloadVal} => ({
-  type: ${action.actionType},
-\u0009${payload1}
-});\n\n`;
 
-      importsCode += `	${action.actionType.toUpperCase()},\n`;
-    }
-  });
 
-  return {
-    exportsCode,
-    importsCode: importsCodeStart + importsCode + importsCodeEnd
-  };
-};

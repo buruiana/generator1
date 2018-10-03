@@ -9,9 +9,13 @@ import {
   SET_SAGA,
 } from '../sagaService/actionTypes';
 import {
+  SET_REDUCER,
+} from '../reducerService/actionTypes';
+import {
   setActionTypesCode,
   setActionsCode,
   setSagaCode,
+  setReducerCode,
 } from './actions';
 import {
   generateActionTypesCode,
@@ -22,6 +26,9 @@ import {
 import {
   generateSagaCode,
 } from '../codeGeneratorService/helpers/saga';
+import {
+  generateReducerCode,
+} from '../codeGeneratorService/helpers/reducer';
 import { boxArray } from '../../utils';
 
 export function* watchSetActionTypes() {
@@ -45,8 +52,16 @@ export function* watchSetSaga() {
   yield put(setSagaCode(sagaCode));
 }
 
+export function* watchSetReducer() {
+  const { reducer } = (yield select()).reducerServiceReducer;
+  const reducerCode = generateReducerCode(boxArray(reducer));
+
+  yield put(setReducerCode(reducerCode));
+}
+
 export default function* rootSaga() {
   yield takeLatest(SET_ACTION_TYPES, watchSetActionTypes);
   yield takeLatest(SET_ACTIONS, watchSetActions);
   yield takeLatest(SET_SAGA, watchSetSaga);
+  yield takeLatest(SET_REDUCER, watchSetReducer);
 }

@@ -11,7 +11,8 @@ const Ace = props => {
   const code = (props.actionTypez || '') + '\n' +
     (props.actions.importsCode || '') + '\n' +
     (props.actions.exportsCode || '') + '\n' +
-    (props.saga || '') + '\n';
+    (props.saga || '') + '\n' +
+    (props.reducer || '') + '\n';
   return (
     <AceEditor
       mode="jsx"
