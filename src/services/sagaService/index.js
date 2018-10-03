@@ -1,31 +1,42 @@
 import { put, takeLatest, select } from "redux-saga/effects";
 import {
-  SET_ACTIONS
-} from '../actionsService/actionTypes';
+  SET_ACTION_TYPES
+} from '../actionTypesService/actionTypes';
 import {
   setSaga,
 } from './actions';
 
-export function* watchSetActions() {
+export function* watchSetActionTypes() {
 
   let saga = [];
-  const actions = (yield select()).actionsServiceReducer.actions;
+  const actionTypes = (yield select()).actionTypesServiceReducer.actionTypes;
 
-  actions.map(action => {
-    let object = [];
+  actionTypes.map(action => {
+    saga.push({
+      isActive: false,
+      name: action.name,
+      watcher: '',
+    });
 
-    if (action.isActive) {
-      object = {
+    if (action.isSuccess) {
+      saga.push({
         isActive: false,
-        name: action.name,
+        name: `${action.name.toUpperCase()}_SUCCESS`,
         watcher: '',
-      }
-      saga.push(object);
+      });
+    }
+
+    if (action.isFail) {
+      saga.push({
+        isActive: false,
+        name: `${action.name.toUpperCase()}_FAIL`,
+        watcher: ''
+      });
     }
   });
   yield put(setSaga(saga));
 }
 
 export default function* rootSaga() {
-  yield takeLatest(SET_ACTIONS, watchSetActions);
+  yield takeLatest(SET_ACTION_TYPES, watchSetActionTypes);
 }

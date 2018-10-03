@@ -10,6 +10,7 @@ const mapStateToProps = state => {
     projectType: state.projectSettingsServiceReducer.projectType,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
     componentType: state.projectSettingsServiceReducer.componentType,
+    actionTypes: state.actionTypesServiceReducer.actionTypes,
   }
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { Nav, NavItem } from 'react-bootstrap';
+import isEmpty from 'lodash/isEmpty';
 import {
   PROJECT_SETTINGS,
   ACTIONS,
@@ -20,34 +21,35 @@ const NavBarSettings = props => {
     props.setModalContent({ node, type });
   };
 
-  const getProjectType = () => {
-    if (props.projectType === SERVICE) {
-      return true;
-    }
-    return false;
+  const isService = () => {
+    return props.projectType === SERVICE
+      ? true
+      : false;
   };
+
+  const hasActionTypes = () => !isEmpty(props.actionTypes);
 
   return (
     <Nav bsStyle="pills" activeKey={1} onSelect={handleSelect}>
       <NavItem eventKey={PROJECT_SETTINGS}>
         Project Settings
       </NavItem>
-      { getProjectType() &&
+      {isService() &&
         <NavItem eventKey={ACTION_TYPES}>
           Action Types
         </NavItem>
       }
-      { getProjectType() &&
+      {isService() && hasActionTypes() &&
       <NavItem eventKey={ACTIONS} >
           Actions
       </NavItem>
       }
-      { getProjectType() &&
+      {isService() && hasActionTypes() &&
       <NavItem eventKey={SAGA} >
         Saga
       </NavItem>
       }
-      { getProjectType() &&
+      {isService() && hasActionTypes() &&
         <NavItem eventKey={REDUCER} >
           Reducer
       </NavItem>
