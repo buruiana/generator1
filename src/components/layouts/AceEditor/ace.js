@@ -30,7 +30,7 @@ const Ace = props => {
       <AceTabs />
       <AceEditor
         mode="jsx"
-        theme="github"
+        theme="xcode"
         onChange={onChange}
         name="UNIQUE_ID_OF_DIV"
         editorProps={{ $blockScrolling: true }}
