@@ -82,7 +82,7 @@ const ActionTypesForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
-      ArrayFieldTemplate={ArrayFieldTemplate}
+      //ArrayFieldTemplate={ArrayFieldTemplate}
       formData={props.actionTypes}
     />
   );

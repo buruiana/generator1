@@ -10,11 +10,10 @@ const AceTabs = props => {
   const renderTabs = () => {
     return props.aceTabs.map(tab => {
       const tabName = `${tab}.js`;
-      console.log('console: tabName', tab);
       return <Tab eventKey={tab} title={tabName} key={tab} />;
     });
   };
-    console.log('console: renderTabs', renderTabs());
+
   return (
     <div className='aceTabs'>
       <Tabs defaultActiveKey='index' id="uncontrolled-tab-example" onSelect={onSelect}>

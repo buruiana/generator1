@@ -15,18 +15,14 @@ export function* watchSetActionTypesForReducer() {
     reducer.push({
       isActive: false,
       name: actionType.name,
-      payload: '',
-      payloadVal: '',
-      payloadDefaultVal: '',
+      payloadInfo: []
     });
 
     if (actionType.isSuccess) {
       reducer.push({
         isActive: false,
         name: `${actionType.name.toUpperCase()}_SUCCESS`,
-        payload: '',
-        payloadVal: '',
-        payloadDefaultVal: '',
+        payloadInfo: []
       });
     }
 
@@ -34,9 +30,7 @@ export function* watchSetActionTypesForReducer() {
       reducer.push({
         isActive: false,
         name: `${actionType.name.toUpperCase()}_FAIL`,
-        payload: '',
-        payloadVal: '',
-        payloadDefaultVal: '',
+        payloadInfo: []
       });
     }
   });
