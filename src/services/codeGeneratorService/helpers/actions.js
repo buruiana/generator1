@@ -6,7 +6,7 @@ export const generateActionsCode = actions => {
   let importsCode = '';
   let exportsCode = '';
   const importsCodeStart = 'import {\n';
-  const importsCodeEnd = "} from './actionTypes'\n";
+  const importsCodeEnd = "} from './actionTypes'\n\n";
 
   actions.map(action => {
     if (action.isActive) {

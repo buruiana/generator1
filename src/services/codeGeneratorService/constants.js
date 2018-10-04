@@ -29,7 +29,6 @@ export const renderActionTypesImport = saga => {
     if (s.isActive) {
       actionTypesCode += s.name + ',\n';
     }
-    //return actionTypesCode;
   });
   return `${start}${actionTypesCode}${end}'\n\n`;
 };
@@ -40,7 +39,6 @@ export const renderSagaWatchers = saga => {
     if (s.isActive) {
       watchersCode += `export function* ${s.watcher}() {}\n`;
     }
-    //return watchersCode;
   });
   return watchersCode + '\n\n';
 };
@@ -51,7 +49,6 @@ export const renderSagaExport = saga => {
     if (s.isActive) {
       exportCode += `\u0009yield takeLatest(${s.name}, ${s.watcher})\n`;
     }
-    //return exportCode;
   });
   return exportCode + '}\n\n';
 };

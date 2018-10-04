@@ -97,7 +97,7 @@ const EditorView = props => {
       <div
         style={{
           height: 800,
-          width: '20%',
+          width: '30%',
           float: 'left'
         }}
       >

@@ -2,37 +2,53 @@ import React from 'react';
 import AceEditor from 'react-ace';
 import 'brace/mode/jsx';
 import 'brace/theme/github';
+import AceTabs from '../AceTabs';
 
 const onChange = newValue => {
   console.log('change', newValue);
 }
 
 const Ace = props => {
-  const code = (props.actionTypez || '') + '\n' +
-    (props.actions.importsCode || '') + '\n' +
-    (props.actions.exportsCode || '') + '\n' +
-    (props.saga || '') + '\n' +
-    (props.reducer || '') + '\n';
+
+  const getAceContent = () => {
+    switch (props.aceTab) {
+      case 'reducer':
+        return props.reducer;
+      case 'index':
+        return props.saga;
+      case 'actions':
+        return props.actions.importsCode + props.actions.exportsCode;
+      case 'actionTypes':
+        return props.actionTypez;
+      default:
+        return '';
+    }
+  };
+
   return (
-    <AceEditor
-      mode="jsx"
-      theme="github"
-      onChange={onChange}
-      name="UNIQUE_ID_OF_DIV"
-      editorProps={{ $blockScrolling: true }}
-      setOptions={{
-        enableBasicAutocompletion: true,
-        enableLiveAutocompletion: true,
-        enableSnippets: false,
-        showLineNumbers: true,
-        tabSize: 2,
-      }}
-      fontSize={10}
-      showPrintMargin={true}
-      showGutter={true}
-      highlightActiveLine={true}
-      value={code}
-    />
+    <div>
+      <AceTabs />
+      <AceEditor
+        mode="jsx"
+        theme="github"
+        onChange={onChange}
+        name="UNIQUE_ID_OF_DIV"
+        editorProps={{ $blockScrolling: true }}
+        setOptions={{
+          enableBasicAutocompletion: true,
+          enableLiveAutocompletion: true,
+          enableSnippets: false,
+          showLineNumbers: true,
+          tabSize: 2,
+        }}
+        fontSize={12}
+        showPrintMargin={true}
+        showGutter={true}
+        highlightActiveLine={true}
+        value={getAceContent()}
+      />
+    </div>
+
   );
 };
 

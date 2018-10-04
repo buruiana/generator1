@@ -12,6 +12,7 @@ import actionsServiceReducer from '../../services/actionsService/reducer';
 import sagaServiceReducer from '../../services/sagaService/reducer';
 import reducerServiceReducer from '../../services/reducerService/reducer';
 import codeGeneratorServiceReducer from '../../services/codeGeneratorService/reducer';
+import aceTabsServiceReducer from '../../services/aceTabsService/reducer';
 
 export const reducers = combineReducers({
   routing: routerReducer,
@@ -27,4 +28,5 @@ export const reducers = combineReducers({
   sagaServiceReducer,
   reducerServiceReducer,
   codeGeneratorServiceReducer,
+  aceTabsServiceReducer,
 });
