@@ -4,16 +4,21 @@ import Tab from 'react-bootstrap/lib/Tab'
 
 const AceTabs = props => {
   const onSelect = data => {
-    console.log('console: datadata', data);
     props.setAceTab(data);
   };
+
+  const renderTabs = () => {
+    return props.aceTabs.map(tab => {
+      const tabName = `${tab}.js`;
+      console.log('console: tabName', tab);
+      return <Tab eventKey={tab} title={tabName} key={tab} />;
+    });
+  };
+    console.log('console: renderTabs', renderTabs());
   return (
     <div className='aceTabs'>
       <Tabs defaultActiveKey='index' id="uncontrolled-tab-example" onSelect={onSelect}>
-        <Tab eventKey='index' title="index.js" />
-        <Tab eventKey='actions' title="actions.js" />
-        <Tab eventKey='actionTypes' title="actionTypes.js" />
-        <Tab eventKey='reducer' title="reducer.js" />
+        {renderTabs()}
       </Tabs>
     </div>
   );

@@ -6,10 +6,7 @@ import {
 
 const mapStateToProps = state => {
   return {
-    reducer: state.codeGeneratorServiceReducer.reducer,
-    saga: state.codeGeneratorServiceReducer.saga,
-    actions: state.codeGeneratorServiceReducer.actions,
-    actionTypes: state.codeGeneratorServiceReducer.actiontypes,
+    aceTabs: state.aceTabsServiceReducer.aceTabs,
   }
 }
 

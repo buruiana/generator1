@@ -2,6 +2,7 @@ import * as actionTypes from '../aceTabsService/actionTypes';
 
 export const initialState = () => ({
   aceTab: 'index',
+  aceTabs: [],
 });
 
 export default (state = initialState(), action) => {
@@ -10,6 +11,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         aceTab: action.aceTab
+      };
+    case actionTypes.SET_ACE_TABS:
+      return {
+        ...state,
+        aceTabs: action.aceTabs
       };
     default:
       return state;
