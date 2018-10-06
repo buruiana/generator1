@@ -3,7 +3,7 @@ import {
   renderActionTypesImport,
   renderSagaWatchers,
   renderSagaExport,
-} from '../constants';
+} from '../renders';
 
 export const generateSagaCode = saga => {
   let sagaCode = '';

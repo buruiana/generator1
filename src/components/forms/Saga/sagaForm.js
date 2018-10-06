@@ -16,28 +16,14 @@ const SagaForm = props => {
   };
 
   const uiSchema = {
-    items: { 'ui:emptyValue': '' },
-    name: { 'ui:disabled': true },
+    items: { 'ui:emptyValue': '', name: { 'ui:disabled': true } },
+    "ui:options": { removable: false, addable: false }
   };
 
   const onSubmit = data => {
     const { formData } = data;
     props.setSaga(formData);
     props.setModalVisibility(false);
-  };
-
-  const ArrayFieldTemplate = props => {
-    return (
-      <div className={props.className}>
-        {props.items &&
-          props.items.map(element => (
-          <div key={element.index}>
-              <div>{element.children}</div>
-              <hr />
-            </div>
-          ))}
-      </div>
-    );
   };
 
   const log = (type) => console.log.bind(console, type);
@@ -47,7 +33,6 @@ const SagaForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
-      ArrayFieldTemplate={ArrayFieldTemplate}
       formData={props.saga}
     />
   );

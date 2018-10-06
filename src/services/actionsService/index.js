@@ -18,6 +18,7 @@ export function* watchSetActionTypes() {
       isActive: false,
       name: `${camelCase(actionType.name)}`,
       actionType: actionType.name.toUpperCase(),
+      payload: [],
     };
     actions.push(object);
 
@@ -26,6 +27,7 @@ export function* watchSetActionTypes() {
         isActive: false,
         name: `${camelCase(actionType.name)}Success`,
         actionType: `${actionType.name.toUpperCase()}_SUCCESS`,
+        payload: [],
       }
       actions.push(object);
     }
@@ -35,6 +37,7 @@ export function* watchSetActionTypes() {
         isActive: false,
         name: `${camelCase(actionType.name)}Fail`,
         actionType: `${actionType.name.toUpperCase()}_FAIL`,
+        payload: [],
       }
       actions.push(object);
     }

@@ -1,7 +1,7 @@
-export const renderActions = (action, payloadVal, payload1) => (
-`export const ${action.name} = ${payloadVal} => ({
+export const renderActions = (action, payloadList, payload1) => (`
+export const ${action.name} = (${payloadList}) => ({
   type: ${action.actionType},
-\u0009${payload1}
+  ${payload1}
 });\n\n`
 );
 
@@ -37,7 +37,10 @@ export const renderSagaWatchers = saga => {
   let watchersCode = '';
   saga.map(s => {
     if (s.isActive) {
-      watchersCode += `export function* ${s.watcher}() {}\n`;
+      watchersCode += `
+export function* ${s.watcher}() {
+
+}\n`;
     }
   });
   return watchersCode + '\n\n';
@@ -57,29 +60,37 @@ export const renderReducerImports = () => (
   `import * as actionTypes from './actionTypes';\n\n`
 );
 
+export const renderReducerPayload = reducerPayload => {
+  return reducerPayload.payloadInfo.map(p => `\t${p.payload}: ${p.initVal},\n`).join('');
+};
+
+export const renderReducerPayload1 = reducerPayload => {
+  return reducerPayload.payloadInfo.map(p => `
+        ${p.payload}: ${p.payloadVal},`).join('');
+};
+
 export const renderReducerInitState = reducer => {
   let initState = 'export const initialState = () => ({\n';
 
   reducer.map(s => {
-    if (s.isActive) {
-      initState += `\u0009${s.payload}: ${s.initVal},\n`;
-    }
+    if (s.isActive) initState += renderReducerPayload(s);
+    return initState;
   });
+
   initState += '});\n\n';
   return initState;
 };
 
 export const renderReducerExport = reducer => {
-  let red =
-  `export default (state = initialState(), action) => {
+
+  let red = `export default (state = initialState(), action) => {
   switch (action.type) {\n`;
 
   reducer.map(s => {
     if (s.isActive) {
       red += `    case actionTypes.${s.name}:
       return {
-        ...state,
-        ${s.payload}: ${s.payloadVal}
+        ...state,${renderReducerPayload1(s)}
       };\n`
     }
   });

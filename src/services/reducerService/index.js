@@ -14,7 +14,7 @@ export function* watchSetActionTypesForReducer() {
   actionTypes.map(actionType => {
     reducer.push({
       isActive: false,
-      name: actionType.name,
+      name: actionType.name.toUpperCase(),
       payloadInfo: []
     });
 

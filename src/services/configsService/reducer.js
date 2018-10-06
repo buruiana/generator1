@@ -1,7 +1,7 @@
 import * as actionTypes from '../configsService/actionTypes';
 
 export const initialState = () => ({
-  isOffline: true,
+  isOffline: false,
 });
 
 export default (state = initialState(), action) => {

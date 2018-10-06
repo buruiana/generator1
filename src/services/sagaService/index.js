@@ -14,7 +14,7 @@ export function* watchSetActionTypesForSaga() {
   actionTypes.map(actionType => {
     saga.push({
       isActive: false,
-      name: actionType.name,
+      name: actionType.name.toUpperCase(),
       watcher: '',
     });
 

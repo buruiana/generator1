@@ -1,4 +1,4 @@
-import { renderActions } from '../constants';
+import { renderActions } from '../renders';
 
 export const generateActionsCode = actions => {
   let actionsCode = {};
@@ -10,13 +10,11 @@ export const generateActionsCode = actions => {
 
   actions.map(action => {
     if (action.isActive) {
-      const payload = action.payload || '';
-      const payloadVal = (payload.includes(',') || payload === '')
-        ? `(${payload})`
-        : `${payload}`;
+      const payloadList = action.payload.map(el => el.payload).toString();
 
-      const payload1 = payload.split(',').join(',\n\u0009')
-      exportsCode += renderActions(action, payloadVal, payload1);
+      const payload1 = payloadList.split(',').join(',\n\u0009');
+
+      exportsCode += renderActions(action, payloadList, payload1);
       importsCode += `	${action.actionType.toUpperCase()},\n`;
     }
   });

@@ -32,3 +32,13 @@
 .aceTabs {
   display: flex;
 }
+
+// i.glyphicon { display: none; }
+// .btn-add::after { content: 'Add'; }
+// .array-item-move-up::after { content: 'Move Up'; }
+// .array-item-move-down::after { content: 'Move Down'; }
+// .array-item-remove::after { content: 'Remove'; }
+
+.col-xs-3, .array-item-toolbox {
+  width: 10%;
+}

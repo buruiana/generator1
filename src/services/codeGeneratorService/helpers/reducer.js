@@ -2,7 +2,7 @@ import {
   renderReducerImports,
   renderReducerInitState,
   renderReducerExport,
-} from '../constants';
+} from '../renders';
 
 export const generateReducerCode = reducer => {
   let reducerCode = '';

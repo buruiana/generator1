@@ -2,7 +2,7 @@ import {
   renderActionTypes,
   renderActionTypesSuccess,
   renderActionTypesFail,
-} from '../constants';
+} from '../renders';
 
 export const generateActionTypesCode = actionTypes => {
   let actionTypesCode = '';
