@@ -20,6 +20,8 @@ const Ace = props => {
         return props.actions.importsCode + props.actions.exportsCode;
       case 'actionTypes':
         return props.actionTypez;
+      case 'hoc':
+        return props.hoc;
       default:
         return '';
     }

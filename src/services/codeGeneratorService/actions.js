@@ -19,3 +19,8 @@ export const setActionTypesCode = actionTypez => ({
   type: actionTypes.SET_ACTION_TYPES_CODE,
   actionTypez
 });
+
+export const setHocCode = hoc => ({
+  type: actionTypes.SET_HOC_CODE,
+  hoc
+});

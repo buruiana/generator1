@@ -7,10 +7,10 @@ import {
 } from './actions';
 
 export function* watchSetProjectSettings() {
-  const projectType = (yield select()).projectSettingsServiceReducer.projectType;
+  const { projectType, projectName } = (yield select()).projectSettingsServiceReducer;
   const tabs = projectType === 'Service'
     ? ['index', 'reducer', 'actions', 'actionTypes']
-    : ['index', 'xxx']
+    : ['hoc', projectName]
 
   yield put(setAceTabs(tabs));
 }

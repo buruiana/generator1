@@ -68,6 +68,7 @@ const ProjectSettingsForm = props => {
       "ui:placeholder": "Choose a technology"
     },
     projectType: { "ui:placeholder": "Choose a type" },
+    componentType: { "ui:placeholder": "Choose a component type" },
   };
 
   const onSubmit = data => {

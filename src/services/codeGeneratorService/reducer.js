@@ -5,6 +5,7 @@ export const initialState = () => ({
   reducer: '',
   actions: '',
   actionTypez: '',
+  hoc: {},
 });
 
 export default (state = initialState(), action) => {
@@ -28,6 +29,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         actionTypez: action.actionTypez
+      };
+    case actionTypes.SET_HOC_CODE:
+      return {
+        ...state,
+        hoc: action.hoc
       };
     default:
       return state;

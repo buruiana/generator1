@@ -6,6 +6,7 @@ import Actions from './Actions';
 import ActionTypes from './ActionTypes';
 import Saga from './Saga';
 import Reducer from './Reducer';
+import Hoc from './Hoc';
 import {
   PROPS_FORM,
   COMPONENT_INFO,
@@ -14,6 +15,7 @@ import {
   ACTIONS,
   SAGA,
   REDUCER,
+  HOC,
 } from './constants';
 
 const RenderModal = props => {
@@ -51,6 +53,10 @@ const RenderModal = props => {
       case REDUCER:
         return (
           <Reducer closeModal={closeModal} />
+        );
+      case HOC:
+        return (
+          <Hoc closeModal={closeModal} />
         );
       default: return null;
     }

@@ -7,9 +7,11 @@ import {
   ACTION_TYPES,
   SAGA,
   REDUCER,
+  HOC,
 } from '../../modals/constants';
 import {
   SERVICE,
+  COMPONENT,
 } from '../../../utils/constants';
 
 const NavBarSettings = props => {
@@ -23,6 +25,12 @@ const NavBarSettings = props => {
 
   const isService = () => {
     return props.projectType === SERVICE
+      ? true
+      : false;
+  };
+
+  const isComponent = () => {
+    return props.projectType === COMPONENT
       ? true
       : false;
   };
@@ -52,6 +60,11 @@ const NavBarSettings = props => {
       {isService() && hasActionTypes() &&
         <NavItem eventKey={REDUCER} >
           Reducer
+      </NavItem>
+      }
+      {isComponent() &&
+        <NavItem eventKey={HOC} >
+          Hoc
       </NavItem>
       }
     </Nav>

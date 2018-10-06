@@ -1,21 +1,15 @@
 import { put, takeLatest, select } from "redux-saga/effects";
-import {
-  SET_ACTION_TYPES,
-} from '../actionTypesService/actionTypes';
-import {
-  SET_ACTIONS,
-} from '../actionsService/actionTypes';
-import {
-  SET_SAGA,
-} from '../sagaService/actionTypes';
-import {
-  SET_REDUCER,
-} from '../reducerService/actionTypes';
+import { SET_ACTION_TYPES } from '../actionTypesService/actionTypes';
+import { SET_ACTIONS } from '../actionsService/actionTypes';
+import { SET_SAGA } from '../sagaService/actionTypes';
+import { SET_REDUCER } from '../reducerService/actionTypes';
+import { SET_HOC } from '../hocService/actionTypes';
 import {
   setActionTypesCode,
   setActionsCode,
   setSagaCode,
   setReducerCode,
+  setHocCode,
 } from './actions';
 import {
   generateActionTypesCode,
@@ -29,6 +23,9 @@ import {
 import {
   generateReducerCode,
 } from '../codeGeneratorService/helpers/reducer';
+import {
+  generateHocCode,
+} from '../codeGeneratorService/helpers/hoc';
 import { boxArray } from '../../utils';
 
 export function* watchSetActionTypes() {
@@ -59,9 +56,18 @@ export function* watchSetReducer() {
   yield put(setReducerCode(reducerCode));
 }
 
+export function* watchSetHoc() {
+  const { hoc } = (yield select()).hocServiceReducer;
+  const { projectName } = (yield select()).projectSettingsServiceReducer;
+  const hocCode = generateHocCode(boxArray(hoc), projectName);
+
+  yield put(setHocCode(hocCode));
+}
+
 export default function* rootSaga() {
   yield takeLatest(SET_ACTION_TYPES, watchSetActionTypes);
   yield takeLatest(SET_ACTIONS, watchSetActions);
   yield takeLatest(SET_SAGA, watchSetSaga);
   yield takeLatest(SET_REDUCER, watchSetReducer);
+  yield takeLatest(SET_HOC, watchSetHoc);
 }

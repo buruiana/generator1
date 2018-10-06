@@ -1,3 +1,5 @@
+import capitalize from 'lodash/capitalize';
+
 export const renderActions = (action, payloadList, payload1) => (`
 export const ${action.name} = (${payloadList}) => ({
   type: ${action.actionType},
@@ -50,7 +52,7 @@ export const renderSagaExport = saga => {
   let exportCode = 'export default function* rootSaga() {\n';
   saga.map(s => {
     if (s.isActive) {
-      exportCode += `\u0009yield takeLatest(${s.name}, ${s.watcher})\n`;
+      exportCode += `\tyield takeLatest(${s.name}, ${s.watcher})\n`;
     }
   });
   return exportCode + '}\n\n';
@@ -60,11 +62,11 @@ export const renderReducerImports = () => (
   `import * as actionTypes from './actionTypes';\n\n`
 );
 
-export const renderReducerPayload = reducerPayload => {
+export const renderReducerPayloadInit = reducerPayload => {
   return reducerPayload.payloadInfo.map(p => `\t${p.payload}: ${p.initVal},\n`).join('');
 };
 
-export const renderReducerPayload1 = reducerPayload => {
+export const renderReducerPayloadVal = reducerPayload => {
   return reducerPayload.payloadInfo.map(p => `
         ${p.payload}: ${p.payloadVal},`).join('');
 };
@@ -73,7 +75,7 @@ export const renderReducerInitState = reducer => {
   let initState = 'export const initialState = () => ({\n';
 
   reducer.map(s => {
-    if (s.isActive) initState += renderReducerPayload(s);
+    if (s.isActive) initState += renderReducerPayloadInit(s);
     return initState;
   });
 
@@ -88,17 +90,39 @@ export const renderReducerExport = reducer => {
 
   reducer.map(s => {
     if (s.isActive) {
-      red += `    case actionTypes.${s.name}:
+      red += `\t\tcase actionTypes.${s.name}:
       return {
-        ...state,${renderReducerPayload1(s)}
+        ...state,${renderReducerPayloadVal(s)}
       };\n`
     }
   });
 
-  red += `    default:
+  red += `\t\tdefault:
       return state;
     }
   }
 }`;
   return red;
+};
+
+
+export const renderHoc = (hoc, projectName) => {
+  return (`
+import ${capitalize(projectName)} from './${projectName}';
+import { connect } from "react-redux";
+import {  set${projectName} } from '../../../services/${projectName}Service/actions';
+
+
+const mapStateToProps = state => {(
+  ${projectName}: state.${projectName}ServiceReducer.${projectName},
+)};
+
+const mapDispatchToProps = dispatch => {(
+  return {
+    set${capitalize(projectName)}: ${projectName} => dispatch(set${capitalize(projectName)}(${projectName})),
+  };
+)};
+
+export default connect(mapStateToProps, mapDispatchToProps)(${capitalize(projectName)});
+`);
 };
