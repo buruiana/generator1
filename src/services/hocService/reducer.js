@@ -1,7 +1,9 @@
 import * as actionTypes from '../hocService/actionTypes';
 
 export const initialState = () => ({
-  hoc: {},
+  hoc: {
+    connectRedux: false,
+  },
 });
 
 export default (state = initialState(), action) => {

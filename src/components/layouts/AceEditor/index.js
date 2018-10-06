@@ -8,14 +8,10 @@ const mapStateToProps = state => {
     saga: state.codeGeneratorServiceReducer.saga,
     reducer: state.codeGeneratorServiceReducer.reducer,
     hoc: state.codeGeneratorServiceReducer.hoc,
+    projectSettings: state.projectSettingsServiceReducer,
     aceTab: state.aceTabsServiceReducer.aceTab,
+    component: state.componentsServiceReducer.component,
   }
 }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     initApp: () => dispatch(initApp()),
-//   };
-// }
 
 export default connect(mapStateToProps)(Ace);

@@ -3,6 +3,10 @@ import AceEditor from 'react-ace';
 import 'brace/mode/jsx';
 import 'brace/theme/github';
 import AceTabs from '../AceTabs';
+import {
+  SERVICE,
+  COMPONENT,
+} from '../../../utils/constants';
 
 const onChange = newValue => {
   console.log('change', newValue);
@@ -11,20 +15,30 @@ const onChange = newValue => {
 const Ace = props => {
 
   const getAceContent = () => {
-    switch (props.aceTab) {
-      case 'reducer':
-        return props.reducer;
-      case 'index':
-        return props.saga;
-      case 'actions':
-        return props.actions.importsCode + props.actions.exportsCode;
-      case 'actionTypes':
-        return props.actionTypez;
-      case 'hoc':
-        return props.hoc;
-      default:
-        return '';
+    if (props.projectSettings.projectType === SERVICE) {
+      switch (props.aceTab) {
+        case 'reducer':
+          return props.reducer;
+        case 'index':
+          return props.saga;
+        case 'actions':
+          return props.actions.importsCode + props.actions.exportsCode;
+        case 'actionTypes':
+          return props.actionTypez;
+        default:
+          return '';
+      }
+    } else if (props.projectSettings.projectType === COMPONENT) {
+      switch (props.aceTab) {
+        case 'index':
+          return props.hoc;
+        case props.projectname:
+          return props.component;
+        default:
+          return '';
+      }
     }
+
   };
 
   return (

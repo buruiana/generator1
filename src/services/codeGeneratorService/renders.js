@@ -107,22 +107,34 @@ export const renderReducerExport = reducer => {
 
 
 export const renderHoc = (hoc, projectName) => {
-  return (`
+  if (hoc.connectRedux) {
+    const start = `
 import ${capitalize(projectName)} from './${projectName}';
 import { connect } from "react-redux";
-import {  set${projectName} } from '../../../services/${projectName}Service/actions';
+import {  set${projectName} } from '../../../services/${projectName}Service/actions';`;
 
-
+    let mapStateToProps = '';
+  if (hoc.mapStateToProps) {
+      mapStateToProps = `
 const mapStateToProps = state => {(
   ${projectName}: state.${projectName}ServiceReducer.${projectName},
-)};
+)};`;
+  }
 
+    let mapDispatchToProps = '';
+    if (hoc.mapStateToProps) {
+      mapDispatchToProps = `
 const mapDispatchToProps = dispatch => {(
-  return {
-    set${capitalize(projectName)}: ${projectName} => dispatch(set${capitalize(projectName)}(${projectName})),
-  };
-)};
+  set${capitalize(projectName)}: ${projectName} => dispatch(set${capitalize(projectName)}(${projectName})),
+)};`;
+    }
 
-export default connect(mapStateToProps, mapDispatchToProps)(${capitalize(projectName)});
-`);
+    const end = `export default connect(mapStateToProps, mapDispatchToProps)(${capitalize(projectName)});`;
+
+    return start + mapStateToProps + mapDispatchToProps + end;
+  } else {
+    return `import ${ capitalize(projectName) } from './${projectName}';
+
+export default ${capitalize(projectName)};`;
+  }
 };

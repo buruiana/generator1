@@ -5,7 +5,7 @@ export const initialState = () => ({
   reducer: '',
   actions: '',
   actionTypez: '',
-  hoc: {},
+  hoc: '',
 });
 
 export default (state = initialState(), action) => {
