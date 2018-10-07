@@ -116,21 +116,30 @@ import {  set${projectName} } from '../../../services/${projectName}Service/acti
 
     let mapStateToProps = '';
   if (hoc.mapStateToProps) {
-      mapStateToProps = `
+    mapStateToProps = `
+
 const mapStateToProps = state => {(
   ${projectName}: state.${projectName}ServiceReducer.${projectName},
 )};`;
   }
 
     let mapDispatchToProps = '';
-    if (hoc.mapStateToProps) {
+    if (hoc.mapDispatchToProps) {
       mapDispatchToProps = `
+
 const mapDispatchToProps = dispatch => {(
   set${capitalize(projectName)}: ${projectName} => dispatch(set${capitalize(projectName)}(${projectName})),
 )};`;
     }
+    const mapStateToPropsVar = (mapStateToProps.length !== 0)
+      ? 'mapStateToProps' 
+      : null;
 
-    const end = `export default connect(mapStateToProps, mapDispatchToProps)(${capitalize(projectName)});`;
+    const mapDispatchToPropsVar = (mapDispatchToProps.length !== 0)
+      ? 'mapDispatchToProps' 
+      : null;
+
+    const end = `\n\nexport default connect(${mapStateToPropsVar}, ${mapDispatchToPropsVar})(${capitalize(projectName)});`;
 
     return start + mapStateToProps + mapDispatchToProps + end;
   } else {
@@ -141,6 +150,7 @@ export default ${capitalize(projectName)};`;
 };
 
 export const renderLifeCycleMethods = smart => {
+
   let lifeCycleMethods = '';
 
   if (smart['componentWillMount']) {
@@ -187,11 +197,19 @@ export const renderLifeCycleMethods = smart => {
   return lifeCycleMethods;
 };
 
+export const renderState = state => {
+  if (state) {
+    return `\t\tthis.state = {};`;
+  }
+  return null;
+};
+
 export const renderConstructor = smart => {
+  console.log('console: smartsmart', smart);
   if (smart.hasConstructor) {
-    return `
-constructor(props) {
-  super(props);${renderState(hasState)}
+    return `\tconstructor(props) {
+    super(props);
+  ${renderState(smart.hasState)}
 	};\n\n`
   }
 };

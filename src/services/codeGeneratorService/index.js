@@ -68,14 +68,15 @@ export function* watchSetReducer() {
 export function* watchSetHoc() {
   const { hoc } = (yield select()).componentSettingsServiceReducer;
   const { projectName } = (yield select()).projectSettingsServiceReducer;
-  const hocCode = generateHocCode(boxArray(hoc), projectName);
+  console.log('console: hochoc', hoc);
+  const hocCode = generateHocCode(hoc, projectName);
 
   yield put(setHocCode(hocCode));
 }
 
 export function* watchSetSmartSettings() {
   const { smart } = (yield select()).componentSettingsServiceReducer;
-  const smartCode = generateSmartCode(smart.lifeCycleMethods);
+  const smartCode = generateSmartCode(smart);
 
   yield put(setSmartCode(smartCode));
 }
