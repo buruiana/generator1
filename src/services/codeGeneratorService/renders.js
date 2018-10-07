@@ -1,4 +1,5 @@
 import capitalize from 'lodash/capitalize';
+import includes from 'lodash/includes';
 
 export const renderActions = (action, payloadList, payload1) => (`
 export const ${action.name} = (${payloadList}) => ({
@@ -136,5 +137,61 @@ const mapDispatchToProps = dispatch => {(
     return `import ${ capitalize(projectName) } from './${projectName}';
 
 export default ${capitalize(projectName)};`;
+  }
+};
+
+export const renderLifeCycleMethods = smart => {
+  let lifeCycleMethods = '';
+
+  if (smart['componentWillMount']) {
+    lifeCycleMethods += `\tcomponentWillMount() {
+
+  };\n\n`;
+  }
+
+  if (smart['componentDidMount']) {
+    lifeCycleMethods += `\tcomponentDidMount() {
+
+  };\n\n`;
+  }
+
+  if (smart['componentWillReceiveProps']) {
+    lifeCycleMethods += `\tcomponentWillReceiveProps(nextProps) {
+
+  };\n\n`;
+  }
+
+  if (smart['shouldComponentUpdate']) {
+    lifeCycleMethods += `\tshouldComponentUpdate(nextProps,nextState) {
+
+  }'\n\n`;
+  }
+
+  if (smart['componentWillUpdate']) {
+    lifeCycleMethods += `\tcomponentWillUpdate(nextProps, nextState) {
+
+  };\n\n`;
+  }
+
+  if (smart['componentDidUpdate']) {
+    lifeCycleMethods += `\tcomponentDidUpdate(prevProps, prevState) {
+
+  };\n\n`;
+  }
+
+  if (smart['componentWillUnmount']) {
+    lifeCycleMethods += `\tcomponentWillUnmount() {
+
+  };\n\n`;
+  }
+  return lifeCycleMethods;
+};
+
+export const renderConstructor = smart => {
+  if (smart.hasConstructor) {
+    return `
+constructor(props) {
+  super(props);${renderState(hasState)}
+	};\n\n`
   }
 };

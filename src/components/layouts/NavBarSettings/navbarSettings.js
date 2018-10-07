@@ -12,6 +12,7 @@ import {
 import {
   SERVICE,
   COMPONENT,
+  SMART,
 } from '../../../utils/constants';
 
 const NavBarSettings = props => {
@@ -31,6 +32,12 @@ const NavBarSettings = props => {
 
   const isComponent = () => {
     return props.projectType === COMPONENT
+      ? true
+      : false;
+  };
+
+  const isSmart = () => {
+    return (props.projectType === COMPONENT && props.componentType === SMART)
       ? true
       : false;
   };
@@ -65,6 +72,11 @@ const NavBarSettings = props => {
       {isComponent() &&
         <NavItem eventKey={HOC} >
           Hoc
+      </NavItem>
+      }
+      {isSmart() &&
+        <NavItem eventKey={SMART} >
+          Smart Settings
       </NavItem>
       }
     </Nav>

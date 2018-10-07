@@ -1,8 +1,9 @@
-import * as actionTypes from '../hocService/actionTypes';
+import * as actionTypes from '../componentSettingsService/actionTypes';
 
 export const initialState = () => ({
   hoc: {
     connectRedux: false,
+    smart: {},
   },
 });
 
@@ -12,6 +13,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         hoc: action.hoc
+      };
+    case actionTypes.SET_SMART_SETTINGS:
+      return {
+        ...state,
+        smart: action.smart,
       };
     default:
       return state;

@@ -1,23 +1,23 @@
-import SagaForm from './sagaForm';
+import SmartForm from './smartForm';
 import { connect } from "react-redux";
 import {
-  setSaga,
-} from '../../../services/serviceSettingsService/actions';
+  setSmartSettings,
+} from '../../../services/componentSettingsService/actions';
 import {
   setModalVisibility,
 } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
-    saga: state.serviceSettingsServiceReducer.saga,
+    smart: state.componentsServiceReducer.smart,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setSaga: saga => dispatch(setSaga(saga)),
+    setSmartSettings: smart => dispatch(setSmartSettings(smart)),
     setModalVisibility: visibile => dispatch(setModalVisibility(visibile)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SagaForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SmartForm);

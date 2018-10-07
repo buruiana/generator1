@@ -1,3 +1,0 @@
-export const SET_ACTION_TYPES = 'SET_ACTION_TYPES';
-
-

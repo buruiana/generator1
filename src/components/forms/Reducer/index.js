@@ -2,14 +2,14 @@ import ReducerForm from './reducerForm';
 import { connect } from "react-redux";
 import {
   setReducer,
-} from '../../../services/reducerService/actions';
+} from '../../../services/serviceSettingsService/actions';
 import {
   setModalVisibility,
 } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
-    reducer: state.reducerServiceReducer.reducer,
+    reducer: state.serviceSettingsServiceReducer.reducer,
   }
 }
 

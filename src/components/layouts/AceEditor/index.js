@@ -10,7 +10,7 @@ const mapStateToProps = state => {
     hoc: state.codeGeneratorServiceReducer.hoc,
     projectSettings: state.projectSettingsServiceReducer,
     aceTab: state.aceTabsServiceReducer.aceTab,
-    component: state.componentsServiceReducer.component,
+    smart: state.codeGeneratorServiceReducer.smart,
   }
 }
 

@@ -32,8 +32,8 @@ const Ace = props => {
       switch (props.aceTab) {
         case 'index':
           return props.hoc;
-        case props.projectname:
-          return props.component;
+        case props.projectSettings.projectName:
+          return props.smart;
         default:
           return '';
       }

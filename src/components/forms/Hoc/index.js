@@ -2,14 +2,14 @@ import HocForm from './hocForm';
 import { connect } from "react-redux";
 import {
   setHoc,
-} from '../../../services/hocService/actions';
+} from '../../../services/componentSettingsService/actions';
 import {
   setModalVisibility,
 } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
-    hoc: state.hocServiceReducer.hoc,
+    hoc: state.componentSettingsServiceReducer.hoc,
   }
 }
 

@@ -6,3 +6,8 @@ export const setHoc = hoc => {
     hoc
   };
 }
+
+export const setSmartSettings = smart => ({
+  type: actionTypes.SET_SMART_SETTINGS,
+  smart,
+})

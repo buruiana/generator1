@@ -24,3 +24,8 @@ export const setHocCode = hoc => ({
   type: actionTypes.SET_HOC_CODE,
   hoc
 });
+
+export const setSmartCode = smart => ({
+  type: actionTypes.SET_SMART_CODE,
+  smart
+});

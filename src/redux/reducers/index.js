@@ -7,13 +7,10 @@ import configsServiceReducer from '../../services/configsService/reducer';
 import providersServiceReducer from '../../services/providersService/reducer';
 import projectSettingsServiceReducer from '../../services/projectSettingsService/reducer';
 import propTypesServiceReducer from '../../services/propTypesService/reducer';
-import actionTypesServiceReducer from '../../services/actionTypesService/reducer';
-import actionsServiceReducer from '../../services/actionsService/reducer';
-import sagaServiceReducer from '../../services/sagaService/reducer';
-import reducerServiceReducer from '../../services/reducerService/reducer';
 import codeGeneratorServiceReducer from '../../services/codeGeneratorService/reducer';
 import aceTabsServiceReducer from '../../services/aceTabsService/reducer';
-import hocServiceReducer from '../../services/hocService/reducer';
+import componentSettingsServiceReducer from '../../services/componentSettingsService/reducer';
+import serviceSettingsServiceReducer from '../../services/serviceSettingsService/reducer';
 
 export const reducers = combineReducers({
   routing: routerReducer,
@@ -24,11 +21,8 @@ export const reducers = combineReducers({
   providersServiceReducer,
   projectSettingsServiceReducer,
   propTypesServiceReducer,
-  actionTypesServiceReducer,
-  actionsServiceReducer,
-  sagaServiceReducer,
-  reducerServiceReducer,
   codeGeneratorServiceReducer,
   aceTabsServiceReducer,
-  hocServiceReducer,
+  componentSettingsServiceReducer,
+  serviceSettingsServiceReducer,
 });

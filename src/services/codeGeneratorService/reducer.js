@@ -6,6 +6,7 @@ export const initialState = () => ({
   actions: '',
   actionTypez: '',
   hoc: '',
+  smart: '',
 });
 
 export default (state = initialState(), action) => {
@@ -34,6 +35,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         hoc: action.hoc
+      };
+    case actionTypes.SET_SMART_CODE:
+      return {
+        ...state,
+        smart: action.smart
       };
     default:
       return state;

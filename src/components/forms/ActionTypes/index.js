@@ -2,14 +2,14 @@ import ActionTypesForm from './actionTypesForm';
 import { connect } from "react-redux";
 import {
   setActionTypes,
-} from '../../../services/actionTypesService/actions';
+} from '../../../services/serviceSettingsService/actions';
 import {
   setModalVisibility,
 } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
-    actionTypes: state.actionTypesServiceReducer.actionTypes,
+    actionTypes: state.serviceSettingsServiceReducer.actionTypes,
   }
 }
 

@@ -6,3 +6,4 @@ export const ACTION_TYPES = 'ACTION_TYPES';
 export const SAGA = 'SAGA';
 export const REDUCER = 'REDUCER';
 export const HOC = 'HOC';
+export const SMART = 'Smart';
