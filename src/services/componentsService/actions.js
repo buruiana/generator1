@@ -9,15 +9,12 @@ export const setAllComponents = components => ({
   components,
 })
 
-export const setSelectedComponent = component => ({
-  type: actionTypes.SET_SELECTED_COMPONENT,
-  component,
-})
-
-export const deleteComponent = () => ({
+export const deleteComponent = component => ({
   type: actionTypes.DELETE_COMPONENT,
+  component,
 })
 
 export const setComponent = component => ({
   type: actionTypes.SET_COMPONENT,
+  component,
 })

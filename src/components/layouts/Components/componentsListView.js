@@ -9,8 +9,7 @@ const ComponentsListView = props => {
   const components = props.components;
 
   const deleteComponent = event => {
-    props.setSelectedComponent({ id: event.target.id });
-    props.deleteComponent();
+    props.deleteComponent({ id: event.target.id });
   };
 
   const componentsList = () => {
@@ -42,13 +41,13 @@ const ComponentsListView = props => {
   };
 
   return (
-    <div className="middle">
+    <div className="middle10">
       <PanelGroup
         accordion
         id="components"
         defaultActiveKey='0'
       >
-        <Panel key="new" eventKey="new" >
+        <Panel key="new" eventKey="new">
           <Panel.Heading>
             <Panel.Title toggle>New Component</Panel.Title>
           </Panel.Heading>

@@ -53,8 +53,7 @@ const ComponentsForm = props => {
     const { formData } = data;
 
     formData.componentProps = componentProps;
-    props.setSelectedComponent(formData);
-    props.setComponent();
+    props.setComponent(formData);
   };
 
   const log = (type) => console.log.bind(console, type);

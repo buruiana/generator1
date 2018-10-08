@@ -2,7 +2,6 @@ import ComponentsForm from './componentsForm';
 import { connect } from "react-redux";
 import {
   setComponent,
-  setSelectedComponent
 } from '../../../services/componentsService/actions';
 
 const mapStateToProps = state => {
@@ -13,8 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setComponent: () => dispatch(setComponent()),
-    setSelectedComponent: componnet => dispatch(setSelectedComponent(componnet)),
+    setComponent: componnet => dispatch(setComponent(componnet)),
   };
 }
 

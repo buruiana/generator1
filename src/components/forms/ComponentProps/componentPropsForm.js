@@ -20,6 +20,7 @@ const ComponentPropsForm = props => {
           title: 'PropType',
           enum: propTypesEnums,
         },
+        propTypeIsrequired: { type: 'boolean', title: 'Prop Type isRequired' },
       }
     },
   };
@@ -47,54 +48,8 @@ const ComponentPropsForm = props => {
       id: props.component.id,
     };
 
-    props.setSelectedComponent(newComponent);
-    props.setComponent();
+    props.setComponent(newComponent);
     props.setModalVisibility(false);
-  };
-
-  const ArrayFieldTemplate = props => {
-    return (
-      <div className={props.className}>
-        {props.items &&
-          props.items.map(element => (
-            <div key={element.index}>
-              <div>{element.children}</div>
-              {element.hasMoveDown && (
-                <button
-                  onClick={element.onReorderClick(
-                    element.index,
-                    element.index + 1
-                  )}>
-                  Down
-              </button>
-              )}
-              {element.hasMoveUp && (
-                <button
-                  onClick={element.onReorderClick(
-                    element.index,
-                    element.index - 1
-                  )}>
-                  Up
-              </button>
-              )}
-              <button onClick={element.onDropIndexClick(element.index)}>
-                Delete
-            </button>
-              <hr />
-            </div>
-          ))}
-
-        {props.canAdd && (
-          <div className="row">
-            <p className="col-xs-3 col-xs-offset-9 array-item-add text-right">
-              <button onClick={props.onAddClick} type="button">
-                Add New Prop
-            </button>
-            </p>
-          </div>
-        )}
-      </div>
-    );
   };
 
   const log = (type) => console.log.bind(console, type);
@@ -104,7 +59,6 @@ const ComponentPropsForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
-      ArrayFieldTemplate={ArrayFieldTemplate}
       formData={props.component.componentProps}
     />
   );

@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import ComponentsListView from './componentsListView';
 import {
   deleteComponent,
-  setSelectedComponent,
 } from '../../../services/componentsService/actions';
 import {
   getAllProviders,
@@ -12,13 +11,12 @@ const mapStateToProps = state => {
   return {
     components: state.componentsServiceReducer.components,
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteComponent: () => dispatch(deleteComponent()),
-    setSelectedComponent: component => dispatch(setSelectedComponent(component)),
+    deleteComponent: component => dispatch(deleteComponent(component)),
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentsListView);

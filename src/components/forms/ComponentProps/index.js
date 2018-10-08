@@ -1,7 +1,7 @@
 import ComponentPropsForm from './componentPropsForm';
 import { connect } from "react-redux";
 import { setModalVisibility } from '../../../services/modalService/actions';
-import { setComponent, setSelectedComponent } from '../../../services/componentsService/actions';
+import { setComponent } from '../../../services/componentsService/actions';
 
 
 const mapStateToProps = state => {
@@ -13,8 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setModalVisibility: modalVisible => dispatch(setModalVisibility(modalVisible)),
-    setComponent: () => dispatch(setComponent()),
-    setSelectedComponent: component => dispatch(setSelectedComponent(component)),
+    setComponent: component => dispatch(setComponent(component)),
   };
 }
 

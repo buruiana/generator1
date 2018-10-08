@@ -12,7 +12,7 @@ export default (state = initialState(), action) => {
         ...state,
         components: action.components,
       };
-    case actionTypes.SET_SELECTED_COMPONENT:
+    case actionTypes.SET_COMPONENT:
       return {
         ...state,
         component: action.component,

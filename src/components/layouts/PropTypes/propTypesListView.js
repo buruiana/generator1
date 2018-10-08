@@ -2,6 +2,7 @@ import React from 'react';
 import PanelGroup from 'react-bootstrap/lib/PanelGroup';
 import Panel from 'react-bootstrap/lib/Panel'
 import PropTypesForm from '../../forms/PropTypes';
+import { boxArray } from '../../../utils';
 
 const PropTypesListView = props => {
   const propTypes = props.propTypes;
@@ -12,7 +13,7 @@ const PropTypesListView = props => {
   };
 
   const propTypesList = () => {
-    return propTypes.map(propType => {
+    return boxArray(propTypes).map(propType => {
       const { name, id } = propType;
 
       return (
@@ -34,7 +35,7 @@ const PropTypesListView = props => {
   };
 
   return (
-    <div className="middle">
+    <div className="middle20">
       <PanelGroup
         accordion
         id="accordion-controlled-example"

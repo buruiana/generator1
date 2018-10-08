@@ -34,8 +34,8 @@ export function* watchGetAllComponents() {
 
 }
 
-export function* watchSetComponent() {
-  const component = (yield select()).componentsServiceReducer.component;
+export function* watchSetComponent(action) {
+  const component = action.component;
   const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {
@@ -56,8 +56,9 @@ export function* watchSetComponent() {
   }
 }
 
-export function* watchDeleteComponent() {
-  const { id } = (yield select()).componentsServiceReducer.component;
+export function* watchDeleteComponent(action) {
+  console.log('console: actionaction', action);
+  const { id } = action.component.id;
   const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {

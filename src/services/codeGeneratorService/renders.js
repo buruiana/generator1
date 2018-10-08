@@ -199,9 +199,8 @@ export const renderLifeCycleMethods = smart => {
 
 export const renderState = state => {
   if (state) {
-    return `\t\tthis.state = {};`;
+    return `\tthis.state = {};`;
   }
-  return null;
 };
 
 export const renderConstructor = smart => {
