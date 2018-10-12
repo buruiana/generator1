@@ -5,6 +5,8 @@ import {
 } from '../serviceSettingsService/actionTypes';
 import {
   setActions,
+  setReducer,
+  setSaga,
 } from './actions';
 
 export function* watchSetActionTypes() {

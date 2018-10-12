@@ -38,6 +38,7 @@
     "firebase": "^5.4.2",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.11",
+    "mustache": "^3.0.0",
     "react": "^15.4.2",
     "react-ace": "^6.1.4",
     "react-bootstrap": "^0.32.4",
