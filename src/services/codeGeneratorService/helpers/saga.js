@@ -1,31 +1,23 @@
+<<<<<<< HEAD
 import {
   renderSagaImport,
   renderActionTypesImport,
   renderSagaWatchers,
   renderSagaExport,
 } from '../renders';
-import { example } from '../templates/saga';
+import { sagaTemplate } from '../templates/saga';
 
 const Mustache = require('mustache');
 
 export const generateSagaCode = saga => {
-  let sagaCode = '';
-  const saga1 = {
+  const data = {
     saga,
-    name: function () {
-      return this.name;
-    },
-    watcher: function () {
-      return this.watcher;
-    },
-  };
-  sagaCode += renderSagaImport();
-  sagaCode += renderActionTypesImport(saga);
-  sagaCode += renderSagaWatchers(saga);
-  sagaCode += renderSagaExport(saga);
-  sagaCode += Mustache.render(example, saga1);
+    name: () => this.name,
+    watcher: () => this.watcher,
+    isActive: () => this.isActive,
+   };
 
-  return sagaCode;
+  return Mustache.render(sagaTemplate, data);
 }
 
 

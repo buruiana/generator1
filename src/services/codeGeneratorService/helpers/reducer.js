@@ -1,18 +1,19 @@
-import {
-  renderReducerImports,
-  renderReducerInitState,
-  renderReducerExport,
-} from '../renders';
+import { reducerTemplate } from '../templates/reducer';
+
+const Mustache = require('mustache');
 
 export const generateReducerCode = reducer => {
-  let reducerCode = '';
+  const data = {
+    reducer,
+    name: () => this.name,
+    isActive: () => this.isActive,
+    payloadInfo: () => this.payloadInfo,
+  };
 
-  reducerCode += renderReducerImports();
-  reducerCode += renderReducerInitState(reducer);
-  reducerCode += renderReducerExport(reducer);
-
-  return reducerCode;
+  return Mustache.render(reducerTemplate, data);
 }
+
+
 
 
 
