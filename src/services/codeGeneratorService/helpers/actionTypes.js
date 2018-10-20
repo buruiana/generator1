@@ -1,25 +1,14 @@
-import {
-  renderActionTypes,
-  renderActionTypesSuccess,
-  renderActionTypesFail,
-} from '../renders';
+import { actionTypesTemplate } from '../templates/actionTypes';
+
+const Mustache = require('mustache');
 
 export const generateActionTypesCode = actionTypes => {
-  let actionTypesCode = '';
+  const data = {
+    actionTypes,
+    name: () => this.name,
+    isSuccess: () => this.isSuccess,
+    isFail: () => this.isFail,
+  };
 
-  actionTypes.map(actionType => {
-    actionTypesCode += renderActionTypes(actionType);
-    if (actionType.isSuccess) {
-      actionTypesCode += renderActionTypesSuccess(actionType);
-    }
-    if (actionType.isFail) {
-      actionTypesCode += renderActionTypesFail(actionType);
-    }
-    return actionTypesCode;
-  });
-
-  return actionTypesCode;
+  return Mustache.render(actionTypesTemplate, data);
 }
-
-
-

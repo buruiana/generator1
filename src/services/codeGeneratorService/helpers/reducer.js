@@ -12,8 +12,3 @@ export const generateReducerCode = reducer => {
 
   return Mustache.render(reducerTemplate, data);
 }
-
-
-
-
-

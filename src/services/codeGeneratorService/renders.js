@@ -204,7 +204,6 @@ export const renderState = state => {
 };
 
 export const renderConstructor = smart => {
-  console.log('console: smartsmart', smart);
   if (smart.hasConstructor) {
     return `\tconstructor(props) {
     super(props);

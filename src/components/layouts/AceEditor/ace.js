@@ -22,7 +22,7 @@ const Ace = props => {
         case 'index':
           return props.saga;
         case 'actions':
-          return props.actions.importsCode + props.actions.exportsCode;
+          return props.actions;
         case 'actionTypes':
           return props.actionTypez;
         default:

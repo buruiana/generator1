@@ -68,8 +68,7 @@ export function* watchSetReducer() {
 export function* watchSetHoc() {
   const { hoc } = (yield select()).componentSettingsServiceReducer;
   const { projectName } = (yield select()).projectSettingsServiceReducer;
-  console.log('console: hochoc', hoc);
-  const hocCode = generateHocCode(hoc, projectName);
+  const hocCode = generateHocCode({ hoc, projectName });
 
   yield put(setHocCode(hocCode));
 }

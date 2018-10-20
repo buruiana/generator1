@@ -1,26 +1,15 @@
-import { renderActions } from '../renders';
+import { actionsTemplate } from '../templates/actions';
+
+const Mustache = require('mustache');
 
 export const generateActionsCode = actions => {
-  let actionsCode = {};
-
-  let importsCode = '';
-  let exportsCode = '';
-  const importsCodeStart = 'import {\n';
-  const importsCodeEnd = "} from './actionTypes'\n\n";
-
-  actions.map(action => {
-    if (action.isActive) {
-      const payloadList = action.payload.map(el => el.payload).toString();
-
-      const payload1 = payloadList.split(',').join(',\n\u0009');
-
-      exportsCode += renderActions(action, payloadList, payload1);
-      importsCode += `	${action.actionType.toUpperCase()},\n`;
-    }
-  });
-
-  return {
-    exportsCode,
-    importsCode: importsCodeStart + importsCode + importsCodeEnd
+  const data = {
+    actions,
+    name: () => this.name,
+    isActive: () => this.isActive,
+    actionType: () => this.actionType,
+    payload: () => this.payload,
   };
-};
+
+  return Mustache.render(actionsTemplate, data);
+}
