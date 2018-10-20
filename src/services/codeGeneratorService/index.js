@@ -75,7 +75,8 @@ export function* watchSetHoc() {
 
 export function* watchSetSmartSettings() {
   const { smart } = (yield select()).componentSettingsServiceReducer;
-  const smartCode = generateSmartCode(smart);
+  const { projectName } = (yield select()).projectSettingsServiceReducer;
+  const smartCode = generateSmartCode({ smart, projectName });
 
   yield put(setSmartCode(smartCode));
 }

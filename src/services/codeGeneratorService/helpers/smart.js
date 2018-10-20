@@ -1,15 +1,16 @@
-import {
-  renderLifeCycleMethods,
-  renderConstructor,
-} from '../renders';
+import { smartTemplate } from '../templates/smart';
 
-export const generateSmartCode = smart => {
-  let smartCode = '';
-  smartCode += renderConstructor(smart);
-  smartCode += renderLifeCycleMethods(smart.lifeCycleMethods);
+const Mustache = require('mustache');
 
-  return smartCode;
+export const generateSmartCode = props => {
+  const smart = { ...props.smart, projectName: props.projectName };
+  const data = {
+    smart,
+    hasConstructor: () => this.hasConstructor,
+    hasState: () => this.hasState,
+    lifeCycleMethods: () => this.lifeCycleMethods,
+    projectName: () => this.projectName,
+  };
+
+  return Mustache.render(smartTemplate, data);
 }
-
-
-

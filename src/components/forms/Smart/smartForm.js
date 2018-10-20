@@ -2,6 +2,7 @@ import React from 'react';
 import Form from "react-jsonschema-form";
 
 const SmartForm = props => {
+  console.log('console: propspropsprops', props);
   const schema = {
     type: 'object',
     properties: {
@@ -40,7 +41,7 @@ const SmartForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
-      formData={props.actions}
+      formData={props.smart}
     />
   );
 }

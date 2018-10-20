@@ -9,7 +9,7 @@ import {
 
 const mapStateToProps = state => {
   return {
-    smart: state.componentsServiceReducer.smart,
+    smart: state.componentSettingsServiceReducer.smart,
   }
 }
 
