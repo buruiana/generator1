@@ -6,6 +6,8 @@ import AceTabs from '../AceTabs';
 import {
   SERVICE,
   COMPONENT,
+  SMART,
+  DUMB,
 } from '../../../utils/constants';
 
 const onChange = newValue => {
@@ -33,7 +35,11 @@ const Ace = props => {
         case 'index':
           return props.hoc;
         case props.projectSettings.projectName:
-          return props.smart;
+          if (props.projectSettings.componentType === SMART) {
+            return props.smart;
+          } else {
+            return props.dumb;
+          }
         default:
           return '';
       }

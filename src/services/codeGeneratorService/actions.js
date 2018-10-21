@@ -29,3 +29,8 @@ export const setSmartCode = smart => ({
   type: actionTypes.SET_SMART_CODE,
   smart
 });
+
+export const setDumbCode = dumb => ({
+  type: actionTypes.SET_DUMB_CODE,
+  dumb
+});

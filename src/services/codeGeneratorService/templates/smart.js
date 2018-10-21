@@ -2,7 +2,7 @@ export const smartTemplate = `
 import React from "react";
 
 {{#smart}}
-const {{projectName}} = props => {
+class {{projectName}} extends Component {
 {{#hasConstructor}}
   constructor(props) {
     super(props);
@@ -61,9 +61,12 @@ const {{projectName}} = props => {
 
 {{/lifeCycleMethods}}
 
-  return (
+  render() {
 
-  );
+    return (
+
+    );
+  }
 };
 
 export default {{projectName}};

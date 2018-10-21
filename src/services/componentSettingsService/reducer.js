@@ -3,8 +3,15 @@ import * as actionTypes from '../componentSettingsService/actionTypes';
 export const initialState = () => ({
   hoc: {
     connectRedux: false,
-    smart: {},
+    mapStateToProps: false,
+    mapDispatchToProps: false,
   },
+  smart: {
+    hasConstructor: false,
+    hasState: false,
+    lifeCycleMethods: [],
+  },
+  dumb: {},
 });
 
 export default (state = initialState(), action) => {

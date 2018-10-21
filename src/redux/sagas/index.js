@@ -5,6 +5,7 @@ import propTypesSaga from '../../services/propTypesService';
 import serviceSettingsSaga from '../../services/serviceSettingsService';
 import codeGeneratorSaga from '../../services/codeGeneratorService';
 import aceTabsSaga from '../../services/aceTabsService';
+import componentSettingsSaga from '../../services/componentSettingsService';
 
 export default function* sagas() {
   yield [
@@ -14,5 +15,6 @@ export default function* sagas() {
     serviceSettingsSaga,
     codeGeneratorSaga,
     aceTabsSaga,
+    componentSettingsSaga,
   ].map(saga => fork(saga));
 }

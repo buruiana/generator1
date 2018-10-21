@@ -12,49 +12,35 @@ import {{projectName}} from './{{projectName}}';
 const mapStateToProps = state => ({
 
 });
-{{/mapStateToProps}}
-{{/connectRedux}}
 
-{{#connectRedux}}
+{{/mapStateToProps}}
 {{#mapDispatchToProps}}
 const mapDispatchToProps = () => {
 
 }
-{{/mapDispatchToProps}}
-{{/connectRedux}}
 
-{{#connectRedux}}
+{{/mapDispatchToProps}}
 {{#mapStateToProps}}
 {{#mapDispatchToProps}}
 export default connect(mapStateToProps, mapDispatchToProps)({{projectName}});
 {{/mapDispatchToProps}}
 {{/mapStateToProps}}
-{{/connectRedux}}
-
-{{#connectRedux}}
 {{^mapStateToProps}}
 {{#mapDispatchToProps}}
 export default connect(null, mapDispatchToProps)({{projectName}});
 {{/mapDispatchToProps}}
 {{/mapStateToProps}}
-{{/connectRedux}}
-
-{{#connectRedux}}
 {{#mapStateToProps}}
 {{^mapDispatchToProps}}
 export default connect(mapStateToProps)({{projectName}});
 {{/mapDispatchToProps}}
 {{/mapStateToProps}}
-{{/connectRedux}}
-
-{{#connectRedux}}
 {{^mapStateToProps}}
 {{^mapDispatchToProps}}
 export default connect(null, null)({{projectName}});
 {{/mapDispatchToProps}}
 {{/mapStateToProps}}
 {{/connectRedux}}
-
 {{^connectRedux}}
 export default {{projectName}};
 {{/connectRedux}}

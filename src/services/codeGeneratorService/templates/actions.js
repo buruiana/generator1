@@ -1,8 +1,9 @@
 export const actionsTemplate =
 `
+{{#actions}}
+{{#isActive}}
 import * as actionTypes from './actionTypes';
 
-{{#actions}}
 export const set{{name}} = (
   {{#payload}}{{#.}}
   {{payload}},
@@ -15,6 +16,6 @@ export const set{{name}} = (
   {{/.}}
   {{/payload}}
 });
-
+{{/isActive}}
 {{/actions}}
 `;

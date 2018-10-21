@@ -11,6 +11,7 @@ const mapStateToProps = state => {
     projectSettings: state.projectSettingsServiceReducer,
     aceTab: state.aceTabsServiceReducer.aceTab,
     smart: state.codeGeneratorServiceReducer.smart,
+    dumb: state.codeGeneratorServiceReducer.dumb,
   }
 }
 

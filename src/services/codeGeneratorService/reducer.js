@@ -7,6 +7,7 @@ export const initialState = () => ({
   actionTypez: '',
   hoc: '',
   smart: '',
+  dumb: '',
 });
 
 export default (state = initialState(), action) => {
@@ -40,6 +41,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         smart: action.smart
+      };
+    case actionTypes.SET_DUMB_CODE:
+      return {
+        ...state,
+        dumb: action.dumb
       };
     default:
       return state;
