@@ -38,12 +38,6 @@
   display: flex;
 }
 
-// i.glyphicon { display: none; }
-// .btn-add::after { content: 'Add'; }
-// .array-item-move-up::after { content: 'Move Up'; }
-// .array-item-move-down::after { content: 'Move Down'; }
-// .array-item-remove::after { content: 'Remove'; }
-
 .col-xs-3, .array-item-toolbox {
   width: 15%;
 }
@@ -51,4 +45,8 @@
 .panel-info>.panel-heading {
   background-color: #FFF;
   border: 1px solid gray;
+}
+
+.componentSearch {
+  width: 30%;
 }

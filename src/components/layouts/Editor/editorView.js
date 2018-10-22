@@ -1,11 +1,13 @@
 import React from 'react';
 import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
 import Ace from '../AceEditor';
 import { COMPONENT_INFO, PROPS_FORM } from '../../modals/constants';
 import NavBarSettings from '../NavBarSettings';
+import ComponentSearchForm from '../../forms/ComponentSearch';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
@@ -34,30 +36,36 @@ const EditorView = props => {
   };
 
   const renderSearchField = () => {
-    return (
-      <div className="row nopaddingLR">
-        <div className='col-lg-8'>
-          <input
-            type="text"
-            className="form-control"
-            name="search"
-            placeholder="Search"
-            value='aaaaaa'
-            //onChange={updateSearch}
-          />
-        </div><br />
-      </div>
-    );
+    return <ComponentSearchForm />;
   };
 
   const onChange = treeData2 => {
-    props.setTree({ treeData2 });
+    const treeData = treeData2.map(el => {
+      return {
+        ...el, hasChildren: !isEmpty(el.children)
+      };
+    });
+    console.log('console: newTreenewTree', treeData);
+    console.log('console: treeData2treeData2', treeData2);
+    //props.setTree(treeData);
+    setIt(treeData);
   };
+
+  const setIt = treeData2 => props.setTree({ treeData2 });
+
+  const filteredDefaultTree = () => {
+    return props.defaultTree.filter(el => {
+      if (props.searchData.name && props.searchData.name !== '') {
+        return el.title.indexOf(props.searchData.name) !== -1;
+      }
+      return el.title !== '';
+    });
+  }
 
   return (
     <div>
       <NavBarSettings />
-      {/* {renderSearchField()} */}
+      {renderSearchField()}
       <div
         style={{
           height: 800,
@@ -66,7 +74,7 @@ const EditorView = props => {
         }}
       >
         <SortableTree
-          treeData={props.defaultTree}
+          treeData={filteredDefaultTree()}
           onChange={() => console.log('changed')}
           dndType={externalNodeType}
           shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}

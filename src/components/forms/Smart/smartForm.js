@@ -2,7 +2,6 @@ import React from 'react';
 import Form from "react-jsonschema-form";
 
 const SmartForm = props => {
-  console.log('console: propspropsprops', props);
   const schema = {
     type: 'object',
     properties: {

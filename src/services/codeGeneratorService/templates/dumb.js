@@ -16,7 +16,7 @@ const {{projectName}} = props => {
       {{>propsPartial}}
       {{#hasComponentPropsVals}}/>{{/hasComponentPropsVals}}
         {{>childrenPartial}}
-    s{{/children}}
+    {{/children}}
     {{/tree}}
   );
 }

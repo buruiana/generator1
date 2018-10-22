@@ -18,3 +18,8 @@ export const setComponent = component => ({
   type: actionTypes.SET_COMPONENT,
   component,
 })
+
+export const setFilterData = searchData => ({
+  type: actionTypes.FILTER_COMPONENTS,
+  searchData,
+})

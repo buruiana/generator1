@@ -11,6 +11,7 @@ const mapStateToProps = state => {
     getNodePath: state.sortableTreeServiceReducer.nodePath,
     modalVisible: state.modalServiceReducer.modalVisible,
     modalContent: state.modalServiceReducer.modalContent,
+    searchData: state.componentsServiceReducer.searchData,
   }
 };
 

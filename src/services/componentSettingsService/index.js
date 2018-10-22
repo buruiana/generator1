@@ -35,7 +35,12 @@ export function* watchSetComponentType(action) {
     case DUMB:
       const dumbCode = generateDumbCode({ dumb, projectName, tree });
       yield put(setHocCode(hocCode));
-      yield put(setDumbCode(dumbCode));
+
+      const myRe = /^[ \r\n]+$/gi;
+      const dumbCode1 = dumbCode.replace(myRe, '');
+
+
+      yield put(setDumbCode(dumbCode1));
       return;
 
     default:

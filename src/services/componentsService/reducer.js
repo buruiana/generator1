@@ -3,6 +3,7 @@ import * as actionTypes from '../componentsService/actionTypes';
 export const initialState = () => ({
   components: [],
   component: [],
+  searchData: {},
 });
 
 export default (state = initialState(), action) => {
@@ -16,6 +17,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         component: action.component,
+      };
+    case actionTypes.FILTER_COMPONENTS:
+      return {
+        ...state,
+        searchData: action.searchData,
       };
     default:
       return state;

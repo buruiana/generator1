@@ -19,6 +19,7 @@ export const mock = {
       techno: 'React Native',
       title: 'name-2',
       children: null,
+      hasChildren: false,
     },
     {
       description: 'descr-1',
@@ -39,6 +40,7 @@ export const mock = {
       techno: 'React',
       title: 'name-1-1',
       children: null,
+      hasChildren: false,
     }
   ],
 }
