@@ -12,7 +12,7 @@ const mapStateToProps = state => {
     modalVisible: state.modalServiceReducer.modalVisible,
     modalContent: state.modalServiceReducer.modalContent,
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -22,6 +22,6 @@ const mapDispatchToProps = dispatch => {
     setModalVisibility: modalVisible => dispatch(setModalVisibility(modalVisible)),
     setModalContent: modalContent => dispatch(setModalContent(modalContent)),
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditorView);

@@ -5,9 +5,9 @@ export const setHoc = hoc => {
     type: actionTypes.SET_HOC,
     hoc
   };
-}
+};
 
 export const setSmartSettings = smart => ({
   type: actionTypes.SET_SMART_SETTINGS,
   smart,
-})
+});

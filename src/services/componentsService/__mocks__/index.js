@@ -17,7 +17,8 @@ export const mock = {
       ],
       provider: 'provider-1',
       techno: 'React Native',
-      title: 'name-2'
+      title: 'name-2',
+      children: null,
     },
     {
       description: 'descr-1',
@@ -36,7 +37,8 @@ export const mock = {
       ],
       provider: 'provider-2',
       techno: 'React',
-      title: 'name-1-1'
+      title: 'name-1-1',
+      children: null,
     }
   ],
 }

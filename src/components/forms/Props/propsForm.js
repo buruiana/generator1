@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
 import { changeNodeAtPath } from 'react-sortable-tree';
+import isEmpty from 'lodash/isEmpty';
 
 const PropsForm = props => {
   const getNodeKey = ({ treeIndex }) => treeIndex;
@@ -44,6 +45,8 @@ const PropsForm = props => {
 
     const newNode = {...node};
     newNode.componentProps = newProps;
+    const hasComponentPropsVals = newProps.filter(el => el.val);
+    newNode.hasComponentPropsVals = !isEmpty(hasComponentPropsVals);
 
     const newTree = {
       treeData2: changeNodeAtPath({

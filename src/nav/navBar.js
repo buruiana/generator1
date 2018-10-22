@@ -10,6 +10,7 @@ const NavBar = props => {
 
   const setIsOffline = () => {
     props.setConfigsIsOffline(!isOffline);
+    props.initApp();
   };
 
   const redirect = event => {

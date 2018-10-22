@@ -50,6 +50,10 @@ const EditorView = props => {
     );
   };
 
+  const onChange = treeData2 => {
+    props.setTree({ treeData2 });
+  };
+
   return (
     <div>
       <NavBarSettings />
@@ -82,7 +86,7 @@ const EditorView = props => {
       >
         <SortableTree
           treeData={props.tree}
-          onChange={treeData2 => props.setTree({ treeData2 })}
+          onChange={onChange}
           dndType={externalNodeType}
           shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
           getNodeKey={getNodeKey}

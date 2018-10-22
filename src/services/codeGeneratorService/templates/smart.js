@@ -21,44 +21,44 @@ class {{projectName}} extends Component {
   componentWillMount() {
 
   };
-{{/componentWillMount}}
 
+{{/componentWillMount}}
 {{#componentDidMount}}
   componentDidMount() {
 
   };
-{{/componentDidMount}}
 
+{{/componentDidMount}}
 {{#componentWillReceiveProps}}
   componentWillReceiveProps() {
 
   };
-{{/componentWillReceiveProps}}
 
+{{/componentWillReceiveProps}}
 {{#shouldComponentUpdate}}
   shouldComponentUpdate() {
 
   };
-{{/shouldComponentUpdate}}
 
+{{/shouldComponentUpdate}}
 {{#componentWillUpdate}}
   componentWillUpdate() {
 
   };
-{{/componentWillUpdate}}
 
+{{/componentWillUpdate}}
 {{#componentDidUpdate}}
   componentDidUpdate() {
 
   };
-{{/componentDidUpdate}}
 
+{{/componentDidUpdate}}
 {{#componentWillUnmount}}
   componentWillUnmount() {
 
   };
-{{/componentWillUnmount}}
 
+{{/componentWillUnmount}}
 {{/lifeCycleMethods}}
 
   render() {

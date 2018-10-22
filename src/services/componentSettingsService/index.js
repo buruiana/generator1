@@ -3,6 +3,7 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import {
   SET_PROJECT_SETTINGS_COMPONENT_TYPE,
 } from '../projectSettingsService/actionTypes';
+import { TREE_SET } from '../sortableTreeService/actionTypes';
 import { SMART, DUMB } from '../../utils/constants';
 import {
   setSmartCode,
@@ -20,18 +21,40 @@ import {
 } from '../codeGeneratorService/helpers/hoc';
 
 export function* watchSetComponentType(action) {
-  const { projectName } = (yield select()).projectSettingsServiceReducer;
+  const { projectName, componentType } = (yield select()).projectSettingsServiceReducer;
   const { smart, dumb, hoc } = (yield select()).componentSettingsServiceReducer;
+  const { tree } = (yield select()).sortableTreeServiceReducer;
   const hocCode = generateHocCode({ hoc, projectName });
-  switch (action.componentType) {
+
+  switch (componentType) {
     case SMART:
-      const smartCode = generateSmartCode({ smart, projectName });
+      const smartCode = generateSmartCode({ smart, projectName, tree });
       yield put(setHocCode(hocCode));
       yield put(setSmartCode(smartCode));
       return;
     case DUMB:
-      const dumbCode = generateDumbCode({ dumb, projectName });
+      const dumbCode = generateDumbCode({ dumb, projectName, tree });
       yield put(setHocCode(hocCode));
+      yield put(setDumbCode(dumbCode));
+      return;
+
+    default:
+      return;
+  }
+}
+
+export function* watchTreeSet() {
+  const { projectName, componentType } = (yield select()).projectSettingsServiceReducer;
+  const { smart, dumb } = (yield select()).componentSettingsServiceReducer;
+  const { tree } = (yield select()).sortableTreeServiceReducer;
+
+  switch (componentType) {
+    case SMART:
+      const smartCode = generateSmartCode({ smart, projectName, tree });
+      yield put(setSmartCode(smartCode));
+      return;
+    case DUMB:
+      const dumbCode = generateDumbCode({ dumb, projectName, tree });
       yield put(setDumbCode(dumbCode));
       return;
 
@@ -42,4 +65,5 @@ export function* watchSetComponentType(action) {
 
 export default function* rootSaga() {
   yield takeLatest(SET_PROJECT_SETTINGS_COMPONENT_TYPE, watchSetComponentType);
+  yield takeLatest(TREE_SET, watchTreeSet);
 }

@@ -4,7 +4,9 @@ export const reducerTemplate =
 export const initialState = () => ({
 {{#reducer}}
 {{#payloadInfo}}
+{{#initVal}}
   {{payload}}: {{initVal}},
+{{/initVal}}
 {{/payloadInfo}}
 {{/reducer}}
 });

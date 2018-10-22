@@ -76,7 +76,8 @@ export function* watchSetHoc() {
 export function* watchSetSmartSettings() {
   const { smart } = (yield select()).componentSettingsServiceReducer;
   const { projectName } = (yield select()).projectSettingsServiceReducer;
-  const smartCode = generateSmartCode({ smart, projectName });
+  const { tree } = (yield select()).sortableTreeServiceReducer;
+  const smartCode = generateSmartCode({ smart, projectName, tree });
 
   yield put(setSmartCode(smartCode));
 }
