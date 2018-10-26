@@ -2,6 +2,7 @@ import React from 'react';
 import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
 import Ace from '../AceEditor';
@@ -42,23 +43,25 @@ const EditorView = props => {
   const onChange = treeData2 => {
     const treeData = treeData2.map(el => {
       return {
-        ...el, hasChildren: !isEmpty(el.children)
+        ...el,
+        hasChildren: !isEmpty(el.children)
       };
     });
     console.log('console: newTreenewTree', treeData);
     console.log('console: treeData2treeData2', treeData2);
-    //props.setTree(treeData);
-    setIt(treeData);
+    setNewTree(treeData);
   };
 
-  const setIt = treeData2 => props.setTree({ treeData2 });
+  const setNewTree = treeData2 => props.setTree({ treeData2 });
 
   const filteredDefaultTree = () => {
     return props.defaultTree.filter(el => {
-      if (props.searchData.name && props.searchData.name !== '') {
-        return el.title.indexOf(props.searchData.name) !== -1;
+      if (!isEmpty(props.searchData)) {
+        return (el.title.indexOf(props.searchData.name) !== -1
+          && el.techno === props.projectTechno
+          && get(props.searchData, 'provider', el.provider) === el.provider)
       }
-      return el.title !== '';
+      return (el.title !== '' && el.techno === props.projectTechno);
     });
   }
 

@@ -25,7 +25,7 @@ const ActionsForm = props => {
 
   const uiSchema = {
     items: { 'ui:emptyValue': '' },
-    "ui:options": { removable: false },
+    "ui:options": { removable: false, addable: false },
   };
 
   const onSubmit = data => {

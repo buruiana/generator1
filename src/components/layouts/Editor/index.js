@@ -12,6 +12,7 @@ const mapStateToProps = state => {
     modalVisible: state.modalServiceReducer.modalVisible,
     modalContent: state.modalServiceReducer.modalContent,
     searchData: state.componentsServiceReducer.searchData,
+    projectTechno: state.projectSettingsServiceReducer.projectTechno,
   }
 };
 

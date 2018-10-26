@@ -2,11 +2,6 @@ import React from 'react';
 import Form from "react-jsonschema-form";
 import LayoutField from 'react-jsonschema-form-layout';
 import isEmpty from 'lodash/isEmpty';
-import {
-  REACT_NATIVE,
-  REACT,
-  PROJECT_TECHNO,
-} from '../../../utils/constants';
 
 const ComponentsSearchForm = props => {
   const { providers } = props;
@@ -56,7 +51,9 @@ const ComponentsSearchForm = props => {
         onChange={onChange}
         onError={log("errors")}
         fields={fields}
-      />
+      >
+        <button type="submit" className="hidden">Submit</button>
+      </Form>
     </div>
   );
 }
