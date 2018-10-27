@@ -13,6 +13,7 @@ import {
   SERVICE,
   COMPONENT,
   SMART,
+  APPLICATION,
 } from '../../../utils/constants';
 
 const NavBarSettings = props => {
@@ -32,6 +33,12 @@ const NavBarSettings = props => {
 
   const isComponent = () => {
     return props.projectType === COMPONENT
+      ? true
+      : false;
+  };
+
+  const isApp = () => {
+    return props.projectType === APPLICATION
       ? true
       : false;
   };
@@ -77,6 +84,11 @@ const NavBarSettings = props => {
       {isSmart() &&
         <NavItem eventKey={SMART} >
           Smart Settings
+      </NavItem>
+      }
+      {isApp() &&
+        <NavItem eventKey={APPLICATION} >
+          App Settings
       </NavItem>
       }
     </Nav>

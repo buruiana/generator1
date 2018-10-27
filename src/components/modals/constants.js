@@ -7,3 +7,4 @@ export const SAGA = 'SAGA';
 export const REDUCER = 'REDUCER';
 export const HOC = 'HOC';
 export const SMART = 'Smart';
+export const APPLICATION = 'Application';

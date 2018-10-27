@@ -18,6 +18,7 @@ import {
   REDUCER,
   HOC,
   SMART,
+  APPLICATION,
 } from './constants';
 
 const RenderModal = props => {
@@ -61,6 +62,10 @@ const RenderModal = props => {
           <Hoc closeModal={closeModal} />
         );
       case SMART:
+        return (
+          <Smart closeModal={closeModal} />
+        );
+      case APPLICATION:
         return (
           <Smart closeModal={closeModal} />
         );
