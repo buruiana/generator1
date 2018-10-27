@@ -9,15 +9,12 @@ export const setAllPropTypes = propTypes => ({
   propTypes,
 })
 
-export const setPropType = () => ({
+export const setPropType = propType => ({
   type: actionTypes.SET_PROP_TYPE,
-})
-
-export const setSelectedPropType = propType => ({
-  type: actionTypes.SET_SELECTED_PROP_TYPE,
   propType,
 })
 
-export const deletePropType = () => ({
+export const deletePropType = propType => ({
   type: actionTypes.DELETE_PROP_TYPE,
+  propType,
 })

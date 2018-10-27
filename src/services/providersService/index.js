@@ -8,9 +8,8 @@ import {
 } from './actionTypes';
 import {
   setAllProviders,
-  getAllProviders,
-
 } from './actions';
+import { initApp } from '../configsService/actions';
 import reduxSagaFirebase from '../../redux/firebaseConfig';
 import { boxArray } from '../../utils';
 import { mock } from './__mocks__';
@@ -30,8 +29,8 @@ export function* watchGetAllProviders() {
   yield put(setAllProviders(boxArray(allProviders)));
 }
 
-export function* watchSetProvider() {
-  const provider = (yield select()).providersServiceReducer.provider;
+export function* watchSetProvider(action) {
+  const { provider } = action;
   const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {
@@ -48,17 +47,17 @@ export function* watchSetProvider() {
         provider
       );
     }
-    yield put(getAllProviders());
+    yield put(initApp());
   }
 }
 
-export function* watchDeleteProvider() {
-  const { id } = (yield select()).providersServiceReducer.provider;
+export function* watchDeleteProvider(action) {
+  const { id } = action.provider;
   const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {
     yield call(reduxSagaFirebase.firestore.deleteDocument, `providers/${id}`);
-    yield put(getAllProviders());
+    yield put(initApp());
   }
 }
 

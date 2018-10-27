@@ -17,8 +17,7 @@ const PropTypesForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    props.setSelectedPropType(formData);
-    props.setPropType();
+    props.setPropType(formData);
   };
 
   const log = (type) => console.log.bind(console, type);

@@ -28,6 +28,8 @@
 .deleteButton {
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .textarea-noBorder {

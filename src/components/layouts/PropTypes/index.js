@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
 import PropTypesListView from './propTypesListView';
 import {
-  getAllPropTypes,
   deletePropType,
-  setSelectedPropType,
+  setPropType,
 } from '../../../services/propTypesService/actions';
 
 const mapStateToProps = state => {
@@ -15,8 +14,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAllPropTypes: () => dispatch(getAllPropTypes()),
-    deletePropType: () => dispatch(deletePropType()),
-    setSelectedPropType: propType => dispatch(setSelectedPropType(propType)),
+    deletePropType: propType => dispatch(deletePropType(propType)),
+    setPropType: propType => dispatch(setPropType(propType)),
   };
 }
 

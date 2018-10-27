@@ -20,7 +20,7 @@ const ComponentsListView = props => {
         <Panel key={id} eventKey={title}>
           <Panel.Heading>
             <Panel.Title toggle componentClass="h1">{title}</Panel.Title>
-            <div className='deleteButton' id={id} onClick={deleteComponent}><a>Delete</a></div>
+            <div className='deleteButton' id={id} onClick={deleteComponent}>Delete</div>
           </Panel.Heading>
           <Panel.Body collapsible>
             <ComponentsForm component={component} />

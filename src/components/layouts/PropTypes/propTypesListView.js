@@ -8,8 +8,7 @@ const PropTypesListView = props => {
   const propTypes = props.propTypes;
 
   const deletePropType = event => {
-    props.setSelectedPropType({ id: event.target.id });
-    props.deletePropType();
+    props.deletePropType({ id: event.target.id });
   };
 
   const propTypesList = () => {
@@ -20,7 +19,7 @@ const PropTypesListView = props => {
         <Panel key={id} eventKey={name} >
           <Panel.Heading>
             <Panel.Title toggle>{name}</Panel.Title>
-            <div id={id} onClick={deletePropType}>Delete</div>
+            <div className='deleteButton' id={id} onClick={deletePropType}>Delete</div>
           </Panel.Heading>
           <Panel.Body collapsible>
             <PropTypesForm propType={propType}/>

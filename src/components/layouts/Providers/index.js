@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
 import ProvidersListView from './providersListView';
 import {
-  getAllProviders,
   deleteProvider,
-  setSelectedProvider,
+  setProvider,
 } from '../../../services/providersService/actions';
 
 const mapStateToProps = state => {
@@ -14,9 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAllProviders: () => dispatch(getAllProviders()),
-    deleteProvider: () => dispatch(deleteProvider()),
-    setSelectedProvider: provider => dispatch(setSelectedProvider(provider)),
+    deleteProvider: provider => dispatch(deleteProvider(provider)),
+    setProvider: provider => dispatch(setProvider(provider)),
   };
 }
 

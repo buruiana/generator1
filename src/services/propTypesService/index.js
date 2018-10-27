@@ -8,9 +8,9 @@ import {
 } from './actionTypes';
 import {
   setAllPropTypes,
-  getAllPropTypes,
 
 } from './actions';
+import { initApp } from '../configsService/actions';
 import reduxSagaFirebase from '../../redux/firebaseConfig';
 import { boxArray } from '../../utils';
 import { mock } from './__mocks__';
@@ -30,8 +30,8 @@ export function* watchGetAllPropTypes() {
   yield put(setAllPropTypes(boxArray(allPropTypes)));
 }
 
-export function* watchSetPropType() {
-  const propType = (yield select()).propTypesServiceReducer.propType;
+export function* watchSetPropType(action) {
+  const { propType } = action;
   const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {
@@ -48,17 +48,17 @@ export function* watchSetPropType() {
         propType
       );
     }
-    yield put(getAllPropTypes());
+    yield put(InitApp());
   }
 }
 
-export function* watchDeletePropType() {
-  const { id } = (yield select()).propTypesServiceReducer.propType;
+export function* watchDeletePropType(action) {
+  const { id } = action.propType;
   const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {
     yield call(reduxSagaFirebase.firestore.deleteDocument, `propTypes/${id}`);
-    yield put(getAllPropTypes());
+    yield put(initApp());
   }
 }
 

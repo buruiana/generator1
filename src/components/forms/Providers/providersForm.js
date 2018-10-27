@@ -19,8 +19,7 @@ const ProvidersForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    props.setSelectedProvider(formData);
-    props.setProvider();
+    props.setProvider(formData);
   };
 
   const log = (type) => console.log.bind(console, type);

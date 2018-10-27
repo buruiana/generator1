@@ -3,9 +3,6 @@ import ComponentsListView from './componentsListView';
 import {
   deleteComponent,
 } from '../../../services/componentsService/actions';
-import {
-  getAllProviders,
-} from '../../../services/providersService/actions';
 
 const mapStateToProps = state => {
   return {

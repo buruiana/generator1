@@ -7,8 +7,7 @@ const ProvidersListView = props => {
   const providers = props.providers;
 
   const deleteProvider = event => {
-    props.setSelectedProvider({ id: event.target.id });
-    props.deleteProvider();
+    props.deleteProvider({ id: event.target.id });
   };
 
   const providersList = () => {
@@ -19,7 +18,7 @@ const ProvidersListView = props => {
         <Panel key={id} eventKey={name} >
           <Panel.Heading>
             <Panel.Title toggle>{name}</Panel.Title>
-            <div id={id} onClick={deleteProvider}>Delete</div>
+            <div className='deleteButton' id={id} onClick={deleteProvider}>Delete</div>
           </Panel.Heading>
           <Panel.Body collapsible>
             <ProvidersForm provider={provider}/>
