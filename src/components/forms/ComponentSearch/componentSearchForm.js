@@ -25,20 +25,29 @@ const ComponentsSearchForm = props => {
   }
 
   const uiSchema = {
-    provider: { "ui:placeholder": "Choose a provider" },
+    name: {
+      "ui:options": {
+        "label": false,
+      },
+      "ui:placeholder": "Component",
+    },
+    provider: {
+      "ui:placeholder": "All providers",
+      "ui:options": {
+        "label": false,
+      },
+    },
     'ui:field': 'layout',
     'ui:layout': [
       {
         name: { md: 4 },
         provider: { md: 4 },
-        techno: { md: 4 }
       },
     ],
   };
 
   const onChange = data => {
     const { formData } = data;
-    console.log('console: formDataformData', formData);
     props.setFilterData(formData);
   };
 
