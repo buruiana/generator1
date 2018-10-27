@@ -6,7 +6,11 @@ import get from 'lodash/get';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
 import Ace from '../AceEditor';
-import { COMPONENT_INFO, PROPS_FORM } from '../../modals/constants';
+import {
+  COMPONENT_INFO,
+  PROPS_FORM,
+  PROJECT_SETTINGS,
+} from '../../modals/constants';
 import NavBarSettings from '../NavBarSettings';
 import ComponentSearchForm from '../../forms/ComponentSearch';
 
@@ -15,6 +19,7 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const EditorView = props => {
+
   const remove = path => {
     const newTree = {
       treeData2: removeNodeAtPath({
@@ -37,7 +42,9 @@ const EditorView = props => {
   };
 
   const renderSearchField = () => {
-    return <ComponentSearchForm />;
+    return props.projectName
+      ? < ComponentSearchForm />
+      : null;
   };
 
   const onChange = treeData2 => {
@@ -47,8 +54,6 @@ const EditorView = props => {
         hasChildren: !isEmpty(el.children)
       };
     });
-    console.log('console: newTreenewTree', treeData);
-    console.log('console: treeData2treeData2', treeData2);
     setNewTree(treeData);
   };
 
@@ -63,7 +68,13 @@ const EditorView = props => {
       }
       return (el.title !== '' && el.techno === props.projectTechno);
     });
-  }
+  };
+
+  const renderAce = () => {
+    return props.projectName
+      ? < Ace />
+      : null;
+  };
 
   return (
     <div>
@@ -116,7 +127,7 @@ const EditorView = props => {
           float: 'left'
         }}
       >
-        <Ace />
+        {renderAce()}
       </div>
       <div>{renderModal(props)}</div>
     </div>
