@@ -1,7 +1,7 @@
 export const propsPartial = `
 {{#componentProps}}
     {{#.}}{{#val}}
-      {{name}}={ {{val}} }
+        {{name}}={ {{val}} }
     {{/val}}{{/.}}
     {{/componentProps}}
 `;

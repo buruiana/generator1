@@ -3,7 +3,7 @@ export const childrenPartial = `
         {{^hasComponentPropsVals}}<{{title}} />{{/hasComponentPropsVals}}
         {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
           {{>propsPartial}}
-     {{#hasComponentPropsVals}}/>{{/hasComponentPropsVals}}
+      {{#hasComponentPropsVals}}/>{{/hasComponentPropsVals}}
       {{>childrenPartial}}
       {{/children}}
 `;

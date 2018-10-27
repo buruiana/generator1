@@ -12,7 +12,7 @@ export const generateDumbCode = props => {
     tree: () => this.tree,
     componentProps: () => this.componentProps,
   };
-  console.log('console: datadata', data);
+
   return Mustache.render(dumbTemplate, data, {
     "childrenPartial": childrenPartial,
     "propsPartial": propsPartial,

@@ -6,10 +6,12 @@ const {{projectName}} = props => {
 
   return (
     {{#tree}}
-    {{^hasComponentPropsVals}}<{{title}} />{{/hasComponentPropsVals}}
+    {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
+    {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
     {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
     {{#componentProps}}{{#val}}
-      {{name}}={ {{val}} }{{/val}}{{/componentProps}}
+      {{name}}={ {{val}} }{{/val}}
+    {{/componentProps}}
     {{#hasComponentPropsVals}}/>{{/hasComponentPropsVals}}
     {{#children}}
       {{^hasComponentPropsVals}}<{{title}} />{{/hasComponentPropsVals}}{{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
@@ -17,6 +19,7 @@ const {{projectName}} = props => {
       {{#hasComponentPropsVals}}/>{{/hasComponentPropsVals}}
         {{>childrenPartial}}
     {{/children}}
+    {{#hasChildren}}</ {{title}}>{{/hasChildren}}
     {{/tree}}
   );
 }

@@ -40,8 +40,8 @@ const ComponentsSearchForm = props => {
     'ui:field': 'layout',
     'ui:layout': [
       {
-        name: { md: 4 },
-        provider: { md: 4 },
+        name: { md: 2 },
+        provider: { md: 2 },
       },
     ],
   };
@@ -60,6 +60,7 @@ const ComponentsSearchForm = props => {
         onChange={onChange}
         onError={log("errors")}
         fields={fields}
+        autocomplete='off'
       >
         <button type="submit" className="hidden">Submit</button>
       </Form>
