@@ -11,6 +11,7 @@ import codeGeneratorServiceReducer from '../../services/codeGeneratorService/red
 import aceTabsServiceReducer from '../../services/aceTabsService/reducer';
 import componentSettingsServiceReducer from '../../services/componentSettingsService/reducer';
 import serviceSettingsServiceReducer from '../../services/serviceSettingsService/reducer';
+import appSettingsServiceReducer from '../../services/appSettingsService/reducer';
 
 export const reducers = combineReducers({
   routing: routerReducer,
@@ -25,4 +26,5 @@ export const reducers = combineReducers({
   aceTabsServiceReducer,
   componentSettingsServiceReducer,
   serviceSettingsServiceReducer,
+  appSettingsServiceReducer,
 });

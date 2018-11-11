@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/lib/Modal';
 import AppSettingsForm from '../../forms/AppSettings';
 
-const AppSettings = ({ closeModal, modalVisible, modalContent }) => {
+const AppSettings = ({ closeModal, modalVisible }) => {
 
   return (
     <div>
@@ -11,7 +11,7 @@ const AppSettings = ({ closeModal, modalVisible, modalContent }) => {
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>
-            Project Settings
+            App Settings
           </Modal.Title>
         </Modal.Header>
 
@@ -25,7 +25,7 @@ const AppSettings = ({ closeModal, modalVisible, modalContent }) => {
   );
 };
 
-ProjectSettings.propTypes = {
+AppSettings.propTypes = {
   modalVisible: PropTypes.bool,
   modalContent: PropTypes.object,
   componentInfo: PropTypes.object,

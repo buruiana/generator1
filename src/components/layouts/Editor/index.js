@@ -14,6 +14,7 @@ const mapStateToProps = state => {
     searchData: state.componentsServiceReducer.searchData,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
     projectName: state.projectSettingsServiceReducer.projectName,
+    projectType: state.projectSettingsServiceReducer.projectType,
   }
 };
 

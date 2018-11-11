@@ -18,7 +18,7 @@ const NavBar = props => {
   };
 
   return (
-    <Navbar>
+    <Navbar className='navBar'>
       <Navbar.Header>
         <Navbar.Brand>
           <a href="#">GENERATOR</a>

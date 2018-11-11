@@ -1,24 +1,18 @@
 import AppSettingsForm from './appSettingsForm';
 import { connect } from "react-redux";
 import {
-  setProjectName,
-  setProjectType,
-  setProjectTechno,
-  setProjectComponentType,
-} from '../../../services/projectSettingsService/actions';
+  setAppSettings,
+} from '../../../services/appSettingsService/actions';
 import {
   setModalContent,
-  setModalVisibility
+  setModalVisibility,
 } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
     modalContent: state.modalServiceReducer.modalContent,
     modalVisible: state.modalServiceReducer.modalVisible,
-    projectName: state.projectSettingsServiceReducer.projectName,
-    projectType: state.projectSettingsServiceReducer.projectType,
-    projectTechno: state.projectSettingsServiceReducer.projectTechno,
-    componentType: state.projectSettingsServiceReducer.componentType,
+    appSettings: state.appSettingsServiceReducer.settings,
   }
 }
 
@@ -26,10 +20,7 @@ const mapDispatchToProps = dispatch => {
   return {
     setModalContent: content => dispatch(setModalContent(content)),
     setModalVisibility: modalVisible => dispatch(setModalVisibility(modalVisible)),
-    setProjectName: projectName => dispatch(setProjectName(projectName)),
-    setProjectTechno: projectTechno => dispatch(setProjectTechno(projectTechno)),
-    setProjectType: projectType => dispatch(setProjectType(projectType)),
-    setProjectComponentType: componentType => dispatch(setProjectComponentType(componentType)),
+    setAppSettings: settings => dispatch(setAppSettings(settings)),
   };
 }
 

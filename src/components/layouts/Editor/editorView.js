@@ -6,11 +6,16 @@ import get from 'lodash/get';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
 import Ace from '../AceEditor';
+import AppStructureView from '../AppStructure';
 import {
   COMPONENT_INFO,
   PROPS_FORM,
-  PROJECT_SETTINGS,
 } from '../../modals/constants';
+import {
+  SERVICE,
+  COMPONENT,
+  APPLICATION,
+} from '../../../utils/constants';
 import NavBarSettings from '../NavBarSettings';
 import ComponentSearchForm from '../../forms/ComponentSearch';
 
@@ -47,6 +52,12 @@ const EditorView = props => {
       : null;
   };
 
+  const renderAppStructure = () => {
+    return props.projectType === APPLICATION
+      ? <AppStructureView />
+      : null;
+  };
+
   const onChange = treeData2 => {
     const treeData = treeData2.map(el => {
       return {
@@ -71,55 +82,71 @@ const EditorView = props => {
   };
 
   const renderAce = () => {
-    return props.projectName
-      ? < Ace />
+    return (props.projectType === SERVICE || props.projectType === COMPONENT)
+      ? <div className='paddingTop'>< Ace /></div>
       : null;
+  };
+
+  const returnComponentBlock = () => {
+    return (
+      <div className='paddingTop'>
+        {renderSearchField()}
+        <div
+          style={{
+            height: 800,
+            width: '25%',
+            float: 'left'
+          }}
+        >
+          <SortableTree
+            treeData={filteredDefaultTree()}
+            onChange={() => console.log('changed')}
+            dndType={externalNodeType}
+            shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
+            generateNodeProps={({ node, path }) => ({
+              buttons: [<button onClick={() => showModal(COMPONENT_INFO, node, path)}>I</button>]
+            })}
+          />
+        </div>
+
+        <div
+          style={{
+            height: 800,
+            width: '45%',
+            float: 'left'
+          }}
+        >
+          <SortableTree
+            treeData={props.tree}
+            onChange={onChange}
+            dndType={externalNodeType}
+            shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
+            getNodeKey={getNodeKey}
+            generateNodeProps={({ node, path }) => ({
+              buttons: [
+                <button onClick={() => remove(path)}>-</button>,
+                <button onClick={() => showModal(PROPS_FORM, node, path)}>P</button>
+              ]
+            })}
+          />
+        </div>
+      </div>
+    );
+  };
+
+  const renderComponentBlock = () => {
+    return props.projectType === SERVICE
+      ? null
+      : props.projectType === COMPONENT
+        ? returnComponentBlock()
+        : null;
   };
 
   return (
     <div>
       <NavBarSettings />
-      {renderSearchField()}
-      <div
-        style={{
-          height: 800,
-          width: '25%',
-          float: 'left'
-        }}
-      >
-        <SortableTree
-          treeData={filteredDefaultTree()}
-          onChange={() => console.log('changed')}
-          dndType={externalNodeType}
-          shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
-          getNodeKey={getNodeKey}
-          generateNodeProps={({ node, path }) => ({
-            buttons: [<button onClick={() => showModal(COMPONENT_INFO, node, path)}>I</button>]
-          })}
-        />
-      </div>
-
-      <div
-        style={{
-          height: 800,
-          width: '45%',
-          float: 'left'
-        }}
-      >
-        <SortableTree
-          treeData={props.tree}
-          onChange={onChange}
-          dndType={externalNodeType}
-          shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
-          getNodeKey={getNodeKey}
-          generateNodeProps={({ node, path }) => ({
-            buttons: [
-              <button onClick={() => remove(path)}>-</button>,
-              <button onClick={() => showModal(PROPS_FORM, node, path)}>P</button>
-            ]
-          })}
-        />
-      </div>
+      {renderComponentBlock()}
+      {renderAppStructure()}
       <div
         style={{
           height: 800,

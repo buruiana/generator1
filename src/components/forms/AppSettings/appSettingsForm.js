@@ -1,65 +1,29 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
-import {
-  APPLICATION,
-  SERVICE,
-  COMPONENT,
-  SMART,
-  DUMB,
-  REACT_NATIVE,
-  REACT,
-  PROJECT_TECHNO,
-  PROJECT_TYPE,
-  PROJECT_NAME,
-  COMPONENT_TYPE,
- } from '../../../utils/constants';
 
 const AppSettingsForm = props => {
-  const { projectName, projectTechno, projectType, componentType } = props;
-  const projectTypeEnums = [ APPLICATION, SERVICE, COMPONENT ];
-  const componentTypeEnums = [ SMART, DUMB ];
-  const technoTypeEnums = [ REACT, REACT_NATIVE ];
+  const { setAppSettings, setModalVisibility, appSettings } = props;
 
   const schema = {
     type: 'object',
-    required: ['projectName', 'projectTechno', 'projectType' ],
     properties: {
-      projectName: {
-        type: 'string',
-        title: PROJECT_NAME,
-        default: projectName
-      },
-      projectTechno: {
-        type: 'string',
-        title: PROJECT_TECHNO,
-        enum: technoTypeEnums,
-        default: projectTechno,
-      },
-      projectType: {
-        type: 'string',
-        title: PROJECT_TYPE,
-        enum: projectTypeEnums,
-        default: projectType
-      },
+      redux: { type: 'boolean', title: 'redux' },
+      reactRedux: { type: 'boolean', title: 'react-redux' },
+      reduxThunk: { type: 'boolean', title: 'redux-thunk' },
+      reduxSaga: { type: 'boolean', title: 'redux-saga' },
+      reactRouter: { type: 'boolean', title: 'React-Router' },
+      reactRouterRedux: { type: 'boolean', title: 'react-router-redux' },
+      reactIntl: { type: 'boolean', title: 'React-Intl' },
+      reactIntlUniversal: { type: 'boolean', title: 'react-intl-universal' },
+      i18next: { type: 'boolean', title: 'i18next' },
+      lodash: { type: 'boolean', title: 'lodash' },
+      firebase: { type: 'boolean', title: 'firebase' },
+      react: { type: 'boolean', title: 'react' },
+      reactBootstrap: { type: 'boolean', title: 'react-bootstrap' },
+      reactJsonschemaForm: { type: 'boolean', title: 'react-jsonschema-form' },
+      reduxSagaFirebase: { type: 'boolean', title: 'redux-saga-firebase' },
+      fontAwesome: { type: 'boolean', title: 'react-fontawesome' },
     },
-    dependencies: {
-      projectType: {
-        oneOf: [
-          {
-            properties: {
-              projectType: { enum: [ COMPONENT ] },
-              componentType: {
-                type: 'string',
-                title: COMPONENT_TYPE,
-                enum: componentTypeEnums,
-                default: componentType
-              },
-            },
-            required: [ 'componentType' ],
-          },
-        ]
-      },
-    }
   };
   const uiSchema = {
     projectType: { "ui:widget": "select" },
@@ -72,14 +36,9 @@ const AppSettingsForm = props => {
   };
 
   const onSubmit = data => {
-    const { projectName, projectTechno, projectType, componentType } = data.formData;
-
-    props.setProjectName(projectName);
-    props.setProjectTechno(projectTechno);
-    props.setProjectType(projectType);
-    props.setProjectComponentType(componentType);
-
-    props.setModalVisibility(false);
+    const { formData } = data;
+    setAppSettings(formData);
+    setModalVisibility(false);
   };
 
   const log = (type) => console.log.bind(console, type);
@@ -89,6 +48,7 @@ const AppSettingsForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
+      formData={appSettings}
     />
   );
 }

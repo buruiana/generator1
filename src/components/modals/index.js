@@ -8,6 +8,7 @@ import Saga from './Saga';
 import Reducer from './Reducer';
 import Hoc from './Hoc';
 import Smart from './Smart';
+import AppSettings from './AppSettings';
 import {
   PROPS_FORM,
   COMPONENT_INFO,
@@ -67,7 +68,7 @@ const RenderModal = props => {
         );
       case APPLICATION:
         return (
-          <Smart closeModal={closeModal} />
+          <AppSettings closeModal={closeModal} />
         );
       default: return null;
     }
