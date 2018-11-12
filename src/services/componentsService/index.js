@@ -38,7 +38,7 @@ export function* watchGetAllComponents() {
 export function* watchSetComponent(action) {
   const { component } = action;
   const { isOffline } = (yield select()).configsServiceReducer;
-  console.log('console: actionaction', component);
+
   if (!isOffline) {
     if (component.id) {
       yield call(

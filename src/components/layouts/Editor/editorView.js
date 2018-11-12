@@ -1,5 +1,5 @@
 import React from 'react';
-import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
+import SortableTree, { removeNodeAtPath, walk, changeNodeAtPath  } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
@@ -18,6 +18,7 @@ import {
 } from '../../../utils/constants';
 import NavBarSettings from '../NavBarSettings';
 import ComponentSearchForm from '../../forms/ComponentSearch';
+import { fillNodeData } from '../../../services/sortableTreeService/helper';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
@@ -33,7 +34,7 @@ const EditorView = props => {
         getNodeKey
       })
     };
-    props.setTree(newTree);
+    setNewTree(fillNodeData(newTree.treeData2));
   };
 
   const showModal = (type, node, path) => {
@@ -59,13 +60,7 @@ const EditorView = props => {
   };
 
   const onChange = treeData2 => {
-    const treeData = treeData2.map(el => {
-      return {
-        ...el,
-        hasChildren: !isEmpty(el.children)
-      };
-    });
-    setNewTree(treeData);
+    setNewTree(fillNodeData(treeData2));
   };
 
   const setNewTree = treeData2 => props.setTree({ treeData2 });

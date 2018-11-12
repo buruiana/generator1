@@ -12,12 +12,13 @@ const {{projectName}} = props => {
     {{#componentProps}}{{#val}}
       {{name}}={ {{val}} }{{/val}}
     {{/componentProps}}
-    {{#hasComponentPropsVals}}/>{{/hasComponentPropsVals}}
+    {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
     {{#children}}
       {{^hasComponentPropsVals}}<{{title}} />{{/hasComponentPropsVals}}{{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
       {{>propsPartial}}
-      {{#hasComponentPropsVals}}/>{{/hasComponentPropsVals}}
+      {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
         {{>childrenPartial}}
+      {{#hasChildren}}</ {{title}}>{{/hasChildren}}
     {{/children}}
     {{#hasChildren}}</ {{title}}>{{/hasChildren}}
     {{/tree}}

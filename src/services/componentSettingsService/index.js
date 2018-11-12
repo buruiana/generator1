@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { put, takeLatest, select } from "redux-saga/effects";
 
 import {
   SET_PROJECT_SETTINGS_COMPONENT_TYPE,

@@ -14,7 +14,6 @@ const AppStructureView = props => {
 
   const onChange = tree => props.setAppTree(tree);
   const onClickFile = rowInfo => {
-    console.log('console: rowInfo', rowInfo);
     if (isEmpty(rowInfo.node.children)) {
       props.setAppFile(rowInfo.node.title);
     }
