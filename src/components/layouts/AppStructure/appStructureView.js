@@ -2,12 +2,34 @@ import React from 'react';
 import SortableTree from 'react-sortable-tree';
 import FileExplorerTheme from 'react-sortable-tree-theme-file-explorer';
 import AceEditor from 'react-ace';
+import isEmpty from 'lodash/isEmpty';
 import 'brace/mode/jsx';
 import 'brace/theme/github';
+import {
+  webpackconfigjs,
+  packagejson,
+} from '../../../services/appSettingsService/code';
 
 const AppStructureView = props => {
 
   const onChange = tree => props.setAppTree(tree);
+  const onClickFile = rowInfo => {
+    console.log('console: rowInfo', rowInfo);
+    if (isEmpty(rowInfo.node.children)) {
+      props.setAppFile(rowInfo.node.title);
+    }
+  };
+
+  const getAceContent = () => {
+    switch (props.file) {
+      case 'webpack.config.js':
+        return webpackconfigjs;
+      case 'package.json':
+        return packagejson;
+      default:
+        return '';
+    }
+  };
 
   return (
     <div>
@@ -22,6 +44,10 @@ const AppStructureView = props => {
           treeData={props.tree}
           onChange={onChange}
           theme={FileExplorerTheme}
+          generateNodeProps={rowInfo => ({
+            onClick: () => onClickFile(rowInfo),
+          })}
+        />
         />
       </div>
       <div
@@ -51,6 +77,7 @@ const AppStructureView = props => {
           value=''
           width='100%'
           height='100%'
+          value={getAceContent()}
         />
       </div>
     </div>

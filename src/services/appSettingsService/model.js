@@ -5,11 +5,11 @@ export const model = [
     children: [
       {
         title: 'redux',
-        expanded: true,
+        expanded: false,
         children: [
           {
             title: 'reducers',
-            expanded: true,
+            expanded: false,
             children: [
               {
                 title: 'index.js',
@@ -19,7 +19,7 @@ export const model = [
           },
           {
             title: 'sagas',
-            expanded: true,
+            expanded: false,
             children: [
               {
                 title: 'index.js',
@@ -35,11 +35,11 @@ export const model = [
       },
       {
         title: 'services',
-        expanded: true,
+        expanded: false,
         children: [
           {
             title: 'testService',
-            expanded: true,
+            expanded: false,
             children: [
               {
                 title: 'actions.js',
@@ -63,15 +63,15 @@ export const model = [
       },
       {
         title: 'components',
-        expanded: true,
+        expanded: false,
         children: [
           {
             title: 'forms',
-            expanded: true,
+            expanded: false,
             children: [
               {
                 title: 'testForm',
-                expanded: true,
+                expanded: false,
                 children: [
                   {
                     title: 'index.js',
@@ -87,11 +87,11 @@ export const model = [
           },
           {
             title: 'layouts',
-            expanded: true,
+            expanded: false,
             children: [
               {
                 title: 'testComponent',
-                expanded: true,
+                expanded: false,
                 children: [
                   {
                     title: 'index.js',
@@ -107,11 +107,11 @@ export const model = [
           },
           {
             title: 'modals',
-            expanded: true,
+            expanded: false,
             children: [
               {
                 title: 'testModal',
-                expanded: true,
+                expanded: false,
                 children: [
                   {
                     title: 'index.js',
