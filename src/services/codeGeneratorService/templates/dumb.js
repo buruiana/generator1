@@ -3,11 +3,15 @@ export const dumbTemplate = `
 import React from 'react';
 
 const {{projectName}} = props => {
+  {{#constList}}
+  const {{.}} = () => {
+    return null;
+  };
 
+  {{/constList}}
   return (
     {{#tree}}
-    {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-    {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+    {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
     {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
     {{#componentProps}}{{#val}}
       {{name}}={ {{val}} }{{/val}}

@@ -1,5 +1,5 @@
 import React from 'react';
-import SortableTree, { removeNodeAtPath, walk, changeNodeAtPath  } from 'react-sortable-tree';
+import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';

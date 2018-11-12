@@ -59,7 +59,7 @@ export function* watchTreeSet() {
       yield put(setSmartCode(smartCode));
       return;
     case DUMB:
-      const dumbCode = generateDumbCode({ dumb, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
+      const dumbCode = generateDumbCode({ dumb, projectName, tree }); //.replace(/(^[ \t]*\n)/gm, "");
       yield put(setDumbCode(dumbCode));
       return;
 
