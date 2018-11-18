@@ -55,11 +55,11 @@ export function* watchTreeSet() {
 
   switch (componentType) {
     case SMART:
-      const smartCode = generateSmartCode({ smart, projectName, tree });
+      const smartCode = generateSmartCode({ smart, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
       yield put(setSmartCode(smartCode));
       return;
     case DUMB:
-      const dumbCode = generateDumbCode({ dumb, projectName, tree }); //.replace(/(^[ \t]*\n)/gm, "");
+      const dumbCode = generateDumbCode({ dumb, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
       yield put(setDumbCode(dumbCode));
       return;
 

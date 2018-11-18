@@ -62,9 +62,29 @@ class {{projectName}} extends Component {
 {{/lifeCycleMethods}}
 
   render() {
+    {{#constList}}
+    const {{.}} = () => {
+      return null;
+    };
 
+    {{/constList}}
     return (
-
+      {{#tree}}
+      {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+      {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
+      {{#componentProps}}{{#val}}
+        {{name}}={ {{val}} }{{/val}}
+      {{/componentProps}}
+      {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
+      {{#children}}
+        {{^hasComponentPropsVals}}<{{title}} />{{/hasComponentPropsVals}}{{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
+        {{>propsPartial}}
+        {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
+          {{>childrenPartial}}
+        {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+      {{/children}}
+      {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+      {{/tree}}
     );
   }
 };
