@@ -4,7 +4,7 @@ import * as actionTypes from './actionTypes';
 
 {{#actions}}
 {{#isActive}}
-export const set{{name}} = (
+export const {{name}} = (
   {{#payload}}{{#.}}
   {{payload}},
   {{/.}}{{/payload}}
@@ -17,5 +17,6 @@ export const set{{name}} = (
   {{/payload}}
 });
 {{/isActive}}
+
 {{/actions}}
 `;

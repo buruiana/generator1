@@ -35,6 +35,13 @@ import {
 import {
   generateSmartCode,
 } from '../codeGeneratorService/helpers/smart';
+import {
+  setAceTab,
+} from '../aceTabsService/actions';
+
+import {
+  ACE_TABS,
+} from '../../utils/constants';
 import { boxArray } from '../../utils';
 
 export function* watchSetActionTypes() {
@@ -49,6 +56,7 @@ export function* watchSetActions() {
   const actionsCode = generateActionsCode(boxArray(actions));
 
   yield put(setActionsCode(actionsCode));
+  yield put(setAceTab(ACE_TABS.ACTIONS));
 }
 
 export function* watchSetSaga() {
@@ -56,6 +64,7 @@ export function* watchSetSaga() {
   const sagaCode = generateSagaCode(boxArray(saga));
 
   yield put(setSagaCode(sagaCode));
+  yield put(setAceTab(ACE_TABS.INDEX));
 }
 
 export function* watchSetReducer() {
@@ -63,6 +72,7 @@ export function* watchSetReducer() {
   const reducerCode = generateReducerCode(boxArray(reducer));
 
   yield put(setReducerCode(reducerCode));
+  yield put(setAceTab(ACE_TABS.REDUCER));
 }
 
 export function* watchSetHoc() {
