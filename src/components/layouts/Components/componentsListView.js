@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/lib/Table';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
 import ComponentSearchForm from '../../forms/ComponentSearch';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
 
 const ComponentsListView = props => {
   const components = props.components;
@@ -42,8 +43,9 @@ const ComponentsListView = props => {
 
   return (
     <div className="middle10">
+      <PageHeader>Components</PageHeader>
       <ComponentSearchForm />
-      <Link to={`/components/new`}>Add New</Link>
+      <Link to={`/components/new`} className='linkStyle'>Add New</Link>
       <Table striped bordered condensed hover responsive>
         <tbody>
           {componentsList()}

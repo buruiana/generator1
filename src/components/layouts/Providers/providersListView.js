@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router";
 import Table from 'react-bootstrap/lib/Table';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
 
 const ProvidersListView = props => {
   const providers = props.providers;
@@ -29,7 +30,8 @@ const ProvidersListView = props => {
 
   return (
     <div className="middle20">
-      <Link to={`/providers/new`}>Add New</Link>
+      <Link to={`/providers/new`} className='linkStyle'>Add New</Link>
+      <PageHeader>Providers</PageHeader>
       <Table striped bordered condensed hover responsive>
         <tbody>
           {providersList()}

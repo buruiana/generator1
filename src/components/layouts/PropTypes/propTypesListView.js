@@ -2,6 +2,7 @@ import React from 'react';
 import { boxArray } from '../../../utils';
 import { Link } from "react-router";
 import Table from 'react-bootstrap/lib/Table';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
 
 const PropTypesListView = props => {
   const propTypes = props.propTypes;
@@ -30,7 +31,8 @@ const PropTypesListView = props => {
 
   return (
     <div className="middle20">
-      <Link to={`/propTypes/new`}>Add New</Link>
+      <Link to={`/propTypes/new`} className='linkStyle'>Add New</Link>
+      <PageHeader>propTypes</PageHeader>
       <Table striped bordered condensed hover responsive>
         <tbody>
           {propTypesList()}
