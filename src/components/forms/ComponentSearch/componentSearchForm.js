@@ -29,7 +29,7 @@ const ComponentsSearchForm = props => {
       "ui:options": {
         "label": false,
       },
-      "ui:placeholder": "Component",
+      "ui:placeholder": "Name",
     },
     provider: {
       "ui:placeholder": "All providers",

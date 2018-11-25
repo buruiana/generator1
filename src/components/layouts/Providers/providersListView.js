@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from "react-router";
 import Table from 'react-bootstrap/lib/Table';
 import PageHeader from 'react-bootstrap/lib/PageHeader';
+import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
+import ComponentSearchForm from '../../forms/ComponentSearch';
 
 const ProvidersListView = props => {
   const providers = props.providers;
@@ -10,8 +13,18 @@ const ProvidersListView = props => {
     props.deleteProvider({ id: event.target.id });
   };
 
+  const filteredItems = () => {
+    return providers.filter(el => {
+      if (!isEmpty(props.searchData) && props.searchData.name) {
+        return (el.name.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
+          && get(props.searchData, 'provider', el.name) === el.name)
+      }
+      return (get(props.searchData, 'provider', el.name) === el.name);
+    });
+  };
+
   const providersList = () => {
-    return providers.map(provider => {
+    return filteredItems().map(provider => {
       const { name, id } = provider;
 
       return (
@@ -31,6 +44,7 @@ const ProvidersListView = props => {
   return (
     <div className="middle20">
       <PageHeader>Providers</PageHeader>
+      <ComponentSearchForm />
       <Link to={`/providers/new`} className='linkStyle'>Add New</Link>
       <Table striped bordered condensed hover responsive>
         <tbody>

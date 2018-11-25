@@ -8,6 +8,7 @@ import {
 const mapStateToProps = state => {
   return {
     providers: state.providersServiceReducer.providers,
+    searchData: state.componentsServiceReducer.searchData,
   }
 }
 
