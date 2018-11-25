@@ -111,7 +111,7 @@ const ComponentsForm = props => {
   return (
     <div className="middle20">
       <PageHeader>
-        {component.title}
+        {component.title || 'New Component'}
       </PageHeader>
       <Link to={`/components`} className="linkStyle">Back</Link>
       <Form schema={schema}

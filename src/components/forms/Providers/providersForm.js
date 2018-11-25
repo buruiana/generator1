@@ -42,7 +42,7 @@ const ProvidersForm = props => {
   return (
     <div className="middle20">
       <PageHeader>
-        {provider.name}
+        {provider.name || 'New Provider'}
       </PageHeader>
       <Link to={`/providers`} className="linkStyle">Back</Link>
       <Form schema={schema}

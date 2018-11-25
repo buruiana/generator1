@@ -137,6 +137,12 @@ const EditorView = props => {
         : null;
   };
 
+  const renderExportFiles = () => {
+    return props.projectName
+      ? <button className='linkStyle'>Export</button>
+      : null;
+  };
+
   return (
     <div>
       <NavBarSettings />
@@ -149,6 +155,7 @@ const EditorView = props => {
           float: 'left'
         }}
       >
+        {renderExportFiles()}
         {renderAce()}
       </div>
       <div>{renderModal(props)}</div>

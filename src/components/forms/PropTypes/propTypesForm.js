@@ -42,7 +42,7 @@ const PropTypesForm = props => {
   return (
     <div className="middle20">
       <PageHeader>
-        {propType.name}
+        {propType.name || 'New PropType'}
       </PageHeader>
       <Link to={`/propTypes`} className="linkStyle">Back</Link>
       <Form schema={schema}
