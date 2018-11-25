@@ -19,6 +19,9 @@ import {
 import {
   generateHocCode,
 } from '../codeGeneratorService/helpers/hoc';
+import {
+  setAceTab,
+} from '../aceTabsService/actions';
 
 export function* watchSetComponentType(action) {
   const { projectName, componentType } = (yield select()).projectSettingsServiceReducer;
@@ -57,10 +60,12 @@ export function* watchTreeSet() {
     case SMART:
       const smartCode = generateSmartCode({ smart, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
       yield put(setSmartCode(smartCode));
+      yield put(setAceTab(projectName));
       return;
     case DUMB:
       const dumbCode = generateDumbCode({ dumb, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
       yield put(setDumbCode(dumbCode));
+      yield put(setAceTab(projectName));
       return;
 
     default:

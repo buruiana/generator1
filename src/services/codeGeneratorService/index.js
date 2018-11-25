@@ -49,6 +49,7 @@ export function* watchSetActionTypes() {
   const actionTypesCode = generateActionTypesCode(boxArray(actionTypes));
 
   yield put(setActionTypesCode(actionTypesCode));
+  yield put(setAceTab(ACE_TABS.ACTION_TYPES));
 }
 
 export function* watchSetActions() {
@@ -81,6 +82,7 @@ export function* watchSetHoc() {
   const hocCode = generateHocCode({ hoc, projectName });
 
   yield put(setHocCode(hocCode));
+  yield put(setAceTab(ACE_TABS.INDEX));
 }
 
 export function* watchSetSmartSettings() {
