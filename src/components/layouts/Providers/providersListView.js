@@ -21,7 +21,7 @@ const ProvidersListView = props => {
           </td>
           <td><h5>{name}</h5></td>
           <td>
-            <h5><a className="linkStyle" id={id} onClick={deleteProvider}>Delete</a></h5>
+            <h5><a className="deleteStyle" id={id} onClick={deleteProvider}>Delete</a></h5>
           </td>
         </tr>
       );
@@ -30,8 +30,8 @@ const ProvidersListView = props => {
 
   return (
     <div className="middle20">
-      <Link to={`/providers/new`} className='linkStyle'>Add New</Link>
       <PageHeader>Providers</PageHeader>
+      <Link to={`/providers/new`} className='linkStyle'>Add New</Link>
       <Table striped bordered condensed hover responsive>
         <tbody>
           {providersList()}

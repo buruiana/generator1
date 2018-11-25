@@ -22,7 +22,7 @@ const PropTypesListView = props => {
           </td>
           <td><h5>{name}</h5></td>
           <td>
-            <h5><a className="linkStyle" id={id} onClick={deletePropType}>Delete</a></h5>
+            <h5><a className="deleteStyle" id={id} onClick={deletePropType}>Delete</a></h5>
           </td>
         </tr>
       );
@@ -31,8 +31,8 @@ const PropTypesListView = props => {
 
   return (
     <div className="middle20">
-      <Link to={`/propTypes/new`} className='linkStyle'>Add New</Link>
       <PageHeader>propTypes</PageHeader>
+      <Link to={`/propTypes/new`} className='linkStyle'>Add New</Link>
       <Table striped bordered condensed hover responsive>
         <tbody>
           {propTypesList()}
