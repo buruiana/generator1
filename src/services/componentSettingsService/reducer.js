@@ -9,7 +9,7 @@ export const initialState = () => ({
   smart: {
     hasConstructor: false,
     hasState: false,
-    lifeCycleMethods: [],
+    lifeCycleMethods: {},
   },
   dumb: {},
 });

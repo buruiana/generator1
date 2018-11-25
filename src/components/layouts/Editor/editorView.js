@@ -68,7 +68,7 @@ const EditorView = props => {
   const filteredDefaultTree = () => {
     return props.defaultTree.filter(el => {
       if (!isEmpty(props.searchData) && props.searchData.name) {
-        return (el.title.indexOf(props.searchData.name) !== -1
+        return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
           && el.techno === props.projectTechno
           && get(props.searchData, 'provider', el.provider) === el.provider)
       }

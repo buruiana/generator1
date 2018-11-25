@@ -38,19 +38,21 @@ export function* watchGetAllComponents() {
 export function* watchSetComponent(action) {
   const { component } = action;
   const { isOffline } = (yield select()).configsServiceReducer;
+  let newComponent = { ...component };
+  newComponent.children = [];
 
   if (!isOffline) {
     if (component.id) {
       yield call(
         reduxSagaFirebase.firestore.setDocument,
         `components/${component.id}`,
-        component
+        newComponent
       );
     } else {
       yield call(
         reduxSagaFirebase.firestore.addDocument,
         `components`,
-        component
+        newComponent
       );
     }
     yield put(getAllComponents());

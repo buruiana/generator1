@@ -2,8 +2,11 @@ import React from 'react';
 import PageHeader from 'react-bootstrap/lib/PageHeader';
 import PanelGroup from 'react-bootstrap/lib/PanelGroup';
 import Panel from 'react-bootstrap/lib/Panel';
+import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
 import ComponentsForm from '../../forms/Components';
 import ComponentPropsForm from '../../forms/ComponentProps';
+import ComponentSearchForm from '../../forms/ComponentSearch';
 
 const ComponentsListView = props => {
   const components = props.components;
@@ -12,8 +15,18 @@ const ComponentsListView = props => {
     props.deleteComponent({ id: event.target.id });
   };
 
+  const filteredComponents = () => {
+    return components.filter(el => {
+      if (!isEmpty(props.searchData) && props.searchData.name) {
+        return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
+          && get(props.searchData, 'provider', el.provider) === el.provider)
+      }
+      return (get(props.searchData, 'provider', el.provider) === el.provider);
+    });
+  };
+
   const componentsList = () => {
-    return components.map(component => {
+    return filteredComponents().map(component => {
       const { title, id } = component;
 
       return (
@@ -42,6 +55,7 @@ const ComponentsListView = props => {
 
   return (
     <div className="middle10">
+      <ComponentSearchForm />
       <PanelGroup
         accordion
         id="components"

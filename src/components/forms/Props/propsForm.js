@@ -32,13 +32,15 @@ const PropsForm = props => {
       let newProp = {};
       if (prop) {
         newProp = {
-          type: prop[0].type,
+          propType: prop[0].propType,
+          propTypeIsrequired: prop[0].propTypeIsrequired,
           name: prop[0].name,
           description: prop[0].description,
-          val: formData[key]
+          val: formData[key],
         };
       } else {
         newProp = prop[0];
+        newProp.val = null;
       }
       newProps.push(newProp);
     });

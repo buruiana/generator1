@@ -12,7 +12,7 @@ export const getConstList = tree => {
 
   flatData.map(el => {
     return el.node.componentProps.filter(prop => {
-      if (!isEmpty(prop.val)) {
+      if (!isEmpty(prop.val) && prop.propType === 'PropTypes.func') {
         constList.push(prop.val);
       }
     });
