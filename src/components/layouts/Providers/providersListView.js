@@ -1,7 +1,6 @@
 import React from 'react';
-import PanelGroup from 'react-bootstrap/lib/PanelGroup';
-import Panel from 'react-bootstrap/lib/Panel'
-import ProvidersForm from '../../forms/Providers';
+import { Link } from "react-router";
+import Table from 'react-bootstrap/lib/Table';
 
 const ProvidersListView = props => {
   const providers = props.providers;
@@ -15,40 +14,27 @@ const ProvidersListView = props => {
       const { name, id } = provider;
 
       return (
-        <Panel key={id} eventKey={name} >
-          <Panel.Heading>
-            <Panel.Title toggle>{name}</Panel.Title>
-            <div className='deleteButton' id={id} onClick={deleteProvider}>Delete</div>
-          </Panel.Heading>
-          <Panel.Body collapsible>
-            <ProvidersForm provider={provider}/>
-          </Panel.Body>
-        </Panel>
+        <tr key={id}>
+          <td>
+            <h4><Link to={`/providers/${id}`}>{name}</Link></h4>
+          </td>
+          <td><h5>{name}</h5></td>
+          <td>
+            <h5><a className="linkStyle" id={id} onClick={deleteProvider}>Delete</a></h5>
+          </td>
+        </tr>
       );
     })
-  };
-  const newProvider = {
-    name: '',
-    path: '',
-    id: ''
   };
 
   return (
     <div className="middle20">
-      <PanelGroup
-        accordion
-        id="accordion-controlled-example"
-      >
-        <Panel key="new" eventKey="new" >
-          <Panel.Heading>
-            <Panel.Title toggle>New Provider</Panel.Title>
-          </Panel.Heading>
-          <Panel.Body collapsible>
-            <ProvidersForm provider={newProvider} />
-          </Panel.Body>
-        </Panel>
-        {providersList()}
-      </PanelGroup>
+      <Link to={`/providers/new`}>Add New</Link>
+      <Table striped bordered condensed hover responsive>
+        <tbody>
+          {providersList()}
+        </tbody>
+      </Table>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import {
 const mapStateToProps = state => {
   return {
     providers: state.providersServiceReducer.providers,
+    propTypes: state.propTypesServiceReducer.propTypes,
     components: state.componentsServiceReducer.components,
   }
 }

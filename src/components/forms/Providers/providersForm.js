@@ -1,9 +1,24 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
+import isEmpty from 'lodash/isEmpty';
+import { Link } from "react-router";
+import PageHeader from 'react-bootstrap/lib/PageHeader';
+import { history } from "../../../redux/store.js";
 
 const ProvidersForm = props => {
-  const { name, path, id } = props.provider;
+  const providersArray = props.providers.filter(provider => provider.id === props.params.id);
 
+  let provider = {};
+  if (!isEmpty(providersArray)) {
+    provider = providersArray[0]
+  } else {
+    provider = {
+      name: '',
+      path: '',
+      id: ''
+    };
+  }
+  const { name, path, id } = provider;
   const schema = {
     type: "object",
     required: ["name"],
@@ -20,16 +35,23 @@ const ProvidersForm = props => {
   const onSubmit = data => {
     const { formData } = data;
     props.setProvider(formData);
+    history.push('/providers');
   };
 
   const log = (type) => console.log.bind(console, type);
   return (
-    <Form schema={schema}
-      uiSchema={uiSchema}
-      onChange={log("changed")}
-      onSubmit={onSubmit}
-      onError={log("errors")}
-    />
+    <div className="middle20">
+      <PageHeader>
+        {provider.name}
+      </PageHeader>
+      <Link to={`/providers`} className="linkStyle">Back</Link>
+      <Form schema={schema}
+        uiSchema={uiSchema}
+        onChange={log("changed")}
+        onSubmit={onSubmit}
+        onError={log("errors")}
+        />
+    </div>
   );
 }
 

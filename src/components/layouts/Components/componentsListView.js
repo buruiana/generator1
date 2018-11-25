@@ -33,7 +33,7 @@ const ComponentsListView = props => {
           </td>
           <td><h5>{provider}</h5></td>
           <td>
-            <h5><a className="deleteButton" id={id} onClick={deleteComponent}>Delete</a></h5>
+            <h5><a className="linkStyle" id={id} onClick={deleteComponent}>Delete</a></h5>
           </td>
         </tr>
       );

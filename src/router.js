@@ -9,6 +9,7 @@ import Components from "../src/components/layouts/Components";
 import PropTypes from "../src/components/layouts/PropTypes";
 import NotFound from "./components/layouts/NotFound";
 import ComponentsForm from '../src/components/forms/Components/';
+import ProvidersForm from '../src/components/forms/Providers/';
 
 const router = (
   <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
@@ -17,6 +18,7 @@ const router = (
       <Route path="/home" component={Home} />
       <Route path="/editor" component={Editor} />
       <Route path="/providers" component={Providers} />
+      <Route path="/providers/:id" component={ProvidersForm} />
       <Route path="/components" component={Components} />
       <Route path="/components/:id" component={ComponentsForm} />
       <Route path="/propTypes" component={PropTypes} />
