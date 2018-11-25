@@ -103,7 +103,6 @@ const ComponentsForm = props => {
   const onSubmit = data => {
     const { formData } = data;
     props.setComponent(formData);
-    console.log('console: props', props);
     history.push('/components');
   };
 

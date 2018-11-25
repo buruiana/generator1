@@ -48,7 +48,7 @@ export function* watchSetPropType(action) {
         propType
       );
     }
-    yield put(InitApp());
+    yield put(initApp());
   }
 }
 

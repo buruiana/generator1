@@ -10,6 +10,7 @@ import PropTypes from "../src/components/layouts/PropTypes";
 import NotFound from "./components/layouts/NotFound";
 import ComponentsForm from '../src/components/forms/Components/';
 import ProvidersForm from '../src/components/forms/Providers/';
+import PropTypesForm from '../src/components/forms/PropTypes/';
 
 const router = (
   <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
@@ -22,6 +23,7 @@ const router = (
       <Route path="/components" component={Components} />
       <Route path="/components/:id" component={ComponentsForm} />
       <Route path="/propTypes" component={PropTypes} />
+      <Route path="/propTypes/:id" component={PropTypesForm} />
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

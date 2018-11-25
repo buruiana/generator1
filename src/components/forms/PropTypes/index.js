@@ -4,10 +4,16 @@ import {
   setPropType,
 } from '../../../services/propTypesService/actions';
 
+const mapStateToProps = state => {
+  return {
+    propTypes: state.propTypesServiceReducer.propTypes,
+  }
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     setPropType: propType => dispatch(setPropType(propType)),
   };
 }
 
-export default connect(null, mapDispatchToProps)(PropTypesForm);
+export default connect(mapStateToProps, mapDispatchToProps)(PropTypesForm);
