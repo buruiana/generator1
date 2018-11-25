@@ -60,7 +60,7 @@ export function* watchSetComponent(action) {
 }
 
 export function* watchDeleteComponent(action) {
-  const { id } = action.component.id;
+  const { id } = action.component;
   const { isOffline } = (yield select()).configsServiceReducer;
 
   if (!isOffline) {

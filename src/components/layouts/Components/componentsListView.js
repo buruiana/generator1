@@ -1,11 +1,8 @@
 import React from 'react';
-import PageHeader from 'react-bootstrap/lib/PageHeader';
-import PanelGroup from 'react-bootstrap/lib/PanelGroup';
-import Panel from 'react-bootstrap/lib/Panel';
+import { Link } from "react-router";
+import Table from 'react-bootstrap/lib/Table';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
-import ComponentsForm from '../../forms/Components';
-import ComponentPropsForm from '../../forms/ComponentProps';
 import ComponentSearchForm from '../../forms/ComponentSearch';
 
 const ComponentsListView = props => {
@@ -27,50 +24,31 @@ const ComponentsListView = props => {
 
   const componentsList = () => {
     return filteredComponents().map(component => {
-      const { title, id } = component;
+      const { title, id, provider } = component;
 
       return (
-        <Panel key={id} eventKey={title}>
-          <Panel.Heading>
-            <Panel.Title toggle componentClass="h1">{title}</Panel.Title>
-            <div className='deleteButton' id={id} onClick={deleteComponent}>Delete</div>
-          </Panel.Heading>
-          <Panel.Body collapsible>
-            <ComponentsForm component={component} />
-            <PageHeader>Props</PageHeader>
-            <ComponentPropsForm component={component} />
-          </Panel.Body>
-        </Panel>
+        <tr key={id}>
+          <td>
+            <h4><Link to={`/components/${id}`}>{title}</Link></h4>
+          </td>
+          <td><h5>{provider}</h5></td>
+          <td>
+            <h5><a className="deleteButton" id={id} onClick={deleteComponent}>Delete</a></h5>
+          </td>
+        </tr>
       );
     })
-  };
-  const newComponent = {
-    title: '',
-    id: '',
-    description: '',
-    provider: '',
-    techno: '',
-    componentProps: [],
   };
 
   return (
     <div className="middle10">
       <ComponentSearchForm />
-      <PanelGroup
-        accordion
-        id="components"
-        defaultActiveKey='0'
-      >
-        <Panel key="new" eventKey="new">
-          <Panel.Heading>
-            <Panel.Title toggle>New Component</Panel.Title>
-          </Panel.Heading>
-          <Panel.Body collapsible>
-            <ComponentsForm component={newComponent} />
-          </Panel.Body>
-        </Panel>
-        {componentsList()}
-      </PanelGroup>
+      <Link to={`/components/new`}>Add New</Link>
+      <Table striped bordered condensed hover responsive>
+        <tbody>
+          {componentsList()}
+        </tbody>
+      </Table>
     </div>
   );
 }

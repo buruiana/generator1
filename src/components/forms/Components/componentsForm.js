@@ -6,9 +6,26 @@ import {
   REACT,
   PROJECT_TECHNO,
 } from '../../../utils/constants';
+import ComponentPropsForm from '../ComponentProps';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
 
 const ComponentsForm = props => {
-  const { title, id, description, techno, provider, componentProps } = props.component;
+  const componenArray = props.components.filter(component => component.id === props.params.id);
+  let component = {};
+  if (!isEmpty(componenArray)) {
+    component = componenArray[0]
+  } else {
+    component = {
+      title: '',
+      id: '',
+      description: '',
+      provider: '',
+      techno: '',
+      componentProps: [],
+    };
+  }
+
+  const { title, id, description, techno, provider, componentProps } = component;
   const { providers } = props;
   const technosEnums = [REACT, REACT_NATIVE];
   const providersEnums = !isEmpty(providers)
@@ -59,13 +76,15 @@ const ComponentsForm = props => {
   const log = (type) => console.log.bind(console, type);
 
   return (
-    <div>
+    <div className="middle20">
       <Form schema={schema}
         uiSchema={uiSchema}
         onChange={log("changed")}
         onSubmit={onSubmit}
         onError={log("errors")}
       />
+      <PageHeader>Props</PageHeader>
+      <ComponentPropsForm component={component} />
     </div>
   );
 }
