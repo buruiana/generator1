@@ -4,9 +4,15 @@ import isEmpty from 'lodash/isEmpty';
 import { Link } from "react-router";
 import PageHeader from 'react-bootstrap/lib/PageHeader';
 import { history } from "../../../redux/store.js";
+import {
+  REACT_NATIVE,
+  REACT,
+  PROJECT_TECHNO,
+} from '../../../utils/constants';
 
 const ProvidersForm = props => {
   const providersArray = props.providers.filter(provider => provider.id === props.params.id);
+  const technoTypeEnums = [REACT, REACT_NATIVE];
 
   let provider = {};
   if (!isEmpty(providersArray)) {
@@ -15,21 +21,33 @@ const ProvidersForm = props => {
     provider = {
       name: '',
       path: '',
-      id: ''
+      id: '',
+      projectTechno: '',
     };
   }
-  const { name, path, id } = provider;
+  const { name, path, id, projectTechno } = provider;
   const schema = {
     type: "object",
     required: ["name"],
     properties: {
       id: { type: "string", title: "Id", default: id },
       name: { type: "string", title: "Name", default: name },
-      path: { type: "string", title: "Path", default: path }
+      path: { type: "string", title: "Path", default: path },
+      projectTechno: {
+        type: 'string',
+        enum: technoTypeEnums,
+        default: projectTechno,
+      },
     }
   };
   const uiSchema = {
-    id: { "ui:widget": "hidden" }
+    id: { "ui:widget": "hidden" },
+    projectTechno: {
+      "ui:placeholder": "Select techno",
+      "ui:options": {
+        "label": false,
+      },
+    },
   };
 
   const onSubmit = data => {

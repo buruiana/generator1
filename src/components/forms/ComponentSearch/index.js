@@ -8,6 +8,7 @@ import { setFilterData } from '../../../services/componentsService/actions';
 const mapStateToProps = state => {
   return {
     providers: state.providersServiceReducer.providers,
+    projectTechno: state.projectSettingsServiceReducer.projectTechno,
   }
 }
 

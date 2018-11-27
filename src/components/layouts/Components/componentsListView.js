@@ -17,9 +17,10 @@ const ComponentsListView = props => {
     return components.filter(el => {
       if (!isEmpty(props.searchData) && props.searchData.name) {
         return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
-          && get(props.searchData, 'provider', el.provider) === el.provider)
+          && get(props.searchData, 'provider', el.provider) === el.provider
+          && get(props.searchData, 'projectTechno', el.techno) === el.techno);
       }
-      return (get(props.searchData, 'provider', el.provider) === el.provider);
+      return (get(props.searchData, 'provider', el.provider) === el.provider && get(props.searchData, 'projectTechno', el.techno) === el.techno);
     });
   };
 

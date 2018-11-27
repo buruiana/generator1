@@ -17,9 +17,10 @@ const ProvidersListView = props => {
     return providers.filter(el => {
       if (!isEmpty(props.searchData) && props.searchData.name) {
         return (el.name.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
-          && get(props.searchData, 'provider', el.name) === el.name)
+          && get(props.searchData, 'provider', el.name) === el.name
+          && get(props.searchData, 'projectTechno', el.projectTechno) === el.projectTechno)
       }
-      return (get(props.searchData, 'provider', el.name) === el.name);
+      return (get(props.searchData, 'provider', el.name) === el.name && get(props.searchData, 'projectTechno', el.projectTechno) === el.projectTechno);
     });
   };
 

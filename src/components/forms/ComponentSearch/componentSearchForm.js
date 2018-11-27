@@ -2,17 +2,28 @@ import React from 'react';
 import Form from "react-jsonschema-form";
 import LayoutField from 'react-jsonschema-form-layout';
 import isEmpty from 'lodash/isEmpty';
+import {
+  REACT_NATIVE,
+  REACT,
+  PROJECT_TECHNO,
+} from '../../../utils/constants';
 
 const ComponentsSearchForm = props => {
-  const { providers } = props;
+  const { providers, projectTechno } = props;
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
     : [];
+
+  const technoTypeEnums = [REACT, REACT_NATIVE];
 
   const schema = {
     type: "object",
     properties: {
       name: { type: "string", default: '' },
+      projectTechno: {
+        type: 'string',
+        enum: technoTypeEnums,
+      },
       provider: {
         type: "string",
         enum: providersEnums,
@@ -31,6 +42,12 @@ const ComponentsSearchForm = props => {
       },
       "ui:placeholder": "Name",
     },
+    projectTechno: {
+      "ui:placeholder": "All technos",
+      "ui:options": {
+        "label": false,
+      },
+    },
     provider: {
       "ui:placeholder": "All providers",
       "ui:options": {
@@ -41,6 +58,7 @@ const ComponentsSearchForm = props => {
     'ui:layout': [
       {
         name: { md: 2 },
+        projectTechno: { md: 2 },
         provider: { md: 2 },
       },
     ],
