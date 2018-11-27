@@ -26,13 +26,14 @@ const ProvidersListView = props => {
 
   const providersList = () => {
     return filteredItems().map(provider => {
-      const { name, id } = provider;
+      const { name, id, projectTechno } = provider;
 
       return (
         <tr key={id}>
           <td>
             <h4><Link to={`/providers/${id}`}>{name}</Link></h4>
           </td>
+          <td><h5>{projectTechno}</h5></td>
           <td><h5>{name}</h5></td>
           <td>
             <h5><a className="deleteStyle" id={id} onClick={deleteProvider}>Delete</a></h5>

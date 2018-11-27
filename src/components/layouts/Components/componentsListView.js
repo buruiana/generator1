@@ -26,13 +26,14 @@ const ComponentsListView = props => {
 
   const componentsList = () => {
     return filteredComponents().map(component => {
-      const { title, id, provider } = component;
+      const { title, id, provider, techno } = component;
 
       return (
         <tr key={id}>
           <td>
             <h4><Link to={`/components/${id}`}>{title}</Link></h4>
           </td>
+          <td><h5>{techno}</h5></td>
           <td><h5>{provider}</h5></td>
           <td>
             <h5><a className="deleteStyle" id={id} onClick={deleteComponent}>Delete</a></h5>
