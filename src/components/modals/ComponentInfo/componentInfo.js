@@ -6,7 +6,13 @@ import Panel from 'react-bootstrap/lib/Panel';
 
 const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
   const renderDescription = () => {
-    return <div>{modalContent.node.description}</div>;
+    return modalContent.node.description
+      ? (
+        <textarea rows={Math.round(modalContent.node.description.length / 33)} cols="120" className='textarea-noBorder'>
+          {modalContent.node.description}
+        </textarea>
+      )
+      : null;
   };
 
   const renderProps = () => {
@@ -22,7 +28,7 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
               {prop.propType}
             </div>
             <div>
-              <textarea rows="2" cols="120" className='textarea-noBorder'>
+              <textarea rows={Math.round(prop.description.length / 33)} cols="118" className='textarea-noBorder'>
                 {prop.description}
               </textarea>
             </div>
@@ -44,9 +50,9 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <textarea rows="20" cols="120" className='textarea-noBorder'>
-              {renderDescription().props.children}
-            </textarea>
+            <div>Techno: {modalContent.node.techno}</div>
+            <div> Provider: {modalContent.node.provider}</div>
+            {renderDescription()}
             <PageHeader>Props</PageHeader>
             {renderProps()}
           </div>

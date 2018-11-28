@@ -18,7 +18,8 @@ const {{projectName}} = props => {
     {{/componentProps}}
     {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
     {{#children}}
-      {{^hasComponentPropsVals}}<{{title}} />{{/hasComponentPropsVals}}{{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
+      {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+      {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
       {{>propsPartial}}
       {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
         {{>childrenPartial}}
