@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/lib/Modal'
 import PageHeader from 'react-bootstrap/lib/PageHeader';
 import Panel from 'react-bootstrap/lib/Panel';
+import Well from 'react-bootstrap/lib/Well';
 
 const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
   const renderDescription = () => {
@@ -50,8 +51,10 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <div>Techno: {modalContent.node.techno}</div>
-            <div> Provider: {modalContent.node.provider}</div>
+            <Well>
+              <div className='wellStyle'>Techno: {modalContent.node.techno}</div>
+              <div className='wellStyle'>Provider: {modalContent.node.provider}</div>
+            </Well>
             {renderDescription()}
             <PageHeader>Props</PageHeader>
             {renderProps()}
