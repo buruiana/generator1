@@ -20,7 +20,8 @@ const ComponentsListView = props => {
           && get(props.searchData, 'provider', el.provider) === el.provider
           && get(props.searchData, 'projectTechno', el.techno) === el.techno);
       }
-      return (get(props.searchData, 'provider', el.provider) === el.provider && get(props.searchData, 'projectTechno', el.techno) === el.techno);
+      return (get(props.searchData, 'provider', el.provider) === el.provider
+        && get(props.searchData, 'projectTechno', el.techno) === el.techno);
     });
   };
 

@@ -23,6 +23,7 @@ const ComponentsSearchForm = props => {
       projectTechno: {
         type: 'string',
         enum: technoTypeEnums,
+        default: projectTechno || undefined,
       },
       provider: {
         type: "string",

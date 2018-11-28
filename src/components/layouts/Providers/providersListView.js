@@ -20,7 +20,8 @@ const ProvidersListView = props => {
           && get(props.searchData, 'provider', el.name) === el.name
           && get(props.searchData, 'projectTechno', el.projectTechno) === el.projectTechno)
       }
-      return (get(props.searchData, 'provider', el.name) === el.name && get(props.searchData, 'projectTechno', el.projectTechno) === el.projectTechno);
+      return (get(props.searchData, 'provider', el.name) === el.name
+        && get(props.searchData, 'projectTechno', el.projectTechno) === el.projectTechno);
     });
   };
 

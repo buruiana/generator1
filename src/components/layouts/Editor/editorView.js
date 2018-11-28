@@ -69,10 +69,11 @@ const EditorView = props => {
     return props.defaultTree.filter(el => {
       if (!isEmpty(props.searchData) && props.searchData.name) {
         return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
-          && el.techno === props.projectTechno
+          && el.techno === props.searchData.projectTechno
           && get(props.searchData, 'provider', el.provider) === el.provider)
       }
-      return (el.techno === props.projectTechno && get(props.searchData, 'provider', el.provider) === el.provider);
+      return (get(props.searchData, 'provider', el.provider) === el.provider
+        && get(props.searchData, 'projectTechno', el.techno) === el.techno);
     });
   };
 
