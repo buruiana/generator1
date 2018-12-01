@@ -19,7 +19,7 @@ import {
 import NavBarSettings from '../NavBarSettings';
 import ComponentSearchForm from '../../forms/ComponentSearch';
 import { fillNodeData } from '../../../services/sortableTreeService/helper';
-import SaveFile from '../../../utils/saveFile';
+import ExportFilesView from '../ExportFiles';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
@@ -139,26 +139,6 @@ const EditorView = props => {
         : null;
   };
 
-  const exportFile = () => {
-    console.log('console: ---------------', );
-    return (<SaveFile data='aaaaaaaaaaaa' type='js' fileName='xxx' />);
-  };
-
-  const xxx = () => {
-    return (
-      <div>
-        <a href='data:text/plain;UTF-8,zzzzzzz' download='zzzzzzzzz.js' >ddddddd</a>
-        <a href='data:text/plain;UTF-8,ccccccc' download='ccccccccc.js' >ccccccc</a>
-      </div>
-    );
-  };
-
-  const renderExportFiles = () => {
-    return props.projectName
-      ? xxx()
-      : null;
-  };
-
   return (
     <div>
       <NavBarSettings />
@@ -171,7 +151,7 @@ const EditorView = props => {
           float: 'left'
         }}
       >
-        {renderExportFiles()}
+        {props.projectType === COMPONENT && <ExportFilesView />}
         {renderAce()}
       </div>
       <div>{renderModal(props)}</div>

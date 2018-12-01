@@ -9,6 +9,7 @@ export const PROJECT_NAME = 'Project Name';
 export const PROJECT_TYPE = 'Project Type';
 export const PROJECT_TECHNO = 'Project Techno';
 export const COMPONENT_TYPE = 'Component Type';
+export const STYLES = 'styles';
 
 export const ACE_TABS = {
   INDEX: 'index',

@@ -58,9 +58,9 @@ const ComponentsSearchForm = props => {
     'ui:field': 'layout',
     'ui:layout': [
       {
-        name: { md: 2 },
+        name: { md: 3 },
         projectTechno: { md: 2 },
-        provider: { md: 2 },
+        provider: { md: 3 },
       },
     ],
   };

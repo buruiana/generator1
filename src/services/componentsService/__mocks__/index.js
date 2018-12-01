@@ -32,7 +32,7 @@ export const mock = {
       id: 'CO4WNiFQLUZ7fit7pjxT',
       provider: 'MaterialUI',
       techno: 'React Native',
-      title: 'FlatList'
+      title: 'FlatList-1'
     },
     {
       children: [],
