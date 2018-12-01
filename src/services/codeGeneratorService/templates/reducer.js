@@ -5,7 +5,7 @@ export const initialState = () => ({
 {{#reducer}}
 {{#payloadInfo}}
 {{#initVal}}
-  {{payload}}: {{initVal}},
+  {{payload}}: {{{initVal}}},
 {{/initVal}}
 {{/payloadInfo}}
 {{/reducer}}

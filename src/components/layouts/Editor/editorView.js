@@ -151,7 +151,7 @@ const EditorView = props => {
           float: 'left'
         }}
       >
-        {props.projectType === COMPONENT && <ExportFilesView />}
+        {(props.projectType === COMPONENT || props.projectType === SERVICE) && <ExportFilesView />}
         {renderAce()}
       </div>
       <div>{renderModal(props)}</div>

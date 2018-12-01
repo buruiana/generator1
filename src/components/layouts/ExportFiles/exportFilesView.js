@@ -17,12 +17,16 @@ const ExportFilesView = props => {
       return props.code.smart || '';
     } else if (tab === props.projectSettings.projectName && props.projectSettings.projectType === COMPONENT && props.projectSettings.componentType === DUMB) {
       return props.code.dumb || '';
-    } else if (tab === ACE_TABS.INDEX && props.projectSettings.projectType === COMPONENT) {
+    } else if (tab === ACE_TABS.INDEX) {
       return props.code.hoc || '';
     } else if (tab === STYLES && props.projectSettings.projectType === COMPONENT) {
       return props.code.styles || '';
-    } else {
-      return 'a';
+    } else if (tab === ACE_TABS.ACTIONS) {
+      return props.code.actions;
+    } else if (tab === ACE_TABS.ACTION_TYPES) {
+      return props.code.actionTypes;
+    } else if (tab === ACE_TABS.REDUCER) {
+      return props.code.reducer;
     }
   };
 
