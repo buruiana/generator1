@@ -26,8 +26,8 @@ const ComponentsForm = props => {
     };
   }
 
-  const { title, id, description, techno, provider, componentProps } = component;
-  const { providers, propTypes, providerPath, isDefault } = props;
+  const { title, id, description, techno, provider } = component;
+  const { providers, propTypes, providerPath, isDefault, closeTag } = props;
 
   const technosEnums = [REACT, REACT_NATIVE];
   const providersEnums = !isEmpty(providers)
@@ -63,6 +63,7 @@ const ComponentsForm = props => {
         default: techno,
       },
       isDefault: { type: "boolean", title: "isDefault", default: isDefault || false },
+      closeTag: { type: "boolean", title: "closeTag", default: closeTag || false },
       componentProps: {
         type: "array",
         items: {
