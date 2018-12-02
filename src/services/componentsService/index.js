@@ -1,4 +1,6 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
+import isEmpty from 'lodash/isEmpty';
+import sortBy from 'lodash/sortBy';
 import {
   INIT_APP
 } from '../configsService/actionTypes';
@@ -29,6 +31,10 @@ export function* watchGetAllComponents() {
       return { ...component.data(), id: component.id };
     });
   };
+  console.log('console: allComponents ', allComponents);
+  if (isEmpty(allComponents)) allComponents = [];
+
+  sortBy(allComponents, el => el.title);
 
   yield put(setAllComponents(allComponents));
   yield put(setDefaultTree(allComponents));

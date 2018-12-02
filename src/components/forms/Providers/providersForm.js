@@ -7,7 +7,6 @@ import { history } from "../../../redux/store.js";
 import {
   REACT_NATIVE,
   REACT,
-  PROJECT_TECHNO,
 } from '../../../utils/constants';
 
 const ProvidersForm = props => {
@@ -25,7 +24,7 @@ const ProvidersForm = props => {
       projectTechno: '',
     };
   }
-  const { name, path, id, projectTechno } = provider;
+  const { name, path, id, projectTechno, providerUrl } = provider;
   const schema = {
     type: "object",
     required: ["name"],
@@ -33,8 +32,10 @@ const ProvidersForm = props => {
       id: { type: "string", title: "Id", default: id },
       name: { type: "string", title: "Name", default: name },
       path: { type: "string", title: "Path", default: path },
+      providerUrl: { type: "string", title: "URL", default: providerUrl || '' },
       projectTechno: {
         type: 'string',
+        title: 'Techno',
         enum: technoTypeEnums,
         default: projectTechno,
       },
@@ -45,7 +46,7 @@ const ProvidersForm = props => {
     projectTechno: {
       "ui:placeholder": "Select techno",
       "ui:options": {
-        "label": false,
+        "label": true,
       },
     },
   };

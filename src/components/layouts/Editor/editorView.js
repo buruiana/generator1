@@ -3,6 +3,7 @@ import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
+import sortBy from 'lodash/sortBy';
 import 'react-sortable-tree/style.css';
 import renderModal from '../../modals';
 import Ace from '../AceEditor';
@@ -35,7 +36,7 @@ const EditorView = props => {
         getNodeKey
       })
     };
-    setNewTree(fillNodeData(newTree.treeData2));
+    setNewTree(fillNodeData(newTree.treeData2, props.providers));
   };
 
   const showModal = (type, node, path) => {
@@ -61,13 +62,13 @@ const EditorView = props => {
   };
 
   const onChange = treeData2 => {
-    setNewTree(fillNodeData(treeData2));
+    setNewTree(fillNodeData(treeData2, props.providers));
   };
 
   const setNewTree = treeData2 => props.setTree({ treeData2 });
 
   const filteredDefaultTree = () => {
-    return props.defaultTree.filter(el => {
+    const filteredTree = props.defaultTree.filter(el => {
       if (!isEmpty(props.searchData) && props.searchData.name) {
         return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
           && el.techno === props.searchData.projectTechno
@@ -76,6 +77,7 @@ const EditorView = props => {
       return (get(props.searchData, 'provider', el.provider) === el.provider
         && get(props.searchData, 'projectTechno', el.techno) === el.techno);
     });
+    return sortBy(filteredTree, el => el.title);
   };
 
   const renderAce = () => {

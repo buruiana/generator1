@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router";
 import Table from 'react-bootstrap/lib/Table';
 import isEmpty from 'lodash/isEmpty';
+import sortBy from 'lodash/sortBy';
 import get from 'lodash/get';
 import ComponentSearchForm from '../../forms/ComponentSearch';
 import PageHeader from 'react-bootstrap/lib/PageHeader';
@@ -14,7 +15,7 @@ const ComponentsListView = props => {
   };
 
   const filteredComponents = () => {
-    return components.filter(el => {
+    const filteredComponents = components.filter(el => {
       if (!isEmpty(props.searchData) && props.searchData.name) {
         return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
           && get(props.searchData, 'provider', el.provider) === el.provider
@@ -23,6 +24,8 @@ const ComponentsListView = props => {
       return (get(props.searchData, 'provider', el.provider) === el.provider
         && get(props.searchData, 'projectTechno', el.techno) === el.techno);
     });
+
+    return sortBy(filteredComponents, el => el.title);
   };
 
   const componentsList = () => {

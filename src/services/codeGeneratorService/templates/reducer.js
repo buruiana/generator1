@@ -19,7 +19,7 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         {{#payloadInfo}}
-        {{payload}}: {{payloadVal}},
+        {{payload}}: {{{payloadVal}}},
         {{/payloadInfo}}
       };
   {{/isActive}}

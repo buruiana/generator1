@@ -73,7 +73,7 @@ class {{projectName}} extends Component {
       {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
       {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
       {{#componentProps}}{{#val}}
-        {{name}}={ {{val}} }{{/val}}
+        {{name}}={{{val}}}{{/val}}
       {{/componentProps}}
       {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
       {{#children}}

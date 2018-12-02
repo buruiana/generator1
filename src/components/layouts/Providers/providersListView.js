@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from "react-router";
 import Table from 'react-bootstrap/lib/Table';
-import PageHeader from 'react-bootstrap/lib/PageHeader';
+import PageHeader from 'react-bootstrap/lib/CarouselCaption';
 import isEmpty from 'lodash/isEmpty';
+import sortBy from 'lodash/sortBy';
 import get from 'lodash/get';
 import ComponentSearchForm from '../../forms/ComponentSearch';
 
@@ -14,7 +15,7 @@ const ProvidersListView = props => {
   };
 
   const filteredItems = () => {
-    return providers.filter(el => {
+    const filteredProviders = providers.filter(el => {
       if (!isEmpty(props.searchData) && props.searchData.name) {
         return (el.name.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
           && get(props.searchData, 'provider', el.name) === el.name
@@ -23,11 +24,12 @@ const ProvidersListView = props => {
       return (get(props.searchData, 'provider', el.name) === el.name
         && get(props.searchData, 'projectTechno', el.projectTechno) === el.projectTechno);
     });
+    return sortBy(filteredProviders, el => el.name);
   };
 
   const providersList = () => {
     return filteredItems().map(provider => {
-      const { name, id, projectTechno } = provider;
+      const { name, id, projectTechno, providerUrl } = provider;
 
       return (
         <tr key={id}>
@@ -36,6 +38,7 @@ const ProvidersListView = props => {
           </td>
           <td><h5>{projectTechno}</h5></td>
           <td><h5>{name}</h5></td>
+          <td><h5><a href={providerUrl} target='blank'>url</a></h5></td>
           <td>
             <h5><a className="deleteStyle" id={id} onClick={deleteProvider}>Delete</a></h5>
           </td>

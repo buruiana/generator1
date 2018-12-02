@@ -27,7 +27,7 @@ const ComponentsForm = props => {
   }
 
   const { title, id, description, techno, provider, componentProps } = component;
-  const { providers, propTypes } = props;
+  const { providers, propTypes, providerPath, isDefault } = props;
 
   const technosEnums = [REACT, REACT_NATIVE];
   const providersEnums = !isEmpty(providers)
@@ -51,12 +51,18 @@ const ComponentsForm = props => {
         enum: providersEnums,
         default: provider,
       },
+      componentImport: {
+        type: "string",
+        title: "Import Path",
+        default: providerPath,
+      },
       techno: {
         type: 'string',
         title: PROJECT_TECHNO,
         enum: technosEnums,
         default: techno,
       },
+      isDefault: { type: "boolean", title: "isDefault", default: isDefault || false },
       componentProps: {
         type: "array",
         items: {
@@ -70,7 +76,7 @@ const ComponentsForm = props => {
               title: 'PropType',
               enum: propTypesEnums,
             },
-            propTypeIsrequired: { type: 'boolean', title: 'Prop Type isRequired' },
+            propTypeIsrequired: { type: 'boolean', title: 'Prop Type isRequired', default: false },
           }
         },
       },

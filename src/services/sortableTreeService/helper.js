@@ -2,7 +2,7 @@ import { walk, changeNodeAtPath } from 'react-sortable-tree';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
 
-export const fillNodeData = treeData => {
+export const fillNodeData = (treeData, providers) => {
   walk({
     treeData: treeData,
     getNodeKey: ({ treeIndex: number }) => number,
@@ -13,6 +13,7 @@ export const fillNodeData = treeData => {
       node.hasChildren = !isEmpty(node.children);
       const hasComponentPropsVals = get(node, 'componentProps', []).filter(el => el.val);
       node.hasComponentPropsVals = !isEmpty(hasComponentPropsVals);
+      node.providerPath = providers.filter(provider => provider.name === node.provider)[0].path;
 
       treeData = changeNodeAtPath({
         treeData: treeData,
