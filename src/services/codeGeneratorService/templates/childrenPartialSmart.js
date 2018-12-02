@@ -5,7 +5,7 @@ export const childrenPartial = `
           {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
         {{#componentProps}}{{#val}}
         {{#.}}{{#val}}
-            {{name}}={ {{val}} }
+            {{name}}={{{val}}}
         {{/val}}{{/.}}
         {{/val}}{{/componentProps}}
           {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -15,7 +15,7 @@ export const childrenPartial = `
             {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
           {{#componentProps}}{{#val}}
           {{#.}}{{#val}}
-              {{name}}={ {{val}} }
+              {{name}}={{{val}}}
           {{/val}}{{/.}}
           {{/val}}{{/componentProps}}
             {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -25,7 +25,7 @@ export const childrenPartial = `
               {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
             {{#componentProps}}{{#val}}
             {{#.}}{{#val}}
-                {{name}}={ {{val}} }
+                {{name}}={{{val}}}
             {{/val}}{{/.}}
             {{/val}}{{/componentProps}}
               {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -35,7 +35,7 @@ export const childrenPartial = `
                 {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
               {{#componentProps}}{{#val}}
               {{#.}}{{#val}}
-                  {{name}}={ {{val}} }
+                  {{name}}={{{val}}}
               {{/val}}{{/.}}
               {{/val}}{{/componentProps}}
                 {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -45,7 +45,7 @@ export const childrenPartial = `
                   {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                 {{#componentProps}}{{#val}}
                 {{#.}}{{#val}}
-                    {{name}}={ {{val}} }
+                    {{name}}={{{val}}}
                 {{/val}}{{/.}}
                 {{/val}}{{/componentProps}}
                   {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -55,7 +55,7 @@ export const childrenPartial = `
                     {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                   {{#componentProps}}{{#val}}
                   {{#.}}{{#val}}
-                      {{name}}={ {{val}} }
+                      {{name}}={{{val}}}
                   {{/val}}{{/.}}
                   {{/val}}{{/componentProps}}
                     {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -65,7 +65,7 @@ export const childrenPartial = `
                       {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                     {{#componentProps}}{{#val}}
                     {{#.}}{{#val}}
-                        {{name}}={ {{val}} }
+                        {{name}}={{{val}}}
                     {{/val}}{{/.}}
                     {{/val}}{{/componentProps}}
                       {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -75,7 +75,7 @@ export const childrenPartial = `
                         {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                       {{#componentProps}}{{#val}}
                       {{#.}}{{#val}}
-                          {{name}}={ {{val}} }
+                          {{name}}={{{val}}}
                       {{/val}}{{/.}}
                       {{/val}}{{/componentProps}}
                         {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -85,7 +85,7 @@ export const childrenPartial = `
                           {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                         {{#componentProps}}{{#val}}
                         {{#.}}{{#val}}
-                            {{name}}={ {{val}} }
+                            {{name}}={{{val}}}
                         {{/val}}{{/.}}
                         {{/val}}{{/componentProps}}
                           {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -95,7 +95,7 @@ export const childrenPartial = `
                             {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                           {{#componentProps}}{{#val}}
                           {{#.}}{{#val}}
-                              {{name}}={ {{val}} }
+                              {{name}}={{{val}}}
                           {{/val}}{{/.}}
                           {{/val}}{{/componentProps}}
                             {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -105,7 +105,7 @@ export const childrenPartial = `
                               {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                             {{#componentProps}}{{#val}}
                             {{#.}}{{#val}}
-                                {{name}}={ {{val}} }
+                                {{name}}={{{val}}}
                             {{/val}}{{/.}}
                             {{/val}}{{/componentProps}}
                               {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -115,7 +115,7 @@ export const childrenPartial = `
                                 {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                               {{#componentProps}}{{#val}}
                               {{#.}}{{#val}}
-                                  {{name}}={ {{val}} }
+                                  {{name}}={{{val}}}
                               {{/val}}{{/.}}
                               {{/val}}{{/componentProps}}
                                 {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -125,7 +125,7 @@ export const childrenPartial = `
                                   {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                                 {{#componentProps}}{{#val}}
                                 {{#.}}{{#val}}
-                                    {{name}}={ {{val}} }
+                                    {{name}}={{{val}}}
                                 {{/val}}{{/.}}
                                 {{/val}}{{/componentProps}}
                                   {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
@@ -135,7 +135,7 @@ export const childrenPartial = `
                                     {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                                   {{#componentProps}}{{#val}}
                                   {{#.}}{{#val}}
-                                      {{name}}={ {{val}} }
+                                      {{name}}={{{val}}}
                                   {{/val}}{{/.}}
                                   {{/val}}{{/componentProps}}
                                     {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
