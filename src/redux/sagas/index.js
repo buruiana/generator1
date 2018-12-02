@@ -9,12 +9,12 @@ import componentSettingsSaga from '../../services/componentSettingsService';
 
 export default function* sagas() {
   yield [
-    componentsSaga,
     providersSaga,
     propTypesSaga,
     serviceSettingsSaga,
     codeGeneratorSaga,
     aceTabsSaga,
     componentSettingsSaga,
+    componentsSaga,
   ].map(saga => fork(saga));
 }

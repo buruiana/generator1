@@ -1,6 +1,7 @@
 import React from 'react';
 import Well from 'react-bootstrap/lib/Well';
 import Label from 'react-bootstrap/lib/Label';
+import { Grid, Row, Col } from "react-bootstrap";
 import {
   COMPONENT,
   SMART,
@@ -33,7 +34,7 @@ const ExportFilesView = props => {
   const renderLinks = () => {
 
     return props.aceTabs.map(tab => {
-      return <a href={`data:text/plain;UTF-8,${getCode(tab)}`} download={`${tab}.js`} key={tab}>{`${tab}.js`}      </a>;
+      return <a href={`data:text/plain;UTF-8,${getCode(tab)}`} download={`${tab}.js`} key={tab}>{`${tab}.js`} </a>;
     });
   };
 
@@ -44,9 +45,20 @@ const ExportFilesView = props => {
   };
 
   return (
-    <Well>
-      {renderExportFiles()}
-    </Well>
+    <div className='paddingTop'>
+      <Well>
+        <Grid>
+          <Row className="show-grid">
+            <Col xs={2} md={2}>
+              <Label>Download</Label>
+            </Col>
+            <Col xs={12} md={10}>
+              <div className='exportFilesLinks'>{renderExportFiles()}</div>
+            </Col>
+          </Row>
+        </Grid>
+      </Well>
+    </div>
   );
 }
 
