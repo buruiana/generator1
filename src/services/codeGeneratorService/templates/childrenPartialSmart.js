@@ -1,7 +1,6 @@
 export const childrenPartial = `
         {{#children}}
-          {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-          {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+          {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
           {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
         {{#componentProps}}{{#val}}
         {{#.}}{{#val}}
@@ -10,8 +9,7 @@ export const childrenPartial = `
         {{/val}}{{/componentProps}}
           {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
             {{#children}}
-            {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-            {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+            {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
             {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
           {{#componentProps}}{{#val}}
           {{#.}}{{#val}}
@@ -20,8 +18,7 @@ export const childrenPartial = `
           {{/val}}{{/componentProps}}
             {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
               {{#children}}
-              {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-              {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+              {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
               {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
             {{#componentProps}}{{#val}}
             {{#.}}{{#val}}
@@ -30,8 +27,7 @@ export const childrenPartial = `
             {{/val}}{{/componentProps}}
               {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                 {{#children}}
-                {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                 {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
               {{#componentProps}}{{#val}}
               {{#.}}{{#val}}
@@ -40,8 +36,7 @@ export const childrenPartial = `
               {{/val}}{{/componentProps}}
                 {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                   {{#children}}
-                  {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                  {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                  {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                   {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                 {{#componentProps}}{{#val}}
                 {{#.}}{{#val}}
@@ -50,9 +45,7 @@ export const childrenPartial = `
                 {{/val}}{{/componentProps}}
                   {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                     {{#children}}
-                    {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                    {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
-                    {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
+                    {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                   {{#componentProps}}{{#val}}
                   {{#.}}{{#val}}
                       {{name}}={{{val}}}
@@ -60,8 +53,7 @@ export const childrenPartial = `
                   {{/val}}{{/componentProps}}
                     {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                       {{#children}}
-                      {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                      {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                      {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                       {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                     {{#componentProps}}{{#val}}
                     {{#.}}{{#val}}
@@ -70,8 +62,7 @@ export const childrenPartial = `
                     {{/val}}{{/componentProps}}
                       {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                         {{#children}}
-                        {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                        {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                       {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                         {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                       {{#componentProps}}{{#val}}
                       {{#.}}{{#val}}
@@ -80,8 +71,7 @@ export const childrenPartial = `
                       {{/val}}{{/componentProps}}
                         {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                           {{#children}}
-                          {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                          {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                          {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                           {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                         {{#componentProps}}{{#val}}
                         {{#.}}{{#val}}
@@ -90,8 +80,7 @@ export const childrenPartial = `
                         {{/val}}{{/componentProps}}
                           {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                             {{#children}}
-                            {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                            {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                            {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                             {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                           {{#componentProps}}{{#val}}
                           {{#.}}{{#val}}
@@ -100,8 +89,7 @@ export const childrenPartial = `
                           {{/val}}{{/componentProps}}
                             {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                               {{#children}}
-                              {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                              {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                              {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                               {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                             {{#componentProps}}{{#val}}
                             {{#.}}{{#val}}
@@ -110,8 +98,7 @@ export const childrenPartial = `
                             {{/val}}{{/componentProps}}
                               {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                                 {{#children}}
-                                {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                                {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                                {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                                 {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                               {{#componentProps}}{{#val}}
                               {{#.}}{{#val}}
@@ -120,8 +107,7 @@ export const childrenPartial = `
                               {{/val}}{{/componentProps}}
                                 {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                                   {{#children}}
-                                  {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                                  {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                                  {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                                   {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                                 {{#componentProps}}{{#val}}
                                 {{#.}}{{#val}}
@@ -130,8 +116,7 @@ export const childrenPartial = `
                                 {{/val}}{{/componentProps}}
                                   {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
                                     {{#children}}
-                                    {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}
-                                    {{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+                                    {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
                                     {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
                                   {{#componentProps}}{{#val}}
                                   {{#.}}{{#val}}
@@ -142,30 +127,30 @@ export const childrenPartial = `
                                       {{>childrenPartial}}
                                     {{#hasChildren}}</ {{title}}>{{/hasChildren}}
                                   {{/children}}
-                                  {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                                  {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                                 {{/children}}
-                                {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                                {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                               {{/children}}
-                              {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                              {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                             {{/children}}
-                            {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                            {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                           {{/children}}
-                          {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                          {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                         {{/children}}
-                        {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                        {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                       {{/children}}
-                      {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                      {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                     {{/children}}
-                    {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                    {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                   {{/children}}
-                  {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                  {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
                 {{/children}}
-                {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+                {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
               {{/children}}
-              {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+              {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
             {{/children}}
-            {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+            {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
           {{/children}}
-          {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+          {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
         {{/children}}
 `;

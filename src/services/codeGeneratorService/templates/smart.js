@@ -70,21 +70,21 @@ class {{projectName}} extends Component {
     {{/constList}}
     return (
       {{#tree}}
-      {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+      {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
       {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
       {{#componentProps}}{{#val}}
         {{name}}={{{val}}}{{/val}}
       {{/componentProps}}
       {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
       {{#children}}
-        {{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{#hasChildren}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/hasChildren}}
+        {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
         {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
         {{>propsPartial}}
         {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
           {{>childrenPartial}}
-        {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+        {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
       {{/children}}
-      {{#hasChildren}}</ {{title}}>{{/hasChildren}}
+      {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
       {{/tree}}
     );
   }
