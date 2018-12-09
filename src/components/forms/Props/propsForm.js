@@ -58,7 +58,6 @@ const PropsForm = props => {
         newNode
       })
     };
-
     props.setTree(newTree);
     props.setModalVisibility(false);
   };

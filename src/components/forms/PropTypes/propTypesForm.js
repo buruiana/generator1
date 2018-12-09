@@ -18,7 +18,6 @@ const PropTypesForm = props => {
       path: '',
     };
   }
-  console.log('console: propTypepropType', propType);
   const { name, id } = propType;
   const schema = {
     type: "object",

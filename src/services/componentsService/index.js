@@ -31,7 +31,7 @@ export function* watchGetAllComponents() {
       return { ...component.data(), id: component.id };
     });
   };
-  console.log('console: allComponents ', allComponents);
+
   if (isEmpty(allComponents)) allComponents = [];
 
   sortBy(allComponents, el => el.title);

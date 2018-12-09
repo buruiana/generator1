@@ -42,7 +42,6 @@ export function* watchSetComponentType(action) {
       const myRe = /^[ \r\n]+$/gi;
       const dumbCode1 = dumbCode.replace(myRe, '');
 
-
       yield put(setDumbCode(dumbCode1));
       return;
 

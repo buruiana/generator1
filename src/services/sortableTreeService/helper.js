@@ -13,7 +13,7 @@ export const fillNodeData = (treeData, providers) => {
       node.hasChildren = !isEmpty(node.children);
       const hasComponentPropsVals = get(node, 'componentProps', []).filter(el => el.val);
       node.hasComponentPropsVals = !isEmpty(hasComponentPropsVals);
-      node.providerPath = providers.filter(provider => provider.name === node.provider)[0].path;
+      node.providerPath = get(providers.filter(provider => provider.name === node.provider), '[0].path', '');
 
       treeData = changeNodeAtPath({
         treeData: treeData,
