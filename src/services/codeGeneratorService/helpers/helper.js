@@ -32,7 +32,7 @@ export const getStylesList = tree => {
   flatData.map(el => {
     return el.node.componentProps.filter(prop => {
       if (!isEmpty(prop.val) && prop.name === 'className') {
-        stylesList.push(prop.val);
+        stylesList.push(prop.val.replace(/[\W_]+/g, ''));
       }
     });
   });
