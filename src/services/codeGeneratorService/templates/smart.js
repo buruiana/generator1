@@ -12,6 +12,12 @@ class {{projectName}} extends Component {
 
     }
     {{/hasState}}
+    [
+      {{#constList}}
+      '{{{.}}}',
+      {{/constList}}
+    ].forEach((name) => (this[name] = this[name].bind(this)));
+
   }
 
 {{/hasConstructor}}
