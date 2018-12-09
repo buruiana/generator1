@@ -36,7 +36,7 @@ export const getStylesList = tree => {
       }
     });
   });
-  console.log('console: stylesList', stylesList);
+
   return stylesList;
 };
 
