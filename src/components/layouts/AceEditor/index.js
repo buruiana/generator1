@@ -12,6 +12,7 @@ const mapStateToProps = state => {
     aceTab: state.aceTabsServiceReducer.aceTab,
     smart: state.codeGeneratorServiceReducer.smart,
     dumb: state.codeGeneratorServiceReducer.dumb,
+    styles: state.codeGeneratorServiceReducer.styles,
   }
 }
 

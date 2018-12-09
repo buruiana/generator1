@@ -34,3 +34,8 @@ export const setDumbCode = dumb => ({
   type: actionTypes.SET_DUMB_CODE,
   dumb
 });
+
+export const setStylesCode = styles => ({
+  type: actionTypes.SET_STYLES_CODE,
+  styles
+});

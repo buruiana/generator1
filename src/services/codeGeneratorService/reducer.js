@@ -8,6 +8,7 @@ export const initialState = () => ({
   hoc: '',
   smart: '',
   dumb: '',
+  styles: '',
 });
 
 export default (state = initialState(), action) => {
@@ -46,6 +47,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         dumb: action.dumb
+      };
+    case actionTypes.SET_STYLES_CODE:
+      return {
+        ...state,
+        styles: action.styles
       };
     default:
       return state;

@@ -34,6 +34,8 @@ const Ace = props => {
       switch (props.aceTab) {
         case 'index':
           return props.hoc;
+        case 'styles':
+          return props.styles;
         case props.projectSettings.projectName:
           if (props.projectSettings.componentType === SMART) {
             return props.smart;

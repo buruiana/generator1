@@ -12,6 +12,7 @@ export const initialState = () => ({
     lifeCycleMethods: {},
   },
   dumb: {},
+  styles: [],
 });
 
 export default (state = initialState(), action) => {
