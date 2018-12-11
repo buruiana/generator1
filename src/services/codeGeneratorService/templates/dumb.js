@@ -1,7 +1,7 @@
 export const dumbTemplate = `
 {{#dumb}}
 import React from 'react';
-
+{{>importPartial}}
 const {{projectName}} = props => {
   {{#constList}}
   const {{.}} = () => {

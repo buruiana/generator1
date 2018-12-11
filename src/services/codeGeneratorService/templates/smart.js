@@ -1,6 +1,6 @@
 export const smartTemplate = `
 import React from "react";
-
+{{>importPartial}}
 {{#smart}}
 class {{projectName}} extends Component {
 {{#hasConstructor}}

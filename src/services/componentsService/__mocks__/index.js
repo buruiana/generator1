@@ -1,5 +1,225 @@
 export const mock = {
   allComponents: [
+
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'backgroundColor',
+          name: 'backgroundColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An ID which is used to associate this InputAccessoryView to specified TextInput(s).',
+          name: 'nativeID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'style',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A component which enables customization of the keyboard input accessory view on iOS. The input accessory view is displayed above the keyboard whenever a TextInput has focus. This component can be used to create custom toolbars.\n\nTo use this component wrap your custom toolbar with the InputAccessoryView component, and set a nativeID. Then, pass that nativeID as the inputAccessoryViewID of whatever TextInput you desire. A simple example:\n\nimport React, { Component } from \'react\';\nimport { View, ScrollView, AppRegistry, TextInput, InputAccessoryView, Button } from \'react-native\';\n\nexport default class UselessTextInput extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {text: \'Placeholder Text\'};\n  }\n\n  render() {\n    const inputAccessoryViewID = "uniqueID";\n    return (\n      <View>\n        <ScrollView keyboardDismissMode="interactive">\n          <TextInput\n            style={{\n              padding: 10,\n              paddingTop: 50,\n            }}\n            inputAccessoryViewID={inputAccessoryViewID}\n            onChangeText={text => this.setState({text})}\n            value={this.state.text}\n          />\n        </ScrollView>\n        <InputAccessoryView nativeID={inputAccessoryViewID}>\n          <Button\n            onPress={() => this.setState({text: \'Placeholder Text\'})}\n            title="Reset Text"\n          />\n        </InputAccessoryView>\n      </View>\n    );\n  }\n}\n\n// skip this line if using Create React Native App\nAppRegistry.registerComponent(\'AwesomeProject\', () => UselessTextInput);\n\nThis component can also be used to create sticky text inputs (text inputs which are anchored to the top of the keyboard). To do this, wrap a TextInput with the InputAccessoryView component, and don\'t set a nativeID. For an example, look at InputAccessoryViewExample.js.',
+      id: '0UxXr3VZ3Veb2IucQ868',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'InputAccessoryView'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'The actual data to render, akin to the data prop in FlatList.\n\nType: array of Sections',
+          name: 'sections',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'How many items to render in the initial batch. This should be enough to fill the screen but not much more. Note these items will never be unmounted as part of the windowed rendering in order to improve perceived performance of scroll-to-top actions.',
+          name: 'initialNumToRender',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to extract a unique key for a given item at the specified index. Key is used for caching and as the react key to track item re-ordering. The default extractor checks item.key, then falls back to using the index, like react does. Note that this sets keys for each item, but each overall section still needs its own key.\n\nType: (item: Item, index: number) => string',
+          name: 'keyExtractor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Default renderer for every item in every section. Can be over-ridden on a per-section basis. Should return a React element.\n\nThe render function will be passed an object with the following keys:\n\n\'item\' (object) - the item object as specified in this section\'s data key\n\'index\' (number) - Item\'s index within the section.\n\'section\' (object) - The full section object as specified in sections.\n\'separators\' (object) - An object with the following keys:\n\'highlight\' (function) - () => void\n\'unhighlight\' (function) - () => void\n\'updateProps\' (function) - (select, newProps) => void\n\'select\' (enum) - possible values are \'leading\', \'trailing\'\n\'newProps\' (object)\n',
+          name: 'renderItem',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called once when the scroll position gets within onEndReachedThreshold of the rendered content.\n\nType: [(info: {distanceFromEnd: number}) => void]',
+          name: 'onEndReached',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A marker property for telling the list to re-render (since it implements PureComponent). If any of your renderItem, Header, Footer, etc. functions depend on anything outside of the data prop, stick it here and treat it immutably.',
+          name: 'extraData',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered in between each item, but not at the top or bottom. By default, highlighted, section, and [leading/trailing][Item/Separator] props are provided. renderItem provides separators.highlight/unhighlight which will update the highlighted prop, but you can also add custom props with separators.updateProps.\n\nType: [component, function, element]',
+          name: 'ItemSeparatorComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Reverses the direction of scroll. Uses scale transforms of -1.',
+          name: 'inverted',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the very end of the list. Can be a React Component Class, a render function, or a rendered element.\n\nType: [component, function, element]',
+          name: 'ListFooterComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'legacyImplementation',
+          name: 'legacyImplementation',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered when the list is empty. Can be a React Component Class, a render function, or a rendered element.\n\nType: [component, function, element]',
+          name: 'ListEmptyComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'How far from the end (in units of visible length of the list) the bottom edge of the list must be from the end of the content to trigger the onEndReached callback. Thus a value of 0.5 will trigger onEndReached when the end of the content is within half the visible length of the list.',
+          name: 'onEndReachedThreshold',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If provided, a standard RefreshControl will be added for "Pull to Refresh" functionality. Make sure to also set the refreshing prop correctly.\n\nType: [() => void]',
+          name: 'onRefresh',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called when the viewability of rows changes, as defined by the viewabilityConfig prop.\n\nThe function will be passed an object with the following keys:\n\n\'viewableItems\' (array of ViewTokens)\n\'changed\' (array of ViewTokens)\nThe ViewToken type is exported by ViewabilityHelper.js:',
+          name: 'onViewableItemsChanged',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set this true while waiting for new data from a refresh.',
+          name: 'refreshing',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Note: may have bugs (missing content) in some circumstances - use at your own risk.\n\nThis may improve scroll performance for large lists.',
+          name: 'removeClippedSubviews',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the very beginning of the list. Can be a React Component Class, a render function, or a rendered element.\n\nType: component, function, element',
+          name: 'ListHeaderComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the bottom of each section.\n\nType: [(info: {section: SectionT}) => ?React.Element]',
+          name: 'renderSectionFooter',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the top of each section. These stick to the top of the ScrollView by default on iOS. See stickySectionHeadersEnabled.\n\nType: [(info: {section: SectionT}) => ?React.Element]',
+          name: 'renderSectionHeader',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the top and bottom of each section (note this is different from ItemSeparatorComponent which is only rendered between items). These are intended to separate sections from the headers above and below and typically have the same highlight response as ItemSeparatorComponent. Also receives highlighted, [leading/trailing][Item/Separator], and any custom props from separators.updateProps.',
+          name: 'SectionSeparatorComponent',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Makes section headers stick to the top of the screen until the next one pushes it off. Only enabled by default on iOS because that is the platform standard there.',
+          name: 'stickySectionHeadersEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A performant interface for rendering sectioned lists, supporting the most handy features:\n\nFully cross-platform.\nConfigurable viewability callbacks.\nList header support.\nList footer support.\nItem separator support.\nSection header support.\nSection separator support.\nHeterogeneous data and item rendering support.\nPull to Refresh.\nScroll loading.\nIf you don\'t need section support and want a simpler interface, use <FlatList>.\n\nSimple Examples:\n\n// Example 1 (Homogeneous Rendering)\n<SectionList\n  renderItem={({item, index, section}) => <Text key={index}>{item}</Text>}\n  renderSectionHeader={({section: {title}}) => (\n    <Text style={{fontWeight: \'bold\'}}>{title}</Text>\n  )}\n  sections={[\n    {title: \'Title1\', data: [\'item1\', \'item2\']},\n    {title: \'Title2\', data: [\'item3\', \'item4\']},\n    {title: \'Title3\', data: [\'item5\', \'item6\']},\n  ]}\n  keyExtractor={(item, index) => item + index}\n/>\n// Example 2 (Heterogeneous Rendering / No Section Headers)\nconst overrideRenderItem = ({ item, index, section: { title, data } }) => <Text key={index}>Override{item}</Text>\n\n<SectionList\n  renderItem={({ item, index, section }) => <Text key={index}>{item}</Text>}\n  sections={[\n    { title: \'Title1\', data: [\'item1\', \'item2\'], renderItem: overrideRenderItem },\n    { title: \'Title2\', data: [\'item3\', \'item4\'] },\n    { title: \'Title3\', data: [\'item5\', \'item6\'] },\n  ]}\n/>\n\nThis is a convenience wrapper around <VirtualizedList>, and thus inherits its props (as well as those of <ScrollView> that aren\'t explicitly listed here, along with the following caveats:\n\nInternal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.\nThis is a PureComponent which means that it will not re-render if props remain shallow- equal. Make sure that everything your renderItem function depends on is passed as a prop (e.g. extraData) that is not === after updates, otherwise your UI may not update on changes. This includes the data prop and parent component state.\nIn order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it\'s possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.\nBy default, the list looks for a key prop on each item and uses that for the React key. Alternatively, you can provide a custom keyExtractor prop.',
+      id: '0edsmGABQyCcxvjxEeFe',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'SectionList'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'The progress value (between 0 and 1).',
+          name: 'progress',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A stretchable image to display as the progress bar.\n\nType: Image.propTypes.source',
+          name: 'progressImage',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The tint color of the progress bar itself.',
+          name: 'progressTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The progress bar style.\n\nType: enum(\'default\', \'bar\')',
+          name: 'progressViewStyle',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A stretchable image to display behind the progress bar.\n\nType: Image.propTypes.source',
+          name: 'trackImage',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The tint color of the progress bar track.',
+          name: 'trackTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Use ProgressViewIOS to render a UIProgressView on iOS.',
+      id: '1mSuGdq4MPT7XZAyQ22P',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'ProgressViewIOS'
+    },
     {
       children: [],
       componentImport: 'react-bootstrap/lib/ListGroupItem',
@@ -65,6 +285,316 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'ListGroupItem'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'maskElement',
+          name: 'maskElement',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Renders the child view with a mask specified in the maskElement prop.\n\nExample\nimport React from \'react\';\nimport { MaskedViewIOS, Text, View } from \'react-native\';\n\nclass MyMaskedView extends React.Component {\n  render() {\n    return (\n      // Determines shape of the mask\n      <MaskedViewIOS\n        style={{ flex: 1, flexDirection: \'row\', height: \'100%\' }}\n        maskElement={\n          <View style={{\n            // Transparent background because mask is based off alpha channel.\n            backgroundColor: \'transparent\',\n            flex: 1,\n            justifyContent: \'center\',\n            alignItems: \'center\',\n          }}>\n            <Text style={{\n              fontSize: 60,\n              color: \'black\',\n              fontWeight: \'bold\',\n            }}>\n              Basic Mask\n            </Text>\n          </View>\n        }\n      >\n        { /* Shows behind the mask, you can put anything here, such as an image */ }\n        <View style={{ flex: 1, height: \'100%\', backgroundColor: \'#324376\' }} />\n        <View style={{ flex: 1, height: \'100%\', backgroundColor: \'#F5DD90\' }} />\n        <View style={{ flex: 1, height: \'100%\', backgroundColor: \'#F76C5E\' }} />\n      </MaskedViewIOS>\n    );\n  }\n}\nThe following image demonstrates that you can put almost anything behind the mask. The three examples shown are masked <View>, <Text>, and <Image>.\n\nThe alpha channel of the view rendered by the maskElement prop determines how much of the view\'s content and background shows through. Fully or partially opaque pixels allow the underlying content to show through but fully transparent pixels block that content.',
+      id: '2cyb6tJMxyeKvRhIqHqf',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'MaskedViewIOS'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'It specifies whether the children are visible or not. If you see a blank content, you probably forgot to add a selected one.',
+          name: 'selected',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Little red bubble that sits at the top right of the icon.\n\nstring, number',
+          name: 'badge',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A custom icon for the tab. It is ignored when a system icon is defined.\n\nImage.propTypes.source',
+          name: 'icon',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback when this tab is being selected, you should change the state of your component to set selected={true}.',
+          name: 'onPress',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If set to true it renders the image as original, it defaults to being displayed as a template',
+          name: 'renderAsOriginal',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Background color for the badge. Available since iOS 10.',
+          name: 'badgeColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A custom icon when the tab is selected. It is ignored when a system icon is defined. If left empty, the icon will be tinted in blue.\n\nImage.propTypes.source',
+          name: 'selectedIcon',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'React style object.',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Items comes with a few predefined system icons. Note that if you are using them, the title and selectedIcon will be overridden with the system ones.\n\nenum(\'bookmarks\', \'contacts\', \'downloads\', \'favorites\', \'featured\', \'history\', \'more\', \'most-recent\', \'most-viewed\', \'recents\', \'search\', \'top-rated\')',
+          name: 'systemIcon',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Text that appears under the icon. It is ignored when a system icon is defined.',
+          name: 'title',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(Apple TV only)* When set to true, this view will be focusable and navigable using the Apple TV remote.',
+          name: 'isTVSelectable',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'TabBarIOS.Item',
+      id: '2poVTlL3U0SPlT8WgC0B',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'TabBarIOS.Item'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'renderItem({ item: Object, index: number, separators: { highlight: Function, unhighlight: Function, updateProps: Function(select: string, newProps: Object) } }) => ?React.Element\n\nTakes an item from data and renders it into the list.\n\nProvides additional metadata like index if you need it, as well as a more generic separators.updateProps function which let you set whatever props you want to change the rendering of either the leading separator or trailing separator in case the more common highlight and unhighlight (which set the highlighted: boolean prop) are insufficient for your use case.',
+          name: 'renderItem',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'For simplicity, data is just a plain array. If you want to use something else, like an immutable list, use the underlying VirtualizedList directly.',
+          name: 'data',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'Rendered in between each item, but not at the top or bottom. By default, highlighted and leadingItem props are provided. renderItem provides separators.highlight/unhighlight which will update the highlighted prop, but you can also add custom props with separators.updateProps.',
+          name: 'ItemSeparatorComponent',
+          propType: 'PropTypes.instanceOf()',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered when the list is empty. Can be a React Component Class, a render function, or a rendered element.',
+          name: 'ListEmptyComponent',
+          propType: 'PropTypes.instanceOf()',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the bottom of all the items. Can be a React Component Class, a render function, or a rendered element.\n\n',
+          name: 'ListFooterComponent',
+          propType: 'PropTypes.instanceOf()',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the top of all the items. Can be a React Component Class, a render function, or a rendered element.',
+          name: 'ListHeaderComponent',
+          propType: 'PropTypes.instanceOf()',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Optional custom style for multi-item rows generated when numColumns > 1.',
+          name: 'columnWrapperStyle',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A marker property for telling the list to re-render (since it implements PureComponent). If any of your renderItem, Header, Footer, etc. functions depend on anything outside of the data prop, stick it here and treat it immutably.',
+          name: 'extraData',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(data, index) => {length: number, offset: number, index: number}\ngetItemLayout is an optional optimization that let us skip the measurement of dynamic content if you know the height of items ahead of time. getItemLayout is both efficient and easy to use if you have fixed height items, for example:\n\n  getItemLayout={(data, index) => (\n    {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}\n  )}\nAdding getItemLayout can be a great performance boost for lists of several hundred items. Remember to include separator length (height or width) in your offset calculation if you specify ItemSeparatorComponent.',
+          name: 'getItemLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, renders items next to each other horizontally instead of stacked vertically.',
+          name: 'horizontal',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'How many items to render in the initial batch. This should be enough to fill the screen but not much more. Note these items will never be unmounted as part of the windowed rendering in order to improve perceived performance of scroll-to-top actions.',
+          name: 'initialNumToRender',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Instead of starting at the top with the first item, start at initialScrollIndex. This disables the "scroll to top" optimization that keeps the first initialNumToRender items always rendered and immediately renders the items starting at this initial index. Requires getItemLayout to be implemented.',
+          name: 'initialScrollIndex',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Reverses the direction of scroll. Uses scale transforms of -1.',
+          name: 'inverted',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(item: object, index: number) => string;\nUsed to extract a unique key for a given item at the specified index. Key is used for caching and as the react key to track item re-ordering. The default extractor checks item.key, then falls back to using the index, like React does.',
+          name: 'keyExtractor',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Multiple columns can only be rendered with horizontal={false} and will zig-zag like a flexWrap layout. Items should all be the same height - masonry layouts are not supported.',
+          name: 'numColumns',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(info: {distanceFromEnd: number}) => void\nCalled once when the scroll position gets within onEndReachedThreshold of the rendered content.',
+          name: 'onEndReached',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'How far from the end (in units of visible length of the list) the bottom edge of the list must be from the end of the content to trigger the onEndReached callback. Thus a value of 0.5 will trigger onEndReached when the end of the content is within half the visible length of the list.',
+          name: 'onEndReachedThreshold',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: '() => void\nIf provided, a standard RefreshControl will be added for "Pull to Refresh" functionality. Make sure to also set the refreshing prop correctly.',
+          name: 'onRefresh',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(info: {\n    viewableItems: array,\n    changed: array,\n  }) => void\nCalled when the viewability of rows changes, as defined by the viewabilityConfig prop.',
+          name: 'onViewableItemsChanged',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set this when offset is needed for the loading indicator to show correctly.',
+          name: 'progressViewOffset',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'May not have full feature parity and is meant for debugging and performance comparison.',
+          name: 'legacyImplementation',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set this true while waiting for new data from a refresh.',
+          name: 'refreshing',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This may improve scroll performance for large lists.\n\nNote: May have bugs (missing content) in some circumstances - use at your own risk.',
+          name: 'removeClippedSubviews',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'See ViewabilityHelper.js for flow type and further documentation.\n\nAt least one of the viewAreaCoveragePercentThreshold or itemVisiblePercentThreshold is required. This needs to be done in the constructor to avoid following error (ref):\n\n  Error: Changing viewabilityConfig on the fly is not supported`\nconstructor (props) {\n  super(props)\n\n  this.viewabilityConfig = {\n      waitForInteraction: true,\n      viewAreaCoveragePercentThreshold: 95\n  }\n}\n<FlatList\n    viewabilityConfig={this.viewabilityConfig}\n  ...\nminimumViewTime\nMinimum amount of time (in milliseconds) that an item must be physically viewable before the viewability callback will be fired. A high number means that scrolling through content without stopping will not mark the content as viewable.\n\nviewAreaCoveragePercentThreshold\nPercent of viewport that must be covered for a partially occluded item to count as "viewable", 0-100. Fully visible items are always considered viewable. A value of 0 means that a single pixel in the viewport makes the item viewable, and a value of 100 means that an item must be either entirely visible or cover the entire viewport to count as viewable.\n\nitemVisiblePercentThreshold\nSimilar to viewAreaPercentThreshold, but considers the percent of the item that is visible, rather than the fraction of the viewable area it covers.\n\nwaitForInteraction\nNothing is considered viewable until the user scrolls or recordInteraction is called after render.',
+          name: 'viewabilityConfig',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'List of ViewabilityConfig/onViewableItemsChanged pairs. A specific onViewableItemsChanged will be called when its corresponding ViewabilityConfig\'s conditions are met. See ViewabilityHelper.js for flow type and further documentation.',
+          name: 'viewabilityConfigCallbackPairs',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A performant interface for rendering simple, flat lists, supporting the most handy features:\n\nFully cross-platform.\nOptional horizontal mode.\nConfigurable viewability callbacks.\nHeader support.\nFooter support.\nSeparator support.\nPull to Refresh.\nScroll loading.\nScrollToIndex support.\nIf you need section support, use <SectionList>.\n\nMinimal Example:\n\n<FlatList\n  data={[{key: \'a\'}, {key: \'b\'}]}\n  renderItem={({item}) => <Text>{item.key}</Text>}\n/>\nMore complex, multi-select example demonstrating PureComponent usage for perf optimization and avoiding bugs.\n\nBy binding the onPressItem handler, the props will remain === and PureComponent will prevent wasteful re-renders unless the actual id, selected, or title props change, even if the components rendered in MyListItem did not have such optimizations.\nBy passing extraData={this.state} to FlatList we make sure FlatList itself will re-render when the state.selected changes. Without setting this prop, FlatList would not know it needs to re-render any items because it is also a PureComponent and the prop comparison will not show any changes.\nkeyExtractor tells the list to use the ids for the react keys instead of the default key property.\nclass MyListItem extends React.PureComponent {\n  _onPress = () => {\n    this.props.onPressItem(this.props.id);\n  };\n\n  render() {\n    const textColor = this.props.selected ? "red" : "black";\n    return (\n      <TouchableOpacity onPress={this._onPress}>\n        <View>\n          <Text style={{ color: textColor }}>\n            {this.props.title}\n          </Text>\n        </View>\n      </TouchableOpacity>\n    );\n  }\n}\n\nclass MultiSelectList extends React.PureComponent {\n  state = {selected: (new Map(): Map<string, boolean>)};\n\n  _keyExtractor = (item, index) => item.id;\n\n  _onPressItem = (id: string) => {\n    // updater functions are preferred for transactional updates\n    this.setState((state) => {\n      // copy the map rather than modifying state.\n      const selected = new Map(state.selected);\n      selected.set(id, !selected.get(id)); // toggle\n      return {selected};\n    });\n  };\n\n  _renderItem = ({item}) => (\n    <MyListItem\n      id={item.id}\n      onPressItem={this._onPressItem}\n      selected={!!this.state.selected.get(item.id)}\n      title={item.title}\n    />\n  );\n\n  render() {\n    return (\n      <FlatList\n        data={this.props.data}\n        extraData={this.state}\n        keyExtractor={this._keyExtractor}\n        renderItem={this._renderItem}\n      />\n    );\n  }\n}\nThis is a convenience wrapper around <VirtualizedList>, and thus inherits its props (as well as those of <ScrollView>) that aren\'t explicitly listed here, along with the following caveats:\n\nInternal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.\nThis is a PureComponent which means that it will not re-render if props remain shallow- equal. Make sure that everything your renderItem function depends on is passed as a prop (e.g. extraData) that is not === after updates, otherwise your UI may not update on changes. This includes the data prop and parent component state.\nIn order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it\'s possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.\nBy default, the list looks for a key prop on each item and uses that for the React key. Alternatively, you can provide a custom keyExtractor prop.\nAlso inherits ScrollView Props, unless it is nested in another FlatList of same orientation.',
+      id: '3DaBXIAYkHu0K2vmN6UG',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'FlatList'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Handler to be called when the user taps the button',
+          name: 'onPress',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'Text to display inside the button',
+          name: 'title',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'Text to display for blindness accessibility features',
+          name: 'accessibilityLabel',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, disable all interactions for this component.',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in end-to-end tests.',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(Apple TV only) TV preferred focus (see documentation for the View component).',
+          name: 'hasTVPreferredFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A basic button component that should render nicely on any platform. Supports a minimal level of customization.\nIf this button doesn\'t look right for your app, you can build your own button using TouchableOpacity or TouchableNativeFeedback. For inspiration, look at the source code for this button component. Or, take a look at the wide variety of button components built by the community.\n\nExample usage:\n\nimport { Button } from \'react-native\';\n...\n\n<Button\n  onPress={onPressLearnMore}\n  title="Learn More"\n  color="#841584"\n  accessibilityLabel="Learn more about this purple button"\n/>',
+      id: '42IlYcOkmgSD3mybsCNc',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'Button'
     },
     {
       children: [],
@@ -143,6 +673,284 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Navbar'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Loads static HTML or a URI (with optional headers) in the WebView. Note that static HTML will require setting originWhitelist to ["*"].\n\nThe object passed to source can have either of the following shapes:\n\nLoad uri\n\nuri (string) - The URI to load in the WebView. Can be a local or remote file.\nmethod (string) - The HTTP Method to use. Defaults to GET if not specified. On Android, the only supported methods are GET and POST.\nheaders (object) - Additional HTTP headers to send with the request. On Android, this can only be used with GET requests.\nbody (string) - The HTTP body to send with the request. This must be a valid UTF-8 string, and will be sent exactly as specified, with no additional encoding (e.g. URL-escaping or base64) applied. On Android, this can only be used with POST requests.\nStatic HTML\n\nhtml (string) - A static HTML page to display in the WebView.\nbaseUrl (string) - The base URL to be used for any relative links in the HTML.',
+          name: 'source',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Controls whether to adjust the content inset for web views that are placed behind a navigation bar, tab bar, or toolbar. The default value is true.',
+          name: 'automaticallyAdjustContentInsets',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that accepts a string that will be passed to the WebView and executed immediately as JavaScript.',
+          name: 'injectJavaScript',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set this to provide JavaScript that will be injected into the web page when the view loads.',
+          name: 'injectedJavaScript',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean that determines whether HTML5 audio and video requires the user to tap them before they start playing. The default value is true.',
+          name: 'mediaPlaybackRequiresUserAction',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Override the native component used to render the WebView. Enables a custom native WebView which uses the same JavaScript as the original WebView.\n\nThe nativeConfig prop expects an object with the following keys:\n\ncomponent (any)\nprops (object)\nviewManager (object)',
+          name: 'nativeConfig',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that is invoked when the WebView load fails.',
+          name: 'onError',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that is invoked when the WebView has finished loading.',
+          name: 'onLoad',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that is invoked when the WebView load succeeds or fails.',
+          name: 'onLoadEnd',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that is invoked when the WebView starts loading.',
+          name: 'onLoadStart',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A function that is invoked when the webview calls window.postMessage. Setting this property will inject a postMessage global into your webview, but will still call pre-existing values of postMessage.\n\nwindow.postMessage accepts one argument, data, which will be available on the event object, event.nativeEvent.data. data must be a string.',
+          name: 'onMessage',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that is invoked when the WebView loading starts or ends.',
+          name: 'onNavigationStateChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'List of origin strings to allow being navigated to. The strings allow wildcards and get matched against just the origin (not the full URL). If the user taps to navigate to a new page but the new page is not in this whitelist, the URL will be handled by the OS. The default whitelisted origins are "http://" and "https://".',
+          name: 'originWhitelist',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that returns a view to show if there\'s an error.',
+          name: 'renderError',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that returns a loading indicator. The startInLoadingState prop must be set to true in order to use this prop.',
+          name: 'renderLoading',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean that controls whether the web content is scaled to fit the view and enables the user to change the scale. The default value is true.\n\nOn iOS, when useWebKit=true, this prop will not work.',
+          name: 'scalesPageToFit',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function that allows custom handling of any web view requests. Return true from the function to continue loading the request and false to stop loading.',
+          name: 'onShouldStartLoadWithRequest',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value that forces the WebView to show the loading view on the first load. This prop must be set to true in order for the renderLoading prop to work.',
+          name: 'startInLoadingState',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A floating-point number that determines how quickly the scroll view decelerates after the user lifts their finger. You may also use the string shortcuts "normal" and "fast" which match the underlying iOS settings for UIScrollViewDecelerationRateNormal and UIScrollViewDecelerationRateFast respectively:\n\nnormal: 0.998\nfast: 0.99 (the default for iOS web view)',
+          name: 'decelerationRate',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value to control whether DOM Storage is enabled. Used only in Android.',
+          name: 'domStorageEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value to enable JavaScript in the WebView. Used on Android only as JavaScript is enabled by default on iOS. The default value is true.',
+          name: 'javaScriptEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies the mixed content mode. i.e WebView will allow a secure origin to load content from any other origin.\n\nPossible values for mixedContentMode are:\n\nnever (default) - WebView will not allow a secure origin to load content from an insecure origin.\nalways - WebView will allow a secure origin to load content from any other origin, even if that origin is insecure.\ncompatibility - WebView will attempt to be compatible with the approach of a modern web browser with regard to mixed content.',
+          name: 'mixedContentMode',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value to enable third party cookies in the WebView. Used on Android Lollipop and above only as third party cookies are enabled by default on Android Kitkat and below and on iOS. The default value is true.',
+          name: 'thirdPartyCookiesEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the user-agent for the WebView.',
+          name: 'userAgent',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean that determines whether HTML5 videos play inline or use the native full-screen controller. The default value is false.\n\nNOTE\n\nIn order for video to play inline, not only does this property need to be set to true, but the video element in the HTML document must also include the webkit-playsinline attribute.',
+          name: 'allowsInlineMediaPlayback',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value that determines whether the web view bounces when it reaches the edge of the content. The default value is true.',
+          name: 'bounces',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The amount by which the web view content is inset from the edges of the scroll view. Defaults to {top: 0, left: 0, bottom: 0, right: 0}.\n\nobject: {top: number, left: number, bottom: number, right: number}',
+          name: 'contentInset',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines the types of data converted to clickable URLs in the web view\'s content. By default only phone numbers are detected.\n\nYou can provide one type or an array of many types.\n\nPossible values for dataDetectorTypes are:\n\nphoneNumber\nlink\naddress\ncalendarEvent\nnone\nall\nWith the new WebKit implementation, we have three new values:\n\ntrackingNumber\nflightNumber\nlookupSuggestion\n',
+          name: 'dataDetectorTypes',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value that determines whether scrolling is enabled in the WebView. The default value is true.',
+          name: 'scrollEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set whether Geolocation is enabled in the WebView. The default value is false. Used only in Android.',
+          name: 'geolocationEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean that sets whether JavaScript running in the context of a file scheme URL should be allowed to access content from any origin. Including accessing content from other file scheme URLs. The default value is false.',
+          name: 'allowUniversalAccessFromFileURLs',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, use WKWebView instead of UIWebView.',
+          name: 'useWebKit',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Warning Please use the react-native-community/react-native-webview fork of this component instead. To reduce the surface area of React Native, <WebView/> is going to be removed from the React Native core. For more information, please read The Slimmening proposal.\n\nWebView renders web content in a native view.\n\nimport React, { Component } from \'react\';\nimport { WebView } from \'react-native\';\n\nclass MyWeb extends Component {\n  render() {\n    return (\n      <WebView\n        source={{uri: \'https://github.com/facebook/react-native\'}}\n        style={{marginTop: 20}}\n      />\n    );\n  }\n}\nMinimal example with inline HTML:\n\nimport React, { Component } from \'react\';\nimport { WebView } from \'react-native\';\n\nclass MyInlineWeb extends Component {\n  render() {\n    return (\n      <WebView\n        originWhitelist={[\'*\']}\n        source={{ html: \'<h1>Hello world</h1>\' }}\n      />\n    );\n  }\n}\nYou can use this component to navigate back and forth in the web view\'s history and configure various properties for the web content.\n\nOn iOS, the useWebKit prop can be used to opt into a WKWebView-backed implementation.\n\nSecurity Warning: Currently, onMessage and postMessage do not allow specifying an origin. This can lead to cross-site scripting attacks if an unexpected document is loaded within a WebView instance. Please refer to the MDN documentation for Window.postMessage() for more details on the security implications of this.',
+      id: '4SQJmZm1rgUgxVhFK3My',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'WebView'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'NavigatorIOS uses route objects to identify child views, their props, and navigation bar configuration. Navigation operations such as push operations expect routes to look like this the initialRoute.',
+          name: 'initialRoute',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'The style of the navigation bar. Supported values are \'default\', \'black\'. Use \'black\' instead of setting barTintColor to black. This produces a navigation bar with the native iOS style with higher translucency.\n\nType: enum(\'default\', \'black\')',
+          name: 'barStyle',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The default background color of the navigation bar.',
+          name: 'barTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value that indicates whether the interactive pop gesture is enabled. This is useful for enabling/disabling the back swipe navigation gesture.\n\nIf this prop is not provided, the default behavior is for the back swipe gesture to be enabled when the navigation bar is shown and disabled when the navigation bar is hidden. Once you\'ve provided the interactivePopGestureEnabled prop, you can never restore the default behavior.',
+          name: 'interactivePopGestureEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The default wrapper style for components in the navigator. A common use case is to set the backgroundColor for every scene.',
+          name: 'itemWrapperStyle',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value that indicates whether the navigation bar is hidden by default.',
+          name: 'navigationBarHidden',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value that indicates whether to hide the 1px hairline shadow by default.',
+          name: 'shadowHidden',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The default color used for the buttons in the navigation bar.',
+          name: 'tintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The default text color of the navigation bar title.',
+          name: 'titleTextColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Boolean value that indicates whether the navigation bar is translucent by default. When true any screens loaded within the navigator will sit below the status bar and underneath the navigation bar. To have screens render below the navigation bar set to false.',
+          name: 'translucent',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'NavigatorIOS is a wrapper around UINavigationController, enabling you to implement a navigation stack. It works exactly the same as it would on a native app using UINavigationController, providing the same animations and behavior from UIKit.\n\nAs the name implies, it is only available on iOS. Take a look at React Navigation for a cross-platform solution in JavaScript, or check out either of these components for native solutions: native-navigation, react-native-navigation.\n\nTo set up the navigator, provide the initialRoute prop with a route object. A route object is used to describe each scene that your app navigates to. initialRoute represents the first route in your navigator.\n\nimport PropTypes from \'prop-types\';\nimport React, { Component } from \'react\';\nimport { NavigatorIOS, Text, TouchableHighlight, View } from \'react-native\';\n\nexport default class NavigatorIOSApp extends Component {\n  render() {\n    return (\n      <NavigatorIOS\n        initialRoute={{\n          component: MyScene,\n          title: \'My Initial Scene\',\n        }}\n        style={{flex: 1}}\n      />\n    );\n  }\n}\n\nclass MyScene extends Component {\n  static propTypes = {\n    title: PropTypes.string.isRequired,\n    navigator: PropTypes.object.isRequired,\n  }\n\n  _onForward = () => {\n    this.props.navigator.push({\n      title: \'Scene\',\n    });\n  }\n\n  render() {\n    return (\n      <View>\n        <Text>Current Scene: { this.props.title }</Text>\n        <TouchableHighlight onPress={this._onForward}>\n          <Text>Tap me to load the next scene</Text>\n        </TouchableHighlight>\n      </View>\n    )\n  }\n}\nIn this code, the navigator renders the component specified in initialRoute, which in this case is MyScene. This component will receive a route prop and a navigator prop representing the navigator. The navigator\'s navigation bar will render the title for the current scene, "My Initial Scene".\n\nYou can optionally pass in a passProps property to your initialRoute. NavigatorIOS passes this in as props to the rendered component:\n\ninitialRoute={{\n  component: MyScene,\n  title: \'My Initial Scene\',\n  passProps: { myProp: \'foo\' }\n}}\nYou can then access the props passed in via {this.props.myProp}.\n\nHandling Navigation\nTo trigger navigation functionality such as pushing or popping a view, you have access to a navigator object. The object is passed in as a prop to any component that is rendered by NavigatorIOS. You can then call the relevant methods to perform the navigation action you need:\n\nclass MyView extends Component {\n  _handleBackPress() {\n    this.props.navigator.pop();\n  }\n\n  _handleNextPress(nextRoute) {\n    this.props.navigator.push(nextRoute);\n  }\n\n  render() {\n    const nextRoute = {\n      component: MyView,\n      title: \'Bar That\',\n      passProps: { myProp: \'bar\' }\n    };\n    return(\n      <TouchableHighlight onPress={() => this._handleNextPress(nextRoute)}>\n        <Text style={{marginTop: 200, alignSelf: \'center\'}}>\n          See you on the other nav {this.props.myProp}!\n        </Text>\n      </TouchableHighlight>\n    );\n  }\n}\nYou can also trigger navigator functionality from the NavigatorIOS component:\n\nclass NavvyIOS extends Component {\n  _handleNavigationRequest() {\n    this.refs.nav.push({\n      component: MyView,\n      title: \'Genius\',\n      passProps: { myProp: \'genius\' },\n    });\n  }\n\n  render() {\n    return (\n      <NavigatorIOS\n        ref=\'nav\'\n        initialRoute={{\n          component: MyView,\n          title: \'Foo This\',\n          passProps: { myProp: \'foo\' },\n          rightButtonTitle: \'Add\',\n          onRightButtonPress: () => this._handleNavigationRequest(),\n        }}\n        style={{flex: 1}}\n      />\n    );\n  }\n}\nThe code above adds a _handleNavigationRequest private method that is invoked from the NavigatorIOS component when the right navigation bar item is pressed. To get access to the navigator functionality, a reference to it is saved in the ref prop and later referenced to push a new scene into the navigation stack.\n\nNavigation Bar Configuration\nProps passed to NavigatorIOS will set the default configuration for the navigation bar. Props passed as properties to a route object will set the configuration for that route\'s navigation bar, overriding any props passed to the NavigatorIOS component.\n\n_handleNavigationRequest() {\n  this.refs.nav.push({\n    //...\n    passProps: { myProp: \'genius\' },\n    barTintColor: \'#996699\',\n  });\n}\n\nrender() {\n  return (\n    <NavigatorIOS\n      //...\n      style={{flex: 1}}\n      barTintColor=\'#ffffcc\'\n    />\n  );\n}\nIn the example above the navigation bar color is changed when the new route is pushed.',
+      id: '5MYx13I9F6HqlPRmgXlY',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'NavigatorIOS'
     },
     {
       children: [],
@@ -423,7 +1231,7 @@ export const mock = {
     },
     {
       children: [],
-      closeTag: true,
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Badge',
       componentProps: [
         {
@@ -445,6 +1253,61 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Badge'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'If false the user won\'t be able to interact with the control. Default value is true.',
+          name: 'enabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, then selecting a segment won\'t persist visually. The onValueChange callback will still work as expected.',
+          name: 'momentary',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the user taps a segment; passes the event as an argument',
+          name: 'onChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the user taps a segment; passes the segment\'s value as an argument',
+          name: 'onValueChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The index in props.values of the segment to be (pre)selected.',
+          name: 'selectedIndex',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Accent color of the control.',
+          name: 'tintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The labels for the control\'s segment buttons, in order.',
+          name: 'values',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Use SegmentedControlIOS to render a UISegmentedControl iOS.\n\nProgrammatically changing selected index\nThe selected index can be changed on the fly by assigning the selectedIndex prop to a state variable, then changing that variable. Note that the state variable would need to be updated as the user selects a value and changes the index, as shown in the example below.\n\nExample\n<SegmentedControlIOS\n  values={[\'One\', \'Two\']}\n  selectedIndex={this.state.selectedIndex}\n  onChange={(event) => {\n    this.setState({selectedIndex: event.nativeEvent.selectedSegmentIndex});\n  }}\n/>',
+      id: 'BPAMkgpvSqAj3CB8OvyL',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'SegmentedControlIOS'
     },
     {
       children: [],
@@ -481,6 +1344,128 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Tab'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Type: optionalImageSource',
+          name: 'overflowIcon',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets possible actions on the toolbar as part of the action menu. These are displayed as icons or text on the right side of the widget. If they don\'t fit they are placed in an \'overflow\' menu.\n\nThis property takes an array of objects, where each object has the following keys:\n\ntitle: required, the title of this action\nicon: the icon for this action, e.g. require(\'./some_icon.png\')\nshow: when to show this action as an icon or hide it in the overflow menu: always, ifRoom or never\nshowWithText: boolean, whether to show text alongside the icon or not\n\narray of object: {title: string,icon: optionalImageSource,show: enum(\'always\', \'ifRoom\', \'never\'),showWithText: bool}',
+          name: 'actions',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the content inset for the toolbar starting edge.\n\nThe content inset affects the valid area for Toolbar content other than the navigation button and menu. Insets define the minimum margin for these components and can be used to effectively align Toolbar content along well-known gridlines.',
+          name: 'contentInsetStart',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the toolbar logo.\n\nType: optionalImageSource',
+          name: 'logo',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the navigation icon.\n\nType: optionalImageSource',
+          name: 'navIcon',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when an action is selected. The only argument that is passed to the callback is the position of the action in the actions array.',
+          name: 'onActionSelected',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback called when the icon is selected.',
+          name: 'onIconClicked',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the content inset for the toolbar ending edge.\n\nThe content inset affects the valid area for Toolbar content other than the navigation button and menu. Insets define the minimum margin for these components and can be used to effectively align Toolbar content along well-known gridlines.\n\n',
+          name: 'contentInsetEnd',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to set the toolbar direction to RTL. In addition to this property you need to add\n\nandroid:supportsRtl="true"\n\nto your application AndroidManifest.xml and then call setLayoutDirection(LayoutDirection.RTL) in your MainActivity onCreate method.',
+          name: 'rtl',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the toolbar subtitle.',
+          name: 'subtitle',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the toolbar subtitle color.',
+          name: 'subtitleColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in end-to-end tests.',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the toolbar title.',
+          name: 'title',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the toolbar title color.',
+          name: 'titleColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'React component that wraps the Android-only Toolbar widget. A Toolbar can display a logo, navigation icon (e.g. hamburger menu), a title & subtitle and a list of actions. The title and subtitle are expanded so the logo and navigation icons are displayed on the left, title and subtitle in the middle and the actions on the right.\n\nIf the toolbar has an only child, it will be displayed between the title and actions.\n\nAlthough the Toolbar supports remote images for the logo, navigation and action icons, this should only be used in DEV mode where require(\'./some_icon.png\') translates into a packager URL. In release mode you should always use a drawable resource for these icons. Using require(\'./some_icon.png\') will do this automatically for you, so as long as you don\'t explicitly use e.g. {uri: \'http://...\'}, you will be good.\n\nExample:\n\nrender: function() {\n  return (\n    <ToolbarAndroid\n      logo={require(\'./app_logo.png\')}\n      title="AwesomeApp"\n      actions={[{title: \'Settings\', icon: require(\'./icon_settings.png\'), show: \'always\'}]}\n      onActionSelected={this.onActionSelected} />\n  )\n},\nonActionSelected: function(position) {\n  if (position === 0) { // index of \'Settings\'\n    showSettings();\n  }\n}',
+      id: 'C4eG0qzWuQqjmV7yKefr',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'ToolbarAndroid'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Determines the type of background drawable that\'s going to be used to display feedback. It takes an object with type property and extra data depending on the type. It\'s recommended to use one of the static methods to generate that dictionary.\n\nType: backgroundPropType',
+          name: 'background',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set to true to add the ripple effect to the foreground of the view, instead of the background. This is useful if one of your child views has a background of its own, or you\'re e.g. displaying images, and you don\'t want the ripple to be covered by them.\n\nCheck TouchableNativeFeedback.canUseNativeForeground() first, as this is only available on Android 6.0 and above. If you try to use this on older versions you will get a warning and fallback to background.',
+          name: 'useForeground',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A wrapper for making views respond properly to touches (Android only). On Android this component uses native state drawable to display touch feedback.\n\nAt the moment it only supports having a single View instance as a child node, as it\'s implemented by replacing that View with another instance of RCTView node with some additional properties set.\n\nBackground drawable of native feedback touchable can be customized with background property.\n\nExample:\n\nrenderButton: function() {\n  return (\n    <TouchableNativeFeedback\n        onPress={this._onPressButton}\n        background={TouchableNativeFeedback.SelectableBackground()}>\n      <View style={{width: 150, height: 100, backgroundColor: \'red\'}}>\n        <Text style={{margin: 30}}>Button</Text>\n      </View>\n    </TouchableNativeFeedback>\n  );\n},',
+      id: 'DWPTOdlJy7wp3eFgpxdJ',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'TouchableNativeFeedback'
     },
     {
       children: [],
@@ -535,6 +1520,229 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Panel.Collapse'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Does this view want to become responder on the start of a touch?\n\nView.props.onStartShouldSetResponder: (event) => [true | false], where event is a synthetic touch event as described above.',
+          name: 'onStartShouldSetResponder',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.',
+          name: 'accessibilityHint',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Overrides the text that\'s read by the screen reader when the user interacts with the element. By default, the label is constructed by traversing all the children and accumulating all the Text nodes separated by space.',
+          name: 'accessibilityLabel',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This defines how far a touch event can start away from the view. Typical interface guidelines recommend touch targets that are at least 30 - 40 points/density-independent pixels.\n\nFor example, if a touchable view has a height of 20 the touchable height can be extended to 40 with hitSlop={{top: 10, bottom: 10, left: 0, right: 0}}\n\nThe touch area never extends past the parent view bounds and the Z-index of sibling views always takes precedence if a touch hits two overlapping views.\n\nobject: {top: number, left: number, bottom: number, right: number}',
+          name: 'hitSlop',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view from native classes.\n\nThis disables the \'layout-only view removal\' optimization for this view!',
+          name: 'nativeID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When accessible is true, the system will try to invoke this function when the user performs accessibility tap gesture.\n\n',
+          name: 'onAccessibilityTap',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on mount and layout changes with:\n\n{nativeEvent: { layout: {x, y, width, height}}}\n\nThis event is fired immediately once the layout has been calculated, but the new layout may not yet be reflected on the screen at the time the event is received, especially if a layout animation is in progress.',
+          name: 'onLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When accessible is true, the system will invoke this function when the user performs the magic tap gesture.',
+          name: 'onMagicTap',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Does this view want to "claim" touch responsiveness? This is called for every touch move on the View when it is not the responder.\n\nView.props.onMoveShouldSetResponder: (event) => [true | false], where event is a synthetic touch event as described above.',
+          name: 'onMoveShouldSetResponder',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If a parent View wants to prevent a child View from becoming responder on a move, it should have this handler which returns true.\n\nView.props.onMoveShouldSetResponderCapture: (event) => [true | false], where event is a synthetic touch event as described above.',
+          name: 'onMoveShouldSetResponderCapture',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The View is now responding for touch events. This is the time to highlight and show the user what is happening.\n\nView.props.onResponderGrant: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderGrant',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The user is moving their finger.\n\nView.props.onResponderMove: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderMove',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Another responder is already active and will not release it to that View asking to be the responder.\n\nView.props.onResponderReject: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderReject',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Fired at the end of the touch.\n\nView.props.onResponderRelease: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderRelease',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The responder has been taken from the View. Might be taken by other views after a call to onResponderTerminationRequest, or might be taken by the OS without asking (e.g., happens with control center/ notification center on iOS)\n\nView.props.onResponderTerminate: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderTerminate',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Some other View wants to become responder and is asking this View to release its responder. Returning true allows its release.\n\nView.props.onResponderTerminationRequest: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderTerminationRequest',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, indicates that the view is an accessibility element. By default, all the touchable elements are accessible.',
+          name: 'accessible',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If a parent View wants to prevent a child View from becoming responder on a touch start, it should have this handler which returns true.\n\nView.props.onStartShouldSetResponderCapture: (event) => [true | false], where event is a synthetic touch event as described above.',
+          name: 'onStartShouldSetResponderCapture',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Controls whether the View can be the target of touch events.\n\n\'auto\': The View can be the target of touch events.\n\'none\': The View is never the target of touch events.\n\'box-none\': The View is never the target of touch events but it\'s subviews can be. It behaves like if the view had the following classes in CSS:\n.box-none {\n     pointer-events: none;\n}\n.box-none * {\n     pointer-events: all;\n}\n\'box-only\': The view can be the target of touch events but it\'s subviews cannot be. It behaves like if the view had the following classes in CSS:\n.box-only {\n     pointer-events: all;\n}\n.box-only * {\n     pointer-events: none;\n}\nSince pointerEvents does not affect layout/appearance, and we are already deviating from the spec by adding additional modes, we opt to not include pointerEvents on style. On some platforms, we would need to implement it as a className anyways. Using style or not is an implementation detail of the platform.\n\nenum(\'box-none\', \'none\', \'box-only\', \'auto\')',
+          name: 'pointerEvents',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This is a special performance property exposed by RCTView and is useful for scrolling content when there are many subviews, most of which are offscreen. For this property to be effective, it must be applied to a view that contains many subviews that extend outside its bound. The subviews must also have overflow: hidden, as should the containing view (or one of its superviews).',
+          name: 'removeClippedSubviews',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'style',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in end-to-end tests.\n\nThis disables the \'layout-only view removal\' optimization for this view!',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: accessibilityComponentTypewill soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nIndicates to accessibility services to treat UI component like a native one. Works for Android only.\n\nPossible values are one of:\n\n\'none\'\n\'button\'\n\'radiobutton_checked\'\n\'radiobutton_unchecked\'\n\n',
+          name: 'accessibilityComponentType',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Indicates to accessibility services whether the user should be notified when this view changes. Works for Android API >= 19 only. Possible values:\n\n\'none\' - Accessibility services should not announce changes to this view.\n\'polite\'- Accessibility services should announce changes to this view.\n\'assertive\' - Accessibility services should interrupt ongoing speech to immediately announce changes to this view.\nSee the Android View docs for reference.\n\nenum(\'none\', \'polite\', \'assertive\')',
+          name: 'accessibilityLiveRegion',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Views that are only used to layout their children or otherwise don\'t draw anything may be automatically removed from the native hierarchy as an optimization. Set this property to false to disable this optimization and ensure that this View exists in the native view hierarchy.',
+          name: 'collapsable',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Controls how view is important for accessibility which is if it fires accessibility events and if it is reported to accessibility services that query the screen. Works for Android only.\n\nPossible values:\n\n\'auto\' - The system determines whether the view is important for accessibility - default (recommended).\n\'yes\' - The view is important for accessibility.\n\'no\' - The view is not important for accessibility.\n\'no-hide-descendants\' - The view is not important for accessibility, nor are any of its descendant views.\nSee the Android importantForAccessibility docs for reference.\n\nenum(\'auto\', \'yes\', \'no\', \'no-hide-descendants\')',
+          name: 'importantForAccessibility',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Whether this View needs to rendered offscreen and composited with an alpha in order to preserve 100% correct colors and blending behavior. The default (false) falls back to drawing the component and its children with an alpha applied to the paint used to draw each element instead of rendering the full component offscreen and compositing it back with an alpha value. This default may be noticeable and undesired in the case where the View you are setting an opacity on has multiple overlapping elements (e.g. multiple overlapping Views, or text and a background).\n\nRendering offscreen to preserve correct alpha behavior is extremely expensive and hard to debug for non-native developers, which is why it is not turned on by default. If you do need to enable this property for an animation, consider combining it with renderToHardwareTextureAndroid if the view contents are static (i.e. it doesn\'t need to be redrawn each frame). If that property is enabled, this View will be rendered off-screen once, saved in a hardware texture, and then composited onto the screen with an alpha each frame without having to switch rendering targets on the GPU.',
+          name: 'needsOffscreenAlphaCompositing',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Whether this View should render itself (and all of its children) into a single hardware texture on the GPU.\n\nOn Android, this is useful for animations and interactions that only modify opacity, rotation, translation, and/or scale: in those cases, the view doesn\'t have to be redrawn and display lists don\'t need to be re-executed. The texture can just be re-used and re-composited with different parameters. The downside is that this can use up limited video memory, so this prop should be set back to false at the end of the interaction/animation.',
+          name: 'renderToHardwareTextureAndroid',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: AccessibilityRole and AccessibilityStates are meant to be a cross-platform solution to replace accessibilityTraits and accessibilityComponentType, which will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead of accessibilityTraits and accessibilityComponentType.\n\nTells the screen reader to treat the currently focused on element as having a specific role.\n\nPossible values for AccessibilityRole is one of:\n\n\'none\' - The element has no role.\n\'button\' - The element should be treated as a button.\n\'link\' - The element should be treated as a link.\n\'header\' - The element is a header that divides content into sections.\n\'search\' - The element should be treated as a search field.\n\'image\' - The element should be treated as an image.\n\'key\' - The element should be treated like a keyboard key.\n\'text\' - The element should be treated as text.\n\'summary\' - The element provides app summary information.\n\'imagebutton\' - The element has the role of both an image and also a button.\n\'adjustable\' - The element allows adjustment over a range of values.\nOn iOS, these roles map to corresponding Accessibility Traits. Image button has the same functionality as if the trait was set to both \'image\' and \'button\'. See the Accessibility guide for more information.\n\nOn Android, these roles have similar functionality on TalkBack as adding Accessibility Traits does on Voiceover in iOS',
+          name: 'accessibilityRole',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: AccessibilityRole and AccessibilityStates are meant to be a cross-platform solution to replace accessibilityTraits and accessibilityComponentType, which will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead of accessibilityTraits and accessibilityComponentType.\n\nTells the screen reader to treat the currently focused on element as being in a specific state.\n\nYou can provide one state, no state, or both states. The states must be passed in through an array. Ex: [\'selected\'] or [\'selected\', \'disabled\']\n\nPossible values for AccessibilityStates are:\n\n\'selected\' - The element is in a selcted state.\n\'disabled\' - The element is in a disabled state.',
+          name: 'accessibilityStates',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: accessibilityTraits will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nProvides additional traits to screen reader. By default no traits are provided unless specified otherwise in element.\n\nYou can provide one trait or an array of many traits.\n\nPossible values for AccessibilityTraits are:\n\n\'none\' - The element has no traits.\n\'button\' - The element should be treated as a button.\n\'link\' - The element should be treated as a link.\n\'header\' - The element is a header that divides content into sections.\n\'search\' - The element should be treated as a search field.\n\'image\' - The element should be treated as an image.\n\'selected\' - The element is selected.\n\'plays\' - The element plays sound.\n\'key\' - The element should be treated like a keyboard key.\n\'text\' - The element should be treated as text.\n\'summary\' - The element provides app summary information.\n\'disabled\' - The element is disabled.\n\'frequentUpdates\' - The element frequently changes its value.\n\'startsMedia\' - The element starts a media session.\n\'adjustable\' - The element allows adjustment over a range of values.\n\'allowsDirectInteraction\' - The element allows direct touch interaction for VoiceOver users.\n\'pageTurn\' - Informs VoiceOver that it should scroll to the next page when it finishes reading the contents of the element.\nSee the Accessibility guide for more information.',
+          name: 'accessibilityTraits',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A value indicating whether VoiceOver should ignore the elements within views that are siblings of the receiver. Default is false.\n\nSee the Accessibility guide for more information.',
+          name: 'accessibilityViewIsModal',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A value indicating whether the accessibility elements contained within this accessibility element are hidden. Default is false.\n\nSee the Accessibility guide for more information.',
+          name: 'accessibilityElementsHidden',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A value indicating this view should or should not be inverted when color inversion is turned on. A value of true will tell the view to not be inverted even if color inversion is turned on.\n\nSee the Accessibility guide for more information.',
+          name: 'accessibilityIgnoresInvertColors',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Whether this View should be rendered as a bitmap before compositing.\n\nOn iOS, this is useful for animations and interactions that do not modify this component\'s dimensions nor its children; for example, when translating the position of a static view, rasterization allows the renderer to reuse a cached bitmap of a static view and quickly composite it during each frame.\n\nRasterization incurs an off-screen drawing pass and the bitmap consumes memory. Test and measure when using this property.\n\n',
+          name: 'shouldRasterizeIOS',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'The most fundamental component for building a UI, View is a container that supports layout with flexbox, style, some touch handling, and accessibility controls. View maps directly to the native view equivalent on whatever platform React Native is running on, whether that is a UIView, <div>, android.view, etc.\n\nView is designed to be nested inside other views and can have 0 to many children of any type.\n\nThis example creates a View that wraps two colored boxes and a text component in a row with padding.\n\nclass ViewColoredBoxesWithText extends Component {\n  render() {\n    return (\n      <View\n        style={{\n          flexDirection: \'row\',\n          height: 100,\n          padding: 20,\n        }}>\n        <View style={{backgroundColor: \'blue\', flex: 0.3}} />\n        <View style={{backgroundColor: \'red\', flex: 0.5}} />\n        <Text>Hello World!</Text>\n      </View>\n    );\n  }\n}\nViews are designed to be used with StyleSheet for clarity and performance, although inline styles are also supported.\n\nSynthetic Touch Events\nFor View responder props (e.g., onResponderMove), the synthetic touch event passed to them are of the following form:\n\nnativeEvent\nchangedTouches - Array of all touch events that have changed since the last event.\nidentifier - The ID of the touch.\nlocationX - The X position of the touch, relative to the element.\nlocationY - The Y position of the touch, relative to the element.\npageX - The X position of the touch, relative to the root element.\npageY - The Y position of the touch, relative to the root element.\ntarget - The node id of the element receiving the touch event.\ntimestamp - A time identifier for the touch, useful for velocity calculation.\ntouches - Array of all current touches on the screen.',
+      id: 'DonxQSjWJ1a8zKvX4mfU',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'View'
     },
     {
       children: [],
@@ -646,7 +1854,7 @@ export const mock = {
     },
     {
       children: [],
-      closeTag: true,
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/BreadcrumbItem',
       componentProps: [
         {
@@ -691,6 +1899,85 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Navbar.Header'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'The visible prop determines whether your modal is visible.',
+          name: 'visible',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The supportedOrientations prop allows the modal to be rotated to any of the specified orientations. On iOS, the modal is still restricted by what\'s specified in your app\'s Info.plist\'s UISupportedInterfaceOrientations field. When using presentationStyle of pageSheet or formSheet, this property will be ignored by iOS.\n\nType: array of enum(\'portrait\', \'portrait-upside-down\', \'landscape\', \'landscape-left\', \'landscape-right\')',
+          name: 'supportedOrientations',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The onRequestClose callback is called when the user taps the hardware back button on Android or the menu button on Apple TV. Because of this required prop, be aware that BackHandler events will not be emitted as long as the modal is open.',
+          name: 'onRequestClose',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'The onShow prop allows passing a function that will be called once the modal has been shown.',
+          name: 'onShow',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The transparent prop determines whether your modal will fill the entire view. Setting this to true will render the modal over a transparent background.',
+          name: 'transparent',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The animationType prop controls how the modal animates.\n\nslide slides in from the bottom\nfade fades into view\nnone appears without an animation\nDefault is set to none.\n\nType: enum(\'none\', \'slide\', \'fade\')',
+          name: 'animationType',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The hardwareAccelerated prop controls whether to force hardware acceleration for the underlying window.',
+          name: 'hardwareAccelerated',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The onDismiss prop allows passing a function that will be called once the modal has been dismissed.',
+          name: 'onDismiss',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The onOrientationChange callback is called when the orientation changes while the modal is being displayed. The orientation provided is only \'portrait\' or \'landscape\'. This callback is also called on initial render, regardless of the current orientation.',
+          name: 'onOrientationChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The presentationStyle prop controls how the modal appears (generally on larger devices such as iPad or plus-sized iPhones). See https://developer.apple.com/reference/uikit/uimodalpresentationstyle for details.\n\nfullScreen covers the screen completely\npageSheet covers portrait-width view centered (only on larger devices)\nformSheet covers narrow-width view centered (only on larger devices)\noverFullScreen covers the screen completely, but allows transparency\nDefault is set to overFullScreen or fullScreen depending on transparent property.\n\nType: enum(\'fullScreen\', \'pageSheet\', \'formSheet\', \'overFullScreen\')',
+          name: 'presentationStyle',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Deprecated. Use the animationType prop instead.',
+          name: 'animated',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'The Modal component is a simple way to present content above an enclosing view.\n\nNote: If you need more control over how to present modals over the rest of your app, then consider using a top-level Navigator.\n\nimport React, {Component} from \'react\';\nimport {Modal, Text, TouchableHighlight, View, Alert} from \'react-native\';\n\nclass ModalExample extends Component {\n  state = {\n    modalVisible: false,\n  };\n\n  setModalVisible(visible) {\n    this.setState({modalVisible: visible});\n  }\n\n  render() {\n    return (\n      <View style={{marginTop: 22}}>\n        <Modal\n          animationType="slide"\n          transparent={false}\n          visible={this.state.modalVisible}\n          onRequestClose={() => {\n            Alert.alert(\'Modal has been closed.\');\n          }}>\n          <View style={{marginTop: 22}}>\n            <View>\n              <Text>Hello World!</Text>\n\n              <TouchableHighlight\n                onPress={() => {\n                  this.setModalVisible(!this.state.modalVisible);\n                }}>\n                <Text>Hide Modal</Text>\n              </TouchableHighlight>\n            </View>\n          </View>\n        </Modal>\n\n        <TouchableHighlight\n          onPress={() => {\n            this.setModalVisible(true);\n          }}>\n          <Text>Show Modal</Text>\n        </TouchableHighlight>\n      </View>\n    );\n  }\n}',
+      id: 'HCCjl7fwouBebFdsxMY8',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'Modal'
     },
     {
       children: [],
@@ -850,6 +2137,133 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'ImageResizeMode is an Enum for different image resizing modes, set via the resizeMode style property on Image components. The values are contain, cover, stretch, center, repeat.',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'blurRadius: the blur radius of the blur filter added to the image',
+          name: 'blurRadius',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on mount and layout changes with {nativeEvent: {layout: {x, y, width, height}}}.',
+          name: 'onLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked when load completes successfully.',
+          name: 'onLoad',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked when load either succeeds or fails.',
+          name: 'onLoadEnd',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on load start.\n\ne.g., onLoadStart={(e) => this.setState({loading: true})}',
+          name: 'onLoadStart',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines how to resize the image when the frame doesn\'t match the raw image dimensions.\n\ncover: Scale the image uniformly (maintain the image\'s aspect ratio) so that both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view (minus padding).\n\ncontain: Scale the image uniformly (maintain the image\'s aspect ratio) so that both dimensions (width and height) of the image will be equal to or less than the corresponding dimension of the view (minus padding).\n\nstretch: Scale width and height independently, This may change the aspect ratio of the src.\n\nrepeat: Repeat the image to cover the frame of the view. The image will keep its size and aspect ratio, unless it is larger than the view, in which case it will be scaled down uniformly so that it is contained in the view.\n\ncenter: Center the image in the view along both dimensions. If the image is larger than the view, scale it down uniformly so that it is contained in the view.\n\nType: enum(\'cover\', \'contain\', \'stretch\', \'repeat\', \'center\')',
+          name: 'resizeMode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The image source (either a remote URL or a local file resource).\n\nThis prop can also contain several remote URLs, specified together with their width and height and potentially with scale/other URI arguments. The native side will then choose the best uri to display based on the measured size of the image container. A cache property can be added to control how networked request interacts with the local cache.\n\nThe currently supported formats are png, jpg, jpeg, bmp, gif, webp (Android only), psd (iOS only).',
+          name: 'source',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Similarly to source, this property represents the resource used to render the loading indicator for the image, displayed until image is ready to be displayed, typically after when it got downloaded from network.',
+          name: 'loadingIndicatorSource',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on load error with {nativeEvent: {error}}.',
+          name: 'onError',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A unique identifier for this element to be used in UI Automation testing scripts.',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The mechanism that should be used to resize the image when the image\'s dimensions differ from the image view\'s dimensions. Defaults to auto.\n\nauto: Use heuristics to pick between resize and scale.\n\nresize: A software operation which changes the encoded image in memory before it gets decoded. This should be used instead of scale when the image is much larger than the view.\n\nscale: The image gets drawn downscaled or upscaled. Compared to resize, scale is faster (usually hardware accelerated) and produces higher quality images. This should be used if the image is smaller than the view. It should also be used if the image is slightly bigger than the view.\n\nMore details about resize and scale can be found at http://frescolib.org/docs/resizing.html.\n\nType: enum(\'auto\', \'resize\', \'scale\')',
+          name: 'resizeMethod',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The text that\'s read by the screen reader when the user interacts with the image.',
+          name: 'accessibilityLabel',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, indicates the image is an accessibility element.',
+          name: 'accessible',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When the image is resized, the corners of the size specified by capInsets will stay a fixed size, but the center content and borders of the image will be stretched. This is useful for creating resizable rounded buttons, shadows, and other resizable assets. More info in the official Apple documentation.\n\nType: object: {top: number, left: number, bottom: number, right: number}',
+          name: 'capInsets',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A static image to display while loading the image source.\nIf passing an object, the general shape is {uri: string, width: number, height: number, scale: number}:\n\nuri - a string representing the resource identifier for the image, which should be either a local file path or the name of a static image resource (which should be wrapped in the require(\'./path/to/image.png\') function).\nwidth, height - can be specified if known at build time, in which case these will be used to set the default <Image/> component dimensions.\nscale - used to indicate the scale factor of the image. Defaults to 1.0 if unspecified, meaning that one image pixel equates to one display point / DIP.\nIf passing a number:\n\nnumber - Opaque type returned by something like require(\'./image.jpg\').\nNote: On Android, the default source prop is ignored on debug builds.',
+          name: 'defaultSource',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked when a partial load of the image is complete. The definition of what constitutes a "partial load" is loader specific though this is meant for progressive JPEG loads.',
+          name: 'onPartialLoad',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on download progress with {nativeEvent: {loaded, total}}.',
+          name: 'onProgress',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Android only. By default, it is 300ms.',
+          name: 'fadeDuration',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A React component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.\n\nThis example shows fetching and displaying an image from local storage as well as one from network and even from data provided in the \'data:\' uri scheme.\n\nNote that for network and data images, you will need to manually specify the dimensions of your image!\n\nimport React, { Component } from \'react\';\nimport { AppRegistry, View, Image } from \'react-native\';\n\nexport default class DisplayAnImage extends Component {\n  render() {\n    return (\n      <View>\n        <Image\n          source={require(\'/react-native/img/favicon.png\')}\n        />\n        <Image\n          style={{width: 50, height: 50}}\n          source={{uri: \'https://facebook.github.io/react-native/docs/assets/favicon.png\'}}\n        />\n        <Image\n          style={{width: 66, height: 58}}\n          source={{uri: \'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==\'}}\n        />\n      </View>\n    );\n  }\n}\n\n// skip this line if using Create React Native App\nAppRegistry.registerComponent(\'DisplayAnImage\', () => DisplayAnImage);\n\n\nYou can also add style to an image:\n\nimport React, { Component } from \'react\';\nimport { AppRegistry, View, Image, StyleSheet } from \'react-native\';\n\nconst styles = StyleSheet.create({\n  stretch: {\n    width: 50,\n    height: 200\n  }\n});\n\nexport default class DisplayAnImageWithStyle extends Component {\n  render() {\n    return (\n      <View>\n        <Image\n          style={styles.stretch}\n          source={require(\'/react-native/img/favicon.png\')}\n        />\n      </View>\n    );\n  }\n}\n\n// skip these lines if using Create React Native App\nAppRegistry.registerComponent(\n  \'DisplayAnImageWithStyle\',\n  () => DisplayAnImageWithStyle\n);\n\nGIF and WebP support on Android\nWhen building your own native code, GIF and WebP are not supported by default on Android.\n\nYou will need to add some optional modules in android/app/build.gradle, depending on the needs of your app.\n\ndependencies {\n  // If your app supports Android versions before Ice Cream Sandwich (API level 14)\n  compile \'com.facebook.fresco:animated-base-support:1.10.0\'\n\n  // For animated GIF support\n  compile \'com.facebook.fresco:animated-gif:1.10.0\'\n\n  // For WebP support, including animated WebP\n  compile \'com.facebook.fresco:animated-webp:1.10.0\'\n  compile \'com.facebook.fresco:webpsupport:1.10.0\'\n\n  // For WebP support, without animations\n  compile \'com.facebook.fresco:webpsupport:1.10.0\'\n}',
+      id: 'KkOEyDJ2Nny1kFXydDJf',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'Image'
+    },
+    {
+      children: [],
       componentImport: 'react-bootstrap/lib/Tooltip',
       componentProps: [
         {
@@ -961,6 +2375,31 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Radio'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'onSnapshotReady',
+          name: 'onSnapshotReady',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'testIdentifier',
+          name: 'testIdentifier',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'SnapshotViewIOS',
+      id: 'Ns7VKzTkDIIgaH7oEilO',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'SnapshotViewIOS'
     },
     {
       children: [],
@@ -1105,6 +2544,139 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'TabContainer'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'This defines how far your touch can start away from the button. This is added to pressRetentionOffset when moving off of the button. ** NOTE ** The touch area never extends past the parent view bounds and the Z-index of sibling views always takes precedence if a touch hits two overlapping views.\n\nobject: {top: number, left: number, bottom: number, right: number}',
+          name: 'hitSlop',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: accessibilityComponentTypewill soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nType: AccessibilityComponentTypes',
+          name: 'accessibilityComponentType',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.',
+          name: 'accessibilityHint',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Overrides the text that\'s read by the screen reader when the user interacts with the element. By default, the label is constructed by traversing all the children and accumulating all the Text nodes separated by space.',
+          name: 'accessibilityLabel',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'accessibilityRole\n\nType: AccessibilityRoles',
+          name: 'accessibilityRole',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'array of AccessibilityStates',
+          name: 'accessibilityStates',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: accessibilityTraitswill soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nType: AccessibilityTraits, ,array of AccessibilityTraits',
+          name: 'accessibilityTraits',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'accessible',
+          name: 'accessible',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Delay in ms, from onPressIn, before onLongPress is called.',
+          name: 'delayLongPress',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Delay in ms, from the start of the touch, before onPressIn is called.',
+          name: 'delayPressIn',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Delay in ms, from the release of the touch, before onPressOut is called.',
+          name: 'delayPressOut',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, disable all interactions for this component.',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked when the item loses focus.',
+          name: 'onBlur',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked when the item receives focus.',
+          name: 'onFocus',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on mount and layout changes with\n\n{nativeEvent: {layout: {x, y, width, height}}}',
+          name: 'onLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'onLongPress',
+          name: 'onLongPress',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called when the touch is released, but not if cancelled (e.g. by a scroll that steals the responder lock).',
+          name: 'onPress',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called as soon as the touchable element is pressed and invoked even before onPress. This can be useful when making network requests.',
+          name: 'onPressIn',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called as soon as the touch is released even before onPress.',
+          name: 'onPressOut',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When the scroll view is disabled, this defines how far your touch may move off of the button, before deactivating the button. Once deactivated, try moving it back and you\'ll see that the button is once again reactivated! Move it back and forth several times while the scroll view is disabled. Ensure you pass in a constant to reduce memory allocations.\n\nobject: {top: number, left: number, bottom: number, right: number}',
+          name: 'pressRetentionOffset',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Do not use unless you have a very good reason. All elements that respond to press should have a visual feedback when touched.\n\nTouchableWithoutFeedback supports only one child. If you wish to have several child components, wrap them in a View.',
+      id: 'QzbzZhhnXD6MVsUqsz57',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'TouchableWithoutFeedback'
     },
     {
       children: [],
@@ -1258,6 +2830,277 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'When true, the scroll view bounces vertically when it reaches the end even if the content is smaller than the scroll view itself. The default value is false when horizontal={true} and true otherwise.',
+          name: 'alwaysBounceVertical',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'These styles will be applied to the scroll view content container which wraps all of the child views. Example:\n\nreturn (\n  <ScrollView contentContainerStyle={styles.contentContainer}>\n  </ScrollView>\n);\n...\nconst styles = StyleSheet.create({\n  contentContainer: {\n    paddingVertical: 20\n  }\n});\n\nType: StyleSheetPropType(View Style props)',
+          name: 'contentContainerStyle',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines whether the keyboard gets dismissed in response to a drag.\n\nCross platform\n\n\'none\' (the default), drags do not dismiss the keyboard.\n\'on-drag\', the keyboard is dismissed when a drag begins.\niOS Only\n\n\'interactive\', the keyboard is dismissed interactively with the drag and moves in synchrony with the touch; dragging upwards cancels the dismissal. On android this is not supported and it will have the same behavior as \'none\'.\n\nType: enum(\'none\', \'on-drag\', \'interactive\')',
+          name: 'keyboardDismissMode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines when the keyboard should stay visible after a tap.\n\n\'never\' (the default), tapping outside of the focused text input when the keyboard is up dismisses the keyboard. When this happens, children won\'t receive the tap.\n\'always\', the keyboard will not dismiss automatically, and the scroll view will not catch taps, but children of the scroll view can catch taps.\n\'handled\', the keyboard will not dismiss automatically when the tap was handled by a children, (or captured by an ancestor).\nfalse, deprecated, use \'never\' instead\ntrue, deprecated, use \'always\' instead\n\nType: enum(\'always\', \'never\', \'handled\', false, true)',
+          name: 'keyboardShouldPersistTaps',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called when scrollable content view of the ScrollView changes.\n\nHandler function is passed the content width and content height as parameters: (contentWidth, contentHeight)\n\nIt\'s implemented using onLayout handler attached to the content container which this ScrollView renders.',
+          name: 'onContentSizeChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called when the momentum scroll starts (scroll which occurs as the ScrollView glides to a stop).',
+          name: 'onMomentumScrollBegin',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called when the momentum scroll ends (scroll which occurs as the ScrollView glides to a stop).',
+          name: 'onMomentumScrollEnd',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Fires at most once per frame during scrolling. The frequency of the events can be controlled using the scrollEventThrottle prop.',
+          name: 'onScroll',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called when the user begins to drag the scroll view.',
+          name: 'onScrollBeginDrag',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called when the user stops dragging the scroll view and it either stops or begins to glide.',
+          name: 'onScrollEndDrag',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, the scroll view stops on multiples of the scroll view\'s size when scrolling. This can be used for horizontal pagination. The default value is false.\n\nNote: Vertical pagination is not supported on Android.',
+          name: 'pagingEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A RefreshControl component, used to provide pull-to-refresh functionality for the ScrollView. Only works for vertical ScrollViews (horizontal prop must be false).',
+          name: 'refreshControl',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Experimental: When true, offscreen child views (whose overflow value is hidden) are removed from their native backing superview when offscreen. This can improve scrolling performance on long lists. The default value is true.',
+          name: 'removeClippedSubviews',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When false, the view cannot be scrolled via touch interaction. The default value is true.\n\nNote that the view can always be scrolled by calling scrollTo.\n',
+          name: 'scrollEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, shows a horizontal scroll indicator. The default value is true.',
+          name: 'showsHorizontalScrollIndicator',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, shows a vertical scroll indicator. The default value is true.',
+          name: 'showsVerticalScrollIndicator',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An array of child indices determining which children get docked to the top of the screen when scrolling. For example, passing stickyHeaderIndices={[0]} will cause the first child to be fixed to the top of the scroll view. This property is not supported in conjunction with horizontal={true}',
+          name: 'stickyHeaderIndices',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sometimes a scrollview takes up more space than its content fills. When this is the case, this prop will fill the rest of the scrollview with a color to avoid setting a background and creating unnecessary overdraw. This is an advanced optimization that is not needed in the general case.',
+          name: 'endFillColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to override default value of overScroll mode.\n\nPossible values:\n\n\'auto\' - Default value, allow a user to over-scroll this view only if the content is large enough to meaningfully scroll.\n\'always\' - Always allow a user to over-scroll this view.\n\'never\' - Never allow a user to over-scroll this view.\n\n\nType: enum(\'auto\', \'always\', \'never\')',
+          name: 'overScrollMode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Tag used to log scroll performance on this scroll view. Will force momentum events to be turned on (see sendMomentumEvents). This doesn\'t do anything out of the box and you need to implement a custom native FpsListener for it to be useful.',
+          name: 'scrollPerfTag',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, the scroll view bounces horizontally when it reaches the end even if the content is smaller than the scroll view itself. The default value is true when horizontal={true} and false otherwise.',
+          name: 'alwaysBounceHorizontal',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, the scroll view\'s children are arranged horizontally in a row instead of vertically in a column. The default value is false.',
+          name: 'horizontal',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Controls whether iOS should automatically adjust the content inset for scroll views that are placed behind a navigation bar or tab bar/ toolbar. The default value is true.',
+          name: 'automaticallyAdjustContentInsets',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, the scroll view bounces when it reaches the end of the content if the content is larger then the scroll view along the axis of the scroll direction. When false, it disables all bouncing even if the alwaysBounce* props are true. The default value is true.',
+          name: 'bounces',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, gestures can drive zoom past min/max and the zoom will animate to the min/max value at gesture end, otherwise the zoom will not exceed the limits.',
+          name: 'bouncesZoom',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When false, once tracking starts, won\'t try to drag if the touch moves. The default value is true.',
+          name: 'canCancelContentTouches',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, the scroll view automatically centers the content when the content is smaller than the scroll view bounds; when the content is larger than the scroll view, this property has no effect. The default value is false.',
+          name: 'centerContent',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The amount by which the scroll view content is inset from the edges of the scroll view. Defaults to {top: 0, left: 0, bottom: 0, right: 0}.\n\nType: object: {top: number, left: number, bottom: number, right: number}',
+          name: 'contentInset',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This property specifies how the safe area insets are used to modify the content area of the scroll view. The default value of this property is "never". Available on iOS 11 and later.\n\nType: enum(\'automatic\', \'scrollableAxes\', \'never\', \'always\')',
+          name: 'contentInsetAdjustmentBehavior',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to manually set the starting scroll offset. The default value is {x: 0, y: 0}.',
+          name: 'contentOffset',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A floating-point number that determines how quickly the scroll view decelerates after the user lifts their finger. You may also use string shortcuts "normal" and "fast" which match the underlying iOS settings for UIScrollViewDecelerationRateNormal and UIScrollViewDecelerationRateFast respectively.\n\n\'normal\': 0.998 (the default)\n\'fast\': 0.99\n\nType: enum(\'fast\', \'normal\'), ,number',
+          name: 'decelerationRate',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, the ScrollView will try to lock to only vertical or horizontal scrolling while dragging. The default value is false.',
+          name: 'directionalLockEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The style of the scroll indicators.\n\n\'default\' (the default), same as black.\n\'black\', scroll indicator is black. This style is good against a light background.\n\'white\', scroll indicator is white. This style is good against a dark background.\n\nType: enum(\'default\', \'black\', \'white\')',
+          name: 'indicatorStyle',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The maximum allowed zoom scale. The default value is 1.0.',
+          name: 'maximumZoomScale',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The minimum allowed zoom scale. The default value is 1.0.',
+          name: 'minimumZoomScale',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, ScrollView allows use of pinch gestures to zoom in and out. The default value is true.',
+          name: 'pinchGestureEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This controls how often the scroll event will be fired while scrolling (as a time interval in ms). A lower number yields better accuracy for code that is tracking the scroll position, but can lead to scroll performance problems due to the volume of information being send over the bridge. You will not notice a difference between values set between 1-16 as the JS run loop is synced to the screen refresh rate. If you do not need precise scroll position tracking, set this value higher to limit the information being sent across the bridge. The default value is zero, which results in the scroll event being sent only once each time the view is scrolled.',
+          name: 'scrollEventThrottle',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The amount by which the scroll view indicators are inset from the edges of the scroll view. This should normally be set to the same value as the contentInset. Defaults to {0, 0, 0, 0}.\n\nType: object: {top: number, left: number, bottom: number, right: number}',
+          name: 'scrollIndicatorInsets',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, the scroll view scrolls to top when the status bar is tapped. The default value is true.',
+          name: 'scrollsToTop',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When snapToInterval is set, snapToAlignment will define the relationship of the snapping to the scroll view.\n\n\'start\' (the default) will align the snap at the left (horizontal) or top (vertical)\n\'center\' will align the snap in the center\n\'end\' will align the snap at the right (horizontal) or bottom (vertical)\n\nType: enum(\'start\', \'center\', \'end\')',
+          name: 'snapToAlignment',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When set, causes the scroll view to stop at multiples of the value of snapToInterval. This can be used for paginating through children that have lengths smaller than the scroll view. Typically used in combination with snapToAlignment and decelerationRate="fast". Overrides less configurable pagingEnabled prop.\n\nNote: Vertical snapToInterval is not supported on Android.',
+          name: 'snapToInterval',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The current scale of the scroll view content. The default value is 1.0.',
+          name: 'zoomScale',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Enables nested scrolling for Android API level 21+. Nested scrolling is supported by default on iOS.',
+          name: 'nestedScrollEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Component that wraps platform ScrollView while providing integration with touch locking "responder" system.\n\nKeep in mind that ScrollViews must have a bounded height in order to work, since they contain unbounded-height children into a bounded container (via a scroll interaction). In order to bound the height of a ScrollView, either set the height of the view directly (discouraged) or make sure all parent views have bounded height. Forgetting to transfer {flex: 1} down the view stack can lead to errors here, which the element inspector makes easy to debug.\n\nDoesn\'t yet support other contained responders from blocking this scroll view from becoming the responder.\n\n<ScrollView> vs <FlatList> - which one to use?\n\nScrollView simply renders all its react child components at once. That makes it very easy to understand and use.\n\nOn the other hand, this has a performance downside. Imagine you have a very long list of items you want to display, maybe several screens worth of content. Creating JS components and native views for everything all at once, much of which may not even be shown, will contribute to slow rendering and increased memory usage.\n\nThis is where FlatList comes into play. FlatList renders items lazily, just when they are about to appear, and removes items that scroll way off screen to save memory and processing time.\n\nFlatList is also handy if you want to render separators between your items, multiple columns, infinite scroll loading, or any number of other features it supports out of the box.',
+      id: 'Sa5gnvuwj44k5pt9Tglp',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'ScrollView'
+    },
+    {
+      children: [],
       componentImport: 'react-bootstrap/lib/ProgressBar',
       componentProps: [
         {
@@ -1330,7 +3173,7 @@ export const mock = {
     },
     {
       children: [],
-      closeTag: true,
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Alert',
       componentProps: [
         {
@@ -1364,6 +3207,67 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Alert'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'The style of the tab bar. Supported values are \'default\', \'black\'. Use \'black\' instead of setting barTintColor to black. This produces a tab bar with the native iOS style with higher translucency.\n\nenum(\'default\', \'black\')',
+          name: 'barStyle',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Background color of the tab bar',
+          name: 'barTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies tab bar item positioning. Available values are:\n\nfill - distributes items across the entire width of the tab bar\ncenter - centers item in the available tab bar space\nauto (default) - distributes items dynamically according to the user interface idiom. In a horizontally compact environment (e.g. iPhone 5) this value defaults to fill, in a horizontally regular one (e.g. iPad) it defaults to center.\n\nenum(\'fill\', \'center\', \'auto\')',
+          name: 'itemPositioning',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'style',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Color of the currently selected tab icon',
+          name: 'tintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A Boolean value that indicates whether the tab bar is translucent',
+          name: 'translucent',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Color of unselected tab icons. Available since iOS 10.',
+          name: 'unselectedItemTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Color of text on unselected tabs',
+          name: 'unselectedTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'TabBarIOS',
+      id: 'VQhJW0TkVxGjFKx5BBuZ',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'TabBarIOS'
     },
     {
       children: [],
@@ -1451,6 +3355,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ToggleButton',
       componentProps: [
         {
@@ -1619,6 +3524,603 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Does this view want to become responder on the start of a touch?\n\nView.props.onStartShouldSetResponder: (event) => [true | false], where event is a synthetic touch event as described above.',
+          name: 'onStartShouldSetResponder',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.',
+          name: 'accessibilityHint',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Overrides the text that\'s read by the screen reader when the user interacts with the element. By default, the label is constructed by traversing all the children and accumulating all the Text nodes separated by space.',
+          name: 'accessibilityLabel',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This defines how far a touch event can start away from the view. Typical interface guidelines recommend touch targets that are at least 30 - 40 points/density-independent pixels.\n\nFor example, if a touchable view has a height of 20 the touchable height can be extended to 40 with hitSlop={{top: 10, bottom: 10, left: 0, right: 0}}\n\nThe touch area never extends past the parent view bounds and the Z-index of sibling views always takes precedence if a touch hits two overlapping views.\n\nType: object: {top: number, left: number, bottom: number, right: number}',
+          name: 'hitSlop',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view from native classes.\n\nThis disables the \'layout-only view removal\' optimization for this view!',
+          name: 'nativeID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When accessible is true, the system will try to invoke this function when the user performs accessibility tap gesture.',
+          name: 'onAccessibilityTap',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on mount and layout changes with:\n\n{nativeEvent: { layout: {x, y, width, height}}}\n\nThis event is fired immediately once the layout has been calculated, but the new layout may not yet be reflected on the screen at the time the event is received, especially if a layout animation is in progress.',
+          name: 'onLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When accessible is true, the system will invoke this function when the user performs the magic tap gesture.',
+          name: 'onMagicTap',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Does this view want to "claim" touch responsiveness? This is called for every touch move on the View when it is not the responder.\n\nView.props.onMoveShouldSetResponder: (event) => [true | false], where event is a synthetic touch event as described above.',
+          name: 'onMoveShouldSetResponder',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If a parent View wants to prevent a child View from becoming responder on a move, it should have this handler which returns true.\n\nView.props.onMoveShouldSetResponderCapture: (event) => [true | false], where event is a synthetic touch event as described above.',
+          name: 'onMoveShouldSetResponderCapture',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The View is now responding for touch events. This is the time to highlight and show the user what is happening.\n\nView.props.onResponderGrant: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderGrant',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The user is moving their finger.\n\nView.props.onResponderMove: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderMove',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Another responder is already active and will not release it to that View asking to be the responder.\n\nView.props.onResponderReject: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderReject',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Fired at the end of the touch.\n\nView.props.onResponderRelease: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderRelease',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The responder has been taken from the View. Might be taken by other views after a call to onResponderTerminationRequest, or might be taken by the OS without asking (e.g., happens with control center/ notification center on iOS)\n\nView.props.onResponderTerminate: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderTerminate',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Some other View wants to become responder and is asking this View to release its responder. Returning true allows its release.\n\nView.props.onResponderTerminationRequest: (event) => {}, where event is a synthetic touch event as described above.',
+          name: 'onResponderTerminationRequest',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When true, indicates that the view is an accessibility element. By default, all the touchable elements are accessible.',
+          name: 'accessible',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If a parent View wants to prevent a child View from becoming responder on a touch start, it should have this handler which returns true.\n\nView.props.onStartShouldSetResponderCapture: (event) => [true | false], where event is a synthetic touch event as described above.',
+          name: 'onStartShouldSetResponderCapture',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Controls whether the View can be the target of touch events.\n\n\'auto\': The View can be the target of touch events.\n\'none\': The View is never the target of touch events.\n\'box-none\': The View is never the target of touch events but it\'s subviews can be. It behaves like if the view had the following classes in CSS:\n.box-none {\n     pointer-events: none;\n}\n.box-none * {\n     pointer-events: all;\n}\n\'box-only\': The view can be the target of touch events but it\'s subviews cannot be. It behaves like if the view had the following classes in CSS:\n.box-only {\n     pointer-events: all;\n}\n.box-only * {\n     pointer-events: none;\n}\nSince pointerEvents does not affect layout/appearance, and we are already deviating from the spec by adding additional modes, we opt to not include pointerEvents on style. On some platforms, we would need to implement it as a className anyways. Using style or not is an implementation detail of the platform.\n\nType: enum(\'box-none\', \'none\', \'box-only\', \'auto\')',
+          name: 'pointerEvents',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This is a special performance property exposed by RCTView and is useful for scrolling content when there are many subviews, most of which are offscreen. For this property to be effective, it must be applied to a view that contains many subviews that extend outside its bound. The subviews must also have overflow: hidden, as should the containing view (or one of its superviews).',
+          name: 'removeClippedSubviews',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'style',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in end-to-end tests.\n\nThis disables the \'layout-only view removal\' optimization for this view!',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: accessibilityComponentTypewill soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nIndicates to accessibility services to treat UI component like a native one. Works for Android only.\n\nPossible values are one of:\n\n\'none\'\n\'button\'\n\'radiobutton_checked\'\n\'radiobutton_unchecked\'\n\n',
+          name: 'accessibilityComponentType',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Indicates to accessibility services whether the user should be notified when this view changes. Works for Android API >= 19 only. Possible values:\n\n\'none\' - Accessibility services should not announce changes to this view.\n\'polite\'- Accessibility services should announce changes to this view.\n\'assertive\' - Accessibility services should interrupt ongoing speech to immediately announce changes to this view.\n\nType: enum(\'none\', \'polite\', \'assertive\')',
+          name: 'accessibilityLiveRegion',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Views that are only used to layout their children or otherwise don\'t draw anything may be automatically removed from the native hierarchy as an optimization. Set this property to false to disable this optimization and ensure that this View exists in the native view hierarchy.',
+          name: 'collapsable',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Controls how view is important for accessibility which is if it fires accessibility events and if it is reported to accessibility services that query the screen. Works for Android only.\n\nPossible values:\n\n\'auto\' - The system determines whether the view is important for accessibility - default (recommended).\n\'yes\' - The view is important for accessibility.\n\'no\' - The view is not important for accessibility.\n\'no-hide-descendants\' - The view is not important for accessibility, nor are any of its descendant views.\n\nType: enum(\'auto\', \'yes\', \'no\', \'no-hide-descendants\')',
+          name: 'importantForAccessibility',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Whether this View needs to rendered offscreen and composited with an alpha in order to preserve 100% correct colors and blending behavior. The default (false) falls back to drawing the component and its children with an alpha applied to the paint used to draw each element instead of rendering the full component offscreen and compositing it back with an alpha value. This default may be noticeable and undesired in the case where the View you are setting an opacity on has multiple overlapping elements (e.g. multiple overlapping Views, or text and a background).\n\nRendering offscreen to preserve correct alpha behavior is extremely expensive and hard to debug for non-native developers, which is why it is not turned on by default. If you do need to enable this property for an animation, consider combining it with renderToHardwareTextureAndroid if the view contents are static (i.e. it doesn\'t need to be redrawn each frame). If that property is enabled, this View will be rendered off-screen once, saved in a hardware texture, and then composited onto the screen with an alpha each frame without having to switch rendering targets on the GPU.',
+          name: 'needsOffscreenAlphaCompositing',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Whether this View should render itself (and all of its children) into a single hardware texture on the GPU.\n\nOn Android, this is useful for animations and interactions that only modify opacity, rotation, translation, and/or scale: in those cases, the view doesn\'t have to be redrawn and display lists don\'t need to be re-executed. The texture can just be re-used and re-composited with different parameters. The downside is that this can use up limited video memory, so this prop should be set back to false at the end of the interaction/animation.',
+          name: 'renderToHardwareTextureAndroid',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: AccessibilityRole and AccessibilityStates are meant to be a cross-platform solution to replace accessibilityTraits and accessibilityComponentType, which will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead of accessibilityTraits and accessibilityComponentType.\n\nTells the screen reader to treat the currently focused on element as having a specific role.\n\nPossible values for AccessibilityRole is one of:\n\n\'none\' - The element has no role.\n\'button\' - The element should be treated as a button.\n\'link\' - The element should be treated as a link.\n\'header\' - The element is a header that divides content into sections.\n\'search\' - The element should be treated as a search field.\n\'image\' - The element should be treated as an image.\n\'key\' - The element should be treated like a keyboard key.\n\'text\' - The element should be treated as text.\n\'summary\' - The element provides app summary information.\n\'imagebutton\' - The element has the role of both an image and also a button.\n\'adjustable\' - The element allows adjustment over a range of values.\nOn iOS, these roles map to corresponding Accessibility Traits. Image button has the same functionality as if the trait was set to both \'image\' and \'button\'. See the Accessibility guide for more information.\n\nOn Android, these roles have similar functionality on TalkBack as adding Accessibility Traits does on Voiceover in iOS',
+          name: 'accessibilityRole',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: AccessibilityRole and AccessibilityStates are meant to be a cross-platform solution to replace accessibilityTraits and accessibilityComponentType, which will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead of accessibilityTraits and accessibilityComponentType.\n\nTells the screen reader to treat the currently focused on element as being in a specific state.\n\nYou can provide one state, no state, or both states. The states must be passed in through an array. Ex: [\'selected\'] or [\'selected\', \'disabled\']\n\nPossible values for AccessibilityStates are:\n\n\'selected\' - The element is in a selcted state.\n\'disabled\' - The element is in a disabled state.',
+          name: 'accessibilityStates',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '> Note: accessibilityTraits will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nProvides additional traits to screen reader. By default no traits are provided unless specified otherwise in element.\n\nYou can provide one trait or an array of many traits.\n\nPossible values for AccessibilityTraits are:\n\n\'none\' - The element has no traits.\n\'button\' - The element should be treated as a button.\n\'link\' - The element should be treated as a link.\n\'header\' - The element is a header that divides content into sections.\n\'search\' - The element should be treated as a search field.\n\'image\' - The element should be treated as an image.\n\'selected\' - The element is selected.\n\'plays\' - The element plays sound.\n\'key\' - The element should be treated like a keyboard key.\n\'text\' - The element should be treated as text.\n\'summary\' - The element provides app summary information.\n\'disabled\' - The element is disabled.\n\'frequentUpdates\' - The element frequently changes its value.\n\'startsMedia\' - The element starts a media session.\n\'adjustable\' - The element allows adjustment over a range of values.\n\'allowsDirectInteraction\' - The element allows direct touch interaction for VoiceOver users.\n\'pageTurn\' - Informs VoiceOver that it should scroll to the next page when it finishes reading the contents of the element.',
+          name: 'accessibilityTraits',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A value indicating whether VoiceOver should ignore the elements within views that are siblings of the receiver. Default is false.',
+          name: 'accessibilityViewIsModal',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A value indicating whether the accessibility elements contained within this accessibility element are hidden. Default is false.',
+          name: 'accessibilityElementsHidden',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A value indicating this view should or should not be inverted when color inversion is turned on. A value of true will tell the view to not be inverted even if color inversion is turned on.',
+          name: 'accessibilityIgnoresInvertColors',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Whether this View should be rendered as a bitmap before compositing.\n\nOn iOS, this is useful for animations and interactions that do not modify this component\'s dimensions nor its children; for example, when translating the position of a static view, rasterization allows the renderer to reuse a cached bitmap of a static view and quickly composite it during each frame.\n\nRasterization incurs an off-screen drawing pass and the bitmap consumes memory. Test and measure when using this property.',
+          name: 'shouldRasterizeIOS',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Displays a circular loading indicator.\n\nimport React, { Component } from \'react\'\nimport {\n  ActivityIndicator,\n  AppRegistry,\n  StyleSheet,\n  Text,\n  View,\n} from \'react-native\'\n\nexport default class App extends Component {\n  render() {\n    return (\n      <View style={[styles.container, styles.horizontal]}>\n        <ActivityIndicator size="large" color="#0000ff" />\n        <ActivityIndicator size="small" color="#00ff00" />\n        <ActivityIndicator size="large" color="#0000ff" />\n        <ActivityIndicator size="small" color="#00ff00" />\n      </View>\n    )\n  }\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    justifyContent: \'center\'\n  },\n  horizontal: {\n    flexDirection: \'row\',\n    justifyContent: \'space-around\',\n    padding: 10\n  }\n})\n\nAppRegistry.registerComponent(\'App\', () => App)',
+      id: 'XyXEaauLRTECjJrUodQt',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'ActivityIndicator'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Specifies whether fonts should scale to respect Text Size accessibility settings. The default is true.',
+          name: 'allowFontScaling',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Can tell TextInput to automatically capitalize certain characters. This property is not supported by some keyboard types such as name-phone-pad.\n\ncharacters: all characters.\nwords: first letter of each word.\nsentences: first letter of each sentence (default).\nnone: don\'t auto capitalize anything.\n\nenum(\'none\', \'sentences\', \'words\', \'characters\')',
+          name: 'autoCapitalize',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If false, disables auto-correct. The default value is true.',
+          name: 'autoCorrect',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, focuses the input on componentDidMount. The default value is false.',
+          name: 'autoFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, the text field will blur when submitted. The default value is true for single-line fields and false for multiline fields. Note that for multiline fields, setting blurOnSubmit to true means that pressing return will blur the field and trigger the onSubmitEditing event instead of inserting a newline into the field.',
+          name: 'blurOnSubmit',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, caret is hidden. The default value is false.',
+          name: 'caretHidden',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When the clear button should appear on the right side of the text view. This property is supported only for single-line TextInput component. The default value is never.\n\nenum(\'never\', \'while-editing\', \'unless-editing\', \'always\')',
+          name: 'clearButtonMode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, clears the text field automatically when editing begins.',
+          name: 'clearTextOnFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, context menu is hidden. The default value is false.',
+          name: 'contextMenuHidden',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines the types of data converted to clickable URLs in the text input. Only valid if multiline={true} and editable={false}. By default no data types are detected.\n\nYou can provide one type or an array of many types.\n\nPossible values for dataDetectorTypes are:\n\n\'phoneNumber\'\n\'link\'\n\'address\'\n\'calendarEvent\'\n\'none\'\n\'all\'\n\nenum(\'phoneNumber\', \'link\', \'address\', \'calendarEvent\', \'none\', \'all\'), ,array of enum(\'phoneNumber\', \'link\', \'address\', \'calendarEvent\', \'none\', \'all\')\n',
+          name: 'dataDetectorTypes',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Provides an initial value that will change when the user starts typing. Useful for simple use-cases where you do not want to deal with listening to events and updating the value prop to keep the controlled state in sync.',
+          name: 'defaultValue',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When false, if there is a small amount of space available around a text input (e.g. landscape orientation on a phone), the OS may choose to have the user edit the text inside of a full screen text input mode. When true, this feature is disabled and users will always edit the text directly inside of the text input. Defaults to false.',
+          name: 'disableFullscreenUI',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If false, text is not editable. The default value is true.',
+          name: 'editable',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, the keyboard disables the return key when there is no text and automatically enables it when there is text. The default value is false.',
+          name: 'enablesReturnKeyAutomatically',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If defined, the provided image resource will be rendered on the left. The image resource must be inside /android/app/src/main/res/drawable and referenced like\n\n<TextInput\n inlineImageLeft=\'search_icon\'\n/>',
+          name: 'inlineImageLeft',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Padding between the inline image, if any, and the text input itself.',
+          name: 'inlineImagePadding',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines the color of the keyboard.\n\nenum(\'default\', \'light\', \'dark\')',
+          name: 'keyboardAppearance',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines which keyboard to open, e.g.numeric.\n\nThe following values work across platforms:\n\ndefault\nnumber-pad\ndecimal-pad\nnumeric\nemail-address\nphone-pad\niOS Only\n\nThe following values work on iOS only:\n\nascii-capable\nnumbers-and-punctuation\nurl\nname-phone-pad\ntwitter\nweb-search\nAndroid Only\n\nThe following values work on Android only:\n\nvisible-password\n\nenum(\'default\', \'email-address\', \'numeric\', \'phone-pad\', \'ascii-capable\', \'numbers-and-punctuation\', \'url\', \'number-pad\', \'name-phone-pad\', \'decimal-pad\', \'twitter\', \'web-search\', \'visible-password\')',
+          name: 'keyboardType',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Limits the maximum number of characters that can be entered. Use this instead of implementing the logic in JS to avoid flicker.',
+          name: 'maxLength',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, the text input can be multiple lines. The default value is false.',
+          name: 'multiline',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the number of lines for a TextInput. Use it with multiline set to true to be able to fill the lines.',
+          name: 'numberOfLines',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the text input is blurred.',
+          name: 'onBlur',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the text input\'s text changes.',
+          name: 'onChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the text input\'s text changes. Changed text is passed as an argument to the callback handler.',
+          name: 'onChangeText',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the text input\'s content size changes. This will be called with { nativeEvent: { contentSize: { width, height } } }.\n\nOnly called for multiline text inputs.',
+          name: 'onContentSizeChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when text input ends.',
+          name: 'onEndEditing',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the text input is focused.',
+          name: 'onFocus',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when a key is pressed. This will be called with { nativeEvent: { key: keyValue } } where keyValue is \'Enter\' or \'Backspace\' for respective keys and the typed-in character otherwise including \' \' for space. Fires before onChange callbacks. Note: on Android only the inputs from soft keyboard are handled, not the hardware keyboard inputs.',
+          name: 'onKeyPress',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on mount and layout changes with {x, y, width, height}.',
+          name: 'onLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on content scroll with { nativeEvent: { contentOffset: { x, y } } }. May also contain other properties from ScrollEvent but on Android contentSize is not provided for performance reasons.',
+          name: 'onScroll',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the text input selection is changed. This will be called with { nativeEvent: { selection: { start, end } } }.',
+          name: 'onSelectionChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the text input\'s submit button is pressed. Invalid if multiline={true} is specified.',
+          name: 'onSubmitEditing',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The string that will be rendered before text input has been entered.',
+          name: 'placeholder',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The text color of the placeholder string.',
+          name: 'placeholderTextColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the return key to the label. Use it instead of returnKeyType.',
+          name: 'returnKeyLabel',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines how the return key should look. On Android you can also use returnKeyLabel.\n\nCross platform\n\nThe following values work across platforms:\n\ndone\ngo\nnext\nsearch\nsend\nAndroid Only\n\nThe following values work on Android only:\n\nnone\nprevious\niOS Only\n\nThe following values work on iOS only:\n\ndefault\nemergency-call\ngoogle\njoin\nroute\nyahoo\n\nenum(\'done\', \'go\', \'next\', \'search\', \'send\', \'none\', \'previous\', \'default\', \'emergency-call\', \'google\', \'join\', \'route\', \'yahoo\')',
+          name: 'returnKeyType',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If false, scrolling of the text view will be disabled. The default value is true. Only works with multiline={true}.',
+          name: 'scrollEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, the text input obscures the text entered so that sensitive text like passwords stay secure. The default value is false. Does not work with multiline={true}.',
+          name: 'secureTextEntry',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The start and end of the text input\'s selection. Set start and end to the same value to position the cursor.\n\nobject: {start: number,end: number}',
+          name: 'selection',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The highlight and cursor color of the text input.',
+          name: 'selectionColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An instance of DocumentSelectionState, this is some state that is responsible for maintaining selection information for a document.\n\nSome functionality that can be performed with this instance is:\n\nblur()\nfocus()\nupdate()\nYou can reference DocumentSelectionState in vendor/document/selection/DocumentSelectionState.js\n\nDocumentSelectionState',
+          name: 'selectionState',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true, all text will automatically be selected on focus.',
+          name: 'selectTextOnFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If false, disables spell-check style (i.e. red underlines). The default value is inherited from autoCorrect.',
+          name: 'spellCheck',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Give the keyboard and the system information about the expected semantic meaning for the content that users enter.\n\nFor iOS 11+ you can set textContentType to username or password to enable autofill of login details from the device keychain.\n\nTo disable autofill, set textContentType to none.\n\nPossible values for textContentType are:\n\nnone\nURL\naddressCity\naddressCityAndState\naddressState\ncountryName\ncreditCardNumber\nemailAddress\nfamilyName\nfullStreetAddress\ngivenName\njobTitle\nlocation\nmiddleName\nname\nnamePrefix\nnameSuffix\nnickname\norganizationName\npostalCode\nstreetAddressLine1\nstreetAddressLine2\nsublocality\ntelephoneNumber\nusername\npassword\n\n\nenum(\'none\', \'URL\', \'addressCity\', \'addressCityAndState\', \'addressState\', \'countryName\', \'creditCardNumber\', \'emailAddress\', \'familyName\', \'fullStreetAddress\', \'givenName\', \'jobTitle\', \'location\', \'middleName\', \'name\', \'namePrefix\', \'nameSuffix\', \'nickname\', \'organizationName\', \'postalCode\', \'streetAddressLine1\', \'streetAddressLine2\', \'sublocality\', \'telephoneNumber\', \'username\', \'password\')',
+          name: 'textContentType',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Note that not all Text styles are supported, an incomplete list of what is not supported includes:\n\nborderLeftWidth\nborderTopWidth\nborderRightWidth\nborderBottomWidth\nborderTopLeftRadius\nborderTopRightRadius\nborderBottomRightRadius\nborderBottomLeftRadius\nsee Issue#7070 for more detail.',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set text break strategy on Android API Level 23+, possible values are simple, highQuality, balanced The default value is simple.\n\nenum(\'simple\', \'highQuality\', \'balanced\')',
+          name: 'textBreakStrategy',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The color of the TextInput underline.',
+          name: 'underlineColorAndroid',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The value to show for the text input. TextInput is a controlled component, which means the native value will be forced to match this value prop if provided. For most uses, this works great, but in some cases this may cause flickering - one common cause is preventing edits by keeping value the same. In addition to simply setting the same value, either set editable={false}, or set/update maxLength to prevent unwanted edits without flicker.',
+          name: 'value',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad.\n\nThe simplest use case is to plop down a TextInput and subscribe to the onChangeText events to read the user input. There are also other events, such as onSubmitEditing and onFocus that can be subscribed to. \n\nA simple example:\n\nimport React, { Component } from \'react\';\nimport { AppRegistry, TextInput } from \'react-native\';\n\nexport default class UselessTextInput extends Component {\n  constructor(props) {\n    super(props);\n    this.state = { text: \'Useless Placeholder\' };\n  }\n\n  render() {\n    return (\n      <TextInput\n        style={{height: 40, borderColor: \'gray\', borderWidth: 1}}\n        onChangeText={(text) => this.setState({text})}\n        value={this.state.text}\n      />\n    );\n  }\n}\n\n// skip this line if using Create React Native App\nAppRegistry.registerComponent(\'AwesomeProject\', () => UselessTextInput);\n\nTwo methods exposed via the native element are .focus() and .blur() that will focus or blur the TextInput programmatically.\n\nNote that some props are only available with multiline={true/false}. Additionally, border styles that apply to only one side of the element (e.g., borderBottomColor, borderLeftWidth, etc.) will not be applied if multiline=false. To achieve the same effect, you can wrap your TextInput in a View:\n\nimport React, { Component } from \'react\';\nimport { AppRegistry, View, TextInput } from \'react-native\';\n\nclass UselessTextInput extends Component {\n  render() {\n    return (\n      <TextInput\n        {...this.props} // Inherit any props passed to it; e.g., multiline, numberOfLines below\n        editable = {true}\n        maxLength = {40}\n      />\n    );\n  }\n}\n\nexport default class UselessTextInputMultiline extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      text: \'Useless Multiline Placeholder\',\n    };\n  }\n\n  // If you type something in the text box that is a color, the background will change to that\n  // color.\n  render() {\n    return (\n     <View style={{\n       backgroundColor: this.state.text,\n       borderBottomColor: \'#000000\',\n       borderBottomWidth: 1 }}\n     >\n       <UselessTextInput\n         multiline = {true}\n         numberOfLines = {4}\n         onChangeText={(text) => this.setState({text})}\n         value={this.state.text}\n       />\n     </View>\n    );\n  }\n}\n\n// skip these lines if using Create React Native App\nAppRegistry.registerComponent(\n \'AwesomeProject\',\n () => UselessTextInputMultiline\n);\n\nTextInput has by default a border at the bottom of its view. This border has its padding set by the background image provided by the system, and it cannot be changed. Solutions to avoid this is to either not set height explicitly, case in which the system will take care of displaying the border in the correct position, or to not display the border by setting underlineColorAndroid to transparent.\n\nNote that on Android performing text selection in input can change app\'s activity windowSoftInputMode param to adjustResize. This may cause issues with components that have position: \'absolute\' while keyboard is active. To avoid this behavior either specify windowSoftInputMode in AndroidManifest.xml ( https://developer.android.com/guide/topics/manifest/activity-element.html ) or control this param programmatically with native code.\n',
+      id: 'YDrqxb1xtoege8w4EbL8',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'TextInput'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Index of initial page that should be selected. Use setPage method to update the page, and onPageSelected to monitor page changes',
+          name: 'initialPage',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines whether the keyboard gets dismissed in response to a drag.\n\n\'none\' (the default), drags do not dismiss the keyboard.\n\'on-drag\', the keyboard is dismissed when a drag begins.\n\nenum(\'none\', \'on-drag\')',
+          name: 'keyboardDismissMode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Executed when transitioning between pages (either because of animation for the requested page change or when user is swiping/dragging between pages) The event.nativeEvent object for this callback will carry following data:\n\nposition - index of first page from the left that is currently visible\noffset - value from range [0, 1] describing stage between page transitions. Value x means that (1 - x) fraction of the page at "position" index is visible, and x fraction of the next page is visible.',
+          name: 'onPageScroll',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function called when the page scrolling state has changed. The page scrolling state can be in 3 states:\n\nidle, meaning there is no interaction with the page scroller happening at the time\ndragging, meaning there is currently an interaction with the page scroller\nsettling, meaning that there was an interaction with the page scroller, and the page scroller is now finishing its closing or opening animation',
+          name: 'onPageScrollStateChanged',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This callback will be called once ViewPager finish navigating to selected page (when user swipes between pages). The event.nativeEvent object passed to this callback will have following fields:\n\nposition - index of page that has been selected',
+          name: 'onPageSelected',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Blank space to show between pages. This is only visible while scrolling, pages are still edge-to-edge.',
+          name: 'pageMargin',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Whether enable showing peekFraction or not. If this is true, the preview of last and next page will show in current screen. Defaults to false.',
+          name: 'peekEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When false, the content does not scroll. The default value is true.',
+          name: 'scrollEnabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A helper function to scroll to a specific page in the ViewPager. The transition between pages will be animated.\n\nposition - index of page that will be selected',
+          name: 'setPage',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A helper function to scroll to a specific page in the ViewPager. The transition between pages will not be animated.\n\nposition - index of page that will be selected',
+          name: 'setPageWithoutAnimation',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Container that allows to flip left and right between child views. Each child view of the ViewPagerAndroid will be treated as a separate page and will be stretched to fill the ViewPagerAndroid.\n\nIt is important all children are <View>s and not composite components. You can set style properties like padding or backgroundColor for each child. It is also important that each child have a key prop.\n\nExample:\n\nrender: function() {\n  return (\n    <ViewPagerAndroid\n      style={styles.viewPager}\n      initialPage={0}>\n      <View style={styles.pageStyle} key="1">\n        <Text>First page</Text>\n      </View>\n      <View style={styles.pageStyle} key="2">\n        <Text>Second page</Text>\n      </View>\n    </ViewPagerAndroid>\n  );\n}\n\n...\n\nvar styles = {\n  ...\n  viewPager: {\n    flex: 1\n  },\n  pageStyle: {\n    alignItems: \'center\',\n    padding: 20,\n  }\n}',
+      id: 'YMYpix4S3rGoMnHvTw3n',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'ViewPagerAndroid'
+    },
+    {
+      children: [],
       componentImport: 'react-bootstrap/lib/PanelHeading',
       componentProps: [
         {
@@ -1694,6 +4196,92 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'NavItem'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'itemStyle',
+          name: 'itemStyle',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'onValueChange',
+          name: 'onValueChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'selectedValue',
+          name: 'selectedValue',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'PickerIOS',
+      id: 'b10AGRkK1Oa8HvZdiLjO',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'PickerIOS'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Determines what the opacity of the wrapped view should be when touch is active.',
+          name: 'activeOpacity',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called immediately after the underlay is hidden',
+          name: 'onHideUnderlay',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Called immediately after the underlay is shown',
+          name: 'onShowUnderlay',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'style',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The color of the underlay that will show through when the touch is active.',
+          name: 'underlayColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(Apple TV only) TV preferred focus (see documentation for the View component).',
+          name: 'hasTVPreferredFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(Apple TV only) Object with properties to control Apple TV parallax effects.\n\nenabled: If true, parallax effects are enabled. Defaults to true. shiftDistanceX: Defaults to 2.0. shiftDistanceY: Defaults to 2.0. tiltAngle: Defaults to 0.05. magnification: Defaults to 1.0. pressMagnification: Defaults to 1.0. pressDuration: Defaults to 0.3. pressDelay: Defaults to 0.0.',
+          name: 'tvParallaxProperties',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, which allows the underlay color to show through, darkening or tinting the view.\n\nThe underlay comes from wrapping the child in a new View, which can affect layout, and sometimes cause unwanted visual artifacts if not used correctly, for example if the backgroundColor of the wrapped view isn\'t explicitly set to an opaque color.\n\nTouchableHighlight must have one child (not zero or more than one). If you wish to have several child components, wrap them in a View.\n\nExample:\n\nrenderButton: function() {\n  return (\n    <TouchableHighlight onPress={this._onPressButton}>\n      <Image\n        style={styles.button}\n        source={require(\'./myButton.png\')}\n      />\n    </TouchableHighlight>\n  );\n},\n\nExample:\n\nimport React, { Component } from \'react\'\nimport {\n  AppRegistry,\n  StyleSheet,\n  TouchableHighlight,\n  Text,\n  View,\n} from \'react-native\'\n\nclass App extends Component {\n  constructor(props) {\n    super(props)\n    this.state = { count: 0 }\n  }\n\n  onPress = () => {\n    this.setState({\n      count: this.state.count+1\n    })\n  }\n\n render() {\n    return (\n      <View style={styles.container}>\n        <TouchableHighlight\n         style={styles.button}\n         onPress={this.onPress}\n        >\n         <Text> Touch Here </Text>\n        </TouchableHighlight>\n        <View style={[styles.countContainer]}>\n          <Text style={[styles.countText]}>\n            { this.state.count !== 0 ? this.state.count: null}\n          </Text>\n        </View>\n      </View>\n    )\n  }\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    justifyContent: \'center\',\n    paddingHorizontal: 10\n  },\n  button: {\n    alignItems: \'center\',\n    backgroundColor: \'#DDDDDD\',\n    padding: 10\n  },\n  countContainer: {\n    alignItems: \'center\',\n    padding: 10\n  },\n  countText: {\n    color: \'#FF00FF\'\n  }\n})\n\nAppRegistry.registerComponent(\'App\', () => App)',
+      id: 'cXPwQfDg20VaLvOyRu55',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'TouchableHighlight'
     },
     {
       children: [],
@@ -1811,6 +4399,116 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'The navigation view that will be rendered to the side of the screen and can be pulled in.',
+          name: 'renderNavigationView',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'Function called whenever the navigation view has been closed.',
+          name: 'onDrawerClose',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies the side of the screen from which the drawer will slide in.\n\nType: enum(DrawerConsts.DrawerPosition.Left, DrawerConsts.DrawerPosition.Right)',
+          name: 'drawerPosition',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies the width of the drawer, more precisely the width of the view that be pulled in from the edge of the window.',
+          name: 'drawerWidth',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines whether the keyboard gets dismissed in response to a drag.\n\n\'none\' (the default), drags do not dismiss the keyboard.\n\'on-drag\', the keyboard is dismissed when a drag begins.\n\nType: enum(\'none\', \'on-drag\')',
+          name: 'keyboardDismissMode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies the lock mode of the drawer. The drawer can be locked in 3 states:\n\nunlocked (default), meaning that the drawer will respond (open/close) to touch gestures.\nlocked-closed, meaning that the drawer will stay closed and not respond to gestures.\nlocked-open, meaning that the drawer will stay opened and not respond to gestures. The drawer may still be opened and closed programmatically (openDrawer/closeDrawer).\n\nType: enum(\'unlocked\', \'locked-closed\', \'locked-open\')',
+          name: 'drawerLockMode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function called whenever the navigation view has been opened.',
+          name: 'onDrawerOpen',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function called whenever there is an interaction with the navigation view.',
+          name: 'onDrawerSlide',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Function called when the drawer state has changed. The drawer can be in 3 states:\n\nidle, meaning there is no interaction with the navigation view happening at the time\ndragging, meaning there is currently an interaction with the navigation view\nsettling, meaning that there was an interaction with the navigation view, and the navigation view is now finishing its closing or opening animation',
+          name: 'onDrawerStateChanged',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies the background color of the drawer. The default value is white. If you want to set the opacity of the drawer, use rgba. Example:\n\nreturn (\n  <DrawerLayoutAndroid drawerBackgroundColor="rgba(0,0,0,0.5)">\n  </DrawerLayoutAndroid>\n);',
+          name: 'drawerBackgroundColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Make the drawer take the entire screen and draw the background of the status bar to allow it to open over the status bar. It will only have an effect on API 21+.',
+          name: 'statusBarBackgroundColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'React component that wraps the platform DrawerLayout (Android only). The Drawer (typically used for navigation) is rendered with renderNavigationView and direct children are the main view (where your content goes). The navigation view is initially not visible on the screen, but can be pulled in from the side of the window specified by the drawerPosition prop and its width can be set by the drawerWidth prop.\n\nExample:\n\nrender: function() {\n  var navigationView = (\n    <View style={{flex: 1, backgroundColor: \'#fff\'}}>\n      <Text style={{margin: 10, fontSize: 15, textAlign: \'left\'}}>I\'m in the Drawer!</Text>\n    </View>\n  );\n  return (\n    <DrawerLayoutAndroid\n      drawerWidth={300}\n      drawerPosition={DrawerLayoutAndroid.positions.Left}\n      renderNavigationView={() => navigationView}>\n      <View style={{flex: 1, alignItems: \'center\'}}>\n        <Text style={{margin: 10, fontSize: 15, textAlign: \'right\'}}>Hello</Text>\n        <Text style={{margin: 10, fontSize: 15, textAlign: \'right\'}}>World!</Text>\n      </View>\n    </DrawerLayoutAndroid>\n  );\n},',
+      id: 'fKVk2SDHkW1Vevh2NPHH',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'DrawerLayoutAndroid'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'style',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'imageStyle',
+          name: 'imageStyle',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Allows to set a reference to the inner Image component',
+          name: 'imageRef',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A common feature request from developers familiar with the web is background-image. To handle this use case, you can use the <ImageBackground> component, which has the same props as <Image>, and add whatever children to it you would like to layer on top of it.\n\nYou might not want to use <ImageBackground> in some cases, since the implementation is very simple. Refer to <ImageBackground>\'s source code for more insight, and create your own custom component when needed.\n\nNote that you must specify some width and height style attributes.\n\nExample\nreturn (\n  <ImageBackground source={...} style={{width: \'100%\', height: \'100%\'}}>\n    <Text>Inside</Text>\n  </ImageBackground>\n);',
+      id: 'fZvZYq1EHs3hz6rwOSqS',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'ImageBackground'
+    },
+    {
+      children: [],
       componentImport: 'react-bootstrap/lib/Label',
       componentProps: [
         {
@@ -1907,6 +4605,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/ButtonGroup',
       componentProps: [
         {
@@ -2006,6 +4705,152 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Panel.Toggle'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Used to style and layout the Slider. See StyleSheet.js and ViewStylePropTypes.js for more info.',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If true the user won\'t be able to move the slider. Default value is false.',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Initial maximum value of the slider. Default value is 1.',
+          name: 'maximumValue',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The color used for the track to the left of the button. Overrides the default blue gradient image on iOS.',
+          name: 'minimumTrackTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Initial minimum value of the slider. Default value is 0.',
+          name: 'minimumValue',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback that is called when the user releases the slider, regardless if the value has changed. The current value is passed as an argument to the callback handler.',
+          name: 'onSlidingComplete',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback continuously called while the user is dragging the slider.',
+          name: 'onValueChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 0.',
+          name: 'step',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The color used for the track to the right of the button. Overrides the default gray gradient image on iOS.',
+          name: 'maximumTrackTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in UI automation tests.',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Initial value of the slider. The value should be between minimumValue and maximumValue, which default to 0 and 1 respectively. Default value is 0.\n\nThis is not a controlled component, you don\'t need to update the value during dragging.',
+          name: 'value',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Color of the foreground switch grip.',
+          name: 'thumbTintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Assigns a maximum track image. Only static images are supported. The leftmost pixel of the image will be stretched to fill the track.\n\nType: Image.propTypes.source',
+          name: 'maximumTrackImage',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Assigns a minimum track image. Only static images are supported. The rightmost pixel of the image will be stretched to fill the track.\n\nType: Image.propTypes.source',
+          name: 'minimumTrackImage',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets an image for the thumb. Only static images are supported.\n\nType: Image.propTypes.source',
+          name: 'thumbImage',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Assigns a single image for the track. Only static images are supported. The center pixel of the image will be stretched to fill the track.\n\nType: Image.propTypes.source',
+          name: 'trackImage',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A component used to select a single value from a range of values.',
+      id: 'hqn9ABubll32mSRsmQLV',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'Slider'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'This is the distance between the top of the user screen and the react native view, may be non-zero in some use cases.',
+          name: 'keyboardVerticalOffset',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Note: Android and iOS both interact with this prop differently. Android may behave better when given no behavior prop at all, whereas iOS is the opposite.\n\nType: enum(\'height\', \'position\', \'padding\')',
+          name: 'behavior',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The style of the content container(View) when behavior is \'position\'.',
+          name: 'contentContainerStyle',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Enabled or disabled KeyboardAvoidingView. The default is true.',
+          name: 'enabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'It is a component to solve the common problem of views that need to move out of the way of the virtual keyboard. It can automatically adjust either its position or bottom padding based on the position of the keyboard.\n\nExample usage:\n\nimport { KeyboardAvoidingView } from \'react-native\';\n\n<KeyboardAvoidingView style={styles.container} behavior="padding" enabled>\n  ... your UI ...\n</KeyboardAvoidingView>\n\n',
+      id: 'iT09a7tjh1vOPtsdo0yE',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'KeyboardAvoidingView'
     },
     {
       children: [],
@@ -2465,6 +5310,79 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Whether the view should be indicating an active refresh.',
+          name: 'refreshing',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'Called when the view starts refreshing.',
+          name: 'onRefresh',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The colors (at least one) that will be used to draw the refresh indicator.',
+          name: 'colors',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Whether the pull to refresh functionality is enabled.',
+          name: 'enabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The background color of the refresh indicator.',
+          name: 'progressBackgroundColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Progress view top offset',
+          name: 'progressViewOffset',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Size of the refresh indicator, see RefreshControl.SIZE.\n\nType: enum(RefreshLayoutConsts.SIZE.DEFAULT, RefreshLayoutConsts.SIZE.LARGE)',
+          name: 'size',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The color of the refresh indicator.',
+          name: 'tintColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The title displayed under the refresh indicator.',
+          name: 'title',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Title color.',
+          name: 'titleColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'This component is used inside a ScrollView or ListView to add pull to refresh functionality. When the ScrollView is at scrollY: 0, swiping down triggers an onRefresh event.\n\nUsage example\nclass RefreshableList extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      refreshing: false,\n    };\n  }\n\n  _onRefresh = () => {\n    this.setState({refreshing: true});\n    fetchData().then(() => {\n      this.setState({refreshing: false});\n    });\n  }\n\n  render() {\n    return (\n      <ScrollView\n        refreshControl={\n          <RefreshControl\n            refreshing={this.state.refreshing}\n            onRefresh={this._onRefresh}\n          />\n        }\n        ...\n      />\n    );\n  }\n  ...\n}\nNote: refreshing is a controlled prop, this is why it needs to be set to true in the onRefresh function otherwise the refresh indicator will stop immediately.',
+      id: 'qyPI4z1mNK2VUOTgQF5x',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'RefreshControl'
+    },
+    {
+      children: [],
       componentImport: 'react-bootstrap/lib/ModalHeader',
       componentProps: [
         {
@@ -2520,6 +5438,61 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'If the transition between status bar property changes should be animated. Supported for backgroundColor, barStyle and hidden.',
+          name: 'animated',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets the color of the status bar text.\n\nType: enum(\'default\', \'light-content\', \'dark-content\')',
+          name: 'barStyle',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If the status bar is hidden.',
+          name: 'hidden',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The background color of the status bar.',
+          name: 'backgroundColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If the status bar is translucent. When translucent is set to true, the app will draw under the status bar. This is useful when using a semi transparent status bar color.',
+          name: 'translucent',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If the network activity indicator should be visible.',
+          name: 'networkActivityIndicatorVisible',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The transition effect when showing and hiding the status bar using the hidden prop. Defaults to \'fade\'.\n\nenum(\'fade\', \'slide\')',
+          name: 'showHideTransition',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Component to control the app status bar.\n\nUsage with Navigator\nIt is possible to have multiple StatusBar components mounted at the same time. The props will be merged in the order the StatusBar components were mounted.\n\n <View>\n   <StatusBar\n     backgroundColor="blue"\n     barStyle="light-content"\n   />\n   <View>\n     <StatusBar hidden={route.statusBarHidden} />\n     ...\n   </View>\n </View>\nImperative API\nFor cases where using a component is not ideal, there is also an imperative API exposed as static functions on the component. It is however not recommended to use the static API and the component for the same prop because any value set by the static API will get overriden by the one set by the component in the next render.\n\nConstants\ncurrentHeight (Android only) The height of the status bar.',
+      id: 'sMUag98N1CJb0jqRnVPI',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'StatusBar'
+    },
+    {
+      children: [],
       componentImport: 'react-bootstrap/lib/Panel',
       componentProps: [
         {
@@ -2553,6 +5526,67 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Panel'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Callback for when an item is selected. This is called with the following parameters:\n\nitemValue: the value prop of the item that was selected\nitemPosition: the index of the selected item in this picker',
+          name: 'onValueChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Value matching value of one of the items. Can be a string or an integer.',
+          name: 'selectedValue',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'style',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in end-to-end tests.',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If set to false, the picker will be disabled, i.e. the user will not be able to make a selection.',
+          name: 'enabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'On Android, specifies how to display the selection items when the user taps on the picker:\n\n\'dialog\': Show a modal dialog. This is the default.\n\'dropdown\': Shows a dropdown anchored to the picker view\n\nType: enum(\'dialog\', \'dropdown\')',
+          name: 'mode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Prompt string for this picker, used on Android in dialog mode as the title of the dialog.',
+          name: 'prompt',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Style to apply to each of the item labels.',
+          name: 'itemStyle',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Renders the native picker component on iOS and Android. Example:\n\n<Picker\n  selectedValue={this.state.language}\n  style={{ height: 50, width: 100 }}\n  onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>\n  <Picker.Item label="Java" value="java" />\n  <Picker.Item label="JavaScript" value="js" />\n</Picker>',
+      id: 'sbS4hHTWOyNdcmPn95w7',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'Picker'
     },
     {
       children: [],
@@ -2646,6 +5680,314 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: '(info: any) => ?React.Element<any>\nTakes an item from data and renders it into the list',
+          name: 'renderItem',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The default accessor functions assume this is an array of objects with shape {key: string} but you can override getItem, getItemCount, and keyExtractor to handle any type of index-based data.',
+          name: 'data',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: true
+        },
+        {
+          description: '(data: any, index: number) => object;\nA generic accessor for extracting an item from any sort of data blob.',
+          name: 'getItem',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(data: any) => number;\nDetermines how many items are in the data blob.',
+          name: 'getItemCount',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'debug will turn on extra logging and visual overlays to aid with debugging both usage and implementation, but with a significant perf hit.',
+          name: 'debug',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A marker property for telling the list to re-render (since it implements PureComponent). If any of your renderItem, Header, Footer, etc. functions depend on anything outside of the data prop, stick it here and treat it immutably.',
+          name: 'extraData',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(\n    data: any,\n    index: number,\n  ) => {length: number, offset: number, index: number}',
+          name: 'getItemLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Instead of starting at the top with the first item, start at initialScrollIndex. This disables the "scroll to top" optimization that keeps the first initialNumToRender items always rendered and immediately renders the items starting at this initial index. Requires getItemLayout to be implemented.',
+          name: 'initialScrollIndex',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Reverses the direction of scroll. Uses scale transforms of -1.',
+          name: 'inverted',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Each cell is rendered using this element. Can be a React Component Class,or a render function. Defaults to using View.',
+          name: 'CellRendererComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered when the list is empty. Can be a React Component Class, a render function, or a rendered element.',
+          name: 'ListEmptyComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the bottom of all the items. Can be a React Component Class, a render function, or a rendered element.',
+          name: 'ListFooterComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Rendered at the top of all the items. Can be a React Component Class, a render function, or a rendered element.',
+          name: 'ListHeaderComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'onLayout',
+          name: 'onLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: '() => void\nIf provided, a standard RefreshControl will be added for "Pull to Refresh" functionality. Make sure to also set the refreshing prop correctly.',
+          name: 'onRefresh',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(info: {\n    index: number,\n    highestMeasuredFrameIndex: number,\n    averageItemLength: number,\n  }) => void\nUsed to handle failures when scrolling to an index that has not been measured yet. Recommended action is to either compute your own offset and scrollTo it, or scroll as far as possible and then try again after more items have been rendered.\n\n',
+          name: 'onScrollToIndexFailed',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(info: {\n    viewableItems: array,\n    changed: array,\n  }) => void\nCalled when the viewability of rows changes, as defined by the viewabilityConfig prop.',
+          name: 'onViewableItemsChanged',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set this true while waiting for new data from a refresh.',
+          name: 'refreshing',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This may improve scroll performance for large lists.\n\nNote: May have bugs (missing content) in some circumstances - use at your own risk.',
+          name: 'removeClippedSubviews',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(props: object) => element;\nRender a custom scroll component, e.g. with a differently styled RefreshControl.',
+          name: 'renderScrollComponent',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'See ViewabilityHelper.js for flow type and further documentation.\n\ntYPE: ViewabilityConfig',
+          name: 'viewabilityConfig',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'List of ViewabilityConfig/onViewableItemsChanged pairs. A specific onViewableItemsChanged will be called when its corresponding ViewabilityConfig\'s conditions are met. See ViewabilityHelper.js for flow type and further documentation.\n\narray of ViewabilityConfigCallbackPair',
+          name: 'viewabilityConfigCallbackPairs',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'horizontal',
+          name: 'horizontal',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'How many items to render in the initial batch. This should be enough to fill the screen but not much more. Note these items will never be unmounted as part of the windowed rendering in order to improve perceived performance of scroll-to-top actions.',
+          name: 'initialNumToRender',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(item: object, index: number) => string;\nUsed to extract a unique key for a given item at the specified index. Key is used for caching and as the react key to track item re-ordering. The default extractor checks item.key, then falls back to using the index, like React does.',
+          name: 'keyExtractor',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The maximum number of items to render in each incremental render batch. The more rendered at once, the better the fill rate, but responsiveness may suffer because rendering content may interfere with responding to button taps or other interactions.',
+          name: 'maxToRenderPerBatch',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(info: {distanceFromEnd: number}) => void\nCalled once when the scroll position gets within onEndReachedThreshold of the rendered content.',
+          name: 'onEndReached',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'How far from the end (in units of visible length of the list) the bottom edge of the list must be from the end of the content to trigger the onEndReached callback. Thus a value of 0.5 will trigger onEndReached when the end of the content is within half the visible length of the list.',
+          name: 'onEndReachedThreshold',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Amount of time between low-pri item render batches, e.g. for rendering items quite a ways off screen. Similar fill rate/responsiveness tradeoff as maxToRenderPerBatch.',
+          name: 'updateCellsBatchingPeriod',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Determines the maximum number of items rendered outside of the visible area, in units of visible lengths. So if your list fills the screen, then windowSize={21} (the default) will render the visible screen area plus up to 10 screens above and 10 below the viewport. Reducing this number will reduce memory consumption and may improve performance, but will increase the chance that fast scrolling may reveal momentary blank areas of unrendered content.\n\n',
+          name: 'windowSize',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Set this when offset is needed for the loading indicator to show correctly.',
+          name: 'progressViewOffset',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Base implementation for the more convenient <FlatList> and <SectionList> components, which are also better documented. In general, this should only really be used if you need more flexibility than FlatList provides, e.g. for use with immutable data instead of plain arrays.\n\nVirtualization massively improves memory consumption and performance of large lists by maintaining a finite render window of active items and replacing all items outside of the render window with appropriately sized blank space. The window adapts to scrolling behavior, and items are rendered incrementally with low-pri (after any running interactions) if they are far from the visible area, or with hi-pri otherwise to minimize the potential of seeing blank space.\n\nSome caveats:\n\nInternal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.\nThis is a PureComponent which means that it will not re-render if props remain shallow- equal. Make sure that everything your renderItem function depends on is passed as a prop (e.g. extraData) that is not === after updates, otherwise your UI may not update on changes. This includes the data prop and parent component state.\nIn order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it\'s possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.\nBy default, the list looks for a key prop on each item and uses that for the React key. Alternatively, you can provide a custom keyExtractor prop.',
+      id: 'tUt8yuIqGjWxpqeu2wl3',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'VirtualizedList'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Lets the user select text, to use the native copy and paste functionality.',
+          name: 'selectable',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.',
+          name: 'accessibilityHint',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Overrides the text that\'s read by the screen reader when the user interacts with the element. By default, the label is constructed by traversing all the children and accumulating all the Text nodes separated by space.',
+          name: 'accessibilityLabel',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When set to true, indicates that the view is an accessibility element. The default value for a Text element is true.\n\nSee the Accessibility guide for more information.',
+          name: 'accessible',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When numberOfLines is set, this prop defines how text will be truncated. numberOfLines must be set in conjunction with this prop.\n\nThis can be one of the following values:\n\nhead - The line is displayed so that the end fits in the container and the missing text at the beginning of the line is indicated by an ellipsis glyph. e.g., "...wxyz"\nmiddle - The line is displayed so that the beginning and end fit in the container and the missing text in the middle is indicated by an ellipsis glyph. "ab...yz"\ntail - The line is displayed so that the beginning fits in the container and the missing text at the end of the line is indicated by an ellipsis glyph. e.g., "abcd..."\nclip - Lines are not drawn past the edge of the text container.\nThe default is tail.\n\nenum(\'head\', \'middle\', \'tail\', \'clip\')',
+          name: 'ellipsizeMode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view from native code.',
+          name: 'nativeID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to truncate the text with an ellipsis after computing the text layout, including line wrapping, such that the total number of lines does not exceed this number.\n\nThis prop is commonly used with ellipsizeMode.',
+          name: 'numberOfLines',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked on mount and layout changes with\n\n{nativeEvent: {layout: {x, y, width, height}}}',
+          name: 'onLayout',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This function is called on long press.\n\ne.g., onLongPress={this.increaseSize}>',
+          name: 'onLongPress',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'This function is called on press.\n\ne.g., onPress={() => console.log(\'1st\')}',
+          name: 'onPress',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'When the scroll view is disabled, this defines how far your touch may move off of the button, before deactivating the button. Once deactivated, try moving it back and you\'ll see that the button is once again reactivated! Move it back and forth several times while the scroll view is disabled. Ensure you pass in a constant to reduce memory allocations.\n\nobject: {top: number, left: number, bottom: number, right: number}',
+          name: 'pressRetentionOffset',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies whether fonts should scale to respect Text Size accessibility settings. The default is true.',
+          name: 'allowFontScaling',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'style',
+          name: 'style',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in end-to-end tests.',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A React component for displaying text.\n\nText supports nesting, styling, and touch handling.\n\nIn the following example, the nested title and body text will inherit the fontFamily from styles.baseText, but the title provides its own additional styles. The title and body will stack on top of each other on account of the literal newlines:\n\nimport React, { Component } from \'react\';\nimport { AppRegistry, Text, StyleSheet } from \'react-native\';\n\nexport default class TextInANest extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      titleText: "Bird\'s Nest",\n      bodyText: \'This is not really a bird nest.\'\n    };\n  }\n\n  render() {\n    return (\n      <Text style={styles.baseText}>\n        <Text style={styles.titleText} onPress={this.onPressTitle}>\n          {this.state.titleText}{\'\\n\'}{\'\\n\'}\n        </Text>\n        <Text numberOfLines={5}>\n          {this.state.bodyText}\n        </Text>\n      </Text>\n    );\n  }\n}\n\nconst styles = StyleSheet.create({\n  baseText: {\n    fontFamily: \'Cochin\',\n  },\n  titleText: {\n    fontSize: 20,\n    fontWeight: \'bold\',\n  },\n});\n\n// skip this line if using Create React Native App\nAppRegistry.registerComponent(\'TextInANest\', () => TextInANest);\n\nNested text\nBoth iOS and Android allow you to display formatted text by annotating ranges of a string with specific formatting like bold or colored text (NSAttributedString on iOS, SpannableString on Android). In practice, this is very tedious. For React Native, we decided to use web paradigm for this where you can nest text to achieve the same effect.\n\nimport React, { Component } from \'react\';\nimport { AppRegistry, Text } from \'react-native\';\n\nexport default class BoldAndBeautiful extends Component {\n  render() {\n    return (\n      <Text style={{fontWeight: \'bold\'}}>\n        I am bold\n        <Text style={{color: \'red\'}}>\n          and red\n        </Text>\n      </Text>\n    );\n  }\n}\n\n// skip this line if using Create React Native App\nAppRegistry.registerComponent(\'AwesomeProject\', () => BoldAndBeautiful);\n\n\nBehind the scenes, React Native converts this to a flat NSAttributedString or SpannableString that contains the following information:\n\n"I am bold and red"\n0-9: bold\n9-17: bold, red\nNested views (iOS only)\nOn iOS, you can nest views within your Text component. Here\'s an example:\n\nimport React, { Component } from \'react\';\nimport { AppRegistry, Text, View } from \'react-native\';\n\nexport default class BlueIsCool extends Component {\n  render() {\n    return (\n      <Text>\n        There is a blue square\n        <View style={{width: 50, height: 50, backgroundColor: \'steelblue\'}} />\n        in between my text.\n      </Text>\n    );\n  }\n}\n\n// skip this line if using Create React Native App\nAppRegistry.registerComponent(\'AwesomeProject\', () => BlueIsCool);\n\nIn order to use this feature, you must give the view a width and a height.\n\nContainers\nThe <Text> element is special relative to layout: everything inside is no longer using the flexbox layout but using text layout. This means that elements inside of a <Text> are no longer rectangles, but wrap when they see the end of the line.\n\n<Text>\n  <Text>First part and </Text>\n  <Text>second part</Text>\n</Text>\n// Text container: all the text flows as if it was one\n// |First part |\n// |and second |\n// |part       |\n\n<View>\n  <Text>First part and </Text>\n  <Text>second part</Text>\n</View>\n// View container: each text is its own block\n// |First part |\n// |and        |\n// |second part|\nLimited Style Inheritance\nOn the web, the usual way to set a font family and size for the entire document is to take advantage of inherited CSS properties like so:\n\nhtml {\n  font-family: \'lucida grande\', tahoma, verdana, arial, sans-serif;\n  font-size: 11px;\n  color: #141823;\n}\nAll elements in the document will inherit this font unless they or one of their parents specifies a new rule.\n\nIn React Native, we are more strict about it: you must wrap all the text nodes inside of a <Text> component. You cannot have a text node directly under a <View>.\n\n// BAD: will raise exception, can\'t have a text node as child of a <View>\n<View>\n  Some text\n</View>\n\n// GOOD\n<View>\n  <Text>\n    Some text\n  </Text>\n</View>\nYou also lose the ability to set up a default font for an entire subtree. The recommended way to use consistent fonts and sizes across your application is to create a component MyAppText that includes them and use this component across your app. You can also use this component to make more specific components like MyAppHeaderText for other kinds of text.\n\n<View>\n  <MyAppText>\n    Text styled with the default font for the entire application\n  </MyAppText>\n  <MyAppHeaderText>Text styled as a header</MyAppHeaderText>\n</View>\nAssuming that MyAppText is a component that simply renders out its children into a Text component with styling, then MyAppHeaderText can be defined as follows:\n\nclass MyAppHeaderText extends Component {\n  render() {\n    return (\n      <MyAppText>\n        <Text style={{fontSize: 20}}>{this.props.children}</Text>\n      </MyAppText>\n    );\n  }\n}\nComposing MyAppText in this way ensures that we get the styles from a top-level component, but leaves us the ability to add / override them in specific use cases.\n\nReact Native still has the concept of style inheritance, but limited to text subtrees. In this case, the second part will be both bold and red.\n\n<Text style={{fontWeight: \'bold\'}}>\n  I am bold\n  <Text style={{color: \'red\'}}>and red</Text>\n</Text>\nWe believe that this more constrained way to style text will yield better apps:\n\n(Developer) React components are designed with strong isolation in mind: You should be able to drop a component anywhere in your application, trusting that as long as the props are the same, it will look and behave the same way. Text properties that could inherit from outside of the props would break this isolation.\n\n(Implementor) The implementation of React Native is also simplified. We do not need to have a fontFamily field on every single element, and we do not need to potentially traverse the tree up to the root every time we display a text node. The style inheritance is only encoded inside of the native Text component and doesn\'t leak to other components or the system itself.',
+      id: 'v9PsHv1IsgoFIT42Osh7',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'Text'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [],
+      description: 'The purpose of SafeAreaView is to render content within the safe area boundaries of a device. It is currently only applicable to iOS devices with iOS version 11 or later.\n\nSafeAreaView renders nested content and automatically applies paddings to reflect the portion of the view that is not covered by navigation bars, tab bars, toolbars, and other ancestor views. Moreover, and most importantly, Safe Area\'s paddings reflect the physical limitation of the screen, such as rounded corners or camera notches (i.e. the sensor housing area on iPhone X).\n\nUsage Example\nSimply wrap your top level view with a SafeAreaView with a flex: 1 style applied to it. You may also want to use a background color that matches your application\'s design.\n\n<SafeAreaView style={{flex: 1, backgroundColor: \'#fff\'}}>\n  <View style={{flex: 1}}>\n    <Text>Hello World!</Text>\n  </View>\n</SafeAreaView>',
+      id: 'vOiATZP57vkVOFzWEWvI',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'SafeAreaView'
+    },
+    {
+      children: [],
       closeTag: true,
       componentImport: '-',
       componentProps: [
@@ -2662,6 +6004,37 @@ export const mock = {
       provider: 'HTML',
       techno: 'React',
       title: 'h2'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Determines what the opacity of the wrapped view should be when touch is active. Defaults to 0.2.',
+          name: 'activeOpacity',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(Apple TV only) Object with properties to control Apple TV parallax effects.\n\nenabled: If true, parallax effects are enabled. Defaults to true. shiftDistanceX: Defaults to 2.0. shiftDistanceY: Defaults to 2.0. tiltAngle: Defaults to 0.05. magnification: Defaults to 1.0. pressMagnification: Defaults to 1.0. pressDuration: Defaults to 0.3. pressDelay: Defaults to 0.0.',
+          name: 'tvParallaxProperties',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(Apple TV only) TV preferred focus (see documentation for the View component).',
+          name: 'hasTVPreferredFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'A wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it.\n\nOpacity is controlled by wrapping the children in an Animated.View, which is added to the view hierarchy. Be aware that this can affect layout.\n\nExample:\n\nrenderButton: function() {\n  return (\n    <TouchableOpacity onPress={this._onPressButton}>\n      <Image\n        style={styles.button}\n        source={require(\'./myButton.png\')}\n      />\n    </TouchableOpacity>\n  );\n},\n\nimport React, { Component } from \'react\'\nimport {\n  AppRegistry,\n  StyleSheet,\n  TouchableOpacity,\n  Text,\n  View,\n} from \'react-native\'\n\nclass App extends Component {\n  constructor(props) {\n    super(props)\n    this.state = { count: 0 }\n  }\n\n  onPress = () => {\n    this.setState({\n      count: this.state.count+1\n    })\n  }\n\n render() {\n   return (\n     <View style={styles.container}>\n       <TouchableOpacity\n         style={styles.button}\n         onPress={this.onPress}\n       >\n         <Text> Touch Here </Text>\n       </TouchableOpacity>\n       <View style={[styles.countContainer]}>\n         <Text style={[styles.countText]}>\n            { this.state.count !== 0 ? this.state.count: null}\n          </Text>\n        </View>\n      </View>\n    )\n  }\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    justifyContent: \'center\',\n    paddingHorizontal: 10\n  },\n  button: {\n    alignItems: \'center\',\n    backgroundColor: \'#DDDDDD\',\n    padding: 10\n  },\n  countContainer: {\n    alignItems: \'center\',\n    padding: 10\n  },\n  countText: {\n    color: \'#FF00FF\'\n  }\n})\n\nAppRegistry.registerComponent(\'App\', () => App)',
+      id: 'w0fMsYPO6sJYPeoheDkQ',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'TouchableOpacity'
     },
     {
       children: [],
@@ -2761,6 +6134,171 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'If true the user won\'t be able to toggle the switch. Default value is false.',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Custom colors for the switch track.\n\niOS: When the switch value is false, the track shrinks into the border. If you want to change the color of the background exposed by the shrunken track, use ios_backgroundColor.\n\nobject: {false: color, true: color}',
+          name: 'trackColor',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'On iOS, custom color for the background. This background color can be seen either when the switch value is false or when the switch is disabled (and the switch is translucent).',
+          name: 'ios_backgroundColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invoked with the new value when the value changes.',
+          name: 'onValueChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in end-to-end tests.',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Color of the foreground switch grip. If this is set on iOS, the switch grip will lose its drop shadow.',
+          name: 'thumbColor',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The value of the switch. If true the switch will be turned on. Default value is false.',
+          name: 'value',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Renders a boolean input.\n\nThis is a controlled component that requires an onValueChange callback that updates the value prop in order for the component to reflect user actions. If the value prop is not updated, the component will continue to render the supplied value prop instead of the expected result of any user actions.',
+      id: 'zKnBxj8y73fgcKPcwiSt',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'Switch'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Whether to show the ProgressBar (true, the default) or hide it (false).',
+          name: 'animating',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Color of the progress bar.',
+          name: 'color',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'If the progress bar will show indeterminate progress. Note that this can only be false if styleAttr is Horizontal.',
+          name: 'indeterminate',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The progress value (between 0 and 1).',
+          name: 'progress',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Style of the ProgressBar. One of:\n\nHorizontal\nNormal (default)\nSmall\nLarge\nInverse\nSmallInverse\nLargeInverse\n\nType: enum(\'Horizontal\', \'Normal\', \'Small\', \'Large\', \'Inverse\', \'SmallInverse\', \'LargeInverse\')\n',
+          name: 'styleAttr',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Used to locate this view in end-to-end tests.',
+          name: 'testID',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Android-only React component used to indicate that the app is loading or there is some activity in the app.\n\nExample:\n\nimport React, { Component } from "react";\nimport {\n  ProgressBarAndroid,\n  AppRegistry,\n  StyleSheet,\n  View\n} from "react-native";\n\nexport default class App extends Component {\n  render() {\n    return (\n      <View style={styles.container}>\n        <ProgressBarAndroid />\n        <ProgressBarAndroid styleAttr="Horizontal" />\n        <ProgressBarAndroid styleAttr="Horizontal" color="#2196F3" />\n        <ProgressBarAndroid\n          styleAttr="Horizontal"\n          indeterminate={false}\n          progress={0.5}\n        />\n      </View>\n    );\n  }\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    justifyContent: "space-evenly",\n    padding: 10\n  }\n});\n\nAppRegistry.registerComponent("App", () => App);',
+      id: 'zdwfyP6JSl9rlH7H2tBJ',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'ProgressBarAndroid'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'The currently selected date.',
+          name: 'date',
+          propType: 'PropTypes.instanceOf()',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'Date change handler.\n\nThis is called when the user changes the date or time in the UI. The first and only argument is a Date object representing the new date and time.\n\n',
+          name: 'onDateChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'Maximum date.\n\nRestricts the range of possible date/time values.',
+          name: 'maximumDate',
+          propType: 'PropTypes.instanceOf()',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Minimum date.\n\nRestricts the range of possible date/time values.',
+          name: 'minimumDate',
+          propType: 'PropTypes.instanceOf()',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The interval at which minutes can be selected.',
+          name: 'minuteInterval',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The date picker mode.\n\nType: enum(\'date\', \'time\', \'datetime\')',
+          name: 'mode',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The locale for the date picker. Value needs to be a Locale ID.',
+          name: 'locale',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Timezone offset in minutes.\n\nBy default, the date picker will use the device\'s timezone. With this parameter, it is possible to force a certain timezone offset. For instance, to show times in Pacific Standard Time, pass -7 * 60.',
+          name: 'timeZoneOffsetInMinutes',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Use DatePickerIOS to render a date/time picker (selector) on iOS. This is a controlled component, so you must hook in to the onDateChange callback and update the date prop in order for the component to update, otherwise the user\'s change will be reverted immediately to reflect props.date as the source of truth.\n\nExample\nimport React, { Component } from \'react\'\nimport {\n  DatePickerIOS,\n  View,\n  StyleSheet,\n} from \'react-native\'\n\nexport default class App extends Component {\n  constructor(props) {\n    super(props);\n    this.state = { chosenDate: new Date() };\n\n    this.setDate = this.setDate.bind(this);\n  }\n\n  setDate(newDate) {\n    this.setState({chosenDate: newDate})\n  }\n\n  render() {\n    return (\n      <View style={styles.container}>\n        <DatePickerIOS\n          date={this.state.chosenDate}\n          onDateChange={this.setDate}\n        />\n      </View>\n    )\n  }\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    justifyContent: \'center\'\n  },\n})',
+      id: 'zfpJHOMJWkqPZLQV9tpZ',
+      isDefault: true,
+      provider: 'ReactNative',
+      techno: 'React Native',
+      title: 'DatePickerIOS'
+    },
+    {
+      children: [],
       componentImport: 'react-bootstrap/lib/Table',
       componentProps: [
         {
@@ -2809,6 +6347,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/ButtonToolbar',
       componentProps: [
         {
@@ -2848,6 +6387,6 @@ export const mock = {
       provider: 'Bootstrap',
       techno: 'React',
       title: 'Modal.Footer'
-    },
+    }
   ],
 }
