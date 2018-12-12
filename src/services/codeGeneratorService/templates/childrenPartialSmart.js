@@ -1,4 +1,4 @@
-export const childrenPartial = `
+export const childrenPartialSmart = `
         {{#children}}
           {{^closeTag}}{{^hasComponentPropsVals}}{{^hasChildren}}<{{title}} />{{/hasChildren}}{{/hasComponentPropsVals}}{{/closeTag}}{{#hasChildren}}{{^closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}{{/hasChildren}}{{#closeTag}}{{^hasComponentPropsVals}}<{{title}}>{{/hasComponentPropsVals}}{{/closeTag}}
           {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}

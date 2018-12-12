@@ -86,12 +86,13 @@ export function* watchSetHoc() {
 }
 
 export function* watchSetSmartSettings() {
+  const myRe = /^[ \r\n]+$/gi;
   const { smart } = (yield select()).componentSettingsServiceReducer;
   const { projectName } = (yield select()).projectSettingsServiceReducer;
   const { tree } = (yield select()).sortableTreeServiceReducer;
-  const smartCode = generateSmartCode({ smart, projectName, tree });
+  const smartCode = generateSmartCode({ smart, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
 
-  yield put(setSmartCode(smartCode));
+  yield put(setSmartCode(smartCode.replace(myRe, '')));
 }
 
 export default function* rootSaga() {

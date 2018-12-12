@@ -1,5 +1,5 @@
 import { smartTemplate } from '../templates/smart';
-import { childrenPartial } from '../templates/childrenPartial';
+import { childrenPartialSmart } from '../templates/childrenPartialSmart';
 import { propsPartial } from '../templates/propsPartial';
 import { importPartial } from '../templates/importPartial';
 import { getConstList, getImportList } from './helper';
@@ -24,7 +24,7 @@ export const generateSmartCode = props => {
   };
 
   return Mustache.render(smartTemplate, data, {
-    "childrenPartial": childrenPartial,
+    "childrenPartialSmart": childrenPartialSmart,
     "propsPartial": propsPartial,
     "importPartial": importPartial,
   });

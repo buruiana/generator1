@@ -12,11 +12,15 @@ class {{projectName}} extends Component {
 
     }
     {{/hasState}}
+    {{#constList}}
     [
+    {{/constList}}
       {{#constList}}
       '{{{.}}}',
       {{/constList}}
+    {{#constList}}
     ].forEach((name) => (this[name] = this[name].bind(this)));
+    {{/constList}}
 
   }
 
@@ -87,7 +91,7 @@ class {{projectName}} extends Component {
         {{#hasComponentPropsVals}}<{{title}}{{/hasComponentPropsVals}}
         {{>propsPartial}}
         {{#hasComponentPropsVals}}>{{/hasComponentPropsVals}}
-          {{>childrenPartial}}
+          {{>childrenPartialSmart}}
         {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}
       {{/children}}
       {{^closeTag}}{{#hasChildren}}</ {{title}}>{{/hasChildren}}{{/closeTag}}{{#closeTag}}</ {{title}}>{{/closeTag}}

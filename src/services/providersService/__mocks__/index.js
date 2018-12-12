@@ -14,5 +14,12 @@ export const mock = {
       projectTechno: 'React',
       providerUrl: ''
     },
+    {
+      id: 'tdcwhGptX0R31Q6YwWoF',
+      name: 'ReactNative',
+      path: 'react-native',
+      projectTechno: 'React Native',
+      providerUrl: 'https://facebook.github.io/react-native/docs/getting-started'
+    }
   ],
 }

@@ -1,6 +1,5 @@
 export const mock = {
   allComponents: [
-
     {
       children: [],
       closeTag: false,
@@ -954,6 +953,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Image',
       componentProps: [
         {
@@ -996,61 +996,62 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/MenuItem',
       componentProps: [
         {
           description: 'Highlight the menu item as active.',
           name: 'active',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Disable the menu item, making it unselectable.\n\ndefault: false',
           name: 'disabled',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Styles the menu item as a horizontal rule, providing visual separation between groups of menu items.\n\nall( PropTypes.bool, ({ divider, children }) => divider && children ? new Error(\'Children will not be rendered for dividers\') : null )',
           name: 'divider',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Value passed to the onSelect handler, useful for identifying the selected menu item.',
           name: 'eventKey',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Styles the menu item as a header label, useful for describing a group of menu items.\n\ndefault: false',
           name: 'header',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'HTML href attribute corresponding to a.href.',
           name: 'href',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired when the menu item is clicked.',
           name: 'onClick',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired when the menu item is selected.\n\n(eventKey: any, event: Object) => any',
           name: 'onSelect',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'dropdown\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'MenuItem',
@@ -1100,25 +1101,26 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ModalDialog',
       componentProps: [
         {
           description: 'A css class to apply to the Modal dialog DOM node.',
           name: 'dialogClassName',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Component size variations.\n\none of: "lg", "large", "sm", "small"',
           name: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'modal\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'Modal.Dialog',
@@ -1141,19 +1143,20 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Jumbotron',
       componentProps: [
         {
           description: 'You can use a custom element type for this component.',
           name: 'componentClass',
           propType: 'PropTypes.element',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'jumbotron\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'A lightweight, flexible component that can optionally extend the entire viewport to showcase key content on your site.\n\n<Jumbotron>\n  <h1>Hello, world!</h1>\n  <p>\n    This is a simple hero unit, a simple jumbotron-style component for calling\n    extra attention to featured content or information.\n  </p>\n  <p>\n    <Button bsStyle="primary">Learn more</Button>\n  </p>\n</Jumbotron>;',
@@ -1165,13 +1168,14 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/InputGroupAddon',
       componentProps: [
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'input-group-addon\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'InputGroup.Addon',
@@ -1207,19 +1211,20 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/ListGroup',
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\nIf not specified, it will be treated as \'li\' if every child is a non-actionable <ListGroupItem>, and \'div\' otherwise.',
           name: 'componentClass',
           propType: 'PropTypes.element',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'list-group\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'List group ListGroup, ListGroupItem\nList groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.\n\n<ListGroup>\n  <ListGroupItem>Item 1</ListGroupItem>\n  <ListGroupItem>Item 2</ListGroupItem>\n  <ListGroupItem>...</ListGroupItem>\n</ListGroup>;\n\nLinked\nSet the href or onClick prop on ListGroupItem, to create a linked or clickable element.\n\nfunction alertClicked() {\n  alert(\'You clicked the third ListGroupItem\');\n}\n\nrender(\n  <ListGroup>\n    <ListGroupItem href="#link1">Link 1</ListGroupItem>\n    <ListGroupItem href="#link2">Link 2</ListGroupItem>\n    <ListGroupItem onClick={alertClicked}>Trigger an alert</ListGroupItem>\n  </ListGroup>\n);\n\nStyling by state\nSet the active or disabled prop to true to mark or disable the item.\n\n<ListGroup>\n  <ListGroupItem href="#" active>\n    Link 1\n  </ListGroupItem>\n  <ListGroupItem href="#">Link 2</ListGroupItem>\n  <ListGroupItem href="#" disabled>\n    Link 3\n  </ListGroupItem>\n</ListGroup>;\n\nStyling by color\nSet the bsStyle prop to style the item\n\n<ListGroup>\n  <ListGroupItem bsStyle="success">Success</ListGroupItem>\n  <ListGroupItem bsStyle="info">Info</ListGroupItem>\n  <ListGroupItem bsStyle="warning">Warning</ListGroupItem>\n  <ListGroupItem bsStyle="danger">Danger</ListGroupItem>\n</ListGroup>;\n\nWith header\nSet the header prop to create a structured item, with a heading and a body area.\n\n<ListGroup>\n  <ListGroupItem header="Heading 1">Some body text</ListGroupItem>\n  <ListGroupItem header="Heading 2" href="#">\n    Linked item\n  </ListGroupItem>\n  <ListGroupItem header="Heading 3" bsStyle="danger">\n    Danger styling\n  </ListGroupItem>\n</ListGroup>;\n\nWith custom component children\nWhen using ListGroupItems directly, ListGroup looks at whether the items have href or onClick props to determine which DOM elements to emit. However, with custom item components as children to ListGroup, set thecomponentClass prop to specify which element ListGroup should output.\n\nfunction CustomComponent({ children }) {\n  return (\n    <li className="list-group-item" onClick={() => {}}>\n      {children}\n    </li>\n  );\n}\n\nrender(\n  <ListGroup componentClass="ul">\n    <CustomComponent>Custom Child 1</CustomComponent>\n    <CustomComponent>Custom Child 2</CustomComponent>\n    <CustomComponent>Custom Child 3</CustomComponent>\n  </ListGroup>\n);',
@@ -1469,49 +1474,50 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/PanelCollapse',
       componentProps: [
         {
           description: 'Callback fired before the component expands',
           name: 'onEnter',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component starts to expand',
           name: 'onEntering',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component has expanded',
           name: 'onEntered',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the component collapses',
           name: 'onExit',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component starts to collapse',
           name: 'onExiting',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component has collapsed',
           name: 'onExited',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'panel\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'Panel.Collapse',
@@ -1746,6 +1752,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Carousel',
       componentProps: [
         {
@@ -2029,73 +2036,74 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Nav',
       componentProps: [
         {
           description: 'Marks the NavItem with a matching eventKey as active. Has a higher precedence over activeHref.',
           name: 'activeKey',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Marks the child NavItem with a matching href prop as active.',
           name: 'activeHref',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'NavItems are be positioned vertically.\n\ndefault: false',
           name: 'stacked',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'all( PropTypes.bool, ({ justified, navbar }) => justified && navbar ? Error(\'justified navbar `Nav`s are not supported\') : null )\n\n\ndefault: false',
           name: 'justified',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'A callback fired when a NavItem is selected.\n\nfunction (\n Any eventKey,\n SyntheticEvent event?\n)',
           name: 'onSelect',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'ARIA role for the Nav, in the context of a TabContainer, the default will be set to "tablist", but can be overridden by the Nav when set explicitly.\n\nWhen the role is set to "tablist" NavItem focus is managed according to the ARIA authoring practices for tabs: https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tabpanel',
           name: 'role',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Apply styling an alignment for use in a Navbar. This prop will be set automatically when the Nav is used inside a Navbar.',
           name: 'navbar',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Float the Nav to the right. When navbar is true the appropriate contextual classes are added as well.\n\ndefault: false',
           name: 'pullRight',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Float the Nav to the left. When navbar is true the appropriate contextual classes are added as well.\n\ndefault: false',
           name: 'pullLeft',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Component visual or contextual style variants.\n\none of: "lg", "large", "sm", "small"',
           name: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'nav\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: '#Navs Nav, NavItem\nNavs come in two styles, pills and tabs. Disable a tab by adding disabled.\n\nfunction handleSelect(selectedKey) {\n  alert(`selected ${selectedKey}`);\n}\n\nconst navInstance = (\n  <Nav bsStyle="pills" activeKey={1} onSelect={handleSelect}>\n    <NavItem eventKey={1} href="/home">\n      NavItem 1 content\n    </NavItem>\n    <NavItem eventKey={2} title="Item">\n      NavItem 2 content\n    </NavItem>\n    <NavItem eventKey={3} disabled>\n      NavItem 3 content\n    </NavItem>\n  </Nav>\n);\n\nrender(navInstance);\n\n#Dropdown\nAdd dropdowns using the NavDropdown component.\n\nclass NavDropdownExample extends React.Component {\n  handleSelect(eventKey, event) {\n    event.preventDefault();\n    alert(`selected ${eventKey}`);\n  }\n\n  render() {\n    return (\n      <Nav bsStyle="tabs" activeKey="1" onSelect={k => this.handleSelect(k)}>\n        <NavItem eventKey="1" href="/home">\n          NavItem 1 content\n        </NavItem>\n        <NavItem eventKey="2" title="Item">\n          NavItem 2 content\n        </NavItem>\n        <NavItem eventKey="3" disabled>\n          NavItem 3 content\n        </NavItem>\n        <NavDropdown eventKey="4" title="Dropdown" id="nav-dropdown">\n          <MenuItem eventKey="4.1">Action</MenuItem>\n          <MenuItem eventKey="4.2">Another action</MenuItem>\n          <MenuItem eventKey="4.3">Something else here</MenuItem>\n          <MenuItem divider />\n          <MenuItem eventKey="4.4">Separated link</MenuItem>\n        </NavDropdown>\n      </Nav>\n    );\n  }\n}\n\nrender(<NavDropdownExample />);\n\n#Stacked\nThey can also be stacked vertically.\n\nfunction handleSelect(selectedKey) {\n  alert(`selected ${selectedKey}`);\n}\n\nconst navInstance = (\n  <Nav bsStyle="pills" stacked activeKey={1} onSelect={handleSelect}>\n    <NavItem eventKey={1} href="/home">\n      NavItem 1 content\n    </NavItem>\n    <NavItem eventKey={2} title="Item">\n      NavItem 2 content\n    </NavItem>\n    <NavItem eventKey={3} disabled>\n      NavItem 3 content\n    </NavItem>\n  </Nav>\n);\n\nrender(navInstance);\n\n#Justified\nThey can be justified to take the full width of their parent.\n\nclass NavJustified extends React.Component {\n  handleSelect(selectedKey) {\n    alert(`selected ${selectedKey}`);\n  }\n\n  render() {\n    return (\n      <div>\n        <Nav\n          bsStyle="tabs"\n          justified\n          activeKey={1}\n          onSelect={key => this.handleSelect(key)}\n        >\n          <NavItem eventKey={1} href="/home">\n            NavItem 1 content\n          </NavItem>\n          <NavItem eventKey={2} title="Item">\n            NavItem 2 content\n          </NavItem>\n          <NavItem eventKey={3} disabled>\n            NavItem 3 content\n          </NavItem>\n        </Nav>\n        <br />\n        <Nav\n          bsStyle="pills"\n          justified\n          activeKey={1}\n          onSelect={key => this.handleSelect(key)}\n        >\n          <NavItem eventKey={1} href="/home">\n            NavItem 1 content\n          </NavItem>\n          <NavItem eventKey={2} title="Item">\n            NavItem 2 content\n          </NavItem>\n          <NavItem eventKey={3} disabled>\n            NavItem 3 content\n          </NavItem>\n        </Nav>\n      </div>\n    );\n  }\n}\n\nrender(<NavJustified />);',
@@ -2107,6 +2115,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ControlLabel',
       componentProps: [
         {
@@ -2264,6 +2273,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Tooltip',
       componentProps: [
         {
@@ -2336,6 +2346,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Radio',
       componentProps: [
         {
@@ -2403,6 +2414,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Form',
       componentProps: [
         {
@@ -2439,6 +2451,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Checkbox',
       componentProps: [
         {
@@ -2487,6 +2500,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Glyphicon',
       componentProps: [
         {
@@ -2680,73 +2694,74 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Overlay',
       componentProps: [
         {
           description: 'Set the visibility of the Overlay\n\ndefault: false',
           name: 'show',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Specify whether the overlay should trigger onHide when the user clicks outside the overlay\n\ndefault: false',
           name: 'rootClose',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'A callback invoked by the overlay when it wishes to be hidden. Required if rootClose is specified.',
           name: 'onHide',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Use animation. default: Fade',
           name: 'animation',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the Overlay transitions in',
           name: 'onEnter',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Overlay begins to transition in',
           name: 'onEntering',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Overlay finishes transitioning in',
           name: 'onEntered',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired right before the Overlay transitions out',
           name: 'onExit',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Overlay begins to transition out',
           name: 'onExiting',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Overlay finishes transitioning out',
           name: 'onExited',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Sets the direction of the Overlay.\n\ndefault: right',
           name: 'placement',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: '#Custom overlays Overlay\nThe OverlayTrigger component is great for most use cases, but as a higher level abstraction it can lack the flexibility needed to build more nuanced or custom behaviors into your Overlay components. For these cases it can be helpful to forgo the trigger and use the Overlay component directly.\n\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.getTarget = this.getTarget.bind(this);\n    this.handleToggle = this.handleToggle.bind(this);\n\n    this.state = {\n      show: true\n    };\n  }\n\n  getTarget() {\n    return ReactDOM.findDOMNode(this.target);\n  }\n\n  handleToggle() {\n    this.setState({ show: !this.state.show });\n  }\n\n  render() {\n    const sharedProps = {\n      container: this,\n      target: this.getTarget,\n      show: this.state.show\n    };\n\n    return (\n      <div style={{ height: 100, paddingLeft: 150, position: \'relative\' }}>\n        <Button\n          ref={button => {\n            this.target = button;\n          }}\n          onClick={this.handleToggle}\n        >\n          Click me!\n        </Button>\n\n        <Overlay {...sharedProps} placement="left">\n          <Tooltip id="overload-left">Tooltip overload!</Tooltip>\n        </Overlay>\n        <Overlay {...sharedProps} placement="top">\n          <Tooltip id="overload-top">Tooltip overload!</Tooltip>\n        </Overlay>\n        <Overlay {...sharedProps} placement="right">\n          <Tooltip id="overload-right">Tooltip overload!</Tooltip>\n        </Overlay>\n        <Overlay {...sharedProps} placement="bottom">\n          <Tooltip id="overload-bottom">Tooltip overload!</Tooltip>\n        </Overlay>\n      </div>\n    );\n  }\n}\n\nrender(<Example />);\n\n#Use Overlay instead of Tooltip and Popover\nYou don\'t need to use the provided Tooltip or Popover components. Creating custom overlays is as easy as wrapping some markup in an Overlay component. Make sure to pass down the className and style props to the wrapped element to make positioning and transitions work.\n\nfunction CustomPopover({ className, style }) {\n  return (\n    <div\n      className={className}\n      style={{\n        ...style,\n        position: \'absolute\',\n        backgroundColor: \'#EEE\',\n        boxShadow: \'0 5px 10px rgba(0, 0, 0, 0.2)\',\n        border: \'1px solid #CCC\',\n        borderRadius: 3,\n        marginLeft: -5,\n        marginTop: 5,\n        padding: 10\n      }}\n    >\n      <strong>Holy guacamole!</strong> Check this info.\n    </div>\n  );\n}\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleToggle = this.handleToggle.bind(this);\n\n    this.state = {\n      show: true\n    };\n  }\n\n  handleToggle() {\n    this.setState({ show: !this.state.show });\n  }\n\n  render() {\n    return (\n      <div style={{ height: 100, position: \'relative\' }}>\n        <Button\n          ref={button => {\n            this.target = button;\n          }}\n          onClick={this.handleToggle}\n        >\n          I am an Overlay target\n        </Button>\n\n        <Overlay\n          show={this.state.show}\n          onHide={() => this.setState({ show: false })}\n          placement="right"\n          container={this}\n          target={() => ReactDOM.findDOMNode(this.target)}\n        >\n          <CustomPopover />\n        </Overlay>\n      </div>\n    );\n  }\n}\n\nrender(<Example />);',
@@ -2758,6 +2773,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/FormControlFeedback',
       componentProps: [
         {
@@ -2776,6 +2792,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Tabs',
       componentProps: [
         {
@@ -3101,6 +3118,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ProgressBar',
       componentProps: [
         {
@@ -3271,6 +3289,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/FormControl',
       componentProps: [
         {
@@ -3319,6 +3338,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/DropdownButton',
       componentProps: [
         {
@@ -3404,115 +3424,116 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Modal',
       componentProps: [
         {
           description: 'Include a backdrop component. Specify \'static\' for a backdrop that doesn\'t trigger an "onHide" when clicked.\n\none of: \'static\', true, false',
           name: 'backdrop',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Add an optional extra class name to .modal-backdrop It could end up looking like class="modal-backdrop foo-modal-backdrop in".',
           name: 'backdropClassName',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Close the modal when escape key is pressed',
           name: 'keyboard',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Open and close the Modal with a slide and fade animation.\n\ndefault: true',
           name: 'animation',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'A Component type that provides the modal content Markup. This is a useful prop when you want to use your own styles and markup to create a custom modal component.\n\ndefault: ModalDialog',
           name: 'dialogComponentClass',
           propType: 'PropTypes.element',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'When true The modal will automatically shift focus to itself when it opens, and replace it to the last focused element when it closes. Generally this should never be set to false as it makes the Modal less accessible to assistive technologies, like screen-readers.',
           name: 'autoFocus',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'When true The modal will prevent focus from leaving the Modal while open. Consider leaving the default value here, as it is necessary to make the Modal work well with assistive technologies, such as screen readers.',
           name: 'enforceFocus',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'When true The modal will restore focus to previously focused element once modal is hidden',
           name: 'restoreFocus',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'When true The modal will show itself.',
           name: 'show',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: '\t\nA callback fired when the header closeButton or non-static backdrop is clicked. Required if either are specified.',
           name: 'onHide',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the Modal transitions in',
           name: 'onEnter',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Modal begins to transition in',
           name: 'onEntering',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Modal finishes transitioning in',
           name: 'onEntered',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired right before the Modal transitions out',
           name: 'onExit',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Modal begins to transition out',
           name: 'onExiting',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Modal finishes transitioning out',
           name: 'onExited',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Component size variations.\n\none of: "lg", "large", "sm", "small"',
           name: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'modal\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: '#Modals Modal\n#Static Markup\nA modal dialog component\n\n<div className="static-modal">\n  <Modal.Dialog>\n    <Modal.Header>\n      <Modal.Title>Modal title</Modal.Title>\n    </Modal.Header>\n\n    <Modal.Body>One fine body...</Modal.Body>\n\n    <Modal.Footer>\n      <Button>Close</Button>\n      <Button bsStyle="primary">Save changes</Button>\n    </Modal.Footer>\n  </Modal.Dialog>\n</div>;\n\n#Basic example\nA modal with header, body, and set of actions in the footer. Use <Modal/> in combination with other components to show or hide your Modal. The <Modal/> Component comes with a few convenient "sub components": <Modal.Header/>, <Modal.Title/>, <Modal.Body/>, and <Modal.Footer/>, which you can use to build the Modal content.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleShow = this.handleShow.bind(this);\n    this.handleClose = this.handleClose.bind(this);\n\n    this.state = {\n      show: false\n    };\n  }\n\n  handleClose() {\n    this.setState({ show: false });\n  }\n\n  handleShow() {\n    this.setState({ show: true });\n  }\n\n  render() {\n    const popover = (\n      <Popover id="modal-popover" title="popover">\n        very popover. such engagement\n      </Popover>\n    );\n    const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;\n\n    return (\n      <div>\n        <p>Click to get the full Modal experience!</p>\n\n        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>\n          Launch demo modal\n        </Button>\n\n        <Modal show={this.state.show} onHide={this.handleClose}>\n          <Modal.Header closeButton>\n            <Modal.Title>Modal heading</Modal.Title>\n          </Modal.Header>\n          <Modal.Body>\n            <h4>Text in a modal</h4>\n            <p>\n              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.\n            </p>\n\n            <h4>Popover in a modal</h4>\n            <p>\n              there is a{\' \'}\n              <OverlayTrigger overlay={popover}>\n                <a href="#popover">popover</a>\n              </OverlayTrigger>{\' \'}\n              here\n            </p>\n\n            <h4>Tooltips in a modal</h4>\n            <p>\n              there is a{\' \'}\n              <OverlayTrigger overlay={tooltip}>\n                <a href="#tooltip">tooltip</a>\n              </OverlayTrigger>{\' \'}\n              here\n            </p>\n\n            <hr />\n\n            <h4>Overflowing text to show scroll behavior</h4>\n            <p>\n              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n              ac consectetur ac, vestibulum at eros.\n            </p>\n            <p>\n              Praesent commodo cursus magna, vel scelerisque nisl consectetur\n              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n              auctor.\n            </p>\n            <p>\n              Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n              cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n              dui. Donec ullamcorper nulla non metus auctor fringilla.\n            </p>\n            <p>\n              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n              ac consectetur ac, vestibulum at eros.\n            </p>\n            <p>\n              Praesent commodo cursus magna, vel scelerisque nisl consectetur\n              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n              auctor.\n            </p>\n            <p>\n              Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n              cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n              dui. Donec ullamcorper nulla non metus auctor fringilla.\n            </p>\n            <p>\n              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n              ac consectetur ac, vestibulum at eros.\n            </p>\n            <p>\n              Praesent commodo cursus magna, vel scelerisque nisl consectetur\n              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n              auctor.\n            </p>\n            <p>\n              Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n              cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n              dui. Donec ullamcorper nulla non metus auctor fringilla.\n            </p>\n          </Modal.Body>\n          <Modal.Footer>\n            <Button onClick={this.handleClose}>Close</Button>\n          </Modal.Footer>\n        </Modal>\n      </div>\n    );\n  }\n}\n\nrender(<Example />);\n\nAdditional Import Options\nThe Modal Header, Title, Body, and Footer components are available as static properties the <Modal/> component, but you can also, import them directly from the /lib directory like: require("react-bootstrap/lib/ModalHeader").\n\n#Contained Modal\nYou will need to add the following css to your project and ensure that your container has the modal-container class.\n\n.modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n/**\n * You will want to include this bit of css\n *\n * .modal-container {\n *   position: relative;\n * }\n * .modal-container .modal, .modal-container .modal-backdrop {\n *   position: absolute;\n * }\n */\n\nclass Trigger extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleHide = this.handleHide.bind(this);\n\n    this.state = {\n      show: false\n    };\n  }\n\n  handleHide() {\n    this.setState({ show: false });\n  }\n  render() {\n    return (\n      <div className="modal-container" style={{ height: 200 }}>\n        <Button\n          bsStyle="primary"\n          bsSize="large"\n          onClick={() => this.setState({ show: true })}\n        >\n          Launch contained modal\n        </Button>\n\n        <Modal\n          show={this.state.show}\n          onHide={this.handleHide}\n          container={this}\n          aria-labelledby="contained-modal-title"\n        >\n          <Modal.Header closeButton>\n            <Modal.Title id="contained-modal-title">\n              Contained Modal\n            </Modal.Title>\n          </Modal.Header>\n          <Modal.Body>\n            Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id\n            ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.\n          </Modal.Body>\n          <Modal.Footer>\n            <Button onClick={this.handleHide}>Close</Button>\n          </Modal.Footer>\n        </Modal>\n      </div>\n    );\n  }\n}\n\nrender(<Trigger />);\n\n#Sizing modals using standard Bootstrap props\nYou can specify a bootstrap large or small modal by using the "bsSize" prop.\n\nclass MySmallModal extends React.Component {\n  render() {\n    return (\n      <Modal\n        {...this.props}\n        bsSize="small"\n        aria-labelledby="contained-modal-title-sm"\n      >\n        <Modal.Header closeButton>\n          <Modal.Title id="contained-modal-title-sm">Modal heading</Modal.Title>\n        </Modal.Header>\n        <Modal.Body>\n          <h4>Wrapped Text</h4>\n          <p>\n            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n            ac consectetur ac, vestibulum at eros.\n          </p>\n          <p>\n            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n            auctor.\n          </p>\n          <p>\n            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n            dui. Donec ullamcorper nulla non metus auctor fringilla.\n          </p>\n          <p>\n            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n            ac consectetur ac, vestibulum at eros.\n          </p>\n          <p>\n            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n            auctor.\n          </p>\n          <p>\n            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n            dui. Donec ullamcorper nulla non metus auctor fringilla.\n          </p>\n          <p>\n            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n            ac consectetur ac, vestibulum at eros.\n          </p>\n          <p>\n            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n            auctor.\n          </p>\n          <p>\n            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n            dui. Donec ullamcorper nulla non metus auctor fringilla.\n          </p>\n        </Modal.Body>\n        <Modal.Footer>\n          <Button onClick={this.props.onHide}>Close</Button>\n        </Modal.Footer>\n      </Modal>\n    );\n  }\n}\n\nclass MyLargeModal extends React.Component {\n  render() {\n    return (\n      <Modal\n        {...this.props}\n        bsSize="large"\n        aria-labelledby="contained-modal-title-lg"\n      >\n        <Modal.Header closeButton>\n          <Modal.Title id="contained-modal-title-lg">Modal heading</Modal.Title>\n        </Modal.Header>\n        <Modal.Body>\n          <h4>Wrapped Text</h4>\n          <p>\n            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n            ac consectetur ac, vestibulum at eros.\n          </p>\n          <p>\n            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n            auctor.\n          </p>\n          <p>\n            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n            dui. Donec ullamcorper nulla non metus auctor fringilla.\n          </p>\n          <p>\n            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n            ac consectetur ac, vestibulum at eros.\n          </p>\n          <p>\n            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n            auctor.\n          </p>\n          <p>\n            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n            dui. Donec ullamcorper nulla non metus auctor fringilla.\n          </p>\n          <p>\n            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n            ac consectetur ac, vestibulum at eros.\n          </p>\n          <p>\n            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor\n            auctor.\n          </p>\n          <p>\n            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo\n            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio\n            dui. Donec ullamcorper nulla non metus auctor fringilla.\n          </p>\n        </Modal.Body>\n        <Modal.Footer>\n          <Button onClick={this.props.onHide}>Close</Button>\n        </Modal.Footer>\n      </Modal>\n    );\n  }\n}\n\nclass App extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.state = {\n      smShow: false,\n      lgShow: false\n    };\n  }\n  render() {\n    let smClose = () => this.setState({ smShow: false });\n    let lgClose = () => this.setState({ lgShow: false });\n\n    return (\n      <ButtonToolbar>\n        <Button\n          bsStyle="primary"\n          onClick={() => this.setState({ smShow: true })}\n        >\n          Launch small demo modal\n        </Button>\n        <Button\n          bsStyle="primary"\n          onClick={() => this.setState({ lgShow: true })}\n        >\n          Launch large demo modal\n        </Button>\n\n        <MySmallModal show={this.state.smShow} onHide={smClose} />\n        <MyLargeModal show={this.state.lgShow} onHide={lgClose} />\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<App />);\n\n#Sizing modals using custom CSS\nYou can apply custom css to the modal dialog div using the "dialogClassName" prop. Example is using a custom css class with width set to 90%.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleShow = this.handleShow.bind(this);\n    this.handleHide = this.handleHide.bind(this);\n\n    this.state = {\n      show: false\n    };\n  }\n\n  handleShow() {\n    this.setState({ show: true });\n  }\n\n  handleHide() {\n    this.setState({ show: false });\n  }\n\n  render() {\n    return (\n      <ButtonToolbar>\n        <Button bsStyle="primary" onClick={this.handleShow}>\n          Launch demo modal\n        </Button>\n\n        <Modal\n          {...this.props}\n          show={this.state.show}\n          onHide={this.handleHide}\n          dialogClassName="custom-modal"\n        >\n          <Modal.Header closeButton>\n            <Modal.Title id="contained-modal-title-lg">\n              Modal heading\n            </Modal.Title>\n          </Modal.Header>\n          <Modal.Body>\n            <h4>Wrapped Text</h4>\n            <p>\n              Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae\n              unde commodi aspernatur enim, consectetur. Cumque deleniti\n              temporibus ipsam atque a dolores quisquam quisquam adipisci\n              possimus laboriosam. Quibusdam facilis doloribus debitis! Sit\n              quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem!\n              Mollitia reiciendis porro quo magni incidunt dolore amet atque\n              facilis ipsum deleniti rem! Dolores debitis voluptatibus ipsum\n              dicta. Dolor quod amet ab sint esse distinctio tenetur. Veritatis\n              laudantium quibusdam quidem corporis architecto veritatis. Ex\n              facilis minima beatae sunt perspiciatis placeat. Quasi corporis\n              odio eaque voluptatibus ratione magnam nulla? Amet cum maiores\n              consequuntur totam dicta! Inventore adipisicing vel vero odio modi\n              doloremque? Vitae porro impedit ea minima laboriosam quisquam\n              neque. Perspiciatis omnis obcaecati consequatur sunt deleniti\n              similique facilis sequi. Ipsum harum vitae modi reiciendis\n              officiis. Quas laudantium laudantium modi corporis nihil provident\n              consectetur omnis, natus nulla distinctio illum corporis. Sit ex\n              earum odio ratione consequatur odit minus laborum? Eos? Sit ipsum\n              illum architecto aspernatur perspiciatis error fuga illum, tempora\n              harum earum, a dolores. Animi facilis inventore harum dolore\n              accusamus fuga provident molestiae eum! Odit dicta error dolorem\n              sunt reprehenderit. Sit similique iure quae obcaecati harum. Eum\n              saepe fugit magnam dicta aliquam? Sapiente possimus aliquam fugiat\n              officia culpa sint! Beatae voluptates voluptatem excepturi\n              molestiae alias in tenetur beatae placeat architecto. Sit possimus\n              rerum fugiat sapiente aspernatur. Necessitatibus tempora animi\n              dicta perspiciatis tempora a velit in! Doloribus perspiciatis\n              doloribus suscipit nam earum. Deleniti veritatis eaque totam\n              assumenda fuga sapiente! Id recusandae. Consectetur necessitatibus\n              eaque velit nobis aliquid? Fugit illum qui suscipit aspernatur\n              alias ipsum repudiandae! Quia omnis quisquam dignissimos a\n              mollitia. Suscipit aspernatur eum maiores repellendus ipsum\n              doloribus alias voluptatum consequatur. Consectetur quibusdam\n              veniam quas tenetur necessitatibus repudiandae? Rem optio vel\n              alias neque optio sapiente quidem similique reiciendis tempore.\n              Illum accusamus officia cum enim minima eligendi consectetur nemo\n              veritatis nam nisi! Adipisicing nobis perspiciatis dolorum\n              adipisci soluta architecto doloremque voluptatibus omnis debitis\n              quas repellendus. Consequuntur assumenda illum commodi mollitia\n              asperiores? Quis aspernatur consequatur modi veritatis aliquid at?\n              Atque vel iure quos. Amet provident voluptatem amet aliquam\n              deserunt sint, elit dolorem ipsa, voluptas? Quos esse facilis\n              neque nihil sequi non? Voluptates rem ab quae dicta culpa dolorum\n              sed atque molestias debitis omnis! Sit sint repellendus deleniti\n              officiis distinctio. Impedit vel quos harum doloribus corporis.\n              Laborum ullam nemo quaerat reiciendis recusandae minima dicta\n              molestias rerum. Voluptas et ut omnis est ipsum accusamus harum.\n              Amet exercitationem quasi velit inventore neque doloremque!\n              Consequatur neque dolorem vel impedit sunt voluptate. Amet quo\n              amet magni exercitationem libero recusandae possimus pariatur.\n              Cumque eum blanditiis vel vitae distinctio! Tempora! Consectetur\n              sit eligendi neque sunt soluta laudantium natus qui aperiam\n              quisquam consectetur consequatur sit sint a unde et. At voluptas\n              ut officiis esse totam quasi dolorem! Hic deserunt doloribus\n              repudiandae! Lorem quod ab nostrum asperiores aliquam ab id\n              consequatur, expedita? Tempora quaerat ex ea temporibus in tempore\n              voluptates cumque. Quidem nam dolor reiciendis qui dolor assumenda\n              ipsam veritatis quasi. Esse! Sit consectetur hic et sunt iste!\n              Accusantium atque elit voluptate asperiores corrupti temporibus\n              mollitia! Placeat soluta odio ad blanditiis nisi. Eius reiciendis\n              id quos dolorum eaque suscipit magni delectus maxime. Sit odit\n              provident vel magnam quod. Possimus eligendi non corrupti tenetur\n              culpa accusantium quod quis. Voluptatum quaerat animi dolore\n              maiores molestias voluptate? Necessitatibus illo omnis laborum hic\n              enim minima! Similique. Dolor voluptatum reprehenderit nihil\n              adipisci aperiam voluptatem soluta magnam accusamus iste incidunt\n              tempore consequatur illo illo odit. Asperiores nesciunt iusto nemo\n              animi ratione. Sunt odit similique doloribus temporibus\n              reiciendis! Ullam. Dolor dolores veniam animi sequi dolores\n              molestias voluptatem iure velit. Elit dolore quaerat incidunt enim\n              aut distinctio. Ratione molestiae laboriosam similique laboriosam\n              eum et nemo expedita. Consequuntur perspiciatis cumque dolorem.\n            </p>\n          </Modal.Body>\n          <Modal.Footer>\n            <Button onClick={this.handleHide}>Close</Button>\n          </Modal.Footer>\n        </Modal>\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<Example />);\n\n#Multiple Modals\nNot supported\nReact-Bootstrap modals are not designed to support rendering multiple modals simultaneously. You will have to add react-overlays as a dependency and build your own modal component using its <ModalManager/> component, which supports multiple modals.\n\n',
@@ -4121,19 +4142,20 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/PanelHeading',
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'div\'',
           name: 'componentClass',
           propType: 'PropTypes.element',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault" \'panel\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'Panel.Heading',
@@ -4285,6 +4307,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/HelpBlock',
       componentProps: [
         {
@@ -4303,6 +4326,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/FormControlStatic',
       componentProps: [
         {
@@ -4327,19 +4351,20 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ModalBody',
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'div\'',
           name: 'componentClass',
           propType: 'PropTypes.element',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'modal-body\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'Modal.Body',
@@ -4351,6 +4376,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/SplitButton',
       componentProps: [
         {
@@ -4509,19 +4535,20 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Label',
       componentProps: [
         {
           description: 'Component visual or contextual style variants.\n\ndefault: \'default\'',
           name: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'label\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'Create a <Label>label</Label> to highlight information.\n\n<div>\n  <h1>\n    Label <Label>New</Label>\n  </h1>\n  <h2>\n    Label <Label>New</Label>\n  </h2>\n  <h3>\n    Label <Label>New</Label>\n  </h3>\n  <h4>\n    Label <Label>New</Label>\n  </h4>\n  <h5>\n    Label <Label>New</Label>\n  </h5>\n  <p>\n    Label <Label>New</Label>\n  </p>\n</div>;\n\nAvailable variations\nAdd any of the below mentioned modifier classes to change the appearance of a label.\n\n<div>\n  <Label bsStyle="default">Default</Label>{\' \'}\n  <Label bsStyle="primary">Primary</Label>{\' \'}\n  <Label bsStyle="success">Success</Label> <Label bsStyle="info">Info</Label>{\' \'}\n  <Label bsStyle="warning">Warning</Label>{\' \'}\n  <Label bsStyle="danger">Danger</Label>\n</div>;',
@@ -4533,6 +4560,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Button',
       componentProps: [
         {
@@ -4642,6 +4670,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Thumbnail',
       componentProps: [
         {
@@ -4690,13 +4719,14 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/PanelToggle',
       componentProps: [
         {
           description: 'You can use a custom element for this component\n\ndefault: SafeAnchor',
           name: 'componentClass',
           propType: 'PropTypes.element',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'Panel.Toggle',
@@ -4854,6 +4884,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/InputGroup',
       componentProps: [
         {
@@ -4878,6 +4909,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/ToggleButtonGroup',
       componentProps: [
         {
@@ -4914,6 +4946,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Breadcrumb',
       componentProps: [],
       description: 'Breadcrumbs are used to indicate the current page\'s location. Add active attribute to active Breadcrumb.Item.\n\nDo not set both active and href attributes. active overrides href and span element is rendered instead of a.\n\n<Breadcrumb>\n  <Breadcrumb.Item href="#">Home</Breadcrumb.Item>\n  <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">\n    Library\n  </Breadcrumb.Item>\n  <Breadcrumb.Item active>Data</Breadcrumb.Item>\n</Breadcrumb>;',
@@ -4925,6 +4958,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/CarouselCaption',
       componentProps: [
         {
@@ -4973,6 +5007,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/TabPane',
       componentProps: [
         {
@@ -5093,6 +5128,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/CarouselItem',
       componentProps: [
         {
@@ -5493,31 +5529,32 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Panel',
       componentProps: [
         {
           description: 'Controls the collapsed/expanded state ofthe Panel. Requires a Panel.Collapse or <Panel.Body collapsible> child component in order to actually animate out or in.',
           name: 'expanded',
           propType: 'PropTypes.bool',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'A callback fired when the collapse state changes.',
           name: 'onToggle',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'A unique identifier for the Component, the eventKey makes it distinguishable from others in a set. Similar to React\'s key prop, in that it only needs to be unique amoungst the Components siblings, not globally.',
           name: 'eventKey',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'An HTML id attribute uniquely identifying the Panel component.',
           name: 'id',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: '#Panels Panel, PanelGroup, Accordion\n#Basic example\nBy default, all the <Panel /> does is apply a basic border and padding to contain some content.\n\nYou can pass on any additional properties you need, e.g. a custom onClick handler, as it is shown in the example code. They all will apply to the wrapper div element.\n\nfunction handleClick() {\n  alert(\'You have clicked on me\');\n}\n\nconst panelInstance = (\n  <Panel onClick={handleClick}>\n    <Panel.Body>Basic panel example</Panel.Body>\n  </Panel>\n);\n\nrender(panelInstance);\n\n#Panel with heading\nEasily add a heading container to your panel with the <Panel.Heading> and <Panel.Title> sub-components.\n\n<div>\n  <Panel>\n    <Panel.Heading>Panel heading without a title</Panel.Heading>\n    <Panel.Body>Panel content</Panel.Body>\n  </Panel>\n  <Panel>\n    <Panel.Heading>\n      <Panel.Title componentClass="h3">Panel heading with a title</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body>Panel content</Panel.Body>\n  </Panel>\n</div>;\n\nPanel with footer\nPass buttons or secondary text in the <Panel.Footer> sub-component. Note that panel footers do not inherit colors and borders when using contextual variations as they are not meant to be in the foreground.\n\n<Panel>\n  <Panel.Body>Panel content</Panel.Body>\n  <Panel.Footer>Panel footer</Panel.Footer>\n</Panel>;\n\n#Contextual alternatives\nLike other components, easily make a panel more meaningful to a particular context by adding a bsStyle prop.\n\n<div>\n  <Panel bsStyle="primary">\n    <Panel.Heading>\n      <Panel.Title componentClass="h3">Panel heading</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body>Panel content</Panel.Body>\n  </Panel>\n\n  <Panel bsStyle="success">\n    <Panel.Heading>\n      <Panel.Title componentClass="h3">Panel heading</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body>Panel content</Panel.Body>\n  </Panel>\n\n  <Panel bsStyle="info">\n    <Panel.Heading>\n      <Panel.Title componentClass="h3">Panel heading</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body>Panel content</Panel.Body>\n  </Panel>\n\n  <Panel bsStyle="warning">\n    <Panel.Heading>\n      <Panel.Title componentClass="h3">Panel heading</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body>Panel content</Panel.Body>\n  </Panel>\n\n  <Panel bsStyle="danger">\n    <Panel.Heading>\n      <Panel.Title componentClass="h3">Panel heading</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body>Panel content</Panel.Body>\n  </Panel>\n</div>;\n\n#With tables and list groups\nAdd any <Table />, <ListGroup /> to a panel for a seamless integration. Mix and match with Panel.Body as needed.\n\n<Panel>\n  <Panel.Heading>Panel heading</Panel.Heading>\n  <Panel.Body>Some default panel content here.</Panel.Body>\n  <ListGroup>\n    <ListGroupItem>Item 1</ListGroupItem>\n    <ListGroupItem>Item 2</ListGroupItem>\n    <ListGroupItem>&hellip;</ListGroupItem>\n  </ListGroup>\n  <Panel.Body>Some more panel content here.</Panel.Body>\n</Panel>;\n\n#Collapsible Panel\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.state = {\n      open: true\n    };\n  }\n\n  render() {\n    return (\n      <div>\n        <Button onClick={() => this.setState({ open: !this.state.open })}>\n          Click to toggle\n        </Button>\n        <br />\n        <Panel id="collapsible-panel-example-1" expanded={this.state.open}>\n          <Panel.Collapse>\n            <Panel.Body>\n              Anim pariatur cliche reprehenderit, enim eiusmod high life\n              accusamus terry richardson ad squid. Nihil anim keffiyeh\n              helvetica, craft beer labore wes anderson cred nesciunt sapiente\n              ea proident.\n            </Panel.Body>\n          </Panel.Collapse>\n        </Panel>\n\n        <p>You can also make the Panel heading toggle the collapse.</p>\n\n        <Panel id="collapsible-panel-example-2" defaultExpanded>\n          <Panel.Heading>\n            <Panel.Title toggle>\n              Title that functions as a collapse toggle\n            </Panel.Title>\n          </Panel.Heading>\n          <Panel.Collapse>\n            <Panel.Body>\n              Anim pariatur cliche reprehenderit, enim eiusmod high life\n              accusamus terry richardson ad squid. Nihil anim keffiyeh\n              helvetica, craft beer labore wes anderson cred nesciunt sapiente\n              ea proident.\n            </Panel.Body>\n          </Panel.Collapse>\n        </Panel>\n\n        <p>Or use a Panel.Toggle component to customize</p>\n\n        <Panel id="collapsible-panel-example-3" defaultExpanded>\n          <Panel.Heading>\n            <Panel.Title>Title that functions as a collapse toggle</Panel.Title>\n            <Panel.Toggle componentClass="a">My own toggle</Panel.Toggle>\n          </Panel.Heading>\n          <Panel.Collapse>\n            <Panel.Body>\n              Anim pariatur cliche reprehenderit, enim eiusmod high life\n              accusamus terry richardson ad squid. Nihil anim keffiyeh\n              helvetica, craft beer labore wes anderson cred nesciunt sapiente\n              ea proident.\n            </Panel.Body>\n          </Panel.Collapse>\n        </Panel>\n      </div>\n    );\n  }\n}\n\nrender(<Example />);\n\n#Controlled PanelGroups\nPanelGroups can be controlled by a parent component. The activeKey prop dictates which panel is open.\n\nclass ControlledPanelGroup extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleSelect = this.handleSelect.bind(this);\n\n    this.state = {\n      activeKey: \'1\'\n    };\n  }\n\n  handleSelect(activeKey) {\n    this.setState({ activeKey });\n  }\n\n  render() {\n    return (\n      <PanelGroup\n        accordion\n        id="accordion-controlled-example"\n        activeKey={this.state.activeKey}\n        onSelect={this.handleSelect}\n      >\n        <Panel eventKey="1">\n          <Panel.Heading>\n            <Panel.Title toggle>Panel heading 1</Panel.Title>\n          </Panel.Heading>\n          <Panel.Body collapsible>Panel content 1</Panel.Body>\n        </Panel>\n        <Panel eventKey="2">\n          <Panel.Heading>\n            <Panel.Title toggle>Panel heading 2</Panel.Title>\n          </Panel.Heading>\n          <Panel.Body collapsible>Panel content 2</Panel.Body>\n        </Panel>\n      </PanelGroup>\n    );\n  }\n}\n\nrender(<ControlledPanelGroup />);\n\n#Uncontrolled PanelGroups\nPanelGroups can also be uncontrolled where they manage their own state. The defaultActiveKey prop dictates which panel is open when initially.\n\n<PanelGroup accordion id="accordion-uncontrolled-example" defaultActiveKey="2">\n  <Panel eventKey="1">\n    <Panel.Heading>\n      <Panel.Title toggle>Panel heading 1</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body collapsible>Panel content 1</Panel.Body>\n  </Panel>\n  <Panel eventKey="2">\n    <Panel.Heading>\n      <Panel.Title toggle>Panel heading 2</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body collapsible>Panel content 2</Panel.Body>\n  </Panel>\n</PanelGroup>;\n\n#Accordions\nUse <PanelGroup accordion /> to create an accordion style collapsing Panel set\n\n<PanelGroup accordion id="accordion-example">\n  <Panel eventKey="1">\n    <Panel.Heading>\n      <Panel.Title toggle>Collapsible Group Item #1</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body collapsible>\n      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry\n      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard\n      dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf\n      moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla\n      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore\n      wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur\n      butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim\n      aesthetic synth nesciunt you probably haven\'t heard of them accusamus\n      labore sustainable VHS.\n    </Panel.Body>\n  </Panel>\n  <Panel eventKey="2">\n    <Panel.Heading>\n      <Panel.Title toggle>Collapsible Group Item #2</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body collapsible>\n      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry\n      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard\n      dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf\n      moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla\n      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore\n      wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur\n      butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim\n      aesthetic synth nesciunt you probably haven\'t heard of them accusamus\n      labore sustainable VHS.\n    </Panel.Body>\n  </Panel>\n  <Panel eventKey="3">\n    <Panel.Heading>\n      <Panel.Title toggle>Collapsible Group Item #3</Panel.Title>\n    </Panel.Heading>\n    <Panel.Body collapsible>\n      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry\n      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard\n      dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf\n      moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla\n      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore\n      wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur\n      butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim\n      aesthetic synth nesciunt you probably haven\'t heard of them accusamus\n      labore sustainable VHS.\n    </Panel.Body>\n  </Panel>\n</PanelGroup>;\n',
@@ -5590,6 +5627,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/NavbarBrand',
       componentProps: [],
       description: 'Navbar.Brand',
@@ -5620,55 +5658,56 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Popover',
       componentProps: [
         {
           description: '\t\nAn html id attribute, necessary for accessibility',
           name: 'id',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Sets the direction the Popover is positioned towards.\n\ndefault: \'right\'\n\none of: \'top\', \'right\', \'bottom\', \'left\'',
           name: 'placement',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'The "top" position value for the Popover.',
           name: 'positionTop',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'The "left" position value for the Popover.',
           name: 'positionLeft',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'The "top" position value for the Popover arrow.',
           name: 'arrowOffsetTop',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'The "left" position value for the Popover arrow.',
           name: 'arrowOffsetLeft',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Title content',
           name: 'title',
           propType: 'PropTypes.node',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'popover\'',
           name: 'bsClass',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: '#Popovers Popover\nThe Popover, offers a more robust alternative to the Tooltip for displaying overlays of content.\n\n<div style={{ height: 120 }}>\n  <Popover\n    id="popover-basic"\n    placement="right"\n    positionLeft={200}\n    positionTop={50}\n    title="Popover right"\n  >\n    And here\'s some <strong>amazing</strong> content. It\'s very engaging. right?\n  </Popover>\n</div>;\n\n#With OverlayTrigger\nThe Popover component, like the Tooltip can be used with an OverlayTrigger Component, and positioned around it.\n\nconst popoverLeft = (\n  <Popover id="popover-positioned-left" title="Popover left">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverTop = (\n  <Popover id="popover-positioned-top" title="Popover top">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverBottom = (\n  <Popover id="popover-positioned-bottom" title="Popover bottom">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverRight = (\n  <Popover id="popover-positioned-right" title="Popover right">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nrender(\n  <ButtonToolbar>\n    <OverlayTrigger trigger="click" placement="left" overlay={popoverLeft}>\n      <Button>Holy guacamole!</Button>\n    </OverlayTrigger>\n    <OverlayTrigger trigger="click" placement="top" overlay={popoverTop}>\n      <Button>Holy guacamole!</Button>\n    </OverlayTrigger>\n    <OverlayTrigger trigger="click" placement="bottom" overlay={popoverBottom}>\n      <Button>Holy guacamole!</Button>\n    </OverlayTrigger>\n    <OverlayTrigger trigger="click" placement="right" overlay={popoverRight}>\n      <Button>Holy guacamole!</Button>\n    </OverlayTrigger>\n  </ButtonToolbar>\n);\n\n#Trigger behaviors\nIt\'s inadvisable to use "hover" or "focus" triggers for popovers, because they have poor accessibility from keyboard and on mobile devices.\n\nconst popoverClick = (\n  <Popover id="popover-trigger-click" title="Popover bottom">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverHoverFocus = (\n  <Popover id="popover-trigger-hover-focus" title="Popover bottom">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverFocus = (\n  <Popover id="popover-trigger-focus" title="Popover bottom">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverClickRootClose = (\n  <Popover id="popover-trigger-click-root-close" title="Popover bottom">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nrender(\n  <ButtonToolbar>\n    <OverlayTrigger trigger="click" placement="bottom" overlay={popoverClick}>\n      <Button>Click</Button>\n    </OverlayTrigger>\n    <OverlayTrigger\n      trigger={[\'hover\', \'focus\']}\n      placement="bottom"\n      overlay={popoverHoverFocus}\n    >\n      <Button>Hover + Focus</Button>\n    </OverlayTrigger>\n    <OverlayTrigger trigger="focus" placement="bottom" overlay={popoverFocus}>\n      <Button>Focus</Button>\n    </OverlayTrigger>\n    <OverlayTrigger\n      trigger="click"\n      rootClose\n      placement="bottom"\n      overlay={popoverClickRootClose}\n    >\n      <Button>Click w/rootClose</Button>\n    </OverlayTrigger>\n  </ButtonToolbar>\n);\n\n#Popover component in container\nSpecify container to control the DOM element to which to append the overlay. This element must be a positioned element to allow correctly positioning the overlay.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleClick = e => {\n      this.setState({ target: e.target, show: !this.state.show });\n    };\n\n    this.state = {\n      show: false\n    };\n  }\n\n  render() {\n    return (\n      <ButtonToolbar>\n        <Button onClick={this.handleClick}>Holy guacamole!</Button>\n\n        <Overlay\n          show={this.state.show}\n          target={this.state.target}\n          placement="bottom"\n          container={this}\n          containerPadding={20}\n        >\n          <Popover id="popover-contained" title="Popover bottom">\n            <strong>Holy guacamole!</strong> Check this info.\n          </Popover>\n        </Overlay>\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<Example />);\n\n#Positioned popover components in scrolling container\n\nconst popoverLeft = (\n  <Popover id="popover-positioned-scrolling-left" title="Popover left">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverTop = (\n  <Popover id="popover-positioned-scrolling-top" title="Popover top">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverBottom = (\n  <Popover id="popover-positioned-scrolling-bottom" title="Popover bottom">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nconst popoverRight = (\n  <Popover id="popover-positioned-scrolling-right" title="Popover right">\n    <strong>Holy guacamole!</strong> Check this info.\n  </Popover>\n);\n\nclass Positioner extends React.Component {\n  render() {\n    return (\n      <ButtonToolbar style={{ padding: \'100px 0\' }}>\n        <OverlayTrigger\n          container={this}\n          trigger="click"\n          placement="left"\n          overlay={popoverLeft}\n        >\n          <Button>Holy guacamole!</Button>\n        </OverlayTrigger>\n        <OverlayTrigger\n          container={this}\n          trigger="click"\n          placement="top"\n          overlay={popoverTop}\n        >\n          <Button>Holy guacamole!</Button>\n        </OverlayTrigger>\n        <OverlayTrigger\n          container={this}\n          trigger="click"\n          placement="bottom"\n          overlay={popoverBottom}\n        >\n          <Button>Holy guacamole!</Button>\n        </OverlayTrigger>\n        <OverlayTrigger\n          container={this}\n          trigger="click"\n          placement="right"\n          overlay={popoverRight}\n        >\n          <Button>Holy guacamole!</Button>\n        </OverlayTrigger>\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<Positioner />);',
@@ -6038,6 +6077,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Well',
       componentProps: [
         {
@@ -6062,6 +6102,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
       componentImport: 'react-bootstrap/lib/Dropdown',
       componentProps: [
         {
@@ -6299,6 +6340,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/Table',
       componentProps: [
         {

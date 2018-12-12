@@ -34,22 +34,21 @@ export function* watchSetComponentType(action) {
   const hocCode = generateHocCode({ hoc, projectName });
   const stylesCode = generateStylesCode(tree);
 
+  const myRe = /^[ \r\n]+$/gi;
+
   switch (componentType) {
     case SMART:
       const smartCode = generateSmartCode({ smart, projectName, tree });
 
       yield put(setHocCode(hocCode));
-      yield put(setSmartCode(smartCode));
+      yield put(setSmartCode(smartCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));
       return;
     case DUMB:
       const dumbCode = generateDumbCode({ dumb, projectName, tree });
+
       yield put(setHocCode(hocCode));
-
-      const myRe = /^[ \r\n]+$/gi;
-      const dumbCode1 = dumbCode.replace(myRe, '');
-
-      yield put(setDumbCode(dumbCode1));
+      yield put(setDumbCode(dumbCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));
       return;
 
@@ -63,17 +62,20 @@ export function* watchTreeSet() {
   const { smart, dumb } = (yield select()).componentSettingsServiceReducer;
   const { tree } = (yield select()).sortableTreeServiceReducer;
   const stylesCode = generateStylesCode(tree);
+  const myRe = /^[ \r\n]+$/gi;
 
   switch (componentType) {
     case SMART:
       const smartCode = generateSmartCode({ smart, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
-      yield put(setSmartCode(smartCode));
+
+      yield put(setSmartCode(smartCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));
       yield put(setAceTab(projectName));
       return;
     case DUMB:
       const dumbCode = generateDumbCode({ dumb, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
-      yield put(setDumbCode(dumbCode));
+
+      yield put(setDumbCode(dumbCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));
       yield put(setAceTab(projectName));
       return;
