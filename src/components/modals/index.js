@@ -9,6 +9,7 @@ import Reducer from './Reducer';
 import Hoc from './Hoc';
 import Smart from './Smart';
 import AppSettings from './AppSettings';
+import JsonFormSettings from './JsonFormSettings';
 import {
   PROPS_FORM,
   COMPONENT_INFO,
@@ -20,6 +21,7 @@ import {
   HOC,
   SMART,
   APPLICATION,
+  JSON_FORM_SETTINGS,
 } from './constants';
 
 const RenderModal = props => {
@@ -69,6 +71,10 @@ const RenderModal = props => {
       case APPLICATION:
         return (
           <AppSettings closeModal={closeModal} />
+        );
+      case JSON_FORM_SETTINGS:
+        return (
+          <JsonFormSettings closeModal={closeModal} />
         );
       default: return null;
     }

@@ -5,6 +5,8 @@ export const initialState = () => ({
   projectType: '',
   projectTechno: '',
   componentType: '',
+  hasJsonForm: false,
+  jsonForm: [],
 });
 
 export default (state = initialState(), action) => {
@@ -28,6 +30,16 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         componentType: action.componentType,
+      };
+    case actionTypes.SET_PROJECT_SETTINGS_HAS_JSON_FORM:
+      return {
+        ...state,
+        hasJsonForm: action.hasJsonForm,
+      };
+    case actionTypes.SET_PROJECT_SETTINGS_JSON_FORM:
+      return {
+        ...state,
+        jsonForm: action.jsonForm,
       };
     default:
       return state;

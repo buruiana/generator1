@@ -19,3 +19,13 @@ export const setProjectComponentType = componentType => ({
   type: actionTypes.SET_PROJECT_SETTINGS_COMPONENT_TYPE,
   componentType
 })
+
+export const setProjectHasJsonForm = hasJsonForm => ({
+  type: actionTypes.SET_PROJECT_SETTINGS_HAS_JSON_FORM,
+  hasJsonForm
+})
+
+export const setProjectJsonForm = jsonForm => ({
+  type: actionTypes.SET_PROJECT_SETTINGS_JSON_FORM,
+  jsonForm
+})

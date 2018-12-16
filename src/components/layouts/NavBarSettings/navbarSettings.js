@@ -8,6 +8,7 @@ import {
   SAGA,
   REDUCER,
   HOC,
+  JSON_FORM_SETTINGS,
 } from '../../modals/constants';
 import {
   SERVICE,
@@ -89,6 +90,11 @@ const NavBarSettings = props => {
       {isApp() &&
         <NavItem eventKey={APPLICATION} >
           App Settings
+      </NavItem>
+      }
+      {isComponent() &&
+        <NavItem eventKey={JSON_FORM_SETTINGS} >
+          Json Form Settings
       </NavItem>
       }
     </Nav>

@@ -1,5 +1,6 @@
 import { put, takeLatest, select } from "redux-saga/effects";
 
+import some from 'lodash/some';
 import {
   SET_PROJECT_SETTINGS_COMPONENT_TYPE,
 } from '../projectSettingsService/actionTypes';
@@ -26,6 +27,9 @@ import {
 import {
   setAceTab,
 } from '../aceTabsService/actions';
+import { 
+  setProjectHasJsonForm,
+} from '../projectSettingsService/actions';
 
 export function* watchSetComponentType(action) {
   const { projectName, componentType } = (yield select()).projectSettingsServiceReducer;
@@ -63,6 +67,7 @@ export function* watchTreeSet() {
   const { tree } = (yield select()).sortableTreeServiceReducer;
   const stylesCode = generateStylesCode(tree);
   const myRe = /^[ \r\n]+$/gi;
+  const hasJsonSchema = some(tree, { title: 'Form', provider: 'Jsonschema-form' });
 
   switch (componentType) {
     case SMART:
@@ -71,13 +76,16 @@ export function* watchTreeSet() {
       yield put(setSmartCode(smartCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));
       yield put(setAceTab(projectName));
+      yield put(setProjectHasJsonForm(hasJsonSchema));
       return;
+
     case DUMB:
       const dumbCode = generateDumbCode({ dumb, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
 
       yield put(setDumbCode(dumbCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));
       yield put(setAceTab(projectName));
+      yield put(setProjectHasJsonForm(hasJsonSchema));
       return;
 
     default:
