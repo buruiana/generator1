@@ -15,7 +15,7 @@ const AceTabs = props => {
   };
 
   return (
-    <div className='aceTabs'>
+    <div className='flex'>
       <Tabs defaultActiveKey='index' id="uncontrolled-tab-example" onSelect={onSelect} activeKey={props.aceTab}>
         {renderTabs()}
       </Tabs>

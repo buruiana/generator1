@@ -11,7 +11,7 @@ const JsonFormSettings = ({ closeModal, modalVisible }) => {
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>
-            JsonForm Settings
+            JsonForm Schema
           </Modal.Title>
         </Modal.Header>
 

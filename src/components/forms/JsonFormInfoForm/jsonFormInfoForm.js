@@ -14,7 +14,7 @@ const JsonFormInfoForm = props => {
 
   const schema = {
     type: 'object',
-    required: ['title'],
+    required: ['title', 'type'],
     properties: {
       title: {
         type: 'string',

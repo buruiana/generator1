@@ -104,7 +104,7 @@ const NavBarSettings = props => {
       }
       {isComponent() && props.hasJsonForm &&
         <NavItem eventKey={JSON_FORM_SETTINGS} >
-          Json Form Settings
+          JsonForm Schema
       </NavItem>
       }
     </Nav>

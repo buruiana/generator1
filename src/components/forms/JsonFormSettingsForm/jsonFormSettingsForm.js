@@ -71,7 +71,7 @@ const JsonFormSettingsForm = props => {
 
   const log = (type) => console.log.bind(console, type);
   return (
-    <div className='middle10'>
+    <div className='flex'>
       <div
         style={{
           height: 400,
