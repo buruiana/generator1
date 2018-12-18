@@ -22,7 +22,7 @@ const ActionTypesForm = props => {
   const onSubmit = data => {
     const { formData } = data;
     props.setActionTypes(formData);
-    props.setModalVisibility(false);
+    props.closeModal();
   };
 
   const log = (type) => console.log.bind(console, type);

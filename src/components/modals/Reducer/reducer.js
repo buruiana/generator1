@@ -17,7 +17,7 @@ const Reduc = ({ closeModal, modalVisible }) => {
 
         <Modal.Body>
           <div>
-            <ReducerForm />
+            <ReducerForm closeModal={closeModal} />
           </div>
         </Modal.Body>
       </Modal>

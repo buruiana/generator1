@@ -22,8 +22,18 @@ const NavBarSettings = props => {
 
   const showModal = (type) => {
     const node = [];
-    props.setModalVisibility(true);
-    props.setModalContent({ node, type });
+    const newEl = {
+      modalName: type,
+      modalVisible: true,
+      modalContent: { node, type },
+    };
+    console.log('console: props', props);
+    const newAllModals = [...props.allModals];
+    console.log('console: newAllModals', newAllModals);
+    newAllModals.push(newEl);
+
+    props.setCurrentModal(type);
+    props.setAllModals(newAllModals);
   };
 
   const isService = () => {
@@ -92,7 +102,7 @@ const NavBarSettings = props => {
           App Settings
       </NavItem>
       }
-      {isComponent() &&
+      {isComponent() && props.hasJsonForm &&
         <NavItem eventKey={JSON_FORM_SETTINGS} >
           Json Form Settings
       </NavItem>

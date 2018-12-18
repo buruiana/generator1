@@ -23,7 +23,7 @@ const SagaForm = props => {
   const onSubmit = data => {
     const { formData } = data;
     props.setSaga(formData);
-    props.setModalVisibility(false);
+    props.closeModal();
   };
 
   const log = (type) => console.log.bind(console, type);

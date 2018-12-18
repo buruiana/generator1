@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import EditorView from './editorView';
 import { setTree, setDefaultTree, setNodePath } from '../../../services/sortableTreeService/actions';
-import { setModalVisibility, setModalContent } from '../../../services/modalService/actions';
+import { setAllModals, setCurrentModal } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -9,8 +9,8 @@ const mapStateToProps = state => {
     tree: state.sortableTreeServiceReducer.tree,
     defaultTree: state.sortableTreeServiceReducer.defaultTree,
     getNodePath: state.sortableTreeServiceReducer.nodePath,
-    modalVisible: state.modalServiceReducer.modalVisible,
-    modalContent: state.modalServiceReducer.modalContent,
+    currentModal: state.modalServiceReducer.currentModal,
+    allModals: state.modalServiceReducer.allModals,
     searchData: state.componentsServiceReducer.searchData,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
     projectName: state.projectSettingsServiceReducer.projectName,
@@ -24,8 +24,8 @@ const mapDispatchToProps = dispatch => {
     setTree: tree => dispatch(setTree(tree)),
     setDefaultTree: defaultTree => dispatch(setDefaultTree(defaultTree)),
     setNodePath: nodePath => dispatch(setNodePath(nodePath)),
-    setModalVisibility: modalVisible => dispatch(setModalVisibility(modalVisible)),
-    setModalContent: modalContent => dispatch(setModalContent(modalContent)),
+    setCurrentModal: currentModal => dispatch(setCurrentModal(currentModal)),
+    setAllModals: allModals => dispatch(setAllModals(allModals)),
   };
 };
 

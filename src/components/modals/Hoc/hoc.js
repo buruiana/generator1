@@ -17,7 +17,7 @@ const Hoc = ({ closeModal, modalVisible }) => {
 
         <Modal.Body>
           <div>
-            <HocForm />
+            <HocForm closeModal={closeModal} />
           </div>
         </Modal.Body>
       </Modal>
@@ -27,7 +27,6 @@ const Hoc = ({ closeModal, modalVisible }) => {
 
 Hoc.propTypes = {
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   componentInfo: PropTypes.object,
   closeModal: PropTypes.func
 };

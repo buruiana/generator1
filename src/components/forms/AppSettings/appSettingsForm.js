@@ -2,7 +2,7 @@ import React from 'react';
 import Form from "react-jsonschema-form";
 
 const AppSettingsForm = props => {
-  const { setAppSettings, setModalVisibility, appSettings } = props;
+  const { setAppSettings, appSettings } = props;
 
   const schema = {
     type: 'object',
@@ -38,7 +38,7 @@ const AppSettingsForm = props => {
   const onSubmit = data => {
     const { formData } = data;
     setAppSettings(formData);
-    setModalVisibility(false);
+    props.closeModal();
   };
 
   const log = (type) => console.log.bind(console, type);

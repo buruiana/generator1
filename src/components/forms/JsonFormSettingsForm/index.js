@@ -4,23 +4,25 @@ import {
   setProjectJsonForm
 } from '../../../services/projectSettingsService/actions';
 import {
-  setModalContent,
-  setModalVisibility
+  setAllModals,
+  setCurrentModal
 } from '../../../services/modalService/actions';
+import { setNodePath } from '../../../services/sortableTreeService/actions';
 
 const mapStateToProps = state => {
   return {
-    modalContent: state.modalServiceReducer.modalContent,
-    modalVisible: state.modalServiceReducer.modalVisible,
+    allModals: state.modalServiceReducer.allModals,
+    currentModal: state.modalServiceReducer.currentModal,
     jsonForm: state.projectSettingsServiceReducer.jsonForm,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setModalContent: content => dispatch(setModalContent(content)),
-    setModalVisibility: modalVisible => dispatch(setModalVisibility(modalVisible)),
+    setAllModals: content => dispatch(setAllModals(content)),
+    setCurrentModal: currentModal => dispatch(setCurrentModal(currentModal)),
     setProjectJsonForm: jsonForm => dispatch(setProjectJsonForm(jsonForm)),
+    setNodePath: nodePath => dispatch(setNodePath(nodePath)),
   };
 }
 

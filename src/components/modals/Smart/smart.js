@@ -17,7 +17,7 @@ const Smart = ({ closeModal, modalVisible }) => {
 
         <Modal.Body>
           <div>
-            <SmartForm />
+            <SmartForm closeModal={closeModal} />
           </div>
         </Modal.Body>
       </Modal>
@@ -27,7 +27,6 @@ const Smart = ({ closeModal, modalVisible }) => {
 
 Smart.propTypes = {
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   componentInfo: PropTypes.object,
   closeModal: PropTypes.func
 };

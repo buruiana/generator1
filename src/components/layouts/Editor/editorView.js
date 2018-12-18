@@ -45,8 +45,16 @@ const EditorView = props => {
       path
     };
     props.setNodePath(nodePath);
-    props.setModalVisibility(true);
-    props.setModalContent({ node, type });
+    const newEl = {
+      modalName: type,
+      modalVisible: true,
+      modalContent: nodePath,
+    };
+    props.setCurrentModal(type);
+    const newAllModals = [...props.allModals];
+    newAllModals.push(newEl);
+    console.log('console: ---------', newAllModals);
+    props.setAllModals(newAllModals);
   };
 
   const renderSearchField = () => {
@@ -165,10 +173,7 @@ EditorView.propTypes = {
   tree: PropTypes.array,
   setTree: PropTypes.func,
   getDefaultTree: PropTypes.array,
-  setModalVisibility: PropTypes.func,
-  setModalContent: PropTypes.func,
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   getNodePath: PropTypes.object,
   setNodePath: PropTypes.func
 };

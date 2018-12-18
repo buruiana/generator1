@@ -7,17 +7,17 @@ import Well from 'react-bootstrap/lib/Well';
 
 const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
   const renderDescription = () => {
-    return modalContent.node.description
+    return modalContent[0].modalContent.node.description
       ? (
-        <textarea rows={Math.round(modalContent.node.description.length / 33)} cols="120" className='textarea-noBorder'>
-          {modalContent.node.description}
+        <textarea rows={Math.round(modalContent[0].modalContent.node.description.length / 33)} cols="120" className='textarea-noBorder'>
+          {modalContent[0].modalContent.node.description}
         </textarea>
       )
       : null;
   };
 
   const renderProps = () => {
-    const propsInfo = modalContent.node.componentProps;
+    const propsInfo = modalContent[0].modalContent.node.componentProps;
     return propsInfo.map(prop => {
       return (
         <Panel key={prop.name} eventKey={prop.name}>
@@ -45,15 +45,15 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>
-            {modalContent.node.title}
+            {modalContent[0].modalContent.node.title}
           </Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
           <div>
             <Well>
-              <div className='wellStyle'>Techno: {modalContent.node.techno}</div>
-              <div className='wellStyle'>Provider: {modalContent.node.provider}</div>
+              <div className='wellStyle'>Techno: {modalContent[0].modalContent.node.techno}</div>
+              <div className='wellStyle'>Provider: {modalContent[0].modalContent.node.provider}</div>
             </Well>
             {renderDescription()}
             <PageHeader>Props</PageHeader>
@@ -67,7 +67,6 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
 
 ComponentInfo.propTypes = {
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   componentInfo: PropTypes.object,
   closeModal: PropTypes.func
 };

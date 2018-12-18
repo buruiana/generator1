@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 import {
   setActionTypes,
 } from '../../../services/serviceSettingsService/actions';
-import {
-  setModalVisibility,
-} from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,7 +13,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setActionTypes: actionTypes => dispatch(setActionTypes(actionTypes)),
-    setModalVisibility: visibile => dispatch(setModalVisibility(visibile)),
   };
 }
 

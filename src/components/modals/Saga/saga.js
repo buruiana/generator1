@@ -17,7 +17,7 @@ const Saga = ({ closeModal, modalVisible }) => {
 
         <Modal.Body>
           <div>
-            <SagaForm />
+            <SagaForm closeModal={closeModal} />
           </div>
         </Modal.Body>
       </Modal>
@@ -27,7 +27,6 @@ const Saga = ({ closeModal, modalVisible }) => {
 
 Saga.propTypes = {
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   componentInfo: PropTypes.object,
   closeModal: PropTypes.func
 };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/lib/Modal';
 import JsonFormSettingsForm from '../../forms/JsonFormSettingsForm';
 
-const JsonFormSettings = ({ closeModal, modalVisible, modalContent }) => {
+const JsonFormSettings = ({ closeModal, modalVisible }) => {
 
   return (
     <div>
@@ -17,7 +17,7 @@ const JsonFormSettings = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <JsonFormSettingsForm />
+            <JsonFormSettingsForm closeModal={closeModal} />
           </div>
         </Modal.Body>
       </Modal>
@@ -27,7 +27,6 @@ const JsonFormSettings = ({ closeModal, modalVisible, modalContent }) => {
 
 JsonFormSettings.propTypes = {
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   closeModal: PropTypes.func
 };
 

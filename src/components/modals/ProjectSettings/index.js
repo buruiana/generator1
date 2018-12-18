@@ -1,27 +1,13 @@
 import ProjectSettings from './projectSettings';
 import { connect } from "react-redux";
-import {
-  setModalContent,
-  setModalVisibility,
-} from '../../../services/modalService/actions';
-
 
 const mapStateToProps = state => {
   return {
-    modalContent: state.modalServiceReducer.modalContent,
-    modalVisible: state.modalServiceReducer.modalVisible,
+    currentModal: state.modalServiceReducer.currentModal,
+    allModals: state.modalServiceReducer.allModals,
     projectName: state.projectSettingsServiceReducer.name,
     projectType: state.projectSettingsServiceReducer.type,
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setModalContent: content => dispatch(setModalContent(content)),
-    setModalVisibility: modalVisible => dispatch(setModalVisibility(modalVisible)),
-    setProjectName: name => dispatch(setProjectName(name)),
-    setProjectType: projectType => dispatch(setProjectType(projectType)),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectSettings);
+export default connect(mapStateToProps)(ProjectSettings);

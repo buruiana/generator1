@@ -1,24 +1,30 @@
 import * as actionTypes from '../modalService/actionTypes';
 
 export const initialState = () => ({
-  modalVisible: true,
-  modalContent: {
-    props: [],
-    type: ''
-  },
+  currentModal: '',
+  allModals: [
+    // {
+    //   modalName: '',
+    //   modalVisible: true,
+    //   modalContent: {
+    //     props: [],
+    //     type: ''
+    //   },
+    // }
+  ],
 });
 
 export default (state = initialState(), action) => {
   switch (action.type) {
-    case actionTypes.MODAL_VISIBILITY_SET:
+    case actionTypes.SET_ALL_MODALS:
       return {
         ...state,
-        modalVisible: action.payload
+        allModals: action.payload
       };
-    case actionTypes.MODAL_CONTENT_SET:
+    case actionTypes.SET_CURRENT_MODAL:
       return {
         ...state,
-        modalContent: action.payload
+        currentModal: action.payload
       };
     default:
       return state;

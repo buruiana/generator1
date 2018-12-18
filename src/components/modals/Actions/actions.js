@@ -17,7 +17,7 @@ const Actions = ({ closeModal, modalVisible }) => {
 
         <Modal.Body>
           <div>
-            <ActionsForm />
+            <ActionsForm closeModal={closeModal} />
           </div>
         </Modal.Body>
       </Modal>
@@ -27,7 +27,6 @@ const Actions = ({ closeModal, modalVisible }) => {
 
 Actions.propTypes = {
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   componentInfo: PropTypes.object,
   closeModal: PropTypes.func
 };

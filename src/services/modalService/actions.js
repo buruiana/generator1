@@ -1,15 +1,15 @@
 import * as actionTypes from './actionTypes';
 
-export const setModalVisibility = modalVisible => {
+export const setCurrentModal = currentModal => {
   return {
-    type: actionTypes.MODAL_VISIBILITY_SET,
-    payload: modalVisible
+    type: actionTypes.SET_CURRENT_MODAL,
+    payload: currentModal
   };
 }
 
-export const setModalContent = modalContent => {
+export const setAllModals = allModals => {
   return {
-    type: actionTypes.MODAL_CONTENT_SET,
-    payload: modalContent
+    type: actionTypes.SET_ALL_MODALS,
+    payload: allModals
   };
 }

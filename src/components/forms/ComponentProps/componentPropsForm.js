@@ -49,7 +49,7 @@ const ComponentPropsForm = props => {
     };
 
     props.setComponent(newComponent);
-    props.setModalVisibility(false);
+    props.closeModal();
   };
 
   const log = (type) => console.log.bind(console, type);

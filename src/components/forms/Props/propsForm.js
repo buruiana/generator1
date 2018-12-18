@@ -59,7 +59,7 @@ const PropsForm = props => {
       })
     };
     props.setTree(newTree);
-    props.setModalVisibility(false);
+    props.closeModal();
   };
 
   const log = (type) => console.log.bind(console, type);

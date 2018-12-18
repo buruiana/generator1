@@ -9,3 +9,4 @@ export const HOC = 'HOC';
 export const SMART = 'Smart';
 export const APPLICATION = 'Application';
 export const JSON_FORM_SETTINGS = 'JSON_FORM_SETTINGS';
+export const JSON_FORM_INFO = 'JSON_FORM_INFO';

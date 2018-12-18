@@ -17,7 +17,7 @@ const AppSettings = ({ closeModal, modalVisible }) => {
 
         <Modal.Body>
           <div>
-            <AppSettingsForm />
+            <AppSettingsForm closeModal={closeModal} />
           </div>
         </Modal.Body>
       </Modal>
@@ -27,7 +27,6 @@ const AppSettings = ({ closeModal, modalVisible }) => {
 
 AppSettings.propTypes = {
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   componentInfo: PropTypes.object,
   closeModal: PropTypes.func
 };

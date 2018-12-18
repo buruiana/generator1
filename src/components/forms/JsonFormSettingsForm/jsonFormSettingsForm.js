@@ -1,84 +1,105 @@
 import React from 'react';
-import Form from "react-jsonschema-form";
+import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
+import { fillNodeData } from '../../../services/sortableTreeService/helper';
 import {
-  APPLICATION,
-  SERVICE,
-  COMPONENT,
-  SMART,
-  DUMB,
-  REACT_NATIVE,
-  REACT,
-  PROJECT_TECHNO,
-  PROJECT_TYPE,
-  PROJECT_NAME,
-  COMPONENT_TYPE,
- } from '../../../utils/constants';
+  JSON_FORM_INFO,
+} from '../../modals/constants';
+
+const externalNodeType = 'yourNodeType';
+const shouldCopyOnOutsideDrop = true;
+const getNodeKey = ({ treeIndex }) => treeIndex;
+const treeData = [
+  { title: 'String' },
+  { title: 'Integer' },
+  { title: 'Boolean' },
+  { title: 'Object' },
+  { title: 'Array' },
+];
 
 const JsonFormSettingsForm = props => {
   const { jsonForm } = props;
   const fieldsTypeEnum = ['string', 'integer', 'object', 'array', 'boolean'];
 
-  const schema = {
-    type: "array",
-    items: {
-      type: 'object',
-      required: ['name', 'fieldType'],
-      properties: {
-        name: { type: 'string', title: 'Name' },
-        description: { type: 'string', title: 'Description' },
-        default: { type: 'string', title: 'Default' },
-        fieldType: {
-          type: 'string',
-          title: 'Field Type',
-          enum: fieldsTypeEnum,
-          default: ''
-        },
-      },
-      dependencies: {
-        fieldType: {
-          oneOf: [
-            {
-              properties: {
-                fieldType: { enum: ['object'] },
-                fieldType1: {
-                  type: 'string',
-                  title: 'Field Type',
-                  enum: fieldsTypeEnum,
-                  default: ''
-                },
-              },
-            },
-          ]
-        },
-      },
-    },
+  const remove = path => {
+    const newTree = {
+      treeData2: removeNodeAtPath({
+        treeData: props.tree,
+        path,
+        getNodeKey
+      })
+    };
+    //setNewTree(fillNodeData(newTree.treeData2, props.providers));
   };
 
-  const uiSchema = {
-    items: {
-      fieldType: {
-        "ui:widget": "select",
-        "ui:placeholder": "Choose type"
-      },
-    },
+  const onChange = treeData2 => {
+    props.setProjectJsonForm(treeData2);
   };
+
+  const setNewTree = treeData2 => props.setTree({ treeData2 });
 
   const onSubmit = data => {
-    //const { projectName, projectTechno, projectType, componentType } = data.formData;
-
     props.setProjectJsonForm(data.formData);
 
-    props.setModalVisibility(false);
+    props.closeModal();
+  };
+
+  const showModal = (type, node, path) => {
+    const nodePath = {
+      node,
+      path
+    };
+    props.setNodePath(nodePath);
+    const newEl = {
+      modalName: type,
+      modalVisible: true,
+      modalContent: { node, type },
+    };
+    props.setCurrentModal(type);
+    const newAllModals = [ ...props.allModals ];
+    newAllModals.push(newEl);
+    props.setAllModals(newAllModals);
   };
 
   const log = (type) => console.log.bind(console, type);
   return (
-    <Form schema={schema}
-      uiSchema={uiSchema}
-      onChange={log("changed")}
-      onSubmit={onSubmit}
-      onError={log("errors")}
-    />
+    <div className='middle10'>
+      <div
+        style={{
+          height: 400,
+          width: '40%',
+          float: 'left'
+        }}
+      >
+        <SortableTree
+          treeData={treeData}
+          onChange={() => console.log('changed')}
+          dndType={externalNodeType}
+          shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
+        />
+      </div>
+
+      <div
+        style={{
+          height: 400,
+          width: '55%',
+          float: 'left',
+        }}
+      >
+        <SortableTree
+          treeData={props.jsonForm}
+          onChange={onChange}
+          dndType={externalNodeType}
+          shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
+          getNodeKey={getNodeKey}
+          generateNodeProps={({ node, path }) => ({
+            buttons: [
+              <button onClick={() => remove(path)}>-</button>,
+              <button onClick={() => showModal(JSON_FORM_INFO, node, path)}>P</button>
+            ]
+          })}
+        />
+      </div>
+    </div>
   );
 }
 

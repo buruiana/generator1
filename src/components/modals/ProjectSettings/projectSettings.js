@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/lib/Modal';
 import ProjectSettingsForm from '../../forms/ProjectSettings';
+import { PROJECT_SETTINGS } from '../../modals/constants';
 
-const ProjectSettings = ({ closeModal, modalVisible, modalContent }) => {
-
+const ProjectSettings = ({ closeModal, allModals, currentModal }) => {
   return (
     <div>
-      <Modal show={modalVisible} onHide={closeModal} bsSize="large"
+      <Modal show={currentModal === PROJECT_SETTINGS} onHide={closeModal} bsSize="large"
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>
@@ -17,7 +17,7 @@ const ProjectSettings = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <ProjectSettingsForm />
+            <ProjectSettingsForm closeModal={closeModal}/>
           </div>
         </Modal.Body>
       </Modal>
@@ -26,9 +26,8 @@ const ProjectSettings = ({ closeModal, modalVisible, modalContent }) => {
 };
 
 ProjectSettings.propTypes = {
-  modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
-  componentInfo: PropTypes.object,
+  allModals: PropTypes.array,
+  currentModal: PropTypes.string,
   closeModal: PropTypes.func
 };
 

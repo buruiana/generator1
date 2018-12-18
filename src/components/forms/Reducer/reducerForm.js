@@ -33,7 +33,7 @@ const ReducerForm = props => {
   const onSubmit = data => {
     const { formData } = data;
     props.setReducer(formData);
-    props.setModalVisibility(false);
+    props.closeModal();
   };
 
   const log = (type) => console.log.bind(console, type);

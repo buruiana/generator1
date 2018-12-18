@@ -1,4 +1,4 @@
-import JsonFormSettings from './jsonFormSettings';
+import JsonFormInfo from './jsonFormInfo';
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -13,4 +13,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(JsonFormSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(JsonFormInfo);

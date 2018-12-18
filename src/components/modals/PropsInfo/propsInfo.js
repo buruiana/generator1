@@ -5,17 +5,17 @@ import PropsForm from '../../forms/Props';
 
 const PropsInfo= ({
   modalVisible,
-  modalContent,
-  closeModal
+  closeModal,
+  modalContent
 }) => {
-
+  console.log('console: ==========', modalContent);
   return (
     <div>
       <Modal show={modalVisible} onHide={closeModal} bsSize="large"
         aria-labelledby="contained-modal-title-lg">
-        <Modal.Header closeButton>{modalContent.node.title}</Modal.Header>
+        <Modal.Header closeButton>{modalContent[0].modalContent.node.title}</Modal.Header>
         <Modal.Body>
-          <PropsForm />
+          <PropsForm closeModal={closeModal} modalContent={modalContent[0].modalContent} />
         </Modal.Body>
       </Modal>
     </div>
@@ -24,7 +24,6 @@ const PropsInfo= ({
 
 PropsInfo.propTypes = {
   modalVisible: PropTypes.bool,
-  modalContent: PropTypes.object,
   closeModal: PropTypes.func
 };
 
