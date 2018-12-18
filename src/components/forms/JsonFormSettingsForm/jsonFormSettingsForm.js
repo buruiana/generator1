@@ -9,11 +9,22 @@ const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 const treeData = [
-  { title: 'String' },
-  { title: 'Integer' },
-  { title: 'Boolean' },
-  { title: 'Object' },
-  { title: 'Array' },
+  {
+    title: '',
+    subtitle: 'String',
+  },
+  {
+    title: '',
+    subtitle: 'Integer', },
+  {
+    title: '',
+    subtitle: 'Boolean', },
+  {
+    title: '',
+    subtitle: 'Object', },
+  {
+    title: '',
+    subtitle: 'Array', },
 ];
 
 const JsonFormSettingsForm = props => {
@@ -21,14 +32,12 @@ const JsonFormSettingsForm = props => {
   const fieldsTypeEnum = ['string', 'integer', 'object', 'array', 'boolean'];
 
   const remove = path => {
-    const newTree = {
-      treeData2: removeNodeAtPath({
-        treeData: props.tree,
-        path,
-        getNodeKey
-      })
-    };
-    //setNewTree(fillNodeData(newTree.treeData2, props.providers));
+    const newTree = removeNodeAtPath({
+      treeData: props.jsonForm,
+      path,
+      getNodeKey
+    });
+    props.setProjectJsonForm(newTree);
   };
 
   const onChange = treeData2 => {

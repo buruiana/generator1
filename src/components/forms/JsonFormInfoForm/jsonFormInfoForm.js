@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
-import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
-import { fillNodeData } from '../../../services/sortableTreeService/helper';
+import { changeNodeAtPath, removeNodeAtPath } from 'react-sortable-tree';
+import { fillJsonFormNodeData } from '../../../services/sortableTreeService/helper';
 import {
   JSON_FORM_INFO,
 } from '../../modals/constants';
@@ -9,7 +9,7 @@ import {
 const JsonFormInfoForm = props => {
   const { jsonForm } = props;
   const fieldsTypeEnum = ['string', 'integer', 'object', 'array', 'boolean'];
-
+  const getNodeKey = ({ treeIndex }) => treeIndex;
 
 
   const schema = {
@@ -23,36 +23,40 @@ const JsonFormInfoForm = props => {
       },
       type: {
         type: 'string',
-        title: 'Name',
+        title: 'Type',
         enum: fieldsTypeEnum,
         default: '',
       },
-      default: {
+      defaultValue: {
         type: 'string',
-        title: 'Name',
+        title: 'Default',
         default: ''
       },
     },
   };
   const uiSchema = {
-    projectType: { "ui:widget": "select" },
     type: {
       "ui:widget": "select",
       "ui:placeholder": "Choose a type"
     },
-    projectType: { "ui:placeholder": "Choose a type" },
-    componentType: { "ui:placeholder": "Choose a component type" },
   };
 
   const onSubmit = data => {
-   // const { projectName, projectTechno, projectType, componentType } = data.formData;
-console.log('console: datadata', data);
-    // props.setProjectName(projectName);
-    // props.setProjectTechno(projectTechno);
-    // props.setProjectType(projectType);
-    // props.setProjectComponentType(componentType);
+    const { title, type, defaultValue } = data.formData;
+    const { node, path } = props.getNodePath;
+    const newNode = { ...node };
+    newNode.title = title;
+    newNode.type = type;
+    newNode.defaultValue = defaultValue;
+    console.log('console: newNode', newNode);
+    const newTree = changeNodeAtPath({
+        treeData: props.jsonForm,
+        path,
+        getNodeKey,
+        newNode
+      });
 
-    //props.setModalVisibility(false);
+    props.setProjectJsonForm(newTree);
     props.closeModal();
   };
 

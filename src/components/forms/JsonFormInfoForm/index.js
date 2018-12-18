@@ -7,6 +7,7 @@ import {
 const mapStateToProps = state => {
   return {
     jsonForm: state.projectSettingsServiceReducer.jsonForm,
+    getNodePath: state.sortableTreeServiceReducer.nodePath,
   }
 }
 
