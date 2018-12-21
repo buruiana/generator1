@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import {
   initApp,
 } from '../../../services/configsService/actions';
+import { setConfigsIsOffline } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -13,6 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     initApp: () => dispatch(initApp()),
+    setConfigsIsOffline: isOffline => dispatch(setConfigsIsOffline(isOffline))
   };
 }
 

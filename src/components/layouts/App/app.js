@@ -5,6 +5,8 @@ import "../../../stylesheets/main.scss";
 import NavBar from '../../../nav';
 
 const App = props => {
+  if (!navigator.onLine) props.setConfigsIsOffline(true);
+
   if (isEmpty(props.components)) props.initApp();
   return (
     <Grid>
