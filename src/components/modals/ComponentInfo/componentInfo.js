@@ -29,7 +29,7 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
               {prop.propType}
             </div>
             <div>
-              <textarea rows={Math.round(prop.description.length / 33)} cols="118" className='textarea-noBorder'>
+              <textarea rows={Math.round(prop.description.length / 30)} cols="118" className='textarea-noBorder'>
                 {prop.description}
               </textarea>
             </div>

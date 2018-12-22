@@ -8,7 +8,6 @@ const PropsInfo= ({
   closeModal,
   modalContent
 }) => {
-  console.log('console: ==========', modalContent);
   return (
     <div>
       <Modal show={modalVisible} onHide={closeModal} bsSize="large"

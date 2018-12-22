@@ -5,7 +5,8 @@ export const initialState = () => ({
   defaultTree: [],
   nodePath: {
     node: {},
-    path: []
+    path: [],
+    type: '',
   },
 });
 

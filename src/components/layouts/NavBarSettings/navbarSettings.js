@@ -9,6 +9,7 @@ import {
   REDUCER,
   HOC,
   JSON_FORM_SETTINGS,
+  JSON_FORM_UI_SETTINGS,
 } from '../../modals/constants';
 import {
   SERVICE,
@@ -19,7 +20,7 @@ import {
 
 const NavBarSettings = props => {
   const handleSelect = type =>  showModal(type);
-
+console.log('console: =========', props);
   const showModal = (type) => {
     const node = [];
     const newEl = {
@@ -27,9 +28,8 @@ const NavBarSettings = props => {
       modalVisible: true,
       modalContent: { node, type },
     };
-    console.log('console: props', props);
+
     const newAllModals = [...props.allModals];
-    console.log('console: newAllModals', newAllModals);
     newAllModals.push(newEl);
 
     props.setCurrentModal(type);
@@ -73,39 +73,44 @@ const NavBarSettings = props => {
         </NavItem>
       }
       {isService() && hasActionTypes() &&
-      <NavItem eventKey={ACTIONS} >
-          Actions
-      </NavItem>
+        <NavItem eventKey={ACTIONS} >
+            Actions
+        </NavItem>
       }
       {isService() && hasActionTypes() &&
-      <NavItem eventKey={SAGA} >
-        Saga
-      </NavItem>
+        <NavItem eventKey={SAGA} >
+          Saga
+        </NavItem>
       }
       {isService() && hasActionTypes() &&
         <NavItem eventKey={REDUCER} >
           Reducer
-      </NavItem>
+        </NavItem>
       }
       {isComponent() &&
         <NavItem eventKey={HOC} >
           Hoc
-      </NavItem>
+        </NavItem>
       }
       {isSmart() &&
         <NavItem eventKey={SMART} >
           Smart Settings
-      </NavItem>
+        </NavItem>
       }
       {isApp() &&
         <NavItem eventKey={APPLICATION} >
           App Settings
-      </NavItem>
+        </NavItem>
       }
       {isComponent() && props.hasJsonForm &&
         <NavItem eventKey={JSON_FORM_SETTINGS} >
           JsonForm Schema
-      </NavItem>
+        </NavItem>
+      }
+      {isComponent() && props.hasJsonForm && !isEmpty(props.jsonForm) &&
+        <NavItem eventKey={JSON_FORM_UI_SETTINGS} >
+          JsonForm uiSchema
+        </NavItem>
       }
     </Nav>
   );

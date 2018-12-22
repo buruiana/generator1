@@ -9,6 +9,7 @@ const mapStateToProps = state => {
   return {
     projectType: state.projectSettingsServiceReducer.projectType,
     hasJsonForm: state.projectSettingsServiceReducer.hasJsonForm,
+    jsonForm: state.projectSettingsServiceReducer.jsonForm,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
     componentType: state.projectSettingsServiceReducer.componentType,
     actionTypes: state.serviceSettingsServiceReducer.actionTypes,

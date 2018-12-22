@@ -11,6 +11,7 @@ import Hoc from './Hoc';
 import Smart from './Smart';
 import AppSettings from './AppSettings';
 import JsonFormSettings from './JsonFormSettings';
+import JsonFormUISettings from './JsonFormUISettings';
 import JsonFormInfo from './JsonFormInfo';
 import {
   PROPS_FORM,
@@ -24,6 +25,7 @@ import {
   SMART,
   APPLICATION,
   JSON_FORM_SETTINGS,
+  JSON_FORM_UI_SETTINGS,
   JSON_FORM_INFO,
 } from './constants';
 
@@ -41,7 +43,6 @@ const RenderModal = props => {
   };
 
   const modalVisible = type => props.currentModal === type;
-  console.log('console: props.allModals', props.allModals);
   let modalContent = type => props.allModals.filter(el => el.modalName === props.currentModal);
 
 
@@ -130,6 +131,13 @@ const RenderModal = props => {
             closeModal={closeModal}
             modalVisible={modalVisible(JSON_FORM_INFO)}
             modalContent={modalContent(JSON_FORM_INFO)} />
+        );
+      case JSON_FORM_UI_SETTINGS:
+        return (
+          <JsonFormUISettings
+            closeModal={closeModal}
+            modalVisible={modalVisible(JSON_FORM_UI_SETTINGS)}
+            modalContent={modalContent(JSON_FORM_UI_SETTINGS)} />
         );
       default: return null;
     }

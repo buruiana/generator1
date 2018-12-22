@@ -1,6 +1,7 @@
 import { put, takeLatest, select } from "redux-saga/effects";
-
+import { getFlatDataFromTree } from 'react-sortable-tree';
 import some from 'lodash/some';
+import isEmpty from 'lodash/isEmpty';
 import {
   SET_PROJECT_SETTINGS_COMPONENT_TYPE,
 } from '../projectSettingsService/actionTypes';
@@ -27,7 +28,7 @@ import {
 import {
   setAceTab,
 } from '../aceTabsService/actions';
-import { 
+import {
   setProjectHasJsonForm,
 } from '../projectSettingsService/actions';
 
@@ -67,7 +68,12 @@ export function* watchTreeSet() {
   const { tree } = (yield select()).sortableTreeServiceReducer;
   const stylesCode = generateStylesCode(tree);
   const myRe = /^[ \r\n]+$/gi;
-  const hasJsonSchema = some(tree, { title: 'Form', provider: 'Jsonschema-form' });
+  const flatData = getFlatDataFromTree({
+    treeData: tree,
+    getNodeKey: ({ treeIndex }) => treeIndex,
+    ignoreCollapsed: false,
+  });
+  const hasJsonSchema = !isEmpty(flatData.filter(el => el.node.provider === 'Jsonschema-form'));
 
   switch (componentType) {
     case SMART:
