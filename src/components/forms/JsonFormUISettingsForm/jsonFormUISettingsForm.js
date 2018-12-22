@@ -14,6 +14,7 @@ const JsonFormUISettingsForm = props => {
   const { jsonForm } = props;
   const booleanWidgetEnum = ['radio', 'select', 'checkbox', 'hidden', 'file'];
   const stringWidgetEnum = ['textarea', 'password', 'color'];
+  const integerWidgetEnum = ['updown', 'range', 'radio'];
 
   const getTypeEnum = () => {
     switch (props.nodePath.node.subtitle) {
@@ -21,6 +22,8 @@ const JsonFormUISettingsForm = props => {
         return booleanWidgetEnum;
       case 'Boolean':
         return stringWidgetEnum;
+      case 'Integer':
+        return integerWidgetEnum;
       default:
         return '';
     }
@@ -77,7 +80,6 @@ const JsonFormUISettingsForm = props => {
   };
 
   const showForm = () => {
-    console.log('console: props.nodePath', props.nodePath);
     if (props.nodePath.type === JSON_FORM_UI_SETTINGS) {
       return (
         <div>

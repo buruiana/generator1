@@ -1,10 +1,7 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
-import { changeNodeAtPath, removeNodeAtPath } from 'react-sortable-tree';
-import { fillJsonFormNodeData } from '../../../services/sortableTreeService/helper';
-import {
-  JSON_FORM_INFO,
-} from '../../modals/constants';
+import { changeNodeAtPath } from 'react-sortable-tree';
+
 
 const JsonFormInfoForm = props => {
   const { jsonForm } = props;
@@ -13,7 +10,7 @@ const JsonFormInfoForm = props => {
 
   const getNodeKey = ({ treeIndex }) => treeIndex;
   const { node, path } = props.nodePath;
-  console.log('console: nodenode', props.nodePath);
+
   const schema = {
     type: 'object',
     required: ['title', 'type'],

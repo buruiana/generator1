@@ -4,7 +4,6 @@ import Modal from 'react-bootstrap/lib/Modal';
 import ActionTypesForm from '../../forms/ActionTypes';
 
 const ActionTypes = ({ closeModal, modalVisible }) => {
-  console.log('console: ooooooooooo', closeModal, modalVisible);
   return (
     <div>
       <Modal show={modalVisible} onHide={closeModal} bsSize="large"

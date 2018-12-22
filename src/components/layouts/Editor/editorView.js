@@ -53,7 +53,6 @@ const EditorView = props => {
     props.setCurrentModal(type);
     const newAllModals = [...props.allModals];
     newAllModals.push(newEl);
-    console.log('console: ---------', newAllModals);
     props.setAllModals(newAllModals);
   };
 

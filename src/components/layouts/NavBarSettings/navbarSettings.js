@@ -20,7 +20,6 @@ import {
 
 const NavBarSettings = props => {
   const handleSelect = type =>  showModal(type);
-console.log('console: =========', props);
   const showModal = (type) => {
     const node = [];
     const newEl = {
