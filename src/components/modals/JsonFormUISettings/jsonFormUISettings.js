@@ -6,8 +6,8 @@ import JsonFormUISettingsForm from '../../forms/JsonFormUISettingsForm';
 const JsonFormUISettings = ({ closeModal, modalVisible }) => {
 
   return (
-    <div>
-      <Modal show={modalVisible} onHide={closeModal} bsSize="large"
+    <div className='modalDefault'>
+      <Modal show={modalVisible} onHide={closeModal} bsSize="lg" dialogClassName='modalDefault'
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>

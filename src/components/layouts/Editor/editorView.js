@@ -40,11 +40,12 @@ const EditorView = props => {
   };
 
   const showModal = (type, node, path) => {
-    props.setNodePath({
+    const nodePath = {
       node,
       path,
       type,
-    });
+    };
+    props.setNodePath(nodePath);
     const newEl = {
       modalName: type,
       modalVisible: true,

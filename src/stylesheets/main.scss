@@ -21,7 +21,6 @@
 }
 
 .middle10 {
-  display: flex;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -84,4 +83,9 @@
 .redButton {
   background-color: white;
   border: 0px;
+}
+
+.modalDefault {
+  height: 80% !important;
+  width: 80% !important;
 }

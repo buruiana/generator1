@@ -2,31 +2,34 @@ import React from 'react';
 import Form from "react-jsonschema-form";
 import { changeNodeAtPath } from 'react-sortable-tree';
 
-
 const JsonFormInfoForm = props => {
   const { jsonForm } = props;
-  const fieldsTypeEnum = ['string', 'integer', 'object', 'array', 'boolean'];
-  const stringFormatWidgetEnum = ['email', 'uri', 'data-url', 'date', 'date-time'];
+  const fieldsTypeEnum = ['boolean', 'string', 'integer', 'number', 'object', 'array'];
+  const stringFormatWidgetEnum = ['any', 'email', 'uri', 'data-url', 'date', 'date-time'];
 
   const getNodeKey = ({ treeIndex }) => treeIndex;
   const { node, path } = props.nodePath;
 
+  const getUIOrder = () => {
+    if (node.subtitle === 'String') {
+      return ['title', 'format', 'enumVal', 'enumNames', 'defaultValue', 'isRequired'];
+    }
+    if (node.subtitle === 'Array') {
+      return ['title', 'enumVal', 'enumNames', 'defaultValue', 'isRequired', 'uniqueItems'];
+    }
+    return ['title', 'enumVal', 'enumNames', 'defaultValue', 'isRequired'];
+  };
+
   const schema = {
     type: 'object',
-    required: ['title', 'type'],
+    required: ['title'],
     properties: {
       title: {
         type: 'string',
         title: 'Name',
         default: ''
       },
-      type: {
-        type: 'string',
-        title: 'Type',
-        enum: fieldsTypeEnum,
-        default: '',
-      },
-      enum: {
+      enumVal: {
         type: 'string',
         title: 'Enum',
         default: '',
@@ -49,23 +52,12 @@ const JsonFormInfoForm = props => {
     },
   };
   const uiSchema = {
-    type: {
-      "ui:widget": "select",
-      "ui:placeholder": "Choose a type",
-    },
     format: {
       "ui:widget": "select",
       "ui:placeholder": "Choose a format",
     },
-    'ui:order': ['title', 'type', 'format', 'enum', 'enumNames', 'defaultValue', 'isRequired'],
+    'ui:order': getUIOrder(),
   };
-
-  if (node.subtitle === 'String' || node.subtitle === 'Integer' || node.subtitle === 'Boolean') {
-    uiSchema.type = {
-      ...uiSchema.type,
-     "ui:widget": "hidden"
-    }
-  }
 
   if (node.subtitle === 'String') {
     schema.properties = {
@@ -79,12 +71,30 @@ const JsonFormInfoForm = props => {
     };
   }
 
+  if (node.subtitle === 'Array') {
+    schema.properties = {
+      ...schema.properties,
+      uniqueItems: {
+        type: 'boolean',
+        title: 'uniqueItems',
+        default: false,
+      },
+    };
+  }
+
   const onSubmit = data => {
-    const { title, type, defaultValue } = data.formData;
+    const { title, type, defaultValue, enumVal, enumNames, isRequired, format, uniqueItems } = data.formData;
+    console.log('console: data.formData', data.formData);
+
     const newNode = { ...node };
     newNode.title = title;
-    newNode.type = type;
     newNode.defaultValue = defaultValue;
+    newNode.enumVal = enumVal;
+    newNode.enumNames = enumNames;
+    newNode.isRequired = isRequired;
+    newNode.format = format;
+    newNode.type = node.subtitle.toLowerCase();
+    newNode.uniqueItems = uniqueItems;
 
     const newTree = changeNodeAtPath({
         treeData: jsonForm,
@@ -99,12 +109,16 @@ const JsonFormInfoForm = props => {
 
   const log = (type) => console.log.bind(console, type);
   return (
-    <Form schema={schema}
-      uiSchema={uiSchema}
-      onChange={log("changed")}
-      onSubmit={onSubmit}
-      onError={log("errors")}
-    />
+    <div>
+      <Form schema={schema}
+        noHtml5Validate={true}
+        uiSchema={uiSchema}
+        onChange={log("changed")}
+        onSubmit={onSubmit}
+        onError={log("errors")}
+        formData={node}
+      />
+    </div>
   );
 }
 

@@ -29,11 +29,11 @@ const treeData = [
 
 const JsonFormSettingsForm = props => {
   const { jsonForm } = props;
-  const fieldsTypeEnum = ['string', 'integer', 'object', 'array', 'boolean'];
+  const fieldsTypeEnum = ['boolean', 'string', 'integer', 'number', 'object', 'array'];
 
   const remove = path => {
     const newTree = removeNodeAtPath({
-      treeData: props.jsonForm,
+      treeData: jsonForm,
       path,
       getNodeKey
     });
