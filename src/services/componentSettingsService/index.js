@@ -1,6 +1,5 @@
 import { put, takeLatest, select } from "redux-saga/effects";
 import { getFlatDataFromTree } from 'react-sortable-tree';
-import some from 'lodash/some';
 import isEmpty from 'lodash/isEmpty';
 import {
   SET_PROJECT_SETTINGS_COMPONENT_TYPE,
@@ -27,6 +26,7 @@ import {
 } from '../codeGeneratorService/helpers/styles';
 import {
   setAceTab,
+  setAceTabs,
 } from '../aceTabsService/actions';
 import {
   setProjectHasJsonForm,
@@ -74,6 +74,20 @@ export function* watchTreeSet() {
     ignoreCollapsed: false,
   });
   const hasJsonSchema = !isEmpty(flatData.filter(el => el.node.provider === 'Jsonschema-form'));
+  const { aceTabs } = (yield select()).aceTabsServiceReducer
+
+  if (hasJsonSchema) {
+    const newAceTabs = [...aceTabs];
+    const hasAllTabs = newAceTabs.find(tab => tab === 'schema');
+    if (isEmpty(hasAllTabs)) {
+      newAceTabs.push('schema', 'uiSchema');
+    }
+
+    yield put(setAceTabs(newAceTabs));
+  } else {
+    const newAceTabs = aceTabs.filter(tab => tab !== 'schema' && tab !== 'uiSchema' );
+    yield put(setAceTabs(newAceTabs));
+  }
 
   switch (componentType) {
     case SMART:
@@ -83,6 +97,7 @@ export function* watchTreeSet() {
       yield put(setStylesCode(stylesCode));
       yield put(setAceTab(projectName));
       yield put(setProjectHasJsonForm(hasJsonSchema));
+
       return;
 
     case DUMB:

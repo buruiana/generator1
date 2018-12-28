@@ -1,6 +1,12 @@
 import React from 'react';
-import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
-import { fillNodeData } from '../../../services/sortableTreeService/helper';
+import SortableTree, {
+  removeNodeAtPath,
+  getFlatDataFromTree,
+  getTreeFromFlatData,
+  walk,
+  changeNodeAtPath,
+} from 'react-sortable-tree';
+import isEmpty from 'lodash/isEmpty';
 import {
   JSON_FORM_INFO,
 } from '../../modals/constants';
@@ -29,7 +35,6 @@ const treeData = [
 
 const JsonFormSettingsForm = props => {
   const { jsonForm } = props;
-  const fieldsTypeEnum = ['boolean', 'string', 'integer', 'number', 'object', 'array'];
 
   const remove = path => {
     const newTree = removeNodeAtPath({
@@ -40,16 +45,54 @@ const JsonFormSettingsForm = props => {
     props.setProjectJsonForm(newTree);
   };
 
-  const onChange = treeData2 => {
-    props.setProjectJsonForm(treeData2);
+  const validateJsonForm = jsonForm => {
+    const flatData = getFlatDataFromTree({
+      treeData: jsonForm,
+      getNodeKey: ({ treeIndex }) => treeIndex,
+      ignoreCollapsed: false,
+    });
+
+    return flatData.find(el => {
+      const isPrimitive = (el.node.subtitle === 'String' || el.node.subtitle === 'Integer' || el.node.subtitle === 'Boolean');
+      return (isPrimitive && !isEmpty(el.node.children));
+    });
   };
 
-  const setNewTree = treeData2 => props.setTree({ treeData2 });
+  const prepareJsonForm = jsonForm => {
+    walk({
+      treeData: jsonForm,
+      getNodeKey: ({ treeIndex: number }) => number,
+      callback: rowInfo => {
+        let node = {
+          ...rowInfo.node,
+        };
 
-  const onSubmit = data => {
-    props.setProjectJsonForm(data.formData);
+        const isPrimitive = (node.subtitle === 'String' || node.subtitle === 'Integer' || node.subtitle === 'Boolean');
+        const isObject = node.subtitle === 'Object';
+        const isArray = node.subtitle === 'Array';
 
-    props.closeModal();
+        node.isPrimitive = isPrimitive;
+        node.isObject = isObject;
+        node.isArray = isArray;
+
+        jsonForm = changeNodeAtPath({
+          treeData: jsonForm,
+          path: rowInfo.path,
+          newNode: node,
+          getNodeKey: ({ treeIndex }) => treeIndex,
+          ignoreCollapsed: false
+        });
+      },
+      ignoreCollapsed: false
+    });
+    return jsonForm;
+  };
+
+  const onChange = treeData => {
+    if (isEmpty(validateJsonForm(treeData))) {
+      const jsonForm = prepareJsonForm(treeData);
+      props.setProjectJsonForm(jsonForm);
+    }
   };
 
   const showModal = (type, node, path) => {

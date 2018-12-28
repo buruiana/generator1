@@ -39,3 +39,8 @@ export const setStylesCode = styles => ({
   type: actionTypes.SET_STYLES_CODE,
   styles
 });
+
+export const setJsonFormCode = jsonForm => ({
+  type: actionTypes.SET_JSON_FORM_CODE,
+  jsonForm
+});

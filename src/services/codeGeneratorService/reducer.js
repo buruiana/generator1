@@ -9,6 +9,7 @@ export const initialState = () => ({
   smart: '',
   dumb: '',
   styles: '',
+  jsonForm: '',
 });
 
 export default (state = initialState(), action) => {
@@ -52,6 +53,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         styles: action.styles
+      };
+    case actionTypes.SET_JSON_FORM_CODE:
+      return {
+        ...state,
+        jsonForm: action.jsonForm
       };
     default:
       return state;

@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { browserHistory } from "react-router";
 import { syncHistoryWithStore, routerMiddleware } from "react-router-redux";
 import createSagaMiddleware from "redux-saga";
+import logger from 'redux-logger'
 import freeze from "redux-freeze";
 import { reducers } from "./reducers/index";
 import sagas from "./sagas/index";
@@ -15,6 +16,7 @@ middlewares.push(routerMiddleware(browserHistory));
 // add the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 middlewares.push(sagaMiddleware);
+middlewares.push(logger);
 
 // add the freeze dev middleware
 if (process.env.NODE_ENV !== 'production') {

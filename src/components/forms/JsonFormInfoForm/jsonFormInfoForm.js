@@ -83,8 +83,7 @@ const JsonFormInfoForm = props => {
   }
 
   const onSubmit = data => {
-    const { title, type, defaultValue, enumVal, enumNames, isRequired, format, uniqueItems } = data.formData;
-    console.log('console: data.formData', data.formData);
+    const { title, defaultValue, enumVal, enumNames, isRequired, format, uniqueItems } = data.formData;
 
     const newNode = { ...node };
     newNode.title = title;

@@ -6,4 +6,5 @@ export const SET_HOC_CODE = 'SET_HOC_CODE';
 export const SET_SMART_CODE = 'SET_SMART_CODE';
 export const SET_DUMB_CODE = 'SET_DUMB_CODE';
 export const SET_STYLES_CODE = 'SET_STYLES_CODE';
+export const SET_JSON_FORM_CODE = 'SET_JSON_FORM_CODE';
 

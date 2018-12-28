@@ -10,12 +10,16 @@ import {
   SET_SMART_SETTINGS
 } from '../componentSettingsService/actionTypes';
 import {
+  SET_PROJECT_SETTINGS_JSON_FORM
+} from '../projectSettingsService/actionTypes';
+import {
   setActionTypesCode,
   setActionsCode,
   setSagaCode,
   setReducerCode,
   setHocCode,
   setSmartCode,
+  setJsonFormCode,
 } from './actions';
 import {
   generateActionTypesCode,
@@ -35,6 +39,9 @@ import {
 import {
   generateSmartCode,
 } from '../codeGeneratorService/helpers/smart';
+import {
+  generateJsonFormCode,
+} from '../codeGeneratorService/helpers/jsonForm';
 import {
   setAceTab,
 } from '../aceTabsService/actions';
@@ -95,6 +102,15 @@ export function* watchSetSmartSettings() {
   yield put(setSmartCode(smartCode.replace(myRe, '')));
 }
 
+export function* watchSetJsonForm() {
+  const myRe = /^[ \r\n]+$/gi;
+  const { jsonForm } = (yield select()).projectSettingsServiceReducer;
+
+  const jsonFormCode = generateJsonFormCode({ jsonForm });
+
+  yield put(setJsonFormCode(jsonFormCode));
+}
+
 export default function* rootSaga() {
   yield takeLatest(SET_ACTION_TYPES, watchSetActionTypes);
   yield takeLatest(SET_ACTIONS, watchSetActions);
@@ -102,4 +118,5 @@ export default function* rootSaga() {
   yield takeLatest(SET_REDUCER, watchSetReducer);
   yield takeLatest(SET_HOC, watchSetHoc);
   yield takeLatest(SET_SMART_SETTINGS, watchSetSmartSettings);
+  yield takeLatest(SET_PROJECT_SETTINGS_JSON_FORM, watchSetJsonForm);
 }
