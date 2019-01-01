@@ -2,11 +2,11 @@ import React from 'react';
 import SortableTree, {
   removeNodeAtPath,
   getFlatDataFromTree,
-  getTreeFromFlatData,
   walk,
   changeNodeAtPath,
 } from 'react-sortable-tree';
 import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
 import {
   JSON_FORM_INFO,
 } from '../../modals/constants';
@@ -70,10 +70,13 @@ const JsonFormSettingsForm = props => {
         const isPrimitive = (node.subtitle === 'String' || node.subtitle === 'Integer' || node.subtitle === 'Boolean');
         const isObject = node.subtitle === 'Object';
         const isArray = node.subtitle === 'Array';
+        const hasChildren = !isEmpty(get(node, 'children', []));
 
         node.isPrimitive = isPrimitive;
         node.isObject = isObject;
         node.isArray = isArray;
+        node.hasChildren = hasChildren;
+        if (!hasChildren && !isPrimitive) node.children = [];
 
         jsonForm = changeNodeAtPath({
           treeData: jsonForm,

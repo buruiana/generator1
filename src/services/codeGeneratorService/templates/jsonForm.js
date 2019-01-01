@@ -1,25 +1,58 @@
 export const jsonFormTemplate = `
-import { call, put, takeLatest, select } from "redux-saga/effects";
-import {
-{{#saga}}
-  {{#isActive}}
-  {{name}},
-  {{/isActive}}
-  {{/saga}}
-} from './actionTypes';
+const schema = {
+  {{#jsonForm}}
+  {{#isPrimitive}}
+  {{title}}: { type: '{{type}}', title: '{{title}}', default: '{{default}}' },
+  {{/isPrimitive}}
+  {{#isObject}}
+  type: 'object',
+  properties: {
+  {{#hasChildren}}
+  {{#children}}
+  {{#isPrimitive}}
+    {{title}}: { type: '{{type}}', title: '{{title}}', default: '{{default}}' },
+  {{/isPrimitive}}
 
-{{#saga}}
-{{#isActive}}
-export function* {{watcher}}(action) {
+  {{#isObject}}
+  type: 'object',
+  properties: {
+  {{#hasChildren}}
+  {{#children}}
+  {{#isPrimitive}}
+      {{title}}: { type: '{{type}}', title: '{{title}}', default: '{{default}}' },
+  {{/isPrimitive}}
+  {{/children}}
+  {{/hasChildren}}
+  },
+  {{/isObject}}
 
-}
-{{/isActive}}
-{{/saga}}
-
-export default function* rootSaga() {
-  {{#saga}}
-  {{#isActive}}
-  yield takeLatest({{name}}, {{watcher}});
-  {{/isActive}}
-  {{/saga}}
+  {{/children}}
+  {{/hasChildren}}
+  },
+    {{/isObject}}
+  {{#isArray}}
+  type: "array",
+    items: {
+    {{#hasChildren}}
+    {{#children}}
+    {{#isPrimitive}}
+      {{title}}: { type: '{{type}}', title: '{{title}}', default: '{{default}}' },
+    {{/isPrimitive}}
+      {{#isObject}}
+      type: 'object',
+      properties: {
+      {{#hasChildren}}
+      {{#children}}
+      {{#isPrimitive}}
+        {{title}}: { type: '{{type}}', title: '{{title}}', default: '{{default}}' },
+      {{/isPrimitive}}
+      {{/children}}
+      {{/hasChildren}}
+      },
+      {{/isObject}}
+    {{/children}}
+    {{/hasChildren}}
+    },
+  {{/isArray}}
+  {{/jsonForm}}
 }`;

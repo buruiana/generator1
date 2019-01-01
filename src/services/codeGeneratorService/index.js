@@ -19,7 +19,7 @@ import {
   setReducerCode,
   setHocCode,
   setSmartCode,
-  setJsonFormCode,
+  setJsonFormSchemaCode,
 } from './actions';
 import {
   generateActionTypesCode,
@@ -106,9 +106,10 @@ export function* watchSetJsonForm() {
   const myRe = /^[ \r\n]+$/gi;
   const { jsonForm } = (yield select()).projectSettingsServiceReducer;
 
-  const jsonFormCode = generateJsonFormCode({ jsonForm });
-
-  yield put(setJsonFormCode(jsonFormCode));
+  const jsonFormSchemaCode = generateJsonFormCode({ jsonForm }).replace(/(^[ \t]*\n)/gm, "");
+  console.log('console: jsonFormSchemaCode', jsonFormSchemaCode);
+  console.log('console: 1111111', jsonFormSchemaCode.replace(myRe, ''));
+  yield put(setJsonFormSchemaCode(jsonFormSchemaCode.replace(myRe, '')));
 }
 
 export default function* rootSaga() {

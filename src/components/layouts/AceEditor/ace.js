@@ -36,6 +36,10 @@ const Ace = props => {
           return props.hoc;
         case 'styles':
           return props.styles;
+        case 'schema':
+          return props.schema;
+        case 'uiSchema':
+          return props.uiSchema;
         case props.projectSettings.projectName:
           if (props.projectSettings.componentType === SMART) {
             return props.smart;

@@ -6,7 +6,12 @@ import { importPartial } from '../templates/importPartial';
 import { getConstList, getImportList } from './helper';
 
 export const generateDumbCode = props => {
-  const dumb = { ...props.dumb, projectName: props.projectName, tree: props.tree };
+  const dumb = {
+    ...props.dumb,
+    projectName: props.projectName,
+    tree: props.tree,
+    hasJsonForm: props.hasJsonSchema,
+  };
   const constList = getConstList(props.tree);
   const importsList = getImportList(props.tree);
 

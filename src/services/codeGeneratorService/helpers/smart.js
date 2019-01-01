@@ -7,7 +7,12 @@ import { getConstList, getImportList } from './helper';
 const Mustache = require('mustache');
 
 export const generateSmartCode = props => {
-  const smart = { ...props.smart, projectName: props.projectName, tree: props.tree };
+  const smart = {
+    ...props.smart,
+    projectName: props.projectName,
+    tree: props.tree,
+    hasJsonForm: props.hasJsonSchema,
+  };
   const constList = getConstList(props.tree);
   const importsList = getImportList(props.tree);
 

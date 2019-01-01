@@ -2,6 +2,10 @@ export const dumbTemplate = `
 {{#dumb}}
 import React from 'react';
 {{>importPartial}}
+{{#hasJsonForm}}
+import schema from './schema';
+import uiSchema from './uiSchema';
+{{/hasJsonForm}}
 const {{projectName}} = props => {
   {{#constList}}
   const {{.}} = () => {

@@ -33,7 +33,7 @@ import {
 } from '../projectSettingsService/actions';
 
 export function* watchSetComponentType(action) {
-  const { projectName, componentType } = (yield select()).projectSettingsServiceReducer;
+  const { projectName, componentType, hasJsonForm } = (yield select()).projectSettingsServiceReducer;
   const { smart, dumb, hoc } = (yield select()).componentSettingsServiceReducer;
   const { tree } = (yield select()).sortableTreeServiceReducer;
   const hocCode = generateHocCode({ hoc, projectName });
@@ -43,14 +43,14 @@ export function* watchSetComponentType(action) {
 
   switch (componentType) {
     case SMART:
-      const smartCode = generateSmartCode({ smart, projectName, tree });
+      const smartCode = generateSmartCode({ smart, projectName, tree, hasJsonForm });
 
       yield put(setHocCode(hocCode));
       yield put(setSmartCode(smartCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));
       return;
     case DUMB:
-      const dumbCode = generateDumbCode({ dumb, projectName, tree });
+      const dumbCode = generateDumbCode({ dumb, projectName, tree, hasJsonForm });
 
       yield put(setHocCode(hocCode));
       yield put(setDumbCode(dumbCode.replace(myRe, '')));
@@ -91,7 +91,7 @@ export function* watchTreeSet() {
 
   switch (componentType) {
     case SMART:
-      const smartCode = generateSmartCode({ smart, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
+      const smartCode = generateSmartCode({ smart, projectName, tree, hasJsonSchema }).replace(/(^[ \t]*\n)/gm, "");
 
       yield put(setSmartCode(smartCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));
@@ -101,7 +101,7 @@ export function* watchTreeSet() {
       return;
 
     case DUMB:
-      const dumbCode = generateDumbCode({ dumb, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
+      const dumbCode = generateDumbCode({ dumb, projectName, tree, hasJsonSchema }).replace(/(^[ \t]*\n)/gm, "");
 
       yield put(setDumbCode(dumbCode.replace(myRe, '')));
       yield put(setStylesCode(stylesCode));

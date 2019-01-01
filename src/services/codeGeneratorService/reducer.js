@@ -9,7 +9,8 @@ export const initialState = () => ({
   smart: '',
   dumb: '',
   styles: '',
-  jsonForm: '',
+  schema: '',
+  uiSchema: '',
 });
 
 export default (state = initialState(), action) => {
@@ -54,10 +55,15 @@ export default (state = initialState(), action) => {
         ...state,
         styles: action.styles
       };
-    case actionTypes.SET_JSON_FORM_CODE:
+    case actionTypes.SET_JSON_FORM_SCHEMA_CODE:
       return {
         ...state,
-        jsonForm: action.jsonForm
+        schema: action.schema
+      };
+      case actionTypes.SET_JSON_FORM_UISCHEMA_CODE:
+      return {
+        ...state,
+        uiSchema: action.uiSchema
       };
     default:
       return state;

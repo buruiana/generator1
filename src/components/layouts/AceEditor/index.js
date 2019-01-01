@@ -13,6 +13,8 @@ const mapStateToProps = state => {
     smart: state.codeGeneratorServiceReducer.smart,
     dumb: state.codeGeneratorServiceReducer.dumb,
     styles: state.codeGeneratorServiceReducer.styles,
+    schema: state.codeGeneratorServiceReducer.schema,
+    uiSchema: state.codeGeneratorServiceReducer.uiSchema,
   }
 }
 

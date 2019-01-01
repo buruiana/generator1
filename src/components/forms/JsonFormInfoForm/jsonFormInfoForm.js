@@ -29,6 +29,11 @@ const JsonFormInfoForm = props => {
         title: 'Name',
         default: ''
       },
+      // description: {
+      //   type: 'string',
+      //   title: 'description',
+      //   default: ''
+      // },
       enumVal: {
         type: 'string',
         title: 'Enum',
@@ -44,11 +49,51 @@ const JsonFormInfoForm = props => {
         title: 'Default',
         default: ''
       },
+      // maxItems: {
+      //   type: 'string',
+      //   title: 'maxItems',
+      //   default: ''
+      // },
+      // minItems: {
+      //   type: 'string',
+      //   title: 'minItems',
+      //   default: ''
+      // },
+      // maxLength: {
+      //   type: 'string',
+      //   title: 'maxLength',
+      //   default: ''
+      // },
+      // minLength: {
+      //   type: 'string',
+      //   title: 'minLength',
+      //   default: ''
+      // },
+      // minimum: {
+      //   type: 'string',
+      //   title: 'Minimum',
+      //   default: ''
+      // },
+      // maximum: {
+      //   type: 'string',
+      //   title: 'Maximum',
+      //   default: ''
+      // },
+      // multipleOf: {
+      //   type: 'string',
+      //   title: 'multipleOf',
+      //   default: ''
+      // },
       isRequired: {
         type: 'boolean',
         title: 'isRequired',
         default: false
       },
+      // uniqueItems: {
+      //   type: 'boolean',
+      //   title: 'uniqueItems',
+      //   default: false
+      // },
     },
   };
   const uiSchema = {

@@ -40,7 +40,12 @@ export const setStylesCode = styles => ({
   styles
 });
 
-export const setJsonFormCode = jsonForm => ({
-  type: actionTypes.SET_JSON_FORM_CODE,
-  jsonForm
+export const setJsonFormSchemaCode = schema => ({
+  type: actionTypes.SET_JSON_FORM_SCHEMA_CODE,
+  schema
+});
+
+export const setJsonFormUISchemaCode = schema => ({
+  type: actionTypes.SET_JSON_FORM_UISCHEMA_CODE,
+  uiSchema
 });
