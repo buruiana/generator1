@@ -1,16 +1,34 @@
-import { hocTemplate } from '../templates/hoc';
+import capitalize from 'lodash/capitalize';
 
-const Mustache = require('mustache');
+export const generateHocCode = hoc => {
+  let code = `import ${capitalize(hoc.projectName)} from './${hoc.projectName}';\n`;
 
-export const generateHocCode = props => {
-  const hoc = { ...props.hoc, projectName: props.projectName };
-  const data = {
-    hoc,
-    connectRedux: () => this.connectRedux,
-    mapStateToProps: () => this.mapStateToProps,
-    mapDispatchToProps: () => this.mapDispatchToProps,
-    projectName: () => this.projectName,
-  };
+  if (hoc.hoc.connectRedux) {
+    let mapStateToProps = 'null';
+    let mapDispatchToProps = 'null';
 
-  return Mustache.render(hocTemplate, data);
+    code+= `import { connect } from "react-redux";\n\n`
+
+    if (hoc.hoc.mapStateToProps) {
+      code+= `const mapStateToProps = () => {}\n\n`;
+      mapStateToProps = 'mapStateToProps';
+    }
+
+    if (hoc.hoc.mapDispatchToProps) {
+      code+= `const mapDispatchToProps = () => {}\n\n`;
+      mapDispatchToProps = 'mapDispatchToProps';
+    }
+
+    if (hoc.hoc.mapStateToProps && !hoc.hoc.mapDispatchToProps) {
+      code += `export default connect(${mapStateToProps})(${capitalize(hoc.projectName)});`;
+    } else if (hoc.hoc.mapDispatchToProps) {
+      code += `export default connect(${mapStateToProps}, ${mapDispatchToProps})(${capitalize(hoc.projectName)});`;
+    } else {
+      code += `export default connect(null, null)(${capitalize(hoc.projectName)});`;
+    }
+  } else {
+    code += `export default ${capitalize(hoc.projectName)};`;
+  }
+
+  return code;
 }

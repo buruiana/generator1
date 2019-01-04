@@ -1,13 +1,14 @@
-import { stylesTemplate } from '../templates/styles';
+import isEmpty from 'lodash/isEmpty';
 import { getStylesList } from './helper';
 
-const Mustache = require('mustache');
-
 export const generateStylesCode = tree => {
-  const styles = getStylesList(tree);
+  let code = '';
+  const stylesList = getStylesList(tree);
+  if (!isEmpty(stylesList)) {
+    stylesList.map(el => {
+      code += `.${el} {};`;
+    });
+  }
 
-  const data = {
-    styles,
-  };
-  return Mustache.render(stylesTemplate, data);
+  return code;
 }

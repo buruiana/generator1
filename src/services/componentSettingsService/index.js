@@ -1,6 +1,8 @@
-import { put, takeLatest, select } from "redux-saga/effects";
+import { put, takeLatest, select, call } from "redux-saga/effects";
 import { getFlatDataFromTree } from 'react-sortable-tree';
 import isEmpty from 'lodash/isEmpty';
+import axios from 'axios';
+import indent from 'indent.js';
 import {
   SET_PROJECT_SETTINGS_COMPONENT_TYPE,
 } from '../projectSettingsService/actionTypes';
@@ -31,6 +33,7 @@ import {
 import {
   setProjectHasJsonForm,
 } from '../projectSettingsService/actions';
+import { getPrettyCode } from '../../utils';
 
 export function* watchSetComponentType(action) {
   const { projectName, componentType, hasJsonForm } = (yield select()).projectSettingsServiceReducer;
@@ -39,21 +42,23 @@ export function* watchSetComponentType(action) {
   const hocCode = generateHocCode({ hoc, projectName });
   const stylesCode = generateStylesCode(tree);
 
-  const myRe = /^[ \r\n]+$/gi;
+  let code = '';
 
   switch (componentType) {
     case SMART:
       const smartCode = generateSmartCode({ smart, projectName, tree, hasJsonForm });
+      code = yield call(getPrettyCode, smartCode);
 
       yield put(setHocCode(hocCode));
-      yield put(setSmartCode(smartCode.replace(myRe, '')));
+      yield put(setSmartCode(code));
       yield put(setStylesCode(stylesCode));
       return;
     case DUMB:
       const dumbCode = generateDumbCode({ dumb, projectName, tree, hasJsonForm });
+      code = yield call(getPrettyCode, dumbCode);
 
       yield put(setHocCode(hocCode));
-      yield put(setDumbCode(dumbCode.replace(myRe, '')));
+      yield put(setDumbCode(code));
       yield put(setStylesCode(stylesCode));
       return;
 
@@ -67,7 +72,6 @@ export function* watchTreeSet() {
   const { smart, dumb } = (yield select()).componentSettingsServiceReducer;
   const { tree } = (yield select()).sortableTreeServiceReducer;
   const stylesCode = generateStylesCode(tree);
-  const myRe = /^[ \r\n]+$/gi;
   const flatData = getFlatDataFromTree({
     treeData: tree,
     getNodeKey: ({ treeIndex }) => treeIndex,
@@ -89,11 +93,13 @@ export function* watchTreeSet() {
     yield put(setAceTabs(newAceTabs));
   }
 
+  let code = '';
   switch (componentType) {
     case SMART:
-      const smartCode = generateSmartCode({ smart, projectName, tree, hasJsonSchema }).replace(/(^[ \t]*\n)/gm, "");
+      const smartCode = generateSmartCode({ smart, projectName, tree, hasJsonSchema });
+      code = yield call(getPrettyCode, smartCode);
 
-      yield put(setSmartCode(smartCode.replace(myRe, '')));
+      yield put(setSmartCode(code));
       yield put(setStylesCode(stylesCode));
       yield put(setAceTab(projectName));
       yield put(setProjectHasJsonForm(hasJsonSchema));
@@ -101,9 +107,10 @@ export function* watchTreeSet() {
       return;
 
     case DUMB:
-      const dumbCode = generateDumbCode({ dumb, projectName, tree, hasJsonSchema }).replace(/(^[ \t]*\n)/gm, "");
+      const dumbCode = generateDumbCode({ dumb, projectName, tree, hasJsonSchema });
+      code = yield getPrettyCode(dumbCode);
 
-      yield put(setDumbCode(dumbCode.replace(myRe, '')));
+      yield put(setDumbCode(code));
       yield put(setStylesCode(stylesCode));
       yield put(setAceTab(projectName));
       yield put(setProjectHasJsonForm(hasJsonSchema));

@@ -3,6 +3,7 @@ import SortableTree from 'react-sortable-tree';
 import FileExplorerTheme from 'react-sortable-tree-theme-file-explorer';
 import AceEditor from 'react-ace';
 import isEmpty from 'lodash/isEmpty';
+import axios from 'axios';
 import 'brace/mode/jsx';
 import 'brace/theme/github';
 import {
@@ -14,9 +15,16 @@ const AppStructureView = props => {
 
   const onChange = tree => props.setAppTree(tree);
   const onClickFile = rowInfo => {
-    if (isEmpty(rowInfo.node.children)) {
-      props.setAppFile(rowInfo.node.title);
-    }
+    // if (isEmpty(rowInfo.node.children)) {
+    //   props.setAppFile(rowInfo.node.title);
+    // }
+
+    const user = {
+      name: webpackconfigjs
+    };
+
+    axios.post('http://localhost:5000/api/prettify', { user })
+      .then(res => console.log('console: res', res))
   };
 
   const getAceContent = () => {

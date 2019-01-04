@@ -1,14 +1,16 @@
-import { actionTypesTemplate } from '../templates/actionTypes';
-
-const Mustache = require('mustache');
-
 export const generateActionTypesCode = actionTypes => {
-  const data = {
-    actionTypes,
-    name: () => this.name,
-    isSuccess: () => this.isSuccess,
-    isFail: () => this.isFail,
-  };
+  let code = '';
 
-  return Mustache.render(actionTypesTemplate, data);
+  actionTypes.map(el => {
+    code = code + `export const ${el.name} = '${el.name}';`;
+    if (el.isSuccess) {
+      code = code + `export const ${el.name}_SUCCESS = '${el.name}_SUCCESS';\n`;
+    }
+    if (el.isFail) {
+      code = code + `export const ${el.name}_FAIL = '${el.name}_FAIL';\n`;
+    }
+  });
+
+
+  return code;
 }

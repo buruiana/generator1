@@ -1,21 +1,19 @@
 {
-  "name": "redux-minimal",
+  "name": "name",
   "version": "1.0.0",
-  "description": "Start building complex react-redux apps today, with this minimalist easy to understand starter kit (boilerplate)",
+  "description": "blah blah blah",
   "keywords": [
     "react",
-    "redux",
-    "minimal",
-    "starter kit",
-    "boilerplate"
+    "redux"
   ],
   "main": "index.js",
-  "homepage": "http://redux-minimal.js.org/",
+  "homepage": "http://test.ca",
   "repository": {
     "type": "git",
-    "url": "https://github.com/catalin-luntraru/redux-minimal"
+    "url": ""
   },
   "scripts": {
+    "backend": "node ./server.js",
     "start": "webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 8080",
     "build-dev": "webpack --config webpack.dev.config.js",
     "build-prod": "webpack -p --config webpack.prod.config.js",
@@ -29,15 +27,19 @@
       "stage-3"
     ]
   },
-  "author": "Catalin Luntraru",
+  "author": "Some Author",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "brace": "^0.11.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
     "file-system": "^2.2.2",
     "firebase": "^5.4.2",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.11",
     "mustache": "^3.0.0",
+    "prettier": "^1.15.3",
     "react": "^15.4.2",
     "react-ace": "^6.1.4",
     "react-bootstrap": "^0.32.4",
