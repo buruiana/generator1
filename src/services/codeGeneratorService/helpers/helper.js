@@ -1,7 +1,8 @@
 import { getFlatDataFromTree } from 'react-sortable-tree';
 import isEmpty from 'lodash/isEmpty';
-import find from 'lodash/find';
-import get from 'lodash/get';
+import uniqBy from 'lodash/uniqBy';
+import sortBy from 'lodash/sortBy';
+import groupBy from 'lodash/groupBy';
 
 export const getConstList = tree => {
   const flatData = getFlatDataFromTree({
@@ -49,81 +50,23 @@ export const getImportList = tree => {
     ignoreCollapsed: false,
   });
 
-  let importList = [];
+  console.log('console: flatData', flatData);
+  const defaultImports = uniqBy(
+    flatData.filter(el => el.node.componentImport !== '-'),
+    'node.componentImport');
+  const sortedDefaultImports = sortBy(defaultImports, 'node.title');
 
-  flatData.map(element => {
-    const el = element.node;
+  const nonDefaultImports = uniqBy(
+    flatData.filter(el => el.node.componentImport === '-'),
+    'node.title');
+  const sortedNonDefaultImports = sortBy(nonDefaultImports, 'node.title');
+  const groupSortedNonDefaultImports = groupBy(sortedNonDefaultImports, 'node.providerPath');
 
-    if (el.componentImport && el.componentImport !== '-') {
-      const obj = find(importList, item => item.name === el.componentImport);
-
-      if (!isEmpty(obj)) {
-        if (el.isDefault) {
-          if (!find(obj['default'], item => item === el.title)) {
-            obj['default'].push(el.title);
-            obj.hasDefaults = true;
-          }
-        } else {
-          if (!find(obj['nonDefault'], item => item === el.title)) {
-            obj['nonDefault'].push(el.title);
-            obj.hasNonDefaults = true;
-          }
-        }
-      } else {
-        if (el.isDefault) {
-          importList.push({
-            name: el.componentImport,
-            'default': [el.title],
-            'nonDefault': [],
-            hasDefaults: true,
-            hasNonDefaults: false,
-          });
-        } else {
-          importList.push({
-            name: el.componentImport,
-            'default': [],
-            'nonDefault': [el.title],
-            hasDefaults: false,
-            hasNonDefaults: true,
-          });
-        }
-      }
-    } else {
-      const obj = find(importList, item => item.name === el.providerPath);
-
-      if (!isEmpty(obj)) {
-        if (el.isDefault) {
-          if (!find(obj['default'], item => item === el.providerPath)) {
-            obj['default'].push(el.title);
-            obj.hasDefaults = true;
-          }
-        } else {
-          if (!find(obj['nonDefault'], item => item === el.title)) {
-            obj['nonDefault'].push(el.title);
-            obj.hasNonDefaults = true;
-          }
-        }
-      } else {
-        if (el.isDefault) {
-          importList.push({
-            name: el.providerPath,
-            'default': [el.title],
-            'nonDefault': [],
-            hasDefaults: true,
-            hasNonDefaults: false,
-          });
-        } else {
-          importList.push({
-            name: el.providerPath,
-            'default': [],
-            'nonDefault': [el.title],
-            hasDefaults: false,
-            hasNonDefaults: true,
-          });
-        }
-      }
-    }
-  });
+  console.log('console: groupSortedNonDefaultImports', groupSortedNonDefaultImports);
+  const importList = {
+    sortedDefaultImports,
+    groupSortedNonDefaultImports
+  };
 
   return importList;
 };

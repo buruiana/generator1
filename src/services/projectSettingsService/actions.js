@@ -25,7 +25,7 @@ export const setProjectHasJsonForm = hasJsonForm => ({
   hasJsonForm
 })
 
-export const setProjectJsonForm = jsonForm => ({
-  type: actionTypes.SET_PROJECT_SETTINGS_JSON_FORM,
-  jsonForm
+export const setProjectError = err => ({
+  type: actionTypes.SET_PROJECT_SETTINGS_ERROR,
+  err
 })

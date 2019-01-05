@@ -9,6 +9,7 @@ import {
   SMART,
   DUMB,
 } from '../../../utils/constants';
+import Alert from 'react-bootstrap/lib/Alert';
 
 const onChange = newValue => {
   console.log('change', newValue);
@@ -50,11 +51,26 @@ const Ace = props => {
           return '';
       }
     }
+  };
 
+  const createMarkup = () => {
+    return { __html: props.projectError };
+  }
+
+  const getAlert = () => {
+    if (props.projectError) {
+      return (
+        <Alert bsStyle="danger">
+          <div dangerouslySetInnerHTML={createMarkup()} />
+        </Alert>
+      );
+    }
+    return null;
   };
 
   return (
     <div>
+      {getAlert()}
       <AceTabs />
       <AceEditor
         mode="jsx"

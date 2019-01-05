@@ -15,6 +15,7 @@ const mapStateToProps = state => {
     styles: state.codeGeneratorServiceReducer.styles,
     schema: state.codeGeneratorServiceReducer.schema,
     uiSchema: state.codeGeneratorServiceReducer.uiSchema,
+    projectError: state.projectSettingsServiceReducer.err,
   }
 }
 

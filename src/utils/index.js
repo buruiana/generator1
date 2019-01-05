@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { put, takeLatest, select, call } from "redux-saga/effects";
+import { setProjectError } from '../services/projectSettingsService/actions';
 
 export const boxArray = obj => {
   return Object.prototype.toString.call(obj) != '[object Array]'
@@ -6,7 +8,7 @@ export const boxArray = obj => {
     : obj;
 };
 
-function prettify(code){
+const prettify = code => {
   return axios.post('http://localhost:5000/api/prettify', code);
 }
 
@@ -17,7 +19,8 @@ export function* getPrettyCode(code) {
     prettyCode = res.data;
   } catch (err) {
     prettyCode = JSON.parse(err.config.data);
-    prettyCode = prettyCode.code + '\n' + err.response.data;
+    prettyCode = prettyCode.code;
+    yield put(setProjectError(err.response.data));
   }
   return prettyCode;
 }
