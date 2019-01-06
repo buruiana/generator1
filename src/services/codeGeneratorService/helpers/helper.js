@@ -50,7 +50,6 @@ export const getImportList = tree => {
     ignoreCollapsed: false,
   });
 
-  console.log('console: flatData', flatData);
   const defaultImports = uniqBy(
     flatData.filter(el => el.node.componentImport !== '-'),
     'node.componentImport');
@@ -62,7 +61,6 @@ export const getImportList = tree => {
   const sortedNonDefaultImports = sortBy(nonDefaultImports, 'node.title');
   const groupSortedNonDefaultImports = groupBy(sortedNonDefaultImports, 'node.providerPath');
 
-  console.log('console: groupSortedNonDefaultImports', groupSortedNonDefaultImports);
   const importList = {
     sortedDefaultImports,
     groupSortedNonDefaultImports

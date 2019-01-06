@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { put, takeLatest, select, call } from "redux-saga/effects";
+import { put } from "redux-saga/effects";
 import { setProjectError } from '../services/projectSettingsService/actions';
 
 export const boxArray = obj => {

@@ -11,7 +11,6 @@ export const initialState = () => ({
     hasState: false,
     lifeCycleMethods: {},
   },
-  dumb: {},
   styles: [],
 });
 
