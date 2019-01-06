@@ -5,6 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
 import sortBy from 'lodash/sortBy';
 import 'react-sortable-tree/style.css';
+import Alert from 'react-bootstrap/lib/Alert';
 import renderModal from '../../modals';
 import Ace from '../AceEditor';
 import AppStructureView from '../AppStructure';
@@ -94,10 +95,26 @@ const EditorView = props => {
       : null;
   };
 
+  const createMarkup = () => {
+    return { __html: props.projectError };
+  }
+
+  const renderError = () => {
+    if (props.projectError) {
+      return (
+        <Alert bsStyle="danger">
+          <div dangerouslySetInnerHTML={createMarkup()} />
+        </Alert>
+      );
+    }
+    return null;
+  };
+
   const returnComponentBlock = () => {
     return (
       <div className='paddingTop'>
         {renderSearchField()}
+        {renderError()}
         <div
           style={{
             height: 800,

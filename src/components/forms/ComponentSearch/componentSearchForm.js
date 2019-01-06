@@ -5,7 +5,6 @@ import isEmpty from 'lodash/isEmpty';
 import {
   REACT_NATIVE,
   REACT,
-  PROJECT_TECHNO,
 } from '../../../utils/constants';
 
 const ComponentsSearchForm = props => {

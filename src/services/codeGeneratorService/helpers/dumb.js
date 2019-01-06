@@ -16,7 +16,7 @@ export const generateDumbCode = props => {
     ignoreCollapsed: false,
   });
   if (isEmpty(flatData)) return null;
-  console.log('console: flatData', flatData);
+  console.log('console: flatData------------------------', flatData);
 
   // IMPORTS
   code += `import React from 'react';\n`;
@@ -47,10 +47,7 @@ export const generateDumbCode = props => {
   // RETURN
   code += ` return (\n`;
   code += prepareTree(flatData);
-
-
   code += ` );\n`;
-
   code += `};\n\n`;
   code += `export default ${props.projectName};`;
 
@@ -64,25 +61,31 @@ const prepareTree = flatTree => {
 
   const getTree = tree => {
     tree.map(el => {
-      console.log('console: current', el.node.title);
       const currentId = el.node.id;
       const nextEl = (tree.length > elIdx + 1)
         ? tree[elIdx + 1]
         : null;
-      console.log('console: nextEl', nextEl);
       const hasChildren = !isEmpty(el.node.children);
+      const hasComponentProps = !isEmpty(el.node.componentProps);
       const hasParent = !isEmpty(el.parentNode);
       const closeTag = hasChildren
         ? '>'
         : ' />';
 
-      //console.log('console: currentId', currentId);
-
       if (hasChildren) parentsList.push(el.node.title);
-      console.log('console: parentsList', parentsList);
 
+      const getComponentProps = () => {
+        let componentProps = '';
+        if (hasComponentProps) {
+          el.node.componentProps.map(el => {
+            console.log('console: qqqqqqqqqqqq', !isEmpty(el.val), el);
+            if (!isEmpty(el.val)) componentProps += `\n${el.name}=${el.val}\n`;
+          });
+        }
+        return componentProps;
+      };
 
-      code += `<${el.node.title}${closeTag}`;
+      code += `<${el.node.title}${getComponentProps()}${closeTag}`;
 
       // set the parent data
       if (hasParent) {
@@ -92,24 +95,17 @@ const prepareTree = flatTree => {
           ? el.parentNode.children[el.parentNode.children.length - 1].id
           : el.parentNode.children[0].id;
 
-
-        console.log('console: currentParentId', currentParentId);
-        console.log('console: currentParent', currentParent);
-
         // check if current element is the last child
         if (currentId === currentParentLastChild && !hasChildren) {
           code += `</ ${parentsList[parentsList.length - 1]}>`;
           parentsList.pop();
         }
-        console.log('console: parentsList1', parentsList);
 
         // check next elemen path
         if (!isEmpty(nextEl) && (currentParent[0].path.length > nextEl.path.length)) {
-          console.log('console: ------', currentParent[0].path.length, nextEl.path.length);
           code += `</ ${parentsList[parentsList.length - 1]}>`;
           parentsList.pop();
         }
-        console.log('console: parentsList2', parentsList);
       }
 
       elIdx++;
@@ -122,12 +118,11 @@ const prepareTree = flatTree => {
         code += `</ ${el}>`;
       });
     }
-    console.log('console: in closure1111', code);
+
     return code;
   };
 
   code += getTree(flatTree);
 
-  console.log('console: on exit', code);
   return code;
 };

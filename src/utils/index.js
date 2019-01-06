@@ -13,13 +13,16 @@ const prettify = code => {
 }
 
 export function* getPrettyCode(code) {
+  if (!code) return;
   let prettyCode = '';
   try {
+    yield put(setProjectError(''));
     const res = yield prettify({ code });
     prettyCode = res.data;
   } catch (err) {
     prettyCode = JSON.parse(err.config.data);
     prettyCode = prettyCode.code;
+
     yield put(setProjectError(err.response.data));
   }
   return prettyCode;
