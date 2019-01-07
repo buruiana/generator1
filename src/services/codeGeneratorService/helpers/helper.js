@@ -146,6 +146,7 @@ export const getLifeCycleCode = lifeCycleMethods => {
 
   let code = '';
   if (lifeCycleMethods.componentWillMount) {
+    code += `// deprecated in React 16.3`;
     code += `componentWillMount() {};\n`;
   }
 
@@ -154,19 +155,19 @@ export const getLifeCycleCode = lifeCycleMethods => {
   }
 
   if (lifeCycleMethods.componentWillReceiveProps) {
-    code += `componentWillReceiveProps() {};\n;`
+    code += `componentWillReceiveProps(nextProps) {};\n;`
   }
 
-  if (lifeCycleMethods.shouldComponentUpdate) {
-    code += `shouldComponentUpdate() {};\n`;
+  if (lifeCycleMethods.shouldComponentUpdate) {s
+    code += `shouldComponentUpdate(nextProps, nextState) {};\n`;
   }
 
   if (lifeCycleMethods.componentWillUpdate) {
-    code += `componentWillUpdate() {};\n`;
+    code += `componentWillUpdate(nextProps, nextState) {};\n`;
   }
 
   if (lifeCycleMethods.componentDidUpdate) {
-    code += `componentDidUpdate() {};\n`;
+    code += `componentDidUpdate(prevProps, prevState) {};\n`;
   }
 
   if (lifeCycleMethods.componentWillUnmount) {
