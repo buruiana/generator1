@@ -17,6 +17,7 @@ const mapStateToProps = state => {
     projectType: state.projectSettingsServiceReducer.projectType,
     providers: state.providersServiceReducer.providers,
     projectError: state.projectSettingsServiceReducer.err,
+    appSettings: state.appSettingsServiceReducer.settings,
   }
 };
 

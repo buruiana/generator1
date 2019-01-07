@@ -28,7 +28,7 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const EditorView = props => {
-
+  console.log('console: propsprops', props);
   const remove = path => {
     const newTree = {
       treeData2: removeNodeAtPath({
@@ -42,8 +42,8 @@ const EditorView = props => {
 
   const showModal = (type, node, path) => {
     const nodePath = {
-      node,
-      path,
+      node: node || {},
+      path: path || [],
       type,
     };
     props.setNodePath(nodePath);
@@ -65,9 +65,9 @@ const EditorView = props => {
   };
 
   const renderAppStructure = () => {
-    return props.projectType === APPLICATION
+    return (props.projectType === APPLICATION && props.appSettings.destination)
       ? <AppStructureView />
-      : null;
+      : null; //showModal(APPLICATION);
   };
 
   const onChange = treeData => {

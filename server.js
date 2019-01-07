@@ -19,8 +19,8 @@ const app = express();
 const cors = require('cors')
 app.use(cors())
 
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/getShell', (req, res) => {
   shell.mkdir('A');
@@ -57,6 +57,11 @@ app.post('/api/prettify', (req, res) => {
     parser: "babylon",
     trailingComma: "all"
   };
+
+  res.json(prettier.format(req.body.code));
+});
+
+app.post('/api/readGeneratedFiles', (req, res) => {
 
   res.json(prettier.format(req.body.code));
 });

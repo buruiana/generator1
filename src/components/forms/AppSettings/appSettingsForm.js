@@ -7,24 +7,71 @@ const AppSettingsForm = props => {
   const schema = {
     type: 'object',
     properties: {
-      redux: { type: 'boolean', title: 'redux' },
-      reactRedux: { type: 'boolean', title: 'react-redux' },
-      reduxThunk: { type: 'boolean', title: 'redux-thunk' },
-      reduxSaga: { type: 'boolean', title: 'redux-saga' },
-      reactRouter: { type: 'boolean', title: 'React-Router' },
-      reactRouterRedux: { type: 'boolean', title: 'react-router-redux' },
-      reactIntl: { type: 'boolean', title: 'React-Intl' },
-      reactIntlUniversal: { type: 'boolean', title: 'react-intl-universal' },
-      i18next: { type: 'boolean', title: 'i18next' },
-      lodash: { type: 'boolean', title: 'lodash' },
-      firebase: { type: 'boolean', title: 'firebase' },
-      react: { type: 'boolean', title: 'react' },
-      reactBootstrap: { type: 'boolean', title: 'react-bootstrap' },
-      reactJsonschemaForm: { type: 'boolean', title: 'react-jsonschema-form' },
-      reduxSagaFirebase: { type: 'boolean', title: 'redux-saga-firebase' },
-      fontAwesome: { type: 'boolean', title: 'react-fontawesome' },
+      destination: { type: 'string', title: 'Destination Path' },
+      state: {
+        type: 'object',
+        properties: {
+          redux: { type: 'boolean', title: 'redux' },
+        },
+      },
+      navigation: {
+        type: 'object',
+        properties: {
+          reactRouter: { type: 'boolean', title: 'React-Router' },
+        },
+      },
+      async: {
+        type: 'object',
+        properties: {
+          reduxThunk: { type: 'boolean', title: 'redux-thunk' },
+          reduxSaga: { type: 'boolean', title: 'redux-saga' },
+        },
+      },
+      bundlers: {
+        type: 'object',
+        properties: {
+          webpack: { type: 'boolean', title: 'react-redux' },
+          parcel: { type: 'boolean', title: 'parcel' },
+        },
+      },
+      int: {
+        type: 'object',
+        properties: {
+          reactIntl: { type: 'boolean', title: 'React-Intl' },
+          reactIntlUniversal: { type: 'boolean', title: 'react-intl-universal' },
+          i18next: { type: 'boolean', title: 'i18next' },
+        },
+      },
+      backend: {
+        type: 'object',
+        properties: {
+          firebase: { type: 'boolean', title: 'firebase' },
+          reduxSagaFirebase: { type: 'boolean', title: 'redux-saga-firebase' },
+        },
+      },
+      utils: {
+        type: 'object',
+        properties: {
+          lodash: { type: 'boolean', title: 'lodash' },
+        },
+      },
+      ui: {
+        type: 'object',
+        properties: {
+          reactBootstrap: { type: 'boolean', title: 'react-bootstrap' },
+          materialUI: { type: 'boolean', title: 'material-ui/core' },
+          fontAwesome: { type: 'boolean', title: 'react-fontawesome' },
+        },
+      },
+      form: {
+        type: 'object',
+        properties: {
+          reactJsonschemaForm: { type: 'boolean', title: 'react-jsonschema-form' },
+        },
+      },
     },
   };
+
   const uiSchema = {
     projectType: { "ui:widget": "select" },
     projectTechno: {

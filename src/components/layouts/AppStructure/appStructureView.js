@@ -2,7 +2,6 @@ import React from 'react';
 import SortableTree from 'react-sortable-tree';
 import FileExplorerTheme from 'react-sortable-tree-theme-file-explorer';
 import AceEditor from 'react-ace';
-import isEmpty from 'lodash/isEmpty';
 import axios from 'axios';
 import 'brace/mode/jsx';
 import 'brace/theme/github';
