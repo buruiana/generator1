@@ -101,7 +101,7 @@ export function* watchSetSmartSettings() {
   const { smart } = (yield select()).componentSettingsServiceReducer;
   const { projectName } = (yield select()).projectSettingsServiceReducer;
   const { tree } = (yield select()).sortableTreeServiceReducer;
-  const smartCode = generateSmartCode({ smart, projectName, tree }).replace(/(^[ \t]*\n)/gm, "");
+  const smartCode = generateSmartCode({ smart, projectName, tree });
 
   const code = yield call(getPrettyCode, smartCode);
   yield put(setSmartCode(code));
@@ -109,7 +109,7 @@ export function* watchSetSmartSettings() {
 
 export function* watchSetJsonForm() {
   const { jsonForm } = (yield select()).projectSettingsServiceReducer;
-  const jsonFormSchemaCode = generateJsonFormCode({ jsonForm }).replace(/(^[ \t]*\n)/gm, "");
+  const jsonFormSchemaCode = generateJsonFormCode({ jsonForm });
   const code = yield call(getPrettyCode, jsonFormSchemaCode);
   yield put(setJsonFormSchemaCode(code));
 }

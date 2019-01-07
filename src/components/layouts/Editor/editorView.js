@@ -70,8 +70,8 @@ const EditorView = props => {
       : null;
   };
 
-  const onChange = treeData2 => {
-    setNewTree(fillNodeData(treeData2, props.providers));
+  const onChange = treeData => {
+    if (treeData.length === 1) setNewTree(fillNodeData(treeData, props.providers));
   };
 
   const setNewTree = treeData2 => props.setTree({ treeData2 });

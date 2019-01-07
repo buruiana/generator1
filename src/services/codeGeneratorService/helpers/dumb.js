@@ -3,7 +3,8 @@ import reverse from 'lodash/reverse';
 import {
   getFlatDataFromTree,
 } from 'react-sortable-tree';
-import { getConstList, getImportList } from './helper';
+import { getConstList, getImportList, getTree } from './helper';
+
 
 export const generateDumbCode = props => {
   let code = '';
@@ -16,7 +17,6 @@ export const generateDumbCode = props => {
     ignoreCollapsed: false,
   });
   if (isEmpty(flatData)) return null;
-  console.log('console: flatData------------------------', flatData);
 
   // IMPORTS
   code += `import React from 'react';\n`;
@@ -33,7 +33,7 @@ export const generateDumbCode = props => {
   });
 
   // START COMPONENT
-  code += `const ${props.projectName} = props => {\n`;
+  code += `\nconst ${props.projectName} = props => {\n`;
 
   // CONSTANTS
   if (!isEmpty(constList)) {
@@ -46,83 +46,10 @@ export const generateDumbCode = props => {
 
   // RETURN
   code += ` return (\n`;
-  code += prepareTree(flatData);
+  code += getTree(flatData);
   code += ` );\n`;
   code += `};\n\n`;
   code += `export default ${props.projectName};`;
 
   return code;
 }
-
-const prepareTree = flatTree => {
-  let code = '';
-  let parentsList = [];
-  let elIdx = 0;
-
-  const getTree = tree => {
-    tree.map(el => {
-      const currentId = el.node.id;
-      const nextEl = (tree.length > elIdx + 1)
-        ? tree[elIdx + 1]
-        : null;
-      const hasChildren = !isEmpty(el.node.children);
-      const hasComponentProps = !isEmpty(el.node.componentProps);
-      const hasParent = !isEmpty(el.parentNode);
-      const closeTag = hasChildren
-        ? '>'
-        : ' />';
-
-      if (hasChildren) parentsList.push(el.node.title);
-
-      const getComponentProps = () => {
-        let componentProps = '';
-        if (hasComponentProps) {
-          el.node.componentProps.map(el => {
-            console.log('console: qqqqqqqqqqqq', !isEmpty(el.val), el);
-            if (!isEmpty(el.val)) componentProps += `\n${el.name}=${el.val}\n`;
-          });
-        }
-        return componentProps;
-      };
-
-      code += `<${el.node.title}${getComponentProps()}${closeTag}`;
-
-      // set the parent data
-      if (hasParent) {
-        const currentParentId = el.parentNode.id;
-        const currentParent = tree.filter(el => el.node.id === currentParentId);
-        const currentParentLastChild = (el.parentNode.children.length > 1)
-          ? el.parentNode.children[el.parentNode.children.length - 1].id
-          : el.parentNode.children[0].id;
-
-        // check if current element is the last child
-        if (currentId === currentParentLastChild && !hasChildren) {
-          code += `</ ${parentsList[parentsList.length - 1]}>`;
-          parentsList.pop();
-        }
-
-        // check next elemen path
-        if (!isEmpty(nextEl) && (currentParent[0].path.length > nextEl.path.length)) {
-          code += `</ ${parentsList[parentsList.length - 1]}>`;
-          parentsList.pop();
-        }
-      }
-
-      elIdx++;
-      return code;
-    });
-
-    // close remaining parents
-    if (parentsList.length) {
-      reverse(parentsList).map(el => {
-        code += `</ ${el}>`;
-      });
-    }
-
-    return code;
-  };
-
-  code += getTree(flatTree);
-
-  return code;
-};

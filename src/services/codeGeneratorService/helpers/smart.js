@@ -1,36 +1,66 @@
-import { smartTemplate } from '../templates/smart';
-import { childrenPartialSmart } from '../templates/childrenPartialSmart';
-import { propsPartial } from '../templates/propsPartial';
-import { importPartial } from '../templates/importPartial';
-import { getConstList, getImportList } from './helper';
+import isEmpty from 'lodash/isEmpty';
+import {
+  getFlatDataFromTree,
+} from 'react-sortable-tree';
+import {
+  getConstList,
+  getImportList,
+  getTree,
+  getLifeCycleCode,
+  getConstrunctor,
+} from './helper';
 
-const Mustache = require('mustache');
 
 export const generateSmartCode = props => {
-  const smart = {
-    ...props.smart,
-    projectName: props.projectName,
-    tree: props.tree,
-    hasJsonForm: props.hasJsonSchema,
-  };
+  console.log('console: props', props);
+  let code = '';
   const constList = getConstList(props.tree);
   const importsList = getImportList(props.tree);
 
-  const data = {
-    smart,
-    constList,
-    importsList,
-    hasConstructor: () => this.hasConstructor,
-    hasState: () => this.hasState,
-    lifeCycleMethods: () => this.lifeCycleMethods,
-    projectName: () => this.projectName,
-    tree: () => this.tree,
-    componentProps: () => this.componentProps,
-  };
-
-  return Mustache.render(smartTemplate, data, {
-    "childrenPartialSmart": childrenPartialSmart,
-    "propsPartial": propsPartial,
-    "importPartial": importPartial,
+  const flatData = getFlatDataFromTree({
+    treeData: props.tree,
+    getNodeKey: ({ treeIndex }) => treeIndex,
+    ignoreCollapsed: false,
   });
+  if (isEmpty(flatData)) return null;
+
+  // IMPORTS
+  code += `import React from 'react';\n`;
+  importsList.sortedDefaultImports.map(el => {
+    code += `import ${el.node.title} from '${el.node.componentImport}';\n`;
+  });
+
+  Object.keys(importsList.groupSortedNonDefaultImports).forEach(key => {
+    code += `import {\n`;
+    importsList.groupSortedNonDefaultImports[key].map(el => {
+      code += `${el.node.title},\n`;
+    });
+    code += `} from '${importsList.groupSortedNonDefaultImports[key][0].node.providerPath}';\n`;
+  });
+
+  // START COMPONENT
+  code += `\nclass ${props.projectName} extends Component {\n`;
+  code += getConstrunctor(props.smart.hasConstructor, props.smart.hasState, constList)
+  code += getLifeCycleCode(props.smart.lifeCycleMethods);
+  code += ` render() {\n`;
+
+  // CONSTANTS
+  if (!isEmpty(constList)) {
+    constList.map(el => {
+      code += ` const ${el} = () => {\n`;
+      code += `   return null;\n`;
+      code += ` };\n\n`;
+    });
+  }
+
+
+  // RETURN
+  code += `   return (\n`;
+  code += getTree(flatData);
+  code += `   );\n`;
+  code += ` };\n\n`;
+  code += `};\n\n`;
+  code += `export default ${props.projectName};`;
+
+  return code;
 }
