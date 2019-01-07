@@ -22,7 +22,6 @@ export const generateSmartCode = props => {
     getNodeKey: ({ treeIndex }) => treeIndex,
     ignoreCollapsed: false,
   });
-  if (isEmpty(flatData)) return null;
 
   // IMPORTS
   code += `import React from 'react';\n`;
@@ -56,7 +55,10 @@ export const generateSmartCode = props => {
 
   // RETURN
   code += `   return (\n`;
-  code += getTree(flatData);
+  code += !isEmpty(flatData)
+    ? getTree(flatData)
+    : '<div />';
+
   code += `   );\n`;
   code += ` };\n\n`;
   code += `};\n\n`;

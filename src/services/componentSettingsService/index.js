@@ -1,11 +1,10 @@
 import { put, takeLatest, select, call } from "redux-saga/effects";
 import { getFlatDataFromTree } from 'react-sortable-tree';
 import isEmpty from 'lodash/isEmpty';
-import axios from 'axios';
-import indent from 'indent.js';
 import {
   SET_PROJECT_SETTINGS_COMPONENT_TYPE,
 } from '../projectSettingsService/actionTypes';
+import { SET_SMART_SETTINGS } from '../componentSettingsService/actionTypes';
 import { TREE_SET } from '../sortableTreeService/actionTypes';
 import { SMART, DUMB } from '../../utils/constants';
 import {
@@ -123,5 +122,5 @@ export function* watchTreeSet() {
 
 export default function* rootSaga() {
   yield takeLatest(SET_PROJECT_SETTINGS_COMPONENT_TYPE, watchSetComponentType);
-  yield takeLatest(TREE_SET, watchTreeSet);
+  yield takeLatest([TREE_SET, SET_SMART_SETTINGS], watchTreeSet);
 }

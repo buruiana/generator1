@@ -146,34 +146,34 @@ export const getLifeCycleCode = lifeCycleMethods => {
 
   let code = '';
   if (lifeCycleMethods.componentWillMount) {
-    code += `componentWillMount() {};`
+    code += `componentWillMount() {};\n`;
   }
 
   if (lifeCycleMethods.componentDidMount) {
-    code += `componentDidMount() {};`
+    code += `componentDidMount() {};\n`;
   }
 
   if (lifeCycleMethods.componentWillReceiveProps) {
-    code += `componentWillReceiveProps() {};`
+    code += `componentWillReceiveProps() {};\n;`
   }
 
   if (lifeCycleMethods.shouldComponentUpdate) {
-    code += `shouldComponentUpdate() {};`
+    code += `shouldComponentUpdate() {};\n`;
   }
 
   if (lifeCycleMethods.componentWillUpdate) {
-    code += `componentWillUpdate() {};`
+    code += `componentWillUpdate() {};\n`;
   }
 
   if (lifeCycleMethods.componentDidUpdate) {
-    code += `componentDidUpdate() {};`
+    code += `componentDidUpdate() {};\n`;
   }
 
   if (lifeCycleMethods.componentWillUnmount) {
-    code += `componentWillUnmount() {};`
+    code += `componentWillUnmount() {}\n;`
   }
 
-  return code;
+  return code + '\n';
 };
 
 export const getConstrunctor = (hasConstructor, hasState, constList) => {
@@ -192,7 +192,7 @@ export const getConstrunctor = (hasConstructor, hasState, constList) => {
       code += `   const constList = ['${constList.toString().replace(/,/g, "', '")}'];\n`;
       code += `   constList.map(name => this[name] = this[name].bind(this));\n\n`;
     }
-    code += ` };\n`;
+    code += ` };\n\n`;
   }
 
   return code;
