@@ -3,6 +3,7 @@ import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
+import has from 'lodash/has';
 import sortBy from 'lodash/sortBy';
 import 'react-sortable-tree/style.css';
 import Alert from 'react-bootstrap/lib/Alert';
@@ -28,7 +29,7 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const EditorView = props => {
-  console.log('console: propsprops', props);
+
   const remove = path => {
     const newTree = {
       treeData2: removeNodeAtPath({
@@ -65,9 +66,9 @@ const EditorView = props => {
   };
 
   const renderAppStructure = () => {
-    return (props.projectType === APPLICATION && props.appSettings.destination)
+    return (props.projectType === APPLICATION && has(props.appSettings, 'destination'))
       ? <AppStructureView />
-      : null; //showModal(APPLICATION);
+      : null;
   };
 
   const onChange = treeData => {

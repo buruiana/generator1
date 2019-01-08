@@ -12,26 +12,27 @@ const AppSettingsForm = props => {
         type: 'object',
         properties: {
           redux: { type: 'boolean', title: 'redux' },
+          'react-redux': { type: 'boolean', title: 'react-redux' },
         },
       },
       navigation: {
         type: 'object',
         properties: {
-          reactRouter: { type: 'boolean', title: 'React-Router' },
+          'React-Router': { type: 'boolean', title: 'React-Router' },
         },
       },
       async: {
         type: 'object',
         properties: {
-          reduxThunk: { type: 'boolean', title: 'redux-thunk' },
-          reduxSaga: { type: 'boolean', title: 'redux-saga' },
+          'redux-thunk' : { type: 'boolean', title: 'redux-thunk' },
+          'redux-saga': { type: 'boolean', title: 'redux-saga' },
         },
       },
       bundlers: {
         type: 'object',
         properties: {
-          webpack: { type: 'boolean', title: 'react-redux' },
-          parcel: { type: 'boolean', title: 'parcel' },
+          'webpack': { type: 'boolean', title: 'webpack' },
+          'parcel': { type: 'boolean', title: 'parcel' },
         },
       },
       int: {
@@ -45,28 +46,28 @@ const AppSettingsForm = props => {
       backend: {
         type: 'object',
         properties: {
-          firebase: { type: 'boolean', title: 'firebase' },
-          reduxSagaFirebase: { type: 'boolean', title: 'redux-saga-firebase' },
+          'firebase': { type: 'boolean', title: 'firebase' },
+          'redux-saga-firebase': { type: 'boolean', title: 'redux-saga-firebase' },
         },
       },
       utils: {
         type: 'object',
         properties: {
-          lodash: { type: 'boolean', title: 'lodash' },
+          'lodash': { type: 'boolean', title: 'lodash' },
         },
       },
       ui: {
         type: 'object',
         properties: {
-          reactBootstrap: { type: 'boolean', title: 'react-bootstrap' },
-          materialUI: { type: 'boolean', title: 'material-ui/core' },
-          fontAwesome: { type: 'boolean', title: 'react-fontawesome' },
+          'react-bootstrap': { type: 'boolean', title: 'react-bootstrap' },
+          'material-ui/core': { type: 'boolean', title: 'material-ui/core' },
+          'react-fontawesome': { type: 'boolean', title: 'react-fontawesome' },
         },
       },
       form: {
         type: 'object',
         properties: {
-          reactJsonschemaForm: { type: 'boolean', title: 'react-jsonschema-form' },
+          'react-jsonschema-form': { type: 'boolean', title: 'react-jsonschema-form' },
         },
       },
     },
@@ -88,6 +89,10 @@ const AppSettingsForm = props => {
     props.closeModal();
   };
 
+  const saveGenerate = () => {
+    props.setGenerateApp(true);
+  };
+
   const log = (type) => console.log.bind(console, type);
   return (
     <Form schema={schema}
@@ -95,8 +100,12 @@ const AppSettingsForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
-      formData={appSettings}
-    />
+      formData={appSettings}>
+      <div>
+        <button type="submit">Save</button>
+        <button type="submit" onClick={saveGenerate}>Save and Generate</button>
+      </div >
+    </Form >
   );
 }
 

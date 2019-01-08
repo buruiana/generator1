@@ -5,11 +5,15 @@ export const generateReducerCode = reducer => {
   if (!isEmpty(reducer)) {
     code = `import * as actionTypes from './actionTypes';\n\n`;
     code+= `export const initialState = () => ({\n`;
-
+    const reducerInitVals = [];
     reducer.map(el => {
       if (!isEmpty(el.payloadInfo)) {
         el.payloadInfo.map(payloadInfo => {
-          code += `${payloadInfo.payload}: ${payloadInfo.initVal},\n`;
+          const dup = reducerInitVals.find(el => el === payloadInfo.payload);
+          if (isEmpty(dup)) {
+            reducerInitVals.push(payloadInfo.payload);
+            code += `${payloadInfo.payload}: ${payloadInfo.initVal},\n`;
+          }
         });
       }
     });

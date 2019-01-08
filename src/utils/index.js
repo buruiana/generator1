@@ -27,3 +27,26 @@ export function* getPrettyCode(code) {
   }
   return prettyCode;
 }
+
+const generateApp = appSettings => {
+  return axios.post('http://localhost:5000/api/generateApp', appSettings);
+}
+
+export function* generateAppBE(appSettings) {
+  console.log('console: appSettingsappSettings', appSettings);
+  if (!appSettings) return;
+  let result = '';
+  try {
+    const res = yield generateApp({ appSettings });
+    result = res.data;
+    console.log('console: result', result);
+  } catch (err) {
+    console.log('console: err', err);
+    // prettyCode = JSON.parse(err.config.data);
+    // prettyCode = prettyCode.code;
+
+    // yield put(setProjectError(err.response.data));
+  }
+  return result;
+}
+

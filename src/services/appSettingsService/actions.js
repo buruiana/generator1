@@ -27,3 +27,10 @@ export const setAppFile = file => {
     file
   };
 }
+
+export const setGenerateApp = generateApp => {
+  return {
+    type: actionTypes.SET_GENERATE_APP,
+    generateApp
+  };
+}

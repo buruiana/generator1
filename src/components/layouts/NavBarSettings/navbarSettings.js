@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 import isEmpty from 'lodash/isEmpty';
+import has from 'lodash/has';
 import {
   PROJECT_SETTINGS,
   ACTIONS,
@@ -34,6 +35,11 @@ const NavBarSettings = props => {
     props.setCurrentModal(type);
     props.setAllModals(newAllModals);
   };
+
+
+  if (props.projectType === APPLICATION && !has(props.appSettings, 'destination')) {
+    props.setCurrentModal(APPLICATION);
+  }
 
   const isService = () => {
     return props.projectType === SERVICE

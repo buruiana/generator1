@@ -61,10 +61,65 @@ app.post('/api/prettify', (req, res) => {
   res.json(prettier.format(req.body.code));
 });
 
-app.post('/api/readGeneratedFiles', (req, res) => {
+app.post('/api/generateApp', (req, res) => {
+  console.log('console: body', req.body);
 
-  res.json(prettier.format(req.body.code));
+  const shell = require('shelljs');
+  const settings = req.body.appSettings;
+  console.log('console: settings', settings);
+  const dest = settings.shift();
+  console.log('console: dest', dest);
+
+  shell.mkdir(dest);
+  shell.cd(dest);
+  const xxx = shell.exec('npm init -y', { silent: false });
+  console.log('console: xxxxxxxxxxx', xxx.output);
 });
+
+app.get('/api/readGeneratedFiles', (req, res) => {
+  console.log('console: aaaaaaaaaaaaa');
+  const dirTree = require("directory-tree");
+  const tree = dirTree("/Users/bienvenue/Documents/1");
+  console.log('console: treetreetree', JSON.stringify(tree));
+  const packageJsonContent = readPasckageJson('/Users/bienvenue/Documents/1/1.txt');
+  console.log('console: -----------', packageJsonContent);
+  res.json(JSON.stringify(tree));
+});
+
+function readPasckageJson(file) {
+  const fs = require("fs");
+  return fs.readFile(file, (err, data) => {
+    if (err) console.log(err);
+    console.log('dadadada', data.toString());
+  });
+};
+
+
+function runNpmShow(dep) {
+  const npmRun = require('npm-run');
+  const result = {};
+  return new Promise((resolve) => {
+    npmRun.exec(`npm show ${dep} dist-tags`, (err, stdout) => {
+      if (!err) {
+        const parsed = stdout.match(/latest: '(.*?)'/i);
+
+        if (!parsed || undefined === parsed[1]) {
+          console.error(`Could not obtain the latest version for: ${dep}. Skip.`);
+        } else {
+          result[dep] = `^${parsed[1]}`;
+
+          console.log(`Processed: ${dep}, latest version: ${parsed[1]}`);
+        }
+      } else {
+        console.error(`Could not fetch version info for: ${dep}. Skip.`);
+      }
+
+      resolve();
+    });
+  });
+}
+
+
 
 // Handles any requests that don't match the ones above
 // app.get('*', (req, res) => {

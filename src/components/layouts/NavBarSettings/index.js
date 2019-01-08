@@ -15,6 +15,7 @@ const mapStateToProps = state => {
     actionTypes: state.serviceSettingsServiceReducer.actionTypes,
     allModals: state.modalServiceReducer.allModals,
     currentModal: state.modalServiceReducer.currentModal,
+    appSettings: state.appSettingsServiceReducer.settings,
   }
 }
 

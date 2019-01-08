@@ -6,6 +6,7 @@ export const initialState = () => ({
   tree: model,
   code: '',
   file: '',
+  generateApp: false,
 });
 
 export default (state = initialState(), action) => {
@@ -29,6 +30,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         file: action.file
+      };
+    case actionTypes.SET_GENERATE_APP:
+      return {
+        ...state,
+        generateApp: action.generateApp
       };
     default:
       return state;
