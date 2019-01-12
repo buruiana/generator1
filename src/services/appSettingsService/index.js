@@ -10,7 +10,7 @@ import {
 export function* watchSetAppSettings() {
   const appSettings = (yield select()).appSettingsServiceReducer;
   const flatSettings = flatten(appSettings.settings);
-  console.log('console: appSettingsappSettings', appSettings);
+
   let filtered = [];
   Object.keys(flatSettings).forEach(key => {
     if (key === 'destination') filtered.push(flatSettings[key])
@@ -19,7 +19,6 @@ export function* watchSetAppSettings() {
 
   const code = yield call(generateAppBE, filtered);
   yield put(setAppCode(appSettings.code + '\n\n' + code));
-  console.log('console: generateAppBE', code, appSettings.code);
 }
 
 const flatten = object => {

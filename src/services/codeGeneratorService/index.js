@@ -10,7 +10,7 @@ import {
   SET_SMART_SETTINGS
 } from '../componentSettingsService/actionTypes';
 import {
-  SET_PROJECT_SETTINGS_JSON_FORM
+  SET_PROJECT_SETTINGS_JSON_FORM,
 } from '../projectSettingsService/actionTypes';
 import {
   setActionTypesCode,
@@ -20,6 +20,7 @@ import {
   setHocCode,
   setSmartCode,
   setJsonFormSchemaCode,
+  setJsonFormUISchemaCode,
 } from './actions';
 import {
   generateActionTypesCode,
@@ -40,8 +41,11 @@ import {
   generateSmartCode,
 } from '../codeGeneratorService/helpers/smart';
 import {
-  generateJsonFormCode,
-} from '../codeGeneratorService/helpers/jsonForm';
+  generateJsonSchemaCode,
+} from './helpers/jsonSchema';
+import {
+  generateJsonUISchemaCode,
+} from './helpers/jsonUISchema';
 import {
   setAceTab,
 } from '../aceTabsService/actions';
@@ -109,9 +113,13 @@ export function* watchSetSmartSettings() {
 
 export function* watchSetJsonForm() {
   const { jsonForm } = (yield select()).projectSettingsServiceReducer;
-  const jsonFormSchemaCode = generateJsonFormCode({ jsonForm });
-  const code = yield call(getPrettyCode, jsonFormSchemaCode);
-  yield put(setJsonFormSchemaCode(code));
+  const jsonFormSchemaCode = generateJsonSchemaCode({ jsonForm });
+  const jsonFormUISchemaCode = generateJsonUISchemaCode({ jsonForm });
+  const schemaCode = yield call(getPrettyCode, jsonFormSchemaCode);
+  const uiSchemaCode = yield call(getPrettyCode, jsonFormUISchemaCode);
+  yield put(setJsonFormSchemaCode(schemaCode));
+  yield put(setJsonFormUISchemaCode(uiSchemaCode));
+  yield put(setAceTab(ACE_TABS.JSONFORMSCHEMA));
 }
 
 export default function* rootSaga() {

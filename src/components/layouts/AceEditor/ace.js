@@ -10,7 +10,7 @@ import {
 } from '../../../utils/constants';
 
 const onChange = newValue => {
-  console.log('change', newValue);
+  console.log('change1', newValue);
 }
 
 const Ace = props => {

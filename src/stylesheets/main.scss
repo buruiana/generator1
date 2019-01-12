@@ -81,9 +81,11 @@
 }
 
 .redButton {
-  background-color: white;
+  background-color: burlywood;
   border: 0px;
 }
+
+*:focus {outline:none}
 
 .modalDefault {
   height: 80% !important;

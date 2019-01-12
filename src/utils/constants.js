@@ -15,5 +15,7 @@ export const ACE_TABS = {
   INDEX: 'index',
   REDUCER: 'reducer',
   ACTIONS: 'actions',
-  ACTION_TYPES: 'actionTypes'
+  ACTION_TYPES: 'actionTypes',
+  JSONFORMSCHEMA: 'schema',
+  UIJSONFORMSCHEMA: 'uiSchema'
 };

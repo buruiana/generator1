@@ -1,7 +1,8 @@
 import JsonFormUISettingsForm from './jsonFormUISettingsForm';
 import { connect } from "react-redux";
 import {
-  setProjectJsonForm
+  setProjectJsonForm,
+  setProjectJsonFormUI,
 } from '../../../services/projectSettingsService/actions';
 import {
   setAllModals,

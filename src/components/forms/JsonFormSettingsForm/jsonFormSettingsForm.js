@@ -52,10 +52,11 @@ const JsonFormSettingsForm = props => {
       getNodeKey: ({ treeIndex }) => treeIndex,
       ignoreCollapsed: false,
     });
-
+    console.log('console: flatData', flatData);
     return flatData.find(el => {
       const isPrimitive = (el.node.subtitle === 'String' || el.node.subtitle === 'Integer' || el.node.subtitle === 'Boolean' || el.node.subtitle === 'Number');
-      return (isPrimitive && !isEmpty(el.node.children));
+
+      return ((isPrimitive && !isEmpty(el.node.children)) || jsonForm.length > 1);
     });
   };
 

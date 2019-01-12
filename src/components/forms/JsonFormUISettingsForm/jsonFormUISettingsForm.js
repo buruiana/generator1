@@ -1,5 +1,6 @@
 import React from 'react';
-import SortableTree, { changeNodeAtPath, getNodeAtPath } from 'react-sortable-tree';
+import SortableTree, { changeNodeAtPath } from 'react-sortable-tree';
+import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import Form from "react-jsonschema-form";
@@ -19,30 +20,21 @@ const JsonFormUISettingsForm = props => {
   const html5InputTypesEnum = ['text', 'password', 'submit', 'reset', 'radio', 'checkbox', 'button', 'color', 'date', 'datetime-local', 'email', 'month', 'number', 'range', 'search', 'tel', 'time', 'url', 'week'];
 
   const { node, path } = props.nodePath;
-
   const getTypeEnum = () => {
-    switch (props.nodePath.node.subtitle) {
-      case 'String':
+    switch (props.nodePath.node.type) {
+      case 'string':
         return stringWidgetEnum;
-      case 'Boolean':
+      case 'boolean':
         return booleanWidgetEnum;
-      case 'Integer':
-      case 'Number':
+      case 'integer':
+      case 'number':
         return integerWidgetEnum;
       default:
         return '';
     }
   };
 
-  const getJsonFormUI = () => {
-    return getNodeAtPath({
-      treeData: props.jsonForm,
-      path,
-      getNodeKey
-    });
-  };
-
-  const currentUiSchema = get(getJsonFormUI(), 'node.uiSchema', {});
+  const currentUiSchema = node.uiSchema;
   const schema = {
     type: 'object',
     properties: {
@@ -50,19 +42,48 @@ const JsonFormUISettingsForm = props => {
         type: 'object',
         title: 'ui:widget',
         properties: {
-          widget: { type: 'string', title: 'ui:widget', enum: getTypeEnum(), default: get(currentUiSchema.uiWidget, 'widget', '') },
-          uiHidden: { type: 'boolean', title: 'hidden', default: get(currentUiSchema.uiWidget, 'uiHidden', false) },
+          widget: {
+            type: 'string',
+            title: 'ui:widget',
+            enum: getTypeEnum(),
+            default: get(currentUiSchema, 'uiWidget.widget', ''),
+          },
+          uiHidden: {
+            type: 'boolean', title: 'hidden',
+            default: get(currentUiSchema, 'uiWidget.uiHidden', false),
+          },
         },
       },
       uiOptions: {
         type: 'object',
         title: 'ui:options',
         properties: {
-          label: { type: 'boolean', title: 'hasLabel', default: get(currentUiSchema, 'uiOptions.label', true) },
-          classNames: { type: 'string', title: 'classNames', default: get(currentUiSchema, 'uiOptions.classNames', '') },
-          inputType: { type: 'string', title: 'inputType', enum: html5InputTypesEnum, default: get(currentUiSchema, 'uiOptions.inputType', '') },
-          backgroundColor: { type: 'string', title: 'backgroundColor', default: get(currentUiSchema, 'uiOptions.backgroundColor', '') },
-          rows: { type: 'integer', title: 'rows', default: get(currentUiSchema, 'uiOptions.rows', 10) },
+          label: {
+            type: 'boolean',
+            title: 'hasLabel',
+            default: get(currentUiSchema, 'uiOptions.label', true),
+          },
+          classNames: {
+            type: 'string',
+            title: 'classNames',
+            default: get(currentUiSchema, 'uiOptions.classNames', ''),
+          },
+          inputType: {
+            type: 'string',
+            title: 'inputType',
+            enum: html5InputTypesEnum,
+            default: get(currentUiSchema, 'uiOptions.inputType', 'text'),
+          },
+          backgroundColor: {
+            type: 'string',
+            title: 'backgroundColor',
+            default: get(currentUiSchema, 'uiOptions.backgroundColor', ''),
+          },
+          rows: {
+            type: 'integer',
+            title: 'rows',
+            default: get(currentUiSchema, 'uiOptions.rows', 10),
+          },
         },
       },
       uiMore: {
@@ -138,16 +159,16 @@ const JsonFormUISettingsForm = props => {
     },
   };
 
-  if (props.nodePath.node.type === 'string') {
+  if (node.type === 'string') {
     stringWidgetEnum.push('file');
   }
-  if (props.nodePath.node.type === 'object') {
+  if (node.type === 'object') {
     schema.properties.uiOptions.properties = {
       ...schema.properties.uiOptions.properties,
       expandable: { type: 'boolean', title: 'expandable' },
     };
   }
-  if (props.nodePath.node.type === 'array') {
+  if (node.type === 'array') {
     schema.properties.uiOptions.properties = {
       ...schema.properties.uiOptions.properties,
       orderable: { type: 'boolean', title: 'orderable' },
@@ -158,7 +179,7 @@ const JsonFormUISettingsForm = props => {
 
 
   const onChange = data => {
-    console.log('JsonFormUISettingsForm changed');
+    console.log('JsonFormUISettingsForm changed', data);
   };
 
   const onSubmit = data => {
@@ -201,10 +222,18 @@ const JsonFormUISettingsForm = props => {
   };
 
   const getButtonClass = path => {
-    if (isEqual(path, props.nodePath.path)) {
-      return 'redButton';
-    }
-    return '';
+    return (isEqual(path, props.nodePath.path))
+      ? 'redButton'
+      : '';
+  };
+
+  const getButton = (node, path) => {
+    if (node.type === 'object' || node.type === 'array') return [];
+    return (
+      [
+        <button onClick={() => setForm(JSON_FORM_UI_SETTINGS, node, path)} className={getButtonClass(path)}>edit</button>
+      ]
+    );
   };
 
   const log = (type) => console.log.bind(console, type);
@@ -224,9 +253,7 @@ const JsonFormUISettingsForm = props => {
           shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
           getNodeKey={getNodeKey}
           generateNodeProps={({ node, path }) => ({
-            buttons: [
-              <button onClick={() => setForm(JSON_FORM_UI_SETTINGS, node, path)} className={getButtonClass(path)}>edit</button>
-            ]
+            buttons: getButton(node, path)
           })}
         />
       </div>

@@ -45,7 +45,7 @@ export const setJsonFormSchemaCode = schema => ({
   schema
 });
 
-export const setJsonFormUISchemaCode = schema => ({
+export const setJsonFormUISchemaCode = uiSchema => ({
   type: actionTypes.SET_JSON_FORM_UISCHEMA_CODE,
   uiSchema
 });

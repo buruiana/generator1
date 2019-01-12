@@ -1,10 +1,9 @@
 import isEmpty from 'lodash/isEmpty';
-import findIndex from 'lodash/findIndex';
 import {
   getFlatDataFromTree,
 } from 'react-sortable-tree';
 
-export const generateJsonFormCode = props => {
+export const generateJsonSchemaCode = props => {
   const { jsonForm } = props;
   let code = '';
 

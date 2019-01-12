@@ -12,7 +12,6 @@ import {
 
 
 export const generateSmartCode = props => {
-  console.log('console: props', props);
   let code = '';
   const constList = getConstList(props.tree);
   const importsList = getImportList(props.tree);

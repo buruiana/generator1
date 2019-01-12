@@ -149,13 +149,12 @@ const JsonFormInfoForm = props => {
     };
   }
 
-
-  console.log('console: schemaschema', schema);
   const onSubmit = data => {
     const { title, description, defaultValue, enumVal, enumNames, isRequired, format, uniqueItems, minItems, maxItems, multipleOf, minimum, maximum, minLength, maxLength } = data.formData;
 
     const newNode = { ...node };
     newNode.title = title;
+    newNode.uiSchema = {};
     newNode.description = description;
     newNode.defaultValue = defaultValue;
     newNode.enumVal = enumVal;
