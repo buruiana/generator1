@@ -6,6 +6,8 @@ const mapStateToProps = state => {
   return {
     tree: state.appSettingsServiceReducer.tree,
     file: state.appSettingsServiceReducer.file,
+    code: state.appSettingsServiceReducer.code,
+    codeDone: state.appSettingsServiceReducer.codeDone,
   }
 }
 

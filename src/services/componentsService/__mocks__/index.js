@@ -4352,6 +4352,121 @@ export const mock = {
     {
       children: [],
       closeTag: false,
+      componentImport: 'react-jsonschema-form',
+      componentProps: [
+        {
+          description: 'Form id',
+          name: 'id',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'className',
+          name: 'className',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Form name',
+          name: 'name',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'method="post"',
+          name: 'method',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'target="_blank"',
+          name: 'target',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'action="/users/list"',
+          name: 'action',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'autocomplete="off"',
+          name: 'autocomplete',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'enctype="multipart/form-data"',
+          name: 'enctype',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'acceptcharset="ISO-8859-1"',
+          name: 'acceptcharset',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'schema',
+          name: 'schema',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'onSubmit',
+          name: 'onSubmit',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'onBlur',
+          name: 'onBlur',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'onFocus',
+          name: 'onFocus',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'onError',
+          name: 'onError',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'formData',
+          name: 'formData',
+          propType: 'PropTypes.array',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'ref={(form) => {yourForm = form;}}',
+          name: 'ref',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'disabled',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'react-jsonschema-form is meant to automatically generate a React form based on a JSON Schema. It is a major component in the kinto-admin project. If you want to generate a form for any data, sight unseen, simply given a JSON schema, react-jsonschema-form may be for you. If you have a priori knowledge of your data and want a toolkit for generating forms for it, you might look elsewhere.\n\nreact-jsonschema-form validates that the data conforms to the given schema, but doesn\'t prevent the user from inputing data that doesn\'t fit (for example, stripping non-numbers from a number field, or adding values to an array that is already "full").\n\n<Form\n  id="edit-form"\n  className="form form-wide"\n  name="awesomeForm"\n  method="post"\n  target="_blank"\n  action="/users/list"\n  autocomplete="off"\n  enctype="multipart/form-data"\n  acceptcharset="ISO-8859-1"\n  schema={} />',
+      id: 'dlJls0V3K562K2K7H8tj',
+      isDefault: true,
+      provider: 'Jsonschema-form',
+      techno: 'React',
+      title: 'Form'
+    },
+    {
+      children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ModalBody',
       componentProps: [
         {

@@ -13,7 +13,7 @@
     "url": ""
   },
   "scripts": {
-    "backend": "node ./server.js",
+    "backend": "nodemon ./server.js",
     "start": "webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 8080",
     "build-dev": "webpack --config webpack.dev.config.js",
     "build-prod": "webpack -p --config webpack.prod.config.js",
@@ -37,9 +37,10 @@
     "express": "^4.16.4",
     "file-system": "^2.2.2",
     "firebase": "^5.4.2",
+    "http": "0.0.0",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.11",
-    "mustache": "^3.0.0",
+    "nodemon": "^1.18.9",
     "npm-run": "^5.0.1",
     "prettier": "^1.15.3",
     "react": "^15.4.2",
@@ -58,7 +59,8 @@
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.14.3",
     "redux-saga-firebase": "^0.14.1",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",

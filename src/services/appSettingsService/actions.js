@@ -21,6 +21,14 @@ export const setAppCode = code => {
   };
 }
 
+export const setAppCodeDone = codeDone => {
+  console.log('console: codeDonecodeDone', codeDone);
+  return {
+    type: actionTypes.SET_APP_CODE_DONE,
+    codeDone: true,
+  };
+}
+
 export const setAppFile = file => {
   return {
     type: actionTypes.SET_APP_FILE,

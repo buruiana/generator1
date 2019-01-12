@@ -7,6 +7,7 @@ import has from 'lodash/has';
 import sortBy from 'lodash/sortBy';
 import 'react-sortable-tree/style.css';
 import Alert from 'react-bootstrap/lib/Alert';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import renderModal from '../../modals';
 import Ace from '../AceEditor';
 import AppStructureView from '../AppStructure';
@@ -96,15 +97,23 @@ const EditorView = props => {
       : null;
   };
 
-  const createMarkup = () => {
-    return { __html: props.projectError };
-  }
+  // const createMarkup = () => {
+  //   return { __html: props.projectError };
+  // }
 
   const renderError = () => {
+    const shortErr = props.projectError.slice(
+      props.projectError.indexOf('<pre>') + 5,
+      props.projectError.indexOf('<br>')
+    );
+
     if (props.projectError) {
       return (
         <Alert bsStyle="danger">
-          <div dangerouslySetInnerHTML={createMarkup()} />
+          <div>
+            <span><Glyphicon glyph="exclamation-sign" />&nbsp;</span>
+            {shortErr}
+          </div>
         </Alert>
       );
     }

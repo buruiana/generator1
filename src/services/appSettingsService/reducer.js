@@ -7,6 +7,7 @@ export const initialState = () => ({
   code: '',
   file: '',
   generateApp: false,
+  codeDone: false,
 });
 
 export default (state = initialState(), action) => {
@@ -25,6 +26,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         code: action.code
+      };
+    case actionTypes.SET_APP_CODE_DONE:
+      return {
+        ...state,
+        codeDone: action.codeDone
       };
     case actionTypes.SET_APP_FILE:
       return {

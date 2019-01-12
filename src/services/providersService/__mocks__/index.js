@@ -15,6 +15,13 @@ export const mock = {
       providerUrl: ''
     },
     {
+      id: 'pOSUeTSB0BzO9b4qzT4M',
+      name: 'Jsonschema-form',
+      path: 'react-jsonschema-form',
+      projectTechno: 'React',
+      providerUrl: 'https://github.com/mozilla-services/react-jsonschema-form'
+    },
+    {
       id: 'tdcwhGptX0R31Q6YwWoF',
       name: 'ReactNative',
       path: 'react-native',

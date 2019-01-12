@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { put } from "redux-saga/effects";
+import isEmpty from 'lodash/isEmpty';
 import { setProjectError } from '../services/projectSettingsService/actions';
 
 export const boxArray = obj => {
@@ -8,18 +9,20 @@ export const boxArray = obj => {
     : obj;
 };
 
-const prettify = code => {
-  return axios.post('http://localhost:5000/api/prettify', code);
+const prettify = (code, parser) => {
+  return axios.post('http://localhost:5000/api/prettify', code, parser);
 }
 
-export function* getPrettyCode(code) {
+export function* getPrettyCode(code, parser="babylon") {
   if (!code) return;
+  //if (isEmpty(parser)) parser = 'babylon';
   let prettyCode = '';
   try {
     yield put(setProjectError(''));
-    const res = yield prettify({ code });
+    const res = yield prettify({ code, parser });
     prettyCode = res.data;
   } catch (err) {
+    console.log('console: err', err);
     prettyCode = JSON.parse(err.config.data);
     prettyCode = prettyCode.code;
 
@@ -33,12 +36,12 @@ const generateApp = appSettings => {
 }
 
 export function* generateAppBE(appSettings) {
-  console.log('console: appSettingsappSettings', appSettings);
   if (!appSettings) return;
   let result = '';
   try {
     const res = yield generateApp({ appSettings });
-    result = res.data;
+    console.log('console: res', res);
+    //result = res.data;
     console.log('console: result', result);
   } catch (err) {
     console.log('console: err', err);

@@ -5,19 +5,28 @@ import { changeNodeAtPath } from 'react-sortable-tree';
 const JsonFormInfoForm = props => {
   const { jsonForm } = props;
   const fieldsTypeEnum = ['boolean', 'string', 'integer', 'number', 'object', 'array'];
-  const stringFormatWidgetEnum = ['any', 'email', 'uri', 'data-url', 'date', 'date-time'];
+  const stringFormatWidgetEnum = ['default', 'email', 'uri', 'data-url', 'date', 'date-time'];
 
   const getNodeKey = ({ treeIndex }) => treeIndex;
   const { node, path } = props.nodePath;
 
   const getUIOrder = () => {
     if (node.subtitle === 'String') {
-      return ['title', 'format', 'enumVal', 'enumNames', 'defaultValue', 'isRequired'];
+      return ['title', 'description', 'defaultValue', 'format', 'minLength', 'maxLength', 'enumVal', 'enumNames',  'isRequired'];
+    }
+    if (node.subtitle === 'Number') {
+      return ['title', 'description', 'defaultValue', 'minimum', 'maximum', 'enumVal', 'enumNames', 'isRequired'];
+    }
+    if (node.subtitle === 'Integer') {
+      return ['title', 'description', 'defaultValue', 'minimum', 'maximum', 'multipleOf', 'enumVal', 'enumNames', 'isRequired'];
     }
     if (node.subtitle === 'Array') {
-      return ['title', 'enumVal', 'enumNames', 'defaultValue', 'isRequired', 'uniqueItems'];
+      return ['title', 'description', 'defaultValue', 'minItems', 'maxItems', 'enumVal', 'enumNames', 'uniqueItems', 'isRequired'];
     }
-    return ['title', 'enumVal', 'enumNames', 'defaultValue', 'isRequired'];
+    if (node.subtitle === 'Object') {
+      return ['title', 'description', 'defaultValue', 'isRequired'];
+    }
+    return ['title', 'description', 'defaultValue', 'enumVal', 'enumNames', 'isRequired'];
   };
 
   const schema = {
@@ -26,74 +35,24 @@ const JsonFormInfoForm = props => {
     properties: {
       title: {
         type: 'string',
-        title: 'Name',
+        title: 'title',
         default: ''
       },
-      // description: {
-      //   type: 'string',
-      //   title: 'description',
-      //   default: ''
-      // },
-      enumVal: {
+      description: {
         type: 'string',
-        title: 'Enum',
-        default: '',
-      },
-      enumNames: {
-        type: 'string',
-        title: 'EnumNames',
-        default: '',
+        title: 'description',
+        default: ''
       },
       defaultValue: {
         type: 'string',
-        title: 'Default',
+        title: 'default',
         default: ''
       },
-      // maxItems: {
-      //   type: 'string',
-      //   title: 'maxItems',
-      //   default: ''
-      // },
-      // minItems: {
-      //   type: 'string',
-      //   title: 'minItems',
-      //   default: ''
-      // },
-      // maxLength: {
-      //   type: 'string',
-      //   title: 'maxLength',
-      //   default: ''
-      // },
-      // minLength: {
-      //   type: 'string',
-      //   title: 'minLength',
-      //   default: ''
-      // },
-      // minimum: {
-      //   type: 'string',
-      //   title: 'Minimum',
-      //   default: ''
-      // },
-      // maximum: {
-      //   type: 'string',
-      //   title: 'Maximum',
-      //   default: ''
-      // },
-      // multipleOf: {
-      //   type: 'string',
-      //   title: 'multipleOf',
-      //   default: ''
-      // },
       isRequired: {
         type: 'boolean',
         title: 'isRequired',
         default: false
       },
-      // uniqueItems: {
-      //   type: 'boolean',
-      //   title: 'uniqueItems',
-      //   default: false
-      // },
     },
   };
   const uiSchema = {
@@ -111,7 +70,44 @@ const JsonFormInfoForm = props => {
         type: 'string',
         title: 'Format',
         enum: stringFormatWidgetEnum,
-        default: '',
+        default: 'default',
+      },
+      minLength: {
+        type: 'string',
+        title: 'minLength',
+        default: ''
+      },
+      maxLength: {
+        type: 'string',
+        title: 'maxLength',
+        default: ''
+      },
+    };
+  }
+
+  if (node.subtitle === 'Number' || node.subtitle === 'Integer') {
+    schema.properties = {
+      ...schema.properties,
+      minimum: {
+        type: 'string',
+        title: 'Minimum',
+        default: ''
+      },
+      maximum: {
+        type: 'string',
+        title: 'Maximum',
+        default: ''
+      },
+    };
+  }
+
+  if (node.subtitle === 'Integer') {
+    schema.properties = {
+      ...schema.properties,
+      multipleOf: {
+        type: 'string',
+        title: 'multipleOf',
+        default: ''
       },
     };
   }
@@ -119,6 +115,16 @@ const JsonFormInfoForm = props => {
   if (node.subtitle === 'Array') {
     schema.properties = {
       ...schema.properties,
+      minItems: {
+        type: 'string',
+        title: 'minItems',
+        default: ''
+      },
+      maxItems: {
+        type: 'string',
+        title: 'maxItems',
+        default: ''
+      },
       uniqueItems: {
         type: 'boolean',
         title: 'uniqueItems',
@@ -127,11 +133,30 @@ const JsonFormInfoForm = props => {
     };
   }
 
+  if (node.subtitle !== 'Object') {
+    schema.properties = {
+      ...schema.properties,
+      enumVal: {
+        type: 'string',
+        title: 'Enum',
+        default: '',
+      },
+      enumNames: {
+        type: 'string',
+        title: 'EnumNames',
+        default: '',
+      },
+    };
+  }
+
+
+  console.log('console: schemaschema', schema);
   const onSubmit = data => {
-    const { title, defaultValue, enumVal, enumNames, isRequired, format, uniqueItems } = data.formData;
+    const { title, description, defaultValue, enumVal, enumNames, isRequired, format, uniqueItems, minItems, maxItems, multipleOf, minimum, maximum, minLength, maxLength } = data.formData;
 
     const newNode = { ...node };
     newNode.title = title;
+    newNode.description = description;
     newNode.defaultValue = defaultValue;
     newNode.enumVal = enumVal;
     newNode.enumNames = enumNames;
@@ -139,6 +164,14 @@ const JsonFormInfoForm = props => {
     newNode.format = format;
     newNode.type = node.subtitle.toLowerCase();
     newNode.uniqueItems = uniqueItems;
+
+    newNode.minItems = minItems;
+    newNode.maxItems = maxItems;
+    newNode.multipleOf = multipleOf;
+    newNode.minimum = minimum;
+    newNode.maximum = maximum;
+    newNode.minLength = minLength;
+    newNode.maxLength = maxLength;
 
     const newTree = changeNodeAtPath({
         treeData: jsonForm,

@@ -2,11 +2,8 @@ import React from 'react';
 import SortableTree, {
   removeNodeAtPath,
   getFlatDataFromTree,
-  walk,
-  changeNodeAtPath,
 } from 'react-sortable-tree';
 import isEmpty from 'lodash/isEmpty';
-import get from 'lodash/get';
 import {
   JSON_FORM_INFO,
 } from '../../modals/constants';
@@ -18,6 +15,10 @@ const treeData = [
   {
     title: '',
     subtitle: 'String',
+  },
+  {
+    title: '',
+    subtitle: 'Number',
   },
   {
     title: '',
@@ -53,48 +54,14 @@ const JsonFormSettingsForm = props => {
     });
 
     return flatData.find(el => {
-      const isPrimitive = (el.node.subtitle === 'String' || el.node.subtitle === 'Integer' || el.node.subtitle === 'Boolean');
+      const isPrimitive = (el.node.subtitle === 'String' || el.node.subtitle === 'Integer' || el.node.subtitle === 'Boolean' || el.node.subtitle === 'Number');
       return (isPrimitive && !isEmpty(el.node.children));
     });
   };
 
-  const prepareJsonForm = jsonForm => {
-    walk({
-      treeData: jsonForm,
-      getNodeKey: ({ treeIndex: number }) => number,
-      callback: rowInfo => {
-        let node = {
-          ...rowInfo.node,
-        };
-
-        const isPrimitive = (node.subtitle === 'String' || node.subtitle === 'Integer' || node.subtitle === 'Boolean');
-        const isObject = node.subtitle === 'Object';
-        const isArray = node.subtitle === 'Array';
-        const hasChildren = !isEmpty(get(node, 'children', []));
-
-        node.isPrimitive = isPrimitive;
-        node.isObject = isObject;
-        node.isArray = isArray;
-        node.hasChildren = hasChildren;
-        if (!hasChildren && !isPrimitive) node.children = [];
-
-        jsonForm = changeNodeAtPath({
-          treeData: jsonForm,
-          path: rowInfo.path,
-          newNode: node,
-          getNodeKey: ({ treeIndex }) => treeIndex,
-          ignoreCollapsed: false
-        });
-      },
-      ignoreCollapsed: false
-    });
-    return jsonForm;
-  };
-
   const onChange = treeData => {
     if (isEmpty(validateJsonForm(treeData))) {
-      const jsonForm = prepareJsonForm(treeData);
-      props.setProjectJsonForm(jsonForm);
+      props.setProjectJsonForm(treeData);
     }
   };
 
@@ -113,6 +80,10 @@ const JsonFormSettingsForm = props => {
     const newAllModals = [ ...props.allModals ];
     newAllModals.push(newEl);
     props.setAllModals(newAllModals);
+  };
+
+  const onChangeSchemaEditor = data => {
+    props.setProjectJsonForm(data);
   };
 
   const log = (type) => console.log.bind(console, type);

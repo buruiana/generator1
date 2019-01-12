@@ -1,5 +1,6 @@
 const express = require('express');
-const path = require('path');
+const http = require('http');
+const socketIO = require('socket.io')
 const bodyParser = require('body-parser');
 // const shell = require('shelljs');
 // shell.mkdir('A');
@@ -12,7 +13,6 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-
 // Serve the static files from the React app
 //app.use(express.static(path.join(__dirname, '../dist')));
 
@@ -21,6 +21,17 @@ app.use(cors())
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+const server = http.createServer(app)
+const io = socketIO(server);
+io.setMaxListeners(20);
+
+io.on('connection', socket => {
+  console.log('New client connected')
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected')
+  })
+})
 
 app.get('/api/getShell', (req, res) => {
   shell.mkdir('A');
@@ -36,44 +47,56 @@ app.get('/api/getShell', (req, res) => {
   });
 });
 
-app.get('/api/getList', (req, res) => {
-  var list = ["item1", "item2", "item3"];
-  res.json(list);
-  console.log('Sent list of items');
-});
-
 app.post('/api/prettify', (req, res) => {
   const prettier = require("prettier");
-
+  console.log('console: req.body', req.body);
   const opt = {
     useTabs: false,
     printWidth: 80,
     tabWidth: 2,
     semi: true,
     singleQuote: true,
-    trailingComma: "all",
     bracketSpacing: true,
     jsxBracketSameLine: true,
-    parser: "babylon",
-    trailingComma: "all"
+    parser: `${req.body.parser}`,
+    trailingComma: 'all'
   };
 
-  res.json(prettier.format(req.body.code));
+  res.json(prettier.format(req.body.code, opt));
 });
 
 app.post('/api/generateApp', (req, res) => {
-  console.log('console: body', req.body);
-
   const shell = require('shelljs');
   const settings = req.body.appSettings;
   console.log('console: settings', settings);
-  const dest = settings.shift();
+  const dest = '/Users/bienvenue/Documents/1'; //settings.shift();
   console.log('console: dest', dest);
 
   shell.mkdir(dest);
   shell.cd(dest);
-  const xxx = shell.exec('npm init -y', { silent: false });
-  console.log('console: xxxxxxxxxxx', xxx.output);
+  //const xxx = shell.exec('npm init -y', { silent: false }).output;
+  let idx = 0;
+  const child = shell.exec('npm init -y', { async: true });
+  child.stdout.on('data', function (data) {
+    io.emit('npm log', data);
+    //res.json(data);
+    //res.end();
+  }).then(
+    settings.map(el => {
+      const child = shell.exec(`npm show ${el} dist-tags`);
+      child.stdout.on('data', function (data) {
+        const parsed = data.match(/latest: '(.*?)'/i);
+        const str = `"${el}": "^${parsed[1]}"`
+        io.emit('npm log', str);
+        console.log('console: sssssss', idx, settings.length);
+        if (idx === settings.length-2) {
+          io.emit('npm done', 'true')
+        } else {
+          idx++;
+        }
+      });
+    })
+  );
 });
 
 app.get('/api/readGeneratedFiles', (req, res) => {
@@ -96,6 +119,7 @@ function readPasckageJson(file) {
 
 
 function runNpmShow(dep) {
+  console.log('console: 1111111', );
   const npmRun = require('npm-run');
   const result = {};
   return new Promise((resolve) => {
@@ -113,10 +137,14 @@ function runNpmShow(dep) {
       } else {
         console.error(`Could not fetch version info for: ${dep}. Skip.`);
       }
-
+      ccc += result;
+      console.log('console:2222222222 ', result);
       resolve();
     });
+    console.log('console: 333333333', result);
   });
+  console.log('console: 444444', result);
+  // return parsed;
 }
 
 
@@ -127,6 +155,6 @@ function runNpmShow(dep) {
 // });
 
 const port = process.env.PORT || 5000;
-app.listen(port);
+server.listen(port);
 
 console.log('App is listening on port ' + port);
