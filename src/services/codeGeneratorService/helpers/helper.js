@@ -57,7 +57,7 @@ export const getImportList = tree => {
   const sortedDefaultImports = sortBy(defaultImports, 'node.title');
 
   const nonDefaultImports = uniqBy(
-    flatData.filter(el => el.node.componentImport === '-'),
+    flatData.filter(el => (el.node.componentImport === '-' && el.node.provider !== 'HTML')),
     'node.title');
   const sortedNonDefaultImports = sortBy(nonDefaultImports, 'node.title');
   const groupSortedNonDefaultImports = groupBy(sortedNonDefaultImports, 'node.providerPath');

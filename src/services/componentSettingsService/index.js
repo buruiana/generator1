@@ -76,7 +76,7 @@ export function* watchTreeSet() {
     getNodeKey: ({ treeIndex }) => treeIndex,
     ignoreCollapsed: false,
   });
-  const hasJsonSchema = !isEmpty(flatData.filter(el => el.node.provider === 'Jsonschema-form'));
+  const hasJsonSchema = !isEmpty(flatData.find(el => el.node.provider === 'Jsonschema-form'));
   const { aceTabs } = (yield select()).aceTabsServiceReducer
 
   if (hasJsonSchema) {

@@ -27,6 +27,10 @@ export const generateSmartCode = props => {
   importsList.sortedDefaultImports.map(el => {
     code += `import ${el.node.title} from '${el.node.componentImport}';\n`;
   });
+  if (props.hasJsonSchema) {
+    code += `import schema from './schema';\n`;
+    code += `import uiSchema from './uiSchema';\n`;
+  }
 
   Object.keys(importsList.groupSortedNonDefaultImports).forEach(key => {
     code += `import {\n`;
