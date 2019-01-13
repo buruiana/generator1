@@ -13,7 +13,7 @@ export const generateJsonUISchemaCode = props => {
     ignoreCollapsed: false,
   });
 
-  if (!isEmpty(jsonForm) && jsonForm[0].title) code += `const uiSchema = {\n`;
+  if (!isEmpty(jsonForm) && jsonForm[0].title) code += `export default uiSchema = {\n`;
   const prepareJsonFormCode = jsonForm => {
     jsonForm.map(el => {
       if (el.title) {

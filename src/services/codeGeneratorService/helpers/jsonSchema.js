@@ -13,7 +13,7 @@ export const generateJsonSchemaCode = props => {
     ignoreCollapsed: false,
   });
 
-  if (!isEmpty(jsonForm) && jsonForm[0].title) code += `const schema = {\n`;
+  if (!isEmpty(jsonForm) && jsonForm[0].title) code += `export default schema = {\n`;
 
   const prepareJsonFormCode = jsonForm => {
     jsonForm.map(el => {
