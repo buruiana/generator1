@@ -13,7 +13,7 @@ export const generateJsonUISchemaCode = props => {
     ignoreCollapsed: false,
   });
 
-  code += `const uiSchema = {\n`;
+  if (!isEmpty(jsonForm) && jsonForm[0].title) code += `const uiSchema = {\n`;
   const prepareJsonFormCode = jsonForm => {
     jsonForm.map(el => {
       if (el.title) {
@@ -41,28 +41,50 @@ export const generateJsonUISchemaCode = props => {
           code += `properties: {\n`;
         }
 
-        if (!isEmpty(el.children)) prepareJsonFormCode(el.children);
-
-
 
         console.log('console: el', el);
         console.log('console: parent', parent);
         console.log('console: isLastChild', isLastChild);
-        // if (!isEmpty(parent) && (parent.type === 'array' || parent.type === 'object') && el.title) code += `}o,\n`;
-        // if (isEmpty(el.children)) code += `}a,\n`; // properties
 
-        // if (!isEmpty(parent)) code += `}b,\n`;
-        // if (el.type === 'object' && (isLastChild || isEmpty(el.children))) code += `}c,\n`;
-        // if (isEmpty(parent)) code += `}d;\n`;
+        if (!isEmpty(el.children)) prepareJsonFormCode(el.children);
 
-        if (el.type === 'array' || el.type === 'object') code += `},\n`; // properties
-        if (el.type === 'array' || el.type === 'object') code += `},\n`; // object
+        if (
+          (!isEmpty(parent) && (parent.type === 'array' || parent.type === 'object') && !isLastChild && !isEmpty(parent.children))
+          || (isEmpty(parent) && !isEmpty(el.children))
+          || ((!isEmpty(parent) && !isLastChild) || (!isEmpty(parent) && isEmpty(el.children) && !isLastChild) && (parent.type !== 'array' || parent.type !== 'object'))
+        ) {
+          code += `},// close field\n`;
+        }
 
-        if (isLastChild) code += `};\n`;
-        code += `},\n`;
+
+        if (
+          (el.type === 'array' || el.type === 'object') && isLastChild //|| (!isEmpty(parent) && isEmpty(parent.children))
+        ) {
+          code += `}, //lastChild\n`;
+        }
+
+        if (
+          (isEmpty(parent)
+            && el.title === jsonForm[0].title) ||
+          (!isEmpty(parent) &&
+            isLastChild &&
+            (el.type === 'array' || el.type === 'object')
+          )
+        ) {
+          code += `}, // close props\n`;
+        }
+
+        if (
+          isEmpty(parent) &&
+          (el.type === 'array' || el.type === 'object') //&& !isEmpty(el.children)
+        ) {
+          code += `}, //closeobj\n`;
+        }
+
+        if (isEmpty(parent)) code += `}; // close const\n`;
       };
     });
-    code += `};\n`;
+
     return code;
   };
 
