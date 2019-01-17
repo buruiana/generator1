@@ -7,9 +7,11 @@ import { setConfigsIsOffline } from '../../../services/configsService/actions';
 import { setAppCode, setAppCodeDone } from '../../../services/appSettingsService/actions';
 
 const mapStateToProps = state => {
+  console.log('console: state', state);
   return {
     components: state.componentsServiceReducer.components,
     code: state.appSettingsServiceReducer.code,
+    codeDone: state.appSettingsServiceReducer.codeDone,
   }
 }
 

@@ -5,17 +5,22 @@ import socketIOClient from 'socket.io-client';
 import "../../../stylesheets/main.scss";
 import NavBar from '../../../nav';
 
+const socket = socketIOClient('http://localhost:5000');
+
 const App = props => {
   if (!navigator.onLine) props.setConfigsIsOffline(true);
 
-  const socket = socketIOClient('http://localhost:5000');
-  socket.on('npm log', log => {
-    props.setAppCode(props.code + '\n\n' + log);
-  });
+  if (!props.codeDone) {
+    socket.on('npm_log', log => {
+      console.log('console: log-----------------', log);
+      props.setAppCode((props.code + '\n\n' + log));
+    });
 
-  socket.on('npm done', () => {
-    props.setAppCodeDone(true);
-  });
+    socket.on('npm_done', () => {
+      console.log('console: log done------------');
+      props.setAppCodeDone(true);
+    });
+  }
 
   if (isEmpty(props.components)) props.initApp();
   return (

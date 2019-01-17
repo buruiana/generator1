@@ -8,6 +8,13 @@ const AppSettingsForm = props => {
     type: 'object',
     properties: {
       destination: { type: 'string', title: 'Destination Path' },
+      techno: {
+        type: 'object',
+        properties: {
+          react: { type: 'boolean', title: 'react' },
+          'react-dom': { type: 'boolean', title: 'react-dom' },
+        },
+      },
       state: {
         type: 'object',
         properties: {
@@ -18,7 +25,10 @@ const AppSettingsForm = props => {
       navigation: {
         type: 'object',
         properties: {
-          'React-Router': { type: 'boolean', title: 'React-Router' },
+          'react-router': { type: 'boolean', title: 'react-router' },
+          'react-router-dom': { type: 'boolean', title: 'react-router-dom' },
+          'react-router-native': { type: 'boolean', title: 'react-router-native' },
+          'react-mini-router': { type: 'boolean', title: 'react-mini-router' },
         },
       },
       async: {
@@ -32,7 +42,7 @@ const AppSettingsForm = props => {
         type: 'object',
         properties: {
           'webpack': { type: 'boolean', title: 'webpack' },
-          'parcel': { type: 'boolean', title: 'parcel' },
+          'parcel-bundler': { type: 'boolean', title: 'parcel-bundler' },
         },
       },
       int: {

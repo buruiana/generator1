@@ -40,9 +40,7 @@ export function* generateAppBE(appSettings) {
   let result = '';
   try {
     const res = yield generateApp({ appSettings });
-    console.log('console: res', res);
-    //result = res.data;
-    console.log('console: result', result);
+
   } catch (err) {
     console.log('console: err', err);
     // prettyCode = JSON.parse(err.config.data);

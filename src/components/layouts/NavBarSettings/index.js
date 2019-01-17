@@ -23,7 +23,6 @@ const mapDispatchToProps = dispatch => {
   return {
     setAllModals: allModals => dispatch(setAllModals(allModals)),
     setCurrentModal: currentModal => dispatch(setCurrentModal(currentModal)),
-    setAppCode: code => dispatch(setAppCode(code)),
   };
 }
 

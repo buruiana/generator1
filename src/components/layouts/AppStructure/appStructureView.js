@@ -11,7 +11,6 @@ import {
 } from '../../../services/appSettingsService/code';
 
 const AppStructureView = props => {
-
   const onChange = tree => props.setAppTree(tree);
   const onClickFile = rowInfo => {
     // if (isEmpty(rowInfo.node.children)) {

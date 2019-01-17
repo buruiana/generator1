@@ -42,11 +42,28 @@ export const generateJsonUISchemaCode = props => {
         }
 
 
-        console.log('console: el', el);
-        console.log('console: parent', parent);
-        console.log('console: isLastChild', isLastChild);
-
         if (!isEmpty(el.children)) prepareJsonFormCode(el.children);
+
+        if (!isEmpty(uiSchema.uiMore.uiDisabled)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiMore.uiEnumDisabled)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiMore.uiInline)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiMore.uiReadonly)) code += `minimum: ${el.minimum},\n`;
+
+
+        if (!isEmpty(uiSchema.uiOptions.backgroundColor)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiOptions.classNames)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiOptions.inputType)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiOptions.label)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiOptions.rows)) code += `minimum: ${el.minimum},\n`;
+
+        if (!isEmpty(uiSchema.uiOthers.uiAutofocus)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiOthers.uiDescription)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiOthers.uiHelp)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiOthers.uiPlaceholder)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiOthers.uiTitle)) code += `minimum: ${el.minimum},\n`;
+
+        if (!isEmpty(uiSchema.uiWidget.uiHidden)) code += `minimum: ${el.minimum},\n`;
+        if (!isEmpty(uiSchema.uiWidget.widget)) code += `"ui:widget": ${el.minimum},\n`;
 
         if (
           (!isEmpty(parent) && (parent.type === 'array' || parent.type === 'object') && !isLastChild && !isEmpty(parent.children))

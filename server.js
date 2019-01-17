@@ -65,6 +65,16 @@ app.post('/api/prettify', (req, res) => {
   res.json(prettier.format(req.body.code, opt));
 });
 
+function execWrapper(command, options) {
+  return new Promise((resolve, reject) => {
+    const shell = require('shelljs');
+    shell.exec(command, options, (error, out, err) => {
+      if (error) return reject(error);
+      resolve({ out: out, err: err });
+    })
+  })
+}
+
 app.post('/api/generateApp', (req, res) => {
   const shell = require('shelljs');
   const settings = req.body.appSettings;
@@ -74,29 +84,38 @@ app.post('/api/generateApp', (req, res) => {
 
   shell.mkdir(dest);
   shell.cd(dest);
-  //const xxx = shell.exec('npm init -y', { silent: false }).output;
-  let idx = 0;
+  let arr = [];
   const child = shell.exec('npm init -y', { async: true });
   child.stdout.on('data', function (data) {
-    io.emit('npm log', data);
+    console.log('console: emit---------------', );
+    //io.emit('npm_log', data);
+    arr.push(data);
     //res.json(data);
-    //res.end();
-  }).then(
-    settings.map(el => {
-      const child = shell.exec(`npm show ${el} dist-tags`);
-      child.stdout.on('data', function (data) {
-        const parsed = data.match(/latest: '(.*?)'/i);
-        const str = `"${el}": "^${parsed[1]}"`
-        io.emit('npm log', str);
-        console.log('console: sssssss', idx, settings.length);
-        if (idx === settings.length-2) {
-          io.emit('npm done', 'true')
-        } else {
-          idx++;
-        }
-      });
-    })
-  );
+    res.end();
+  });
+
+  async function myAsyncFunction() {
+    const promises = settings.map((type) => execWrapper(`npm show ${type} dist-tags`));
+    let del_arr = Promise.all(promises);
+    const res = await del_arr;
+
+    let i = 0;
+    
+    res.map(e => {
+      const parsed = e.out.match(/latest: '(.*?)'/i);
+      const str = `"${settings[i]}": "^${parsed[1]}"`;
+      console.log('console: emit---------------');
+      //io.emit('npm_log', str);
+      
+      arr.push(str);
+      i++;
+    });
+    console.log('console: emit-done--------------', arr);
+    io.emit('npm_log', arr);
+    //io.emit('npm_done');
+  }
+
+  myAsyncFunction();
 });
 
 app.get('/api/readGeneratedFiles', (req, res) => {
@@ -116,38 +135,6 @@ function readPasckageJson(file) {
     console.log('dadadada', data.toString());
   });
 };
-
-
-function runNpmShow(dep) {
-  console.log('console: 1111111', );
-  const npmRun = require('npm-run');
-  const result = {};
-  return new Promise((resolve) => {
-    npmRun.exec(`npm show ${dep} dist-tags`, (err, stdout) => {
-      if (!err) {
-        const parsed = stdout.match(/latest: '(.*?)'/i);
-
-        if (!parsed || undefined === parsed[1]) {
-          console.error(`Could not obtain the latest version for: ${dep}. Skip.`);
-        } else {
-          result[dep] = `^${parsed[1]}`;
-
-          console.log(`Processed: ${dep}, latest version: ${parsed[1]}`);
-        }
-      } else {
-        console.error(`Could not fetch version info for: ${dep}. Skip.`);
-      }
-      ccc += result;
-      console.log('console:2222222222 ', result);
-      resolve();
-    });
-    console.log('console: 333333333', result);
-  });
-  console.log('console: 444444', result);
-  // return parsed;
-}
-
-
 
 // Handles any requests that don't match the ones above
 // app.get('*', (req, res) => {
