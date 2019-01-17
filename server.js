@@ -69,6 +69,7 @@ function execWrapper(command, options) {
   return new Promise((resolve, reject) => {
     const shell = require('shelljs');
     shell.exec(command, options, (error, out, err) => {
+
       if (error) return reject(error);
       resolve({ out: out, err: err });
     })
@@ -86,33 +87,32 @@ app.post('/api/generateApp', (req, res) => {
   shell.cd(dest);
   let arr = [];
   const child = shell.exec('npm init -y', { async: true });
+  io.sockets.emit('npm_log', 'Generating package.json...\n');
   child.stdout.on('data', function (data) {
-    console.log('console: emit---------------', );
-    //io.emit('npm_log', data);
-    arr.push(data);
+    //arr.push(data);
+    io.sockets.emit('npm_log', data);
     //res.json(data);
+    io.sockets.emit('npm_log', 'Installing dependencies...\n');
     res.end();
   });
 
   async function myAsyncFunction() {
+
     const promises = settings.map((type) => execWrapper(`npm show ${type} dist-tags`));
+
     let del_arr = Promise.all(promises);
     const res = await del_arr;
 
     let i = 0;
-    
+
     res.map(e => {
       const parsed = e.out.match(/latest: '(.*?)'/i);
       const str = `"${settings[i]}": "^${parsed[1]}"`;
-      console.log('console: emit---------------');
-      //io.emit('npm_log', str);
-      
       arr.push(str);
       i++;
     });
-    console.log('console: emit-done--------------', arr);
-    io.emit('npm_log', arr);
-    //io.emit('npm_done');
+    io.sockets.emit('npm_log', arr);
+    io.sockets.emit('npm_done');
   }
 
   myAsyncFunction();
