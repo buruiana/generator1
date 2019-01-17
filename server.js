@@ -33,19 +33,19 @@ io.on('connection', socket => {
   })
 })
 
-app.get('/api/getShell', (req, res) => {
-  shell.mkdir('A');
-  shell.touch('A/package.json');
-  shell.cd('A');
-  //shell.exec('npm init -y', { silent: false }).output;
+// app.get('/api/getShell', (req, res) => {
+//   shell.mkdir('A');
+//   shell.touch('A/package.json');
+//   shell.cd('A');
+//   //shell.exec('npm init -y', { silent: false }).output;
 
-  shell.exec('npm init -y', (code, stdout, stderr) => {
-    console.log('Exit code:', code);
-    console.log('Program output:', stdout);
-    console.log('Program stderr:', stderr);
-    res.json(stdout);
-  });
-});
+//   shell.exec('npm init -y', (code, stdout, stderr) => {
+//     console.log('Exit code:', code);
+//     console.log('Program output:', stdout);
+//     console.log('Program stderr:', stderr);
+//     res.json(stdout);
+//   });
+// });
 
 app.post('/api/prettify', (req, res) => {
   const prettier = require("prettier");
@@ -79,9 +79,7 @@ function execWrapper(command, options) {
 app.post('/api/generateApp', (req, res) => {
   const shell = require('shelljs');
   const settings = req.body.appSettings;
-  console.log('console: settings', settings);
   const dest = '/Users/bienvenue/Documents/1'; //settings.shift();
-  console.log('console: dest', dest);
 
   shell.mkdir(dest);
   shell.cd(dest);
@@ -118,23 +116,22 @@ app.post('/api/generateApp', (req, res) => {
   myAsyncFunction();
 });
 
-app.get('/api/readGeneratedFiles', (req, res) => {
-  console.log('console: aaaaaaaaaaaaa');
-  const dirTree = require("directory-tree");
-  const tree = dirTree("/Users/bienvenue/Documents/1");
-  console.log('console: treetreetree', JSON.stringify(tree));
-  const packageJsonContent = readPasckageJson('/Users/bienvenue/Documents/1/1.txt');
-  console.log('console: -----------', packageJsonContent);
-  res.json(JSON.stringify(tree));
-});
+// app.get('/api/readGeneratedFiles', (req, res) => {
 
-function readPasckageJson(file) {
-  const fs = require("fs");
-  return fs.readFile(file, (err, data) => {
-    if (err) console.log(err);
-    console.log('dadadada', data.toString());
-  });
-};
+//   const dirTree = require("directory-tree");
+//   const tree = dirTree("/Users/bienvenue/Documents/1");
+//   console.log('console: treetreetree', JSON.stringify(tree));
+//   const packageJsonContent = readPasckageJson('/Users/bienvenue/Documents/1/1.txt');
+//   res.json(JSON.stringify(tree));
+// });
+
+// function readPasckageJson(file) {
+//   const fs = require("fs");
+//   return fs.readFile(file, (err, data) => {
+//     if (err) console.log(err);
+//     console.log('dadadada', data.toString());
+//   });
+// };
 
 // Handles any requests that don't match the ones above
 // app.get('*', (req, res) => {
