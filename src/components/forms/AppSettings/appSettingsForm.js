@@ -80,6 +80,12 @@ const AppSettingsForm = props => {
           'react-jsonschema-form': { type: 'boolean', title: 'react-jsonschema-form' },
         },
       },
+      styles: {
+        type: 'object',
+        properties: {
+          'sass': { type: 'boolean', title: 'sass' },
+        },
+      },
     },
   };
 
