@@ -12,12 +12,10 @@ const App = props => {
 
   if (!props.codeDone) {
     socket.on('npm_log', log => {
-      console.log('console: log-----------------', log);
       props.setAppCode((props.code + '\n\n' + log));
     });
 
     socket.on('npm_done', () => {
-      console.log('console: log done------------');
       props.setAppCodeDone(true);
     });
   }

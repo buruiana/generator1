@@ -13,11 +13,11 @@ export function* watchSetAppSettings() {
 
   let filtered = [];
   Object.keys(flatSettings).forEach(key => {
-    if (key !== 'destination' &&flatSettings[key]) filtered.push(key);
+    if (key === 'destination') filtered.push(flatSettings[key]);
+    if (key !== 'destination' && flatSettings[key]) filtered.push(key);
   });
 
-  const code = yield call(generateAppBE, filtered);
-  //if (code) yield put(setAppCode(appSettings.code + '\n\n' + code));
+  yield call(generateAppBE, filtered);
 }
 
 const flatten = object => {

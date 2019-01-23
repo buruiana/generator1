@@ -41,7 +41,7 @@ const ComponentPropsForm = props => {
     const { formData } = data;
     let newComponent = {
       title: props.component.title,
-      description: props.component.description,
+      description: props.component.description || '',
       provider: props.component.provider,
       techno: props.component.techno,
       componentProps: formData,

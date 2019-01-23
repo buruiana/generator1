@@ -44,7 +44,7 @@ const ComponentsForm = props => {
     properties: {
       id: { type: "string", title: "Id", default: id },
       title: { type: "string", title: "Name", default: title },
-      description: { type: "string", title: "Description", default: description },
+      description: { type: "string", title: "Description", default: description || '' },
       provider: {
         type: "string",
         title: "Provider",
@@ -71,7 +71,7 @@ const ComponentsForm = props => {
           required: ['name'],
           properties: {
             name: { type: 'string', title: 'Name' },
-            description: { type: 'string', title: 'Description' },
+            description: { type: 'string', title: 'Description', default: description || '' },
             propType: {
               type: 'string',
               title: 'PropType',

@@ -23,7 +23,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const server = http.createServer(app)
 const io = socketIO(server);
-io.setMaxListeners(20);
+io.setMaxListeners(1);
+const shell = require('shelljs');
+const prettier = require("prettier");
+const fs = require("fs");
 
 io.on('connection', socket => {
   console.log('New client connected')
@@ -33,23 +36,14 @@ io.on('connection', socket => {
   })
 })
 
-// app.get('/api/getShell', (req, res) => {
-//   shell.mkdir('A');
-//   shell.touch('A/package.json');
-//   shell.cd('A');
-//   //shell.exec('npm init -y', { silent: false }).output;
-
-//   shell.exec('npm init -y', (code, stdout, stderr) => {
-//     console.log('Exit code:', code);
-//     console.log('Program output:', stdout);
-//     console.log('Program stderr:', stderr);
-//     res.json(stdout);
-//   });
-// });
+function copyFiles(src, dest) {
+  shell.exec(`cp -r ${src} ${dest}`);
+  io.sockets.emit('npm_log', 'Done!\n');
+  io.sockets.emit('npm_done');
+};
 
 app.post('/api/prettify', (req, res) => {
-  const prettier = require("prettier");
-  console.log('console: req.body', req.body);
+
   const opt = {
     useTabs: false,
     printWidth: 80,
@@ -67,9 +61,7 @@ app.post('/api/prettify', (req, res) => {
 
 function execWrapper(command, options) {
   return new Promise((resolve, reject) => {
-    const shell = require('shelljs');
     shell.exec(command, options, (error, out, err) => {
-
       if (error) return reject(error);
       resolve({ out: out, err: err });
     })
@@ -77,66 +69,82 @@ function execWrapper(command, options) {
 }
 
 app.post('/api/generateApp', (req, res) => {
-  const shell = require('shelljs');
   const settings = req.body.appSettings;
-  const dest = '/Users/bienvenue/Documents/1'; //settings.shift();
+  const src = '/Users/bienvenue/Documents/Projects/generator1/templates/';
+  const dest = settings.shift();
 
   shell.mkdir(dest);
   shell.cd(dest);
-  let arr = [];
-  const child = shell.exec('npm init -y', { async: true });
-  io.sockets.emit('npm_log', 'Generating package.json...\n');
-  child.stdout.on('data', function (data) {
-    //arr.push(data);
-    io.sockets.emit('npm_log', data);
-    //res.json(data);
-    io.sockets.emit('npm_log', 'Installing dependencies...\n');
-    res.end();
-  });
-
-  async function myAsyncFunction() {
-
-    const promises = settings.map((type) => execWrapper(`npm show ${type} dist-tags`));
-
-    let del_arr = Promise.all(promises);
-    const res = await del_arr;
-
-    let i = 0;
-
-    res.map(e => {
-      const parsed = e.out.match(/latest: '(.*?)'/i);
-      const str = `"${settings[i]}": "^${parsed[1]}"`;
-      arr.push(str);
-      i++;
-    });
-    io.sockets.emit('npm_log', arr);
-    io.sockets.emit('npm_done');
-  }
-
-  myAsyncFunction();
+  myAsyncFunction(settings, src, dest);
+  // const child = shell.exec('npm init -y', { async: true });
+  // io.sockets.emit('npm_log', 'Generating package.json...\n');
+  // child.stdout.on('data', function (data) {
+  //   io.sockets.emit('npm_log', data);
+  //   io.sockets.emit('npm_log', 'Installing dependencies...\n');
+  //   res.end();
+  //   myAsyncFunction(settings, src, dest);
+  // });
 });
 
-// app.get('/api/readGeneratedFiles', (req, res) => {
+const package = `
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/web/index.js",
+  "scripts": {
+    "test": "",
+    "start": "parcel src/web/index.html"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "keywords": [],
+  "author": "M",
+  "license": "ISC",
+  "dependencies": {
+    replaceDependencies
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-react": "^7.0.0",
+    "sass": "^1.16.1"
+  }
+}
+`;
 
-//   const dirTree = require("directory-tree");
-//   const tree = dirTree("/Users/bienvenue/Documents/1");
-//   console.log('console: treetreetree', JSON.stringify(tree));
-//   const packageJsonContent = readPasckageJson('/Users/bienvenue/Documents/1/1.txt');
-//   res.json(JSON.stringify(tree));
-// });
+function generatePackageJson(dependencies) {
+  return package.replace('replaceDependencies', dependencies);
+}
 
-// function readPasckageJson(file) {
-//   const fs = require("fs");
-//   return fs.readFile(file, (err, data) => {
-//     if (err) console.log(err);
-//     console.log('dadadada', data.toString());
-//   });
-// };
+async function myAsyncFunction(settings, src, dest) {
+  const promises = settings.map((type) => execWrapper(`npm show ${type} dist-tags`));
+  io.sockets.emit('npm_log', 'Getting dependencies');
+  let del_arr = Promise.all(promises);
+  const res = await del_arr;
+  let arr = [];
+  let i = 0;
 
-// Handles any requests that don't match the ones above
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname + '../dist/index.html'));
-// });
+  res.map(e => {
+    const parsed = e.out.match(/latest: '(.*?)'/i);
+    const str = `"${settings[i]}": "^${parsed[1]}"`;
+    arr.push('\n' + str);
+    i++;
+  });
+
+  io.sockets.emit('npm_log', arr);
+
+  const opt = {
+    parser: 'json'
+  };
+  const package = prettier.format(generatePackageJson(arr), opt);
+  io.sockets.emit('npm_log', 'Generating package.json');
+  fs.writeFileSync(`${dest}/package.json`, package, 'utf8');
+
+  io.sockets.emit('npm_log', 'Copying files...\n');
+  copyFiles(src, dest);
+}
+
 
 const port = process.env.PORT || 5000;
 server.listen(port);
