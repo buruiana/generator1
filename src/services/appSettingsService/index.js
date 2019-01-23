@@ -18,7 +18,7 @@ export function* watchSetAppSettings() {
   Object.keys(flatSettings).forEach(key => {
     if (flatSettings[key]) filtered.push(key);
   });
-
+  console.log('console: filtered', filtered);
   yield call(generateAppBE, filtered);
 }
 

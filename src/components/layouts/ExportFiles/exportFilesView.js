@@ -44,9 +44,14 @@ const ExportFilesView = props => {
       : null;
   };
 
+  const onClick = () => {
+    console.log('console: downloading', );
+  };
+
   return (
-    <div className='paddingTop'>
-      <Well>
+    <div className='paddingTop downloadFiles'>
+      <button onClick={onClick}>Download files</button>
+      {/* <Well>
         <Grid>
           <Row className="show-grid">
             <Col xs={2} md={2}>
@@ -57,7 +62,7 @@ const ExportFilesView = props => {
             </Col>
           </Row>
         </Grid>
-      </Well>
+      </Well> */}
     </div>
   );
 }

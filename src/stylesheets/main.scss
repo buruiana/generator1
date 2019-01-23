@@ -92,10 +92,7 @@
   width: 80% !important;
 }
 
-// .modal-backdrop {
-//   z-index: 0;
-// }
-
-// .modal {
-//   z-index: 0;
-// }
+.downloadFiles {
+  display: flex;
+  justify-content: flex-end;
+}

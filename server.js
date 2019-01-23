@@ -56,12 +56,8 @@ function execWrapper(command, options) {
 app.post('/api/generateApp', (req, res) => {
   const settings = req.body.appSettings;
   const src = '/Users/bienvenue/Documents/Projects/generator1/templates/';
-  console.log('console: settings', settings);
   const projectName = settings.shift();
-  console.log('console: projectName', projectName);
-  console.log('console: settings1', settings);
   const dest = settings.shift() + '/' + projectName;
-  console.log('console: settings2', settings);
 
   shell.mkdir(dest);
   shell.cd(dest);
@@ -95,11 +91,6 @@ const package = `
   "dependencies": {
     replaceDependencies
   },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-react": "^7.0.0",
-    "sass": "^1.16.1"
-  }
 }
 `;
 

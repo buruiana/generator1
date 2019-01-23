@@ -115,7 +115,7 @@ export function* watchSetJsonForm() {
   const { jsonForm } = (yield select()).projectSettingsServiceReducer;
   const jsonFormSchemaCode = generateJsonSchemaCode({ jsonForm });
 
-  //const jsonFormUISchemaCode = generateJsonUISchemaCode({ jsonForm });
+  const jsonFormUISchemaCode = generateJsonUISchemaCode({ jsonForm });
   const schemaCode = yield call(getPrettyCode, jsonFormSchemaCode);
   //const uiSchemaCode = yield call(getPrettyCode, jsonFormUISchemaCode);
   yield put(setJsonFormSchemaCode(schemaCode));
