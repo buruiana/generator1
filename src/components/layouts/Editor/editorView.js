@@ -67,7 +67,7 @@ const EditorView = props => {
   };
 
   const renderAppStructure = () => {
-    return (props.projectType === APPLICATION && has(props.appSettings, 'destination'))
+    return (props.projectType === APPLICATION)
       ? <AppStructureView />
       : null;
   };

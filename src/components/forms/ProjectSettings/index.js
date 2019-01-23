@@ -5,6 +5,7 @@ import {
   setProjectType,
   setProjectTechno,
   setProjectComponentType,
+  setProjectDestination,
 } from '../../../services/projectSettingsService/actions';
 
 const mapStateToProps = state => {
@@ -12,17 +13,17 @@ const mapStateToProps = state => {
     projectName: state.projectSettingsServiceReducer.projectName,
     projectType: state.projectSettingsServiceReducer.projectType,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
+    projectDestination: state.projectSettingsServiceReducer.projectDestination,
     componentType: state.projectSettingsServiceReducer.componentType,
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setProjectName: projectName => dispatch(setProjectName(projectName)),
-    setProjectTechno: projectTechno => dispatch(setProjectTechno(projectTechno)),
-    setProjectType: projectType => dispatch(setProjectType(projectType)),
-    setProjectComponentType: componentType => dispatch(setProjectComponentType(componentType)),
-  };
-}
+const mapDispatchToProps = {
+  setProjectName: projectName => setProjectName(projectName),
+  setProjectTechno: projectTechno => setProjectTechno(projectTechno),
+  setProjectType: projectType => setProjectType(projectType),
+  setProjectComponentType: componentType => setProjectComponentType(componentType),
+  setProjectDestination: projectDestination => setProjectDestination(projectDestination),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectSettingsForm);

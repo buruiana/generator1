@@ -42,7 +42,7 @@ const AppStructureView = props => {
         style={{
           height: 800,
           width: '70%',
-          float: 'right'
+          float: 'left'
         }}
       >
         <AceEditor

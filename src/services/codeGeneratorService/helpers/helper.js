@@ -146,7 +146,7 @@ export const getLifeCycleCode = lifeCycleMethods => {
 
   let code = '';
   if (lifeCycleMethods.componentWillMount) {
-    code += `// deprecated in React 16.3`;
+    code += `// deprecated in React 16.3\n`;
     code += `componentWillMount() {};\n`;
   }
 

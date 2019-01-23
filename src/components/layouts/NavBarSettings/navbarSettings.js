@@ -36,11 +36,6 @@ const NavBarSettings = props => {
     props.setAllModals(newAllModals);
   };
 
-
-  if (props.projectType === APPLICATION && !has(props.appSettings, 'destination')) {
-    props.setCurrentModal(APPLICATION);
-  }
-
   const isService = () => {
     return props.projectType === SERVICE
       ? true

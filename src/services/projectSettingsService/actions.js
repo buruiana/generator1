@@ -15,6 +15,11 @@ export const setProjectTechno = projectTechno => ({
   projectTechno
 })
 
+export const setProjectDestination = projectDestination => ({
+  type: actionTypes.SET_PROJECT_DESTINATION,
+  projectDestination
+})
+
 export const setProjectComponentType = componentType => ({
   type: actionTypes.SET_PROJECT_SETTINGS_COMPONENT_TYPE,
   componentType

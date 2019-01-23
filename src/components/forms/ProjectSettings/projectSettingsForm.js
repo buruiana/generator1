@@ -11,11 +11,12 @@ import {
   PROJECT_TECHNO,
   PROJECT_TYPE,
   PROJECT_NAME,
+  PROJECT_DESTINATION,
   COMPONENT_TYPE,
  } from '../../../utils/constants';
 
 const ProjectSettingsForm = props => {
-  const { projectName, projectTechno, projectType, componentType } = props;
+  const { projectName, projectTechno, projectType, componentType, projectDestination } = props;
   const projectTypeEnums = [ APPLICATION, SERVICE, COMPONENT ];
   const componentTypeEnums = [ SMART, DUMB ];
   const technoTypeEnums = [ REACT, REACT_NATIVE ];
@@ -28,6 +29,11 @@ const ProjectSettingsForm = props => {
         type: 'string',
         title: PROJECT_NAME,
         default: projectName
+      },
+      projectDestination: {
+        type: 'string',
+        title: PROJECT_DESTINATION,
+        default: projectDestination
       },
       projectTechno: {
         type: 'string',
@@ -72,11 +78,12 @@ const ProjectSettingsForm = props => {
   };
 
   const onSubmit = data => {
-    const { projectName, projectTechno, projectType, componentType } = data.formData;
+    const { projectName, projectTechno, projectType, componentType, projectDestination } = data.formData;
 
     props.setProjectName(projectName);
     props.setProjectTechno(projectTechno);
     props.setProjectType(projectType);
+    props.setProjectDestination(projectDestination);
     props.setProjectComponentType(componentType);
 
     props.closeModal();
@@ -89,6 +96,7 @@ const ProjectSettingsForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
+      formData={props}
     />
   );
 }

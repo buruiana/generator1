@@ -8,6 +8,7 @@ export const REACT_NATIVE = 'React Native';
 export const PROJECT_NAME = 'Project Name';
 export const PROJECT_TYPE = 'Project Type';
 export const PROJECT_TECHNO = 'Project Techno';
+export const PROJECT_DESTINATION = 'Destination Folder';
 export const COMPONENT_TYPE = 'Component Type';
 export const STYLES = 'styles';
 

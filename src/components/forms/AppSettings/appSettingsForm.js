@@ -7,7 +7,6 @@ const AppSettingsForm = props => {
   const schema = {
     type: 'object',
     properties: {
-      destination: { type: 'string', title: 'Destination Path' },
       techno: {
         type: 'object',
         properties: {

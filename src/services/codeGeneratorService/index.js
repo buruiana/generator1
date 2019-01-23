@@ -114,11 +114,12 @@ export function* watchSetSmartSettings() {
 export function* watchSetJsonForm() {
   const { jsonForm } = (yield select()).projectSettingsServiceReducer;
   const jsonFormSchemaCode = generateJsonSchemaCode({ jsonForm });
-  const jsonFormUISchemaCode = generateJsonUISchemaCode({ jsonForm });
+
+  //const jsonFormUISchemaCode = generateJsonUISchemaCode({ jsonForm });
   const schemaCode = yield call(getPrettyCode, jsonFormSchemaCode);
-  const uiSchemaCode = yield call(getPrettyCode, jsonFormUISchemaCode);
+  //const uiSchemaCode = yield call(getPrettyCode, jsonFormUISchemaCode);
   yield put(setJsonFormSchemaCode(schemaCode));
-  yield put(setJsonFormUISchemaCode(uiSchemaCode));
+  //yield put(setJsonFormUISchemaCode(uiSchemaCode));
   yield put(setAceTab(ACE_TABS.JSONFORMSCHEMA));
 }
 

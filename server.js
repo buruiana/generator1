@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const server = http.createServer(app)
 const io = socketIO(server);
-io.setMaxListeners(1);
+io.setMaxListeners(20);
 
 io.on('connection', socket => {
   console.log('New client connected')
