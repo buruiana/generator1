@@ -51,8 +51,12 @@ const Ace = props => {
     }
   };
 
+  const getAceStyle = (props.projectSettings.projectType === SERVICE)
+    ? 'serviceAce'
+    : 'componentAce';
+
   return (
-    <div>
+    <div className={getAceStyle}>
       <AceTabs />
       <AceEditor
         mode="jsx"

@@ -181,14 +181,7 @@ const EditorView = props => {
       <NavBarSettings />
       {renderComponentBlock()}
       {renderAppStructure()}
-      <div
-        style={{
-          height: 800,
-          width: '30%',
-          float: 'left'
-        }}
-      >
-        {(props.projectType === COMPONENT || props.projectType === SERVICE) && <ExportFilesView />}
+      <div>
         {renderAce()}
       </div>
       <div>{renderModal(props)}</div>

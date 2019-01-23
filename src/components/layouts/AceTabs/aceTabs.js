@@ -1,6 +1,8 @@
 import React from 'react';
 import Tabs from 'react-bootstrap/lib/Tabs';
 import Tab from 'react-bootstrap/lib/Tab'
+import Col from 'react-bootstrap/lib/Col';
+import ExportFilesView from '../ExportFiles';
 
 const AceTabs = props => {
   const onSelect = data => {
@@ -16,9 +18,12 @@ const AceTabs = props => {
 
   return (
     <div className='flex'>
-      <Tabs defaultActiveKey='index' id="uncontrolled-tab-example" onSelect={onSelect} activeKey={props.aceTab}>
-        {renderTabs()}
-      </Tabs>
+      <Col md={9}>
+        <Tabs defaultActiveKey='index' id="uncontrolled-tab-example" onSelect={onSelect} activeKey={props.aceTab}>
+          {renderTabs()}
+        </Tabs>
+      </Col>
+      <Col md={3}><ExportFilesView /></Col>
     </div>
   );
 }

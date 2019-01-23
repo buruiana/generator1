@@ -92,7 +92,19 @@
   width: 80% !important;
 }
 
-.downloadFiles {
+.exportFiles {
   display: flex;
   justify-content: flex-end;
+}
+
+.componentAce {
+  height: 100%;
+  width: 30%;
+  float: left;
+}
+
+.serviceAce {
+  height: 100%;
+  width: 70%;
+  float: left;
 }
