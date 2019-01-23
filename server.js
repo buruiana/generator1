@@ -25,8 +25,6 @@ io.on('connection', socket => {
 
 function copyFiles(src, dest) {
   shell.exec(`cp -r ${src} ${dest}`);
-  io.sockets.emit('npm_log', 'Done!\n');
-  io.sockets.emit('npm_done');
 };
 
 app.post('/api/prettify', (req, res) => {
@@ -58,7 +56,12 @@ function execWrapper(command, options) {
 app.post('/api/generateApp', (req, res) => {
   const settings = req.body.appSettings;
   const src = '/Users/bienvenue/Documents/Projects/generator1/templates/';
-  const dest = settings.shift();
+  console.log('console: settings', settings);
+  const projectName = settings.shift();
+  console.log('console: projectName', projectName);
+  console.log('console: settings1', settings);
+  const dest = settings.shift() + '/' + projectName;
+  console.log('console: settings2', settings);
 
   shell.mkdir(dest);
   shell.cd(dest);
@@ -129,6 +132,8 @@ async function myAsyncFunction(settings, src, dest) {
   io.sockets.emit('npm_log', package);
   io.sockets.emit('npm_log', 'Copying files...\n');
   copyFiles(src, dest);
+  io.sockets.emit('npm_log', 'Done!');
+  io.sockets.emit('npm_done');
 }
 
 

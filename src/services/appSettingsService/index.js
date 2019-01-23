@@ -9,9 +9,11 @@ import {
 
 export function* watchSetAppSettings() {
   const appSettings = (yield select()).appSettingsServiceReducer;
+  const { projectName } = (yield select()).projectSettingsServiceReducer;
   const flatSettings = flatten(appSettings.settings);
 
   let filtered = [];
+  filtered.push(projectName);
   Object.keys(flatSettings).forEach(key => {
     if (key === 'destination') filtered.push(flatSettings[key]);
     if (key !== 'destination' && flatSettings[key]) filtered.push(key);
