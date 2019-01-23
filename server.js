@@ -2,21 +2,11 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io')
 const bodyParser = require('body-parser');
-// const shell = require('shelljs');
-// shell.mkdir('A');
-//shell.touch('A/package.json');
-// shell.cd('A');
-//shell.exec('npm init -y', { silent: false }).output;
-// shell.exec('yarn create react-app my-app', { silent: false }).output;
-// shell.cd('my-app');
-// shell.exec('npm start', { silent: false }).output;
-
+const shell = require('shelljs');
+const prettier = require("prettier");
+const fs = require("fs");
+const cors = require('cors');
 const app = express();
-
-// Serve the static files from the React app
-//app.use(express.static(path.join(__dirname, '../dist')));
-
-const cors = require('cors')
 app.use(cors())
 
 app.use(bodyParser.json());
@@ -24,9 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const server = http.createServer(app)
 const io = socketIO(server);
 io.setMaxListeners(1);
-const shell = require('shelljs');
-const prettier = require("prettier");
-const fs = require("fs");
 
 io.on('connection', socket => {
   console.log('New client connected')
@@ -119,7 +106,7 @@ function generatePackageJson(dependencies) {
 
 async function myAsyncFunction(settings, src, dest) {
   const promises = settings.map((type) => execWrapper(`npm show ${type} dist-tags`));
-  io.sockets.emit('npm_log', 'Getting dependencies');
+  io.sockets.emit('npm_log', 'Getting dependencies...');
   let del_arr = Promise.all(promises);
   const res = await del_arr;
   let arr = [];
@@ -133,14 +120,13 @@ async function myAsyncFunction(settings, src, dest) {
   });
 
   io.sockets.emit('npm_log', arr);
-
+  io.sockets.emit('npm_log', 'Generating package.json');
   const opt = {
     parser: 'json'
   };
   const package = prettier.format(generatePackageJson(arr), opt);
-  io.sockets.emit('npm_log', 'Generating package.json');
   fs.writeFileSync(`${dest}/package.json`, package, 'utf8');
-
+  io.sockets.emit('npm_log', package);
   io.sockets.emit('npm_log', 'Copying files...\n');
   copyFiles(src, dest);
 }
