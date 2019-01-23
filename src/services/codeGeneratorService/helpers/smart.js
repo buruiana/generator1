@@ -1,4 +1,5 @@
 import isEmpty from 'lodash/isEmpty';
+import capitalize from 'lodash/capitalize';
 import {
   getFlatDataFromTree,
 } from 'react-sortable-tree';
@@ -41,7 +42,7 @@ export const generateSmartCode = props => {
   });
 
   // START COMPONENT
-  code += `\nclass ${props.projectName} extends Component {\n`;
+  code += `\nclass ${capitalize(props.projectName)} extends Component {\n`;
   code += getConstrunctor(props.smart.hasConstructor, props.smart.hasState, constList)
   code += getLifeCycleCode(props.smart.lifeCycleMethods);
   code += ` render() {\n`;
@@ -65,7 +66,7 @@ export const generateSmartCode = props => {
   code += `   );\n`;
   code += ` };\n\n`;
   code += `};\n\n`;
-  code += `export default ${props.projectName};`;
+  code += `export default ${capitalize(props.projectName)};`;
 
   return code;
 }

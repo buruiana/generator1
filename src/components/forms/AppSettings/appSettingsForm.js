@@ -15,13 +15,6 @@ const AppSettingsForm = props => {
           'react-dom': { type: 'boolean', title: 'react-dom' },
         },
       },
-      general: {
-        type: 'object',
-        properties: {
-          '@babel/core': { type: 'boolean', title: '@babel/core' },
-          '@babel/preset-react': { type: 'boolean', title: '@babel/preset-react' },
-        },
-      },
       state: {
         type: 'object',
         properties: {

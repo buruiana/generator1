@@ -53,6 +53,35 @@ function execWrapper(command, options) {
   })
 }
 
+app.post('/api/exportFiles', (req, res) => {
+  const name = req.body.name;
+  const dest = req.body.destination + `/${name}`;
+
+  let reducer, saga, actions, actionTypes, hoc, component, styles = '';
+  shell.mkdir(dest);
+
+
+  if (!req.body.hoc) {
+    reducer = req.body.reducer;
+    fs.writeFileSync(`${dest}/reducer.js`, reducer, 'utf8');
+    saga = req.body.saga || '';
+    fs.writeFileSync(`${dest}/saga.js`, saga, 'utf8');
+    actions = req.body.actions || '';
+    fs.writeFileSync(`${dest}/actions.js`, actions, 'utf8');
+    actionTypes = req.body.actionTypes || '';
+    fs.writeFileSync(`${dest}/actionTypes.js`, actionTypes, 'utf8');
+  } else {
+    hoc = req.body.hoc;
+    fs.writeFileSync(`${dest}/index.js`, hoc, 'utf8');
+    component = req.body.component || '';
+    fs.writeFileSync(`${dest}/${name}.js`, component, 'utf8');
+    styles = req.body.styles || '';
+    fs.writeFileSync(`${dest}/styles.js`, styles, 'utf8');
+  }
+
+  res.json('done');
+});
+
 app.post('/api/generateApp', (req, res) => {
   const settings = req.body.appSettings;
   const src = '/Users/bienvenue/Documents/Projects/generator1/templates/';

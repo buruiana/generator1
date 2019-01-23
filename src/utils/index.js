@@ -51,3 +51,24 @@ export function* generateAppBE(appSettings) {
   return result;
 }
 
+const exportFiles = data => {
+  return axios.post('http://localhost:5000/api/exportFiles', data);
+}
+
+export function* exportFilesBE(info) {
+  if (!info) return;
+  let result = '';
+  try {
+    const res = yield exportFiles(info);
+    result = res;
+  } catch (err) {
+    console.log('console: err', err);
+    // prettyCode = JSON.parse(err.config.data);
+    // prettyCode = prettyCode.code;
+
+    // yield put(setProjectError(err.response.data));
+  }
+  return result;
+}
+
+

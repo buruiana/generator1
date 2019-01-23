@@ -39,3 +39,8 @@ export const setProjectJsonForm = jsonForm => ({
   type: actionTypes.SET_PROJECT_SETTINGS_JSON_FORM,
   jsonForm
 })
+
+export const exportProjectFiles = data => ({
+  type: actionTypes.EXPORT_PROJECT_FILES,
+  data
+})

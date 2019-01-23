@@ -8,8 +8,8 @@ import {
   DUMB,
   ACE_TABS,
   STYLES,
+  SERVICE,
 } from '../../../utils/constants';
-
 
 const ExportFilesView = props => {
 
@@ -44,8 +44,28 @@ const ExportFilesView = props => {
       : null;
   };
 
+  const prepareObject = () => {
+    const objToSend = {};
+    objToSend.name = props.projectSettings.projectName;
+    objToSend.destination = props.projectSettings.projectDestination;
+    if (props.projectSettings.projectType === COMPONENT) {
+      objToSend.component = props.code.dumb || props.code.smart;
+      objToSend.hoc = props.code.hoc;
+      objToSend.styles = props.code.styles;
+    } else if (props.projectSettings.projectType === SERVICE) {
+      objToSend.reducer = props.code.reducer;
+      objToSend.actions = props.code.actions;
+      objToSend.actionTypes = props.code.actionTypez;
+      objToSend.saga = props.code.saga;
+    }
+    return objToSend;
+  }
+
   const onClick = () => {
-    console.log('console: downloading', );
+    console.log('console: downloading');
+    const objToSend = prepareObject();
+    props.exportProjectFiles(objToSend);
+    console.log('console: objToSend', objToSend);
   };
 
   return (

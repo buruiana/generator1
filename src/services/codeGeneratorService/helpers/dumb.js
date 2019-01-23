@@ -1,5 +1,5 @@
 import isEmpty from 'lodash/isEmpty';
-import reverse from 'lodash/reverse';
+import capitalize from 'lodash/capitalize';
 import {
   getFlatDataFromTree,
 } from 'react-sortable-tree';
@@ -37,7 +37,7 @@ export const generateDumbCode = props => {
   });
 
   // START COMPONENT
-  code += `\nconst ${props.projectName} = props => {\n`;
+  code += `\nconst ${capitalize(props.projectName)} = props => {\n`;
 
   // CONSTANTS
   if (!isEmpty(constList)) {
@@ -53,7 +53,7 @@ export const generateDumbCode = props => {
   code += getTree(flatData);
   code += ` );\n`;
   code += `};\n\n`;
-  code += `export default ${props.projectName};`;
+  code += `export default ${capitalize(props.projectName)};`;
 
   return code;
 }

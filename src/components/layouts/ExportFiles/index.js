@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import ExportFilesView from './exportFilesView';
 import {
-  deleteComponent,
-} from '../../../services/componentsService/actions';
+  exportProjectFiles,
+} from '../../../services/projectSettingsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -12,10 +12,8 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    deleteComponent: component => dispatch(deleteComponent(component)),
-  };
+const mapDispatchToProps = {
+  exportProjectFiles: data => exportProjectFiles(data),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExportFilesView);
