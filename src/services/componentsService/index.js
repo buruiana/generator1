@@ -35,9 +35,17 @@ export function* watchGetAllComponents() {
   if (isEmpty(allComponents)) allComponents = [];
 
   sortBy(allComponents, el => el.title);
+  const newAllComp = [];
+  allComponents.map(el => {
+    const newEl = {
+      ...el,
+      subtitle: el.provider
+    };
+    newAllComp.push(newEl);
+  });
 
-  yield put(setAllComponents(allComponents));
-  yield put(setDefaultTree(allComponents));
+  yield put(setAllComponents(newAllComp));
+  yield put(setDefaultTree(newAllComp));
 
 }
 

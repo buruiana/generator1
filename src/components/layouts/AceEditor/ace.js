@@ -76,6 +76,7 @@ const Ace = props => {
         showGutter={true}
         highlightActiveLine={true}
         value={getAceContent()}
+        height={800}
       />
     </div>
 

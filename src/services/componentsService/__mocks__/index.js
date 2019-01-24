@@ -4462,7 +4462,8 @@ export const mock = {
       isDefault: true,
       provider: 'Jsonschema-form',
       techno: 'React',
-      title: 'Form'
+      title: 'Form',
+      subtitle: 'Jsonschema-form'
     },
     {
       children: [],

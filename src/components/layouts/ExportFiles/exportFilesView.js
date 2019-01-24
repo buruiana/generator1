@@ -11,37 +11,6 @@ import {
 
 const ExportFilesView = props => {
 
-  // const getCode = tab => {
-  //   if (tab === props.projectSettings.projectName && props.projectSettings.projectType === COMPONENT && props.projectSettings.componentType === SMART) {
-  //     return props.code.smart || '';
-  //   } else if (tab === props.projectSettings.projectName && props.projectSettings.projectType === COMPONENT && props.projectSettings.componentType === DUMB) {
-  //     return props.code.dumb || '';
-  //   } else if (tab === ACE_TABS.INDEX) {
-  //     return props.code.hoc || '';
-  //   } else if (tab === STYLES && props.projectSettings.projectType === COMPONENT) {
-  //     return props.code.styles || '';
-  //   } else if (tab === ACE_TABS.ACTIONS) {
-  //     return props.code.actions;
-  //   } else if (tab === ACE_TABS.ACTION_TYPES) {
-  //     return props.code.actionTypes;
-  //   } else if (tab === ACE_TABS.REDUCER) {
-  //     return props.code.reducer;
-  //   }
-  // };
-
-  // const renderLinks = () => {
-
-  //   return props.aceTabs.map(tab => {
-  //     return <a href={`data:text/plain;UTF-8,${getCode(tab)}`} download={`${tab}.js`} key={tab}>{`${tab}.js`} </a>;
-  //   });
-  // };
-
-  const renderExportFiles = () => {
-    return props.projectSettings.projectName
-      ? renderLinks()
-      : null;
-  };
-
   const prepareObject = () => {
     const objToSend = {};
     objToSend.name = props.projectSettings.projectName;
@@ -64,11 +33,17 @@ const ExportFilesView = props => {
     props.exportProjectFiles(objToSend);
   };
 
-  return (
-    <div>
-      <Button onClick={onClick} bsStyle="info">Download</Button>
-    </div>
-  );
+  const renderView = () => {
+    return !props.projectSettings.projectDestination
+      ? null
+      : (
+        <div>
+          <Button onClick={onClick} bsStyle="info">Download</Button>
+        </div>
+      );
+  };
+
+  return renderView();
 }
 
 export default ExportFilesView;

@@ -7,7 +7,6 @@ import { setConfigsIsOffline } from '../../../services/configsService/actions';
 import { setAppCode, setAppCodeDone } from '../../../services/appSettingsService/actions';
 
 const mapStateToProps = state => {
-  console.log('console: state', state);
   return {
     components: state.componentsServiceReducer.components,
     code: state.appSettingsServiceReducer.code,
@@ -15,13 +14,11 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    initApp: () => dispatch(initApp()),
-    setConfigsIsOffline: isOffline => dispatch(setConfigsIsOffline(isOffline)),
-    setAppCode: code => dispatch(setAppCode(code)),
-    setAppCodeDone: val => dispatch(setAppCodeDone(val)),
-  };
+const mapDispatchToProps = {
+  initApp: () => initApp(),
+  setConfigsIsOffline: isOffline => setConfigsIsOffline(isOffline),
+  setAppCode: code => setAppCode(code),
+  setAppCodeDone: val => setAppCodeDone(val),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
