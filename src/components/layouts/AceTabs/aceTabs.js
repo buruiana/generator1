@@ -18,12 +18,12 @@ const AceTabs = props => {
 
   return (
     <div className='flex'>
-      <Col md={9}>
+      <Col md={2}><ExportFilesView /></Col>
+      <Col md={12}>
         <Tabs defaultActiveKey='index' id="uncontrolled-tab-example" onSelect={onSelect} activeKey={props.aceTab}>
           {renderTabs()}
         </Tabs>
       </Col>
-      <Col md={3}><ExportFilesView /></Col>
     </div>
   );
 }

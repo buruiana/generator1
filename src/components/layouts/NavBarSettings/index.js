@@ -4,6 +4,7 @@ import {
   setCurrentModal,
   setAllModals,
 } from '../../../services/modalService/actions';
+import { initApp } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -19,11 +20,10 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setAllModals: allModals => dispatch(setAllModals(allModals)),
-    setCurrentModal: currentModal => dispatch(setCurrentModal(currentModal)),
-  };
+const mapDispatchToProps = {
+  setAllModals: allModals => setAllModals(allModals),
+  setCurrentModal: currentModal => setCurrentModal(currentModal),
+  initApp: () => initApp(),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBarSettings);

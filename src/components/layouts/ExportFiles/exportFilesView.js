@@ -1,11 +1,8 @@
 import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import {
   COMPONENT,
-  SMART,
-  DUMB,
-  ACE_TABS,
-  STYLES,
   SERVICE,
 } from '../../../utils/constants';
 
@@ -38,7 +35,8 @@ const ExportFilesView = props => {
       ? null
       : (
         <div>
-          <Button onClick={onClick} bsStyle="info">Download</Button>
+          {/* <Button onClick={onClick} bsStyle="info">Download</Button> */}
+          <Glyphicon glyph="download-alt" onClick={onClick} />
         </div>
       );
   };

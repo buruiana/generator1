@@ -11,6 +11,7 @@ export const PROJECT_TECHNO = 'Project Techno';
 export const PROJECT_DESTINATION = 'Destination Folder';
 export const COMPONENT_TYPE = 'Component Type';
 export const STYLES = 'styles';
+export const INIT_APP = 'INIT_APP';
 
 export const ACE_TABS = {
   INDEX: 'index',

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import isEmpty from 'lodash/isEmpty';
-import has from 'lodash/has';
+import Navbar from 'react-bootstrap/lib/Navbar';
 import {
   PROJECT_SETTINGS,
   ACTIONS,
@@ -13,14 +14,24 @@ import {
   JSON_FORM_UI_SETTINGS,
 } from '../../modals/constants';
 import {
-  SERVICE,
-  COMPONENT,
   SMART,
   APPLICATION,
+  INIT_APP,
 } from '../../../utils/constants';
+import {
+  isService,
+  isComponent,
+  isApp,
+  isSmart,
+  hasActionTypes,
+} from './helper';
 
 const NavBarSettings = props => {
-  const handleSelect = type =>  showModal(type);
+  const handleSelect = type => {
+    return type === INIT_APP
+      ? props.initApp()
+      : showModal(type);
+  };
   const showModal = (type) => {
     const node = [];
     const newEl = {
@@ -36,83 +47,64 @@ const NavBarSettings = props => {
     props.setAllModals(newAllModals);
   };
 
-  const isService = () => {
-    return props.projectType === SERVICE
-      ? true
-      : false;
-  };
-
-  const isComponent = () => {
-    return props.projectType === COMPONENT
-      ? true
-      : false;
-  };
-
-  const isApp = () => {
-    return props.projectType === APPLICATION
-      ? true
-      : false;
-  };
-
-  const isSmart = () => {
-    return (props.projectType === COMPONENT && props.componentType === SMART)
-      ? true
-      : false;
-  };
-
-  const hasActionTypes = () => !isEmpty(props.actionTypes);
-
   return (
-    <Nav bsStyle="pills" activeKey={1} onSelect={handleSelect}>
-      <NavItem eventKey={PROJECT_SETTINGS}>
-        Project Settings
-      </NavItem>
-      {isService() &&
-        <NavItem eventKey={ACTION_TYPES}>
-          Action Types
+    <Navbar>
+      <Nav bsStyle="pills" activeKey={1} onSelect={handleSelect}>
+        <NavItem eventKey={INIT_APP}>
+          <Glyphicon glyph="flash" />
         </NavItem>
-      }
-      {isService() && hasActionTypes() &&
-        <NavItem eventKey={ACTIONS} >
-            Actions
+        <NavItem eventKey={PROJECT_SETTINGS}>
+          Project Settings
         </NavItem>
-      }
-      {isService() && hasActionTypes() &&
-        <NavItem eventKey={SAGA} >
-          Saga
-        </NavItem>
-      }
-      {isService() && hasActionTypes() &&
-        <NavItem eventKey={REDUCER} >
-          Reducer
-        </NavItem>
-      }
-      {isComponent() &&
-        <NavItem eventKey={HOC} >
-          Hoc
-        </NavItem>
-      }
-      {isSmart() &&
-        <NavItem eventKey={SMART} >
-          Smart Settings
-        </NavItem>
-      }
-      {isApp() &&
-        <NavItem eventKey={APPLICATION} >
-          App Settings
-        </NavItem>
-      }
-      {isComponent() && props.hasJsonForm &&
-        <NavItem eventKey={JSON_FORM_SETTINGS} >
-          JsonForm Schema
-        </NavItem>
-      }
-      {isComponent() && props.hasJsonForm && !isEmpty(props.jsonForm) &&
-        <NavItem eventKey={JSON_FORM_UI_SETTINGS} >
-          JsonForm uiSchema
-        </NavItem>
-      }
-    </Nav>
+        {isService(props.projectType) &&
+          <NavItem eventKey={ACTION_TYPES}>
+            Action Types
+          </NavItem>
+        }
+        {isService(props.projectType) && hasActionTypes(props.actionTypes) &&
+          <NavItem eventKey={ACTIONS} >
+              Actions
+          </NavItem>
+        }
+        {isService(props.projectType) && hasActionTypes(props.actionTypes) &&
+          <NavItem eventKey={SAGA} >
+            Saga
+          </NavItem>
+        }
+        {isService(props.projectType) && hasActionTypes(props.actionTypes) &&
+          <NavItem eventKey={REDUCER} >
+            Reducer
+          </NavItem>
+        }
+        {isComponent(props.projectType) &&
+          <NavItem eventKey={HOC} >
+            Hoc
+          </NavItem>
+        }
+        {isSmart(props.projectType, props.componentType) &&
+          <NavItem eventKey={SMART} >
+            Smart Settings
+          </NavItem>
+        }
+        {isApp(props.projectType) &&
+          <NavItem eventKey={APPLICATION} >
+            App Settings
+          </NavItem>
+        }
+      </Nav>
+      <Nav pullRight bsStyle="pills" activeKey={1} onSelect={handleSelect}>
+        {isComponent() && props.hasJsonForm &&
+          <NavItem eventKey={JSON_FORM_SETTINGS} >
+            JsonForm Schema
+          </NavItem>
+        }
+        {isComponent() && props.hasJsonForm && !isEmpty(props.jsonForm) &&
+          <NavItem eventKey={JSON_FORM_UI_SETTINGS} >
+            JsonForm uiSchema
+          </NavItem>
+        }
+      </Nav>
+    </Navbar>
   );
 }
 
