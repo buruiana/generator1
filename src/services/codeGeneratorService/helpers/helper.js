@@ -77,7 +77,8 @@ export const getTree = flatTree => {
 
   const prepareTree = tree => {
     tree.map(el => {
-      const currentId = el.node.id;
+      const currentId = el.node.uniqId;
+      const currentPath = el.path;
       const nextEl = (tree.length > elIdx + 1)
         ? tree[elIdx + 1]
         : null;
@@ -107,11 +108,11 @@ export const getTree = flatTree => {
         const currentParentId = el.parentNode.id;
         const currentParent = tree.filter(el => el.node.id === currentParentId);
         const currentParentLastChild = (el.parentNode.children.length > 1)
-          ? el.parentNode.children[el.parentNode.children.length - 1].id
-          : el.parentNode.children[0].id;
+          ? el.parentNode.children[el.parentNode.children.length - 1]
+          : el.parentNode.children[0];
 
         // check if current element is the last child
-        if (currentId === currentParentLastChild && !hasChildren) {
+        if ((currentId === currentParentLastChild.uniqId) && !hasChildren) {
           code += `</ ${parentsList[parentsList.length - 1]}>`;
           parentsList.pop();
         }

@@ -1,6 +1,7 @@
 import { walk, changeNodeAtPath } from 'react-sortable-tree';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
+import uniqueId from 'lodash/uniqueId';
 
 export const fillNodeData = (treeData, providers) => {
   walk({
@@ -10,6 +11,7 @@ export const fillNodeData = (treeData, providers) => {
       let node = {
         ...rowInfo.node,
       };
+      node.uniqId = uniqueId();
       node.hasChildren = !isEmpty(node.children);
       const hasComponentPropsVals = get(node, 'componentProps', []).filter(el => el.val);
       node.hasComponentPropsVals = !isEmpty(hasComponentPropsVals);

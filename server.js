@@ -31,16 +31,18 @@ app.post('/api/prettify', (req, res) => {
 
   const opt = {
     useTabs: false,
-    printWidth: 80,
+    printWidth: 60,
     tabWidth: 2,
     semi: true,
     singleQuote: true,
-    bracketSpacing: true,
+    bracketSpacing: false,
     jsxBracketSameLine: true,
     parser: `${req.body.parser}`,
-    trailingComma: 'all'
+    trailingComma: 'all',
+    arrowParens: 'avoid',
+    proseWrap: 'preserve'
   };
-
+  console.log('console: ---------------------------------', req.body.code);
   res.json(prettier.format(req.body.code, opt));
 });
 
