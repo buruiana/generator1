@@ -73,11 +73,9 @@
   font-size: 1.5rem;
 }
 
-.exportFilesLinks {
+.exportFiles {
   display: flex;
-  flex-direction:row;
-  justify-content: space-around;
-  padding-left: 10px;
+  justify-content: flex-start;
 }
 
 .redButton {
@@ -92,11 +90,6 @@
   width: 80% !important;
 }
 
-.exportFiles {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .componentAce {
   height: 100%;
   width: 30%;
@@ -109,22 +102,26 @@
   float: left;
 }
 
-// .nav-pills{
-//   background-color: #F8F8F8;
-//   border: 1px solid #E8E8E8;
-//   border-radius: 5px;
-// }
-
 .nav-tabs {
   font-size: 13px;
 }
 
 .nav>li>a {
-  padding: 15px 10px;
+  padding: 7px 10px;
 }
 
 .navbar {
   padding: 0px;
   min-height: 20px;
   margin: 0px;
+}
+
+.glyphicon-export {
+  vertical-align: -webkit-baseline-middle;
+}
+
+.col-md-0 {
+  width: 2.2%;
+  padding-left: 1%;
+  cursor: pointer;
 }

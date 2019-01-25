@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/lib/Button';
 import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import {
   COMPONENT,
@@ -33,12 +32,7 @@ const ExportFilesView = props => {
   const renderView = () => {
     return !props.projectSettings.projectDestination
       ? null
-      : (
-        <div>
-          {/* <Button onClick={onClick} bsStyle="info">Download</Button> */}
-          <Glyphicon glyph="download-alt" onClick={onClick} />
-        </div>
-      );
+      : <Glyphicon glyph="export" onClick={onClick} />
   };
 
   return renderView();

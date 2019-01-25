@@ -1,3 +1,4 @@
+import isEmpty from 'lodash/isEmpty';
 import {
   SERVICE,
   COMPONENT,

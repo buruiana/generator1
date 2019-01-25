@@ -8,6 +8,7 @@ import { initApp } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
+    projectName: state.projectSettingsServiceReducer.projectName,
     projectType: state.projectSettingsServiceReducer.projectType,
     hasJsonForm: state.projectSettingsServiceReducer.hasJsonForm,
     jsonForm: state.projectSettingsServiceReducer.jsonForm,

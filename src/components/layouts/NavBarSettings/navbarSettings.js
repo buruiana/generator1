@@ -1,6 +1,8 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 import Glyphicon from 'react-bootstrap/lib/Glyphicon';
+import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
+import Tooltip from 'react-bootstrap/lib/Tooltip';
 import isEmpty from 'lodash/isEmpty';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import {
@@ -47,14 +49,22 @@ const NavBarSettings = props => {
     props.setAllModals(newAllModals);
   };
 
+  const tooltip = tip => <Tooltip id="tooltip">{tip}</Tooltip>;
+
   return (
     <Navbar>
       <Nav bsStyle="pills" activeKey={1} onSelect={handleSelect}>
-        <NavItem eventKey={INIT_APP}>
-          <Glyphicon glyph="flash" />
-        </NavItem>
+        {props.projectName &&
+          <NavItem eventKey={INIT_APP}>
+            <OverlayTrigger placement="top" overlay={tooltip('Init Project')}>
+              <Glyphicon glyph="flash" />
+            </OverlayTrigger>
+          </NavItem>
+        }
         <NavItem eventKey={PROJECT_SETTINGS}>
-          Project Settings
+          <OverlayTrigger placement="top" overlay={tooltip('Project Settings')}>
+            <Glyphicon glyph="cog" />
+          </OverlayTrigger>
         </NavItem>
         {isService(props.projectType) &&
           <NavItem eventKey={ACTION_TYPES}>
@@ -78,12 +88,16 @@ const NavBarSettings = props => {
         }
         {isComponent(props.projectType) &&
           <NavItem eventKey={HOC} >
-            Hoc
+            <OverlayTrigger placement="top" overlay={tooltip('Higher Order Component')}>
+              <Glyphicon glyph="header" />
+            </OverlayTrigger>
           </NavItem>
         }
         {isSmart(props.projectType, props.componentType) &&
           <NavItem eventKey={SMART} >
-            Smart Settings
+            <OverlayTrigger placement="top" overlay={tooltip('Smart Settings')}>
+              <Glyphicon glyph="tower" />
+            </OverlayTrigger>
           </NavItem>
         }
         {isApp(props.projectType) &&
@@ -93,14 +107,18 @@ const NavBarSettings = props => {
         }
       </Nav>
       <Nav pullRight bsStyle="pills" activeKey={1} onSelect={handleSelect}>
-        {isComponent() && props.hasJsonForm &&
+        {isComponent(props.projectType) && props.hasJsonForm &&
           <NavItem eventKey={JSON_FORM_SETTINGS} >
-            JsonForm Schema
+            <OverlayTrigger placement="top" overlay={tooltip('JsonForm Schema')}>
+              <Glyphicon glyph="baby-formula" />
+            </OverlayTrigger>
           </NavItem>
         }
-        {isComponent() && props.hasJsonForm && !isEmpty(props.jsonForm) &&
+        {isComponent(props.projectType) && props.hasJsonForm && !isEmpty(props.jsonForm) &&
           <NavItem eventKey={JSON_FORM_UI_SETTINGS} >
-            JsonForm uiSchema
+            <OverlayTrigger placement="top" overlay={tooltip('JsonForm UISchema')}>
+              <Glyphicon glyph="tent" />
+            </OverlayTrigger>
           </NavItem>
         }
       </Nav>
