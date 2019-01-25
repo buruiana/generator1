@@ -106,9 +106,9 @@
   font-size: 13px;
 }
 
-.nav>li>a {
-  padding: 7px 10px;
-}
+// .nav>li>a {
+//   padding: 7px 10px;
+// }
 
 .navbar {
   padding: 0px;
@@ -121,6 +121,18 @@
 }
 
 .col-md-0 {
-  padding-left: 12px;
+  padding-left: 1em;
+  padding-top: 0.5em;
   cursor: pointer;
+}
+
+.navbar-settings {
+  width: 50%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.glyphicon-remove-circle, .glyphicon-adjust, .glyphicon-info-sign {
+  cursor: pointer;
+  padding-left:0.5em;
 }

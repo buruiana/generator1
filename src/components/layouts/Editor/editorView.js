@@ -138,7 +138,7 @@ const EditorView = props => {
             dndType={externalNodeType}
             shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
             generateNodeProps={({ node, path }) => ({
-              buttons: [<button onClick={() => showModal(COMPONENT_INFO, node, path)}>I</button>]
+              buttons: [<Glyphicon glyph="info-sign" onClick={() => showModal(COMPONENT_INFO, node, path)} />]
             })}
           />
         </div>
@@ -158,8 +158,8 @@ const EditorView = props => {
             getNodeKey={getNodeKey}
             generateNodeProps={({ node, path }) => ({
               buttons: [
-                <button onClick={() => remove(path)}>-</button>,
-                <button onClick={() => showModal(PROPS_FORM, node, path)}>P</button>
+                <Glyphicon glyph="remove-circle" onClick={() => remove(path)} />,
+                <Glyphicon glyph="adjust" onClick={() => showModal(PROPS_FORM, node, path)} />
               ]
             })}
           />
