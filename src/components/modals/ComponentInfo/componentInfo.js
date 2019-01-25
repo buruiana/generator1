@@ -51,10 +51,9 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <Well>
-              <div className='wellStyle'>Techno: {modalContent[0].modalContent.node.techno}</div>
-              <div className='wellStyle'>Provider: {modalContent[0].modalContent.node.provider}</div>
-            </Well>
+            <h5>Techno: {modalContent[0].modalContent.node.techno}</h5>
+            <h5>Provider: {modalContent[0].modalContent.node.provider}</h5>
+            <hr />
             {renderDescription()}
             <PageHeader>Props</PageHeader>
             {renderProps()}

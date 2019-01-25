@@ -12,7 +12,11 @@ const PropsInfo= ({
     <div>
       <Modal show={modalVisible} onHide={closeModal} bsSize="large"
         aria-labelledby="contained-modal-title-lg">
-        <Modal.Header closeButton>{modalContent[0].modalContent.node.title}</Modal.Header>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {modalContent[0].modalContent.node.title}
+          </Modal.Title>
+        </Modal.Header>
         <Modal.Body>
           <PropsForm closeModal={closeModal} modalContent={modalContent[0].modalContent} />
         </Modal.Body>
