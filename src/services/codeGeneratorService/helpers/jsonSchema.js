@@ -43,12 +43,8 @@ export const generateJsonSchemaCode = props => {
 
         if (!isEmpty(el.description)) code += `description: '${el.description}',\n`;
         if (!isEmpty(el.type)) code += `type: '${el.type}',\n`;
-
-
         if (el.type === 'array') code += `items: {\n`;
-        if (el.type === 'object') {
-          code += `properties: {\n`;
-        }
+        if (el.type === 'object') code += `properties: {\n`;
 
         if (!isEmpty(el.children)) prepareJsonFormCode(el.children);
 

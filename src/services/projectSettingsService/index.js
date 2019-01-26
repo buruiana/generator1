@@ -7,8 +7,6 @@ import {
 } from '../../utils';
 
 export function* watchExportProjectFiles(action) {
-  console.log('console: actionaction', action);
-
   yield call(exportFilesBE, action.data);
 }
 

@@ -1,5 +1,6 @@
 import isEmpty from 'lodash/isEmpty';
 import has from 'lodash/has';
+import get from 'lodash/get';
 import {
   getFlatDataFromTree,
 } from 'react-sortable-tree';
@@ -123,7 +124,7 @@ export const generateJsonUISchemaCode = props => {
     ignoreCollapsed: false,
   });
 
-  if (!isEmpty(jsonForm) && jsonForm[0].title) code += `export default schema = {\n`;
+  if (!isEmpty(jsonForm) && jsonForm[0].title) code += `export default uiSchema = {\n`;
 
   const prepareJsonFormCode = jsonForm => {
     jsonForm.map(el => {
@@ -131,12 +132,20 @@ export const generateJsonUISchemaCode = props => {
         let isChild = false;
         let isLastChild = false;
         let parent = null;
-
+        const uiSchema = get(el, 'uiSchema', null);
         const flatElement = flatData.find(element => element.node.title === el.title);
 
-        if (!isEmpty(flatElement)) {
-          parent = flatElement.parentNode;
-        }
+        const hasUiOptions = !isEmpty(uiSchema) && (
+          uiSchema.uiMore.uiInline ||
+          uiSchema.uiOptions.backgroundColor ||
+          uiSchema.uiOptions.classNames ||
+          uiSchema.uiOptions.inputType ||
+          uiSchema.uiOptions.label ||
+          uiOptions.rows
+        );
+        console.log('console: EL', el);
+        console.log('console: FLATELEMENT', flatElement );
+        if (!isEmpty(flatElement)) parent = flatElement.parentNode;
 
         if (!isEmpty(parent)) {
           isChild = !isEmpty(parent.children);
@@ -145,39 +154,40 @@ export const generateJsonUISchemaCode = props => {
             : false;
         }
 
-        if (isChild) {
-          if (!isEmpty(el.title)) code += `${el.title}: { title: '${el.title}',`;
-        } else {
-          if (!isEmpty(el.title)) code += `title: '${el.title}',`;
-        }
-
-        if (!isEmpty(el.description)) code += `description: '${el.description}',\n`;
-        if (!isEmpty(el.type)) code += `type: '${el.type}',\n`;
-
-
+        if (!isEmpty(el.title)) code += `${el.title}: {`;
         if (el.type === 'array') code += `items: {\n`;
-        if (el.type === 'object') {
-          code += `properties: {\n`;
-        }
+        if (el.type === 'object') code += `properties: {\n`;
 
         if (!isEmpty(el.children)) prepareJsonFormCode(el.children);
 
+        if (has(uiSchema, 'uiMore.uiDisabled') && uiSchema.uiMore.uiDisabled) code += `"ui:disabled": true,\n`;
+        if (has(uiSchema, 'uiMore.uiEnumDisabled') && uiSchema.uiMore.uiEnumDisabled) code += `'ui:enumDisabled': '${uiSchema.uiMore.uiEnumDisabled}',\n`;
+        if (has(uiSchema, 'uiMore.uiReadonly') && uiSchema.uiMore.uiReadonly) code += `'ui:readonly': true,\n`;
 
-        if (!isEmpty(el.minimum)) code += `minimum: ${el.minimum},\n`;
-        if (!isEmpty(el.maximum)) code += `maximum: ${el.maximum},\n`;
-        if (!isEmpty(el.minLength)) code += `minLength: ${el.minLength},\n`;
-        if (!isEmpty(el.maxLength)) code += `maxLength: ${el.maxLength},\n`;
-        if (!isEmpty(el.minItems)) code += `minItems: ${el.minItems},\n`;
-        if (!isEmpty(el.maxItems)) code += `maxItems: ${el.maxItems},\n`;
-        if (!isEmpty(el.isRequired)) code += `isRequired: ${el.isRequired},\n`;
-        if (!isEmpty(el.uniqueItems)) code += `uniqueItems: ${el.uniqueItems},\n`;
-        if (!isEmpty(el.multipleOf)) code += `multipleOf: ${el.multipleOf},\n`;
-        if (!isEmpty(el.enumVal)) code += `enum: ${el.enumVal},\n`;
-        if (!isEmpty(el.enumNames)) code += `enumNames: ${el.enumNames},\n`;
+        // uiOptions
+        if (hasUiOptions) code += `'ui:options': {\n`;
+
+        if (has(uiSchema, 'uiOptions.uiInline') && uiSchema.uiMore.uiInline) code += `inline: ${uiSchema.uiMore.uiInline},\n`;
+        if (has(uiSchema, 'uiOptions.backgroundColor') && uiSchema.uiOptions.backgroundColor) code += `backgroundColor: '${uiSchema.uiOptions.backgroundColor}',\n`;
+        if (has(uiSchema, 'uiOptions.classNames') && uiSchema.uiOptions.classNames) code += `classNames: '${uiSchema.uiOptions.classNames}',\n`;
+        if (has(uiSchema, 'uiOptions.inputType') && uiSchema.uiOptions.inputType) code += `inputType: '${uiSchema.uiOptions.inputType}',\n`;
+        if (has(uiSchema, 'uiOptions.label') && uiSchema.uiOptions.label) code += `label: '${uiSchema.uiOptions.label}',\n`;
+        if (has(uiSchema, 'uiOptions.rows') && uiSchema.uiOptions.rows) code += `rows: ${uiSchema.uiOptions.rows},\n`;
+
+        if (hasUiOptions) code += `},\n`;
+
+        // other options
+        if (has(uiSchema, 'uiOthers.uiAutofocus') && uiSchema.uiOthers.uiAutofocus) code += `'ui:autofocus': ${uiSchema.uiOthers.uiAutofocus},\n`;
+        if (has(uiSchema, 'uiOthers.uiDescription') && uiSchema.uiOthers.uiDescription) code += `'ui:description': '${uiSchema.uiOthers.uiDescription}',\n`;
+        if (has(uiSchema, 'uiOthers.uiTitle') && uiSchema.uiOthers.uiTitle) code += `'ui:title': '${uiSchema.uiOthers.uiTitle}',\n`;
+        if (has(uiSchema, 'uiOthers.uiHelp') && uiSchema.uiOthers.uiHelp) code += `'ui:help': '${uiSchema.uiOthers.uiHelp}',\n`;
+        if (has(uiSchema, 'uiOthers.uiPlaceholder') && uiSchema.uiOthers.uiPlaceholder) code += `'ui:placeholder': '${uiSchema.uiOthers.uiPlaceholder}',\n`;
+
+        if (has(uiSchema, 'uiWidget.widget') && uiSchema.uiWidget.widget) code += `'ui:widget': '${uiSchema.uiWidget.widget}',\n`;
 
         if (!isEmpty(parent) && (parent.type === 'array' || parent.type === 'object') && el.title) code += `},\n`;
         if ((el.type === 'array' || el.type === 'object') && isEmpty(el.children)) code += `},\n`;
-        if (!isEmpty(parent) && isLastChild) code += `},\n`;
+        if (!isEmpty(parent) && isLastChild) code += `},},\n`;
         if (isEmpty(parent)) code += `};\n`;
       }
     });

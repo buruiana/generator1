@@ -14,13 +14,13 @@ const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const JsonFormUISettingsForm = props => {
   const { jsonForm } = props;
-  const booleanWidgetEnum = ['radio', 'select', 'checkbox'];
-  const stringWidgetEnum = ['textarea', 'password', 'color', 'text'];
-  const integerWidgetEnum = ['updown', 'range', 'radio'];
-  const html5InputTypesEnum = ['text', 'password', 'submit', 'reset', 'radio', 'checkbox', 'button', 'color', 'date', 'datetime-local', 'email', 'month', 'number', 'range', 'search', 'tel', 'time', 'url', 'week'];
+  const booleanWidgetEnum = ['radio', 'select', 'checkbox', 'hidden'];
+  const stringWidgetEnum = ['textarea', 'password', 'color', 'text', 'hidden'];
+  const integerWidgetEnum = ['updown', 'range', 'radio', 'hidden'];
+  const html5InputTypesEnum = ['text', 'password', 'submit', 'reset', 'radio', 'checkbox', 'button', 'color', 'date', 'datetime-local', 'email', 'month', 'number', 'range', 'search', 'tel', 'time', 'url', 'week', 'hidden'];
 
   const { node, path } = props.nodePath;
-  const getTypeEnum = () => {
+  const getWidgetEnum = () => {
     switch (props.nodePath.node.type) {
       case 'string':
         return stringWidgetEnum;
@@ -45,12 +45,8 @@ const JsonFormUISettingsForm = props => {
           widget: {
             type: 'string',
             title: 'ui:widget',
-            enum: getTypeEnum(),
+            enum: getWidgetEnum(),
             default: get(currentUiSchema, 'uiWidget.widget', ''),
-          },
-          uiHidden: {
-            type: 'boolean', title: 'hidden',
-            default: get(currentUiSchema, 'uiWidget.uiHidden', false),
           },
         },
       },
