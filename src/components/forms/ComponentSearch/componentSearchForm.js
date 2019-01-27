@@ -9,7 +9,6 @@ import {
   REACT_NATIVE,
   REACT,
 } from '../../../utils/constants';
-import { PROJECT_SETTINGS } from '../../modals/constants';
 import ExportFilesView from '../../layouts/ExportFiles';
 
 const ComponentsSearchForm = props => {
@@ -74,33 +73,7 @@ const ComponentsSearchForm = props => {
     props.setFilterData(formData);
   };
 
-  const log = (type) => console.log.bind(console, type);
-
-  const renderExportStatus = () => {
-    return props.exported
-      ? <span className='successExport'><Glyphicon glyph="ok-circle" className='downloadFiles' /></span>
-      : null;
-  }
-
-  const showModal = type => {
-    console.log('console: type', props);
-    const node = [];
-    const newEl = {
-      modalName: type,
-      modalVisible: true,
-      modalContent: { node, type },
-    };
-
-    const newAllModals = [...props.allModals];
-    newAllModals.push(newEl);
-    console.log('console: newAllModals', newAllModals );
-    props.setCurrentModal(type);
-    props.setAllModals(newAllModals);
-  };
-
-  const changeDest = () => {
-    showModal(PROJECT_SETTINGS);
-  }
+  const log = (type) => console.log.bind(console, type)
 
   return (
     <Row>
@@ -121,18 +94,7 @@ const ComponentsSearchForm = props => {
         </div>
       </Col>
       <Col md={5}>
-        <div className='filterComponentsBox1'>
-          <div className='destinationLabel'>
-            <span className='filterComponentsLabel'>DESTINATION</span>:
-            <span className='exportDest'> {props.projectDestination || 'NO DESTINATION'}</span>
-            <a className='changeDest' onClick={changeDest}>( change )</a>
-          </div>
-          <div>
-            <Glyphicon glyph="download-alt" className='downloadFiles' />
-            <ExportFilesView />
-            {renderExportStatus()}
-          </div>
-        </div>
+        <ExportFilesView />
       </Col>
     </Row>
   );

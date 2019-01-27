@@ -6,17 +6,15 @@ import {
   SERVICE,
   ACE_TABS,
 } from '../../../utils/constants';
+import { PROJECT_SETTINGS } from '../../modals/constants';
 
 const ExportFilesView = props => {
 
   const renderLinks = () => {
-    const isDisabled = isEmpty(props.projectSettings.projectDestination)
-      ? `disabled='disabled'`
-      : '';
     return (
       <span>
         <a className='exportFilesLinks' onClick={onClick}>All Files&nbsp;</a>
-        {props.aceTabs.map(tab => <a className='exportFilesLinks' id={tab} isDisabled onClick={onClick}>{`${tab}.js`}&nbsp;</a>)}
+        {props.aceTabs.map(tab => <a className='exportFilesLinks' id={tab} onClick={onClick}>{`${tab}.js`}&nbsp;</a>)}
       </span>);
   };
 
@@ -75,6 +73,32 @@ const ExportFilesView = props => {
     }
   }
 
+  const renderExportStatus = () => {
+    return props.exported
+      ? <span className='successExport'><Glyphicon glyph="ok-circle" className='downloadFiles' /></span>
+      : null;
+  }
+
+  const showModal = type => {
+    console.log('console: type', props);
+    const node = [];
+    const newEl = {
+      modalName: type,
+      modalVisible: true,
+      modalContent: { node, type },
+    };
+
+    const newAllModals = [...props.allModals];
+    newAllModals.push(newEl);
+    console.log('console: newAllModals', newAllModals);
+    props.setCurrentModal(type);
+    props.setAllModals(newAllModals);
+  };
+
+  const changeDest = () => {
+    showModal(PROJECT_SETTINGS);
+  }
+
   const onClick = event => {
     const objToSend = prepareObject(event.target.id);
     props.exportProjectFiles(objToSend);
@@ -86,7 +110,20 @@ const ExportFilesView = props => {
       : renderLinks();
   };
 
-  return renderView();
+  return (
+    <div className='filterComponentsBox1'>
+      <div className='destinationLabel'>
+        <span className='filterComponentsLabel'>DESTINATION</span>:
+            <span className='exportDest'> {props.projectDestination || 'NO DESTINATION'}</span>
+        <a className='changeDest' onClick={changeDest}>( change )</a>
+      </div>
+      <div>
+        <Glyphicon glyph="download-alt" className='downloadFiles' />
+        {renderView()}
+        {renderExportStatus()}
+      </div>
+    </div>
+  );
 }
 
 export default ExportFilesView;
