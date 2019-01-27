@@ -194,14 +194,14 @@ div.rst__moveHandle {
   color: #2aabd2;
 }
 
-.compProp {
-  background: white;
-}
-
 .offline {
   color: gray;
 }
 
 .online {
-  color: red;
+  color: green;
+}
+
+.navbar-default .navbar-brand {
+  color: green;
 }
