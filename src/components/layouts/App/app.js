@@ -35,6 +35,13 @@ const App = props => {
           {props.children}
         </Row>
       </div>
+      <Row className="show-grid">
+        <div className='footer'>
+          <a href="#" className="support">&nbsp;</a>
+          <a href="#" className="tweet">&nbsp;</a>
+          <a href="#" className="face">&nbsp;</a>
+        </div>
+      </Row>
     </Grid>
   )
 };

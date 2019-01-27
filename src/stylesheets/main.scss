@@ -92,7 +92,7 @@
 
 .componentAce {
   height: 100%;
-  width: 30%;
+  width: 40%;
   float: left;
 }
 
@@ -105,10 +105,6 @@
 .nav-tabs {
   font-size: 13px;
 }
-
-// .nav>li>a {
-//   padding: 7px 10px;
-// }
 
 .navbar {
   padding: 0px;
@@ -136,11 +132,15 @@
 .glyphicon-remove-circle, .glyphicon-adjust, .glyphicon-info-sign {
   cursor: pointer;
   padding-left:0.5em;
-  color: red;
+  color: #FF7D7D;
+}
+
+.glyphicon-adjust {
+  color: #6dcd9a;
 }
 
 .rst__moveHandle, .rst__loadingHandle {
-  background-color: #2aabd2;
+  background-color: #92D4E8;
 }
 
 div.rst__rowContents {
@@ -148,11 +148,11 @@ div.rst__rowContents {
 }
 
 div.rst__moveHandle {
-  background-color: #2aabd2;
+  background-color: #92D4E8;
 }
 
 .glyphicon-export {
-  color: red;
+  color: #FF7D7D;
 }
 
 .navbar-settings>li>a {
@@ -164,30 +164,26 @@ div.rst__moveHandle {
 .glyphicon-wrench {
   cursor: pointer;
   padding-right:0.5em;
-  color: green;
-}
-
-.glyphicon-option-vertical {
-  color: blue;
-  padding-right: 5px;
+  color: #6dcd9a;
 }
 
 .navBar-txt {
-  color: blue;
+  color: #3D5B94;
   padding-right: 20px;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-  border: 1px solid #2aabd2;
+  border: 1px solid #6dcd9a;
   border-bottom: 0px;
+  background-color: #ECF8F1;
 }
 
 .compInfo {
-  color: red;
+  color: #FF7D7D;
 }
 
 .compInfo1 {
-  color: #2aabd2;
+  color: #92D4E8;
 }
 
 .offline {
@@ -195,11 +191,11 @@ div.rst__moveHandle {
 }
 
 .online {
-  color: green;
+  color: #6dcd9a;
 }
 
 .navbar-default .navbar-brand {
-  color: green;
+  color: #468362;
 }
 
 .homeImg {
@@ -209,4 +205,38 @@ div.rst__moveHandle {
 .emptyExport {
   padding-left: 1em;
   padding-top: 0.5em;
+}
+
+.footer {
+   left:0px;
+   bottom:0px;
+   height:20px;
+   width:100%;
+
+   a {
+      float: left;
+      line-height: 20px;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .face {
+      background-color: #3D5B94;
+      font-size: 12e;
+      width: 33%;
+    }
+
+    .tweet {
+      background-color: #92D4E8;
+      font-size: 12;
+      width: 33%;
+    }
+
+    .support {
+      background-color: #6dcd9a;
+      font-size: 0.8em;
+      width: 34%;
+    }
 }
