@@ -179,3 +179,20 @@ div.rst__moveHandle {
   color: blue;
   padding-right: 20px;
 }
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  border: 1px solid #2aabd2;
+  border-bottom: 0px;
+}
+
+.compInfo {
+  color: red;
+}
+
+.compInfo1 {
+  color: #2aabd2;
+}
+
+.compProp {
+  background: white;
+}

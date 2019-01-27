@@ -20,7 +20,7 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
     const propsInfo = modalContent[0].modalContent.node.componentProps;
     return propsInfo.map(prop => {
       return (
-        <Panel key={prop.name} eventKey={prop.name}>
+        <Panel key={prop.name} eventKey={prop.name} className='compProp'>
           <Panel.Heading>
             <Panel.Title toggle componentClass="h1">{prop.name}</Panel.Title>
           </Panel.Heading>
@@ -51,11 +51,11 @@ const ComponentInfo = ({ closeModal, modalVisible, modalContent }) => {
 
         <Modal.Body>
           <div>
-            <h5>Techno: {modalContent[0].modalContent.node.techno}</h5>
-            <h5>Provider: {modalContent[0].modalContent.node.provider}</h5>
+            <h5><span className='compInfo'>Techno:</span> <span className='compInfo1'>{modalContent[0].modalContent.node.techno}</span></h5>
+            <h5><span className='compInfo'>Provider:</span> <span className='compInfo1'>{modalContent[0].modalContent.node.provider}</span></h5>
             <hr />
             {renderDescription()}
-            <PageHeader>Props</PageHeader>
+            <h3>Props</h3>
             {renderProps()}
           </div>
         </Modal.Body>
