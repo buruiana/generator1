@@ -10,17 +10,14 @@ import {
 const ExportFilesView = props => {
 
   const renderLinks = () => {
+    const isDisabled = isEmpty(props.projectSettings.projectDestination)
+      ? `disabled='disabled'`
+      : '';
     return (
       <span>
         <a className='exportFilesLinks' onClick={onClick}>All Files&nbsp;</a>
-        {props.aceTabs.map(tab => <a className='exportFilesLinks' id={tab} onClick={onClick}>{`${tab}.js`}&nbsp;</a>)}
+        {props.aceTabs.map(tab => <a className='exportFilesLinks' id={tab} isDisabled onClick={onClick}>{`${tab}.js`}&nbsp;</a>)}
       </span>);
-  };
-
-  const renderExportFiles = () => {
-    return props.projectSettings.projectDestination
-      ? renderLinks()
-      : null;
   };
 
   const prepareObject = tab => {
@@ -85,8 +82,8 @@ const ExportFilesView = props => {
 
   const renderView = () => {
     return !props.projectSettings.projectDestination
-      ? <div className='emptyExport' />
-      : renderExportFiles();
+      ? <span className='emptyExport'>SET DESTINATION</span>
+      : renderLinks();
   };
 
   return renderView();

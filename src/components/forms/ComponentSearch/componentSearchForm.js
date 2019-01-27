@@ -124,7 +124,7 @@ const ComponentsSearchForm = props => {
         <div className='filterComponentsBox1'>
           <div className='destinationLabel'>
             <span className='filterComponentsLabel'>DESTINATION</span>:
-            <span className='exportDest'> {props.projectDestination}</span>
+            <span className='exportDest'> {props.projectDestination || 'NO DESTINATION'}</span>
             <a className='changeDest' onClick={changeDest}>( change )</a>
           </div>
           <div>
