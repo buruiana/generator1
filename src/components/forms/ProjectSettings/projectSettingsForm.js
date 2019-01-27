@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
+import lowerFirst from 'lodash/lowerFirst';
 import {
   APPLICATION,
   SERVICE,
@@ -80,7 +81,7 @@ const ProjectSettingsForm = props => {
   const onSubmit = data => {
     const { projectName, projectTechno, projectType, componentType, projectDestination } = data.formData;
 
-    props.setProjectName(projectName);
+    props.setProjectName(lowerFirst(projectName));
     props.setProjectTechno(projectTechno);
     props.setProjectType(projectType);
     props.setProjectDestination(projectDestination);

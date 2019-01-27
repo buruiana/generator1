@@ -31,7 +31,7 @@ const ExportFilesView = props => {
 
   const renderView = () => {
     return !props.projectSettings.projectDestination
-      ? null
+      ? <div className='emptyExport'/>
       : <Glyphicon glyph="export" onClick={onClick} />
   };
 
