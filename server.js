@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const server = http.createServer(app)
 const io = socketIO(server);
-io.setMaxListeners(20);
+io.setMaxListeners(0);
 
 io.on('connection', socket => {
   console.log('New client connected')
@@ -42,7 +42,7 @@ app.post('/api/prettify', (req, res) => {
     arrowParens: 'avoid',
     proseWrap: 'preserve'
   };
-  console.log('console: ---------------------------------', req.body.code);
+
   res.json(prettier.format(req.body.code, opt));
 });
 
@@ -58,27 +58,37 @@ function execWrapper(command, options) {
 app.post('/api/exportFiles', (req, res) => {
   const name = req.body.name;
   const dest = req.body.destination + `/${name}`;
-
-  let reducer, saga, actions, actionTypes, hoc, component, styles = '';
   shell.mkdir(dest);
 
 
-  if (!req.body.hoc) {
-    reducer = req.body.reducer;
-    fs.writeFileSync(`${dest}/reducer.js`, reducer, 'utf8');
-    saga = req.body.saga || '';
-    fs.writeFileSync(`${dest}/saga.js`, saga, 'utf8');
-    actions = req.body.actions || '';
-    fs.writeFileSync(`${dest}/actions.js`, actions, 'utf8');
-    actionTypes = req.body.actionTypes || '';
-    fs.writeFileSync(`${dest}/actionTypes.js`, actionTypes, 'utf8');
+  if (!req.body.type === 'Service') {
+    if (req.body.reducer || req.body.exportAll) {
+      fs.writeFileSync(`${dest}/reducer.js`, req.body.reducer, 'utf8');
+    }
+
+    if (req.body.saga || req.body.exportAll) {
+      fs.writeFileSync(`${dest}/saga.js`, req.body.saga, 'utf8');
+    }
+
+    if (req.body.actions || req.body.exportAll) {
+      fs.writeFileSync(`${dest}/actions.js`, req.body.actions, 'utf8');
+    }
+
+    if (req.body.actionTypes || req.body.exportAll) {
+      fs.writeFileSync(`${dest}/actionTypes.js`, req.body.actionTypes, 'utf8');
+    }
   } else {
-    hoc = req.body.hoc;
-    fs.writeFileSync(`${dest}/index.js`, hoc, 'utf8');
-    component = req.body.component || '';
-    fs.writeFileSync(`${dest}/${name}.js`, component, 'utf8');
-    styles = req.body.styles || '';
-    fs.writeFileSync(`${dest}/styles.js`, styles, 'utf8');
+    if (req.body.hoc || req.body.exportAll) {
+      fs.writeFileSync(`${dest}/index.js`, req.body.hoc, 'utf8');
+    }
+
+    if (req.body.component || req.body.exportAll) {
+      fs.writeFileSync(`${dest}/${name}.js`, req.body.component, 'utf8');
+    }
+
+    if (req.body.styles || req.body.exportAll) {
+      fs.writeFileSync(`${dest}/styles.js`, req.body.styles, 'utf8');
+    }
   }
 
   res.json('done');

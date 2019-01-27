@@ -9,6 +9,7 @@ export const initialState = () => ({
   hasJsonForm: false,
   err: '',
   jsonForm: [],
+  exported: false,
 });
 
 export default (state = initialState(), action) => {
@@ -47,6 +48,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         err: action.err,
+      };
+    case actionTypes.EXPORT_PROJECT_FILES_SUCCESS:
+      return {
+        ...state,
+        exported: action.exported,
       };
     case actionTypes.SET_PROJECT_SETTINGS_JSON_FORM:
       return {

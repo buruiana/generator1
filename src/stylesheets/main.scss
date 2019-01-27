@@ -62,7 +62,7 @@
 }
 
 .paddingTop {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 .rstcustom__rowLabel {
@@ -209,13 +209,14 @@ div.rst__moveHandle {
 
 .footer {
    left:0px;
-   bottom:0px;
-   height:20px;
+   //bottom:-20px;
+   height:5px;
    width:100%;
+   position: absolute;
 
    a {
       float: left;
-      line-height: 20px;
+      line-height: 10px;
       text-decoration: none;
       color: white;
       text-align: center;
@@ -243,4 +244,55 @@ div.rst__moveHandle {
 
 .rst__placeholder{
     z-index: 0;
+}
+
+.filterComponentsBox {
+  padding: 10px 10px 0px 10px;
+  background: #ECF8F1;
+}
+
+.filterComponentsLabel {
+  color: #468362;
+}
+
+.filterComponentsBox1 {
+  padding: 10px 10px 0px 10px;
+  background: #F1F9FC;
+  min-height: 6em;
+}
+
+.downloadFiles {
+  font-size: 1.5rem;
+  color: #3D5B94;
+  padding: 20px 10px 10px 0px;
+}
+
+.destinationLabel {
+  color: #468362;
+}
+
+.exportDest {
+  color: #FF7D7D;
+}
+
+.exportFilesLinks, .changeDest {
+  padding-left: 10px;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tabsList {
+  padding-left: 40px;
+}
+
+.successExport {
+  -webkit-animation: fadeout 2s;
+  font-size: 24px;
+  padding-left: 30px;
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }

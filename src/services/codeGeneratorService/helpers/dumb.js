@@ -16,7 +16,6 @@ export const generateDumbCode = props => {
     getNodeKey: ({ treeIndex }) => treeIndex,
     ignoreCollapsed: false,
   });
-  if (isEmpty(flatData)) return null;
 
   // IMPORTS
   code += `import React from 'react';\n`;
@@ -50,7 +49,7 @@ export const generateDumbCode = props => {
 
   // RETURN
   code += ` return (\n`;
-  code += getTree(flatData);
+  code += getTree(flatData) || '<div />';
   code += ` );\n`;
   code += `};\n\n`;
   code += `export default ${capitalize(props.projectName)};`;

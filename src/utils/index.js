@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { put } from "redux-saga/effects";
 import isEmpty from 'lodash/isEmpty';
-import { setProjectError } from '../services/projectSettingsService/actions';
+import { setProjectError, setExportFilesSuccess } from '../services/projectSettingsService/actions';
 
 export const boxArray = obj => {
   return Object.prototype.toString.call(obj) != '[object Array]'
@@ -60,14 +60,12 @@ export function* exportFilesBE(info) {
   let result = '';
   try {
     const res = yield exportFiles(info);
-    result = res;
+    yield put(setExportFilesSuccess(true));
   } catch (err) {
     console.log('console: err', err);
-    // prettyCode = JSON.parse(err.config.data);
-    // prettyCode = prettyCode.code;
-
-    // yield put(setProjectError(err.response.data));
+    yield put(setProjectError(err.response.data));
   }
+  //yield put(setExportFilesSuccess(false));
   return result;
 }
 

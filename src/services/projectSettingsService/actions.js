@@ -42,9 +42,16 @@ export const setProjectJsonForm = jsonForm => ({
 
 export const exportProjectFiles = data => ({
   type: actionTypes.EXPORT_PROJECT_FILES,
+  exported: false,
   data
 })
 
 export const initProject = () => ({
   type: actionTypes.INIT_PROJECT,
+  exported: false,
+})
+
+export const setExportFilesSuccess = val => ({
+  type: actionTypes.EXPORT_PROJECT_FILES_SUCCESS,
+  exported: val,
 })
