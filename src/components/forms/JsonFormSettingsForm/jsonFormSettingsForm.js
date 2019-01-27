@@ -108,7 +108,7 @@ const JsonFormSettingsForm = props => {
       <div
         style={{
           height: 400,
-          width: '55%',
+          width: '60%',
           float: 'left',
         }}
       >

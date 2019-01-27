@@ -7,7 +7,7 @@ const JsonFormSettings = ({ closeModal, modalVisible }) => {
 
   return (
     <div>
-      <Modal show={modalVisible} onHide={closeModal} bsSize="large"
+      <Modal show={modalVisible} onHide={closeModal} bsSize="lg"
         aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title>
