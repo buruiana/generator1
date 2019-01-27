@@ -6,6 +6,7 @@ const mapStateToProps = state => {
   return {
     aceTabs: state.aceTabsServiceReducer.aceTabs,
     aceTab: state.aceTabsServiceReducer.aceTab,
+    projectSettings: state.projectSettingsServiceReducer,
   }
 }
 

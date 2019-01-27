@@ -59,7 +59,7 @@ const ComponentsSearchForm = props => {
       {
         name: { md: 3 },
         projectTechno: { md: 2 },
-        provider: { md: 3 },
+        provider: { md: 2 },
       },
     ],
   };
@@ -72,7 +72,7 @@ const ComponentsSearchForm = props => {
   const log = (type) => console.log.bind(console, type);
 
   return (
-    <div>
+    <div className='paddingTops'>
       <Form schema={schema}
         uiSchema={uiSchema}
         onChange={onChange}
