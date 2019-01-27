@@ -164,7 +164,8 @@ div.rst__moveHandle {
 }
 
 .glyphicon-flash, .glyphicon-cog, .glyphicon-th-list, .glyphicon-road,
-.glyphicon-object-align-bottom, .glyphicon-object-align-top {
+.glyphicon-object-align-bottom, .glyphicon-object-align-top,
+.glyphicon-wrench {
   cursor: pointer;
   padding-right:0.5em;
   color: green;
@@ -195,4 +196,12 @@ div.rst__moveHandle {
 
 .compProp {
   background: white;
+}
+
+.offline {
+  color: gray;
+}
+
+.online {
+  color: red;
 }

@@ -18,6 +18,7 @@ import { setDefaultTree } from '../sortableTreeService/actions';
 import reduxSagaFirebase from '../../redux/firebaseConfig';
 import { mock } from './__mocks__';
 import { initApp } from "../configsService/actions";
+import { initProject } from "../projectSettingsService/actions";
 
 export function* watchGetAllComponents() {
   let allComponents = [];
@@ -80,6 +81,7 @@ export function* watchDeleteComponent(action) {
   if (!isOffline) {
     yield call(reduxSagaFirebase.firestore.deleteDocument, `components/${id}`);
     yield put(initApp());
+    yield put(initProject());
   }
 }
 

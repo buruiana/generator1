@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import NavBar from './navBar';
 import { setConfigsIsOffline, initApp } from '../services/configsService/actions';
+import { initProject } from '../services/projectSettingsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -8,11 +9,10 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setConfigsIsOffline: isOffline => dispatch(setConfigsIsOffline(isOffline)),
-    initApp: () => dispatch(initApp()),
-  };
+const mapDispatchToProps = {
+  setConfigsIsOffline: isOffline => setConfigsIsOffline(isOffline),
+  initApp: () => initApp(),
+  initProject: () => initProject(),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

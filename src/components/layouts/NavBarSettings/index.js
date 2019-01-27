@@ -4,7 +4,7 @@ import {
   setCurrentModal,
   setAllModals,
 } from '../../../services/modalService/actions';
-import { initApp } from '../../../services/configsService/actions';
+import { initProject } from '../../../services/projectSettingsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -24,7 +24,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   setAllModals: allModals => setAllModals(allModals),
   setCurrentModal: currentModal => setCurrentModal(currentModal),
-  initApp: () => initApp(),
+  initProject: () => initProject(),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBarSettings);

@@ -53,6 +53,18 @@ export default (state = initialState(), action) => {
         ...state,
         jsonForm: action.jsonForm,
       };
+    case actionTypes.INIT_PROJECT:
+      return {
+        ...state,
+        projectName: '',
+        projectType: '',
+        projectTechno: '',
+        componentType: '',
+        projectDestination: '',
+        hasJsonForm: false,
+        err: '',
+        jsonForm: [],
+      };
     default:
       return state;
   }

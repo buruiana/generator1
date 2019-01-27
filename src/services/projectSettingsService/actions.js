@@ -44,3 +44,7 @@ export const exportProjectFiles = data => ({
   type: actionTypes.EXPORT_PROJECT_FILES,
   data
 })
+
+export const initProject = () => ({
+  type: actionTypes.INIT_PROJECT,
+})

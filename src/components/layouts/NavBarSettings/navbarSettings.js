@@ -1,7 +1,6 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 import Glyphicon from 'react-bootstrap/lib/Glyphicon';
-import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 import Tooltip from 'react-bootstrap/lib/Tooltip';
 import isEmpty from 'lodash/isEmpty';
 import Navbar from 'react-bootstrap/lib/Navbar';
@@ -31,7 +30,7 @@ import {
 const NavBarSettings = props => {
   const handleSelect = type => {
     return type === INIT_APP
-      ? props.initApp()
+      ? props.initProject()
       : showModal(type);
   };
   const showModal = (type) => {
@@ -48,8 +47,6 @@ const NavBarSettings = props => {
     props.setCurrentModal(type);
     props.setAllModals(newAllModals);
   };
-
-  const tooltip = tip => <Tooltip id="tooltip">{tip}</Tooltip>;
 
   return (
     <div>
@@ -80,12 +77,15 @@ const NavBarSettings = props => {
           }
           {isComponent(props.projectType) &&
             <NavItem eventKey={HOC}>
-            <span className='navBar-txt'>COMPONENT</span>
+              <span className='navBar-txt'>COMPONENT</span>
               <Glyphicon glyph="road" />HOC
             </NavItem>
           }
           {isSmart(props.projectType, props.componentType) &&
-            <NavItem eventKey={SMART}>Smart Settings</NavItem>
+            <NavItem eventKey={SMART}>
+              <Glyphicon glyph="wrench" />
+              Smart Settings
+            </NavItem>
           }
           {isApp(props.projectType) &&
             <NavItem eventKey={APPLICATION}>
@@ -100,12 +100,12 @@ const NavBarSettings = props => {
           {isComponent(props.projectType) && props.hasJsonForm &&
             <NavItem eventKey={JSON_FORM_SETTINGS}>
               <span className='navBar-txt'>JSONFORM</span>
-              <Glyphicon glyph="object-align-top" />
+              <Glyphicon glyph="object-align-bottom" />
               Schema
             </NavItem>
           }
           {isComponent(props.projectType) && props.hasJsonForm && !isEmpty(props.jsonForm) &&
-            <NavItem eventKey={JSON_FORM_UI_SETTINGS}><Glyphicon glyph="object-align-bottom" />uiSchema</NavItem>
+            <NavItem eventKey={JSON_FORM_UI_SETTINGS}><Glyphicon glyph="object-align-top" />uiSchema</NavItem>
           }
         </Nav>
       </Navbar>

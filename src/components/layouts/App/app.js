@@ -20,7 +20,11 @@ const App = props => {
     });
   }
 
-  if (isEmpty(props.components)) props.initApp();
+  if (isEmpty(props.components)) {
+    props.initApp();
+    props.initProject();
+  }
+
   return (
     <Grid>
       <Row className="show-grid">

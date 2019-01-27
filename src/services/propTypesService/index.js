@@ -8,9 +8,9 @@ import {
 } from './actionTypes';
 import {
   setAllPropTypes,
-
 } from './actions';
 import { initApp } from '../configsService/actions';
+import { initProject } from '../projectSettingsService/actions';
 import reduxSagaFirebase from '../../redux/firebaseConfig';
 import { boxArray } from '../../utils';
 import { mock } from './__mocks__';
@@ -49,6 +49,7 @@ export function* watchSetPropType(action) {
       );
     }
     yield put(initApp());
+    yield put(initProject());
   }
 }
 
@@ -59,6 +60,7 @@ export function* watchDeletePropType(action) {
   if (!isOffline) {
     yield call(reduxSagaFirebase.firestore.deleteDocument, `propTypes/${id}`);
     yield put(initApp());
+    yield put(initProject());
   }
 }
 
