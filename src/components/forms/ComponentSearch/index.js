@@ -1,8 +1,6 @@
 import ComponentSearchForm from './componentSearchForm';
 import { connect } from "react-redux";
-import {
-  setComponent,
-} from '../../../services/componentsService/actions';
+import { setComponent } from '../../../services/componentsService/actions';
 import { setFilterData } from '../../../services/componentsService/actions';
 
 const mapStateToProps = state => {
@@ -12,11 +10,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setComponent: componnet => dispatch(setComponent(componnet)),
-    setFilterData: filterData => dispatch(setFilterData(filterData)),
-  };
+const mapDispatchToProps = {
+  setComponent: componnet => setComponent(componnet),
+  setFilterData: filterData => setFilterData(filterData),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentSearchForm);

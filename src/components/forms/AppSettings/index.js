@@ -11,11 +11,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setAppSettings: settings => dispatch(setAppSettings(settings)),
-    setGenerateApp: val => dispatch(setGenerateApp(val)),
-  };
+const mapDispatchToProps = {
+  setAppSettings: settings => setAppSettings(settings),
+  setGenerateApp: val => setGenerateApp(val),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppSettingsForm);

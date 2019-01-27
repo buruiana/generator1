@@ -1,11 +1,9 @@
 import JsonFormSettingsForm from './jsonFormSettingsForm';
 import { connect } from "react-redux";
-import {
-  setProjectJsonForm
-} from '../../../services/projectSettingsService/actions';
+import { setProjectJsonForm } from '../../../services/projectSettingsService/actions';
 import {
   setAllModals,
-  setCurrentModal
+  setCurrentModal,
 } from '../../../services/modalService/actions';
 import { setNodePath } from '../../../services/sortableTreeService/actions';
 
@@ -17,13 +15,11 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setAllModals: content => dispatch(setAllModals(content)),
-    setCurrentModal: currentModal => dispatch(setCurrentModal(currentModal)),
-    setProjectJsonForm: jsonForm => dispatch(setProjectJsonForm(jsonForm)),
-    setNodePath: nodePath => dispatch(setNodePath(nodePath)),
-  };
+const mapDispatchToProps = {
+  setAllModals: content => setAllModals(content),
+  setCurrentModal: currentModal => setCurrentModal(currentModal),
+  setProjectJsonForm: jsonForm => setProjectJsonForm(jsonForm),
+  setNodePath: nodePath => setNodePath(nodePath),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(JsonFormSettingsForm);

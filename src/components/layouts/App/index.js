@@ -1,11 +1,7 @@
 import App from './app';
 import { connect } from "react-redux";
-import {
-  initApp,
-} from '../../../services/configsService/actions';
-import {
-  initProject,
-} from '../../../services/projectSettingsService/actions';
+import { initApp } from '../../../services/configsService/actions';
+import { initProject } from '../../../services/projectSettingsService/actions';
 import { setConfigsIsOffline } from '../../../services/configsService/actions';
 import { setAppCode, setAppCodeDone } from '../../../services/appSettingsService/actions';
 

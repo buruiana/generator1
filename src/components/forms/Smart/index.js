@@ -1,8 +1,6 @@
 import SmartForm from './smartForm';
 import { connect } from "react-redux";
-import {
-  setSmartSettings,
-} from '../../../services/componentSettingsService/actions';
+import { setSmartSettings } from '../../../services/componentSettingsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,10 +8,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setSmartSettings: smart => dispatch(setSmartSettings(smart)),
-  };
+const mapDispatchToProps = {
+  setSmartSettings: smart => setSmartSettings(smart),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SmartForm);

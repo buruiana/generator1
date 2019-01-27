@@ -1,8 +1,6 @@
 import ProvidersForm from './providersForm';
 import { connect } from "react-redux";
-import {
-  setProvider,
-} from '../../../services/providersService/actions';
+import { setProvider } from '../../../services/providersService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,10 +8,8 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setProvider: provider => dispatch(setProvider(provider)),
-  };
+const mapDispatchToProps = {
+  setProvider: provider => setProvider(provider),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProvidersForm);

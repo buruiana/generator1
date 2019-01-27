@@ -21,14 +21,12 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setTree: tree => dispatch(setTree(tree)),
-    setDefaultTree: defaultTree => dispatch(setDefaultTree(defaultTree)),
-    setNodePath: nodePath => dispatch(setNodePath(nodePath)),
-    setCurrentModal: currentModal => dispatch(setCurrentModal(currentModal)),
-    setAllModals: allModals => dispatch(setAllModals(allModals)),
-  };
+const mapDispatchToProps = {
+  setTree: tree => setTree(tree),
+  setDefaultTree: defaultTree => setDefaultTree(defaultTree),
+  setNodePath: nodePath => setNodePath(nodePath),
+  setCurrentModal: currentModal => setCurrentModal(currentModal),
+  setAllModals: allModals => setAllModals(allModals),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditorView);

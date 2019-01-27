@@ -1,8 +1,6 @@
 import ActionsForm from './actionsForm';
 import { connect } from "react-redux";
-import {
-  setActions,
-} from '../../../services/serviceSettingsService/actions';
+import { setActions } from '../../../services/serviceSettingsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,10 +8,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setActions: actions => dispatch(setActions(actions)),
-  };
+const mapDispatchToProps = {
+  setActions: actions => setActions(actions),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActionsForm);

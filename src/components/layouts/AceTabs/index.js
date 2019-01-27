@@ -1,8 +1,6 @@
 import { connect } from "react-redux";
 import AceTabs from './aceTabs';
-import {
-  setAceTab,
-} from '../../../services/aceTabsService/actions';
+import { setAceTab } from '../../../services/aceTabsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,10 +9,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setAceTab: tab => dispatch(setAceTab(tab)),
-  };
+const mapDispatchToProps = {
+  setAceTab: tab => setAceTab(tab),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AceTabs);

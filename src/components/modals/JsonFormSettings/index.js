@@ -7,10 +7,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setProjectJsonForm: jsonForm => dispatch(setProjectJsonForm(jsonForm)),
-  };
+const mapDispatchToProps = {
+  setProjectJsonForm: jsonForm => setProjectJsonForm(jsonForm),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(JsonFormSettings);

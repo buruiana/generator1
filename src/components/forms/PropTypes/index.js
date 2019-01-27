@@ -1,8 +1,6 @@
 import PropTypesForm from './propTypesForm';
 import { connect } from "react-redux";
-import {
-  setPropType,
-} from '../../../services/propTypesService/actions';
+import { setPropType } from '../../../services/propTypesService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,10 +8,8 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setPropType: propType => dispatch(setPropType(propType)),
-  };
+const mapDispatchToProps = {
+  setPropType: propType => setPropType(propType),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PropTypesForm);

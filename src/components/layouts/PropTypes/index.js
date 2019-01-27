@@ -11,12 +11,10 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getAllPropTypes: () => dispatch(getAllPropTypes()),
-    deletePropType: propType => dispatch(deletePropType(propType)),
-    setPropType: propType => dispatch(setPropType(propType)),
-  };
+const mapDispatchToProps = {
+  getAllPropTypes: () => getAllPropTypes(),
+  deletePropType: propType => deletePropType(propType),
+  setPropType: propType => setPropType(propType),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PropTypesListView);

@@ -12,10 +12,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setComponent: componnet => dispatch(setComponent(componnet)),
-  };
+const mapDispatchToProps = {
+  setComponent: componnet => setComponent(componnet),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentsForm);

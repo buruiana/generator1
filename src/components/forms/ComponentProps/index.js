@@ -9,10 +9,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setComponent: component => dispatch(setComponent(component)),
-  };
+const mapDispatchToProps = {
+  setComponent: component => setComponent(component),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentPropsForm);

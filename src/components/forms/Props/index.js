@@ -9,10 +9,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setTree: tree => dispatch(setTree(tree)),
-  };
+const mapDispatchToProps = {
+  setTree: tree => setTree(tree),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PropsForm);

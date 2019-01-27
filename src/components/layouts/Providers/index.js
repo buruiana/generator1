@@ -12,11 +12,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    deleteProvider: provider => dispatch(deleteProvider(provider)),
-    setProvider: provider => dispatch(setProvider(provider)),
-  };
+const mapDispatchToProps = {
+    deleteProvider: provider => deleteProvider(provider),
+    setProvider: provider => setProvider(provider),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProvidersListView);

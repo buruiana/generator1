@@ -1,8 +1,6 @@
 import { connect } from "react-redux";
 import ComponentsListView from './componentsListView';
-import {
-  deleteComponent,
-} from '../../../services/componentsService/actions';
+import { deleteComponent } from '../../../services/componentsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,10 +9,8 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    deleteComponent: component => dispatch(deleteComponent(component)),
-  };
+const mapDispatchToProps = {
+  deleteComponent: component => deleteComponent(component),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentsListView);

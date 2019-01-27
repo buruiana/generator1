@@ -11,11 +11,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setProjectJsonForm: jsonForm => dispatch(setProjectJsonForm(jsonForm)),
-    setNodePath: nodePath => dispatch(setNodePath(nodePath)),
-  };
+const mapDispatchToProps = {
+  setProjectJsonForm: jsonForm => setProjectJsonForm(jsonForm),
+  setNodePath: nodePath => setNodePath(nodePath),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(JsonFormInfoForm);

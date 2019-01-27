@@ -11,12 +11,10 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setAppTree: tree => dispatch(setAppTree(tree)),
-    setAppFile: file => dispatch(setAppFile(file)),
-    setAppCode: code => dispatch(setAppCode(code)),
-  };
+const mapDispatchToProps = {
+    setAppTree: tree => setAppTree(tree),
+    setAppFile: file => setAppFile(file),
+    setAppCode: code => setAppCode(code),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppStructureView

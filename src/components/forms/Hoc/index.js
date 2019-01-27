@@ -1,8 +1,6 @@
 import HocForm from './hocForm';
 import { connect } from "react-redux";
-import {
-  setHoc,
-} from '../../../services/componentSettingsService/actions';
+import { setHoc } from '../../../services/componentSettingsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,10 +8,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setHoc: hoc => dispatch(setHoc(hoc)),
-  };
+const mapDispatchToProps = {
+  setHoc: hoc => setHoc(hoc),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HocForm);

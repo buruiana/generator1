@@ -1,8 +1,6 @@
 import ReducerForm from './reducerForm';
 import { connect } from "react-redux";
-import {
-  setReducer,
-} from '../../../services/serviceSettingsService/actions';
+import { setReducer } from '../../../services/serviceSettingsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,10 +8,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setReducer: reducer => dispatch(setReducer(reducer)),
-  };
+const mapDispatchToProps = {
+  setReducer: reducer => setReducer(reducer),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReducerForm);
