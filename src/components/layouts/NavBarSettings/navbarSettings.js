@@ -78,7 +78,7 @@ const NavBarSettings = props => {
           {isComponent(props.projectType) &&
             <NavItem eventKey={HOC}>
               <span className='navBar-txt'>COMPONENT</span>
-              <Glyphicon glyph="road" />HOC
+              <Glyphicon glyph="star-empty" />HOC
             </NavItem>
           }
           {isSmart(props.projectType, props.componentType) &&
