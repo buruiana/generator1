@@ -57,70 +57,55 @@ const NavBarSettings = props => {
         <Nav bsStyle="pills" activeKey={1} onSelect={handleSelect} >
           {props.projectName &&
             <NavItem eventKey={INIT_APP}>
-              <OverlayTrigger placement="top" overlay={tooltip('Init Project')}>
-                <Glyphicon glyph="flash" />
-              </OverlayTrigger>
+              <span className='navBar-txt'>PROJECT</span>
+              <Glyphicon glyph="flash" />
+              Init Project
             </NavItem>
           }
-          <NavItem eventKey={PROJECT_SETTINGS}>
-            <OverlayTrigger placement="top" overlay={tooltip('Project Settings')}>
-              <Glyphicon glyph="cog" />
-            </OverlayTrigger>
-          </NavItem>
+          <NavItem eventKey={PROJECT_SETTINGS}><Glyphicon glyph="cog" />Project Settings</NavItem>
           {isService(props.projectType) &&
             <NavItem eventKey={ACTION_TYPES}>
-              AT
-            </NavItem>
+              <span className='navBar-txt'>REDUX</span>
+              Action types
+              </NavItem>
           }
           {isService(props.projectType) && hasActionTypes(props.actionTypes) &&
-            <NavItem eventKey={ACTIONS} >
-              A
-            </NavItem>
+            <NavItem eventKey={ACTIONS}>Actions</NavItem>
           }
           {isService(props.projectType) && hasActionTypes(props.actionTypes) &&
-            <NavItem eventKey={SAGA} >
-              S
-          </NavItem>
+            <NavItem eventKey={SAGA}>Saga</NavItem>
           }
           {isService(props.projectType) && hasActionTypes(props.actionTypes) &&
-            <NavItem eventKey={REDUCER} >
-              R
-            </NavItem>
+            <NavItem eventKey={REDUCER}>Reducer</NavItem>
           }
           {isComponent(props.projectType) &&
-            <NavItem eventKey={HOC} >
-              <OverlayTrigger placement="top" overlay={tooltip('Higher Order Component')}>
-                <Glyphicon glyph="header" />
-              </OverlayTrigger>
+            <NavItem eventKey={HOC}>
+            <span className='navBar-txt'>COMPONENT</span>
+              <Glyphicon glyph="road" />HOC
             </NavItem>
           }
           {isSmart(props.projectType, props.componentType) &&
-            <NavItem eventKey={SMART} >
-              <OverlayTrigger placement="top" overlay={tooltip('Smart Settings')}>
-                <Glyphicon glyph="tower" />
-              </OverlayTrigger>
-            </NavItem>
+            <NavItem eventKey={SMART}>Smart Settings</NavItem>
           }
           {isApp(props.projectType) &&
-            <NavItem eventKey={APPLICATION} >
-              App Settings
-          </NavItem>
+            <NavItem eventKey={APPLICATION}>
+              <span className='navBar-txt'></span>APP
+              <Glyphicon glyph="option-vertical" />
+              <Glyphicon glyph="th-list" />
+              Settings
+            </NavItem>
           }
         </Nav>
         <Nav pullRight bsStyle="pills" activeKey={1} onSelect={handleSelect}>
           {isComponent(props.projectType) && props.hasJsonForm &&
-            <NavItem eventKey={JSON_FORM_SETTINGS} >
-              <OverlayTrigger placement="top" overlay={tooltip('JsonForm Schema')}>
-                <Glyphicon glyph="baby-formula" />
-              </OverlayTrigger>
+            <NavItem eventKey={JSON_FORM_SETTINGS}>
+              <span className='navBar-txt'>JSONFORM</span>
+              <Glyphicon glyph="object-align-top" />
+              Schema
             </NavItem>
           }
           {isComponent(props.projectType) && props.hasJsonForm && !isEmpty(props.jsonForm) &&
-            <NavItem eventKey={JSON_FORM_UI_SETTINGS} >
-              <OverlayTrigger placement="top" overlay={tooltip('JsonForm UISchema')}>
-                <Glyphicon glyph="tent" />
-              </OverlayTrigger>
-            </NavItem>
+            <NavItem eventKey={JSON_FORM_UI_SETTINGS}><Glyphicon glyph="object-align-bottom" />uiSchema</NavItem>
           }
         </Nav>
       </Navbar>

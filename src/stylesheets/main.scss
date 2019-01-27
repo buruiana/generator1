@@ -127,12 +127,55 @@
 }
 
 .navbar-settings {
-  width: 30%;
+  //width: 30%;
   padding: 0px;
   margin: 0px;
+  color: black;
 }
 
 .glyphicon-remove-circle, .glyphicon-adjust, .glyphicon-info-sign {
   cursor: pointer;
   padding-left:0.5em;
+  color: red;
+}
+
+.rst__moveHandle, .rst__loadingHandle {
+  background-color: #2aabd2;
+}
+
+div.rst__rowContents {
+  border-radius: 0px 10px 10px 0px;
+}
+
+div.rst__moveHandle {
+  background-color: #2aabd2;
+}
+
+.glyphicon-export {
+  color: red;
+}
+
+// .navBar {
+//   background: #7ACFE7;
+// }
+
+.navbar-settings>li>a {
+  color: balck;
+}
+
+.glyphicon-flash, .glyphicon-cog, .glyphicon-th-list, .glyphicon-road,
+.glyphicon-object-align-bottom, .glyphicon-object-align-top {
+  cursor: pointer;
+  padding-right:0.5em;
+  color: green;
+}
+
+.glyphicon-option-vertical {
+  color: blue;
+  padding-right: 5px;
+}
+
+.navBar-txt {
+  color: blue;
+  padding-right: 20px;
 }
