@@ -90,7 +90,7 @@ const ExportFilesView = props => {
 
     const newAllModals = [...props.allModals];
     newAllModals.push(newEl);
-    console.log('console: newAllModals', newAllModals);
+
     props.setCurrentModal(type);
     props.setAllModals(newAllModals);
   };

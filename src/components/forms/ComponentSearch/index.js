@@ -7,7 +7,6 @@ const mapStateToProps = state => {
     providers: state.providersServiceReducer.providers,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
     projectDestination: state.projectSettingsServiceReducer.projectDestination,
-    exported: state.projectSettingsServiceReducer.exported,
   }
 }
 

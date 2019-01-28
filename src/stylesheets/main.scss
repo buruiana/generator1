@@ -212,7 +212,8 @@ div.rst__moveHandle {
    bottom: 0px;
    height: 5px;
    width: 100%;
-   position: absolute;
+   position: fixed;
+   z-index: 10;
 
    a {
       float: left;
@@ -287,9 +288,10 @@ div.rst__moveHandle {
 }
 
 .successExport {
-  -webkit-animation: fadeout 2s;
+  //-webkit-animation: fadeout 2s;
   font-size: 24px;
   padding-left: 30px;
+  transition: width 1s 1s, height 1s 1s, opacity 1s;
 }
 
 @keyframes fadeout {
