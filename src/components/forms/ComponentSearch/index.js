@@ -7,6 +7,7 @@ const mapStateToProps = state => {
     providers: state.providersServiceReducer.providers,
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
     projectDestination: state.projectSettingsServiceReducer.projectDestination,
+    pathname: state.routing.locationBeforeTransitions.pathname,
   }
 }
 

@@ -73,11 +73,21 @@ const ComponentsSearchForm = props => {
     props.setFilterData(formData);
   };
 
+  const getExportFilesView = () => {
+    return (props.pathname === 'editor')
+      ? (
+        <Col md={5}>
+          <ExportFilesView />
+        </Col>
+      )
+        : null;
+  };
+
   const log = (type) => console.log.bind(console, type)
 
   return (
     <Row>
-      <Col md={7}>
+      <Col md={(props.pathname === 'editor') ? 7 : 12}>
         <div className='filterComponentsBox'>
           <span className='filterComponentsLabel'>FILTER COMPONENTS</span>
           <div className='paddingTop'>
@@ -86,16 +96,14 @@ const ComponentsSearchForm = props => {
               onChange={onChange}
               onError={log("errors")}
               fields={fields}
-              autocomplete='off'
+              autocomplete='on'
               >
             <button type="submit" className="hidden">Submit</button>
             </Form>
           </div>
         </div>
       </Col>
-      <Col md={5}>
-        <ExportFilesView />
-      </Col>
+      {getExportFilesView()}
     </Row>
   );
 }
