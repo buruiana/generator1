@@ -381,7 +381,7 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      title: 'TabBarIOS.Item'
+      title: 'TabBarIOS__Item'
     },
     {
       children: [],
@@ -1077,6 +1077,7 @@ export const mock = {
       id: '8eawiS1gwWNjnw6Fz1PS',
       isDefault: false,
       provider: 'HTML',
+      subtitle: 'HTML',
       techno: 'React',
       title: 'div'
     },
@@ -1127,19 +1128,22 @@ export const mock = {
       id: '93uClSQcwyGJ0cq2C5cy',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Modal.Dialog'
+      title: 'Modal__Dialog'
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/NavbarCollapse',
       componentProps: [],
       description: 'Navbar.Collapse',
       id: '93xY4uCAZjNNlXPKIJSP',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Navbar.Collapse'
+      title: 'Navbar__Collapse'
     },
     {
       children: [],
@@ -1182,8 +1186,9 @@ export const mock = {
       id: '9QvbCynRko82uMUS1rQf',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'InputGroup.Addon'
+      title: 'InputGroup__Addon'
     },
     {
       children: [],
@@ -1449,6 +1454,67 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: true,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'onClick',
+          name: 'onClick',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'className',
+          name: 'className',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'html buttonSpecifies that a button should automatically get focus when the page loads',
+          name: 'autofocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies that a button should be disabled',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies one or more forms the button belongs to',
+          name: 'form',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies the type of button',
+          name: 'type',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies an initial value for the button',
+          name: 'value',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies a name for the button',
+          name: 'name',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'html button',
+      id: 'CoY3UqtmbKer38qUKZ1z',
+      isDefault: false,
+      provider: 'HTML',
+      techno: 'React',
+      title: 'button'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: '-',
       componentProps: [
@@ -1524,8 +1590,9 @@ export const mock = {
       id: 'DhRlqan3PUDwdQ4lspH6',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Panel.Collapse'
+      title: 'Panel__Collapse'
     },
     {
       children: [],
@@ -1893,19 +1960,22 @@ export const mock = {
       id: 'EePm08YwomzPQPlJCUcB',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Breadcrumb.Item'
+      title: 'Breadcrumb__Item'
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/NavbarHeader',
       componentProps: [],
       description: 'Navbar.Header',
       id: 'HAI627meuoN0YhJzEzS5',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Navbar.Header'
+      title: 'Navbar__Header'
     },
     {
       children: [],
@@ -2328,6 +2398,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/InputGroupButton',
       componentProps: [
         {
@@ -2341,8 +2412,9 @@ export const mock = {
       id: 'LvuttVoKjsvQ8LfdAhNs',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'InputGroup.Button'
+      title: 'InputGroup__Button'
     },
     {
       children: [],
@@ -2525,31 +2597,32 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/TabContainer',
       componentProps: [
         {
           description: 'HTML id attribute, required if no generateChildId prop is specified.\n\nfunction(props, ...args) { let error = null; if (!props.generateChildId) { error = idPropType(props, ...args); if (!error && !props.id) { error = new Error( \'In order to properly initialize Tabs in a way that is accessible \' + \'to assistive technologies (such as screen readers) an `id` or a \' + \'`generateChildId` prop to TabContainer is required\' ); } } return error;',
           name: 'id',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'A function that takes an eventKey and type and returns a unique id for child tab <NavItem>s and <TabPane>s. The function must be a pure function, meaning it should always return the same id for the same set of inputs. The default value requires that an id to be set for the <TabContainer>.\n\nThe type argument will either be "tab" or "pane".\n\ndefault: (eventKey, type) => `${this.props.id}-${type}-${key}`',
           name: 'generateChildId',
           propType: 'PropTypes.func',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         },
         {
           description: 'he eventKey of the currently active tab.',
           name: 'onSelect',
-          propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
         },
         {
           description: 'The eventKey of the currently active tab.',
           name: 'activeKey',
           propType: 'PropTypes.string',
-          propTypeIsrequired: true
+          propTypeIsrequired: false
         }
       ],
       description: 'TabContainer',
@@ -2787,8 +2860,9 @@ export const mock = {
       id: 'RNTGYdkkm8osSehwVxKl',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'FormControl.Feedback'
+      title: 'FormControl__Feedback'
     },
     {
       children: [],
@@ -4162,8 +4236,9 @@ export const mock = {
       id: 'a7bZesFogd0zTHkyXOUG',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Panel.Heading'
+      title: 'Panel__Heading'
     },
     {
       children: [],
@@ -4346,8 +4421,9 @@ export const mock = {
       id: 'cyBBSi3l2Fs18XXcBFud',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'FormControl.Static'
+      title: 'FormControl__Static'
     },
     {
       children: [],
@@ -4462,8 +4538,7 @@ export const mock = {
       isDefault: true,
       provider: 'Jsonschema-form',
       techno: 'React',
-      title: 'Form',
-      subtitle: 'Jsonschema-form'
+      title: 'Form'
     },
     {
       children: [],
@@ -4487,8 +4562,9 @@ export const mock = {
       id: 'eKv8EYkQXHoOFwCLRdaZ',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Modal.Body'
+      title: 'Modal__Body'
     },
     {
       children: [],
@@ -4849,8 +4925,9 @@ export const mock = {
       id: 'hS7Uja0jxaHZgQFo3JSU',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Panel.Toggle'
+      title: 'Panel__Toggle'
     },
     {
       children: [],
@@ -5094,11 +5171,13 @@ export const mock = {
       id: 'kc6wM6m8ALddmDvYSVv8',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Carousel.Caption'
+      title: 'Carousel__Caption'
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ModalTitle',
       componentProps: [
         {
@@ -5118,8 +5197,34 @@ export const mock = {
       id: 'mqrK9kqyPNhM6hHgUwEp',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Modal.Title'
+      title: 'Modal__Title'
+    },
+    {
+      children: [],
+      closeTag: false,
+      componentImport: '-',
+      componentProps: [
+        {
+          description: 'Specifies which form element a label is bound to',
+          name: 'for',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Specifies one or more forms the label belongs to',
+          name: 'form',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: '',
+      id: 'n9vOAqzEBwSDjlhjVKZe',
+      isDefault: false,
+      provider: 'HTML',
+      techno: 'React',
+      title: 'label'
     },
     {
       children: [],
@@ -5288,11 +5393,13 @@ export const mock = {
       id: 'nn6lgRHDkYGV8QZOGb1G',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Carousel.Item'
+      title: 'Carousel__Item'
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/PageItem',
       componentProps: [
         {
@@ -5336,8 +5443,9 @@ export const mock = {
       id: 'o3RntWvdORJ16swg2h15',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Pager.Item'
+      title: 'Pager__Item'
     },
     {
       children: [],
@@ -5535,6 +5643,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ModalHeader',
       componentProps: [
         {
@@ -5566,8 +5675,9 @@ export const mock = {
       id: 'r1TLuQYfe7M3xTfZuOSi',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Modal.Header'
+      title: 'Modal__Header'
     },
     {
       children: [],
@@ -5750,8 +5860,9 @@ export const mock = {
       id: 't2FggUXxb7HCS5s6Sy0d',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Navbar.Brand'
+      title: 'Navbar__Brand'
     },
     {
       children: [],
@@ -6524,6 +6635,7 @@ export const mock = {
     },
     {
       children: [],
+      closeTag: false,
       componentImport: 'react-bootstrap/lib/ModalFooter',
       componentProps: [
         {
@@ -6543,8 +6655,87 @@ export const mock = {
       id: 'zul9y7IXXu6HIt5xXx9L',
       isDefault: true,
       provider: 'Bootstrap',
+      subtitle: 'Bootstrap',
       techno: 'React',
-      title: 'Modal.Footer'
+      title: 'Modal__Footer'
     }
   ],
+  component: {
+    id: '2poVTlL3U0SPlT8WgC0B',
+    title: 'TabBarIOS__Item',
+    description: 'TabBarIOS.Item',
+    provider: 'ReactNative',
+    componentImport: '-',
+    techno: 'React Native',
+    isDefault: true,
+    closeTag: false,
+    componentProps: [
+      {
+        description: 'It specifies whether the children are visible or not. If you see a blank content, you probably forgot to add a selected one.',
+        name: 'selected',
+        propType: 'PropTypes.bool',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'Little red bubble that sits at the top right of the icon.\n\nstring, number',
+        name: 'badge',
+        propType: 'PropTypes.string',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'A custom icon for the tab. It is ignored when a system icon is defined.\n\nImage.propTypes.source',
+        name: 'icon',
+        propType: 'PropTypes.string',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'Callback when this tab is being selected, you should change the state of your component to set selected={true}.',
+        name: 'onPress',
+        propType: 'PropTypes.func',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'If set to true it renders the image as original, it defaults to being displayed as a template',
+        name: 'renderAsOriginal',
+        propType: 'PropTypes.bool',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'Background color for the badge. Available since iOS 10.',
+        name: 'badgeColor',
+        propType: 'PropTypes.string',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'A custom icon when the tab is selected. It is ignored when a system icon is defined. If left empty, the icon will be tinted in blue.\n\nImage.propTypes.source',
+        name: 'selectedIcon',
+        propType: 'PropTypes.string',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'React style object.',
+        name: 'style',
+        propType: 'PropTypes.string',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'Items comes with a few predefined system icons. Note that if you are using them, the title and selectedIcon will be overridden with the system ones.\n\nenum(\'bookmarks\', \'contacts\', \'downloads\', \'favorites\', \'featured\', \'history\', \'more\', \'most-recent\', \'most-viewed\', \'recents\', \'search\', \'top-rated\')',
+        name: 'systemIcon',
+        propType: 'PropTypes.oneOf([\'\', \'\'])',
+        propTypeIsrequired: false
+      },
+      {
+        description: 'Text that appears under the icon. It is ignored when a system icon is defined.',
+        name: 'title',
+        propType: 'PropTypes.string',
+        propTypeIsrequired: false
+      },
+      {
+        description: '(Apple TV only)* When set to true, this view will be focusable and navigable using the Apple TV remote.',
+        name: 'isTVSelectable',
+        propType: 'PropTypes.bool',
+        propTypeIsrequired: false
+      }
+    ],
+  },
 }

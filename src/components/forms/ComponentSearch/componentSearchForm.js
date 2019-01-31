@@ -12,7 +12,7 @@ import {
 import ExportFilesView from '../../layouts/ExportFiles';
 
 const ComponentsSearchForm = props => {
-  const { providers, projectTechno } = props;
+  const { providers, projectTechno, searchData } = props;
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
     : [];
@@ -74,7 +74,7 @@ const ComponentsSearchForm = props => {
   };
 
   const getExportFilesView = () => {
-    return (props.pathname === 'editor')
+    return ((props.pathname === 'editor') || (props.pathname === '/editor'))
       ? (
         <Col md={5}>
           <ExportFilesView />
@@ -87,7 +87,7 @@ const ComponentsSearchForm = props => {
 
   return (
     <Row>
-      <Col md={(props.pathname === 'editor') ? 7 : 12}>
+      <Col md={((props.pathname === 'editor') || (props.pathname === '/editor')) ? 7 : 12}>
         <div className='filterComponentsBox'>
           <span className='filterComponentsLabel'>FILTER COMPONENTS</span>
           <div className='paddingTop'>
@@ -96,6 +96,7 @@ const ComponentsSearchForm = props => {
               onChange={onChange}
               onError={log("errors")}
               fields={fields}
+              formData={searchData}
               autocomplete='on'
               >
             <button type="submit" className="hidden">Submit</button>

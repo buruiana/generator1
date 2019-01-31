@@ -8,6 +8,7 @@ const mapStateToProps = state => {
     projectTechno: state.projectSettingsServiceReducer.projectTechno,
     projectDestination: state.projectSettingsServiceReducer.projectDestination,
     pathname: state.routing.locationBeforeTransitions.pathname,
+    searchData: state.componentsServiceReducer.searchData,
   }
 }
 

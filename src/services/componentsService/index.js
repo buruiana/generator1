@@ -36,6 +36,8 @@ export function* watchGetAllComponents() {
   if (isEmpty(allComponents)) allComponents = [];
 
   sortBy(allComponents, el => el.title);
+
+  // remove this after comp update
   const newAllComp = [];
   allComponents.map(el => {
     const newEl = {

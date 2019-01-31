@@ -13,8 +13,8 @@ const ExportFilesView = props => {
   const renderLinks = () => {
     return (
       <span>
-        <a className='exportFilesLinks' onClick={onClick}>All Files&nbsp;</a>
-        {props.aceTabs.map(tab => <a className='exportFilesLinks' id={tab} onClick={onClick}>{`${tab}.js`}&nbsp;</a>)}
+        <a key='allFiles' className='exportFilesLinks' onClick={onClick}>All Files&nbsp;</a>
+        {props.aceTabs.map(tab => <a key={tab} className='exportFilesLinks' id={tab} onClick={onClick}>{`${tab}.js`}&nbsp;</a>)}
       </span>);
   };
 
@@ -114,7 +114,7 @@ const ExportFilesView = props => {
     <div className='filterComponentsBox1'>
       <div className='destinationLabel'>
         <span className='filterComponentsLabel'>DESTINATION</span>:
-            <span className='exportDest'> {props.projectDestination || 'NO DESTINATION'}</span>
+            <span className='exportDest'> {props.projectSettings.projectDestination || 'NO DESTINATION'}</span>
         <a className='changeDest' onClick={changeDest}>( change )</a>
       </div>
       <div>
