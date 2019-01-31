@@ -57,9 +57,11 @@ function execWrapper(command, options) {
 
 app.post('/api/exportFiles', (req, res) => {
   const name = req.body.name;
+  const techno = req.body.techno;
   const dest = req.body.destination + `/${name}`;
   shell.mkdir(dest);
 
+  console.log('console: ------------------', req.body);
 
   if (!req.body.type === 'Service') {
     if (req.body.reducer || req.body.exportAll) {
@@ -87,7 +89,8 @@ app.post('/api/exportFiles', (req, res) => {
     }
 
     if (req.body.styles || req.body.exportAll) {
-      fs.writeFileSync(`${dest}/styles.js`, req.body.styles, 'utf8');
+      const ext = req.body.techno === 'React' ? 'css' : 'js';
+      fs.writeFileSync(`${dest}/styles.${ext}`, req.body.styles, 'utf8');
     }
   }
 

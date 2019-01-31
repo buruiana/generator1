@@ -22,6 +22,7 @@ const ExportFilesView = props => {
     const objToSend = {};
     const exportAll = isEmpty(tab);
     objToSend.name = props.projectSettings.projectName;
+    objToSend.techno = props.projectSettings.projectTechno;
     objToSend.destination = props.projectSettings.projectDestination;
     objToSend.projectType = props.projectSettings.projectType;
     objToSend.exportAll = exportAll;
@@ -101,6 +102,7 @@ const ExportFilesView = props => {
 
   const onClick = event => {
     const objToSend = prepareObject(event.target.id);
+    console.log('console: objToSend', objToSend);
     props.exportProjectFiles(objToSend);
   };
 
