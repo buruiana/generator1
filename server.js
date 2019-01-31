@@ -83,7 +83,7 @@ app.post('/api/exportFiles', (req, res) => {
     }
 
     if (req.body.component || req.body.exportAll) {
-      fs.writeFileSync(`${dest}/${name}.js`, req.body.component, 'utf8');
+      fs.writeFileSync(`${dest}/${name}.js`, req.body.component.replace(/__/g, '.'), 'utf8');
     }
 
     if (req.body.styles || req.body.exportAll) {

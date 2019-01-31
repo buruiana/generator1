@@ -52,7 +52,7 @@ export const getImportList = tree => {
   });
 
   const defaultImports = uniqBy(
-    flatData.filter(el => el.node.componentImport !== '-'),
+    flatData.filter(el => (el.node.componentImport !== '-' && el.node.title.indexOf('__') === -1)),
     'node.componentImport');
   const sortedDefaultImports = sortBy(defaultImports, 'node.title');
 
