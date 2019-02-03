@@ -1,9 +1,9 @@
 import React from 'react';
 import SortableTree, { changeNodeAtPath } from 'react-sortable-tree';
-import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import Form from "react-jsonschema-form";
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import {
   JSON_FORM_UI_SETTINGS,
 } from '../../modals/constants';
@@ -219,15 +219,19 @@ const JsonFormUISettingsForm = props => {
 
   const getButtonClass = path => {
     return (isEqual(path, props.nodePath.path))
-      ? 'redButton'
+      ? 'glyphRed'
       : '';
   };
 
   const getButton = (node, path) => {
-    if (node.type === 'object' || node.type === 'array') return [];
+    if ((node.type === 'object' || node.type === 'array') && path[0] === 0) return [];
     return (
       [
-        <button onClick={() => setForm(JSON_FORM_UI_SETTINGS, node, path)} className={getButtonClass(path)}>edit</button>
+        <Glyphicon
+          glyph="adjust"
+          onClick={() => setForm(JSON_FORM_UI_SETTINGS, node, path)}
+          className={getButtonClass(path)}
+        />
       ]
     );
   };

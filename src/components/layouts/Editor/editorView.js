@@ -3,7 +3,6 @@ import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
-import has from 'lodash/has';
 import sortBy from 'lodash/sortBy';
 import 'react-sortable-tree/style.css';
 import Alert from 'react-bootstrap/lib/Alert';
