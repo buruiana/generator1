@@ -13,9 +13,9 @@ const prettify = (code, parser) => {
   return axios.post('http://localhost:5000/api/prettify', code, parser);
 }
 
-export function* getPrettyCode(code, parser="babylon") {
+export function* getPrettyCode(code, parser="babel") {
   if (!code) return;
-  //if (isEmpty(parser)) parser = 'babylon';
+
   let prettyCode = '';
   try {
     yield put(setProjectError(''));

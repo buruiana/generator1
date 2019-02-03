@@ -5,6 +5,7 @@ const NavBar = props => {
     <ul>
       <li><a href="/home">Home</a></li>
       <li><a href="/counter">Counter</a></li>
+      <li><a href="/testform">Form</a></li>
     </ul>
   );
 };
