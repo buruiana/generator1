@@ -71,9 +71,12 @@ export const generateJsonUISchemaCode = props => {
 
         if (has(uiSchema, 'uiWidget.widget') && uiSchema.uiWidget.widget) code += `'ui:widget': '${uiSchema.uiWidget.widget}',\n`;
 
+
+        if (isEmpty(parent) && (el.type !== 'array' || el.type !== 'object') && el.title) code += `},\n`;
         if (!isEmpty(parent) && (parent.type === 'array' || parent.type === 'object') && el.title) code += `},\n`;
-        if ((el.type === 'array' || el.type === 'object') && isEmpty(el.children)) code += `},\n`;
-        if (!isEmpty(parent) && isLastChild) code += `},},\n`;
+        if ((el.type === 'array' || el.type === 'object') && isEmpty(el.children) && el.title) code += `},\n`;
+        //if (!isEmpty(parent) && !isLastChild && el.title) code += `},\n`;
+        if (!isEmpty(parent) && isLastChild && el.title) code += `},\n`;
         if (isEmpty(parent)) code += `};\n`;
       }
     });
