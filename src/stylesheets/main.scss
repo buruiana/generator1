@@ -121,7 +121,6 @@
 }
 
 .navbar-settings {
-  //width: 30%;
   padding: 0px;
   margin: 0px;
   color: black;
@@ -194,10 +193,6 @@ div.rst__moveHandle {
 
 .navbar-default .navbar-brand {
   color: #468362;
-}
-
-.homeImg {
-  background-image: url('/media/code.jpg');
 }
 
 .emptyExport {
@@ -300,3 +295,27 @@ div.rst__moveHandle {
 .panel-info {
   border-color: #fff;
 }
+
+// .btn-add > i {
+//   display: none;
+// }
+
+// .btn-add::after {
+//   content: "Add";
+// }
+
+// .array-item-remove > i {
+//   display: none;
+// }
+
+// .array-item-remove::after {
+//   content: "Remove";
+// }
+
+// .array-item-move-down > i {
+//   display: none;
+// }
+
+// .array-item-move-up > i {
+//   display: none;
+// }

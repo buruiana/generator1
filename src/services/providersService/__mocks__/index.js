@@ -9,10 +9,10 @@ export const mock = {
     },
     {
       id: 'k0LjCQQLYTKwe8DfA44J',
-      name: 'Bootstrap',
-      path: 'bootstrap/path',
+      name: 'Bootstrap_0_32_4',
+      path: '-',
       projectTechno: 'React',
-      providerUrl: ''
+      providerUrl: 'https://react-bootstrap.github.io/'
     },
     {
       id: 'pOSUeTSB0BzO9b4qzT4M',

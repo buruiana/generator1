@@ -63,7 +63,7 @@ const ComponentsForm = props => {
         default: techno,
       },
       isDefault: { type: "boolean", title: "isDefault", default: isDefault || false },
-      closeTag: { type: "boolean", title: "closeTag", default: closeTag || false },
+      // closeTag: { type: "boolean", title: "closeTag", default: closeTag || false },
       componentProps: {
         type: "array",
         items: {
