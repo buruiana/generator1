@@ -89,8 +89,7 @@ const NavBarSettings = props => {
           }
           {isApp(props.projectType) &&
             <NavItem eventKey={APPLICATION}>
-              <span className='navBar-txt'></span>APP
-              <Glyphicon glyph="option-vertical" />
+            <span className='navBar-txt'>APP</span>
               <Glyphicon glyph="th-list" />
               Settings
             </NavItem>

@@ -152,6 +152,7 @@ const JsonFormUISettingsForm = props => {
     },
     uiOthers: {
       "ui:options": { backgroundColor: 'gray' },
+      uiPlaceholder: { "ui:placeholder": "Choose a aaa" },
     },
   };
 
