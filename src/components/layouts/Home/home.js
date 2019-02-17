@@ -3,8 +3,8 @@ import React from "react";
 
 const Home = props => {
   return (
-    <div className='homeImg'>aaaaa
-      <img src='localhost:8080/public/media/code.jpg' />
+    <div className='centered'>
+      <img src='/code.jpg' />
     </div>
   );
 };
