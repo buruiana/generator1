@@ -1,6 +1,13 @@
 export const mock = {
   allProviders: [
     {
+      id: 'Rbdnac4zPa8OBfJOBTsT',
+      name: 'ReactBootstrap_1.0.0-beta.5',
+      path: 'react-bootstrap',
+      projectTechno: 'React',
+      providerUrl: 'https://react-bootstrap.github.io/'
+    },
+    {
       id: 'g4dkcggI0iE0TGyvRq3t',
       name: 'HTML',
       path: 'https://www.w3schools.com/html/',

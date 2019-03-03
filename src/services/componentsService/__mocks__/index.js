@@ -2,6 +2,37 @@ export const mock = {
   allComponents: [
     {
       children: [],
+      componentImport: 'react-bootstrap/Navbar',
+      componentProps: [
+        {
+          description: 'Set a custom element for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An href, when provided the Brand will render as an <a> element (unless as is provided).',
+          name: 'href',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'navbar\'\n\t\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Navbar.Brand',
+      id: '07jxlV9GKFbAGGcMFwi9',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Navbar__Brand',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: '-',
       componentProps: [
@@ -31,6 +62,115 @@ export const mock = {
       techno: 'React Native',
       title: 'InputAccessoryView',
       subtitle: 'ReactNative'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Carousel',
+      componentProps: [
+        {
+          description: 'default: 0\t\n\ncontrolled by: onSelect, initial prop: defaultActiveindex\nControls the current visible slide',
+          name: 'activeIndex',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\t\n\nShow the Carousel previous and next arrows for changing the current slide',
+          name: 'controls',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nCross fade slides instead of the default slide animation',
+          name: 'fade',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\t\n\nShow a set of slide position indicators',
+          name: 'indicators',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: 5000\t\n\nThe amount of time to delay between automatically cycling an item. If null, carousel will not automatically cycle.',
+          name: 'interval',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\t\n\nEnable keyboard navigation via the Arrow keys for changing slides',
+          name: 'keyboard',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: node\ndefault: <span aria-hidden="true" className="carousel-control-next-icon" />\t\n\nOverride the default button icon for the "next" control',
+          name: 'nextIcon',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'Next\'\t\n\nLabel shown to screen readers only, can be used to show the next element in the carousel. Set to null to deactivate.',
+          name: 'nextLabel',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controls activeIndex\nCallback fired when the active item changes.\n\n(eventKey: any, direction: \'prev\' | \'next\', ?event: Object) => any',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A callback fired after a slide transitions in',
+          name: 'onSlideEnd',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\t\n\nTemporarily puase the slide interval when the mouse hovers over a slide.',
+          name: 'pauseOnHover',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: <span aria-hidden="true" className="carousel-control-prev-icon" />\t\n\nOverride the default button icon for the "previous" control',
+          name: 'prevIcon',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'Previous\'\t\n\nLabel shown to screen readers only, can be used to show the previous element in the carousel. Set to null to deactivate.',
+          name: 'prevLabel',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\n\t\nEnables animation on the Carousel as it transitions between slides.',
+          name: 'slide',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\t\n\nSlides will loop to the start when the last one transitions',
+          name: 'wrap',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'carousel\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Carousels\nA slideshow component for cycling through elements—images or slides of text—like a carousel.\n\nExample#\nCarousels don’t automatically normalize slide dimensions. As such, you may need to use additional utilities or custom styles to appropriately size content. While carousels support previous/next controls and indicators, they’re not explicitly required. Add and customize as you see fit.\n\n<Carousel>\n  <Carousel.Item>\n    <img\n      className="d-block w-100"\n      src="holder.js/800x400?text=First slide&bg=373940"\n      alt="First slide"\n    />\n    <Carousel.Caption>\n      <h3>First slide label</h3>\n      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>\n    </Carousel.Caption>\n  </Carousel.Item>\n  <Carousel.Item>\n    <img\n      className="d-block w-100"\n      src="holder.js/800x400?text=Second slide&bg=282c34"\n      alt="Third slide"\n    />\n\n    <Carousel.Caption>\n      <h3>Second slide label</h3>\n      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\n    </Carousel.Caption>\n  </Carousel.Item>\n  <Carousel.Item>\n    <img\n      className="d-block w-100"\n      src="holder.js/800x400?text=Third slide&bg=20232a"\n      alt="Third slide"\n    />\n\n    <Carousel.Caption>\n      <h3>Third slide label</h3>\n      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>\n    </Carousel.Caption>\n  </Carousel.Item>\n</Carousel>;\n\nControlled#\nYou can can also control the Carousel state, via the activeIndex prop and onSelect handler.\n\nclass ControlledCarousel extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleSelect = this.handleSelect.bind(this);\n\n    this.state = {\n      index: 0,\n      direction: null,\n    };\n  }\n\n  handleSelect(selectedIndex, e) {\n    this.setState({\n      index: selectedIndex,\n      direction: e.direction,\n    });\n  }\n\n  render() {\n    const { index, direction } = this.state;\n\n    return (\n      <Carousel\n        activeIndex={index}\n        direction={direction}\n        onSelect={this.handleSelect}\n      >\n        <Carousel.Item>\n          <img\n            className="d-block w-100"\n            src="holder.js/800x400?text=First slide&bg=373940"\n            alt="First slide"\n          />\n          <Carousel.Caption>\n            <h3>First slide label</h3>\n            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>\n          </Carousel.Caption>\n        </Carousel.Item>\n        <Carousel.Item>\n          <img\n            className="d-block w-100"\n            src="holder.js/800x400?text=Second slide&bg=282c34"\n            alt="Third slide"\n          />\n\n          <Carousel.Caption>\n            <h3>Second slide label</h3>\n            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\n          </Carousel.Caption>\n        </Carousel.Item>\n        <Carousel.Item>\n          <img\n            className="d-block w-100"\n            src="holder.js/800x400?text=Third slide&bg=20232a"\n            alt="Third slide"\n          />\n\n          <Carousel.Caption>\n            <h3>Third slide label</h3>\n            <p>\n              Praesent commodo cursus magna, vel scelerisque nisl consectetur.\n            </p>\n          </Carousel.Caption>\n        </Carousel.Item>\n      </Carousel>\n    );\n  }\n}\n\nrender(<ControlledCarousel />);',
+      id: '0W0tWTKic5qZOeM8ga1Z',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Carousel',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -174,6 +314,37 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/ListGroup',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'flush\'\ndefault: null\t\nAdds a variant to the list-group',
+          name: 'variant',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'list-group\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'List groups\nList groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.\n\nBasic Example#\n\n<ListGroup>\n  <ListGroup.Item>Cras justo odio</ListGroup.Item>\n  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\n  <ListGroup.Item>Morbi leo risus</ListGroup.Item>\n  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>\n  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>\n</ListGroup>;\n\nActive items#\nSet the active prop to indicate the list groups current active selection.\n\n<ListGroup as="ul">\n  <ListGroup.Item as="li" active>\n    Cras justo odio\n  </ListGroup.Item>\n  <ListGroup.Item as="li">Dapibus ac facilisis in</ListGroup.Item>\n  <ListGroup.Item as="li" disabled>\n    Morbi leo risus\n  </ListGroup.Item>\n  <ListGroup.Item as="li">Porta ac consectetur ac</ListGroup.Item>\n</ListGroup>;\n\nDisabled items#\nSet the disabled prop to prevent actions on a <List.Item>. For elements that aren\'t naturally disable-able (like anchors) onClick handlers are added that call preventDefault to mimick disabled behavior.\n\n<ListGroup>\n  <ListGroup.Item disabled>Cras justo odio</ListGroup.Item>\n  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\n  <ListGroup.Item>Morbi leo risus</ListGroup.Item>\n  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>\n</ListGroup>;\n\nActionable items#\nToggle the action prop to create actionable list group items, with disabled, hover and active styles. List item actions will render a <button> or <a> (depending on the presence of an href) by default but can be overriden by setting the as prop as usual.\n\nList items actions are distinct from plain items to ensure that click or tap affordances aren\'t applied to non-interactive items.\n\nfunction alertClicked() {\n  alert(\'You clicked the third ListGroupItem\');\n}\n\nrender(\n  <ListGroup defaultActiveKey="#link1">\n    <ListGroup.Item action href="#link1">\n      Link 1\n    </ListGroup.Item>\n    <ListGroup.Item action href="#link2" disabled>\n      Link 2\n    </ListGroup.Item>\n    <ListGroup.Item action>This one is a button</ListGroup.Item>\n  </ListGroup>,\n);\n\nFlush#\nAdd the flush variant to remove outer borders and rounded corners to render list group items edge-to-edge in a parent container such as a Card.\n\n<ListGroup variant="flush">\n  <ListGroup.Item>Cras justo odio</ListGroup.Item>\n  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\n  <ListGroup.Item>Morbi leo risus</ListGroup.Item>\n  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>\n</ListGroup>;\n\nContextual classes#\nUse contextual variants on <List.Item>s to style them with a stateful background and color.\n\n<ListGroup>\n  <ListGroup.Item>No style</ListGroup.Item>\n  <ListGroup.Item variant="primary">Primary</ListGroup.Item>\n  <ListGroup.Item variant="secondary">Secondary</ListGroup.Item>\n  <ListGroup.Item variant="success">Success</ListGroup.Item>\n  <ListGroup.Item variant="danger">Danger</ListGroup.Item>\n  <ListGroup.Item variant="warning">Warning</ListGroup.Item>\n  <ListGroup.Item variant="info">Info</ListGroup.Item>\n  <ListGroup.Item variant="light">Light</ListGroup.Item>\n  <ListGroup.Item variant="dark">Dark</ListGroup.Item>\n</ListGroup>;\n\nWhen paired with actions, additional hover and active styles apply.\n\n<ListGroup>\n  <ListGroup.Item>No style</ListGroup.Item>\n  <ListGroup.Item variant="primary">Primary</ListGroup.Item>\n  <ListGroup.Item action variant="secondary">\n    Secondary\n  </ListGroup.Item>\n  <ListGroup.Item action variant="success">\n    Success\n  </ListGroup.Item>\n  <ListGroup.Item action variant="danger">\n    Danger\n  </ListGroup.Item>\n  <ListGroup.Item action variant="warning">\n    Warning\n  </ListGroup.Item>\n  <ListGroup.Item action variant="info">\n    Info\n  </ListGroup.Item>\n  <ListGroup.Item action variant="light">\n    Light\n  </ListGroup.Item>\n  <ListGroup.Item action variant="dark">\n    Dark\n  </ListGroup.Item>\n</ListGroup>;\n\nTabbed Interfaces#\nYou can also use the Tab components to create ARIA compliant tabbable interfaces with the <ListGroup> component. Swap out the <Nav> component for the list group and you are good to go.\n\n<Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">\n  <Row>\n    <Col sm={4}>\n      <ListGroup>\n        <ListGroup.Item action href="#link1">\n          Link 1\n        </ListGroup.Item>\n        <ListGroup.Item action href="#link2">\n          Link 2\n        </ListGroup.Item>\n      </ListGroup>\n    </Col>\n    <Col sm={8}>\n      <Tab.Content>\n        <Tab.Pane eventKey="#link1">\n          <Sonnet />\n        </Tab.Pane>\n        <Tab.Pane eventKey="#link2">\n          <Sonnet />\n        </Tab.Pane>\n      </Tab.Content>\n    </Col>\n  </Row>\n</Tab.Container>;\n\n',
+      id: '1dQZMf8j5DvgF82nG8UH',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ListGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: '-',
       componentProps: [
@@ -289,6 +460,98 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'ListGroupItem'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Card',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\'\n\nSets card background',
+          name: 'bg',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nWhen this prop is set, it creates a Card with a Card.Body inside passing the children directly to it',
+          name: 'body',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\'\n\nSets card border color',
+          name: 'border',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\' | \'white\' | \'muted\'\n\nSets card text color',
+          name: 'text',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'card\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Cards\nBootstrap’s cards provide a flexible and extensible content container with multiple variants and options.\n\nBasic Example#\n\nCard style={{ width: \'18rem\' }}>\n  <Card.Img variant="top" src="holder.js/100px180" />\n  <Card.Body>\n    <Card.Title>Card Title</Card.Title>\n    <Card.Text>\n      Some quick example text to build on the card title and make up the bulk of\n      the card\'s content.\n    </Card.Text>\n    <Button variant="primary">Go somewhere</Button>\n  </Card.Body>\n</Card>;\n\nContent types#\nBody#\nUse <Card.Body> to pad content inside a <Card>.\n\n<Card>\n  <Card.Body>This is some text within a card body.</Card.Body>\n</Card>;\n\nAlernatively, you can use this shorthand version for Cards with body only, and no other children\n\n<Card body>This is some text within a card body.</Card>;\n\nTitle, text, and links#\nUsing <Card.Title>, <Card.Subtitle>, and <Card.Text> inside the <Card.Body> will line them up nicely. <Card.Link>s are used to line up links next to each other.\n\n<Card style={{ width: \'18rem\' }}>\n  <Card.Body>\n    <Card.Title>Card Title</Card.Title>\n    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>\n    <Card.Text>\n      Some quick example text to build on the card title and make up the bulk of\n      the card\'s content.\n    </Card.Text>\n    <Card.Link href="#">Card Link</Card.Link>\n    <Card.Link href="#">Another Link</Card.Link>\n  </Card.Body>\n</Card>;\n\nList Groups#\nCreate lists of content in a card with a flush list group.\n\n<Card style={{ width: \'18rem\' }}>\n  <ListGroup variant="flush">\n    <ListGroup.Item>Cras justo odio</ListGroup.Item>\n    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\n    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>\n  </ListGroup>\n</Card>;\n\n<Card style={{ width: \'18rem\' }}>\n  <Card.Header>Featured</Card.Header>\n  <ListGroup variant="flush">\n    <ListGroup.Item>Cras justo odio</ListGroup.Item>\n    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\n    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>\n  </ListGroup>\n</Card>;\n\nKitchen Sink#\n\n<Card style={{ width: \'18rem\' }}>\n  <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />\n  <Card.Body>\n    <Card.Title>Card Title</Card.Title>\n    <Card.Text>\n      Some quick example text to build on the card title and make up the bulk of\n      the card\'s content.\n    </Card.Text>\n  </Card.Body>\n  <ListGroup className="list-group-flush">\n    <ListGroupItem>Cras justo odio</ListGroupItem>\n    <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>\n    <ListGroupItem>Vestibulum at eros</ListGroupItem>\n  </ListGroup>\n  <Card.Body>\n    <Card.Link href="#">Card Link</Card.Link>\n    <Card.Link href="#">Another Link</Card.Link>\n  </Card.Body>\n</Card>;\n\nHeader and Footer#\nYou may add a header by adding a <Card.Header> component.\n\n<Card>\n  <Card.Header>Featured</Card.Header>\n  <Card.Body>\n    <Card.Title>Special title treatment</Card.Title>\n    <Card.Text>\n      With supporting text below as a natural lead-in to additional content.\n    </Card.Text>\n    <Button variant="primary">Go somewhere</Button>\n  </Card.Body>\n</Card>;\n\nA <CardHeader> can be styled by passing a heading element through the <as> prop\n\n<Card>\n  <Card.Header as="h5">Featured</Card.Header>\n  <Card.Body>\n    <Card.Title>Special title treatment</Card.Title>\n    <Card.Text>\n      With supporting text below as a natural lead-in to additional content.\n    </Card.Text>\n    <Button variant="primary">Go somewhere</Button>\n  </Card.Body>\n</Card>;\n\n<Card>\n  <Card.Header>Quote</Card.Header>\n  <Card.Body>\n    <blockquote className="blockquote mb-0">\n      <p>\n        {\' \'}\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere\n        erat a ante.{\' \'}\n      </p>\n      <footer className="blockquote-footer">\n        Someone famous in <cite title="Source Title">Source Title</cite>\n      </footer>\n    </blockquote>\n  </Card.Body>\n</Card>;\n\n<Card className="text-center">\n  <Card.Header>Featured</Card.Header>\n  <Card.Body>\n    <Card.Title>Special title treatment</Card.Title>\n    <Card.Text>\n      With supporting text below as a natural lead-in to additional content.\n    </Card.Text>\n    <Button variant="primary">Go somewhere</Button>\n  </Card.Body>\n  <Card.Footer className="text-muted">2 days ago</Card.Footer>\n</Card>;\n\nImages#\nCards include a few options for working with images. Choose from appending “image caps” at either end of a card, overlaying images with card content, or simply embedding the image in a card.\n\nImage caps#\nSimilar to headers and footers, cards can include top and bottom “image caps”—images at the top or bottom of a card.\n\n<>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px180" />\n    <Card.Body>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n  <Card>\n    <Card.Body>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n    <Card.Img variant="bottom" src="holder.js/100px180" />\n  </Card>\n</>;\n\nImage Overlays#\nTurn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need additional styles or utilities.\n\n<Card className="bg-dark text-white">\n  <Card.Img src="holder.js/100px270" alt="Card image" />\n  <Card.ImgOverlay>\n    <Card.Title>Card title</Card.Title>\n    <Card.Text>\n      This is a wider card with supporting text below as a natural lead-in to\n      additional content. This content is a little bit longer.\n    </Card.Text>\n    <Card.Text>Last updated 3 mins ago</Card.Text>\n  </Card.ImgOverlay>\n</Card>;\n\nNavigation#\nAdd some navigation to a card’s header (or block) with React Bootstrap’s Nav components.\n\n<Card>\n  <Card.Header>\n    <Nav variant="tabs" defaultActiveKey="#first">\n      <Nav.Item>\n        <Nav.Link href="#first">Active</Nav.Link>\n      </Nav.Item>\n      <Nav.Item>\n        <Nav.Link href="#link">Link</Nav.Link>\n      </Nav.Item>\n      <Nav.Item>\n        <Nav.Link href="#disabled" disabled>\n          Disabled\n        </Nav.Link>\n      </Nav.Item>\n    </Nav>\n  </Card.Header>\n  <Card.Body>\n    <Card.Title>Special title treatment</Card.Title>\n    <Card.Text>\n      With supporting text below as a natural lead-in to additional content.\n    </Card.Text>\n    <Button variant="primary">Go somewhere</Button>\n  </Card.Body>\n</Card>;\n\n<Card>\n  <Card.Header>\n    <Nav variant="pills" defaultActiveKey="#first">\n      <Nav.Item>\n        <Nav.Link href="#first">Active</Nav.Link>\n      </Nav.Item>\n      <Nav.Item>\n        <Nav.Link href="#link">Link</Nav.Link>\n      </Nav.Item>\n      <Nav.Item>\n        <Nav.Link href="#disabled" disabled>\n          Disabled\n        </Nav.Link>\n      </Nav.Item>\n    </Nav>\n  </Card.Header>\n  <Card.Body>\n    <Card.Title>Special title treatment</Card.Title>\n    <Card.Text>\n      With supporting text below as a natural lead-in to additional content.\n    </Card.Text>\n    <Button variant="primary">Go somewhere</Button>\n  </Card.Body>\n</Card>;\n\nCard Styles#\nBackground Color#\nYou can change a card\'s appearance by changing their <bg>, and <text> props.\n\n<>\n  <Card bg="primary" text="white" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Primary Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card bg="secondary" text="white" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Secondary Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card bg="success" text="white" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Success Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card bg="danger" text="white" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Danger Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card bg="warning" text="white" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Warning Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card bg="info" text="white" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Info Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card bg="dark" text="white" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Dark Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card bg="light" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Light Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n</>;\n\nBorder Color#\n\n<>\n  <Card border="primary" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Primary Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card border="secondary" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Secondary Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card border="success" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Success Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card border="danger" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Danger Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card border="warning" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Warning Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card border="info" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Info Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card border="dark" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Dark Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n\n  <Card border="light" style={{ width: \'18rem\' }}>\n    <Card.Header>Header</Card.Header>\n    <Card.Body>\n      <Card.Title>Light Card Title</Card.Title>\n      <Card.Text>\n        Some quick example text to build on the card title and make up the bulk\n        of the card\'s content.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <br />\n</>;\n\nCard layout#\nCard Groups#\n\n<CardGroup>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px160" />\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This is a wider card with supporting text below as a natural lead-in to\n        additional content. This content is a little bit longer.\n      </Card.Text>\n    </Card.Body>\n    <Card.Footer>\n      <small className="text-muted">Last updated 3 mins ago</small>\n    </Card.Footer>\n  </Card>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px160" />\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This card has supporting text below as a natural lead-in to additional\n        content.{\' \'}\n      </Card.Text>\n    </Card.Body>\n    <Card.Footer>\n      <small className="text-muted">Last updated 3 mins ago</small>\n    </Card.Footer>\n  </Card>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px160" />\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This is a wider card with supporting text below as a natural lead-in to\n        additional content. This card has even longer content than the first to\n        show that equal height action.\n      </Card.Text>\n    </Card.Body>\n    <Card.Footer>\n      <small className="text-muted">Last updated 3 mins ago</small>\n    </Card.Footer>\n  </Card>\n</CardGroup>;\n\nCard Deck#\n\n<CardDeck>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px160" />\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This is a wider card with supporting text below as a natural lead-in to\n        additional content. This content is a little bit longer.\n      </Card.Text>\n    </Card.Body>\n    <Card.Footer>\n      <small className="text-muted">Last updated 3 mins ago</small>\n    </Card.Footer>\n  </Card>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px160" />\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This card has supporting text below as a natural lead-in to additional\n        content.{\' \'}\n      </Card.Text>\n    </Card.Body>\n    <Card.Footer>\n      <small className="text-muted">Last updated 3 mins ago</small>\n    </Card.Footer>\n  </Card>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px160" />\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This is a wider card with supporting text below as a natural lead-in to\n        additional content. This card has even longer content than the first to\n        show that equal height action.\n      </Card.Text>\n    </Card.Body>\n    <Card.Footer>\n      <small className="text-muted">Last updated 3 mins ago</small>\n    </Card.Footer>\n  </Card>\n</CardDeck>;\n\nCard Columns#\n\n<CardColumns>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px160" />\n    <Card.Body>\n      <Card.Title>Card title that wraps to a new line</Card.Title>\n      <Card.Text>\n        This is a longer card with supporting text below as a natural lead-in to\n        additional content. This content is a little bit longer.\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <Card className="p-3">\n    <blockquote className="blockquote mb-0 card-body">\n      <p>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere\n        erat a ante.\n      </p>\n      <footer className="blockquote-footer">\n        <small className="text-muted">\n          Someone famous in <cite title="Source Title">Source Title</cite>\n        </small>\n      </footer>\n    </blockquote>\n  </Card>\n  <Card>\n    <Card.Img variant="top" src="holder.js/100px160" />\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This card has supporting text below as a natural lead-in to additional\n        content.{\' \'}\n      </Card.Text>\n    </Card.Body>\n    <Card.Footer>\n      <small className="text-muted">Last updated 3 mins ago</small>\n    </Card.Footer>\n  </Card>\n  <Card bg="primary" text="white" className="text-center p-3">\n    <blockquote className="blockquote mb-0 card-body">\n      <p>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere\n        erat a ante.\n      </p>\n      <footer className="blockquote-footer">\n        <small className="text-muted">\n          Someone famous in <cite title="Source Title">Source Title</cite>\n        </small>\n      </footer>\n    </blockquote>\n  </Card>\n  <Card className="text-center">\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This card has supporting text below as a natural lead-in to additional\n        content.{\' \'}\n      </Card.Text>\n      <Card.Text>\n        <small className="text-muted">Last updated 3 mins ago</small>\n      </Card.Text>\n    </Card.Body>\n  </Card>\n  <Card>\n    <Card.Img src="holder.js/100px160" />\n  </Card>\n  <Card className="text-right">\n    <blockquote className="blockquote mb-0 card-body">\n      <p>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere\n        erat a ante.\n      </p>\n      <footer className="blockquote-footer">\n        <small className="text-muted">\n          Someone famous in <cite title="Source Title">Source Title</cite>\n        </small>\n      </footer>\n    </blockquote>\n  </Card>\n  <Card>\n    <Card.Body>\n      <Card.Title>Card title</Card.Title>\n      <Card.Text>\n        This is a wider card with supporting text below as a natural lead-in to\n        additional content. This card has even longer content than the first to\n        show that equal height action.\n      </Card.Text>\n      <Card.Text>\n        <small className="text-muted">Last updated 3 mins ago</small>\n      </Card.Text>\n    </Card.Body>\n  </Card>\n</CardColumns>;',
+      id: '2BeFPCXrDt2xOjsapxEx',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Card'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Image',
+      componentProps: [
+        {
+          description: 'default: false\n\t\nSets image as fluid image.',
+          name: 'fluid',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nSets image shape as rounded.',
+          name: 'rounded',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\n\t\nSets image shape as circle.',
+          name: 'roundedCircle',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nSets image shape as thumbnail.',
+          name: 'thumbnail',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'img\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Images#\nShape#\nUse the rounded, roundedCircle and thumbnail props to customise the image.\n\n<Container>\n  <Row>\n    <Col xs={6} md={4}>\n      <Image src="holder.js/171x180" rounded />\n    </Col>\n    <Col xs={6} md={4}>\n      <Image src="holder.js/171x180" roundedCircle />\n    </Col>\n    <Col xs={6} md={4}>\n      <Image src="holder.js/171x180" thumbnail />\n    </Col>\n  </Row>\n</Container>;\n\nFluid#\nUse the fluid to scale image nicely to the parent element.\n\n<Image src="holder.js/100px250" fluid />;',
+      id: '2beDhFmimoEiIIpZGIw5',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Image',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -603,6 +866,74 @@ export const mock = {
       techno: 'React Native',
       title: 'Button',
       subtitle: 'ReactNative'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/FigureImage',
+      componentProps: [
+        {
+          description: 'default: true\t\nSets image as fluid image.',
+          name: 'fluid',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets image shape as rounded.',
+          name: 'rounded',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets image shape as circle.',
+          name: 'roundedCircle',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Sets image shape as thumbnail.',
+          name: 'thumbnail',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'img\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'FigureImage',
+      id: '45hoGiq9kpzmQu1lzcwZ',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'FigureImage',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Alert',
+      componentProps: [
+        {
+          description: 'Type: elementType\t\nDefault: <DivStyledAsH4>\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'alert-heading\'\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Alert.Heading',
+      id: '48Jey3qC5n46EvcP7Ab6',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Alert__Heading'
     },
     {
       children: [],
@@ -1011,6 +1342,61 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Tabs',
+      componentProps: [
+        {
+          description: 'type: any\n\ncontrolled by: onSelect, initial prop: defaultActivekey\nMark the Tab with a matching eventKey as active.',
+          name: 'activeKey',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'HTML id attribute, required if no generateChildId prop is specified.',
+          name: 'id',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nWait until the first "enter" transition to mount tabs (add them to the DOM)',
+          name: 'mountOnEnter',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controls activeKey\nCallback fired when a Tab is selected.\n\nfunction (\n  Any eventKey,\n  SyntheticEvent event?\n)',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: Transition | false\ndefault: {Fade}\t\n\nSets a default animation strategy for all children <TabPane>s. Use false to disable, true to enable the default <Fade> animation or a react-transition-group v2 <Transition/> component.',
+          name: 'transition',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nUnmount tabs (remove it from the DOM) when it is no longer visible',
+          name: 'unmountOnExit',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'tabs\' | \'pills\'\ndefault: \'tabs\'\t\n\nNavigation style',
+          name: 'variant',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Tabbed components#\nDynamic tabbed interfaces\n\nExamples#\nCreate dynamic tabbed interfaces, as described in the WAI ARIA Authoring Practices. Tabs is a higher-level component for quickly creating a Nav matched with a set of TabPanes.\n\n<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">\n  <Tab eventKey="home" title="Home">\n    <Sonnet />\n  </Tab>\n  <Tab eventKey="profile" title="Profile">\n    <Sonnet />\n  </Tab>\n  <Tab eventKey="contact" title="Contact" disabled>\n    <Sonnet />\n  </Tab>\n</Tabs>;\n\nControlled#\nTabs can be controlled directly when you want to handle the selection logic personally.\n\nclass ControlledTabs extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n    this.state = {\n      key: \'home\',\n    };\n  }\n\n  render() {\n    return (\n      <Tabs\n        id="controlled-tab-example"\n        activeKey={this.state.key}\n        onSelect={key => this.setState({ key })}\n      >\n        <Tab eventKey="home" title="Home">\n          <Sonnet />\n        </Tab>\n        <Tab eventKey="profile" title="Profile">\n          <Sonnet />\n        </Tab>\n        <Tab eventKey="contact" title="Contact" disabled>\n          <Sonnet />\n        </Tab>\n      </Tabs>\n    );\n  }\n}\n\nrender(<ControlledTabs />);\n\nNo animation#\nSet the transition prop to false\n\n<Tabs defaultActiveKey="home" transition={false} id="noanim-tab-example">\n  <Tab eventKey="home" title="Home">\n    <Sonnet />\n  </Tab>\n  <Tab eventKey="profile" title="Profile">\n    <Sonnet />\n  </Tab>\n  <Tab eventKey="contact" title="Contact" disabled>\n    <Sonnet />\n  </Tab>\n</Tabs>;\n\nDropdowns?#\nDynamic tabbed interfaces should not contain dropdown menus, as this causes both usability and accessibility issues. From a usability perspective, the fact that the currently displayed tab’s trigger element is not immediately visible (as it’s inside the closed dropdown menu) can cause confusion. From an accessibility point of view, there is currently no sensible way to map this sort of construct to a standard WAI ARIA pattern, meaning that it cannot be easily made understandable to users of assistive technologies.\n\nThat said, it Dropdowns do work technically (sans focus management), but we don\'t make any claims about support.\n\nCustom Tab Layout#\nFor more complex layouts the flexible TabContainer, TabContent, and TabPane components along with any style of Nav allow you to quickly piece together your own Tabs component with additional markup needed.\n\nCreate a set of NavItems each with an eventKey corresponding to the eventKey of a TabPane. Wrap the whole thing in a TabContainer and you have fully functioning custom tabs component. Check out the below example making use of the grid system and pills.\n\n<Tab.Container id="left-tabs-example" defaultActiveKey="first">\n  <Row>\n    <Col sm={3}>\n      <Nav variant="pills" className="flex-column">\n        <Nav.Item>\n          <Nav.Link eventKey="first">Tab 1</Nav.Link>\n        </Nav.Item>\n        <Nav.Item>\n          <Nav.Link eventKey="second">Tab 2</Nav.Link>\n        </Nav.Item>\n      </Nav>\n    </Col>\n    <Col sm={9}>\n      <Tab.Content>\n        <Tab.Pane eventKey="first">\n          <Sonnet />\n        </Tab.Pane>\n        <Tab.Pane eventKey="second">\n          <Sonnet />\n        </Tab.Pane>\n      </Tab.Content>\n    </Col>\n  </Row>\n</Tab.Container>;\n\n',
+      id: '6EHU0ngjhXztAqd6oU7n',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Tabs',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/MenuItem',
       componentProps: [
@@ -1077,6 +1463,25 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'MenuItem'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Carousel',
+      componentProps: [
+        {
+          description: 'default: \'carousel-item\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Carousel.Item',
+      id: '7HyNo9DvoQFNARLJIP88',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Carousel__Item',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -1212,6 +1617,128 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'InputGroup__Addon'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Collapse',
+      componentProps: [
+        {
+          description: 'default: false\t\n\nRun the expand animation when the component mounts, if it is initially shown',
+          name: 'appear',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'height\' | \'width\' | function\ndefault: \'height\'\t\n\nThe dimension used when collapsing, or a function that returns the dimension\n\nNote: Bootstrap only partially supports \'width\'! You will need to supply your own CSS animation for the .width CSS class.',
+          name: 'dimension',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: element.offsetWidth | element.offsetHeight\t\n\nFunction that returns the height or width of the animating DOM node\n\nAllows for providing some custom logic for how much the Collapse component should animate in its specified dimension. Called with the current dimension prop value and the DOM node.',
+          name: 'getDimensionValue',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nShow the component; triggers the expand or collapse animation',
+          name: 'in',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nWait until the first "enter" transition to mount the component (add it to the DOM)',
+          name: 'mountOnEnter',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired before the component expands',
+          name: 'onEnter',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the component has expanded',
+          name: 'onEntered',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the component starts to expand',
+          name: 'onEntering',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired before the component collapses',
+          name: 'onExit',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the component has collapsed',
+          name: 'onExited',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the component starts to collapse',
+          name: 'onExiting',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'ARIA role of collapsible element',
+          name: 'role',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: 300\t\n\nDuration of the collapse animation in milliseconds, to ensure that finishing callbacks are fired even if the original browser transition end events are canceled',
+          name: 'timeout',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nUnmount the component (remove it from the DOM) when it is collapsed',
+          name: 'unmountOnExit',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Transitions\nBootstrap includes a few general use CSS transitions that can be applied to a number of components. React Bootstrap, bundles them up into a a few composable <Transition> components from react-transition-group, a commonly used animation wrapper for React.\n\nEncapsulating animations into components has the added benefit of making them more broadly useful, as well as portable for using in other libraries. All React-bootstrap components that can be animated, support pluggable <Transition> components.\n\nCollapse#\nAdd a collapse toggle animation to an element or component.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.state = {\n      open: false,\n    };\n  }\n\n  render() {\n    const { open } = this.state;\n    return (\n      <>\n        <Button\n          onClick={() => this.setState({ open: !open })}\n          aria-controls="example-collapse-text"\n          aria-expanded={open}\n        >\n          click\n        </Button>\n        <Collapse in={this.state.open}>\n          <div id="example-collapse-text">\n            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus\n            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer\n            labore wes anderson cred nesciunt sapiente ea proident.\n          </div>\n        </Collapse>\n      </>\n    );\n  }\n}\n\nrender(<Example />);\n\n',
+      id: 'ATISoCEt89kLkoYCZ4jG',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Collapse',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/FigureCaption',
+      componentProps: [
+        {
+          description: 'default: <figcaption>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'figure-caption\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'FigureCaption',
+      id: 'Aw23xRugSeVZw3p5OIO7',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'FigureCaption',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -1484,6 +2011,110 @@ export const mock = {
       techno: 'React Native',
       title: 'ToolbarAndroid',
       subtitle: 'ReactNative'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Dropdown',
+      componentProps: [
+        {
+          description: 'default: false\t\n\nAligns the Dropdown menu to the right of it\'s container.',
+          name: 'alignRight',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: elementType\ndefault: <div>\t\n\n\nControl the rendering of the DropdownMenu. All non-menu props (listed here) are passed through to the as Component.\n\nIf providing a custom, non DOM, component. the show, close and alignRight props are also injected and should be handled appropriately.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\n\t\nHave the dropdown switch to it\'s opposite placement when necessary to stay on screen.',
+          name: 'flip',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'onSelect',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'click\' | \'mousedown\'\n\nWhich event when fired outside the component will cause it to be closed\n\nNote: For custom dropdown components, you will have to pass the rootCloseEvent to <RootCloseWrapper> in your custom dropdown menu component (similarly to how it is implemented in <Dropdown.Menu>).',
+          name: 'rootCloseEvent',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '\t\nControls the visibility of the Dropdown menu',
+          name: 'show',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'dropdown-menu\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Dropdown.Menu',
+      id: 'CQdocJ39wT8oT573OW8o',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Dropdown__Menu',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ButtonGroup',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault <div>\t\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'group\'\t\n\nAn ARIA role describing the button group. Usually the default "group" role is fine. An aria-label or aria-labelledby prop is also recommended.',
+          name: 'role',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'sm\' | \'lg\'\n\nSets the size for all Buttons in the group.',
+          name: 'size',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\nDisplay as a button toggle group.\n\n(Generally it\'s better to use ToggleButtonGroup directly)',
+          name: 'toggle',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nMake the set of Buttons appear vertically stacked.',
+          name: 'vertical',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'btn-group\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Button groups\nGroup a series of buttons together on a single line with the button group.\n\nBasic example#\nWrap a series of <Button>s in a <ButtonGroup>.\n\n<ButtonGroup aria-label="Basic example">\n  <Button variant="secondary">Left</Button>\n  <Button variant="secondary">Middle</Button>\n  <Button variant="secondary">Right</Button>\n</ButtonGroup>;\n\nButton toolbar#\nCombine sets of <ButtonGroup>s into a <ButtonToolbar> for more complex components.\n\n<ButtonToolbar aria-label="Toolbar with button groups">\n  <ButtonGroup className="mr-2" aria-label="First group">\n    <Button>1</Button>\n    <Button>2</Button>\n    <Button>3</Button>\n    <Button>4</Button>\n  </ButtonGroup>\n\n  <ButtonGroup className="mr-2" aria-label="Second group">\n    <Button>5</Button>\n    <Button>6</Button>\n    <Button>7</Button>\n  </ButtonGroup>\n\n  <ButtonGroup aria-label="Third group">\n    <Button>8</Button>\n  </ButtonGroup>\n</ButtonToolbar>;\n\nFeel free to mix input groups with button groups in your toolbars. Similar to the example above, you’ll likely need some utilities though to space things properly.\n\n<div>\n  <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">\n    <ButtonGroup className="mr-2" aria-label="First group">\n      <Button variant="secondary">1</Button>\n      <Button variant="secondary">2</Button>\n      <Button variant="secondary">3</Button>\n      <Button variant="secondary">4</Button>\n    </ButtonGroup>\n    <InputGroup>\n      <InputGroup.Prepend>\n        <InputGroup.Text id="btnGroupAddon">@</InputGroup.Text>\n      </InputGroup.Prepend>\n      <FormControl\n        type="text"\n        placeholder="Input group example"\n        aria-label="Input group example"\n        aria-describedby="btnGroupAddon"\n      />\n    </InputGroup>\n  </ButtonToolbar>\n\n  <ButtonToolbar\n    className="justify-content-between"\n    aria-label="Toolbar with Button groups"\n  >\n    <ButtonGroup aria-label="First group">\n      <Button variant="secondary">1</Button>\n      <Button variant="secondary">2</Button>\n      <Button variant="secondary">3</Button>\n      <Button variant="secondary">4</Button>\n    </ButtonGroup>\n    <InputGroup>\n      <InputGroup.Prepend>\n        <InputGroup.Text id="btnGroupAddon2">@</InputGroup.Text>\n      </InputGroup.Prepend>\n      <FormControl\n        type="text"\n        placeholder="Input group example"\n        aria-label="Input group example"\n        aria-describedby="btnGroupAddon2"\n      />\n    </InputGroup>\n  </ButtonToolbar>\n</div>;\n\nSizing#\nInstead of applying button sizing props to every button in a group, just add size prop to the <ButtonGroup>.\n\n<div className="d-flex flex-column">\n  <ButtonGroup size="lg">\n    <Button>Left</Button>\n    <Button>Middle</Button>\n    <Button>Right</Button>\n  </ButtonGroup>\n\n  <ButtonGroup className="mt-3">\n    <Button>Left</Button>\n    <Button>Middle</Button>\n    <Button>Right</Button>\n  </ButtonGroup>\n  <ButtonGroup size="sm" className="mt-3">\n    <Button>Left</Button>\n    <Button>Middle</Button>\n    <Button>Right</Button>\n  </ButtonGroup>\n</div>;\n\nNesting#\nYou can place other button types within the <ButtonGroup> like <DropdownButton>s.\n\n<ButtonGroup>\n  <Button>1</Button>\n  <Button>2</Button>\n  <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-nested-dropdown">\n    <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>\n    <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>\n  </DropdownButton>\n</ButtonGroup>;\n\nVertical variation#\nMake a set of buttons appear vertically stacked rather than horizontally, by adding vertical to the <ButtonGroup>. Split button dropdowns are not supported here.\n\n<ButtonGroup vertical>\n  <Button>Button</Button>\n  <Button>Button</Button>\n  <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-vertical-dropdown-1">\n    <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>\n    <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>\n  </DropdownButton>\n  <Button>Button</Button>\n  <Button>Button</Button>\n  <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-vertical-dropdown-2">\n    <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>\n    <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>\n  </DropdownButton>\n  <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-vertical-dropdown-3">\n    <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>\n    <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>\n  </DropdownButton>\n</ButtonGroup>;\n\n',
+      id: 'CddqFS1UntsYYuZo6ZLd',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ButtonGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2006,6 +2637,105 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/ModalHeader',
+      componentProps: [
+        {
+          description: 'default: false\t\n\nSpecify whether the Component should contain a close button',
+          name: 'closeButton',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'Close\'\t\n\nProvides an accessible label for the close button. It is used for Assistive Technology when the label text is not readable.',
+          name: 'closeLabel',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A Callback fired when the close button is clicked. If used directly inside a Modal component, the onHide will automatically be propagated up to the parent Modal onHide.',
+          name: 'onHide',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'ModalHeader',
+      id: 'G4ASaKtaqHMSGxu061OV',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ModalHeader',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/InputGroup',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'sm\' | \'lg\'\n\nControl the size of buttons and form elements from the top-level .',
+          name: 'size',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'input-group\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Place one add-on or button on either side of an input. You may also place one on both sides of an input. Remember to place <label>s outside the input group.\n\n<div>\n  <InputGroup className="mb-3">\n    <InputGroup.Prepend>\n      <InputGroup.Text id="basic-addon1">@</InputGroup.Text>\n    </InputGroup.Prepend>\n    <FormControl\n      placeholder="Username"\n      aria-label="Username"\n      aria-describedby="basic-addon1"\n    />\n  </InputGroup>\n\n  <InputGroup className="mb-3">\n    <FormControl\n      placeholder="Recipient\'s username"\n      aria-label="Recipient\'s username"\n      aria-describedby="basic-addon2"\n    />\n    <InputGroup.Append>\n      <InputGroup.Text id="basic-addon2">@example.com</InputGroup.Text>\n    </InputGroup.Append>\n  </InputGroup>\n\n  <label htmlFor="basic-url">Your vanity URL</label>\n  <InputGroup className="mb-3">\n    <InputGroup.Prepend>\n      <InputGroup.Text id="basic-addon3">\n        https://example.com/users/\n      </InputGroup.Text>\n    </InputGroup.Prepend>\n    <FormControl id="basic-url" aria-describedby="basic-addon3" />\n  </InputGroup>\n\n  <InputGroup className="mb-3">\n    <InputGroup.Prepend>\n      <InputGroup.Text>$</InputGroup.Text>\n    </InputGroup.Prepend>\n    <FormControl aria-label="Amount (to the nearest dollar)" />\n    <InputGroup.Append>\n      <InputGroup.Text>.00</InputGroup.Text>\n    </InputGroup.Append>\n  </InputGroup>\n\n  <InputGroup>\n    <InputGroup.Prepend>\n      <InputGroup.Text>With textarea</InputGroup.Text>\n    </InputGroup.Prepend>\n    <FormControl as="textarea" aria-label="With textarea" />\n  </InputGroup>\n</div>;\n\nSizing#\nAdd the relative form sizing classes to the InputGroup and contents within will automatically resize—no need for repeating the form control size classes on each element.\n\n<div>\n  <InputGroup size="sm" className="mb-3">\n    <InputGroup.Prepend>\n      <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>\n    </InputGroup.Prepend>\n    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />\n  </InputGroup>\n  <br />\n  <InputGroup className="mb-3">\n    <InputGroup.Prepend>\n      <InputGroup.Text id="inputGroup-sizing-default">Default</InputGroup.Text>\n    </InputGroup.Prepend>\n    <FormControl\n      aria-label="Default"\n      aria-describedby="inputGroup-sizing-default"\n    />\n  </InputGroup>\n  <br />\n  <InputGroup size="lg">\n    <InputGroup.Prepend>\n      <InputGroup.Text id="inputGroup-sizing-lg">Large</InputGroup.Text>\n    </InputGroup.Prepend>\n    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" />\n  </InputGroup>\n</div>;\n\nCheckboxes and radios#\nUse the InputGroup.Radio or InputGroup.Checkbox to add options to an input group.\n\n<div>\n  <InputGroup className="mb-3">\n    <InputGroup.Prepend>\n      <InputGroup.Checkbox aria-label="Checkbox for following text input" />\n    </InputGroup.Prepend>\n    <FormControl aria-label="Text input with checkbox" />\n  </InputGroup>\n  <InputGroup>\n    <InputGroup.Prepend>\n      <InputGroup.Radio aria-label="Radio button for following text input" />\n    </InputGroup.Prepend>\n    <FormControl aria-label="Text input with radio button" />\n  </InputGroup>\n</div>;\n\nMultiple inputs#\nWhile multiple inputss are supported visually, validation styles are only available for input groups with a single input.\n\n<InputGroup className="mb-3">\n  <InputGroup.Prepend>\n    <InputGroup.Text>First and last name</InputGroup.Text>\n  </InputGroup.Prepend>\n  <FormControl />\n  <FormControl />\n</InputGroup>;\n\nMultiple addons#\nMultiple add-ons are supported and can be mixed\n\n<div>\n  <InputGroup className="mb-3">\n    <InputGroup.Prepend>\n      <InputGroup.Text>$</InputGroup.Text>\n      <InputGroup.Text>0.00</InputGroup.Text>\n    </InputGroup.Prepend>\n    <FormControl\n      placeholder="Recipient\'s username"\n      aria-label="Amount (to the nearest dollar)"\n    />\n  </InputGroup>\n  <InputGroup className="mb-3">\n    <FormControl\n      placeholder="Recipient\'s username"\n      aria-label="Amount (to the nearest dollar)"\n    />\n    <InputGroup.Append>\n      <InputGroup.Text>$</InputGroup.Text>\n      <InputGroup.Text>0.00</InputGroup.Text>\n    </InputGroup.Append>\n  </InputGroup>\n</div>;\n\nButton addons#\n\n<div>\n  <InputGroup className="mb-3">\n    <InputGroup.Prepend>\n      <Button variant="outline-secondary">Button</Button>\n    </InputGroup.Prepend>\n    <FormControl aria-describedby="basic-addon1" />\n  </InputGroup>\n\n  <InputGroup className="mb-3">\n    <FormControl\n      placeholder="Recipient\'s username"\n      aria-label="Recipient\'s username"\n      aria-describedby="basic-addon2"\n    />\n    <InputGroup.Append>\n      <Button variant="outline-secondary">Button</Button>\n    </InputGroup.Append>\n  </InputGroup>\n\n  <InputGroup className="mb-3">\n    <InputGroup.Prepend>\n      <Button variant="outline-secondary">Button</Button>\n      <Button variant="outline-secondary">Button</Button>\n    </InputGroup.Prepend>\n    <FormControl aria-describedby="basic-addon1" />\n  </InputGroup>\n\n  <InputGroup>\n    <FormControl\n      placeholder="Recipient\'s username"\n      aria-label="Recipient\'s username"\n      aria-describedby="basic-addon2"\n    />\n    <InputGroup.Append>\n      <Button variant="outline-secondary">Button</Button>\n      <Button variant="outline-secondary">Button</Button>\n    </InputGroup.Append>\n  </InputGroup>\n</div>;\n\nButtons with Dropdowns#\n\n<>\n  <InputGroup className="mb-3">\n    <DropdownButton\n      as={InputGroup.Prepend}\n      variant="outline-secondary"\n      title="Dropdown"\n      id="input-group-dropdown-1"\n    >\n      <Dropdown.Item href="#">Action</Dropdown.Item>\n      <Dropdown.Item href="#">Another action</Dropdown.Item>\n      <Dropdown.Item href="#">Something else here</Dropdown.Item>\n      <Dropdown.Divider />\n      <Dropdown.Item href="#">Separated link</Dropdown.Item>\n    </DropdownButton>\n    <FormControl aria-describedby="basic-addon1" />\n  </InputGroup>\n\n  <InputGroup>\n    <FormControl\n      placeholder="Recipient\'s username"\n      aria-label="Recipient\'s username"\n      aria-describedby="basic-addon2"\n    />\n\n    <DropdownButton\n      as={InputGroup.Append}\n      variant="outline-secondary"\n      title="Dropdown"\n      id="input-group-dropdown-2"\n    >\n      <Dropdown.Item href="#">Action</Dropdown.Item>\n      <Dropdown.Item href="#">Another action</Dropdown.Item>\n      <Dropdown.Item href="#">Something else here</Dropdown.Item>\n      <Dropdown.Divider />\n      <Dropdown.Item href="#">Separated link</Dropdown.Item>\n    </DropdownButton>\n  </InputGroup>\n</>;\n\n',
+      id: 'G8mNjq0GzL9UoEnm9GW9',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'InputGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ModalDialog',
+      componentProps: [
+        {
+          description: 'Specify whether the Component should be vertically centered',
+          name: 'centered',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'sm\' | \'lg\'\n\nSpecifies a large or small modal.',
+          name: 'size',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'ModalDialog',
+      id: 'GXNLnmgjUOko7Pok0OrD',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ModalDialog',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/NavbarHeader',
       componentProps: [],
@@ -2100,6 +2830,31 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Card',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'card-img-overlay\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Card.ImgOverlay',
+      id: 'HPEAmL1sgGHAWhGfCXPD',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Card__ImgOverlay',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       componentImport: 'react-bootstrap/lib/OverlayTrigger',
       componentProps: [
         {
@@ -2147,6 +2902,43 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'OverlayTrigger'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Tooltip',
+      componentProps: [
+        {
+          description: 'type: { ref: ReactRef, style: Object }\n\nAn Overlay injected set of props for positioning the tooltip arrow.\n\nThis is generally provided by the Overlay component positioning the tooltip',
+          name: 'arrowProps',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ntype: string|number\n\nAn html id attribute, necessary for accessibility',
+          name: 'id',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'type: \'auto-start\' | \'auto\' | \'auto-end\' | \'top-start\' | \'top\' | \'top-end\' | \'right-start\' | \'right\' | \'right-end\' | \'bottom-end\' | \'bottom\' | \'bottom-start\' | \'left-end\' | \'left\' | \'left-start\'\ndefault: \'right\'\t\n\nSets the direction the Tooltip is positioned towards.\n\nThis is generally provided by the Overlay component positioning the tooltip',
+          name: 'placement',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'tooltip\'\n\t\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Tooltip',
+      id: 'Ih2FNBfPydojVe2hrOsU',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Tooltip',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2261,6 +3053,56 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'ControlLabel'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Badge',
+      componentProps: [
+        {
+          description: 'default: false\n\nAdd the pill modifier to make badges more rounded with some additional horizontal padding',
+          name: 'pill',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'light\' | \'dark\'\n\nThe visual style of the badge',
+          name: 'variant',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'badge\'\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Badges scale to match the size of the immediate parent element by using relative font sizing and em units.\n\n<div>\n  <h1>\n    Example heading <Badge variant="secondary">New</Badge>\n  </h1>\n  <h2>\n    Example heading <Badge variant="secondary">New</Badge>\n  </h2>\n  <h3>\n    Example heading <Badge variant="secondary">New</Badge>\n  </h3>\n  <h4>\n    Example heading <Badge variant="secondary">New</Badge>\n  </h4>\n  <h5>\n    Example heading <Badge variant="secondary">New</Badge>\n  </h5>\n  <h6>\n    Example heading <Badge variant="secondary">New</Badge>\n  </h6>\n</div>;\n\nBadges can be used as part of links or buttons to provide a counter.\n\n<Button variant="primary">\n  Profile <Badge variant="light">9</Badge>\n  <span className="sr-only">unread messages</span>\n</Button>;\n\nNote that depending on how they are used, badges may be confusing for users of screen readers and similar assistive technologies. While the styling of badges provides a visual cue as to their purpose, these users will simply be presented with the content of the badge. Depending on the specific situation, these badges may seem like random additional words or numbers at the end of a sentence, link, or button. Unless the context is clear, consider including additional context with a visually hidden piece of additional text. ## Contextual variations Add any of the below mentioned modifier classes to change the appearance of a badge.\n\n<div>\n  <Badge variant="primary">Primary</Badge>\n  <Badge variant="secondary">Secondary</Badge>\n  <Badge variant="success">Success</Badge>\n  <Badge variant="danger">Danger</Badge>\n  <Badge variant="warning">Warning</Badge>\n  <Badge variant="info">Info</Badge>\n  <Badge variant="light">Light</Badge>\n  <Badge variant="dark">Dark</Badge>\n</div>;\n\nPill#\nbadges Use the pill modifier class to make badges more rounded (with a larger border-radius and additional horizontal padding). Useful if you miss the badges from v3.\n\n<div>\n  <Badge pill variant="primary">\n    Primary\n  </Badge>\n  <Badge pill variant="secondary">\n    Secondary\n  </Badge>\n  <Badge pill variant="success">\n    Success\n  </Badge>\n  <Badge pill variant="danger">\n    Danger\n  </Badge>\n  <Badge pill variant="warning">\n    Warning\n  </Badge>\n  <Badge pill variant="info">\n    Info\n  </Badge>\n  <Badge pill variant="light">\n    Light\n  </Badge>\n  <Badge pill variant="dark">\n    Dark\n  </Badge>\n</div>;',
+      id: 'K0wElJ8ogaXQzBaOkJSO',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Badge',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Navbar',
+      componentProps: [
+        {
+          description: 'default: \'navbar-collapse\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Navbar.Collapse',
+      id: 'KWbHjvFUR1xK4AfvxGn6',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Navbar__Collapse',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2392,6 +3234,67 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Nav',
+      componentProps: [
+        {
+          description: 'The active state of the NavItem item.',
+          name: 'active',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: <a>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nThe disabled state of the NavItem item.',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Uniquely idenifies the NavItem amoungst its siblings, used to determine and control the active state ofthe parent Nav',
+          name: 'eventKey',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The HTML href attribute for the NavLink',
+          name: 'href',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A callback fired when the NavLink is selected.\n\nfunction (eventKey: any, event: SyntheticEvent) {}',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The ARIA role for the NavLink, In the context of a \'tablist\' parent Nav, the role defaults to \'tab\'',
+          name: 'role',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'nav-link\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Nav.Link',
+      id: 'LSQ5A8yJk7F5j6hCGqpk',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Nav__Link',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/Tooltip',
       componentProps: [
@@ -2467,6 +3370,61 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'InputGroup__Button'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/TabContainer',
+      componentProps: [
+        {
+          description: 'type: any\n\ncontrolled by: onSelect, initial prop: defaultActivekey\nThe eventKey of the currently active tab.',
+          name: 'activeKey',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: '(eventKey, type) => `${this.props.id}-${type}-${eventKey}`\t\nA function that takes an eventKey and type and returns a unique id for child tab <NavItem>s and <TabPane>s. The function must be a pure function, meaning it should always return the same id for the same set of inputs. The default value requires that an id to be set for the <TabContainer>.\n\nThe type argument will either be "tab" or "pane".',
+          name: 'generateChildId',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'HTML id attribute, required if no generateChildId prop is specified.',
+          name: 'id',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Wait until the first "enter" transition to mount tabs (add them to the DOM)',
+          name: 'mountOnEnter',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controls activeKey\nA callback fired when a tab is selected.',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: {Transition | false}\ndefault: {Fade}\t\n\nSets a default animation strategy for all children <TabPane>s. Use false to disable, true to enable the default <Fade> animation or a react-transition-group v2 <Transition/> component.',
+          name: 'transition',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Unmount tabs (remove it from the DOM) when they are no longer visible',
+          name: 'unmountOnExit',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'TabContainer',
+      id: 'N2PKBjY8DCCtygYhM4sv',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'TabContainer',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2580,6 +3538,129 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Figure',
+      componentProps: [
+        {
+          description: 'default: <figure>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'figure\'\n\t\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Figures#\nAnytime you need to display a piece of content, like an image with an optional caption, consider using a Figure.\n\nFigure#\nDisplaying related images and text with the Figure component.\n\n  <Figure.Image\n    width={171}\n    height={180}\n    alt="171x180"\n    src="holder.js/171x180"\n  />\n  <Figure.Caption>\n    Nulla vitae elit libero, a pharetra augue mollis interdum.\n  </Figure.Caption>\n</Figure>;',
+      id: 'NxDyj8OFoNbX3cezXpgl',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Figure',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ListGroup',
+      componentProps: [
+        {
+          description: 'Marks a ListGroupItem as actionable, applying additional hover, active and disabled styles for links and buttons.',
+          name: 'action',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\n\t\nSets list item as active',
+          name: 'active',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: <{div | a | button}>\t\n\nYou can use a custom element type for this component. For none action items, items render as li. For actions the default is an achor or button element depending on whether a href is provided.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nSets list item state as disabled',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\'\ndefault: null\t\n\nSets contextual classes for list item',
+          name: 'variant',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'list-group-item\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'ListGroup.Item',
+      id: 'OI5lcQgn30b495kypnol',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ListGroup__Item',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Breadcrumb',
+      componentProps: [
+        {
+          description: 'default false\n\nAdds a visual "active" state to a Breadcrumb Item and disables the link.',
+          name: 'active',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: elementType\ndefault: <li>\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'href attribute for the inner a element',
+          name: 'href',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'target attribute for the inner a element',
+          name: 'target',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'title attribute for the inner a element',
+          name: 'title',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'breadcrumb-item\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Breadcrumb.Item',
+      id: 'Ohy25sdoxqdGfq1UpDqk',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Breadcrumb__Item'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/Checkbox',
       componentProps: [
@@ -2655,6 +3736,133 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'Glyphicon'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Modal',
+      componentProps: [
+        {
+          description: 'default: true\t\n\nOpen and close the Modal with a slide and fade animation.',
+          name: 'animation',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\n\t\nWhen true The modal will automatically shift focus to itself when it opens, and replace it to the last focused element when it closes. Generally this should never be set to false as it makes the Modal less accessible to assistive technologies, like screen-readers.',
+          name: 'autoFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'static\' | true | false\ndefault: true\t\n\nInclude a backdrop component. Specify \'static\' for a backdrop that doesn\'t trigger an "onHide" when clicked.',
+          name: 'backdrop',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Add an optional extra class name to .modal-backdrop It could end up looking like class="modal-backdrop foo-modal-backdrop in".',
+          name: 'backdropClassName',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'vertically center the Dialog in the window',
+          name: 'centered',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: <ModalDialog>\t\n\nA Component type that provides the modal content Markup. This is a useful prop when you want to use your own styles and markup to create a custom modal component.',
+          name: 'dialogAs',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A css class to apply to the Modal dialog DOM node.',
+          name: 'dialogClassName',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\t\n\nWhen true The modal will prevent focus from leaving the Modal while open. Consider leaving the default value here, as it is necessary to make the Modal work well with assistive technologies, such as screen readers.',
+          name: 'enforceFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\t\n\nClose the modal when escape key is pressed',
+          name: 'keyboard',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired before the Modal transitions in',
+          name: 'onEnter',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the Modal finishes transitioning in',
+          name: 'onEntered',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired as the Modal begins to transition in',
+          name: 'onEntering',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired right before the Modal transitions out',
+          name: 'onExit',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the Modal finishes transitioning out',
+          name: 'onExited',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired as the Modal begins to transition out',
+          name: 'onExiting',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A callback fired when the header closeButton or non-static backdrop is clicked. Required if either are specified.',
+          name: 'onHide',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: true\t\n\nWhen true The modal will restore focus to previously focused element once modal is hidden',
+          name: 'restoreFocus',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nWhen true The modal will show itself.',
+          name: 'show',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'sm\' | \'lg\'\n\nRender a large or small modal.',
+          name: 'size',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Modals#\nAdd dialogs to your site for lightboxes, user notifications, or completely custom content.\n\nOverview#\nModals are positioned over everything else in the document and remove scroll from the <body> so that modal content scrolls instead.\nModals are unmounted when closed.\nBootstrap only supports one modal window at a time. Nested modals aren’t supported, but if you really need them the underlying react-overlays can support them if you\'re willing.\nModal\'s "trap" focus in them, ensuring the keyboard navigation cycles through the modal, and not the rest of the page.\nUnlike vanilla Bootstrap, autoFocus works in Modals because React handles the implementation.\nExamples#\nStatic Markup#\nBelow is a static modal dialog (without the positioning) to demostrate the look and feel of the Modal.\n\n<Modal.Dialog>\n  <Modal.Header closeButton>\n    <Modal.Title>Modal title</Modal.Title>\n  </Modal.Header>\n\n  <Modal.Body>\n    <p>Modal body text goes here.</p>\n  </Modal.Body>\n\n  <Modal.Footer>\n    <Button variant="secondary">Close</Button>\n    <Button variant="primary">Save changes</Button>\n  </Modal.Footer>\n</Modal.Dialog>;\n\nLive demo#\nA modal with header, body, and set of actions in the footer. Use <Modal/> in combination with other components to show or hide your Modal. The <Modal/> Component comes with a few convenient "sub components": <Modal.Header/>, <Modal.Title/>, <Modal.Body/>, and <Modal.Footer/>, which you can use to build the Modal content.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleShow = this.handleShow.bind(this);\n    this.handleClose = this.handleClose.bind(this);\n\n    this.state = {\n      show: false,\n    };\n  }\n\n  handleClose() {\n    this.setState({ show: false });\n  }\n\n  handleShow() {\n    this.setState({ show: true });\n  }\n\n  render() {\n    return (\n      <>\n        <Button variant="primary" onClick={this.handleShow}>\n          Launch demo modal\n        </Button>\n\n        <Modal show={this.state.show} onHide={this.handleClose}>\n          <Modal.Header closeButton>\n            <Modal.Title>Modal heading</Modal.Title>\n          </Modal.Header>\n          <Modal.Body>Woohoo, you\'re reading this text in a modal!</Modal.Body>\n          <Modal.Footer>\n            <Button variant="secondary" onClick={this.handleClose}>\n              Close\n            </Button>\n            <Button variant="primary" onClick={this.handleClose}>\n              Save Changes\n            </Button>\n          </Modal.Footer>\n        </Modal>\n      </>\n    );\n  }\n}\n\nrender(<Example />);\n\nAdditional Import Options\nThe Modal Header, Title, Body, and Footer components are available as static properties the <Modal/> component, but you can also, import them directly like: require("react-bootstrap/ModalHeader").\n\nVertically centered#\nYou can vertically center a modal by passing the "verticallyCenter" prop.\n\nclass MyVerticallyCenteredModal extends React.Component {\n  render() {\n    return (\n      <Modal\n        {...this.props}\n        size="lg"\n        aria-labelledby="contained-modal-title-vcenter"\n        centered\n      >\n        <Modal.Header closeButton>\n          <Modal.Title id="contained-modal-title-vcenter">\n            Modal heading\n          </Modal.Title>\n        </Modal.Header>\n        <Modal.Body>\n          <h4>Centered Modal</h4>\n          <p>\n            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta\n            ac consectetur ac, vestibulum at eros.\n          </p>\n        </Modal.Body>\n        <Modal.Footer>\n          <Button onClick={this.props.onHide}>Close</Button>\n        </Modal.Footer>\n      </Modal>\n    );\n  }\n}\n\nclass App extends React.Component {\n  constructor(...args) {\n    super(...args);\n\n    this.state = { modalShow: false };\n  }\n\n  render() {\n    let modalClose = () => this.setState({ modalShow: false });\n\n    return (\n      <ButtonToolbar>\n        <Button\n          variant="primary"\n          onClick={() => this.setState({ modalShow: true })}\n        >\n          Launch vertically centered modal\n        </Button>\n\n        <MyVerticallyCenteredModal\n          show={this.state.modalShow}\n          onHide={modalClose}\n        />\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<App />);\n\nUsing the grid#\nYou can use grid layouts within a model using regular grid components inside the modal content.\n\nclass MydModalWithGrid extends React.Component {\n  render() {\n    return (\n      <Modal {...this.props} aria-labelledby="contained-modal-title-vcenter">\n        <Modal.Header closeButton>\n          <Modal.Title id="contained-modal-title-vcenter">\n            Using Grid in Modal\n          </Modal.Title>\n        </Modal.Header>\n        <Modal.Body>\n          <Container>\n            <Row className="show-grid">\n              <Col xs={12} md={8}>\n                <code>.col-xs-12 .col-md-8</code>\n              </Col>\n              <Col xs={6} md={4}>\n                <code>.col-xs-6 .col-md-4</code>\n              </Col>\n            </Row>\n\n            <Row className="show-grid">\n              <Col xs={6} md={4}>\n                <code>.col-xs-6 .col-md-4</code>\n              </Col>\n              <Col xs={6} md={4}>\n                <code>.col-xs-6 .col-md-4</code>\n              </Col>\n              <Col xs={6} md={4}>\n                <code>.col-xs-6 .col-md-4</code>\n              </Col>\n            </Row>\n          </Container>\n        </Modal.Body>\n        <Modal.Footer>\n          <Button onClick={this.props.onHide}>Close</Button>\n        </Modal.Footer>\n      </Modal>\n    );\n  }\n}\n\nclass App extends React.Component {\n  constructor(...args) {\n    super(...args);\n\n    this.state = { modalShow: false };\n  }\n\n  render() {\n    let modalClose = () => this.setState({ modalShow: false });\n\n    return (\n      <ButtonToolbar>\n        <Button\n          variant="primary"\n          onClick={() => this.setState({ modalShow: true })}\n        >\n          Launch modal with grid\n        </Button>\n\n        <MydModalWithGrid show={this.state.modalShow} onHide={modalClose} />\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<App />);\n\nOptional Sizes#\nYou can specify a bootstrap large or small modal by using the "size" prop.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.state = {\n      smShow: false,\n      lgShow: false,\n    };\n  }\n\n  render() {\n    let smClose = () => this.setState({ smShow: false });\n    let lgClose = () => this.setState({ lgShow: false });\n\n    return (\n      <ButtonToolbar>\n        <Button onClick={() => this.setState({ smShow: true })}>\n          Small modal\n        </Button>\n        <Button onClick={() => this.setState({ lgShow: true })}>\n          Large modal\n        </Button>\n\n        <Modal\n          size="sm"\n          show={this.state.smShow}\n          onHide={smClose}\n          aria-labelledby="example-modal-sizes-title-sm"\n        >\n          <Modal.Header closeButton>\n            <Modal.Title id="example-modal-sizes-title-sm">\n              Small Modal\n            </Modal.Title>\n          </Modal.Header>\n          <Modal.Body>...</Modal.Body>\n        </Modal>\n\n        <Modal\n          size="lg"\n          show={this.state.lgShow}\n          onHide={lgClose}\n          aria-labelledby="example-modal-sizes-title-lg"\n        >\n          <Modal.Header closeButton>\n            <Modal.Title id="example-modal-sizes-title-lg">\n              Large Modal\n            </Modal.Title>\n          </Modal.Header>\n          <Modal.Body>...</Modal.Body>\n        </Modal>\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<Example />);\n\nSizing modals using custom CSS#\nYou can apply custom css to the modal dialog div using the "dialogClassName" prop. Example is using a custom css class with width set to 90%.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.state = {\n      show: false,\n    };\n\n    this.handleShow = () => {\n      this.setState({ show: true });\n    };\n\n    this.handleHide = () => {\n      this.setState({ show: false });\n    };\n  }\n\n  render() {\n    return (\n      <>\n        <Button variant="primary" onClick={this.handleShow}>\n          Custom Width Modal\n        </Button>\n\n        <Modal\n          show={this.state.show}\n          onHide={this.handleHide}\n          dialogClassName="modal-90w"\n          aria-labelledby="example-custom-modal-styling-title"\n        >\n          <Modal.Header closeButton>\n            <Modal.Title id="example-custom-modal-styling-title">\n              Custom Modal Styling\n            </Modal.Title>\n          </Modal.Header>\n          <Modal.Body>\n            <p>\n              Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae\n              unde commodi aspernatur enim, consectetur. Cumque deleniti\n              temporibus ipsam atque a dolores quisquam quisquam adipisci\n              possimus laboriosam. Quibusdam facilis doloribus debitis! Sit\n              quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem!\n              Mollitia reiciendis porro quo magni incidunt dolore amet atque\n              facilis ipsum deleniti rem!\n            </p>\n          </Modal.Body>\n        </Modal>\n      </>\n    );\n  }\n}\n\nrender(<Example />);',
+      id: 'P5dyQTUyV0lVrR1ovU0E',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Modal',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2912,6 +4120,67 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Dropdow',
+      componentProps: [
+        {
+          description: 'Highlight the menu item as active.',
+          name: 'active',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: <SafeAnchor>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nDisable the menu item, making it unselectable.',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: any\n\nValue passed to the onSelect handler, useful for identifying the selected menu item.',
+          name: 'eventKey',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'HTML href attribute corresponding to a.href.',
+          name: 'href',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired when the menu item is clicked.',
+          name: 'onClick',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired when the menu item is selected.\n\n(eventKey: any, event: Object) => any',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'dropdown\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Dropdown.Item',
+      id: 'RMNMUuy21kYBA2231dv4',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Dropdown__Item',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/FormControlFeedback',
       componentProps: [
@@ -2930,6 +4199,128 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'FormControl__Feedback'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Dropdown',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'dropdown-header\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Dropdown.Header',
+      id: 'RnD8CufkJPdGVmJ6tJGy',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Dropdown__Header',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/TabPane',
+      componentProps: [
+        {
+          description: 'Toggles the active state of the TabPane, this is generally controlled by a TabContainer.',
+          name: 'active',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'You can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'tab-pane\'\t\n',
+          name: 'bsClass',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: any\n\nA key that associates the TabPane with it\'s controlling NavLink.',
+          name: 'eventKey',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Wait until the first "enter" transition to mount the tab (add it to the DOM)',
+          name: 'mountOnEnter',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Transition onEnter callback when animation is not false',
+          name: 'onEnter',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Transition onEntered callback when animation is not false',
+          name: 'onEntered',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Transition onEntering callback when animation is not false',
+          name: 'onEntering',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Transition onExit callback when animation is not false',
+          name: 'onExit',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Transition onExited callback when animation is not false',
+          name: 'onExited',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Transition onExiting callback when animation is not false',
+          name: 'onExiting',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: boolean | elementType\n\nUse animation when showing or hiding <TabPane>s. Use false to disable, true to enable the default <Fade> animation or a react-transition-group v2 <Transition/> component.',
+          name: 'transition',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Unmount the tab (remove it from the DOM) when it is no longer visible',
+          name: 'unmountOnExit',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'tab-pane\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'TabPane',
+      id: 'RppBAjoxsjTJl6Fz08a5',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'TabPane',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2987,6 +4378,25 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'Tabs'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Tab',
+      componentProps: [
+        {
+          description: 'required',
+          name: 'title',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Tab',
+      id: 'SXebJOqI82f3Yg2XsdB4',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Tab'
     },
     {
       children: [],
@@ -3262,6 +4672,104 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/ProgressBar',
+      componentProps: [
+        {
+          description: 'default: false\t\n\nAnimate\'s the stripes from right to left',
+          name: 'animated',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: onlyProgressBar\n\nChild elements (only allows elements of type )',
+          name: 'children',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Show label that represents visual percentage. EG. 60%',
+          name: 'label',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: 100\n\nMaximum value progress can reach',
+          name: 'max',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: 0\t\n\nMinimum value progress can begin from',
+          name: 'min',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Current value of progress',
+          name: 'now',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nHide\'s the label visually.',
+          name: 'srOnly',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nUses a gradient to create a striped effect.',
+          name: 'striped',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'success\' | \'danger\' | \'warning\' | \'info\'\n\nSets the background class of the progress bar.',
+          name: 'variant',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Progress bars#\nProvide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.\n\nExample#\nDefault progress bar.\n\n<ProgressBar now={60} />;\n\nWith label#\nAdd a label prop to show a visible percentage. For low percentages, consider adding a min-width to ensure the label\'s text is fully visible.\n\nconst now = 60;\n\nconst progressInstance = <ProgressBar now={now} label={`${now}%`} />;\n\nrender(progressInstance);\n\nScreenreader only label#\nAdd a srOnly prop to hide the label visually.\n\nconst now = 60;\n\nconst progressInstance = <ProgressBar now={now} label={`${now}%`} srOnly />;\n\nrender(progressInstance);\n\nContextual alternatives#\nProgress bars use some of the same button and alert classes for consistent styles.\n\n<div>\n  <ProgressBar variant="success" now={40} />\n  <ProgressBar variant="info" now={20} />\n  <ProgressBar variant="warning" now={60} />\n  <ProgressBar variant="danger" now={80} />\n</div>;\n\nStriped#\nUses a gradient to create a striped effect. Not available in IE8.\n\n<div>\n  <ProgressBar striped variant="success" now={40} />\n  <ProgressBar striped variant="info" now={20} />\n  <ProgressBar striped variant="warning" now={60} />\n  <ProgressBar striped variant="danger" now={80} />\n</div>;\n\nAnimated#\nAdd active prop to animate the stripes right to left. Not available in IE9 and below.\n\n<ProgressBar animated now={45} />;\n\nStacked#\nNest <ProgressBar />s to stack them.\n\n<ProgressBar>\n  <ProgressBar striped variant="success" now={35} key={1} />\n  <ProgressBar variant="warning" now={20} key={2} />\n  <ProgressBar striped variant="danger" now={10} key={3} />\n</ProgressBar>;',
+      id: 'Sfm4I0k2yUQtBkPbFJsA',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ProgressBar',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Jumbotron',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\n\t\nMake the jumbotron full width, and without rounded corners',
+          name: 'fluid',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'jumbotron\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Jumbotron#\nA lightweight, flexible component that can optionally extend the entire viewport to showcase key content on your site.\n\n<Jumbotron>\n  <h1>Hello, world!</h1>\n  <p>\n    This is a simple hero unit, a simple jumbotron-style component for calling\n    extra attention to featured content or information.\n  </p>\n  <p>\n    <Button variant="primary">Learn more</Button>\n  </p>\n</Jumbotron>;\n\n<Jumbotron fluid>\n  <Container>\n    <h1>Fluid jumbotron</h1>\n    <p>\n      This is a modified jumbotron that occupies the entire horizontal space of\n      its parent.\n    </p>\n  </Container>\n</Jumbotron>;',
+      id: 'TlwKaou20n4H7NsrIVjy',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Jumbotron',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/ProgressBar',
       componentProps: [
@@ -3334,6 +4842,31 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'ProgressBar'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Dropdown',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'dropdown-divider\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Dropdown.Divider',
+      id: 'U8QRHVGnBYyDVkDTSMZR',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Dropdown__Divider',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3435,6 +4968,31 @@ export const mock = {
       techno: 'React Native',
       title: 'TabBarIOS',
       subtitle: 'ReactNative'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/CardGroup',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'card-group\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'CardGroup',
+      id: 'WJ5027EqM7PtXdzqthIo',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'CardGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4228,6 +5786,61 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Table',
+      componentProps: [
+        {
+          description: 'Adds borders on all sides of the table and cells.',
+          name: 'bordered',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Enable a hover state on table rows within a <tbody>.',
+          name: 'hover',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: boolean | string\n\nResponsive tables allow tables to be scrolled horizontally with ease. Across every breakpoint, use responsive for horizontally scrolling tables. Responsive tables are wrapped automatically in a div. Use responsive="sm", responsive="md", responsive="lg", or responsive="xl" as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.',
+          name: 'responsive',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Make tables more compact by cutting cell padding in half by setting size as sm.',
+          name: 'size',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Adds zebra-striping to any table row within the <tbody>.',
+          name: 'striped',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Invert the colors of the table — with light text on dark backgrounds by setting variant as dark.',
+          name: 'variant',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'table\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Tables#\nUse the striped, bordered and hover props to customize the table.\n\n<Table striped bordered hover>\n  <thead>\n    <tr>\n      <th>#</th>\n      <th>First Name</th>\n      <th>Last Name</th>\n      <th>Username</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <td>3</td>\n      <td colSpan="2">Larry the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</Table>;\n\nSmall Table#\nUse size="sm" to make tables compact by cutting cell padding in half.\n\n<Table striped bordered hover size="sm">\n  <thead>\n    <tr>\n      <th>#</th>\n      <th>First Name</th>\n      <th>Last Name</th>\n      <th>Username</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <td>3</td>\n      <td colSpan="2">Larry the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</Table>;\n\nDark Table#\nUse variant="dark" to invert the colors of the table and get light text on a dark background.\n\n<Table striped bordered hover variant="dark">\n  <thead>\n    <tr>\n      <th>#</th>\n      <th>First Name</th>\n      <th>Last Name</th>\n      <th>Username</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <td>3</td>\n      <td colSpan="2">Larry the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</Table>;\n\nResponsive#\nResponsive tables allow tables to be scrolled horizontally with ease.\n\nAlways Responsive#\nAcross every breakpoint, use responsive for horizontally scrolling tables. Responsive tables are wrapped automatically in a div.\n\n<Table responsive>\n  <thead>\n    <tr>\n      <th>#</th>\n      <th>Table heading</th>\n      <th>Table heading</th>\n      <th>Table heading</th>\n      <th>Table heading</th>\n      <th>Table heading</th>\n      <th>Table heading</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n    </tr>\n    <tr>\n      <td>3</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n      <td>Table cell</td>\n    </tr>\n  </tbody>\n</Table>;\n\nBreakpoint specific#\nUse responsive="sm", responsive="md", responsive="lg", or responsive="xl" as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.\n\n\n',
+      id: 'YLSB1d7KTM5VvA3Xlmrj',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Table',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: '-',
       componentProps: [
@@ -4299,6 +5912,68 @@ export const mock = {
       techno: 'React Native',
       title: 'ViewPagerAndroid',
       subtitle: 'ReactNative'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ResponsiveEmbed',
+      componentProps: [
+        {
+          description: 'type: \'21by9\' | \'16by9\' | \'4by3\' | \'1by1\'\ndefault: \'1by1\'\t\n\nSet the aspect ration of the embed',
+          name: 'aspectRatio',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\n\nThis component requires a single child element',
+          name: 'children',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'default: \'embed-responsive\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Responsive embed#\nAllow browsers to determine video or slideshow dimensions based on the width of their containing block by creating an intrinsic ratio that will properly scale on any device.\n\nYou don\'t need to include frameborder="0" in your iframes.\n\nThe aspect ratio is controlled via the aspectRatio prop.\n\n<div style={{ width: 660, height: \'auto\' }}>\n  <ResponsiveEmbed aspect="a16by9">\n    <embed type="image/svg+xml" src="/TheresaKnott_castle.svg" />\n  </ResponsiveEmbed>\n</div>;\n\n',
+      id: 'ZRYit8eSZhEq6Tl1MZ7m',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ResponsiveEmbed',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/PageItem',
+      componentProps: [
+        {
+          description: 'default: false\t\n\nStyles PageItem as active, and renders a <span> instead of an <a>.',
+          name: 'active',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'(current)\'\t\n\nAn accessible label indicating the active state..',
+          name: 'activeLabel',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nDisables the PageItem',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'PageItem',
+      id: 'Zd3nCwimNbQLmEj1T3pv',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'PageItem',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4414,6 +6089,61 @@ export const mock = {
       techno: 'React Native',
       title: 'PickerIOS',
       subtitle: 'ReactNative'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ToggleButton',
+      componentProps: [
+        {
+          description: 'The checked state of the input, managed by <ToggleButtonGroup> automatically',
+          name: 'checked',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The disabled state of both the label and input',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: ReactRef\n\nA ref attached to the <input> element',
+          name: 'inputRef',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The HTML input name, used to group like checkboxes or radio buttons together semantically',
+          name: 'name',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A callback fired when the underlying input element changes. This is passed directly to the <input> so shares the same signature as a native onChange event.',
+          name: 'onChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type\t: \'checkbox\' | \'radio\'\n\nThe <input> element type',
+          name: 'type',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: any\n\nThe value of the input, should be unique amoungst it\'s siblings when nested in a ToggleButtonGroup.',
+          name: 'value',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'ToggleButton',
+      id: 'cMSXhnmrmZh1dthlNOVp',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ToggleButton',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4637,6 +6367,68 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Alert',
+      componentProps: [
+        {
+          description: 'Type: elementType\ndefault: <SafeAnchor>\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'alert-link\'\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Alert.Link',
+      id: 'duB8YXqFJ9YqX8o2kITU',
+      isDefault: false,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Alert__Link',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Dropdown',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault: <Button>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ntype: string|number\n\nAn html id attribute, necessary for assistive technologies, such as screen readers.',
+          name: 'id',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'split',
+          name: 'split',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'dropdown-toggle\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Dropdown.Toggle',
+      id: 'eFd26kwbHtosMqKDPv9D',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Dropdown__Toggle'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/ModalBody',
       componentProps: [
@@ -4661,6 +6453,98 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'Modal__Body'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Alert',
+      componentProps: [
+        {
+          description: 'Sets the text for alert close button.\nDefault: \'Close alert\'\t\n',
+          name: 'closeLabel',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Renders a properly aligned dismiss button, as well as adding extra horizontal padding to the Alert.',
+          name: 'dismissible',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controls show\nCallback fired when alert is closed.\n\n',
+          name: 'onClose',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controlled by: onClose, initial prop: defaultShow\nControls the visual state of the Alert.\n\ndefault: true',
+          name: 'show',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: elementType\ndefault: <Fade>\n\nA react-transition-group Transition component used to animate the Alert on dismissal.',
+          name: 'transition',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\'\n\nThe Alert visual variant',
+          name: 'variant',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'alert\'\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.\n\n[\n  \'primary\',\n  \'secondary\',\n  \'success\',\n  \'danger\',\n  \'warning\',\n  \'info\',\n  \'light\',\n  \'dark\',\n].map((variant, idx) => (\n  <Alert key={idx} variant={variant}>\n    This is a {variant} alert—check it out!\n  </Alert>\n));\n\nConveying meaning to assistive technologies\nUsing color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the .sr-only class.\n\nLinks#\nFor links, use the <Alert.Link> component to provide matching colored links within any alert.\n\n[\n  \'primary\',\n  \'secondary\',\n  \'success\',\n  \'danger\',\n  \'warning\',\n  \'info\',\n  \'light\',\n  \'dark\',\n].map((variant, idx) => (\n  <Alert key={idx} variant={variant}>\n    This is a {variant} alert with{\' \'}\n    <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you\n    like.\n  </Alert>\n));\n\nAdditional content#\nAlerts can content whatever content you like. Headers, paragraphs, dividers, go crazy.\n\n<Alert variant="success">\n  <Alert.Heading>Hey, nice to see you</Alert.Heading>\n  <p>\n    Aww yeah, you successfully read this important alert message. This example\n    text is going to run a bit longer so that you can see how spacing within an\n    alert works with this kind of content.\n  </p>\n  <hr />\n  <p className="mb-0">\n    Whenever you need to, be sure to use margin utilities to keep things nice\n    and tidy.\n  </p>\n</Alert>;\n\nDismissing#\nAdd the dismissable prop to add a functioning dismiss button to the Alert.\n\n<Alert dismissible variant="danger">\n  <Alert.Heading>Oh snap! You got an error!</Alert.Heading>\n  <p>\n    Change this and that and try again. Duis mollis, est non commodo luctus,\n    nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis\n    consectetur purus sit amet fermentum.\n  </p>\n</Alert>;\n\nYou can also control the visual state directly which is great if you want to build more complicated alerts.\n\nclass AlertDismissable extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = { show: true };\n  }\n\n  render() {\n    const handleHide = () => this.setState({ show: false });\n    const handleShow = () => this.setState({ show: true });\n    return (\n      <>\n        <Alert show={this.state.show} variant="success">\n          <Alert.Heading>How\'s it going?!</Alert.Heading>\n          <p>\n            Duis mollis, est non commodo luctus, nisi erat porttitor ligula,\n            eget lacinia odio sem nec elit. Cras mattis consectetur purus sit\n            amet fermentum.\n          </p>\n          <hr />\n          <div className="d-flex justify-content-end">\n            <Button onClick={handleHide} variant="outline-success">\n              Close me ya\'ll!\n            </Button>\n          </div>\n        </Alert>\n\n        {!this.state.show && <Button onClick={handleShow}>Show Alert</Button>}\n      </>\n    );\n  }\n}\n\nrender(<AlertDismissable />);',
+      id: 'eQIrw5vkpyVf2cjDLc5L',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Alert'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Navbar',
+      componentProps: [
+        {
+          description: 'default: <button>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The toggle content. When empty, the default toggle will be rendered.',
+          name: 'children',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'Toggle navigation\'\t\n\nAn accessible ARIA label for the toggler button.',
+          name: 'label',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'navbar-toggler\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Navbar.Toggle',
+      id: 'f8dIXN88NBFvkue6Hx4S',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Navbar__Toggle',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4712,6 +6596,43 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'SplitButton'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Breadcrumb',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault: <nav>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'breadcrumb\'\t\n\nARIA label for the nav element https://www.w3.org/TR/wai-aria-practices/#breadcrumb',
+          name: 'label',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: {}\n\nAdditional props passed as-is to the underlying <ul> element',
+          name: 'listProps',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'breadcrumb\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS. Add active prop to active Breadcrumb.Item. Do not set both active and href attributes. active overrides href and span element is rendered instead of a.\n\n<Breadcrumb>\n  <Breadcrumb.Item href="#">Home</Breadcrumb.Item>\n  <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">\n    Library\n  </Breadcrumb.Item>\n  <Breadcrumb.Item active>Data</Breadcrumb.Item>\n</Breadcrumb>;',
+      id: 'fJZmKwvV9gnDENBqoFVb',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Breadcrumb',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4854,6 +6775,110 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Fade',
+      componentProps: [
+        {
+          description: 'default: false\t\n\nRun the fade in animation when the component mounts, if it is initially shown',
+          name: 'appear',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nShow the component; triggers the fade in or fade out animation',
+          name: 'in',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nWait until the first "enter" transition to mount the component (add it to the DOM)',
+          name: 'mountOnEnter',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired before the component fades in',
+          name: 'onEnter',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the has component faded in',
+          name: 'onEntered',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the component starts to fade in',
+          name: 'onEntering',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired before the component fades out',
+          name: 'onExit',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the component has faded out',
+          name: 'onExited',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the component starts to fade out',
+          name: 'onExiting',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: 300\t\n\nDuration of the fade animation in milliseconds, to ensure that finishing callbacks are fired even if the original browser transition end events are canceled',
+          name: 'timeout',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\n\t\nUnmount the component (remove it from the DOM) when it is faded out',
+          name: 'unmountOnExit',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Fade#\nAdd a fade animation to a child element or component.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.state = {\n      open: false,\n    };\n  }\n\n  render() {\n    const { open } = this.state;\n    return (\n      <>\n        <Button\n          onClick={() => this.setState({ open: !open })}\n          aria-controls="example-fade-text"\n          aria-expanded={open}\n        >\n          Toggle text\n        </Button>\n        <Fade in={this.state.open}>\n          <div id="example-fade-text">\n            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus\n            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer\n            labore wes anderson cred nesciunt sapiente ea proident.\n          </div>\n        </Fade>\n      </>\n    );\n  }\n}\n\nrender(<Example />);',
+      id: 'fyYFZP7LpMBH1mwj04gD',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Fade',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/TabContent',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'tab-content\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'TabContent',
+      id: 'g6NBboBqNdcEBcoLvmvJ',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'TabContent',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/Button',
       componentProps: [
@@ -4926,6 +6951,62 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'Button'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Nav',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'The ARIA role of the component',
+          name: 'role',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'nav-item\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Nav.Item',
+      id: 'g99eI4hVAUAydmc0XNTr',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Nav__Item',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ModalBody',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'ModalBody',
+      id: 'gObdbiO5P92LWehUMb46',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ModalBody',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -5150,6 +7231,98 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Card',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'card-body\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Card.Body',
+      id: 'i2hFmXVjoBYoJGav12An',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Card__Body',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Button',
+      componentProps: [
+        {
+          description: 'default: false\t\nManually set the visual state of the button to :active',
+          name: 'active',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: elementType\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Spans the full width of the Button parent',
+          name: 'block',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nDisables the Button, preventing mouse events, even if the underlying component is an <a> element',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Providing a href will render an <a> element, styled as a button.',
+          name: 'href',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'sm\' | \'lg\'\n\nSpecifies a large or small button.',
+          name: 'size',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'button\' | \'reset\' | \'submit\' | null\ndefault: \'button\'\t\n\nDefines HTML button type attribute.',
+          name: 'type',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'primary\'\t\n\nOne or more button variant combinations\n\nbuttons may be one of a variety of visual variants such as:\n\n\'primary\', \'secondary\', \'success\', \'danger\', \'warning\', \'info\', \'dark\', \'light\', \'link\'\n\nas well as "outline" versions (prefixed by \'outline-*\')\n\n\'outline-primary\', \'outline-secondary\', \'outline-success\', \'outline-danger\', \'outline-warning\', \'outline-info\', \'outline-dark\', \'outline-light\'',
+          name: 'variant',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'btn\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Buttons\nCustom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.\n\nExamples#\nUse any of the available button style types to quickly create a styled button. Just modify the variant prop.\n\n<ButtonToolbar>\n  <Button variant="primary">Primary</Button>\n  <Button variant="secondary">Secondary</Button>\n  <Button variant="success">Success</Button>\n  <Button variant="warning">Warning</Button>\n  <Button variant="danger">Danger</Button>\n  <Button variant="info">Info</Button>\n  <Button variant="light">Light</Button>\n  <Button variant="dark">Dark</Button>\n  <Button variant="link">Link</Button>\n</ButtonToolbar>;\n\nOutline buttons#\nFor a lighter touch, Buttons also come in outline-* variants with no background color.\n\n<ButtonToolbar>\n  <Button variant="outline-primary">Primary</Button>\n  <Button variant="outline-secondary">Secondary</Button>\n  <Button variant="outline-success">Success</Button>\n  <Button variant="outline-warning">Warning</Button>\n  <Button variant="outline-danger">Danger</Button>\n  <Button variant="outline-info">Info</Button>\n  <Button variant="outline-light">Light</Button>\n  <Button variant="outline-dark">Dark</Button>\n</ButtonToolbar>;\n\nButton tags#\nNormally <Button> components will render a HTML <button> element. However you can render whatever you\'d like, adding a href prop will automatically render an <a /> element. You can use the as prop to render whatever your heart desires. React Bootstrap will take care of the proper ARIA roles for you.\n\nSizes#\nFancy larger or smaller buttons? Add size="large", size="small" for additional sizes.\n\n<div>\n  <ButtonToolbar>\n    <Button variant="primary" size="lg">\n      Large button\n    </Button>\n    <Button variant="secondary" size="lg">\n      Large button\n    </Button>\n  </ButtonToolbar>\n\n  <ButtonToolbar>\n    <Button variant="primary" size="sm">\n      Small button\n    </Button>\n    <Button variant="secondary" size="sm">\n      Small button\n    </Button>\n  </ButtonToolbar>\n</div>;\n\nCreate block level buttons—those that span the full width of a parent—by adding block\n\n<div>\n  <Button variant="primary" size="lg" block>\n    Block level button\n  </Button>\n  <Button variant="secondary" size="lg" block>\n    Block level button\n  </Button>\n</div>;\n\nActive state#\nTo set a buttons active state simply set the components active prop.\n\n<ButtonToolbar>\n  <Button variant="primary" size="lg" active>\n    Primary button\n  </Button>\n  <Button variant="secondary" size="lg" active>\n    Button\n  </Button>\n</ButtonToolbar>;\n\nDisabled state#\nMake buttons look inactive by adding the disabled prop to.\n\n<ButtonToolbar>\n  <Button variant="primary" size="lg" disabled>\n    Primary button\n  </Button>{\' \'}\n  <Button variant="secondary" size="lg" disabled>\n    Button\n  </Button>{\' \'}\n  <Button href="#" variant="secondary" size="lg" disabled>\n    Link\n  </Button>\n</ButtonToolbar>;\n\nWatch out! <a> element\'s don\'t naturally support a disabled attribute. In browsers that support it this is handled with a point-events: none style but not all browsers support it yet.\n\nReact Bootstrap will prevent any onClick handlers from firing regardless of the rendered element.\n\nButton loading state#\nWhen activating an asynchronous action from a button it is a good UX pattern to give the user feedback as to the loading state, this can easily be done by updating your <Button />s props from a state change like below.\n\nfunction simulateNetworkRequest() {\n  return new Promise(resolve => setTimeout(resolve, 2000));\n}\n\nclass LoadingButton extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleClick = this.handleClick.bind(this);\n\n    this.state = {\n      isLoading: false,\n    };\n  }\n\n  handleClick() {\n    this.setState({ isLoading: true }, () => {\n      simulateNetworkRequest().then(() => {\n        this.setState({ isLoading: false });\n      });\n    });\n  }\n\n  render() {\n    const { isLoading } = this.state;\n\n    return (\n      <Button\n        variant="primary"\n        disabled={isLoading}\n        onClick={!isLoading ? this.handleClick : null}\n      >\n        {isLoading ? \'Loading…\' : \'Click to load\'}\n      </Button>\n    );\n  }\n}\n\nrender(<LoadingButton />);\n\nCheckbox / Radio#\nButton\'s can also be used to style checkbox and radio form elements. This is helpful when you want a toggle button that works neatly inside an HTML form.\n\n<div className="d-flex flex-column">\n  <ButtonGroup toggle>\n    <ToggleButton type="checkbox" defaultChecked value="1">\n      Checked\n    </ToggleButton>\n  </ButtonGroup>\n  <ButtonGroup toggle className="mt-3">\n    <ToggleButton type="radio" name="radio" defaultChecked value="1">\n      Active\n    </ToggleButton>\n    <ToggleButton type="radio" name="radio" value="2">\n      Radio\n    </ToggleButton>\n    <ToggleButton type="radio" name="radio" value="3">\n      Radio\n    </ToggleButton>\n  </ButtonGroup>\n</div>;\n\nThe above handles styling, But requires manually controlling the checked state for each radio or checkbox in the group.\n\nFor a nicer experience with checked state management use the <ToggleButtonGroup> instead of a <ButtonGroup toggle> component. The group behaves as a form component, where the value is an array of the selected values for a named checkbox group or the single toggled value in a similarly named radio group.\n\nUncontrolled#\n\n<>\n  <ButtonToolbar>\n    <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]}>\n      <ToggleButton value={1}>Checkbox 1 (pre-checked)</ToggleButton>\n      <ToggleButton value={2}>Checkbox 2</ToggleButton>\n      <ToggleButton value={3}>Checkbox 3 (pre-checked)</ToggleButton>\n    </ToggleButtonGroup>\n  </ButtonToolbar>\n\n  <ButtonToolbar>\n    <ToggleButtonGroup type="radio" name="options" defaultValue={1}>\n      <ToggleButton value={1}>Radio 1 (pre-checked)</ToggleButton>\n      <ToggleButton value={2}>Radio 2</ToggleButton>\n      <ToggleButton value={3}>Radio 3</ToggleButton>\n    </ToggleButtonGroup>\n  </ButtonToolbar>\n</>;\n\nControlled#\n\nclass ToggleButtonGroupControlled extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleChange = this.handleChange.bind(this);\n\n    this.state = {\n      value: [1, 3],\n    };\n  }\n\n  handleChange(value, event) {\n    this.setState({ value });\n  }\n\n  render() {\n    return (\n      <ToggleButtonGroup\n        type="checkbox"\n        value={this.state.value}\n        onChange={this.handleChange}\n      >\n        <ToggleButton value={1}>Option 1</ToggleButton>\n        <ToggleButton value={2}>Option 2</ToggleButton>\n        <ToggleButton value={3}>Option 3</ToggleButton>\n      </ToggleButtonGroup>\n    );\n  }\n}\n\nrender(<ToggleButtonGroupControlled />);',
+      id: 'iHLaRIu2JjuvM0TXJGrm',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Button'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: '-',
       componentProps: [
@@ -5268,6 +7441,61 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/DropdownButton',
+      componentProps: [
+        {
+          description: 'Disables both Buttons',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An href passed to the Toggle component',
+          name: 'href',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ntype: string|number\n\nAn html id attribute for the Toggle button, necessary for assistive technologies, such as screen readers.',
+          name: 'id',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'An ARIA accessible role applied to the Menu component. When set to \'menu\', The dropdown',
+          name: 'menuRole',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An onClick handler passed to the Toggle component',
+          name: 'onClick',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Which event when fired outside the component will cause it to be closed.\n\nsee DropdownMenu for more details',
+          name: 'rootCloseEvent',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ntype: node\n\nThe content of the non-toggle Button.',
+          name: 'title',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'A convenience component for simple or general use dropdowns. Renders a Button toggle and all children are passed directly to the default Dropdown.Menu.\n\nAll unknown props are passed through to the Dropdown component. Only the Button variant, size and bsPrefix props are passed to the toggle, along with menu related props are passed to the Dropdown.Menu',
+      id: 'kIa5etTkaOCMELvTeAMX',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'DropdownButton',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/CarouselCaption',
       componentProps: [
@@ -5292,6 +7520,56 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'Carousel__Caption'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ModalFooter',
+      componentProps: [
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'ModalFooter',
+      id: 'l9f8cp1WG5G3HQgJD5Nf',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ModalFooter',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ButtonToolbar',
+      componentProps: [
+        {
+          description: 'default: \'toolbar\'\t\n\nThe ARIA role describing the button toolbar. Generally the default "toolbar" role is correct. An aria-label or aria-labelledby prop is also recommended.',
+          name: 'role',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'btn-toolbar\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'ButtonToolbar',
+      id: 'm5azHJZ7B5igLVpOovcX',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ButtonToolbar',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -5345,6 +7623,31 @@ export const mock = {
       techno: 'React',
       title: 'label',
       subtitle: 'HTML'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Carousel',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'carousel-caption\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Carousel.Caption',
+      id: 'nA7OmIHlHOjwxS8GYjbq',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Carousel__Caption'
     },
     {
       children: [],
@@ -5473,6 +7776,49 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/OverlayTrigger',
+      componentProps: [
+        {
+          description: 'children',
+          name: 'children',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'The initial visibility state of the Overlay. For more nuanced visibility control, consider using the Overlay component directly.',
+          name: 'defaultShow',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: number | shape\n\nA millisecond delay amount to show and hide the Overlay once triggered',
+          name: 'delay',
+          propType: 'PropTypes.number',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: function | element\n\nAn element or text to overlay next to the target.',
+          name: 'overlay',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'hover\' | \'click\' |\'focus\' | Array<\'hover\' | \'click\' |\'focus\'>\ndefault: [\'hover\', \'focus\']\t\n\nSpecify which action or actions trigger Overlay visibility',
+          name: 'trigger',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'OverlayTrigger',
+      id: 'nWz4UwDUm8Cc8x4xxBvJ',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'OverlayTrigger',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/CarouselItem',
       componentProps: [
@@ -5524,6 +7870,37 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Card',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault: <img>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'top\' | \'bottom\'\ndefault: null\t\n\nDefines image position inside the card.',
+          name: 'variant',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'card-img\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Card.Img',
+      id: 'o1KczNYNVRqbULmSoN0B',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Card__Img',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/PageItem',
       componentProps: [
@@ -5572,6 +7949,134 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'Pager__Item'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Overlay',
+      componentProps: [
+        {
+          description: 'type: componentOrElement | function\n\nA component instance, DOM node, or function that returns either. The container element will have the Overlay appended to it via a React portal.',
+          name: 'container',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired before the Overlay transitions in',
+          name: 'onEnter',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the Overlay finishes transitioning in',
+          name: 'onEntered',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired as the Overlay begins to transition in',
+          name: 'onEntering',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired right before the Overlay transitions out',
+          name: 'onExit',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired after the Overlay finishes transitioning out',
+          name: 'onExited',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Callback fired as the Overlay begins to transition out',
+          name: 'onExiting',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A callback invoked by the overlay when it wishes to be hidden. Required if rootClose is specified.',
+          name: 'onHide',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'auto-start\' | \'auto\' | \'auto-end\' | \'top-start\' | \'top\' | \'top-end\' | \'right-start\' | \'right\' | \'right-end\' | \'bottom-end\' | \'bottom\' | \'bottom-start\' | \'left-end\' | \'left\' | \'left-start\'\ndefault: \'top\'\t\n\nThe placement of the OVerlay in relation to it\'s target.',
+          name: 'placement',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A set of popper options and props passed directly to react-popper\'s Popper component.',
+          name: 'popperConfig',
+          propType: 'PropTypes.object',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nSpecify whether the overlay should trigger onHide when the user clicks outside the overlay',
+          name: 'rootClose',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'click\' | \'mousedown\'\n\nSpecify event for triggering a "root close" toggle.',
+          name: 'rootCloseEvent',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nSet the visibility of the Overlay',
+          name: 'show',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: componentOrElement | function\n\nA component instance, DOM node, or function that returns either. The overlay will be positioned in relation to the target',
+          name: 'target',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: boolean | elementType\ndefault: Fade\t\n\nAnimate the entering and exiting of the Ovelay. true will use the <Fade> transition, or a custom react-transition-group <Transition> component can be provided.',
+          name: 'transition',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Overlays#\nA set of components for positioning beautiful overlays, tooltips, popovers, and anything else you need.\n\nOverview#\nThings to know about the react-boostrap Overlay components.\n\nOverlays rely on a 3rd party library react-popper, a tiny react wrapper around Popper.js. It\'s include automatically with react-bootstrap, but you should reference the API for more advanced use-cases.\nThe <Tooltip> and <Popover> components do not position themselves. Instead the <Overlay> (or <OverlayTrigger>) components, inject ref and style props.\nTooltip expects specific props injected by the <Overlay> component\nTooltips for disabled elements must be triggered on a wrapper element.\nOverlay#\nOverlay is the fundemental component for positioning and controlling tooltip visibility. It\'s a wrapper around react-popper, that adds support for transitions, and visibility toggling.\n\nCreating an Overlay#\nOverlays consist of at least two elements, the "overlay", the element to be positioned, as well as a "target", the element the overlay is positioned in relation to. You can also also have an "arrow" element, like the tooltips and popovers, but that is optional. Be sure to check out the react-popper documentation for more details about the injected props.\n\nclass Example extends React.Component {\n  constructor(...args) {\n    super(...args);\n\n    this.attachRef = target => this.setState({ target });\n    this.state = {\n      show: false,\n    };\n  }\n\n  render() {\n    const { show, target } = this.state;\n    return (\n      <>\n        <Button\n          variant="danger"\n          ref={this.attachRef}\n          onClick={() => this.setState({ show: !show })}\n        >\n          Click me to see\n        </Button>\n        <Overlay target={target} show={show} placement="right">\n          {({ placement, scheduleUpdate, arrowProps, ...props }) => (\n            <div\n              {...props}\n              style={{\n                backgroundColor: \'rgba(255, 100, 100, 0.85)\',\n                padding: \'2px 10px\',\n                color: \'white\',\n                borderRadius: 3,\n                ...props.style,\n              }}\n            >\n              Simple tooltip\n            </div>\n          )}\n        </Overlay>\n      </>\n    );\n  }\n}\n\nrender(<Example />);\n\nOverlayTrigger#\nSince the above pattern is pretty common, but verbose, we\'ve included <OverlayTrigger> component to help with common use-cases. It even has functionality to delayed show or hides, and a few different "trigger" events you can mix and match.\n\nNote that triggering components must be able to accept a ref since <OverlayTrigger> will attempt to add one. You can use forwardRef() for stateless function components.\n\nconst renderTooltip = props => (\n  <div\n    {...props}\n    style={{\n      backgroundColor: \'rgba(0, 0, 0, 0.85)\',\n      padding: \'2px 10px\',\n      color: \'white\',\n      borderRadius: 3,\n      ...props.style,\n    }}\n  >\n    Simple tooltip\n  </div>\n);\n\nconst Example = () => (\n  <OverlayTrigger\n    placement="right-start"\n    delay={{ show: 250, hide: 400 }}\n    overlay={renderTooltip}\n  >\n    <Button variant="success">Hover me to see</Button>\n  </OverlayTrigger>\n);\n\nrender(<Example />);\n\nTooltips#\nA tooltip component for a more stylish alternative to that anchor tag title attribute.\n\nExamples#\nHover over the links below to see tooltips.\n\nYou can pass the Overlay injected props directly to the Tooltip component.\n\nclass Example extends React.Component {\n  constructor(...args) {\n    super(...args);\n\n    this.attachRef = target => this.setState({ target });\n    this.state = { show: false };\n  }\n\n  render() {\n    const { show, target } = this.state;\n    return (\n      <>\n        <Button\n          ref={this.attachRef}\n          onClick={() => this.setState({ show: !show })}\n        >\n          Click me!\n        </Button>\n        <Overlay target={target} show={show} placement="right">\n          {props => (\n            <Tooltip id="overlay-example" {...props}>\n              My Tooltip\n            </Tooltip>\n          )}\n        </Overlay>\n      </>\n    );\n  }\n}\n\nrender(<Example />);\n\nOr pass a Tooltip element to OverlayTrigger instead.\n\n<ButtonToolbar>\n  {[\'top\', \'right\', \'bottom\', \'left\'].map(placement => (\n    <OverlayTrigger\n      key={placement}\n      placement={placement}\n      overlay={\n        <Tooltip id={`tooltip-${placement}`}>\n          Tooltip on <strong>{placement}</strong>.\n        </Tooltip>\n      }\n    >\n      <Button variant="secondary">Tooltip on {placement}</Button>\n    </OverlayTrigger>\n  ))}\n</ButtonToolbar>;\n\nPopovers#\nA popover component, like those found in iOS.\n\nconst popover = (\n  <Popover id="popover-basic" title="Popover right">\n    And here\'s some <strong>amazing</strong> content. It\'s very engaging. right?\n  </Popover>\n);\n\nconst Example = () => (\n  <OverlayTrigger trigger="click" placement="right" overlay={popover}>\n    <Button variant="success">Click me to see</Button>\n  </OverlayTrigger>\n);\n\nrender(<Example />);\n\nAs with <Tooltip>s, you can control the placement of the Popover.\n\n<ButtonToolbar>\n  {[\'top\', \'right\', \'bottom\', \'left\'].map(placement => (\n    <OverlayTrigger\n      trigger="click"\n      key={placement}\n      placement={placement}\n      overlay={\n        <Popover\n          id={`popover-positioned-${placement}`}\n          title={`Popover ${placement}`}\n        >\n          <strong>Holy guacamole!</strong> Check this info.\n        </Popover>\n      }\n    >\n      <Button variant="secondary">Popover on {placement}</Button>\n    </OverlayTrigger>\n  ))}\n</ButtonToolbar>;\n\nDisabled elements#\nElements with the disabled attribute aren’t interactive, meaning users cannot hover or click them to trigger a popover (or tooltip). As a workaround, you’ll want to trigger the overlay from a wrapper <div> or <span> and override the pointer-events on the disabled element.\n\n<OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Tooltip!</Tooltip>}>\n  <span className="d-inline-block">\n    <Button disabled style={{ pointerEvents: \'none\' }}>\n      Disabled button\n    </Button>\n  </span>\n</OverlayTrigger>;\n\nChanging containers#\nYou can specify a container to control the DOM element the overlay is appended to. This is especially useful when styles conflict with your Overlay\'s.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleClick = ({ target }) => {\n      this.setState(s => ({ target, show: !s.show }));\n    };\n\n    this.state = {\n      show: false,\n    };\n  }\n\n  render() {\n    return (\n      <ButtonToolbar>\n        <Button onClick={this.handleClick}>Holy guacamole!</Button>\n\n        <Overlay\n          show={this.state.show}\n          target={this.state.target}\n          placement="bottom"\n          container={this}\n          containerPadding={20}\n        >\n          <Popover id="popover-contained" title="Popover bottom">\n            <strong>Holy guacamole!</strong> Check this info.\n          </Popover>\n        </Overlay>\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<Example />);\n\nUpdating position dynamically#\nSince we can\'t know every time your overlay changes size, to reposition it, you need to take manual action if you want to update the position of an Overlay in response to a change.\n\nFor this, the Overlay component also injects a scheduleUpdate() method that an overlay component can use to reposition itself.\n\nclass UpdatingPopover extends React.Component {\n  componentDidUpdate(prevProps) {\n    if (prevProps.children !== this.props.children) {\n      console.log(\'updating!\');\n      this.props.scheduleUpdate();\n    }\n  }\n\n  render() {\n    return <Popover {...this.props} />;\n  }\n}\n\nconst longContent = `\n  Very long\n  Multiline content\n  that is engaging and what-not\n`;\nconst shortContent = \'Short and sweet!\';\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n    this.state = { content: shortContent };\n  }\n\n  componentDidMount() {\n    this.timer = setInterval(() => {\n      this.setState(state => ({\n        content: state.content === shortContent ? longContent : shortContent,\n      }));\n    }, 3000);\n  }\n\n  render() {\n    const { content } = this.state;\n\n    return (\n      <OverlayTrigger\n        trigger="click"\n        overlay={\n          <UpdatingPopover id="popover-contained">{content}</UpdatingPopover>\n        }\n      >\n        <Button onClick={this.handleClick}>Holy guacamole!</Button>\n      </OverlayTrigger>\n    );\n  }\n}\n\nrender(<Example />);\n',
+      id: 'ocXSb0zZfvYOb58mCaMj',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Overlay',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Pagination',
+      componentProps: [
+        {
+          description: 'type: \'sm\' | \'lg\'\n\nSet\'s the size of all PageItems.',
+          name: 'size',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'pagination\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Pagination#\nA set of presentational components for building pagination UI.\n\nlet active = 2;\nlet items = [];\nfor (let number = 1; number <= 5; number++) {\n  items.push(\n    <Pagination.Item key={number} active={number === active}>\n      {number}\n    </Pagination.Item>,\n  );\n}\n\nconst paginationBasic = (\n  <div>\n    <Pagination>{items}</Pagination>\n    <br />\n\n    <Pagination size="lg">{items}</Pagination>\n    <br />\n\n    <Pagination size="sm">{items}</Pagination>\n  </div>\n);\n\nrender(paginationBasic);\n\nMore options#\nFor building more complex pagination UI, there are few convenient sub-components for adding "First", "Previous", "Next", and "Last" buttons, as well as an Ellipsis item for indicating previous or continuing results.\n\n<Pagination>\n  <Pagination.First />\n  <Pagination.Prev />\n  <Pagination.Item>{1}</Pagination.Item>\n  <Pagination.Ellipsis />\n\n  <Pagination.Item>{10}</Pagination.Item>\n  <Pagination.Item>{11}</Pagination.Item>\n  <Pagination.Item active>{12}</Pagination.Item>\n  <Pagination.Item>{13}</Pagination.Item>\n  <Pagination.Item disabled>{14}</Pagination.Item>\n\n  <Pagination.Ellipsis />\n  <Pagination.Item>{20}</Pagination.Item>\n  <Pagination.Next />\n  <Pagination.Last />\n</Pagination>;\n\n',
+      id: 'pNGhFzXZ3j7JxKKHrRdc',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Pagination',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -5674,6 +8179,43 @@ export const mock = {
       techno: 'React',
       title: 'a',
       subtitle: 'HTML'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ToggleButtonGroup',
+      componentProps: [
+        {
+          description: 'An HTML <input> name for each child button.\n\nRequired if type is set to \'radio\'',
+          name: 'name',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controls values\nCallback fired when a button is pressed, depending on whether the type is \'radio\' or \'checkbox\', onChange will be called with the value or array of active values',
+          name: 'onChange',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'checkbox\' | \'radio\'\ndefault: \'radio\'\t\n\nThe input type of the rendered buttons, determines the toggle behavior of the buttons',
+          name: 'type',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: any\n\ncontrolled by: onChange, initial prop: defaultValue\nThe value, or array of values, of the active (pressed) buttons',
+          name: 'value',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'ToggleButtonGroup',
+      id: 'qZZRuaGGaZ4iMJXEsZ5W',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ToggleButtonGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -5836,6 +8378,110 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/Dropdown',
+      componentProps: [
+        {
+          description: 'Align the menu to the right side of the Dropdown toggle',
+          name: 'alignRight',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'up\' | \'left\' | \'right\' | \'down\'\n\nDetermines the direction and location of the Menu in relation to it\'s Toggle.',
+          name: 'drop',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Allow Dropdown to flip in case of an overlapping on the reference element. For more information refer to Popper.js\'s flip docs.',
+          name: 'flip',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A callback fired when a menu item is selected.\n\n(eventKey: any, event: Object) => any',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controls show\nA callback fired when the Dropdown wishes to change visibility. Called with the requested show value, the DOM event, and the source that fired it: \'click\',\'keydown\',\'rootClose\', or \'select\'.\n\nfunction(\n  isOpen: boolean,\n  event: SyntheticEvent,\n  metadata: {\n    source: \'select\' | \'click\' | \'rootClose\' | \'keydown\'\n  }\n): void',
+          name: 'onToggle',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controlled by: onToggle, initial prop: defaultShow\nWhether or not the Dropdown is visible.',
+          name: 'show',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'dropdown\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Dropdowns\nToggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin\n\nOverview#\nDropdowns are toggleable, contextual overlays for displaying lists of links and more. Like overlays, Dropdowns are built using a third-party library Popper.js, which provides dynamic positioning and viewport detection.\n\nAccessibility#\nThe WAI ARIA standard defines a role="menu" widget, but it\'s very specific to a certain kind a menu. ARIA menus, must only contain role="menuitem", role="menuitemcheckbox", or role="menuitemradio".\n\nOn the other hand, Bootstrap\'s dropdowns are designed to more generic and application in a variety of situations. For this reason we don\'t automatically add the menu roles to the markup. We do implement some basic keyboard navigation, and if you do provide the "menu" role, react-bootstrap will do it\'s best to ensure the focus management is compliant with the ARIA authoring guidelines for menus.\n\nExamples#\nSingle button dropdowns#\nThe basic Dropdown is composed of a wrapping Dropdown and inner <DropdownMenu>, and <DropdownToggle>. By default the <DropdownToggle> will render a Button component and accepts all the \n\nDropdown>\n  <Dropdown.Toggle variant="success" id="dropdown-basic">\n    Dropdown Button\n  </Dropdown.Toggle>\n\n  <Dropdown.Menu>\n    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>\n    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>\n    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>\n  </Dropdown.Menu>\n</Dropdown>;\n\nSince the above is such a common configuration react-bootstrap provide the <DropdownButton> component to help reduce typing. Provide a title prop and some <DropdownItem>s and you\'re ready to go.\n\n<DropdownButton id="dropdown-basic-button" title="Dropdown button">\n  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>\n  <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>\n  <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>\n</DropdownButton>;\n\nDropdownButton will forward Button props to the underlying Toggle component\n\n<ButtonToolbar>\n  {[\'Primary\', \'Secondary\', \'Success\', \'Info\', \'Warning\', \'Danger\'].map(\n    variant => (\n      <DropdownButton\n        title={variant}\n        variant={variant.toLowerCase()}\n        id={`dropdown-variants-${variant}`}\n        key={variant}\n      >\n        <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n        <Dropdown.Item eventKey="3" active>\n          Active Item\n        </Dropdown.Item>\n        <Dropdown.Divider />\n        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n      </DropdownButton>\n    ),\n  )}\n</ButtonToolbar>;\n\nSplit button dropdowns#\nSimilarly, You create a split dropdown by combining the Dropdown components with another Button and a ButtonGroup.\n\n<Dropdown as={ButtonGroup}>\n  <Button variant="success">Split Button</Button>\n\n  <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />\n\n  <Dropdown.Menu>\n    <Dropdown.Item hred="#/action-1">Action</Dropdown.Item>\n    <Dropdown.Item hred="#/action-2">Another action</Dropdown.Item>\n    <Dropdown.Item hred="#/action-3">Something else</Dropdown.Item>\n  </Dropdown.Menu>\n</Dropdown>;\n\nAs with DropdownButton, SplitButton is provided as convenience component.\n\n<ButtonToolbar>\n  {[\'Primary\', \'Secondary\', \'Success\', \'Info\', \'Warning\', \'Danger\'].map(\n    variant => (\n      <SplitButton\n        title={variant}\n        variant={variant.toLowerCase()}\n        id={`dropdown-split-variants-${variant}`}\n        key={variant}\n      >\n        <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n        <Dropdown.Item eventKey="3" active>\n          Active Item\n        </Dropdown.Item>\n        <Dropdown.Divider />\n        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n      </SplitButton>\n    ),\n  )}\n</ButtonToolbar>;\n\nSizing#\nDropdowns work with buttons of all sizes.\n\n<>\n  <ButtonToolbar>\n    {[DropdownButton, SplitButton].map((DropdownType, idx) => (\n      <DropdownType\n        size="lg"\n        title="Drop small"\n        id={`dropdown-button-drop-${idx}`}\n        key={idx}\n      >\n        <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n        <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>\n        <Dropdown.Divider />\n        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n      </DropdownType>\n    ))}\n  </ButtonToolbar>\n  <ButtonToolbar>\n    {[DropdownButton, SplitButton].map((DropdownType, idx) => (\n      <DropdownType\n        size="sm"\n        variant="secondary"\n        title="Drop small"\n        id={`dropdown-button-drop-${idx}`}\n        key={idx}\n      >\n        <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n        <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>\n        <Dropdown.Divider />\n        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n      </DropdownType>\n    ))}\n  </ButtonToolbar>\n</>;\n\nDrop directions#\nTrigger dropdown menus above, below, left, or to the right of their toggle elements, with the drop prop.\n\n<>\n  <ButtonToolbar>\n    {[\'up\', \'down\', \'left\', \'right\'].map(direction => (\n      <DropdownButton\n        drop={direction}\n        variant="secondary"\n        title={` Drop ${direction} `}\n        id={`dropdown-button-drop-${direction}`}\n        key={direction}\n      >\n        <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n        <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>\n        <Dropdown.Divider />\n        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n      </DropdownButton>\n    ))}\n  </ButtonToolbar>\n\n  <ButtonToolbar>\n    {[\'up\', \'down\', \'left\', \'right\'].map(direction => (\n      <SplitButton\n        drop={direction}\n        variant="secondary"\n        title={`Drop ${direction}`}\n        id={`dropdown-button-drop-${direction}`}\n        key={direction}\n      >\n        <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n        <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>\n        <Dropdown.Divider />\n        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n      </SplitButton>\n    ))}\n  </ButtonToolbar>\n</>;\n\nDropdown items#\nHistorically dropdown menu contents had to be links, but that’s no longer the case with v4. Now you can optionally use <button> elements in your dropdowns instead of just <a>s.\n\n<DropdownButton id="dropdown-item-button" title="Dropdown button">\n  <Dropdown.Item as="button">Action</Dropdown.Item>\n  <Dropdown.Item as="button">Another action</Dropdown.Item>\n  <Dropdown.Item as="button">Something else</Dropdown.Item>\n</DropdownButton>;\n\nMenu alignment#\nBy default, a dropdown menu is aligned to the left, but you can switch it by passing the alignRight prop.\n\n<DropdownButton\n  alignRight\n  title="Dropdown right"\n  id="dropdown-menu-align-right"\n>\n  <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n  <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n  <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>\n  <Dropdown.Divider />\n  <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n</DropdownButton>;\n\nMenu headers#\nAdd a header to label sections of actions.\n\n<Dropdown.Menu show>\n  <Dropdown.Header>Dropdown header</Dropdown.Header>\n  <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n  <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>\n</Dropdown.Menu>;\n\nMenu dividers#\nSeparate groups of related menu items with a divider.\n\n<Dropdown.Menu show>\n  <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n  <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n  <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>\n  <Dropdown.Divider />\n  <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n</Dropdown.Menu>;\n\nCustomization#\nIf the default handling of the dropdown menu and toggle components aren\'t to your liking, you can customize them, by using the more basic <Dropdown> Component to explicitly specify the Toggle and Menu components\n\n<ButtonToolbar>\n  <Dropdown>\n    <Dropdown.Toggle id="dropdown-custom-1">Pow! Zoom!</Dropdown.Toggle>\n    <Dropdown.Menu className="super-colors">\n      <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n      <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n      <Dropdown.Item eventKey="3" active>\n        Active Item\n      </Dropdown.Item>\n      <Dropdown.Divider />\n      <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n    </Dropdown.Menu>\n  </Dropdown>\n\n  <Dropdown as={ButtonGroup}>\n    <Button variant="info">mix it up style-wise</Button>\n    <Dropdown.Toggle split variant="success" id="dropdown-custom-2" />\n    <Dropdown.Menu className="super-colors">\n      <Dropdown.Item eventKey="1">Action</Dropdown.Item>\n      <Dropdown.Item eventKey="2">Another action</Dropdown.Item>\n      <Dropdown.Item eventKey="3" active>\n        Active Item\n      </Dropdown.Item>\n      <Dropdown.Divider />\n      <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>\n    </Dropdown.Menu>\n  </Dropdown>\n</ButtonToolbar>;\n\nCustom Dropdown Components#\nFor those that want to customize everything, you can forgo the included Toggle and Menu components, and create your own. By providing custom components to the as prop, you can control how each component behaves. Custom toggle and menu components must be able to accept refs.\n\nclass CustomToggle extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleClick = this.handleClick.bind(this);\n  }\n\n  handleClick(e) {\n    e.preventDefault();\n\n    this.props.onClick(e);\n  }\n\n  render() {\n    return (\n      <a href="" onClick={this.handleClick}>\n        {this.props.children}\n      </a>\n    );\n  }\n}\n\nclass CustomMenu extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleChange = this.handleChange.bind(this);\n\n    this.state = { value: \'\' };\n  }\n\n  handleChange(e) {\n    this.setState({ value: e.target.value.toLowerCase().trim() });\n  }\n\n  render() {\n    const {\n      children,\n      style,\n      className,\n      \'aria-labelledby\': labeledBy,\n    } = this.props;\n\n    const { value } = this.state;\n\n    return (\n      <div style={style} className={className} aria-labelledby={labeledBy}>\n        <FormControl\n          autoFocus\n          className="mx-3 my-2 w-auto"\n          placeholder="Type to filter..."\n          onChange={this.handleChange}\n          value={value}\n        />\n        <ul className="list-unstyled">\n          {React.Children.toArray(children).filter(\n            child =>\n              !value || child.props.children.toLowerCase().startsWith(value),\n          )}\n        </ul>\n      </div>\n    );\n  }\n}\n\nrender(\n  <Dropdown>\n    <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">\n      Custom toggle\n    </Dropdown.Toggle>\n\n    <Dropdown.Menu as={CustomMenu}>\n      <Dropdown.Item eventKey="1">Red</Dropdown.Item>\n      <Dropdown.Item eventKey="2">Blue</Dropdown.Item>\n      <Dropdown.Item eventKey="3" active>\n        Orange\n      </Dropdown.Item>\n      <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>\n    </Dropdown.Menu>\n  </Dropdown>,\n);\n\n',
+      id: 'rv0AcK30JogsRLFLvUZ7',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Dropdown',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Popover',
+      componentProps: [
+        {
+          description: 'An Overlay injected set of props for positioning the popover arrow.\n\nThis is generally provided by the Overlay component positioning the popover',
+          name: 'arrowProps',
+          propType: 'PropTypes.shape({})',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ntype: string|number\n\nAn html id attribute, necessary for accessibility',
+          name: 'id',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'type: \'auto-start\' | \'auto\' | \'auto-end\' | \'top-start\' | \'top\' | \'top-end\' | \'right-start\' | \'right\' | \'right-end\' | \'bottom-end\' | \'bottom\' | \'bottom-start\' | \'left-end\' | \'left\' | \'left-start\'\ndefault: \'right\'\t\n\nSets the direction the Popover is positioned towards.\n\nThis is generally provided by the Overlay component positioning the popover',
+          name: 'placement',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Title content',
+          name: 'title',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'popover\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Popovers#\nA popover component, like those found in iOS.\n\nExamples#\nconst popover = (\n  <Popover id="popover-basic" title="Popover right">\n    And here\'s some <strong>amazing</strong> content. It\'s very engaging. right?\n  </Popover>\n);\n\nconst Example = () => (\n  <OverlayTrigger trigger="click" placement="right" overlay={popover}>\n    <Button variant="success">Click me to see</Button>\n  </OverlayTrigger>\n);\n\nrender(<Example />);\n\nAs with <Tooltip>s, you can control the placement of the Popover.\n\n<ButtonToolbar>\n  {[\'top\', \'right\', \'bottom\', \'left\'].map(placement => (\n    <OverlayTrigger\n      trigger="click"\n      key={placement}\n      placement={placement}\n      overlay={\n        <Popover\n          id={`popover-positioned-${placement}`}\n          title={`Popover ${placement}`}\n        >\n          <strong>Holy guacamole!</strong> Check this info.\n        </Popover>\n      }\n    >\n      <Button variant="secondary">Popover on {placement}</Button>\n    </OverlayTrigger>\n  ))}\n</ButtonToolbar>;\n\nDisabled elements#\nElements with the disabled attribute aren’t interactive, meaning users cannot hover or click them to trigger a popover (or tooltip). As a workaround, you’ll want to trigger the overlay from a wrapper <div> or <span> and override the pointer-events on the disabled element.\n\n<OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Tooltip!</Tooltip>}>\n  <span className="d-inline-block">\n    <Button disabled style={{ pointerEvents: \'none\' }}>\n      Disabled button\n    </Button>\n  </span>\n</OverlayTrigger>;\n\nChanging containers#\nYou can specify a container to control the DOM element the overlay is appended to. This is especially useful when styles conflict with your Overlay\'s.\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n\n    this.handleClick = ({ target }) => {\n      this.setState(s => ({ target, show: !s.show }));\n    };\n\n    this.state = {\n      show: false,\n    };\n  }\n\n  render() {\n    return (\n      <ButtonToolbar>\n        <Button onClick={this.handleClick}>Holy guacamole!</Button>\n\n        <Overlay\n          show={this.state.show}\n          target={this.state.target}\n          placement="bottom"\n          container={this}\n          containerPadding={20}\n        >\n          <Popover id="popover-contained" title="Popover bottom">\n            <strong>Holy guacamole!</strong> Check this info.\n          </Popover>\n        </Overlay>\n      </ButtonToolbar>\n    );\n  }\n}\n\nrender(<Example />);\n\nUpdating position dynamically#\nSince we can\'t know every time your overlay changes size, to reposition it, you need to take manual action if you want to update the position of an Overlay in response to a change.\n\nFor this, the Overlay component also injects a scheduleUpdate() method that an overlay component can use to reposition itself.\n\nclass UpdatingPopover extends React.Component {\n  componentDidUpdate(prevProps) {\n    if (prevProps.children !== this.props.children) {\n      console.log(\'updating!\');\n      this.props.scheduleUpdate();\n    }\n  }\n\n  render() {\n    return <Popover {...this.props} />;\n  }\n}\n\nconst longContent = `\n  Very long\n  Multiline content\n  that is engaging and what-not\n`;\nconst shortContent = \'Short and sweet!\';\n\nclass Example extends React.Component {\n  constructor(props, context) {\n    super(props, context);\n    this.state = { content: shortContent };\n  }\n\n  componentDidMount() {\n    this.timer = setInterval(() => {\n      this.setState(state => ({\n        content: state.content === shortContent ? longContent : shortContent,\n      }));\n    }, 3000);\n  }\n\n  render() {\n    const { content } = this.state;\n\n    return (\n      <OverlayTrigger\n        trigger="click"\n        overlay={\n          <UpdatingPopover id="popover-contained">{content}</UpdatingPopover>\n        }\n      >\n        <Button onClick={this.handleClick}>Holy guacamole!</Button>\n      </OverlayTrigger>\n    );\n  }\n}\n\nrender(<Example />);\n',
+      id: 'sDey4hyXFseA8tua2wLA',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Popover'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: '-',
       componentProps: [
@@ -5889,6 +8535,73 @@ export const mock = {
       techno: 'React Native',
       title: 'StatusBar',
       subtitle: 'ReactNative'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Nav',
+      componentProps: [
+        {
+          description: 'Marks the NavItem with a matching eventKey (or href if present) as active.',
+          name: 'activeKey',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nHave all NavItems to proportionatly fill all available width.',
+          name: 'fill',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\n\t\nHave all NavItems to evenly fill all available width.',
+          name: 'justify',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Apply styling an alignment for use in a Navbar. This prop will be set automatically when the Nav is used inside a Navbar.',
+          name: 'navbar',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A callback fired when a NavItem is selected.\n\nfunction (\n Any eventKey,\n SyntheticEvent event?\n)',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'ARIA role for the Nav, in the context of a TabContainer, the default will be set to "tablist", but can be overridden by the Nav when set explicitly.\n\nWhen the role is "tablist", NavLink focus is managed according to the ARIA authoring practices for tabs: https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tabpanel',
+          name: 'role',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'tabs\' | \'pills\'\n\nThe visual variant of the nav items.',
+          name: 'variant',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'nav\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'Base Nav\nNavigation bits in Bootstrap all share a general Nav component and styles. Swap variants to switch between each style. The base Nav component is built with flexbox and provide a strong foundation for building all types of navigation components.\n\n<Nav\n  activeKey="/home"\n  onSelect={selectedKey => alert(`selected ${selectedKey}`)}\n>\n  <Nav.Item>\n    <Nav.Link href="/home">Active</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="link-1">Link</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="link-2">Link</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="disabled" disabled>\n      Disabled\n    </Nav.Link>\n  </Nav.Item>\n</Nav>;\n\n<Nav> markup is very flexible and styling is controlled via classes so you can use whatever elements you like to build your navs. By default <Nav> and <Nav.Item> both render <div>s instead of <ul> and <li> elements respectively. This because it\'s possible (and common) to leave off the <Nav.Item>\'s and render a <Nav.Link> directly, which would create invalid markup by default (ul > a).\n\nWhen a <ul> is appropriate you can render one via the as prop; be sure to also set your items to <li> as well!\n\n<Nav defaultActiveKey="/home" as="ul">\n  <Nav.Item as="li">\n    <Nav.Link href="/home">Active</Nav.Link>\n  </Nav.Item>\n  <Nav.Item as="li">\n    <Nav.Link eventKey="link-1">Link</Nav.Link>\n  </Nav.Item>\n  <Nav.Item as="li">\n    <Nav.Link eventKey="link-2">Link</Nav.Link>\n  </Nav.Item>\n</Nav>;\n\nAlignment and orientation#\nYou can control the the direction and orientation of the Nav by making use of the flexbox layout utility classes. By default, navs are left-aligned, but that is easily changed to center or right-aligned.\n\n<>\n  <Nav className="justify-content-center" activeKey="/home">\n    <Nav.Item>\n      <Nav.Link href="/home">Active</Nav.Link>\n    </Nav.Item>\n    <Nav.Item>\n      <Nav.Link eventKey="link-1">Link</Nav.Link>\n    </Nav.Item>\n    <Nav.Item>\n      <Nav.Link eventKey="link-2">Link</Nav.Link>\n    </Nav.Item>\n    <Nav.Item>\n      <Nav.Link eventKey="disabled" disabled>\n        Disabled\n      </Nav.Link>\n    </Nav.Item>\n  </Nav>\n  <p className="text-center mt-4 mb-4">Or right-aligned</p>\n  <Nav className="justify-content-end" activeKey="/home">\n    <Nav.Item>\n      <Nav.Link href="/home">Active</Nav.Link>\n    </Nav.Item>\n    <Nav.Item>\n      <Nav.Link eventKey="link-1">Link</Nav.Link>\n    </Nav.Item>\n    <Nav.Item>\n      <Nav.Link eventKey="link-2">Link</Nav.Link>\n    </Nav.Item>\n    <Nav.Item>\n      <Nav.Link eventKey="disabled" disabled>\n        Disabled\n      </Nav.Link>\n    </Nav.Item>\n  </Nav>\n</>;\n\nVertical#\nCreate stacked navs by changing the flex item direction with the .flex-column class, or your own css. You can even use the responsive versions to stack in some viewports but not others (e.g. .flex-sm-column).\n\n<Nav defaultActiveKey="/home" className="flex-column">\n  <Nav.Link href="/home">Active</Nav.Link>\n  <Nav.Link eventKey="link-1">Link</Nav.Link>\n  <Nav.Link eventKey="link-2">Link</Nav.Link>\n  <Nav.Link eventKey="disabled" disabled>\n    Disabled\n  </Nav.Link>\n</Nav>;\n\nTabs#\nVisually represent nav items as "tabs". This style pairs nicely with tabbable regions created by our Tab components\n\n<Nav variant="tabs" defaultActiveKey="/home">\n  <Nav.Item>\n    <Nav.Link href="/home">Active</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="link-1">Option 2</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="disabled" disabled>\n      Disabled\n    </Nav.Link>\n  </Nav.Item>\n</Nav>;\n\nPills#\nAn alternative visual variant.\n\n<Nav variant="pills" defaultActiveKey="/home">\n  <Nav.Item>\n    <Nav.Link href="/home">Active</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="link-1">Option 2</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="disabled" disabled>\n      Disabled\n    </Nav.Link>\n  </Nav.Item>\n</Nav>;\n\nFill and justify#\nForce the contents of your nav to extend the full available width. To proportionately fill the space use fill. Notice that the nav is the entire width but each nav item is a different size.\n\n<Nav fill variant="tabs" defaultActiveKey="/home">\n  <Nav.Item>\n    <Nav.Link href="/home">Active</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="link-1">Loooonger NavLink</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="link-2">Link</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="disabled" disabled>\n      Disabled\n    </Nav.Link>\n  </Nav.Item>\n</Nav>;\n\nIf you want each NavItem to be the same size use justify.\n\n<Nav justify variant="tabs" defaultActiveKey="/home">\n  <Nav.Item>\n    <Nav.Link href="/home">Active</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="link-1">Loooonger NavLink</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="link-2">Link</Nav.Link>\n  </Nav.Item>\n  <Nav.Item>\n    <Nav.Link eventKey="disabled" disabled>\n      Disabled\n    </Nav.Link>\n  </Nav.Item>\n</Nav>;\n\nUsing dropdowns#\nYou can mix and match the Dropdown components with the NavLink and NavItem components to create a Dropdown that plays well in a Nav component\n\n<Dropdown as={NavItem}>\n  <Dropdown.Toggle as={NavLink}>Click to see more…</Dropdown.Toggle>\n  <Dropdown.Menu>\n    <Dropdown.Item>Hello there!</Dropdown.Item>\n  </Dropdown.Menu>\n</Dropdown>;\n\nThe above demostrates how flexible the component model can be. But if you didn\'t want to roll your own versions we\'ve included a straight-forward <NavDropdown> that works for most cases.\n\nclass NavDropdownExample extends React.Component {\n  handleSelect(eventKey) {\n    alert(`selected ${eventKey}`);\n  }\n\n  render() {\n    return (\n      <Nav variant="pills" activeKey="1" onSelect={k => this.handleSelect(k)}>\n        <Nav.Item>\n          <Nav.Link eventKey="1" href="#/home">\n            NavLink 1 content\n          </Nav.Link>\n        </Nav.Item>\n        <Nav.Item>\n          <Nav.Link eventKey="2" title="Item">\n            NavLink 2 content\n          </Nav.Link>\n        </Nav.Item>\n        <Nav.Item>\n          <Nav.Link eventKey="3" disabled>\n            NavLink 3 content\n          </Nav.Link>\n        </Nav.Item>\n        <NavDropdown title="Dropdown" id="nav-dropdown">\n          <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>\n          <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>\n          <NavDropdown.Item eventKey="4.3">\n            Something else here\n          </NavDropdown.Item>\n          <NavDropdown.Divider />\n          <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>\n        </NavDropdown>\n      </Nav>\n    );\n  }\n}\n\nrender(<NavDropdownExample />);\n\n',
+      id: 'sO95FizkxTwJjnh3pkDI',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Nav',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -5993,6 +8706,73 @@ export const mock = {
     },
     {
       children: [],
+      componentImport: 'react-bootstrap/SplitButton',
+      componentProps: [
+        {
+          description: 'Disables both Buttons',
+          name: 'disabled',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An href passed to the non-toggle Button',
+          name: 'href',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ntype" string|number\n\nAn html id attribute for the Toggle button, necessary for assistive technologies, such as screen readers.',
+          name: 'id',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An ARIA accessible role applied to the Menu component. When set to \'menu\', The dropdown',
+          name: 'menuRole',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An onClick handler passed to the non-toggle Button',
+          name: 'onClick',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Which event when fired outside the component will cause it to be closed.\n\nsee DropdownMenu for more details',
+          name: 'rootCloseEvent',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'An anchor target passed to the non-toggle Button',
+          name: 'target',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ntype: node\n\nThe content of the non-toggle Button.',
+          name: 'title',
+          propType: 'PropTypes.node',
+          propTypeIsrequired: true
+        },
+        {
+          description: 'default: \'Toggle dropdown\'\t\n\nAccessible label for the toggle; the value of title if not specified.',
+          name: 'toggleLabel',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'SplitButton',
+      id: 'ssISkM7bkh4PpFmsp4j1',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'SplitButton',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
+    },
+    {
+      children: [],
       closeTag: false,
       componentImport: 'react-bootstrap/lib/NavbarBrand',
       componentProps: [],
@@ -6087,6 +8867,31 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'Popover'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/ModalTitle',
+      componentProps: [
+        {
+          description: 'default: <divWithClassName(h4)>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        }
+      ],
+      description: 'ModalTitle',
+      id: 'tN5Su4cTRNz2UaBzuWtv',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'ModalTitle',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6287,6 +9092,31 @@ export const mock = {
       techno: 'React Native',
       title: 'VirtualizedList',
       subtitle: 'ReactNative'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/CardDeck',
+      componentProps: [
+        {
+          description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
+          name: 'as',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'card-deck\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'CardDeck',
+      id: 'v0jP3FsP5toWToX7zkri',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'CardDeck',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6552,6 +9382,91 @@ export const mock = {
       subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
       title: 'Dropdown'
+    },
+    {
+      children: [],
+      componentImport: 'react-bootstrap/Navbar',
+      componentProps: [
+        {
+          description: 'default: <nav>\t\n\nSet a custom element for this component.',
+          name: 'as',
+          propType: 'PropTypes.element',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A convenience prop for adding bg-* utility classes since they are so commonly used here. light and dark are common choices but any bg-* class is supported, including any custom ones you might define.\n\nPairs nicely with the variant prop.',
+          name: 'bg',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: false\t\n\nToggles expanded to false after the onSelect event of a descendant of a child <Nav> fires. Does nothing if no <Nav> or <Nav> descendants exist.\n\nManually controlling expanded via the onSelect callback is recommended instead, for more complex operations that need to be executed after the select event of <Nav> descendants.',
+          name: 'collapseOnSelect',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: true | \'sm\' | \'md\' | \'lg\' | \'xl\'\ndefault: true\t\n\nThe breakpoint, below which, the Navbar will collapse. When true the Navbar will always be expanded regardless of screen size.',
+          name: 'expand',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controlled by: onToggle, initial prop: defaultExpanded\nControls the visiblity of the navbar body',
+          name: 'expanded',
+          propType: 'PropTypes.bool',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'top\' | \'bottom\'\n\nCreate a fixed navbar along the top or bottom of the screen, that scrolls with the page. A convenience prop for the fixed-* positioning classes.',
+          name: 'fixed',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'A callback fired when a descendant of a child <Nav> is selected. Should be used to execute complex closing or other miscellaneous actions desired after selecting a descendant of <Nav>. Does nothing if no <Nav> or <Nav> descendants exist. The callback is called with an eventKey, which is a prop from the selected <Nav> descendant, and an event.\n\nfunction (\n eventKey: mixed,\n event?: SyntheticEvent\n)\nFor basic closing behavior after all <Nav> descendant onSelect events in mobile viewports, try using collapseOnSelect.\n\nNote: If you are manually closing the navbar using this OnSelect prop, ensure that you are setting expanded to false and not toggling between true and false.',
+          name: 'onSelect',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'controls expanded\nA callback fired when the <Navbar> body collapses or expands. Fired when a <Navbar.Toggle> is clicked and called with the new expanded boolean value.',
+          name: 'onToggle',
+          propType: 'PropTypes.func',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'default: \'navigation\'\t\n\nThe ARIA role for the navbar, will default to \'navigation\' for Navbars whose as is something other than <nav>.',
+          name: 'role',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'top\' | \'bottom\'\n\nPosition the navbar at the top or bottom of the viewport, but only after scrolling past it. . A convenience prop for the sticky-* positioning classes.\n\nNot supported in <= IE11 and other older browsers without a polyfill',
+          name: 'sticky',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'type: \'light\' | \'dark\'\ndefault: \'light\'\t\n\nThe general visual variant a the Navbar. Use in combination with the bg prop, background-color utilities, or your own background styles.',
+          name: 'variant',
+          propType: 'PropTypes.oneOf([\'\', \'\'])',
+          propTypeIsrequired: false
+        },
+        {
+          description: 'required\t\ndefault: \'navbar\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
+          name: 'bsPrefix',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        }
+      ],
+      description: 'Navbars#\nA powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more\n\nOverview#\nHere’s what you need to know before getting started with the navbar:\n\nuse the expand prop to allow for nvabar collapsing at lower breakpoints.\nNavbars and their contents are fluid by default. Use optional containers to limit their horizontal width.\nUse spacing and flex utilities to size and position content\nA responsive navigation header, including support for branding, navigation, and more. Here’s an example of all the sub-components included in a responsive light-themed navbar that automatically collapses at the lg (large) breakpoint.\n\n<Navbar bg="light" expand="lg">\n  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>\n  <Navbar.Toggle aria-controls="basic-navbar-nav" />\n  <Navbar.Collapse id="basic-navbar-nav">\n    <Nav className="mr-auto">\n      <Nav.Link href="#home">Home</Nav.Link>\n      <Nav.Link href="#link">Link</Nav.Link>\n      <NavDropdown title="Dropdown" id="basic-nav-dropdown">\n        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>\n        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>\n        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>\n        <NavDropdown.Divider />\n        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>\n      </NavDropdown>\n    </Nav>\n    <Form inline>\n      <FormControl type="text" placeholder="Search" className="mr-sm-2" />\n      <Button variant="outline-success">Search</Button>\n    </Form>\n  </Navbar.Collapse>\n</Navbar>;\n\nBrand#\nA simple flexible branding component. Images are supported but will likely require custom styling to work well.\n\n<>\n  <Navbar bg="light">\n    <Navbar.Brand href="#home">Brand link</Navbar.Brand>\n  </Navbar>\n  <br />\n  <Navbar bg="light">\n    <Navbar.Brand>Brand text</Navbar.Brand>\n  </Navbar>\n  <br />\n  <Navbar bg="dark">\n    <Navbar.Brand href="#home">\n      <img\n        src="/logo.svg"\n        width="30"\n        height="30"\n        className="d-inline-block align-top"\n        alt="React Bootstrap logo"\n      />\n    </Navbar.Brand>\n  </Navbar>\n  <br />\n  <Navbar bg="dark" variant="dark">\n    <Navbar.Brand href="#home">\n      <img\n        alt=""\n        src="/logo.svg"\n        width="30"\n        height="30"\n        className="d-inline-block align-top"\n      />\n      {\' React Bootstrap\'}\n    </Navbar.Brand>\n  </Navbar>\n</>;\n\nForms#\nUse <Form inline> and your variaous form controls within the Navbar. Align the contents as needed with utility classes.\n\n<Navbar className="bg-light justify-content-between">\n  <Form inline>\n    <InputGroup>\n      <InputGroup.Prepend>\n        <InputGroup.Text id="basic-addon1">@</InputGroup.Text>\n      </InputGroup.Prepend>\n      <FormControl\n        placeholder="Username"\n        aria-label="Username"\n        aria-describedby="basic-addon1"\n      />\n    </InputGroup>\n  </Form>\n  <Form inline>\n    <FormControl type="text" placeholder="Search" className=" mr-sm-2" />\n    <Button type="submit">Submit</Button>\n  </Form>\n</Navbar>;\n\nText and Non-nav links#\nLoose text and links can be wrapped Navbar.Text in order to correctly align it vertically.\n\n<Navbar>\n  <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>\n  <Navbar.Toggle />\n  <Navbar.Collapse className="justify-content-end">\n    <Navbar.Text>\n      Signed in as: <a href="#login">Mark Otto</a>\n    </Navbar.Text>\n  </Navbar.Collapse>\n</Navbar>;\n\nColor schemes#\nTheming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from variant="light" for use with light background colors, or variant="dark" for dark background colors. Then, customize with the bg prop or any custom css!\n\n<>\n  <Navbar bg="dark" variant="dark">\n    <Navbar.Brand href="#home">Navbar</Navbar.Brand>\n    <Nav className="mr-auto">\n      <Nav.Link href="#home">Home</Nav.Link>\n      <Nav.Link href="#features">Features</Nav.Link>\n      <Nav.Link href="#pricing">Pricing</Nav.Link>\n    </Nav>\n    <Form inline>\n      <FormControl type="text" placeholder="Search" className="mr-sm-2" />\n      <Button variant="outline-info">Search</Button>\n    </Form>\n  </Navbar>\n  <br />\n  <Navbar bg="primary" variant="dark">\n    <Navbar.Brand href="#home">Navbar</Navbar.Brand>\n    <Nav className="mr-auto">\n      <Nav.Link href="#home">Home</Nav.Link>\n      <Nav.Link href="#features">Features</Nav.Link>\n      <Nav.Link href="#pricing">Pricing</Nav.Link>\n    </Nav>\n    <Form inline>\n      <FormControl type="text" placeholder="Search" className="mr-sm-2" />\n      <Button variant="outline-light">Search</Button>\n    </Form>\n  </Navbar>\n\n  <br />\n  <Navbar bg="light" variant="light">\n    <Navbar.Brand href="#home">Navbar</Navbar.Brand>\n    <Nav className="mr-auto">\n      <Nav.Link href="#home">Home</Nav.Link>\n      <Nav.Link href="#features">Features</Nav.Link>\n      <Nav.Link href="#pricing">Pricing</Nav.Link>\n    </Nav>\n    <Form inline>\n      <FormControl type="text" placeholder="Search" className="mr-sm-2" />\n      <Button variant="outline-primary">Search</Button>\n    </Form>\n  </Navbar>\n</>;\n\nContainers#\nWhile not required, you can wrap the Navbar in a <Container> component to center it on a page, or add one within to only center the contents of a fixed or static top navbar.\n\n<Container>\n  <Navbar expand="lg" variant="light" bg="light">\n    <Navbar.Brand href="#">Navbar</Navbar.Brand>\n  </Navbar>\n</Container>;\n\nWhen the container is within your navbar, its horizontal padding is removed at breakpoints lower than your specified expand={\'sm\' | \'md\' | \'lg\' | \'xl\'} prop. This ensures we’re not doubling up on padding unnecessarily on lower viewports when your navbar is collapsed.\n\n<Navbar expand="lg" variant="light" bg="light">\n  <Container>\n    <Navbar.Brand href="#">Navbar</Navbar.Brand>\n  </Container>\n</Navbar>;\n\nPlacement#\nYou can use Bootstrap\'s position utilities to place navbars in non-static positions. Choose from fixed to the top, fixed to the bottom, or stickied to the top (scrolls with the page until it reaches the top, then stays there). Fixed navbars use position: fixed, meaning they’re pulled from the normal flow of the DOM and may require custom CSS (e.g., padding-top on the <body>) to prevent overlap with other elements. Also note that .sticky-top uses position: sticky, which isn’t fully supported in every browser.\n\nSince these positioning needs are so common for Navbars, we\'ve added convenience props for them\n\nFixed top\n<Navbar fixed="top" />\n\nFixed bottom\n<Navbar fixed="bottom" />\n\nSticky top\n<Navbar sticky="top" />\nSticky bottom\n<Navbar sticky="bottom" />\nResponsive behaviors#\nUse the expand prop as well as the Navbar.Toggle and Navbar.Collapse components to control when content collapses behind a button.\n\nSet the defaultExpanded prop to make the Navbar start expanded. Set collapseOnSelect to make the Navbar collapse automatically when the user selects an item. You can also finely control the collapsing behavior by using the expanded and onToggle props.\n\n<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">\n  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>\n  <Navbar.Toggle aria-controls="responsive-navbar-nav" />\n  <Navbar.Collapse id="responsive-navbar-nav">\n    <Nav className="mr-auto">\n      <Nav.Link href="#features">Features</Nav.Link>\n      <Nav.Link href="#pricing">Pricing</Nav.Link>\n      <NavDropdown title="Dropdown" id="collasible-nav-dropdown">\n        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>\n        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>\n        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>\n        <NavDropdown.Divider />\n        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>\n      </NavDropdown>\n    </Nav>\n    <Nav>\n      <Nav.Link href="#deets">More deets</Nav.Link>\n      <Nav.Link eventKey={2} href="#memes">\n        Dank memes\n      </Nav.Link>\n    </Nav>\n  </Navbar.Collapse>\n</Navbar>;',
+      id: 'zGTqZTpY0jrPiXGjU7JG',
+      isDefault: true,
+      provider: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
+      techno: 'React',
+      title: 'Navbar'
     },
     {
       children: [],
