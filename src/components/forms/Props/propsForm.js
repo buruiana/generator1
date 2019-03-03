@@ -17,8 +17,14 @@ const PropsForm = props => {
       type: "string",
       title: prop.name,
       val: prop.val,
-      default: prop.val
+      default: prop.val,
     }
+  });
+
+  const uiSchema = {};
+
+  propsInfo.map(prop => {
+    uiSchema[prop.name] = { "ui:placeholder": `${prop.propType}` }
   });
 
   const onSubmit = data => {
@@ -65,6 +71,7 @@ const PropsForm = props => {
   const log = (type) => console.log.bind(console, type);
   return (
     <Form schema={schema}
+      uiSchema={uiSchema}
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
