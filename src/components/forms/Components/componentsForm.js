@@ -71,7 +71,7 @@ const ComponentsForm = props => {
           required: ['name'],
           properties: {
             name: { type: 'string', title: 'Name' },
-            description: { type: 'string', title: 'Description', default: description || '' },
+            description: { type: 'string', title: 'Description', default: '' },
             propType: {
               type: 'string',
               title: 'PropType',

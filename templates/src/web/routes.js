@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Route, Switch } from 'react-router';
 import Home from '../web/components/layouts/Home';
 import Counter from '../web/components/layouts/Counter';
@@ -17,6 +17,6 @@ const routes = (
       <Route component={NoMatch} />
     </Switch>
   </div>
-)
+);
 
-export default routes
+export default routes;
