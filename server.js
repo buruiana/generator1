@@ -63,13 +63,13 @@ app.post('/api/exportFiles', (req, res) => {
 
   console.log('console: ------------------', req.body);
 
-  if (!req.body.type === 'Service') {
+  if (req.body.projectType === 'Service') {
     if (req.body.reducer || req.body.exportAll) {
       fs.writeFileSync(`${dest}/reducer.js`, req.body.reducer, 'utf8');
     }
 
     if (req.body.saga || req.body.exportAll) {
-      fs.writeFileSync(`${dest}/saga.js`, req.body.saga, 'utf8');
+      fs.writeFileSync(`${dest}/index.js`, req.body.saga, 'utf8');
     }
 
     if (req.body.actions || req.body.exportAll) {

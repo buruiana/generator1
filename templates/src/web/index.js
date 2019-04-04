@@ -1,11 +1,10 @@
-import { AppContainer } from 'react-hot-loader'
-import { Provider } from 'react-redux'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import configureStore, { history } from '../shared/redux/store'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './App';
+import configureStore, { history } from '../shared/redux/store';
 
-const store = configureStore()
+const store = configureStore();
 const render = () => {
   ReactDOM.render(
     <AppContainer>
@@ -15,6 +14,6 @@ const render = () => {
     </AppContainer>,
     document.getElementById('react-root')
   )
-}
+};
 
-render()
+render();
